@@ -1,3 +1,5 @@
+;改编自 @KOP-XIAO 的 IP_API.js，优化了一下。
+
 if ($response.statusCode != 200) {
   $done(null);
 }
@@ -42,8 +44,8 @@ var flags = new Map([["AC","🇦🇨"],["AD","🇦🇩"],["AE","🇦🇪"],["AF"
 
 var body = $response.body;
 var obj = JSON.parse(body);
-var title =flags.get(obj['countryCode']) + ' '+ City_ValidCheck(obj['city']);//+Area_check(obj['country']);
-var subtitle = ISP_ValidCheck(obj['org']);
+var title =flags.get(obj['countryCode']) + '『'+ City_ValidCheck(obj['city']) +'』';
+var subtitle = '📍' + ' ' + ISP_ValidCheck(obj['org']) + ' ➠ ' +obj['query'];
 var ip = obj['query'];
-var description = '\n\n' + '------------------------------' + '\n' + 'IP :'+ ' ' +obj['query'] + '\n\n' + '服务商 :' + ' ' +obj['isp'] + '\n\n' + '地区 :' + ' ' +City_ValidCheck(obj['regionName']) + ' ' + '⟦' + flags.get(obj['countryCode']) + '⟧' + '\n' + '------------------------------';
+var description = '\n' + '🔎 查询结果' + '\n\n' + '------------------------------' + '\n' + 'IP :'+ ' ' +obj['query'] + '\n\n' + '服务商 :' + ' ' +obj['isp'] + '\n\n' + '地区 :' + ' ' +City_ValidCheck(obj['regionName']) + ' ' + '⟦' + flags.get(obj['countryCode']) + '⟧' + '\n' + '------------------------------';
 $done({title, subtitle, ip, description});
