@@ -47,5 +47,5 @@ var obj = JSON.parse(body);
 var title =flags.get(obj['countryCode']) + '『'+ City_ValidCheck(obj['city']) +'』';
 var subtitle = '📍' + ISP_ValidCheck(obj['org']) + ' ➠ ' +obj['query'];
 var ip = obj['query'];
-var description = '\n' + '**🔎 查询结果**' + '\n' + '------------------------------' + '\n' + '**IP :**'+ ' ' +obj['query'] + '\n\n' + '**服务商 :**' + ' ' +obj['isp'] + '\n\n' + '**地区 :**' + ' ' +City_ValidCheck(obj['regionName']) + ' ' + '⟦' + flags.get(obj['countryCode']) + '⟧' + '\n' + '------------------------------';
+var description = '\n' + '🔎 查询结果' + '\n' + '------------------------------' + '\n' + 'IP :'+ ' ' +obj['query'] + '\n\n' + '服务商 :' + ' ' +obj['isp'] + '\n\n' + '地区 :' + ' ' +City_ValidCheck(obj['regionName']) + ' ' + '⟦' + flags.get(obj['countryCode']) + '⟧' + '\n' + '------------------------------';
 $done({title, subtitle, ip, description});
