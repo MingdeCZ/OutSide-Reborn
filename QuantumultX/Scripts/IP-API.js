@@ -1,4 +1,4 @@
-;改编自 @KOP-XIAO 的 IP_API.js，优化了一下。
+# 改编自 @KOP-XIAO 的 IP_API.js，优化了一下。
 
 if ($response.statusCode != 200) {
   $done(null);
