@@ -845,7 +845,6 @@ http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopshowapi\
 # Sub-Store 高级订阅管理工具 sub.store
 http-request ^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body=true, timeout=120, tag=Sub-Store Core
 http-request https?:\/\/sub\.store script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body=true, timeout=120, tag=Sub-Store Simple
-cron "0 0 * * *" script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/cron-sync-artifacts.min.js, tag=Sub-Store Sync
 
 # @blackmatrix7（更多脚本信息请自行在 https://github.com/blackmatrix7/ios_rule_script 中查找）
 # 什么值得买去广告  app-api.smzdm.com,homepage-api.smzdm.com,haojia-api.smzdm.com,haojia.m.smzdm.com,baike-api.smzdm.com,s-api.smzdm.com,zhiyou.m.smzdm.com
@@ -864,7 +863,7 @@ http-response ^https?:\/\/(t7z|kjp)\.cupid\.iqiyi\.com\/mixer\? requires-body=1,
 # 知乎助手 Plus，去广告及功能增强 118.89.204.198,103.41.167.237,2402:4e00:1200:ed00:0:9089:6dac:96b6,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,m-cloud.zhihu.com,103.41.167.236,103.41.167.234,103.41.167.235,103.41.167.226
 # 获取用户信息 - 隔离用户数据，开启本地会员等
 http-response ^https?:\/\/api\.zhihu\.com\/people\/ requires-body=1,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js,tag=知乎_处理用户信息
-# 关键词屏蔽 - 解锁本地的关键词屏蔽功能，需要开启本地VIP
+# 关键词屏蔽 - 解锁本地的关键词屏蔽功能，需要开启本地 VIP
 http-request ^https?:\/\/api\.zhihu\.com\/feed-root\/block script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js,tag=知乎_解锁关键词屏蔽
 # 优化软件配置 - 优化下发的配置文件来实现某些效果
 http-response ^https?:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\? requires-body=1,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js,tag=知乎_优化软件配置 1
@@ -924,7 +923,7 @@ http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|t
 http-response ^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js, requires-body=true, timeout=10, tag=解除微信链接限制
 
 # @chavyleung（更多脚本信息请自行在 https://github.com/chavyleung/scripts 中查找）
-# Box JS（浏览器访问：https://boxjs.com）boxjs.com,boxjs.net,*.boxjs.com,*.boxjs.net
+# BoxJS（浏览器访问：https://boxjs.com）boxjs.com,boxjs.net,*.boxjs.com,*.boxjs.net
 http-request ^https?:\/\/(.+\.)?boxjs\.(com|net) script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120, tag=BoxJs
 
 # @chengkongyiban（更多脚本信息请自行在 https://github.com/chengkongyiban 中查找）
@@ -1007,7 +1006,7 @@ http-response ^https?:\/\/tft-app\.cdtft\.cn\/gateway-customer\/tftapp\/tft-ams\
 http-response ^https?:\/\/api\.zhihu\.com\/commercial_api.*launch_v2 script-path=https://github.com/ddgksf2013/Scripts/raw/master/zhihu_openads.js, requires-body=true
 
 # 微信小程序去广告（收录常用小程序的去广告，作者署名在插件内）
-# EMS中国邮政物流速递 @TEAXS ump.ems.com.cn
+# EMS 中国邮政物流速递 @TEAXS ump.ems.com.cn
 http-response ^https:\/\/ump\.ems\.com\.cn\/new-generation-extend\/redis\/pageInfoByChannel script-path = https://raw.githubusercontent.com/jizhi0520/QX/main/ems.js, requires-body = true, tag = EMS 中国邮政物流速递去广告
 # 滴滴出行 @TEAXS common.diditaxi.com.cn
 http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5 script-path = https://raw.githubusercontent.com/jizhi0520/QX/main/didi.js, requires-body = true, tag = 滴滴出行去广告
@@ -1019,7 +1018,7 @@ http-response ^https?:\/\/comic\.321mh\.com\/app_api\/v\d\/getcomicinfo_body scr
 http-response ^https:\/\/go\.heytea\.com\/api\/service-portal\/vip script-path = https://raw.githubusercontent.com/jizhi0520/QX/main/heytea.js, requires-body = true, tag = 喜茶去广告
 # 茶颜悦色 @是豆豆呀 miniapp.sexytea2013.com
 http-response ^https:\/\/miniapp\.sexytea2013\.com\/cms\/slot\/queryByCodes\?codes=INDEX_TOP_BANNER script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/WexinMiniPrograms/chayanyuese/chayanyuese_remove_ads.js, requires-body = true, tag = 茶颜悦色去广告
-# COCO点单 @是豆豆呀 coco-com.e.verystar.net
+# COCO 点单 @是豆豆呀 coco-com.e.verystar.net
 http-response ^https:\/\/coco-com\.e\.verystar\.net\/v1\/home\/info script-path = https://raw.githubusercontent.com/jizhi0520/QX/main/coco.js, requires-body = true, tag = COCO 点单去广告
 # 滴滴青桔 @是豆豆呀 htwkop.xiaojukeji.com
 http-response ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig script-path = https://raw.githubusercontent.com/jizhi0520/QX/main/qingju.js, requires-body = true, tag = 滴滴青桔去广告
@@ -1028,7 +1027,7 @@ http-response ^https:\/\/cappapi\.alittle-tea\.com\/open\?method=catering\.set\.
 # 携程旅行 @是豆豆呀 m.ctrip.com
 http-response ^https:\/\/m\.ctrip\.com\/restapi\/soa2\/13012\/getWaterflowInfo script-path = https://raw.githubusercontent.com/jizhi0520/QX/main/T3.js, requires-body = true, tag = 携程旅行去广告
 
-# YouTube去广告（过滤视频、瀑布流、搜索和 Shorts 中的广告，并删除底部的上传按钮，增加画中画、后台播放及字幕翻译功能，字幕翻译需要在插件内配置字幕样式。此插件不能与其他具有 YouTube 广告过滤能力和字幕翻译能力的插件一起使用，并且需要禁用 UDP 协议的 443 端口。此插件仅建议 iOS 15 以上设备使用，Premium 订阅用户请勿使用）*.googlevideo.com, youtubei.googleapis.com, www.youtube.com, m.youtube.com, tv.youtube.com, -redirector*.googlevideo.com
+# YouTube 去广告（过滤视频、瀑布流、搜索和 Shorts 中的广告，并删除底部的上传按钮，增加画中画、后台播放及字幕翻译功能，字幕翻译需要在插件内配置字幕样式。此插件不能与其他具有 YouTube 广告过滤能力和字幕翻译能力的插件一起使用，并且需要禁用 UDP 协议的 443 端口。此插件仅建议 iOS 15 以上设备使用，Premium 订阅用户请勿使用）*.googlevideo.com, youtubei.googleapis.com, www.youtube.com, m.youtube.com, tv.youtube.com, -redirector*.googlevideo.com
 # 来自 Maasea 的作品
 http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/YouTube/YouTube_remove_ads_request.js, requires-body = true, binary-body-mode = true, tag = YouTube 请求
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/main/Resource/Script/YouTube/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = YouTube 响应
