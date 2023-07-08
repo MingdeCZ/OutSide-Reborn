@@ -16,6 +16,522 @@
 skip-proxy = iosapps.itunes.apple.com
 # Fileball 要开 MPV 的话必须添加
 force-http-engine-hosts = aliyun.example.com:0, quark.example.com:0, pikpak.example.com:0
+# @VirgilClyne
+# 🍟 整点薯条:🌐 通用设置增强（(📱 iOS 版) 1.添加跳过代理部分段内容 2.添加返回真实 IP 段内容 3.添加不可 MitM 的域名，防止打断连接）
+# 跳过代理
+# 跳过某个域名或者 IP 段，这些目标主机将不会由 Loon Proxy 处理。
+skip-proxy = localhost, *.local, captive.apple.com, e.crashlytics.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, fe80::/10
+# Always Real IP Hosts
+# DNS 数据包将被转发到上游 DNS 服务器。
+real-ip = *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, cable.auth.com, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
+
+[Host]
+# 🍟 整点薯条:🌐 DNS 增强（1.域名按所属 DNS 进行分流解析 2.路由器地址使用系统 DNS 进行解析 3.特殊地址使用规范 DNS 进行解析）
+# --- CUSTOM HOSTS ---
+# > IPv6
+ip6-localhost = ::1
+ip6-loopback = ::1
+ip6-localnet = fe00::0
+ip6-mcastprefix = ff00::0
+ip6-allnodes = ff02::1
+ip6-allrouters = ff02::2
+ip6-allhosts = ff02::3
+
+# > Encrypted DNS
+dns.google = 8.8.8.8
+dns64.dns.google = 2001:4860:4860::6464
+cloudflare-dns.com = 104.16.249.249
+1dot1dot1dot1.cloudflare-dns.com = 1.1.1.1
+one.one.one.one = 1.1.1.1
+dns.alidns.com = 223.5.5.5
+doh.pub = 1.12.12.12
+dot.pub = 1.12.12.12
+doh.360.cn = 23.6.48.18
+dot.360.cn = 101.198.198.198
+dns.twnic.tw = 101.101.101.101
+ordns.he.net = 74.82.42.42
+
+# > Modify Contents
+# Google API Services China
+# services.googleapis.cn = 74.125.193.94
+# Firebase Cloud Messaging
+talk.google.com = 108.177.125.188
+mtalk.google.com = 108.177.125.188
+alt1-mtalk.google.com = 3.3.3.3
+alt2-mtalk.google.com = 3.3.3.3
+alt3-mtalk.google.com = 74.125.200.188
+alt4-mtalk.google.com = 74.125.200.188
+alt5-mtalk.google.com = 3.3.3.3
+alt6-mtalk.google.com = 3.3.3.3
+alt7-mtalk.google.com = 74.125.200.188
+alt8-mtalk.google.com = 3.3.3.3
+# Google CDN
+# dl.google.com = 180.163.151.161
+# dl.l.google.com = 180.163.151.161
+
+# --- CUSTOM DNS ---
+# > Modify Contents
+# Google CDN
+blog.google = server:119.29.29.29
+googletraveladservices.com = server:119.29.29.29
+dl.google.com = server:119.29.29.29
+dl.l.google.com = server:119.29.29.29
+clientservices.googleapis.com = server:119.29.29.29
+update.googleapis.com = server:119.29.29.29
+translate.googleapis.com = server:119.29.29.29
+fonts.googleapis.com = server:119.29.29.29
+fonts.gstatic.com = server:119.29.29.29
+# Google STUN
+stun.l.google.com = server:system
+stun?.l.google.com = server:system
+
+# > Router Admin Panel
+# Ubiquiti Unifi Network App
+*.id.ui.direct = server:system
+# Ubiquiti Unifi Portal
+# unifi.ui.com = server:system
+# Ubiquiti Unifi OS
+unifi.local = server:system
+# Ubiquiti Unifi Controller
+# network.unifi.ui.com = server:system
+# Ubiquiti Amplifi Router
+amplifi.lan = server:system
+# Synology Router
+router.synology.com = server:system
+# Razer Sila Router
+sila.razer.com = server:system
+# Asus Router
+router.asus.com = server:system
+# Netgear Router
+routerlogin.net = server:system
+# Netgear Obri Router
+orbilogin.com = server:system
+# Linksys Router
+www.LinksysSmartWiFi.com = server:system
+LinksysSmartWiFi.com = server:system
+myrouter.local = server:system
+# Aurba Router
+instant.arubanetworks.com = server:system
+setmeup.arubanetworks.com = server:system
+# 小米 Mi WiFi Router
+www.miwifi.com = server:system
+miwifi.com = server:system
+# 华为 Huawei Router
+mediarouter.home = server:system
+# TP-Link Router
+tplogin.cn = server:system
+tplinklogin.net = server:system
+tplinkwifi.net = server:system
+# 水星 MERCURY Router
+melogin.cn = server:system
+# 迅捷 FAST Router
+falogin.cn = server:system
+# 腾达 Tenda Router
+tendawifi.com = server:system
+# 磊科 Netcore Router
+leike.cc = server:system
+# 中兴 ZTE Router
+zte.home = server:system
+# 斐讯 PHICOMM Router
+p.to = server:system
+phicomm.me = server:system
+# 极路由 HiWiFi Router
+hiwifi.com = server:system
+# 迅雷路由
+peiluyou.com = server:system
+# M2M routers at MiFi Hotspot
+_hotspot_.m2m = server:system
+# csl Wi-Fi
+hotspot.cslwifi.com = server:system
+
+# > Apple
+networking.apple = server:https://doh.dns.apple.com/dns-query
+# Apple.com
+# *.apple.com = server:https://doh.dns.apple.com/dns-query
+# iCloud.com
+*.icloud.com = server:https://doh.dns.apple.com/dns-query
+
+# > Alphabet
+# *.google = server:https://dns.google/dns-query
+*.google.com = server:https://dns.google/dns-query
+*.google.com.?? = server:https://dns.google/dns-query
+# Google sites
+# *.goog = server:https://dns.google/dns-query
+# Google 静态资源
+*.gstatic.com = server:https://dns.google/dns-query
+# Google Photos
+*.ggpht.com = server:https://dns.google/dns-query
+# Google 用户上传数据
+*.googleusercontent.com = server:https://dns.google/dns-query
+# Google APIs
+*.googleapis.com = server:https://dns.google/dns-query
+# Google backbone
+*.1e100.net = server:https://dns.google/dns-query
+# Youtube sites
+*.youtube = server:https://dns.google/dns-query
+# Youtube
+*.youtube.com = server:https://dns.google/dns-query
+# Youtube 图片
+*.ytimg.com = server:https://dns.google/dns-query
+# Youtube Video
+*.googlevideo.com = server:https://dns.google/dns-query
+# Google Video Thumbnails
+*.gvt?.com = server:https://dns.google/dns-query
+# reCaptcha
+*.recaptcha.net = server:https://dns.google/dns-query
+# Gmail
+*.gmail.com = server:https://dns.google/dns-query
+# Google Source
+*.googlesource.com = server:https://dns.google/dns-query
+# Google AD Services
+*.googleadservices.com = server:https://dns.google/dns-query
+# DoubleClick
+*.doubleclick.net = server:https://dns.google/dns-query
+# AdSense
+*.adsense.com = server:https://dns.google/dns-query
+# AdSense Custom Search Ads
+*.adsensecustomsearchads.com = server:https://dns.google/dns-query
+# AdSense for mobile apps
+*.adsenseformobileapps.com = server:https://dns.google/dns-query
+# Google shortened URLs
+*.gle = server:https://dns.google/dns-query
+# Google URL Shortener
+goo.gl = server:https://dns.google/dns-query
+
+# > Cloudflare
+*.cloudflare.com = server:https://cloudflare-dns.com/dns-query
+# Cloudflare Stream
+*.cloudflarestream.com = server:https://cloudflare-dns.com/dns-query
+# Cloudflare Client
+*.cloudflareclient.com = server:https://cloudflare-dns.com/dns-query
+# Cloudflare Web Analytics
+*.cloudflareinsights.com = server:https://cloudflare-dns.com/dns-query
+# Cloudflare 1.1.1.1
+*.every1dns.net = server:https://cloudflare-dns.com/dns-query
+# Cloudflare SSL Certificate
+# *.cloudflaressl.com = server:https://cloudflare-dns.com/dns-query
+# Cloudflare DNS
+*.cloudflare-dns.com = server:https://cloudflare-dns.com/dns-query
+# CloudFlare Workers
+*.workers.dev = server:https://cloudflare-dns.com/dns-query
+
+# > 阿里巴巴
+*.alibaba.cn = server:https://dns.alidns.com/dns-query
+*.alibaba.com.cn = server:https://dns.alidns.com/dns-query
+# Alibaba 中国
+*.china.alibaba.com = server:https://dns.alidns.com/dns-query
+# 1688
+*.1688.com = server:https://dns.alidns.com/dns-query
+# 淘宝
+*.taobao.com = server:https://dns.alidns.com/dns-query
+# 淘宝 缓存
+*.tbcache.com = server:https://dns.alidns.com/dns-query
+# 天猫
+*.tmall.com = server:https://dns.alidns.com/dns-query
+# 阿里 CDN
+*.alicdn.com = server:https://dns.alidns.com/dns-query
+# 阿里昆仑
+*.alikunlun.com = server:https://dns.alidns.com/dns-query
+# 云引擎应用平台
+*.aliapp.com = server:https://dns.alidns.com/dns-query
+# 上云平台
+*.aliapp.org = server:https://dns.alidns.com/dns-query
+# 阿里用户上传资料
+*.alibabausercontent.com = server:https://dns.alidns.com/dns-query
+# mmstat 数据统计 广告追踪
+*.mmstat.com = server:https://dns.alidns.com/dns-query
+# 淘宝短网址
+tb.cn = server:https://dns.alidns.com/dns-query
+
+# > 阿里云
+# 阿里云
+*.aliyun.* = server:https://dns.alidns.com/dns-query
+# 阿里云 CDN
+*.aliyuncdn.* = server:https://dns.alidns.com/dns-query
+# 阿里云 API 服务
+*.aliyuncs.com = server:https://dns.alidns.com/dns-query
+# 阿里云 DDoS 防护
+*.aliyunddos????.com = server:https://dns.alidns.com/dns-query
+# 阿里云盘
+*.aliyundrive.com = server:https://dns.alidns.com/dns-query
+# 阿里云盾
+*.aliyundun.com = server:https://dns.alidns.com/dns-query
+# 阿里云盾 Web 应用防火墙
+*.aliyundunwaf.com = server:https://dns.alidns.com/dns-query
+# 阿里云 内部
+*.aliyun-inc.com = server:https://dns.alidns.com/dns-query
+
+# > 蚂蚁集团
+*.antgroup.com = server:https://dns.alidns.com/dns-query
+# 蚂蚁金服
+*.antfin.com = server:https://dns.alidns.com/dns-query
+*.antfinancial.com = server:https://dns.alidns.com/dns-query
+# 支付宝
+*.alipay.com = server:https://dns.alidns.com/dns-query
+*.alipay.com.cn = server:https://dns.alidns.com/dns-query
+# 支付宝 HTTP DNS
+*.alipaydns.com = server:https://dns.alidns.com/dns-query
+# 支付宝 商家资源
+*.alipayeshop.com = server:https://dns.alidns.com/dns-query
+# 支付宝 Mdap
+*.alipaylog.com = server:https://dns.alidns.com/dns-query
+# 支付宝 静态资源
+*.alipayobjects.com = server:https://dns.alidns.com/dns-query
+# 支付宝 开放技术生态体系
+*.alipay-eco.com = server:https://dns.alidns.com/dns-query
+
+# > 腾讯
+*.tencent.com = server:https://doh.pub/dns-query
+# 腾讯云
+*.qcloud.com = server:https://doh.pub/dns-query
+# 腾讯云 CDN
+*.qcloudcdn.cn = server:https://doh.pub/dns-query
+*.qcloudcdn.com = server:https://doh.pub/dns-query
+# 腾讯云对象储存
+*.qcloudcos.com = server:https://doh.pub/dns-query
+# 腾讯云静态资源
+*.qcloudimg.com = server:https://doh.pub/dns-query
+# 腾讯云超级管家
+*.qcloudcjgj.com = server:https://doh.pub/dns-query
+# 腾讯云网站管家
+*.qcloudwzgj.com = server:https://doh.pub/dns-query
+# 腾讯云主页管家
+*.qcloudzygj.com = server:https://doh.pub/dns-query
+# 腾讯开放云
+*.myqcloud.com = server:https://doh.pub/dns-query
+# 腾讯云
+*.tencent-cloud.net = server:https://doh.pub/dns-query
+# 腾讯云 aiot 解决方案
+*.tencentcloud-aiot.com = server:https://doh.pub/dns-query
+# 腾讯云 API
+*.tencentcloudapi.com = server:https://doh.pub/dns-query
+# 腾讯云容器镜像服务 TCR
+*.tencentcloudcr.com = server:https://doh.pub/dns-query
+# 腾讯云云市场
+*.tencentcloudmarket.com = server:https://doh.pub/dns-query
+# QQ
+*.qq.com = server:https://doh.pub/dns-query
+# 腾讯头像
+*.qlogo.cn = server:https://doh.pub/dns-query
+# 腾讯图片
+*.qpic.cn = server:https://doh.pub/dns-query
+# 微信
+*.weixin.qq.com = server:https://doh.pub/dns-query
+*.wx.qq.com = server:https://doh.pub/dns-query
+*.weixin.com = server:https://doh.pub/dns-query
+# 微信公众平台
+*.weixinbridge.com = server:https://doh.pub/dns-query
+# WeChat
+*.wechat.com = server:https://doh.pub/dns-query
+# 微信小程序
+*.servicewechat.com = server:https://doh.pub/dns-query
+# 微云
+*.weiyun.com = server:https://doh.pub/dns-query
+# 腾讯 图片 静态资源
+*.gtimg.cn = server:https://doh.pub/dns-query
+*.idqqimg.com = server:https://doh.pub/dns-query
+# 腾讯 静态资源 CDN
+*.cdn-go.cn = server:https://doh.pub/dns-query
+# 腾讯云 智能云解析 DNS
+*.smtcdns.com = server:https://doh.pub/dns-query
+*.smtcdns.net = server:https://doh.pub/dns-query
+# 腾讯短网址
+url.cn = server:https://doh.pub/dns-query
+
+# > 百度
+*.baidu = server:180.76.76.76
+*.baidu.com = server:180.76.76.76
+# 百度 静态资源
+*.bdimg.com = server:180.76.76.76
+*.bdstatic.com = server:180.76.76.76
+# 百度网盘
+*.baidupcs.* = server:180.76.76.76
+# 百度云 CDN
+*.baiduyuncdn.* = server:180.76.76.76
+# 百度云 DNS
+*.baiduyundns.* = server:180.76.76.76
+# 百度云 DNS
+*.bdydns.* = server:180.76.76.76
+# 百度云 CDN
+*.bdycdn.* = server:180.76.76.76
+# 百度云 域名
+*.bdysite.com = server:180.76.76.76
+*.bdysites.com = server:180.76.76.76
+# 百度智能云
+*.baidubce.* = server:180.76.76.76
+# 百度智能云 DNS
+*.bcedns.* = server:180.76.76.76
+# 百度智能云 对象存储 BOS
+*.bcebos.com = server:180.76.76.76
+# 百度智能云 播放器服务
+*.bcevod.com = server:180.76.76.76
+# 百度智能云 图片服务
+*.bceimg.com = server:180.76.76.76
+# 百度智能云 主机
+*.bcehost.com = server:180.76.76.76
+*.bcehosts.com = server:180.76.76.76
+# 百度短网址
+dwz.cn = server:180.76.76.76
+
+# > 360
+# 360 安全中心
+*.360.cn = server:https://doh.360.cn/dns-query
+# 360 安全卫士
+*.360safe.com = server:https://doh.360.cn/dns-query
+# 360 快资讯
+*.360kuai.com = server:https://doh.360.cn/dns-query
+# 360 搜索
+*.so.com = server:https://doh.360.cn/dns-query
+# 360 网页快照服务
+*.360webcache.com = server:https://doh.360.cn/dns-query
+# 奇虎 api
+*.qihuapi.com = server:https://doh.360.cn/dns-query
+# 360 图床
+*.qhimg.com = server:https://doh.360.cn/dns-query
+*.qhimgs.com = server:https://doh.360.cn/dns-query
+*.qhimgs?.com = server:https://doh.360.cn/dns-query
+# 360
+*.qhmsg.com = server:https://doh.360.cn/dns-query
+# 奇虎静态资源
+*.qhres.com = server:https://doh.360.cn/dns-query
+*.qhres?.com = server:https://doh.360.cn/dns-query
+# 导航静态文件
+*.dhrest.com = server:https://doh.360.cn/dns-query
+# 360
+*.qhupdate.com = server:https://doh.360.cn/dns-query
+# 360 安全云盘
+*.yunpan.cn = server:https://doh.360.cn/dns-query
+*.yunpan.com.cn = server:https://doh.360.cn/dns-query
+*.yunpan.com = server:https://doh.360.cn/dns-query
+# 360 短网址
+urlqh.cn = server:https://doh.360.cn/dns-query
+
+# > BiliBili
+*.bilibili.com = server:system
+# BiliBili API
+*.biliapi.com = server:system
+*.biliapi.net = server:system
+# BiliBili CDN
+*.bilicdn?.com = server:system
+# BiliBili 静态资源
+*.hdslb.com = server:system
+*.hdslb.net = server:system
+# BiliBili 视频
+cn-hk-eq-bcache-??.bilivideo.com = server:system
+# BiliBili upos 视频服务器（akamai）
+upos-hz-mirrorakam.akamaized.net = server:system
+# BiliBili upos 视频服务器（asia-abroad.com）
+upos-sz-mirrorasiaov.bilibilivideo.com = server:system
+# BiliBili upos 视频服务器（阿里云）
+upos-sz-mirrorali.bilivideo.com = server:https://dns.alidns.com/dns-query
+upos-sz-mirrorali?.bilivideo.com = server:https://dns.alidns.com/dns-query
+upos-sz-mirrorali??.bilivideo.com = server:https://dns.alidns.com/dns-query
+# BiliBili upos 视频服务器（百度云）
+upos-sz-mirrorbos.bilivideo.com = server:180.76.76.76
+# BiliBili upos 视频服务器（腾讯云）
+upos-sz-mirrorcos.bilivideo.com = server:https://doh.pub/dns-query
+upos-sz-mirrorcos?.bilivideo.com = server:https://doh.pub/dns-query
+upos-sz-mirrorcos??.bilivideo.com = server:https://doh.pub/dns-query
+# BiliBili upos 视频服务器（华为云）
+upos-sz-mirrorhw.bilivideo.com = server:system
+upos-sz-mirrorhw?.bilivideo.com = server:system
+upos-sz-mirrorhwo?.bilivideo.com = server:system
+# BiliBili upos 视频服务器（金山云）
+upos-sz-mirrorks3.bilivideo.com = server:system
+upos-sz-mirrorks3?.bilivideo.com = server:system
+# BiliBili upos 视频服务器（七牛云）
+upos-sz-mirrorkodo.bilivideo.com = server:system
+upos-sz-mirrorkodo?.bilivideo.com = server:system
+# BiliBili upos 视频服务器（网宿）
+upos-sz-mirrorwcs.bilivideo.com = server:system
+upos-sz-mirrorwcs?.bilivideo.com = server:system
+# BiliBili upos 视频服务器（迅雷）
+upos-sz-mirrorxycdn.bilivideo.com = server:system
+# BiliBili upos 视频服务器（百度云）
+upos-sz-upcdnbd??.bilivideo.com = server:180.76.76.76
+# BiliBili upos 视频服务器
+upos-sz-upcdnhw.bilivideo.com = server:system
+# BiliBili upos 视频服务器（腾讯云）
+upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
+# BiliBili upos 视频服务器
+upos-sz-upcdnws.bilivideo.com = server:system
+upos-tf-all-js.bilivideo.com = server:system
+# BiliBili mCDN 视频服务器
+*.mcdn.bilivideo.com = server:system
+# BiliBili 视频
+*.bilivideo.com = server:system
+*.bilivideo.cn = server:system
+# BiliBili 短网址
+acg.tv = server:system
+
+# > 京东
+*.jd.com = server:system
+# 京东 静态资源
+*.360buyimg.com = server:system
+# 京东云
+*.jdcloud.com = server:system
+# 京东云 缓存和存储
+*.jcloudstatic.com = server:system
+# 京东云 静态资源
+*.jcloudstatic.net = server:system
+# 京东云 全局负载均衡
+*.jdgslb.com = server:system
+# 京东短网址
+3.cn = server:system
+
+# > 🇨🇳 CHN
+# CNNIC SDNS
+# 中国政府网
+# *.gov.cn = server:1.2.4.8
+# *.政务 = server:1.2.4.8
+
+# > 🇭🇰 HKG
+# PCCW Enterprises Limited
+# *.pccw.com = server:dns1.pccw.com
+# 1O1O
+# *.1010.com.hk = server:dns1.pccw.com
+# csl.
+# *.hkcsl.com = server:dns1.pccw.com
+# The CLUB by HKT
+# *.theclub.com.hk = server:dns1.pccw.com
+# now.com
+# *.now.com = server:dns2.pccw.com
+# Now E
+# *.nowe.com = server:dns2.pccw.com
+# Now TV
+# *.now-tv.com = server:dns2.pccw.com
+# MOOV
+# *.moov.hk = server:dns3.pccw.com
+# viu
+# *.viu.com = server:dns3.pccw.com
+# viu tv
+# *.viu.tv = server:dns3.pccw.com
+# Hong Kong Cable Television Limited
+# *.hkcable.com.hk = server:dns1.hkcable.com.hk
+# i-CABLE
+# *.i-cable.com = server:dns2.hkcable.com.hk
+# CABLE TV Service
+# *.cabletv.com.hk = server:dns2.hkcable.com.hk
+# KDDI Hong Kong Limited
+# *.hk.kddi.com = server:apple.kdd.net.hk
+
+# > 🇹🇼 TWN
+# 中华电信
+*.cht.com.tw = server:https://dns.hinet.net/dns-query
+# 中华电信 HiNet
+*.hinet.net = server:https://dns.hinet.net/dns-query
+# 中华电信 emome
+*.emome.net = server:https://dns.hinet.net/dns-query
+# So-net Entertainment Taiwan
+# so-net.net.tw = server:ns1.so-net.net.tw
+# so-net.tw = server:ns1.so-net.net.tw
+# Taiwan Network Information Center
+*.tw = server:https://dns.twnic.tw/dns-query
+*.taipei = server:https://dns.twnic.tw/dns-query
+
+# > 🇺🇸 USA
+# Hurricane Electric
+*.he.net = server:https://ordns.he.net/dns-query
 
 [Rule]
 # ⚠️ 苹果已通过下发远程策略，从 iOS15 开始，禁止修改天气app，此模块已终止使用
@@ -1041,4 +1557,4 @@ http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext(\?.*)$ script-pa
 http-response ^https\:\/\/api.revenuecat.com\/v1\/subscribers(.+) script-path=https://raw.githubusercontent.com/ThorJsbox/QuanX/master/Rewrite_local/Gearpro.js, requires-body=true, timeout=10, tag=Gear 解锁订阅
 
 [MITM]
-hostname = *.58cdn.com.cn, *.akamaihd.net, *.api.hbo.com, *.avi-cdn.net, *.boxjs.com, *.boxjs.net, *.cbsaavideo.com, *.cbsivideo.com, *.chelaile.net.cn, *.cloudfront.net, *.cupid.iqiyi.com, *.googlevideo.com, *.hbomaxcdn.com, *.hoopchina.com, *.huluim.com, *.iqiyi.com, *.iqiyipic.com, *.kakamobi.cn, *.kuwo.cn, *.laichon.com, *.lrts.me, *.media.dssott.com, *.media.starott.com, *.nflxvideo.net, *.peopleapp.com, *.uve.weibo.com, *.xima*.*, *.xmcdn.*, *.youtube.com, *account.wps.com, *cupid.iqiyi.com, *gaoqingdianshi.com, -redirector*.googlevideo.com 103.41.167.226, 103.41.167.234, 103.41.167.235, 103.41.167.236, 103.41.167.237, 103.91.210.141, 116.85.2.14, 116.85.2.15, 118.178.214.118, 118.89.204.198, 2402:4e00:1200:ed00:0:9089:6dac:96b6, 3g.csair.com, 3pp.starbucks.com.cn, 47.100.65.202, a.qiumibao.com, aag.enmonster.com, access.mypikpak.com, account.wps.cn, acs.m.taobao.com, act.vip.iqiyi.com, ad.12306.cn, adapi.izuiyou.com, adm.10jqka.com.cn, adpai.thepaper.cn, adproxy.autohome.com.cn, adx-cn.anythinktech.com, afd.baidu.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, ap.dongqiudi.com, ap?.bili*i.com, ap?.bili*i.net, api*.smoot.apple.cn, api*.smoot.apple.com, api-ad-product.huxiu.com, api-new.app.acfun.cn, api-sams.walmartmobile.cn, api.00bang.cn, api.21ec74.com, api.ahmobile.cn, api.bilibili.com, api.caijingmobile.com, api.caiyunapp.com, api.cloud.189.cn, api.coolapk.com, api.dangdang.com, api.douban.com, api.gameplus.qq.com, api.gamer.com.tw, api.haohaozhu.cn, api.hellobike.com, api.internetofcity.cn, api.izuiyou.com, api.jr.mi.com, api.jxedt.com, api.kkmh.com, api.live.bilibili.com, api.m.jd.com, api.m.mi.com, api.mcd.cn, api.mwee.cn, api.pinduoduo.com, api.psy-1.com, api.revenuecat.com, api.rr.tv, api.sfacg.com, api.shenyin.name, api.taou.com, api.tipsoon.com, api.touker.com, api.vistopia.com.cn, api.weibo.cn, api.wfdata.club, api.xiachufang.com, api.xiaoyi.com, api.yangkeduo.com, api.yikaobang.com.cn, api.yonghuivip.com, api.zhihu.com, api3.cls.cn, apis.lifeweek.com.cn, app-api.smzdm.com, app-gw.csdn.net, app.58.com, app.ap.d3yuiw4.com, app.api.versa-ai.com, app.bilibili.com, app.dewu.com, app.hbooker.com, app.homeinns.com, app.yinxiang.com, app.zhuanzhuan.com, app2.autoimg.cn, app3.qdaily.com, appactive.1234567.com.cn, appapi.huazhu.com, appcloud2.zhihu.com, appconf.mail.163.com, apps.api.ke.com, appuser-static.huolala.cn, appwk.baidu.com, b.appsimg.com, baike-api.smzdm.com, bdsp-x.jd.com, beta-api.crunchyroll.com, bgw.xinyue.qq.com, boxer.baidu.com, boxjs.com, boxjs.net, business.msstatic.com, capis*.didapinche.com, cappapi.alittle-tea.com, cbd-gateway-service-applets.hualala.com, ccsp-egmas.sf-express.com, cdn-evone-ceph.echargenet.com, cdn.*.chelaileapp.cn, cdn.cmgadx.com, client-api.oray.com, client.app.coc.10086.cn, client.mail.163.com, client.qunar.com, client.tujia.com, cn-acs.m.cainiao.com, coco-com.e.verystar.net, common.diditaxi.com.cn, conf.diditaxi.com.cn, configuration.ls.apple.com, creditcardapp.bankcomm.cn, creditcardapp.bankcomm.com, customer-app.sto.cn, daoyu.sdo.com, dapis.mting.info, data-collector.soulapp.cn, dili.bdatu.com, direction2.is.autonavi.com, discardrp.umetrip.com, dispatcher.camera360.com, dispatcher.is.autonavi.com, djcapp.game.qq.com, dl-cu-hz.lechange.cn, dsp-x.jd.com, dsp.fcbox.com, dynamicad.kfc.com.cn, e.dangdang.com, easyreadfs.nosdn.127.net, elemecdn.com, emdcadvertise.eastmoney.com, explorer.tratao.com, fbchina.flipchina.cn, file.dian.so, flowplus.meituan.net, fscdn.zto.com, fuss10.elemecdn.com, gab.122.gov.cn, gateway-api.dushu365.com, gateway.36kr.com, gateway.shouqiev.com, gd.10086.cn, gg.caixin.com, gha.ghac.cn, gist.githubusercontent.com, github.com, gitlab.com, go.heytea.com, goblin.hupu.com, god.gameyw.netease.com, gongdu.youshu.cc, grpc.biliapi.net, gsp-ssl.ls.apple.com, gspe1-ssl.ls.apple.com, gspe12-cn-ssl.ls.apple.com, gspe12-ssl.ls.apple.com, gspe19-cn-ssl.ls.apple.com, gspe19-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, guanyu.longfor.com, guide-acs.m.taobao.com, gw.aihuishou.com, gw.alicdn.com, gw.kaola.com, gx.10086.cn, haojia-api.smzdm.com, haojia.m.smzdm.com, hdgateway.zto.com, heic.alicdn.com, helper.2bulu.com, hfapp-service.qweather.net, homefront.qunar.com, homepage-api.smzdm.com, htwkop.xiaojukeji.com, i.ys7.com, iadmusicmat.music.com, ih2.ireader.com, img-tailor.11222.cn, img.jiemian.com, img.meituan.net, img.rr.tv, interface*.music.163.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, ios.sspai.com, iphone.ac.qq.com, j-image.missfresh.cn, jad-api.jin10.com, jdread-api.jd.com, js-ad.ayximgs.com, lban.spdb.com.cn, lcen.xiaote.net, lchttpapi.xczim.com, learn.chaoxing.com, license.pdfexpert.com, list-app-m.i4.cn, m-cloud.zhihu.com, m.ads.8le8le.com, m.client.10010.com, m.creditcard.ecitic.com, m.ctrip.com, m.ibuscloud.com, m.qianbao.qq.com, m.sd.10086.cn, m.tuniu.com, m.youtube.com, m5.amap.com, ma-adx.ctrip.com, mage*.if.qidian.com, maicai.api.ddxq.mobi, mangaapi.manhuaren.com, mapi.appvipshop.com, mapi.dangdang.com, mapi.mafengwo.cn, mapi.sfbest.com, mapi.weibo.com, mb3admin.com, mbd.baidu.com, mi.gdt.qq.com, mime.baidu.com, miniapp.sexytea2013.com, mlol.qt.qq.com, mob.mddcloud.com.cn, mobads.baidu.com, mp.weixin.qq.com, mpcs.suning.com, mpos-pic.helipay.com, mrobot.pconline.com.cn, ms.jr.jd.com, mxsa.mxbc.net, new-app-api.ylyk.com, new.vip.weibo.cn, newclient.map.baidu.com, news-assets.apple.com, news-client-search.apple.com, news-client.apple.com, news-edge.apple.com, news-events.apple.com, notability.com, ocean.shuqireader.com, open-cms-api.uc.cn, open.e.kuaishou.com, open.fitdays.cn, open.taou.com, open3.vistastory.com, orders.kfc.com.cn, otheve.beacon.qq.com, overseas.weico.cc, p*.meituan.net, p0.pipi.cn, pan-api.bitqiu.com, pan.baidu.com, peisongapi.meituan.com, pipi.4kya.com, pss.txffp.com, pzoap.moedot.com, qapi.huolala.cn, r.inews.qq.com, rap.is.autonavi.com, raw.githubusercontent.com, res.kfc.com.cn, res.pizzahut.com.cn, res.xiaojukeji.com, restore-access.indream.app, router-app-api.jdcloud.com, rtbapi.douyucdn.cn, run.api.qyfxgd.cn, s-api.smzdm.com, s.jiediankeji.com, s3plus.meituan.net, sdk.alibaba.com.ailbaba.me, security.wechat.com, service.busi.inke.cn, sh-gateway.shihuo.cn, shopapi.io.mi.com, slapi.oray.net, smarket.dian.so, sp.kaola.com, spclient.wg.spotify.com, sq.sljkj.com, sso.ifanr.com, ssp.dzh.com.cn, startup.umetrip.com, sto-customer-app.oss-cn-shanghai.aliyuncs.co, sub.store, sundew.ls.apple.com, supplier-api.imdada.cn, support.you.163.com, syh.zybang.com, t1.market.xiaomi.com, tagit.hyhuo.com, tel.mangaapi.manhuaren.com, testflight.apple.com, tft-app.cdtft.cn, tiebac.baidu.com, tk.lanjiyin.com, tm-api.pin-dao.cn, top-widgets-api.xiaozujian.com, track.mm.taou.com, tv.youtube.com, ump.ems.com.cn, us.l.qq.com, uts-api.itunes.apple.com, venus.yhd.com, vip7.fzwdyy.cn, wap.js.10086.cn, wap.ngchina.cn, wcprd.hilton.com, web.chelaile.net.cn, webchatapp.fcbox.com, weixin110.qq.com, wmapi.meituan.com, www.deppon.com, www.i3zh.com, www.meituan.com, www.xmind.app, www.xmind.cn, www.xmind.net, www.youtube.com, www.zhihu.com, www1.elecfans.com, wx.mygolbs.com, yanxuan.nosdn.127.net, yfamily.ml, youtubei.googleapis.com, yunbusiness.ccb.com, yxyapi2.yuxueyuan.cn, zconfig.alibabausercontent.com, zhiyou.m.smzdm.com, zhuanlan.zhihu.com, zjdr666.com, zone.guiderank-app.com, ztoread.ziroom.com
+hostname = *.58cdn.com.cn, *.akamaihd.net, *.api.hbo.com, *.avi-cdn.net, *.boxjs.com, *.boxjs.net, *.cbsaavideo.com, *.cbsivideo.com, *.chelaile.net.cn, *.cloudfront.net, *.cupid.iqiyi.com, *.googlevideo.com, *.hbomaxcdn.com, *.hoopchina.com, *.huluim.com, *.iqiyi.com, *.iqiyipic.com, *.kakamobi.cn, *.kuwo.cn, *.laichon.com, *.lrts.me, *.media.dssott.com, *.media.starott.com, *.nflxvideo.net, *.peopleapp.com, *.uve.weibo.com, *.xima*.*, *.xmcdn.*, *.youtube.com, *account.wps.com, *cupid.iqiyi.com, *gaoqingdianshi.com, -redirector*.googlevideo.com 103.41.167.226, 103.41.167.234, 103.41.167.235, 103.41.167.236, 103.41.167.237, 103.91.210.141, 116.85.2.14, 116.85.2.15, 118.178.214.118, 118.89.204.198, 2402:4e00:1200:ed00:0:9089:6dac:96b6, 3g.csair.com, 3pp.starbucks.com.cn, 47.100.65.202, a.qiumibao.com, aag.enmonster.com, access.mypikpak.com, account.wps.cn, acs.m.taobao.com, act.vip.iqiyi.com, ad.12306.cn, adapi.izuiyou.com, adm.10jqka.com.cn, adpai.thepaper.cn, adproxy.autohome.com.cn, adx-cn.anythinktech.com, afd.baidu.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, ap.dongqiudi.com, ap?.bili*i.com, ap?.bili*i.net, api*.smoot.apple.cn, api*.smoot.apple.com, api-ad-product.huxiu.com, api-new.app.acfun.cn, api-sams.walmartmobile.cn, api.00bang.cn, api.21ec74.com, api.ahmobile.cn, api.bilibili.com, api.caijingmobile.com, api.caiyunapp.com, api.cloud.189.cn, api.coolapk.com, api.dangdang.com, api.douban.com, api.gameplus.qq.com, api.gamer.com.tw, api.haohaozhu.cn, api.hellobike.com, api.internetofcity.cn, api.izuiyou.com, api.jr.mi.com, api.jxedt.com, api.kkmh.com, api.live.bilibili.com, api.m.jd.com, api.m.mi.com, api.mcd.cn, api.mwee.cn, api.pinduoduo.com, api.psy-1.com, api.revenuecat.com, api.rr.tv, api.sfacg.com, api.shenyin.name, api.taou.com, api.tipsoon.com, api.touker.com, api.vistopia.com.cn, api.weibo.cn, api.wfdata.club, api.xiachufang.com, api.xiaoyi.com, api.yangkeduo.com, api.yikaobang.com.cn, api.yonghuivip.com, api.zhihu.com, api3.cls.cn, apis.lifeweek.com.cn, app-api.smzdm.com, app-gw.csdn.net, app.58.com, app.ap.d3yuiw4.com, app.api.versa-ai.com, app.bilibili.com, app.dewu.com, app.hbooker.com, app.homeinns.com, app.yinxiang.com, app.zhuanzhuan.com, app2.autoimg.cn, app3.qdaily.com, appactive.1234567.com.cn, appapi.huazhu.com, appcloud2.zhihu.com, appconf.mail.163.com, apps.api.ke.com, appuser-static.huolala.cn, appwk.baidu.com, b.appsimg.com, baike-api.smzdm.com, bdsp-x.jd.com, beta-api.crunchyroll.com, bgw.xinyue.qq.com, boxer.baidu.com, boxjs.com, boxjs.net, business.msstatic.com, capis*.didapinche.com, cappapi.alittle-tea.com, cbd-gateway-service-applets.hualala.com, ccsp-egmas.sf-express.com, cdn-evone-ceph.echargenet.com, cdn.*.chelaileapp.cn, cdn.cmgadx.com, client-api.oray.com, client.app.coc.10086.cn, client.mail.163.com, client.qunar.com, client.tujia.com, cn-acs.m.cainiao.com, coco-com.e.verystar.net, common.diditaxi.com.cn, conf.diditaxi.com.cn, configuration.ls.apple.com, creditcardapp.bankcomm.cn, creditcardapp.bankcomm.com, customer-app.sto.cn, daoyu.sdo.com, dapis.mting.info, data-collector.soulapp.cn, dili.bdatu.com, direction2.is.autonavi.com, discardrp.umetrip.com, dispatcher.camera360.com, dispatcher.is.autonavi.com, djcapp.game.qq.com, dl-cu-hz.lechange.cn, dsp-x.jd.com, dsp.fcbox.com, dynamicad.kfc.com.cn, e.dangdang.com, easyreadfs.nosdn.127.net, elemecdn.com, emdcadvertise.eastmoney.com, explorer.tratao.com, fbchina.flipchina.cn, file.dian.so, flowplus.meituan.net, fscdn.zto.com, fuss10.elemecdn.com, gab.122.gov.cn, gateway-api.dushu365.com, gateway.36kr.com, gateway.shouqiev.com, gd.10086.cn, gg.caixin.com, gha.ghac.cn, gist.githubusercontent.com, github.com, gitlab.com, go.heytea.com, goblin.hupu.com, god.gameyw.netease.com, gongdu.youshu.cc, grpc.biliapi.net, gsp-ssl.ls.apple.com, gspe1-ssl.ls.apple.com, gspe12-cn-ssl.ls.apple.com, gspe12-ssl.ls.apple.com, gspe19-cn-ssl.ls.apple.com, gspe19-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, guanyu.longfor.com, guide-acs.m.taobao.com, gw.aihuishou.com, gw.alicdn.com, gw.kaola.com, gx.10086.cn, haojia-api.smzdm.com, haojia.m.smzdm.com, hdgateway.zto.com, heic.alicdn.com, helper.2bulu.com, hfapp-service.qweather.net, homefront.qunar.com, homepage-api.smzdm.com, htwkop.xiaojukeji.com, i.ys7.com, iadmusicmat.music.com, ih2.ireader.com, img-tailor.11222.cn, img.jiemian.com, img.meituan.net, img.rr.tv, interface*.music.163.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, ios.sspai.com, iphone.ac.qq.com, j-image.missfresh.cn, jad-api.jin10.com, jdread-api.jd.com, js-ad.ayximgs.com, lban.spdb.com.cn, lcen.xiaote.net, lchttpapi.xczim.com, learn.chaoxing.com, license.pdfexpert.com, list-app-m.i4.cn, m-cloud.zhihu.com, m.ads.8le8le.com, m.client.10010.com, m.creditcard.ecitic.com, m.ctrip.com, m.ibuscloud.com, m.qianbao.qq.com, m.sd.10086.cn, m.tuniu.com, m.youtube.com, m5.amap.com, ma-adx.ctrip.com, mage*.if.qidian.com, maicai.api.ddxq.mobi, mangaapi.manhuaren.com, mapi.appvipshop.com, mapi.dangdang.com, mapi.mafengwo.cn, mapi.sfbest.com, mapi.weibo.com, mb3admin.com, mbd.baidu.com, mi.gdt.qq.com, mime.baidu.com, miniapp.sexytea2013.com, mlol.qt.qq.com, mob.mddcloud.com.cn, mobads.baidu.com, mp.weixin.qq.com, mpcs.suning.com, mpos-pic.helipay.com, mrobot.pconline.com.cn, ms.jr.jd.com, mxsa.mxbc.net, new-app-api.ylyk.com, new.vip.weibo.cn, newclient.map.baidu.com, news-assets.apple.com, news-client-search.apple.com, news-client.apple.com, news-edge.apple.com, news-events.apple.com, notability.com, ocean.shuqireader.com, open-cms-api.uc.cn, open.e.kuaishou.com, open.fitdays.cn, open.taou.com, open3.vistastory.com, orders.kfc.com.cn, otheve.beacon.qq.com, overseas.weico.cc, p*.meituan.net, p0.pipi.cn, pan-api.bitqiu.com, pan.baidu.com, peisongapi.meituan.com, pipi.4kya.com, pss.txffp.com, pzoap.moedot.com, qapi.huolala.cn, r.inews.qq.com, rap.is.autonavi.com, raw.githubusercontent.com, res.kfc.com.cn, res.pizzahut.com.cn, res.xiaojukeji.com, restore-access.indream.app, router-app-api.jdcloud.com, rtbapi.douyucdn.cn, run.api.qyfxgd.cn, s-api.smzdm.com, s.jiediankeji.com, s3plus.meituan.net, sdk.alibaba.com.ailbaba.me, security.wechat.com, service.busi.inke.cn, sh-gateway.shihuo.cn, shopapi.io.mi.com, slapi.oray.net, smarket.dian.so, sp.kaola.com, spclient.wg.spotify.com, sq.sljkj.com, sso.ifanr.com, ssp.dzh.com.cn, startup.umetrip.com, sto-customer-app.oss-cn-shanghai.aliyuncs.co, sub.store, sundew.ls.apple.com, supplier-api.imdada.cn, support.you.163.com, syh.zybang.com, t1.market.xiaomi.com, tagit.hyhuo.com, tel.mangaapi.manhuaren.com, testflight.apple.com, tft-app.cdtft.cn, tiebac.baidu.com, tk.lanjiyin.com, tm-api.pin-dao.cn, top-widgets-api.xiaozujian.com, track.mm.taou.com, tv.youtube.com, ump.ems.com.cn, us.l.qq.com, uts-api.itunes.apple.com, venus.yhd.com, vip7.fzwdyy.cn, wap.js.10086.cn, wap.ngchina.cn, wcprd.hilton.com, web.chelaile.net.cn, webchatapp.fcbox.com, weixin110.qq.com, wmapi.meituan.com, www.deppon.com, www.i3zh.com, www.meituan.com, www.xmind.app, www.xmind.cn, www.xmind.net, www.youtube.com, www.zhihu.com, www1.elecfans.com, wx.mygolbs.com, yanxuan.nosdn.127.net, yfamily.ml, youtubei.googleapis.com, yunbusiness.ccb.com, yxyapi2.yuxueyuan.cn, zconfig.alibabausercontent.com, zhiyou.m.smzdm.com, zhuanlan.zhihu.com, zjdr666.com, zone.guiderank-app.com, ztoread.ziroom.com, -gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, -pan.baidu.com
