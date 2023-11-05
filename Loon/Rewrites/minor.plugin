@@ -1,14 +1,12 @@
 #!name=Loon 插件合集
-#!desc=搜集了网上 Loon 的插件，建议先点击下面的链接查看使用方法和注意事项👇。最后更新：2023.07.08。所有资源均搜集于网络，欢迎留言添加、修改和纠错👏
+#!desc=搜集了网上 Loon 的插件，建议先点击下面的链接查看使用方法和注意事项👇。所有资源均搜集于网络，欢迎留言添加、修改和纠错👏
 #!openUrl=https://github.com/MingdeCZ/OutSide-Reborn/blob/main//Loon/Rewrites/minor.plugin
 #!author=@MingdeCZ https://github.com/MingdeCZ
 #!homepage=https://github.com/MingdeCZ/OutSide-Reborn/tree/main/Loon
 #!manual=
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
+#!date=23.11.03
 #!other=
-#!select = 启用插件随机图标（资源转换器）, 启用, 禁用
-#!select = 替换原始插件图标（资源转换器）, 启用, 禁用
-#!select = 插件随机图标合集（资源转换器）, Doraemon(100P),Shin-chan(100P),Weslie-Wolffy(100P),Tom-Jerry(100P),Genshin(100P),Shin-Miya(100P),OnePiece(100P),Stitch(100P)
 #!select = 仅输出字幕译文（YouTube）, 是, 否
 #!select = 字幕译文的位置（YouTube）, 译文位于原文之上, 译文位于原文之下
 
