@@ -1,7 +1,7 @@
-const BASE_URL = 'https://www.netflix.com/title/';
+//const BASE_URL = 'https://www.netflix.com/title/';
 //const BASE_URL_YTB = "https://www.youtube.com/premium";
 //const BASE_URL_DISNEY = 'https://www.disneyplus.com';
-const FILM_ID = 81280792
+//const FILM_ID = 81280792
 //const BASE_URL_GPT = 'https://chat.openai.com/'
 //const Region_URL_GPT = 'https://chat.openai.com/cdn-cgi/trace'
 
@@ -54,7 +54,7 @@ const message = {
 
 ;(async () => {
   testYTB()
-  let [{ region, status }] = await Promise.all([testDisneyPlus(),testNf(FILM_ID),testChatGPT()])
+  let [{ region, status }] = await Promise.all([testDisneyPlus(),testNf(81280792),testChatGPT()])
   console.log("NetFlix Result:"+result["Netflix"])
   console.log(`testDisneyPlus: region=${region}, status=${status}`)
   if (status==STATUS_COMING) {
@@ -300,7 +300,7 @@ function timeout(delay = 5000) {
 function testNf(filmId) {
   return new Promise((resolve, reject) =>{
     let option = {
-      url: BASE_URL + filmId,
+      url: 'https://www.netflix.com/title/' + filmId,
       opts: opts,
       timeout: 5200,
       headers: {
