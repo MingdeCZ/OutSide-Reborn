@@ -1,0 +1,1534 @@
+/*
+Rewrites:
+#!name=Surge 插件合集
+#!desc=搜集了网上 Surge 的插件，建议先查看使用方法和注意事项。最后更新：23.10.09。所有资源均搜集于网络，欢迎留言添加、修改和纠错👏
+#!openUrl=https://github.com/MingdeCZ/OutSide-Reborn/blob/main//Surge/Rewrites/Petite.sgmodule
+#!author=@MingdeCZ https://github.com/MingdeCZ
+#!homepage=https://github.com/MingdeCZ/OutSide-Reborn/tree/main/Surge
+#!system=ios
+
+[General]
+# @VirgilClyne
+# 🍟 整点薯条:🌐 通用设置增强（(📱 iOS 版) 1.添加跳过代理部分段内容 2.添加返回真实 IP 段内容 3.添加不可 MitM 的域名，防止打断连接）
+# 跳过某个域名或者 IP 段，这些目标主机将不会由 Surge Proxy 处理
+# (macOS 版本中，如果启用了 Set as System Proxy, 这些值会被写入到系统网络代理设置.)
+skip-proxy = %INSERT% localhost, *.local, captive.apple.com, e.crashlytics.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, fe80::/10
+# Always Real IP Hosts
+# 当 Surge VIF 处理 DNS 问题时，此选项要求 Surge 返回一个真正的 IP 地址，而不是一个假 IP 地址
+# DNS 数据包将被转发到上游 DNS 服务器。
+always-real-ip = %INSERT% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, cable.auth.com, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
+
+# TestFlight 账户管理
+skip-proxy = %APPEND% iosapps.itunes.apple.com
+
+# 🍟 整点薯条:🌐 DNS 增强
+# ---(DNS 服务器)---
+# 通过代理请求使用本地 DNS 映射结果
+use-local-host-item-for-proxy=true
+# 加密 DNS 服务器
+# 使加密 DNS 请求通过代理策略执行
+encrypted-dns-follow-outbound-mode = true
+
+force-http-engine-hosts = %APPEND% boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net, script.hub, *.script.hub
+
+[Host]
+# 🍟 整点薯条:🌐 DNS 增强（1.域名按所属 DNS 进行分流解析 2.路由器地址使用系统 DNS 进行解析 3.特殊地址使用规范 DNS 进行解析）
+# --- CUSTOM HOSTS ---
+# IPv6
+ip6-localhost = ::1 // IPv6 Localhost
+ip6-loopback = ::1 // IPv6 Loopback
+ip6-localnet = fe00::0 // IPv6 Link-Local
+ip6-mcastprefix = ff00::0 // IPv6 Multicast
+ip6-allnodes = ff02::1 // IPv6 All Nodes
+ip6-allrouters = ff02::2 // IPv6 All Routers
+ip6-allhosts = ff02::3 // IPv6 All Hosts
+
+# Encrypted DNS
+dns.google = 8.8.8.8, 8.8.4.4, 2001:4860:4860::8888, 2001:4860:4860::8844 // https://dns.google/dns-query
+dns64.dns.google = 2001:4860:4860::6464, 2001:4860:4860::64 // https://dns64.dns.google/dns-query
+cloudflare-dns.com = 104.16.249.249, 104.16.248.249, 2606:4700::6810:f8f9, 2606:4700::6810:f9f9 // https://cloudflare-dns.com/dns-query
+1dot1dot1dot1.cloudflare-dns.com = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1001, 2606:4700:4700::1111 // 1dot1dot1dot1.cloudflare-dns.com:853
+one.one.one.one = 1.1.1.1, 1.0.0.1, 2606:4700:4700::1001, 2606:4700:4700::1111  // one.one.one.one:853
+dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1 // https://dns.alidns.com/dns-query
+doh.pub = 1.12.12.12, 120.53.53.53 // https://doh.pub/dns-query
+dot.pub = 1.12.12.12, 120.53.53.53 // dot.pub:853
+doh.360.cn = 23.6.48.18, 112.65.69.15 // https://doh.360.cn/dns-query
+dot.360.cn = 101.198.198.198, 101.198.199.200, 101.198.192.33, 112.65.69.15 // dot.360.cn:853
+dns.twnic.tw = 101.101.101.101, 2001:de4::101, 2001:de4::102 // https://dns.twnic.tw/dns-query
+ordns.he.net = 74.82.42.42, 2001:470:20::2 // https://ordns.he.net/dns-query
+
+# Modify Contents
+# services.googleapis.cn = 74.125.193.94 // Google API Services China
+talk.google.com = 108.177.125.188 // Firebase Cloud Messaging
+mtalk.google.com = 108.177.125.188, 2404:6800:4008:c07::bc, 142.250.31.188 // Firebase Cloud Messaging
+alt1-mtalk.google.com = 3.3.3.3, 2607:f8b0:4023:c0b::bc, 64.233.171.188 // Firebase Cloud Messaging
+alt2-mtalk.google.com = 3.3.3.3, 142.250.115.188 // Firebase Cloud Messaging
+alt3-mtalk.google.com = 74.125.200.188, 173.194.77.188 // Firebase Cloud Messaging
+alt4-mtalk.google.com = 74.125.200.188, 173.194.219.188 // Firebase Cloud Messaging
+alt5-mtalk.google.com = 3.3.3.3, 2607:f8b0:4023:1::bc, 142.250.112.188 // Firebase Cloud Messaging
+alt6-mtalk.google.com = 3.3.3.3, 172.217.197.188 // Firebase Cloud Messaging
+alt7-mtalk.google.com = 74.125.200.188, 2607:f8b0:4002:c03::bc, 108.177.12.188 // Firebase Cloud Messaging
+alt8-mtalk.google.com = 3.3.3.3 // Firebase Cloud Messaging
+# dl.google.com = 180.163.151.161 // Google CDN
+# dl.l.google.com = 180.163.151.161 // Google CDN
+
+# --- CUSTOM DNS ---
+# Modify Contents
+blog.google = server:119.29.29.29 // Google Blog
+googletraveladservices.com = server:119.29.29.29 // Google Flights
+dl.google.com = server:119.29.29.29 // Google Download
+dl.l.google.com = server:119.29.29.29 // Google Download
+clientservices.googleapis.com = server:119.29.29.29 // Google Chrome
+update.googleapis.com = server:119.29.29.29 // Google Update
+translate.googleapis.com = server:119.29.29.29 // Google Translate
+fonts.googleapis.com = server:119.29.29.29 // Google Fonts
+fonts.gstatic.com = server:119.29.29.29 // Google Fonts
+stun.l.google.com = server:syslib // Google STUN
+stun?.l.google.com = server:syslib // Google STUN
+
+# Router Admin Panel
+*.id.ui.direct = server:syslib // Ubiquiti Unifi Network App
+# unifi.ui.com = server:syslib // Ubiquiti Unifi Portal
+unifi.local = server:syslib // Ubiquiti Unifi OS
+# network.unifi.ui.com = server:syslib // Ubiquiti Unifi Controller
+amplifi.lan = server:syslib // Ubiquiti Amplifi Router
+router.synology.com = server:syslib // Synology Router
+sila.razer.com = server:syslib // Razer Sila Router
+router.asus.com = server:syslib // Asus Router
+routerlogin.net = server:syslib // Netgear Router
+orbilogin.com = server:syslib // Netgear Obri Router
+www.LinksysSmartWiFi.com = server:syslib // Linksys Router
+LinksysSmartWiFi.com = server:syslib // Linksys Router
+myrouter.local = server:syslib // Linksys Router
+instant.arubanetworks.com = server:syslib // Aurba Router
+setmeup.arubanetworks.com = server:syslib // Aurba Router
+www.miwifi.com = server:syslib // 小米 Mi WiFi Router
+miwifi.com = server:syslib // 小米 Mi WiFi Router
+mediarouter.home = server:syslib // 华为 Huawei Router
+tplogin.cn = server:syslib // TP-Link Router
+tplinklogin.net = server:syslib // TP-Link Router
+tplinkwifi.net = server:syslib // TP-Link Router
+melogin.cn = server:syslib // 水星 MERCURY Router
+falogin.cn = server:syslib // 迅捷 FAST Router
+tendawifi.com = server:syslib // 腾达 Tenda Router
+leike.cc = server:syslib // 磊科 Netcore Router
+zte.home = server:syslib // 中兴 ZTE Router
+p.to = server:syslib // 斐讯 PHICOMM Router
+phicomm.me = server:syslib // 斐讯 PHICOMM Router
+hiwifi.com = server:syslib // 极路由 HiWiFi Router
+peiluyou.com = server:syslib // 迅雷路由
+_hotspot_.m2m = server:syslib // M2M routers at MiFi Hotspot
+hotspot.cslwifi.com = server:syslib // csl Wi-Fi
+
+# Apple
+# refer: https://support.apple.com/zh-cn/HT210060
+networking.apple = server:https://doh.dns.apple.com/dns-query // Apple
+# *.apple.com = server:https://doh.dns.apple.com/dns-query // Apple.com
+*.icloud.com = server:https://doh.dns.apple.com/dns-query // iCloud.com
+
+# Alphabet
+# refer: https://developers.google.com/speed/public-dns/docs/doh?hl=zh-cn
+# *.google = server:https://dns.google/dns-query // Google
+*.google.com = server:https://dns.google/dns-query // Google
+*.google.com.?? = server:https://dns.google/dns-query // Google
+# *.goog = server:https://dns.google/dns-query // Google sites
+*.gstatic.com = server:https://dns.google/dns-query // Google 静态资源
+*.ggpht.com = server:https://dns.google/dns-query // Google Photos
+*.googleusercontent.com = server:https://dns.google/dns-query // Google 用户上传数据
+*.googleapis.com = server:https://dns.google/dns-query // Google APIs
+*.1e100.net = server:https://dns.google/dns-query // Google backbone
+*.youtube = server:https://dns.google/dns-query // Youtube sites
+*.youtube.com = server:https://dns.google/dns-query // Youtube
+*.ytimg.com = server:https://dns.google/dns-query // Youtube 图片
+*.googlevideo.com = server:https://dns.google/dns-query // Youtube Video
+*.gvt?.com = server:https://dns.google/dns-query // Google Video Thumbnails
+*.recaptcha.net = server:https://dns.google/dns-query // reCaptcha
+*.gmail.com = server:https://dns.google/dns-query // Gmail
+*.googlesource.com = server:https://dns.google/dns-query // Google Source
+*.googleadservices.com = server:https://dns.google/dns-query // Google AD Services
+*.doubleclick.net = server:https://dns.google/dns-query // DoubleClick
+*.adsense.com = server:https://dns.google/dns-query // AdSense
+*.adsensecustomsearchads.com = server:https://dns.google/dns-query // AdSense Custom Search Ads
+*.adsenseformobileapps.com = server:https://dns.google/dns-query // AdSense for mobile apps
+*.gle = server:https://dns.google/dns-query // Google shortened URLs
+goo.gl = server:https://dns.google/dns-query // Google URL Shortener
+
+# Cloudflare
+# refer: https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/
+*.cloudflare.com = server:https://cloudflare-dns.com/dns-query // Cloudflare
+*.cloudflarestream.com = server:https://cloudflare-dns.com/dns-query // Cloudflare Stream
+*.cloudflareclient.com = server:https://cloudflare-dns.com/dns-query // Cloudflare Client
+*.cloudflareinsights.com = server:https://cloudflare-dns.com/dns-query // Cloudflare Web Analytics
+*.every1dns.net = server:https://cloudflare-dns.com/dns-query // Cloudflare 1.1.1.1
+# *.cloudflaressl.com = server:https://cloudflare-dns.com/dns-query // Cloudflare SSL Certificate
+*.cloudflare-dns.com = server:https://cloudflare-dns.com/dns-query // Cloudflare DNS
+*.workers.dev = server:https://cloudflare-dns.com/dns-query // CloudFlare Workers
+
+# 阿里巴巴
+# refer: https://www.alidns.com
+*.alibaba.cn = server:https://dns.alidns.com/dns-query // 阿里巴巴
+*.alibaba.com.cn = server:https://dns.alidns.com/dns-query // 阿里巴巴
+*.china.alibaba.com = server:https://dns.alidns.com/dns-query // Alibaba 中国
+*.1688.com = server:https://dns.alidns.com/dns-query // 1688
+*.taobao.com = server:https://dns.alidns.com/dns-query // 淘宝
+*.tbcache.com = server:https://dns.alidns.com/dns-query // 淘宝 缓存
+*.tmall.com = server:https://dns.alidns.com/dns-query // 天猫
+*.alicdn.com = server:https://dns.alidns.com/dns-query // 阿里 CDN
+*.alikunlun.com = server:https://dns.alidns.com/dns-query // 阿里昆仑
+*.aliapp.com = server:https://dns.alidns.com/dns-query // 云引擎应用平台
+*.aliapp.org = server:https://dns.alidns.com/dns-query // 上云平台
+*.alibabausercontent.com = server:https://dns.alidns.com/dns-query // 阿里用户上传资料
+*.mmstat.com = server:https://dns.alidns.com/dns-query // mmstat 数据统计 广告追踪
+tb.cn = server:https://dns.alidns.com/dns-query // 淘宝短网址
+
+# 阿里云
+# refer: https://www.alidns.com
+*.aliyun.* = server:https://dns.alidns.com/dns-query // 阿里云
+*.aliyuncdn.* = server:https://dns.alidns.com/dns-query // 阿里云 CDN
+*.aliyuncs.com = server:https://dns.alidns.com/dns-query // 阿里云 API 服务
+*.aliyunddos????.com = server:https://dns.alidns.com/dns-query // 阿里云 DDoS防护
+*.aliyundrive.com = server:https://dns.alidns.com/dns-query // 阿里云盘
+*.aliyundun.com = server:https://dns.alidns.com/dns-query // 阿里云盾
+*.aliyundunwaf.com = server:https://dns.alidns.com/dns-query // 阿里云盾 Web 应用防火墙
+*.aliyun-inc.com = server:https://dns.alidns.com/dns-query // 阿里云 内部
+
+# 蚂蚁集团
+# refer: https://www.alidns.com
+*.antgroup.com = server:https://dns.alidns.com/dns-query // 蚂蚁集团
+*.antfin.com = server:https://dns.alidns.com/dns-query // 蚂蚁金服
+*.antfinancial.com = server:https://dns.alidns.com/dns-query // 蚂蚁金服
+*.alipay.com = server:https://dns.alidns.com/dns-query // 支付宝
+*.alipay.com.cn = server:https://dns.alidns.com/dns-query // 支付宝
+*.alipaydns.com = server:https://dns.alidns.com/dns-query // 支付宝 HTTP DNS
+*.alipayeshop.com = server:https://dns.alidns.com/dns-query // 支付宝 商家资源
+*.alipaylog.com = server:https://dns.alidns.com/dns-query // 支付宝 Mdap
+*.alipayobjects.com = server:https://dns.alidns.com/dns-query // 支付宝 静态资源
+*.alipay-eco.com = server:https://dns.alidns.com/dns-query // 支付宝 开放技术生态体系
+
+# 腾讯
+# refer: https://www.dnspod.cn/products/publicdns
+*.tencent.com = server:https://doh.pub/dns-query // 腾讯
+*.qcloud.com = server:https://doh.pub/dns-query // 腾讯云
+*.qcloudcdn.cn = server:https://doh.pub/dns-query // 腾讯云CDN
+*.qcloudcdn.com = server:https://doh.pub/dns-query // 腾讯云CDN
+*.qcloudcos.com = server:https://doh.pub/dns-query // 腾讯云对象储存
+*.qcloudimg.com = server:https://doh.pub/dns-query // 腾讯云静态资源
+*.qcloudcjgj.com = server:https://doh.pub/dns-query // 腾讯云超级管家
+*.qcloudwzgj.com = server:https://doh.pub/dns-query // 腾讯云网站管家
+*.qcloudzygj.com = server:https://doh.pub/dns-query // 腾讯云主页管家
+*.myqcloud.com = server:https://doh.pub/dns-query // 腾讯开放云
+*.tencent-cloud.net = server:https://doh.pub/dns-query // 腾讯云
+*.tencentcloud-aiot.com = server:https://doh.pub/dns-query // 腾讯云aiot解决方案
+*.tencentcloudapi.com = server:https://doh.pub/dns-query // 腾讯云API
+*.tencentcloudcr.com = server:https://doh.pub/dns-query // 腾讯云容器镜像服务TCR
+*.tencentcloudmarket.com = server:https://doh.pub/dns-query // 腾讯云云市场
+*.qq.com = server:https://doh.pub/dns-query // QQ
+*.qlogo.cn = server:https://doh.pub/dns-query // 腾讯头像
+*.qpic.cn = server:https://doh.pub/dns-query // 腾讯图片
+*.weixin.qq.com = server:https://doh.pub/dns-query // 微信
+*.wx.qq.com = server:https://doh.pub/dns-query // 微信
+*.weixin.com = server:https://doh.pub/dns-query // 微信
+*.weixinbridge.com = server:https://doh.pub/dns-query // 微信公众平台
+*.wechat.com = server:https://doh.pub/dns-query // WeChat
+*.servicewechat.com = server:https://doh.pub/dns-query // 微信小程序
+*.weiyun.com = server:https://doh.pub/dns-query // 微云
+*.gtimg.cn = server:https://doh.pub/dns-query // 腾讯 图片 静态资源
+*.idqqimg.com = server:https://doh.pub/dns-query // 腾讯 图片 静态资源
+*.cdn-go.cn = server:https://doh.pub/dns-query // 腾讯 静态资源 CDN
+*.smtcdns.com = server:https://doh.pub/dns-query // 腾讯云 智能云解析DNS
+*.smtcdns.net = server:https://doh.pub/dns-query // 腾讯云 智能云解析DNS
+url.cn = server:https://doh.pub/dns-query // 腾讯短网址
+
+# 百度
+# refer: https://dudns.baidu.com/support/localdns/Address/index.html
+*.baidu = server:180.76.76.76 // 百度
+*.baidu.com = server:180.76.76.76 // 百度
+*.bdimg.com = server:180.76.76.76 // 百度 静态资源
+*.bdstatic.com = server:180.76.76.76 // 百度 静态资源
+*.baidupcs.* = server:180.76.76.76 // 百度网盘
+*.baiduyuncdn.* = server:180.76.76.76 // 百度云CDN
+*.baiduyundns.* = server:180.76.76.76 // 百度云DNS
+*.bdydns.* = server:180.76.76.76 // 百度云 DNS
+*.bdycdn.* = server:180.76.76.76 // 百度云 CDN
+*.bdysite.com = server:180.76.76.76 // 百度云 域名
+*.bdysites.com = server:180.76.76.76 // 百度云 域名
+*.baidubce.* = server:180.76.76.76 // 百度智能云
+*.bcedns.* = server:180.76.76.76 // 百度智能云 DNS
+*.bcebos.com = server:180.76.76.76 // 百度智能云 对象存储BOS
+*.bcevod.com = server:180.76.76.76 // 百度智能云 播放器服务
+*.bceimg.com = server:180.76.76.76 // 百度智能云 图片服务
+*.bcehost.com = server:180.76.76.76 // 百度智能云 主机
+*.bcehosts.com = server:180.76.76.76 // 百度智能云 主机
+dwz.cn = server:180.76.76.76 // 百度短网址
+
+# 360
+# refer: https://sdns.360.net/dnsPublic.html#course
+*.360.cn = server:https://doh.360.cn/dns-query // 360安全中心
+*.360safe.com = server:https://doh.360.cn/dns-query // 360安全卫士
+*.360kuai.com = server:https://doh.360.cn/dns-query // 360快资讯
+*.so.com = server:https://doh.360.cn/dns-query // 360搜索
+*.360webcache.com = server:https://doh.360.cn/dns-query // 360网页快照服务
+*.qihuapi.com = server:https://doh.360.cn/dns-query // 奇虎api
+*.qhimg.com = server:https://doh.360.cn/dns-query // 360图床
+*.qhimgs.com = server:https://doh.360.cn/dns-query // 360图床
+*.qhimgs?.com = server:https://doh.360.cn/dns-query // 360图床
+*.qhmsg.com = server:https://doh.360.cn/dns-query // 360
+*.qhres.com = server:https://doh.360.cn/dns-query // 奇虎静态资源
+*.qhres?.com = server:https://doh.360.cn/dns-query // 奇虎静态资源
+*.dhrest.com = server:https://doh.360.cn/dns-query // 导航静态文件
+*.qhupdate.com = server:https://doh.360.cn/dns-query // 360
+*.yunpan.cn = server:https://doh.360.cn/dns-query // 360安全云盘
+*.yunpan.com.cn = server:https://doh.360.cn/dns-query // 360安全云盘
+*.yunpan.com = server:https://doh.360.cn/dns-query // 360安全云盘
+urlqh.cn = server:https://doh.360.cn/dns-query // 360短网址
+
+# Bytedance
+# refer: https://www.volcengine.com/docs/6758/179060
+*.amemv.com = server:180.184.1.1 // 艾特迷
+*.bdxiguaimg.com = server:180.184.1.1 // 西瓜 图片服务
+*.bdxiguastatic.com = server:180.184.1.1 // 西瓜 静态资源
+*.byted-static.com = server:180.184.1.1 // 字节跳动 UNPKG
+*.bytedance.* = server:180.184.1.1 // 字节跳动
+*.bytedns.net = server:180.184.1.1 // 字节跳动 DNS
+*.bytednsdoc.com = server:180.184.1.1 // 字节跳动 CDN 文件存储
+*.bytegoofy.com = server:180.184.1.1 // 字节跳动 Goofy
+*.byteimg.com = server:180.184.1.1 // 字节跳动 图片服务
+*.bytescm.com = server:180.184.1.1 // 字节跳动 SCM
+*.bytetos.com = server:180.184.1.1 // 字节跳动 TOS
+*.bytexservice.com = server:180.184.1.1 // 飞书企业服务平台
+*.douyin.com = server:180.184.1.1 // 抖音
+*.douyinpic.com = server:180.184.1.1 // 抖音 静态资源
+*.douyinstatic.com = server:180.184.1.1 // 抖音 静态资源
+*.douyinvod.com = server:180.184.1.1 // 抖音 静态资源
+*.feelgood.cn = server:180.184.1.1 // FeelGood平台
+*.feiliao.com = server:180.184.1.1 // 飞聊官网
+*.gifshow.com = server:180.184.1.1 // 快手
+*.huoshan.com = server:180.184.1.1 // 火山网
+*.huoshanzhibo.com = server:180.184.1.1 // 火山直播
+*.ibytedapm.com = server:180.184.1.1 // 抖音 dapm
+*.iesdouyin.com = server:180.184.1.1 // 抖音 CDN
+*.ixigua.com = server:180.184.1.1 // 西瓜视频
+*.kspkg.com = server:180.184.1.1 // 快手
+*.pstatp.com = server:180.184.1.1 // 抖音 静态资源
+*.snssdk.com = server:180.184.1.1 // 今日头条
+*.toutiao.com = server:180.184.1.1 // 今日头条
+*.toutiao13.com = server:180.184.1.1 // 今日头条
+*.toutiao???.??? = server:180.184.1.1 // 今日头条 静态资源
+*.toutiaocloud.cn = server:180.184.1.1 // 头条云
+*.toutiaocloud.com = server:180.184.1.1 // 头条云
+*.toutiaopage.com = server:180.184.1.1 // 今日头条 建站
+*.wukong.com = server:180.184.1.1 // 悟空
+*.zijieapi.com = server:180.184.1.1 // 字节跳动 API
+*.zijieimg.com = server:180.184.1.1 // 字节跳动 图片服务
+*.zjbyte.com = server:180.184.1.1 // 今日头条 网页版
+*.zjcdn.com = server:180.184.1.1 // 字节跳动 CDN
+
+# BiliBili
+*.bilibili.com = server:syslib // BiliBili
+*.biliapi.com = server:syslib // BiliBili API
+*.biliapi.net = server:syslib // BiliBili API
+*.bilicdn?.com = server:syslib // BiliBili CDN
+*.hdslb.com = server:syslib // BiliBili 静态资源
+*.hdslb.net = server:syslib // BiliBili 静态资源
+cn-hk-eq-bcache-??.bilivideo.com = server:syslib // BiliBili 视频服务器（unknown）
+upos-hz-mirrorakam.akamaized.net = server:syslib // BiliBili upos视频服务器（akamai）
+upos-sz-mirrorasiaov.bilibilivideo.com = server:syslib // BiliBili upos视频服务器（asia-abroad.com）
+upos-sz-mirrorali.bilivideo.com = server:https://dns.alidns.com/dns-query // BiliBili upos视频服务器（阿里云）
+upos-sz-mirrorali?.bilivideo.com = server:https://dns.alidns.com/dns-query // BiliBili upos视频服务器（阿里云）
+upos-sz-mirrorali??.bilivideo.com = server:https://dns.alidns.com/dns-query // BiliBili upos视频服务器（阿里云）
+upos-sz-mirrorbos.bilivideo.com = server:180.76.76.76 // BiliBili upos视频服务器（百度云）
+upos-sz-mirrorcos.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
+upos-sz-mirrorcos?.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
+upos-sz-mirrorcos??.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
+upos-sz-mirrorhw.bilivideo.com = server:syslib // BiliBili upos视频服务器（华为云）
+upos-sz-mirrorhw?.bilivideo.com = server:syslib // BiliBili upos视频服务器（华为云）
+upos-sz-mirrorhwo?.bilivideo.com = server:syslib // BiliBili upos视频服务器（华为云）
+upos-sz-mirrorks3.bilivideo.com = server:syslib // BiliBili upos视频服务器（金山云）
+upos-sz-mirrorks3?.bilivideo.com = server:syslib // BiliBili upos视频服务器（金山云）
+upos-sz-mirrorkodo.bilivideo.com = server:syslib // BiliBili upos视频服务器（七牛云）
+upos-sz-mirrorkodo?.bilivideo.com = server:syslib // BiliBili upos视频服务器（七牛云）
+upos-sz-mirrorwcs.bilivideo.com = server:syslib // BiliBili upos视频服务器（网宿）
+upos-sz-mirrorwcs?.bilivideo.com = server:syslib // BiliBili upos视频服务器（网宿）
+upos-sz-mirrorxycdn.bilivideo.com = server:syslib // BiliBili upos视频服务器（迅雷）
+upos-sz-upcdnbd??.bilivideo.com = server:180.76.76.76 // BiliBili upos视频服务器（百度云）
+upos-sz-upcdnhw.bilivideo.com = server:syslib // BiliBili uupos视频服务器（华为云）
+upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query // BiliBili upos视频服务器（腾讯云）
+upos-sz-upcdnws.bilivideo.com = server:syslib // BiliBili upos视频服务器（网宿）
+upos-tf-all-js.bilivideo.com = server:syslib // BiliBili upos视频服务器（unknown）
+*.mcdn.bilivideo.com = server:syslib // BiliBili mCDN视频服务器
+*.bilivideo.com = server:syslib // BiliBili 视频
+*.bilivideo.cn = server:syslib // BiliBili 视频
+acg.tv = server:syslib // BiliBili短网址
+
+# 京东
+*.jd.com = server:syslib // 京东
+*.360buyimg.com = server:syslib // 京东 静态资源
+*.jdcloud.com = server:syslib // 京东云
+*.jcloudstatic.com = server:syslib // 京东云 缓存和存储
+*.jcloudstatic.net = server:syslib // 京东云 静态资源
+*.jdgslb.com = server:syslib // 京东云 全局负载均衡
+3.cn = server:syslib // 京东短网址
+
+# 🇨🇳 CHN
+# CNNIC SDNS
+# *.gov.cn = server:1.2.4.8 // 中国政府网
+# *.政务 = server:1.2.4.8 // 中国政府网
+
+# 🇭🇰 HKG
+# PCCW Enterprises Limited
+# *.pccw.com = server:dns1.pccw.com // 电讯盈科
+# *.1010.com.hk = server:dns1.pccw.com // 1O1O
+# *.hkcsl.com = server:dns1.pccw.com // csl.
+# *.theclub.com.hk = server:dns1.pccw.com // The CLUB by HKT
+# *.now.com = server:dns2.pccw.com // now.com
+# *.nowe.com = server:dns2.pccw.com // Now E
+# *.now-tv.com = server:dns2.pccw.com // Now TV
+# *.moov.hk = server:dns3.pccw.com // MOOV
+# *.viu.com = server:dns3.pccw.com // viu
+# *.viu.tv = server:dns3.pccw.com // viu tv
+# Hong Kong Cable Television Limited
+# *.hkcable.com.hk = server:dns1.hkcable.com.hk // Hong Kong Cable Television Limited
+# *.i-cable.com = server:dns2.hkcable.com.hk // i-CABLE
+# *.cabletv.com.hk = server:dns2.hkcable.com.hk // CABLE TV Service
+# KDDI Hong Kong Limited
+# *.hk.kddi.com = server:apple.kdd.net.hk // KDDI Hong Kong
+
+# 🇹🇼 TWN
+# 中华电信
+*.cht.com.tw = server:https://dns.hinet.net/dns-query // 中华电信
+*.hinet.net = server:https://dns.hinet.net/dns-query // 中华电信HiNet
+*.emome.net = server:https://dns.hinet.net/dns-query // 中华电信emome
+# So-net
+# so-net.net.tw = server:ns1.so-net.net.tw // So-net Entertainment Taiwan
+# so-net.tw = server:ns1.so-net.net.tw // So-net Entertainment Taiwan
+# Taiwan Network Information Center
+*.tw = server:https://dns.twnic.tw/dns-query // TWNIC DNS
+*.taipei = server:https://dns.twnic.tw/dns-query // TWNIC DNS
+
+# 🇺🇸 USA
+# Hurricane Electric
+*.he.net = server:https://ordns.he.net/dns-query // HE.net
+
+[Rule]
+# 定位服务（V3）
+# Country Code
+DOMAIN,gspe1-ssl.ls.apple.com,DIRECT
+
+# 知乎助手
+# 拦截开屏广告
+URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/launch_v2\?,REJECT
+URL-REGEX,^https?:\/\/api\.zhihu\.com\/commercial_api\/real_time_launch_v2\?,REJECT
+# 拦截品牌提问
+URL-REGEX,^https?:\/\/api\.zhihu\.com\/brand\/question\/\d+/card\?,REJECT
+URL-REGEX,^https?:\/\/www\.zhihu\.com\/api\/v\d+\/brand\/question/\d+/card\?,REJECT
+# 其他拦截不影响使用的域名
+DOMAIN,mqtt.zhihu.com,REJECT
+DOMAIN,sugar.zhihu.com,REJECT
+DOMAIN,crash2.zhihu.com,REJECT
+DOMAIN,appcloud.zhihu.com,REJECT
+DOMAIN,appcloud2.in.zhihu.com,REJECT
+
+# 百度贴吧去广告
+RULE-SET,https://raw.githubusercontent.com/app2smile/rules/master/rule/tieba-ad.list,REJECT-DROP
+
+# 菜鸟净化
+# Surge 必须屏蔽
+AND,((OR,((USER-AGENT,Cainiao*), (USER-AGENT,AMap*))), (URL-REGEX,^http:\/\/(amdc|\d).+\/amdc\/mobileDispatch$)),REJECT-DROP
+
+[Map Local]
+# 知乎助手
+^https?:\/\/118\.89\.204\.198 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+^https?:\/\/103\.41\.167\.237 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+^https?:\/\/2402:4e00:1200:ed00:0:9089:6dac:96b6 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 屏蔽下发的配置，如皮肤等
+^https?:\/\/api\.zhihu\.com\/ab\/api\/v1\/products\/zhihu\/platforms\/ios\/config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json" header="Content-Type: application/x-protobuf"
+# 屏蔽我的页面开通会员的卡片
+# ^https?:\/\/api\.zhihu\.com\/unlimited\/go\/my_card data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 去除底部标签页关注人角标
+^https?:\/\/api\.zhihu\.com\/moments\/tab_v2 data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 去除消息通知角标
+^https?:\/\/api\.zhihu\.com\/(notifications\/v\d\/count) data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 拦截回答下的卡片广告
+^https?:\/\/www\.zhihu\.com\/api\/v\d\/answers\/\d+\/recommendations data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 拦截应用内弹窗
+^https?:\/\/api\.zhihu\.com\/me\/guides data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 去除关注页最常访问
+^https?:\/\/api\.zhihu\.com\/moments\/recent data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 拦截推荐页顶部广告
+^https?:\/\/api\.zhihu\.com\/api\/v4\/ecom_data\/config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 底栏加号的广告
+^https?:\/\/api\.zhihu\.com\/content-distribution-core\/bubble\/common\/settings data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 推荐页搜索栏左侧图标
+^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/current_reading data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 疑似推荐页内容更新红点
+^https?:\/\/api\.zhihu\.com\/feed\/render\/revisit\/tag_config data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 去除回答页的相关搜索
+^https?:\/\/www\.zhihu\.com\/api\/v\d+\/search\/related_queries\/answer data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+# 暂不清楚作用
+^https?:\/\/api\.zhihu\.com\/commercial_api\/banners_v3\/app_topstory_banner data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+^https?:\/\/api\.zhihu\.com\/ad-style-service\/request data="https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/blank/blank_dict.json"
+
+# 微博国际版
+# 热门视频 | 热推荐
+^https?:\/\/api\.weibo\.cn\/\d\/(cardlist\?v_f=\d|ad\/weibointl\?) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
+^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?a=hot_search_users data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
+
+# 百度首页净化 m.baidu.com,www.baidu.com
+^https?:\/\/(www|m)\.baidu\.com\/?($|\?(from=\w{8,9}|tn=&from=)) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/baidu.html" header="Content-Type: text/html; charset=utf-8"
+
+# 菜鸟净化
+^https?:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.(nbmensa\.research\.researchservice\.consultmerge|adx\.flyad\.getad) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.com\.cainiao\.longquan\.place\.getpageresourcecontent\.cn\/\d\. data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
+^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.(guoguo\.nbnetflow\.ads\.index\.cn\/\d\.|adkeyword\.get\.cn\/1\d\.|nbmensa\.research\.researchservice\.(acquire|event|close)\.cn\/\d\.) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
+
+# 百度输入法
+# 开屏
+^https?:\/\/mime\.baidu\.com\/v5\/start_screen_ads/list data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/reject-dict.json"
+# 应用内灵感语录 输入页面推荐里语录
+^https?:\/\/mime\.baidu\.com\/sapi\/v1\/lccorpus\/(applist|pannellist) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/mime.json"
+# 点击图标 | 收集和分析用户的输入数据
+^https?:\/\/mime\.baidu\.com\/sapi\/v1\/(circle\/joinedlist|lccorpus\/usercorpussync|aihelpactivity\/aihelpresource) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/mime.json"
+^https?:\/\/mime\.baidu\.com\/commer\/pocket_api\/enterprise_list data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/mime.json"
+^https?:\/\/mbd\.baidu\.com\/ccs\/v1\/start\/confsync\?appname=baidu_input data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/bd.json"
+#^https?:\/\/h2tcbox\.baidu\.com\/ztbox\?action=zubc\&appname=baidu_input data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/bd.json"
+# log
+^https:\/\/mime\.baidu\.com\/v5\/(fb\/st\?logtype|(notiv3|cellloc_noti|noti_cloudswitch_noti)\/info) data="https://raw.githubusercontent.com/Keywos/rule/main/mocks/mime.json"
+
+# 什么值得买去广告
+# 好价详情页
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/other_modul - reject
+# 好价详情页红包小助手
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/user_related_modul - reject
+# Wiki（618 晒物活动推广，将来可能不是广告）
+^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/wiki_related_modul - reject
+
+# 去除 Youtube 广告
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data="https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/blank.txt" header="Content-Type: application/vnd.yt-ump"
+
+[Header Rewrite]
+# 解锁必应浏览器 AI 搜索限制（23.02.28）
+^https:\/\/www\.bing\.com\/(search|new) header-replace-regex User-Agent ^\w+\/[0-9\.\s]+\((\w+);.+ "Mozilla/5.0 ($1; Intel Mac OS X 10_12_6) AppleWebKit/537.36 Chrome/110.0 Safari/537.36 Edg/110.0"
+
+[URL Rewrite]
+# 跳过重定向界面
+# 知乎
+^https:\/\/link\.zhihu\.com\/\?target=(https?)?(%3A|:)?(\/\/|%2F%2F)?(.*?)(&source.*)?$ http://$4 302
+# 115
+^https?:\/\/home\.115\.com\/go\?(https?:\/\/)?(.*) http://$2 302
+
+# 哔哩哔哩
+^https?:\/\/app\.bilibili\.com\/x\/resource\/ip - reject
+
+[Panel]
+查询节点信息 = script-name=查询节点信息,update-interval=43200
+服务解锁检测 lite = script-name=服务解锁检测 lite,update-interval=7200
+
+[Script]
+查询节点信息 = type=generic,timeout=8,script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Surge/Scripts/Networkcheck.js
+服务解锁检测 lite = type=generic,timeout=30,script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Surge/Scripts/Servicecheck-lite.js,script-update-interval=0,argument=title=服务解锁检测 lite&icon=play.tv&color=#D22F28
+
+# @I-am-R-E（更多脚本信息请自行在 https://github.com/I-am-R-E/Functional-Store-Hub 中查找）
+# 解锁 Xmind 思维导图订阅到 2030 年 www.xmind.cn, www.xmind.net, www.xmind.app
+Xmind 思维导图 = type=http-response,pattern=https?:\/\/www\.xmind\.(cn|net|app)\/\_res\/devices,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/Xmind/Script/Xmind.js,script-update-interval=0
+
+# 解锁财新文章阅读与音频限制 gateway.caixin.com
+财新会员 = type=http-request,pattern=^https?:\/\/gateway\.caixin\.com\/api\/app\-api\/auth\/(validate|validateAudioAuth),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/CaiXin/Script/CaiXin.js,script-update-interval=0
+
+# 财新周刊会员（登陆账号体验更加）（22.07.12）ipadcms.caixin.com
+财新周刊 = type=http-response,pattern=^https?:\/\/ipadcms\.caixin\.com\/(api|tmp|power)\/(articles?|myfree(v\d+)?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/CaiXinWeekly/Script/CaiXinWeekly.js,script-update-interval=0
+
+# 解锁流利说·阅读会员、解锁阅读权限、解锁音频权限等 vira.llsapp.com
+流利说·阅读 = type=http-response,pattern=^https?:\/\/vira\.llsapp\.com\/api\/v\d\/\w+\/\w+$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/LiuLiShuoYueDu/Script/LiuLiShuoYueDu.js,script-update-interval=0
+
+# 解锁 PlaneFinder 高级订阅 app-live.planefinder.net
+PlaneFinder = type=http-response,pattern=^https?:\/\/app\-live\.planefinder\.net\/api\/v\d+\/account\/\w+\/login,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/PlaneFinder/Script/PlaneFinder.js,script-update-interval=0
+
+# WPS 解锁本地会员（支持大陆版以及非大陆版）（22.07.10）account.wps.cn, *account.wps.com
+WPS 会员 = type=http-response,pattern=^https?:\/\/.*?account\.wps\.(com|cn)(:\d+)?\/api\/users\/\w+\/overview$,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Script/WPS.js,script-update-interval=0
+
+# @NobyDa （更多脚本信息请自行在 https://github.com/NobyDa/Script 中查找）
+# TestFlight 账户管理（自动存储/合并多个 TestFlight 账户列表，并可分享/导出 TestFlight APP）testflight.apple.com
+TestFlight 账户管理 = type=http-request,pattern=^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/,requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js
+
+# TestFlight 区域限制解除（该模块适用于更新 TestFlight App 时, 提示 "APP不可用" 问题）testflight.apple.com
+TestFlight 下载修正 = type=http-request,pattern=^https?:\/\/testflight\.apple\.com\/v\d\/accounts\/.+?\/install$,requires-body=1,script-update-interval=-1,max-size=0,script-path=https://gist.githubusercontent.com/NobyDa/9be418b93afc5e9c8a8f4d28ae403cf2/raw/TF_Download.js
+
+# 哔哩哔哩(白图标外区版)港澳台番剧自动切换地区 & 显示豆瓣评分（23.02.11）（地区自动切换功能仅适用于 4.7+。如需搜索指定地区番剧，可在搜索框添加后缀" 港"，" 台"， " 中" 例如: 进击的巨人 港）ap?.bili*i.com, ap?.bili*i.net
+Bili Region = type=http-response,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/(pgc\/view\/v\d\/app\/season|x\/offline\/version)\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
+Bili Search = type=http-request,pattern=^https:\/\/ap(p|i)\.bili(bili|api)\.(com|net)\/x\/v\d\/search(\/type)?\?.+?%20(%E6%B8%AF|%E5%8F%B0|%E4%B8%AD)&,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/Bili_Auto_Regions.js
+
+# 微信去除公众号文章底部广告（23.03.14） mp.weixin.qq.com
+http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js
+
+# # 解锁必应浏览器 AI 搜索限制（23.02.28）www.bing.com
+# @VirgilClyne （更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/iRingo 中查找）
+# 解锁原装
+# 定位服务（V3）（全面自定义「定位服务」与「地图」的功能）configuration.ls.apple.com, gspe1-ssl.ls.apple.com, gspe12-ssl.ls.apple.com, gspe12-cn-ssl.ls.apple.com, gspe19-ssl.ls.apple.com, gspe19-cn-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, gsp-ssl.ls.apple.com, direction2.is.autonavi.com, dispatcher.is.autonavi.com, rap.is.autonavi.com, sundew.ls.apple.com
+# 🗺️ Network Defaults
+🗺️ Maps.config.defaults.request = type=http-request, pattern=^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults(\?.*)?$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+🗺️ Maps.config.defaults.response = type=http-response, pattern=^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults(\?.*)?$, requires-body=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.response.js, argument=
+# 📍 Country Code
+📍 Location.pep.gcc.response = type=http-response, pattern=^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc, requires-body=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.response.js, argument=
+# 🗺️ Announcements
+🗺️ Maps.config.announcements.request = type=http-request, pattern=^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements(\?.*)?$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+# 🗺️ Resource Manifest
+🗺️ Maps.geo_manifest.dynamic.config.request = type=http-request, pattern=^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config(\?.*)?$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+# 🗺️ PlaceData Dispatcher
+🗺️ Maps.dispatcher.arpc.request = type=http-request, pattern=^https?:\/\/gsp-ssl\.ls\.apple\.com\/dispatcher\.arpc$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+🗺️ Maps.dispatcher.request = type=http-request, pattern=^https?:\/\/dispatcher\.is\.autonavi\.com\/dispatcher$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+# 🗺️ Directions & ETA
+🗺️ Maps.directions.arpc.request = type=http-request, pattern=^https?:\/\/gsp-ssl\.ls\.apple\.com\/directions\.arpc$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+🗺️ Maps.direction.request = type=http-request, pattern=^https?:\/\/direction2\.is\.autonavi\.com\/direction$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+# 🗺️ Traffic
+🗺️ Maps.traffic.request = type=http-request, pattern=^https?:\/\/gspe12-ssl\.ls\.apple\.com\/traffic(\?.*)?$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+🗺️ Maps.traffic.request = type=http-request, pattern=^https?:\/\/gspe12-cn-ssl\.ls\.apple\.com\/traffic(\?.*)?$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+# 🗺️ RAP(Ratings and Photos) Submission
+🗺️ Maps.feedback.submission.request = type=http-request, pattern=^https?:\/\/sundew\.ls\.apple\.com\/v1\/feedback\/submission\.arpc$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+🗺️ Maps.rap.request = type=http-request, pattern=^https?:\/\/rap\.is\.autonavi\.com\/rap$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+# 🗺️ RAP(Ratings and Photos) Status
+🗺️ Maps.grp.st.request = type=http-request, pattern=^https?:\/\/sundew\.ls\.apple\.com\/grp\/st$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+🗺️ Maps.rapstatus.request = type=http-request, pattern=^https?:\/\/rap\.is\.autonavi\.com\/rapstatus$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+# 🗺️ UGC Log Discard
+🗺️ Maps.log_message.request = type=http-request, pattern=^https?:\/\/sundew\.ls\.apple\.com\/v1\/log_message$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+# 🗺️ Tiles
+🗺️ Maps.tile.vf.request = type=http-request, pattern=^https?:\/\/gspe19-ssl\.ls\.apple\.com\/tile\.vf(\?.*)?$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+🗺️ Maps.tiles.request = type=http-request, pattern=^https?:\/\/gspe19-cn-ssl\.ls\.apple\.com\/tiles(\?.*)?$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Location.request.js, argument=
+
+# Siri 与搜索（V3）（全面自定义「Siri 与搜索」的功能）api*.smoot.apple.com, api*.smoot.apple.cn
+# Bag (iOS/macOS)
+🔍 Siri.bag.request = type=http-request, pattern=^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag(\?.*)?$, requires-body=0, timeout=5, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, argument=
+🔍 Siri.bag.response = type=http-response, pattern=^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag(\?.*)?$, requires-body=1, timeout=10, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, argument=
+# Spotlight & Look Up Search (iOS/macOS)
+🔍 Siri.search.request = type=http-request, pattern=^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search(\?.*)?$, requires-body=0, timeout=5, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, argument=
+🔍 Siri.search.response = type=http-response, pattern=^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search(\?.*)?$, requires-body=1, timeout=10, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, argument=
+# warm (unknown)
+🔍 Siri.warm.request = type=http-request, pattern=^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/warm(\?.*)?$, requires-body=0, debug=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, argument=
+# render (unknown)
+🔍 Siri.render.request = type=http-request, pattern=^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/render(\?.*)?$, requires-body=0, debug=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, argument=
+# Flight Search (iOS/macOS)
+🔍 Siri.flight.request = type=http-request, pattern=^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/flight(\?.*)?$, requires-body=0, debug=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, argument=
+# Siri Infomation Card (macOS)
+🔍 Siri.card.request = type=http-request, pattern=^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card(\?.*)?$, requires-body=0, timeout=5, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, argument=
+🔍 Siri.card.response = type=http-response, pattern=^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card(\?.*)?$, requires-body=1, timeout=10, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, argument=
+
+# TV（V3）（全面自定义「TV app」功能）uts-api.itunes.apple.com, umc-tempo-api.apple.com
+📺 TV.uts.request = type=http-request, pattern=^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/.*, requires-body=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js
+📺 TV.uts.response = type=http-response, pattern=^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/.*, requires-body=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.response.js
+📺 TV.umc.request = type=http-request, pattern=^https?:\/\/umc-tempo-api\.apple\.com\/(v1|v2|v3)\/.*, requires-body=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js
+
+# News（V2）（1. 自定义解锁 News 的地区 注：该插件包含代理规则，安装过程中需要匹配代理策略组为🇺🇸线路，使用过程中 gateway.icloud.com 会走与 News 相同的代理线路）news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com
+📰 News.v1.configs.request = type=http-request, pattern=^https?:\/\/news(-todayconfig)?-edge\.apple\.com\/v1\/configs(\?.*)?$, requires-body=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js
+📰 News.analyticseventsv2.async.request = type=http-request, pattern=^https?:\/\/news(-sports)?-events\.apple\.com\/analyticseventsv2\/async(\?.*)?$, requires-body=1, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js
+📰 News.v1.search.request = type=http-request, pattern=^https?:\/\/news-client-search\.apple\.com\/v1\/search(\?.*)?$, requires-body=0, script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js
+
+# @Peng-YM（更多脚本信息请自行在 https://github.com/Peng-YM/QuanX 及 https://github.com/sub-store-org/Sub-Store 中查找）
+# GitHub 访问私有仓库（允许引用 Github 私有仓库/ gist 中的订阅分流，重写，脚本等配置文件） raw.githubusercontent.com, gist.githubusercontent.com
+Github Private = type=http-request, requires-body=0, pattern=^https?:\/\/(raw|gist)\.githubusercontent.com, script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GithubPrivate/github-private-repo.js
+
+# 替换支付宝内淘票票评分为豆瓣评分 guide-acs.m.taobao.com
+淘票票豆瓣评分 = type=http-response, requires-body=1, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopshowapi\.getextendshowbyid, script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/TaoPiaoPiao/taopiaopiao.js
+
+# Sub-Store 高级订阅管理工具 （带 ability 参数版本, 可能会爆内存）sub.store
+Sub-Store Core = type=http-request,pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))),script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js,requires-body=true,timeout=120,ability=http-client-policy
+Sub-Store Simple = type=http-request,pattern=^https?:\/\/sub\.store,script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js,requires-body=true
+
+# @blackmatrix7（更多脚本信息请自行在 https://github.com/blackmatrix7/ios_rule_script 中查找）
+# 知乎助手（去广告及功能增强）118.89.204.198,103.41.167.237,2402:4e00:1200:ed00:0:9089:6dac:96b6,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,m-cloud.zhihu.com,103.41.167.236,103.41.167.234,103.41.167.235,103.41.167.226
+# 获取用户信息 - 隔离用户数据，开启本地会员等
+处理用户信息 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/people\/,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 关键词屏蔽 - 解锁本地的关键词屏蔽功能，需要开启本地 VIP
+解锁关键词屏蔽 = type=http-request,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/feed-root\/block,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 优化软件配置 - 优化下发的配置文件来实现某些效果
+优化软件配置1 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+优化软件配置2 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/appcloud2\.zhihu\.com\/v\d+\/config,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 用户信息 - 修改用户盐值
+修改用户盐值 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/user-credit\/basis,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 关注页 - 内容优化及屏蔽转发的黑名单用户想法
+关注列表优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/moments_v3\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 推荐页 - 移除黑名单用户发布的文章、去除广告，及自定义一些屏蔽项目
+推荐页优化 = type=http-response,requires-body=1,max-size=0,pattern=^https:\/\/api\.zhihu\.com\/topstory\/recommend,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 黑名单页 - 同步黑名单数据
+同步黑名单 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/settings\/blocked_users,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 问题的回答列表 - 移除黑名单用户的回答、去除广告
+回答列表优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/(v4\/)?questions\/\d+,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 回答信息流 - 移除黑名单用户的回答、去除广告
+回答信息流优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/next-(data|bff|render),script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 回答页底部评论摘要 - 移除黑名单用户发表的评论
+评论摘要优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/www\.zhihu\.com\/api\/v4\/comment_v5\/answers\/\d+\/abstract_comment\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 评论页及子页面 - 去除黑名单用户发表的评论
+评论优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/(comment_v5\/)?(answers|comments?|articles|pins)\/\d+\/(root_|child_)?comments?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 消息页 - 折叠官方消息、屏蔽营销消息
+消息优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/notifications\/v3\/(message|timeline\/entry\/system_message),script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 回答页 - 内容优化，付费、营销、推广内容文首提醒
+回答内容优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/www\.zhihu\.com\/appview\/v2\/answer\/.*(entry=(?!(preload-topstory|preload-search|preload-subscription)))?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 回答页 - 屏蔽下翻出现的黑名单用户的回答
+回答翻页优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/next\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 文章页 - 去除底部
+文章优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/www\.zhihu\.com\/api\/v\d\/articles\/\d+\/recommendation\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 热榜页 - 去除
+热榜优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/topstory\/hot-lists(\?|\/),script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+# 搜索页 - 去除预置
+预置关键词优化 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/api\.zhihu\.com\/search\/preset_words\?,script-path=https://gist.githubusercontent.com/blackmatrix7/f5f780d0f56b319b6ad9848fd080bb18/raw/zheye.min.js
+
+# @yichahucha （更多脚本信息请自行在 https://github.com/yichahucha/surge 中查找）
+# Netflix 显示评分 ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com
+nf_rating.js = type=http-request,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
+nf_rating.js = type=http-response,requires-body=1,pattern=^https?:\/\/ios(-.*)?\.prod\.ftl\.netflix\.com\/iosui\/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js
+
+# 微博去广告 api.weibo.cn, mapi.weibo.com, *.uve.weibo.com
+http-response ^https?://(sdk|wb)app\.uve\.weibo\.com(/interface/sdk/sdkad.php|/wbapplua/wbpullad.lua) requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_launch.js
+http-response ^https?://m?api\.weibo\.c(n|om)/2/(messageflow/notice|search/(container_timeline|finder)|statuses/(container_timeline_hot|container_timeline_unread|container_timeline|unread|extend|positives/get|(friends|video)(/|_)(mix)?timeline)|stories/(video_stream|home_list)|(groups|fangle)/timeline|profile/statuses|comments/build_comments|photo/recommend_list|service/picfeed|searchall|cardlist|page|!/(photos/pic_recommend_status|live/media_homelist)|video/tiny_stream_video_list|photo/info|remind/unread_count) requires-body=1,max-size=-1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/wb_ad.js
+
+# @app2smile（更多脚本信息请自行在 https://github.com/app2smile/rules 中查找）
+# Spotify Pro（1. 部分解锁 premium 需 iOS 15+，音质不能设置为超高 2. 搜索界面歌单/歌曲可以随意切换完全播放 3. 音乐库已点赞歌曲随意切换完全播放）spclient.wg.spotify.com
+Spotify-json = type=http-request,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(artistview\/v1\/artist|album-entity-view\/v2\/album)\/,requires-body=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-json.js
+Spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/spotify-proto.js,script-update-interval=0
+
+# 百度贴吧去广告（iOS 15+、开屏广告、推荐、吧内帖子列表的直播及广告、详情页直播/关联商品/广告、看图模式广告、首页和帖子详情页右下角悬浮广告、部分吧内的置顶/最新中间的广告/head 图片广告/head 直播）（加载本重写前，须同时加载对应的贴吧分流，否则不能完全去广告）tiebac.baidu.com
+贴吧-json = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/(s\/sync|f\/(frs\/(page|threadlist|generalTabList)|pb\/(pic)?page|excellent\/personalized))$|tiebaads\/commonbatch\?),requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-json.js,script-update-interval=0
+贴吧-proto = type=http-response,pattern=^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/app2smile/rules/master/js/tieba-proto.js,script-update-interval=0
+
+# @zZPiglet（更多脚本信息请自行在 https://github.com/zZPiglet/Task/tree/master 中查找）
+# 跳过中间界面，支付宝链接和被封禁淘宝链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选）（群聊/扫码均可使用，可选项可在脚本2、3行更改，也可在 BoxJs 中更改）security.wechat.com, weixin110.qq.com
+解除微信链接限制 = type=http-response,pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js
+
+# 跳过重定向界面 links.jianshu.com, www.jianshu.com, link.zhihu.com, weibo.cn, sinaurl.cn, home.115.com, shop.sc.weibo.com
+# 简书
+简书 = type=http-request,pattern=^https:\/\/links\.jianshu\.com\/go\?to=,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/noredirect.js
+简书2 = type=http-request,pattern=^https:\/\/www\.jianshu\.com\/go-wild\?ac=\d&url=,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/noredirect.js
+# 知乎
+知乎 = type=http-request,pattern=^https:\/\/link\.zhihu\.com\/\?target=,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/noredirect.js
+# 微博
+微博 = type=http-request,pattern=^https?:\/\/weibo\.cn\/sinaurl\?(.*&)?(u|toasturl|goto)=,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/noredirect.js
+微博2 = type=http-request,pattern=^https:\/\/shop\.sc\.weibo\.com\/h5\/jump\/error\?(.*&)?url=(.*),script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/noredirect.js
+微博3 = type=http-response,pattern=^https?:\/\/(sinaurl|t)\.cn\/,script-path=https://raw.githubusercontent.com/zZPiglet/Task/master/asset/noredirect.js
+
+# @chavyleung（更多脚本信息请自行在 https://github.com/chavyleung/scripts 中查找）
+# BoxJS（浏览器访问：https://boxjs.com）boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net
+BoxJs = type=http-request,pattern=^https?:\/\/(.+\.)?boxjs\.(com|net),script-path=https://raw.githubusercontent.com/chavyleung/scripts/master/box/chavy.boxjs.js, requires-body=true, timeout=120
+
+# @Neurogram（更多脚本信息请自行在 https://github.com/Neurogram-R 中查找）
+# Dualsub（为 Disney+, Star+, Max, Hulu, Netflix, Paramount+, Prime Video, YouTube 等加上字幕）*.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com
+Dualsub = type=http-response,pattern=^http.+(media.(dss|star)ott|manifests.v2.api.hbo|hbomaxcdn|nflxvideo|cbs(aa|i)video|cloudfront|akamaihd|avi-cdn|huluim|youtube).(com|net)\/(.+\.vtt($|\?m=\d+)|.+-all-.+\.m3u8.*|hls\.m3u8.+|\?o=\d+&v=\d+&e=.+|\w+\/2\$.+\/[a-zA-Z0-9-]+\.m3u8|api\/timedtext.+),requires-body=1,max-size=0,timeout=30,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
+Dualsub-setting = type=http-request,pattern=^http.+(setting|general).(media.dssott|hbomaxcdn|nflxvideo|youtube|cbsivideo|cloudfront|huluim).(com|net)\/\?action=(g|s)et,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js
+
+# Script Hub: 重写 & 规则集转换（访问：https://script.hub）script.hub, *.script.hub
+前端 = type=http-request,pattern=^https?:\/\/script\.hub\/($|edit\/|reload), requires-body=0, max-size=0,script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-hub.js, timeout=120
+QX 转换 Surge = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=qx-rewrite, requires-body=0, max-size=0, script-path=https://github.com/Script-Hub-Org/Script-Hub/raw/main/QX-Rewrite-Parser.js, timeout=120
+Loon 转换 Surge = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=loon-plugin, requires-body=0, max-size=0, script-path=https://github.com/Script-Hub-Org/Script-Hub/raw/main/Loon-Rewrite-Parser.js, timeout=120
+Surge 模块控制器 = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=surge-module, requires-body=0, max-size=0, script-path=https://github.com/Script-Hub-Org/Script-Hub/raw/main/Surge-Rewrite-Parser.js, timeout=120
+规则集转换 = type=http-request, pattern=^https?:\/\/script\.hub\/file\/_start_\/.+type=rule-set, requires-body=0, max-size=0, script-path=https://github.com/Script-Hub-Org/Script-Hub/raw/main/rule-parser.js, timeout=120
+脚本转换 = type=http-request, pattern=^https?:\/\/script\.hub\/convert\/, requires-body=0, max-size=0, script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/script-converter.js, timeout=120
+
+# @
+# 哔哩哔哩 manga.bilibili.com, api.live.bilibili.com, api.vc.bilibili.com, app.bilibili.com, app.biliapi.net, api.bilibili.com, api.biliapi.net, grpc.biliapi.net
+# 开屏广告 | 推荐页 banner 和广告 | 我的页面 | 1080P | 热搜 | 标签栏 | 下发皮肤
+bili-jsons = type=http-response,pattern=^https?:\/\/app\.bilibili\.com\/x\/(v2\/(splash\/(list|show)|feed\/index|account\/(mine(\/ipad)?|myinfo\?)|search\/square)|resource\/show\/(tab\/v2|skin\?)),requires-body=1,script-update-interval=-1,script-path=https://github.com/Keywos/rule/raw/main/JS/bjson.js
+
+# 微博国际版 *api.weibo.cn, sdkapp.uve.weibo.com
+# 趋势页 | 开屏广告 | 用户中心 | 热搜置顶 | 我的页面 尊享专属 | 瀑布流去广告
+http-response ^https?:\/\/weibointl\.api\.weibo\.cn\/portal\.php\?(ct=(feed&a=trends|user&a=get_searching_info)|a=(get_coopen_ads|user_center|search_topic|open_app&auth|icon_center)) requires-body=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/weibous.js
+http-response ^https?:\/\/api\.weibo\.cn\/\d\/statuses\/.*timeline requires-body=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/weibous.js
+http-response ^https?:\/\/sdkapp\.uve\.weibo\.com\/interface\/sdk\/sdkad\.php requires-body=1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/weibous.js
+
+# 菜鸟净化 cn-acs.m.cainiao.com, guide-acs.m.taobao.com
+菜鸟淘宝 = type=http-response,pattern=^https?:\/\/(cn-acs\.m\.cainiao|guide-acs\.m\.taobao)\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.m?show,requires-body=1,max-size=0,script-update-interval=-1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/cainiao.js
+菜鸟 cn = type=http-response,pattern=^https?:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.cainiao\.nbpresentation\.(homepage\.merge|pickup\.empty\.page|protocol\.homepage)\.get\.cn,requires-body=1,max-size=0,script-update-interval=-1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/cainiao.js
+
+# 百度输入法 imeres.baidu.com, mbd.baidu.com, mime.baidu.com, h2tcbox.baidu.com
+百度输入法 = type=http-response,pattern=^https?:\/\/mime\.baidu\.com\/(imrobot\/v1\/pub\/relation\/get_robot_list|v5\/custom_page\/(layout|getdata)),requires-body=1,max-size=0,script-update-interval=-1,script-path=https://raw.githubusercontent.com/Keywos/rule/main/JS/bdsrf.js
+
+# @
+# 什么值得买去广告 zhiyou.smzdm.com, app-api.smzdm.com, homepage-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com
+获取 cookie = script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_daily.js,type=http-request,requires-body=false,pattern=^https?:\/\/zhiyou\.smzdm\.com\/user\/?$
+开屏 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/app-api\.smzdm\.com\/util\/loading,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+首页 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/homepage-api\.smzdm\.com\/v3\/home,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+好价 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/haojia-api\.smzdm\.com\/home\/list,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+好价详情页 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/haojia\.m\.smzdm\.com\/detail_modul\/article_releated_modul,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+百科 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/baike-api\.smzdm\.com\/home_v3\/list,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+搜索结果 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/s-api\.smzdm\.com\/sou\/list_v10,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+搜索标签 = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/s-api\.smzdm\.com\/sou\/filter\/tags\/hot_tags,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+值会员权益中心 banner = type=http-response,requires-body=1,max-size=0,pattern=^https?:\/\/zhiyou\.m\.smzdm\.com\/user\/vip\/ajax_get_banner,script-path=https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/smzdm/smzdm_remove_ads.js
+
+# @
+# 去除 Youtube 广告（iOS >= 15）*.googlevideo.com, youtubei.googleapis.com
+Youtube.request = type=http-request,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.request.beta.js
+Youtube.response = type=http-response,pattern=^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting)\?,requires-body=1,max-size=-1,binary-body-mode=1,script-path=https://raw.githubusercontent.com/Maasea/sgmodule/master/Script/Youtube/dist/youtube.response.beta.js
+
+# 杂七杂八
+# 显示京东历史价格 api.m.jd.com
+http-response ^https?:\/\/api\.m\.jd\.com\/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) requires-body=1,script-path= https://raw.githubusercontent.com/zwf234/rules/master/js/jd_price.js
+
+# 解锁 Emby Premiere mb3admin.com
+Emby Premiere = type=http-response,pattern=^https?:\/\/mb3admin.com\/admin\/service\/registration\/validateDevice,requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/rartv/SurgeScript/main/EmbyPremiere/EmbyPremiere.js
+
+[MITM]
+hostname = guide-acs.m.taobao.com, ios-*.prod.ftl.netflix.com,ios.prod.ftl.netflix.com, api.weibo.cn, mapi.weibo.com, *.uve.weibo.com, ap?.bili*i.com, ap?.bili*i.net, mp.weixin.qq.com
+# 不可 MitM 也不应该被打断连接的域名
+hostname = %INSERT% -gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, boxjs.com, boxjs.net, *.boxjs.com, *.boxjs.net
+hostname = %APPEND% configuration.ls.apple.com, gspe1-ssl.ls.apple.com, gspe12-ssl.ls.apple.com, gspe12-cn-ssl.ls.apple.com, gspe19-ssl.ls.apple.com, gspe19-cn-ssl.ls.apple.com, gspe35-ssl.ls.apple.com, gsp-ssl.ls.apple.com, direction2.is.autonavi.com, dispatcher.is.autonavi.com, rap.is.autonavi.com, sundew.ls.apple.com, api*.smoot.apple.com, api*.smoot.apple.cn, uts-api.itunes.apple.com, umc-tempo-api.apple.com, news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com, raw.githubusercontent.com, gist.githubusercontent.com, sub.store, 118.89.204.198,103.41.167.237,2402:4e00:1200:ed00:0:9089:6dac:96b6,www.zhihu.com,api.zhihu.com,zhuanlan.zhihu.com,appcloud2.zhihu.com,m-cloud.zhihu.com,103.41.167.236,103.41.167.234,103.41.167.235,103.41.167.226, spclient.wg.spotify.com, tiebac.baidu.com, security.wechat.com, weixin110.qq.com, links.jianshu.com, www.jianshu.com, link.zhihu.com, weibo.cn, sinaurl.cn, home.115.com, shop.sc.weibo.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, www.xmind.cn, www.xmind.net, www.xmind.app, gateway.caixin.com, ipadcms.caixin.com, vira.llsapp.com, app-live.planefinder.net, account.wps.cn, *account.wps.com, testflight.apple.com, www.bing.com, api.m.jd.com, manga.bilibili.com, api.live.bilibili.com, api.vc.bilibili.com, app.bilibili.com, app.biliapi.net, api.bilibili.com, api.biliapi.net, grpc.biliapi.net, *api.weibo.cn, sdkapp.uve.weibo.com, m.baidu.com,www.baidu.com, cn-acs.m.cainiao.com, guide-acs.m.taobao.com, imeres.baidu.com, mbd.baidu.com, mime.baidu.com, h2tcbox.baidu.com, zhiyou.smzdm.com, app-api.smzdm.com, homepage-api.smzdm.com, haojia-api.smzdm.com, haojia.m.smzdm.com, baike-api.smzdm.com, s-api.smzdm.com, zhiyou.m.smzdm.com, *.googlevideo.com, youtubei.googleapis.com, script.hub, *.script.hub, mb3admin.com
+
+Scripts:
+networkcheck.js// 最后更新：23.10.09
+let prfl = {
+    icons: "globe.asia.australia.fill",
+    icolor: "#6699FF",
+    hideIP: false,
+    dptrTmot: 1e3,
+    arvlTmot: 2e3,
+}
+
+function ai(e) {
+    return String['fromCodePoint'](...e['toUpperCase']()['split']('')['map'](e => 127397 + e['charCodeAt']()));
+}
+
+function bi(m, n) {
+    var o = new RegExp('[\u4E00-\u9FA5]+');
+    var p = '';
+    if (m['match'](/\ or\ /g)) {
+        m = '';
+    }
+    if (!o['test'](m)) {
+        m = '';
+    }
+    if (!o['test'](n)) {
+        n = '';
+    }
+    if (m == n) {
+        m = '';
+    }
+    if (m && n) {
+        p = m + ' ' + n;
+    } else if (m) {
+        p = m;
+    } else if (n) {
+        p = n;
+    }
+    return p;
+}
+
+function ci(m) {
+    return '自治系统号：' + m['match'](/(?<=^.{2})\S\d+/g)[0];
+}
+
+function di(m, n) {
+    if (m == n || m == '') {
+        return n;
+    } else {
+        return m + ' ' + n;
+    }
+}
+
+function ei(m) {
+    if (m == '中华民国' || m == '中華民國') {
+        return '台湾';
+    } else {
+        return m;
+    }
+}
+
+function fi(m) {
+    var n = '',
+        o = gi(),
+        p = hi();
+    for (var q = 0; q < m['length']; q++) {
+        if (m['charCodeAt'](q) > 10000 && p['indexOf'](m['charAt'](q)) != -1) n += o['charAt'](p['indexOf'](m['charAt'](q)));
+        else n += m['charAt'](q);
+    }
+    return n;
+}
+
+function gi() {
+    return '皑蔼碍爱翱袄奥坝罢摆败颁办绊帮绑镑谤剥饱宝报鲍辈贝钡狈备惫绷笔毕毙闭边编贬变辩辫鳖瘪濒滨宾摈饼拨钵铂驳卜补参蚕残惭惨灿苍舱仓沧厕侧册测层诧搀掺蝉馋谗缠铲产阐颤场尝长偿肠厂畅钞车彻尘陈衬撑称惩诚骋痴迟驰耻齿炽冲虫宠畴踌筹绸丑橱厨锄雏础储触处传疮闯创锤纯绰辞词赐聪葱囱从丛凑窜错达带贷担单郸掸胆惮诞弹当挡党荡档捣岛祷导盗灯邓敌涤递缔点垫电淀钓调迭谍叠钉顶锭订东动栋冻斗犊独读赌镀锻断缎兑队对吨顿钝夺鹅额讹恶饿儿尔饵贰发罚阀珐矾钒烦范贩饭访纺飞废费纷坟奋愤粪丰枫锋风疯冯缝讽凤肤辐抚辅赋复负讣妇缚该钙盖干赶秆赣冈刚钢纲岗皋镐搁鸽阁铬个给龚宫巩贡钩沟构购够蛊顾剐关观馆惯贯广规硅归龟闺轨诡柜贵刽辊滚锅国过骇韩汉阂鹤贺横轰鸿红后壶护沪户哗华画划话怀坏欢环还缓换唤痪焕涣黄谎挥辉毁贿秽会烩汇讳诲绘荤浑伙获货祸击机积饥讥鸡绩缉极辑级挤几蓟剂济计记际继纪夹荚颊贾钾价驾歼监坚笺间艰缄茧检碱硷拣捡简俭减荐槛鉴践贱见键舰剑饯渐溅涧浆蒋桨奖讲酱胶浇骄娇搅铰矫侥脚饺缴绞轿较秸阶节茎惊经颈静镜径痉竞净纠厩旧驹举据锯惧剧鹃绢杰洁结诫届紧锦仅谨进晋烬尽劲荆觉决诀绝钧军骏开凯颗壳课垦恳抠库裤夸块侩宽矿旷况亏岿窥馈溃扩阔蜡腊莱来赖蓝栏拦篮阑兰澜谰揽览懒缆烂滥捞劳涝乐镭垒类泪篱离里鲤礼丽厉励砾历沥隶俩联莲连镰怜涟帘敛脸链恋炼练粮凉两辆谅疗辽镣猎临邻鳞凛赁龄铃凌灵岭领馏刘龙聋咙笼垄拢陇楼娄搂篓芦卢颅庐炉掳卤虏鲁赂禄录陆驴吕铝侣屡缕虑滤绿峦挛孪滦乱抡轮伦仑沦纶论萝罗逻锣箩骡骆络妈玛码蚂马骂吗买麦卖迈脉瞒馒蛮满谩猫锚铆贸么霉没镁门闷们锰梦谜弥觅绵缅庙灭悯闽鸣铭谬谋亩钠纳难挠脑恼闹馁腻撵捻酿鸟聂啮镊镍柠狞宁拧泞钮纽脓浓农疟诺欧鸥殴呕沤盘庞国爱赔喷鹏骗飘频贫苹凭评泼颇扑铺朴谱脐齐骑岂启气弃讫牵扦钎铅迁签谦钱钳潜浅谴堑枪呛墙蔷强抢锹桥乔侨翘窍窃钦亲轻氢倾顷请庆琼穷趋区躯驱龋颧权劝却鹊让饶扰绕热韧认纫荣绒软锐闰润洒萨鳃赛伞丧骚扫涩杀纱筛晒闪陕赡缮伤赏烧绍赊摄慑设绅审婶肾渗声绳胜圣师狮湿诗尸时蚀实识驶势释饰视试寿兽枢输书赎属术树竖数帅双谁税顺说硕烁丝饲耸怂颂讼诵擞苏诉肃虽绥岁孙损笋缩琐锁獭挞抬摊贪瘫滩坛谭谈叹汤烫涛绦腾誊锑题体屉条贴铁厅听烃铜统头图涂团颓蜕脱鸵驮驼椭洼袜弯湾顽万网韦违围为潍维苇伟伪纬谓卫温闻纹稳问瓮挝蜗涡窝呜钨乌诬无芜吴坞雾务误锡牺袭习铣戏细虾辖峡侠狭厦锨鲜纤咸贤衔闲显险现献县馅羡宪线厢镶乡详响项萧销晓啸蝎协挟携胁谐写泻谢锌衅兴汹锈绣虚嘘须许绪续轩悬选癣绚学勋询寻驯训讯逊压鸦鸭哑亚讶阉烟盐严颜阎艳厌砚彦谚验鸯杨扬疡阳痒养样瑶摇尧遥窑谣药爷页业叶医铱颐遗仪彝蚁艺亿忆义诣议谊译异绎荫阴银饮樱婴鹰应缨莹萤营荧蝇颖哟拥佣痈踊咏涌优忧邮铀犹游诱舆鱼渔娱与屿语吁御狱誉预驭鸳渊辕园员圆缘远愿约跃钥岳粤悦阅云郧匀陨运蕴酝晕韵杂灾载攒暂赞赃脏凿枣灶责择则泽贼赠扎札轧铡闸诈斋债毡盏斩辗崭栈战绽张涨帐账胀赵蛰辙锗这贞针侦诊镇阵挣睁狰帧郑证织职执纸挚掷帜质钟终种肿众诌轴皱昼骤猪诸诛烛瞩嘱贮铸筑驻专砖转赚桩庄装妆壮状锥赘坠缀谆浊兹资渍踪综总纵邹诅组钻致钟么为只凶准启板里雳余链泄';
+}
+
+function hi() {
+    return '皚藹礙愛翺襖奧壩罷擺敗頒辦絆幫綁鎊謗剝飽寶報鮑輩貝鋇狽備憊繃筆畢斃閉邊編貶變辯辮鼈癟瀕濱賓擯餅撥缽鉑駁蔔補參蠶殘慚慘燦蒼艙倉滄廁側冊測層詫攙摻蟬饞讒纏鏟産闡顫場嘗長償腸廠暢鈔車徹塵陳襯撐稱懲誠騁癡遲馳恥齒熾沖蟲寵疇躊籌綢醜櫥廚鋤雛礎儲觸處傳瘡闖創錘純綽辭詞賜聰蔥囪從叢湊竄錯達帶貸擔單鄲撣膽憚誕彈當擋黨蕩檔搗島禱導盜燈鄧敵滌遞締點墊電澱釣調叠諜疊釘頂錠訂東動棟凍鬥犢獨讀賭鍍鍛斷緞兌隊對噸頓鈍奪鵝額訛惡餓兒爾餌貳發罰閥琺礬釩煩範販飯訪紡飛廢費紛墳奮憤糞豐楓鋒風瘋馮縫諷鳳膚輻撫輔賦複負訃婦縛該鈣蓋幹趕稈贛岡剛鋼綱崗臯鎬擱鴿閣鉻個給龔宮鞏貢鈎溝構購夠蠱顧剮關觀館慣貫廣規矽歸龜閨軌詭櫃貴劊輥滾鍋國過駭韓漢閡鶴賀橫轟鴻紅後壺護滬戶嘩華畫劃話懷壞歡環還緩換喚瘓煥渙黃謊揮輝毀賄穢會燴彙諱誨繪葷渾夥獲貨禍擊機積饑譏雞績緝極輯級擠幾薊劑濟計記際繼紀夾莢頰賈鉀價駕殲監堅箋間艱緘繭檢堿鹼揀撿簡儉減薦檻鑒踐賤見鍵艦劍餞漸濺澗漿蔣槳獎講醬膠澆驕嬌攪鉸矯僥腳餃繳絞轎較稭階節莖驚經頸靜鏡徑痙競淨糾廄舊駒舉據鋸懼劇鵑絹傑潔結誡屆緊錦僅謹進晉燼盡勁荊覺決訣絕鈞軍駿開凱顆殼課墾懇摳庫褲誇塊儈寬礦曠況虧巋窺饋潰擴闊蠟臘萊來賴藍欄攔籃闌蘭瀾讕攬覽懶纜爛濫撈勞澇樂鐳壘類淚籬離裏鯉禮麗厲勵礫曆瀝隸倆聯蓮連鐮憐漣簾斂臉鏈戀煉練糧涼兩輛諒療遼鐐獵臨鄰鱗凜賃齡鈴淩靈嶺領餾劉龍聾嚨籠壟攏隴樓婁摟簍蘆盧顱廬爐擄鹵虜魯賂祿錄陸驢呂鋁侶屢縷慮濾綠巒攣孿灤亂掄輪倫侖淪綸論蘿羅邏鑼籮騾駱絡媽瑪碼螞馬罵嗎買麥賣邁脈瞞饅蠻滿謾貓錨鉚貿麽黴沒鎂門悶們錳夢謎彌覓綿緬廟滅憫閩鳴銘謬謀畝鈉納難撓腦惱鬧餒膩攆撚釀鳥聶齧鑷鎳檸獰甯擰濘鈕紐膿濃農瘧諾歐鷗毆嘔漚盤龐國愛賠噴鵬騙飄頻貧蘋憑評潑頗撲鋪樸譜臍齊騎豈啓氣棄訖牽扡釺鉛遷簽謙錢鉗潛淺譴塹槍嗆牆薔強搶鍬橋喬僑翹竅竊欽親輕氫傾頃請慶瓊窮趨區軀驅齲顴權勸卻鵲讓饒擾繞熱韌認紉榮絨軟銳閏潤灑薩鰓賽傘喪騷掃澀殺紗篩曬閃陝贍繕傷賞燒紹賒攝懾設紳審嬸腎滲聲繩勝聖師獅濕詩屍時蝕實識駛勢釋飾視試壽獸樞輸書贖屬術樹豎數帥雙誰稅順說碩爍絲飼聳慫頌訟誦擻蘇訴肅雖綏歲孫損筍縮瑣鎖獺撻擡攤貪癱灘壇譚談歎湯燙濤縧騰謄銻題體屜條貼鐵廳聽烴銅統頭圖塗團頹蛻脫鴕馱駝橢窪襪彎灣頑萬網韋違圍爲濰維葦偉僞緯謂衛溫聞紋穩問甕撾蝸渦窩嗚鎢烏誣無蕪吳塢霧務誤錫犧襲習銑戲細蝦轄峽俠狹廈鍁鮮纖鹹賢銜閑顯險現獻縣餡羨憲線廂鑲鄉詳響項蕭銷曉嘯蠍協挾攜脅諧寫瀉謝鋅釁興洶鏽繡虛噓須許緒續軒懸選癬絢學勳詢尋馴訓訊遜壓鴉鴨啞亞訝閹煙鹽嚴顔閻豔厭硯彥諺驗鴦楊揚瘍陽癢養樣瑤搖堯遙窯謠藥爺頁業葉醫銥頤遺儀彜蟻藝億憶義詣議誼譯異繹蔭陰銀飲櫻嬰鷹應纓瑩螢營熒蠅穎喲擁傭癰踴詠湧優憂郵鈾猶遊誘輿魚漁娛與嶼語籲禦獄譽預馭鴛淵轅園員圓緣遠願約躍鑰嶽粵悅閱雲鄖勻隕運蘊醞暈韻雜災載攢暫贊贓髒鑿棗竈責擇則澤賊贈紮劄軋鍘閘詐齋債氈盞斬輾嶄棧戰綻張漲帳賬脹趙蟄轍鍺這貞針偵診鎮陣掙睜猙幀鄭證織職執紙摯擲幟質鍾終種腫衆謅軸皺晝驟豬諸誅燭矚囑貯鑄築駐專磚轉賺樁莊裝妝壯狀錐贅墜綴諄濁茲資漬蹤綜總縱鄒詛組鑽緻鐘麼為隻兇準啟闆裡靂餘鍊洩';
+}
+
+function ii(m, n) {
+    if (n == '') {
+        return '运营商：' + m + '\n\n' + '数据中心：未知';
+    } else if (m == n) {
+        return '运营商同数据中心：' + m;
+    } else {
+    	return '运营商：' + m + '\n\n' + '数据中心：' + n;
+    }
+}
+
+function ji(m) {
+  if (m.includes("中国")) {
+    return m.replace("中国", "");
+  } else {
+    return m;
+  }
+}
+
+function ki(s) {
+    if (s > 0) {
+        return '北纬：' + s + '°';
+    } else {
+        return '南纬：' + Math.abs(s)+ '°';
+    }
+}
+
+function li(s) {
+    if (s > 0) {
+        return '东经：' + s + '°';
+    } else {
+        return '西经：' + Math.abs(s)+ '°';
+    }
+}
+
+let data, ke = true,
+    re = false;
+
+(async () => {
+    try {
+        try {
+            let e = $persistentStore.read("svrckKey"),
+                t = $environment;
+            data = e ? JSON.parse(e) : prfl;
+            if (typeof data.hideIP !== "boolean" || typeof data.icons !== "string" || typeof data.icolor !== "string" || typeof data.dptrTmot !== "number" || typeof data.arvlTmot !== "number") {
+                console.log("无数据或数据错误或更新，恢复默认");
+                re = true;
+                data = prfl
+            }
+        } catch (e) {
+            console.log("无数据或数据错误或更新，恢复默认");
+            data = prfl;
+            re = true
+        }
+        re && $persistentStore.write(JSON.stringify(prfl, "", 2), "svrckKey");
+        
+        let t = data.icons,
+            o = data.icolor,
+            i = data.hideIP,
+            n = data.dptrTmot,
+            s = data.arvlTmot;
+        let a = "",
+            u = "",
+            p = "",
+            f = "";
+        
+        const x = await tKey(`https://api-v3.speedtest.cn/ip`, n);
+        if (x.code === 0) {
+            let {
+                province: t,
+                isp: o,
+                city: n,
+                district: s,
+                ip: u,
+                lat: w,
+                lon: y
+            } = x.data, a = x.tk;
+            //console.log("ik" + JSON.stringify(mi, null, 2));
+            i && (u = mi(u));
+            z = "_______________________________\n" + "\n                    🔎 结果 👇\n" + "\n             -------------------\n" + "\n                      入网信息" + "\n                      ---------\n" + "\n归属地：" + di(t,n) + " " + s + "\n\nIP：" + u + "   " + a + "ms\n" + "\n                   运营商：" + ji(o) + "\n\n" + "北纬：" + w + '°' + "   " + "东经：" + y + '°' + "\n\n   -------------------------------\n"
+        } else {
+            //console.log("ik" + JSON.stringify(e));
+            z = "入网查询失败"
+            }
+                            
+        const g = await tKey("http://ip-api.com/json/?lang=zh-CN", s);
+        if (g.status === "success" && ke) {
+            console.log("ipapi" + JSON.stringify(g, null, 2));
+            let {
+                country: e,
+                countryCode: t,
+                regionName: o,
+                query: n,
+                city: s,
+                org: r,
+                isp: l,
+                as: c,
+                lat: w,
+                lon: y,
+                tk: p
+            } = g;
+            a = n;
+            i && (n = mi(n));
+            var arvltt = "\n                      落地分析" + "\n                      ---------\n";
+                arvled = "\n\n_______________________________"
+                d = di(ei(fi(e)), bi(fi(o), fi(s))) + " ➟ ⟦" + ai(t) + "⟧";
+                u = arvltt + "\n归属地：" + d + "\n\nIP：" + n + "   " + p + "ms\n\n" + ii(l,r) + "\n\n" + ci(c) + "\n\n" + ki(w) + "   " + li(y) + arvled
+        } else {
+            u = arvltt + "\n                          抱歉\n" + "\n          无法获取节点相关信息" + arvled
+        }
+
+        const m = await httpAPI();
+        let y, P = "";
+        const h = m.requests.slice(0, 6);
+        let w = h.filter((e => /ip-api\.com/.test(e.URL)));
+        if (w.length > 0 && ke) {
+            const e = w[0];
+            f = e.policyName;
+            y = e.remoteAddress.replace(" (Proxy)", "");
+        } else {
+            y = "Noip"
+        }
+            
+        let k = false,
+            v4 = false,
+            v6 = false,
+            cn = true;
+            
+        if (y === "Noip") {
+            k = true
+        } else if (/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(y)) {
+            v4 = true
+        } else if (/^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/.test(y)) {
+            v6 = true
+        }
+        
+        if (y == a) {
+            cn = false;
+            p = "\n                    -----------" + "\n                    类型：直连" + "\n                    -----------\n"
+        } else {
+            if (!k || v4) {
+                const e = await tKey(`https://api-v3.speedtest.cn/ip?ip=${y}`, n);
+                if (e.code === 0 && e.data.countryCode === "CN") {
+                    let {
+                        province: t,
+                        isp: o,
+                        city: n,
+                        district: s,
+                        lat: w,
+                        lon: z
+                    } = e.data, a = e.tk;
+                    //console.log("ik" + JSON.stringify(e, null, 2));
+                    i && (y = mi(y));
+                    p = "\n             -------------------" + "\n             类型：国内🇨🇳中转" + "\n             -------------------\n" + "\n                      入口分析" + "\n                      ---------\n" + "\n归属地：" + di(t,n) + " " + s + "\n\nIP：" + y + "   " + a + "ms\n" + "\n                   运营商：" + ji(o) + "\n\n" + "北纬：" + w + '°' + "   " + "东经：" + z + '°' + "\n\n   -------------------------------\n"
+                } else {
+                    cn = false;
+                    //console.log("ik" + JSON.stringify(e));
+                    p = "入口查询失败"
+                }
+            }
+
+            if ((!k || v6) && !cn) {
+                const e = await tKey(`http://ip-api.com/json/${y}?lang=zh-CN`, s);
+                if (e.status === "success") {
+                    //console.log("iai" + JSON.stringify(e, null, 2));
+                    let {
+                        countryCode: t,
+                        country: o,
+                        regionName: u,
+                        city: n,
+                        org: v,
+                        lat: b,
+                        lon: z,
+                        as: w,
+                        tk: s,
+                        isp: a
+                    } = e;
+                    i && (y = mi(y));
+                    let r = di(ei(fi(o)), bi(fi(u), fi(n))) + " ➟ ⟦" + ai(t) + "⟧";
+                    p = "\n                ----------------" + "\n                类型：国外中转" + "\n                ----------------\n" + "\n                      入口分析" + "\n                      ---------\n" + "\n归属地：" + r + "\n\nIP：" + y + "   " + s + "ms\n\n" + ii(a,v) + "\n\n" + ci(w) + "\n\n" + ki(b) + "   " + li(z) + "\n\n   -------------------------------\n"
+                } else {
+                    //console.log("iai" + JSON.stringify(e));
+                    p = "抱歉入口查询失败\n"
+                }
+            }
+        }
+        $done({
+            title: "节点信息查询" + " ➟ " + f,
+            content: z + p + u,
+            icon: t,
+            "icon-color": o
+        })
+    } catch (e) {
+        //console.log(e.message);
+        $done({
+            title: "节点信息查询" + " ➟ " + f,
+            content: "\n查询失败，请重试⚠️",
+            icon: icons,
+            "icon-color": icolor
+        })
+    }
+})(),
+
+
+function mi(e) {
+    return e.replace(/(\w{1,4})(\.|\:)(\w{1,4})$/, ((e, t, o, i) => `${"∗".repeat(t.length)}.${"∗".repeat(i.length)}`))
+}
+
+async function httpAPI(e = "/v1/requests/recent", t = "GET", o = null) {
+    return new Promise(((i, n) => {
+        $httpAPI(t, e, o, (e => {
+            i(e)
+        }))
+    }))
+}
+
+async function tKey(e, t) {
+    let o = 1,
+        i = 1;
+    const s = new Promise(((s, a) => {
+        const r = async l => {
+            try {
+                const o = await Promise.race([new Promise(((t, o) => {
+                    let i = Date.now();
+                    $httpClient.get({
+                        url: e
+                    }, ((e, n, s) => {
+                        if (e) {
+                            o(e)
+                        } else {
+                            let e = Date.now() - i;
+                            let o = n.status;
+                            switch (o) {
+                                case 200:
+                                    let o = n.headers["Content-Type"];
+                                    switch (true) {
+                                        case o.includes("application/json"):
+                                            let i = JSON.parse(s);
+                                            i.tk = e;
+                                            t(i);
+                                            break;
+                                        case o.includes("text/html"):
+                                            t("text/html");
+                                            break;
+                                        case o.includes("text/plain"):
+                                            let n = s.split("\n");
+                                            let a = n.reduce(((t, o) => {
+                                                let [i, n] = o.split("=");
+                                                t[i] = n;
+                                                t.tk = e;
+                                                return t
+                                            }), {});
+                                            t(a);
+                                            break;
+                                        case o.includes("image/svg+xml"):
+                                            t("image/svg+xml");
+                                            break;
+                                        default:
+                                            t("未知");
+                                            break
+                                    }
+                                    break;
+                                case 204:
+                                    let i = {
+                                        tk: e
+                                    };
+                                    t(i);
+                                    break;
+                                case 429:
+                                    console.log("次数过多");
+                                    t("次数过多");
+                                    break;
+                                case 404:
+                                    console.log("404");
+                                    t("404");
+                                    break;
+                                default:
+                                    t("nokey");
+                                    break
+                            }
+                        }
+                    }))
+                })), new Promise(((e, o) => {
+                    setTimeout((() => o(new Error("timeout"))), t)
+                }))]);
+                if (o) {
+                    s(o)
+                } else {
+                    s("超时");
+                    a(new Error(n.message))
+                }
+            } catch (e) {
+                if (l < o) {
+                    i++;
+                    r(l + 1)
+                } else {
+                    s("检测失败, 重试次数" + i);
+                    a(e)
+                }
+            }
+        };
+        r(0)
+    }));
+    return s
+}
+
+servicecheck-lite.js
+/*
+脚本参考 @Helge_0x00 
+修改日期：23.10.09
+
+支持使用脚本使用 argument 参数自定义配置，如：argument=title=解锁检测&icon=headphones.circle&color=#FF2121，具体参数如下所示，
+ * title: 面板标题
+ * icon: SFSymbols 图标
+ * color：图标颜色
+*/
+
+function a(m) {
+    return String['fromCodePoint'](...m['toUpperCase']()['split']('')['map'](m => 0x1f1a5 + m['charCodeAt']()));
+}
+
+let args = getArgs();
+
+const REQUEST_HEADERS = {
+  'User-Agent':
+    'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36',
+  'Accept-Language': 'en',
+}
+
+// 即将登陆
+const STATUS_COMING = 2
+// 支持解锁
+const STATUS_AVAILABLE = 1
+// 不支持解锁
+const STATUS_NOT_AVAILABLE = 0
+// 检测超时
+const STATUS_TIMEOUT = -1
+// 检测异常
+const STATUS_ERROR = -2
+
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36';
+
+(async () => {
+  let now = new Date();
+  let hour = now.getHours();
+  let minutes = now.getMinutes();
+  hour = hour > 9 ? hour : "0" + hour;
+  minutes = minutes > 9 ? minutes : "0" + minutes;
+  let panel_result = {
+    title: `${args.title} | ${hour}:${minutes}` || `流媒体解锁查询 | ${hour}:${minutes}`,
+    content: '',
+    icon: args.icon || "play.circle",
+    "icon-color": args.color || "#007aff",
+  }
+	
+  let [{ region, status }] = await Promise.all([testDisneyPlus()])
+  await Promise.all([check_youtube_premium(), check_netflix()])
+    .then((result) => {
+      console.log(result)
+      let disney_result = ""
+      if (status == STATUS_COMING) {
+        //console.log(1)
+        disney_result = "D⁺: 即将登陆~" + a(region.toUpperCase()) + ' |'
+      } else if (status == STATUS_AVAILABLE) {
+        //console.log(2)
+        console.log(region)
+        disney_result = "D⁺: " + a(region.toUpperCase()) + ' |'
+        // console.log(result["Disney"])
+      } else if (status == STATUS_NOT_AVAILABLE) {
+        //console.log(3)
+        disney_result = "D⁺: \u2612" + ' |'
+      } else if (status == STATUS_TIMEOUT) {
+        disney_result = "D⁺: ⌛️" + ' |'
+      }
+      result.push(disney_result)
+      console.log(result)
+      let content = result.join(' ')
+      console.log(content)
+
+      panel_result['content'] = content + gptcheck
+    })
+    .finally(() => {
+      $done(panel_result)
+    })
+})()
+
+function getArgs() {
+  return Object.fromEntries(
+    $argument
+      .split("&")
+      .map((item) => item.split("="))
+      .map(([k, v]) => [k, decodeURIComponent(v)])
+  );
+}
+
+async function check_youtube_premium() {
+  let inner_check = () => {
+    return new Promise((resolve, reject) => {
+      let option = {
+        url: 'https://www.youtube.com/premium',
+        headers: REQUEST_HEADERS,
+      }
+      $httpClient.get(option, function (error, response, data) {
+        if (error != null || response.status !== 200) {
+          reject('Error')
+          return
+        }
+
+        if (data.indexOf('Premium is not available in your country') !== -1) {
+          resolve('Not Available')
+          return
+        }
+
+        let region = ''
+        let re = new RegExp('"countryCode":"(.*?)"', 'gm')
+        let result = re.exec(data)
+        if (result != null && result.length === 2) {
+          region = result[1]
+        } else if (data.indexOf('www.google.cn') !== -1) {
+          region = 'CN'
+        } else {
+          region = 'US'
+        }
+        resolve(region)
+      })
+    })
+  }
+
+  let youtube_check_result = '📺: '
+
+  await inner_check()
+    .then((code) => {
+      if (code === 'Not Available') {
+        youtube_check_result += '\u2612 |'
+      } else {
+        youtube_check_result += a(code.toUpperCase()) + ' |'
+      }
+    })
+    .catch((error) => {
+      youtube_check_result += '⌛️ |'
+    })
+
+  return youtube_check_result
+}
+
+async function check_netflix() {
+  let inner_check = (filmId) => {
+    return new Promise((resolve, reject) => {
+      let option = {
+        url: 'https://www.netflix.com/title/' + filmId,
+        headers: REQUEST_HEADERS,
+      }
+      $httpClient.get(option, function (error, response, data) {
+        if (error != null) {
+          reject('Error')
+          return
+        }
+
+        if (response.status === 403) {
+          reject('Not Available')
+          return
+        }
+
+        if (response.status === 404) {
+          resolve('Not Found')
+          return
+        }
+
+        if (response.status === 200) {
+          let url = response.headers['x-originating-url']
+          let region = url.split('/')[3]
+          region = region.split('-')[0]
+          if (region == 'title') {
+            region = 'US'
+          }
+          resolve(region)
+          return
+        }
+
+        reject('Error')
+      })
+    })
+  }
+
+  let netflix_check_result = 'NF: '
+
+  await inner_check(80062035)
+    .then((code) => {
+      if (code === 'Not Found') {
+        return inner_check(80018499)
+      }
+      netflix_check_result += a(code.toUpperCase()) + ' |'
+      return Promise.reject('BreakSignal')
+    })
+    .then((code) => {
+      if (code === 'Not Found') {
+        return Promise.reject('Not Available')
+      }
+
+      netflix_check_result += '⚠' + a(code.toUpperCase()) + ' |'
+      return Promise.reject('BreakSignal')
+    })
+    .catch((error) => {
+      if (error === 'BreakSignal') {
+        return
+      }
+      if (error === 'Not Available') {
+        netflix_check_result += '\u2612 |'
+        return
+      }
+      netflix_check_result += '⌛️ |'
+    })
+
+  return netflix_check_result
+}
+
+async function testDisneyPlus() {
+  try {
+    let { region, cnbl } = await Promise.race([testHomePage(), timeout(7000)])
+    console.log(`homepage: region=${region}, cnbl=${cnbl}`)
+    // 即将登陆
+    //  if (cnbl == 2) {
+    //    return { region, status: STATUS_COMING }
+    //  }
+    let { countryCode, inSupportedLocation } = await Promise.race([getLocationInfo(), timeout(7000)])
+    console.log(`getLocationInfo: countryCode=${countryCode}, inSupportedLocation=${inSupportedLocation}`)
+
+    region = countryCode ?? region
+    console.log("region:" + region)
+    // 即将登陆
+    if (inSupportedLocation === false || inSupportedLocation === 'false') {
+      return { region, status: STATUS_COMING }
+    } else {
+      // 支持解锁
+      return { region, status: STATUS_AVAILABLE }
+    }
+
+  } catch (error) {
+    console.log("error:" + error)
+
+    // 不支持解锁
+    if (error === 'Not Available') {
+      console.log("不支持")
+      return { status: STATUS_NOT_AVAILABLE }
+    }
+
+    // 检测超时
+    if (error === 'Timeout') {
+      return { status: STATUS_TIMEOUT }
+    }
+
+    return { status: STATUS_ERROR }
+  }
+}
+
+function getLocationInfo() {
+  return new Promise((resolve, reject) => {
+    let opts = {
+      url: 'https://disney.api.edge.bamgrid.com/graph/v1/device/graphql',
+      headers: {
+        'Accept-Language': 'en',
+        Authorization: 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84',
+        'Content-Type': 'application/json',
+        'User-Agent': UA,
+      },
+      body: JSON.stringify({
+        query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) { grant { grantType assertion } } }',
+        variables: {
+          input: {
+            applicationRuntime: 'chrome',
+            attributes: {
+              browserName: 'chrome',
+              browserVersion: '94.0.4606',
+              manufacturer: 'apple',
+              model: null,
+              operatingSystem: 'macintosh',
+              operatingSystemVersion: '10.15.7',
+              osDeviceIds: [],
+            },
+            deviceFamily: 'browser',
+            deviceLanguage: 'en',
+            deviceProfile: 'macosx',
+          },
+        },
+      }),
+    }
+
+    $httpClient.post(opts, function (error, response, data) {
+      if (error) {
+        reject('Error')
+        return
+      }
+
+      if (response.status !== 200) {
+        console.log('getLocationInfo: ' + data)
+        reject('Not Available')
+        return
+      }
+
+      data = JSON.parse(data)
+      if (data?.errors) {
+        console.log('getLocationInfo: ' + data)
+        reject('Not Available')
+        return
+      }
+
+      let {
+        token: { accessToken },
+        session: {
+          inSupportedLocation,
+          location: { countryCode },
+        },
+      } = data?.extensions?.sdk
+      resolve({ inSupportedLocation, countryCode, accessToken })
+    })
+  })
+}
+
+function testHomePage() {
+  return new Promise((resolve, reject) => {
+    let opts = {
+      url: 'https://www.disneyplus.com/',
+      headers: {
+        'Accept-Language': 'en',
+        'User-Agent': UA,
+      },
+    }
+
+    $httpClient.get(opts, function (error, response, data) {
+      if (error) {
+        reject('Error')
+        return
+      }
+      if (response.status !== 200 || data.indexOf('Sorry, Disney+ is not available in your region.') !== -1) {
+        reject('Not Available')
+        return
+      }
+
+      let match = data.match(/Region: ([A-Za-z]{2})[\s\S]*?CNBL: ([12])/)
+      if (!match) {
+        resolve({ region: '', cnbl: '' })
+        return
+      }
+
+      let region = match[1]
+      let cnbl = match[2]
+      resolve({ region, cnbl })
+    })
+  })
+}
+
+function timeout(delay = 5000) {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject('Timeout')
+    }, delay)
+  })
+}
+
+let gptcheck = " GPT: ";
+let url = "http://chat.openai.com/cdn-cgi/trace";
+let tf = ["T1", "XX", "AL", "DZ", "AD", "AO", "AG", "AR", "AM", "AU", "AT", "AZ", "BS", "BD", "BB", "BE", "BZ", "BJ", "BT", "BA", "BW", "BR", "BG", "BF", "CV", "CA", "CL", "CO", "KM", "CR", "HR", "CY", "DK", "DJ", "DM", "DO", "EC", "SV", "EE", "FJ", "FI", "FR", "GA", "GM", "GE", "DE", "GH", "GR", "GD", "GT", "GN", "GW", "GY", "HT", "HN", "HU", "IS", "IN", "ID", "IQ", "IE", "IL", "IT", "JM", "JP", "JO", "KZ", "KE", "KI", "KW", "KG", "LV", "LB", "LS", "LR", "LI", "LT", "LU", "MG", "MW", "MY", "MV", "ML", "MT", "MH", "MR", "MU", "MX", "MC", "MN", "ME", "MA", "MZ", "MM", "NA", "NR", "NP", "NL", "NZ", "NI", "NE", "NG", "MK", "NO", "OM", "PK", "PW", "PA", "PG", "PE", "PH", "PL", "PT", "QA", "RO", "RW", "KN", "LC", "VC", "WS", "SM", "ST", "SN", "RS", "SC", "SL", "SG", "SK", "SI", "SB", "ZA", "ES", "LK", "SR", "SE", "CH", "TH", "TG", "TO", "TT", "TN", "TR", "TV", "UG", "AE", "US", "UY", "VU", "ZM", "BO", "BN", "CG", "CZ", "VA", "FM", "MD", "PS", "KR", "TW", "TZ", "TL", "GB"];
+//let tff = ["plus", "on"];
+
+// 发送 HTTP 请求获取所在地信息
+$httpClient.get(url, function(error, response, data) {
+    if (data) {
+        let lines = data.split("\n");
+    let cf = lines.reduce((acc, line) => {
+        let [key, value] = line.split("=");
+        acc[key] = value;
+        return acc;
+        }, {});
+    let loc = a(cf.loc);
+
+    // 判断 ChatGPT 是否支持该国家/地区
+    let l = tf.indexOf(cf.loc);
+    let gpt;
+    if (l !== -1) {
+        return gptcheck += `${loc}`;
+        } else {
+        return gptcheck += "\u2612";
+        }
+    } else {
+        return gptcheck += "⌛️";
+        }
+})
