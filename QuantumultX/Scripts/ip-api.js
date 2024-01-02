@@ -177,7 +177,7 @@ if (y != 200) {
             'sony': '索尼',
             'fujit': '富士通',
             'rakut': '乐天',
-            'level': 'l3',
+            'level 3': 'l3',
             'comca': '康卡斯特',
             'chart': '特许',
             'centu': '世联',
