@@ -170,7 +170,6 @@ if (y != 200) {
             'goog': 'g',
             'chung': '中华电信',
             'kbro': '凯擘',
-            'akil': 'akile',
             'ntt': '日电',
             'kddi': '凯迪迪爱',
             'softb': '软银',
