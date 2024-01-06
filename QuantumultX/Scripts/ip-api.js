@@ -157,7 +157,7 @@ if (y != 200) {
             'micros': '微软',
             'g-c': 'gcore',
             'apert': '光圈',
-            'misak': '御坂',
+            'misaka ': '御坂',
             'appl': '',
             'jinx': '金克斯',
             'eons': '亿安',
