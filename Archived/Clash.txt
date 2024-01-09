@@ -1,3 +1,4 @@
+/*
 ruleset=DIRECT,[]GEOIP,CN
 ruleset=选,[]FINAL
 
