@@ -204,7 +204,7 @@ if ($response['statusCode'] != 200) {
     }
 
     var p = JSON['parse']($response['body']);
-    var q = a(p['countryCode']) + ' '/* + h(g(e(b(p['country'])), f(b(p['regionName']), b(p['city']))))*/;
+    var q = a(p['countryCode']) + ' ' + h(g(e(b(p['country'])), f(b(p['regionName']), b(p['city']))));
     var r = p['query'] + ' ➟ '/* + j(i(p['as']))*/;
     var s = p['query'];
     var t = '\n' + '🔎 结果 👇' + '\n' + '_________________________________' + '\n\n'/* + k(g(e(b(p['country'])), f(b(p['regionName']), b(p['city'])))) + l(p['as']) + '\n\n' + m(p['isp'], p['org']) + '\n\n' + n(p['lat']) + '    ' + o(p['lon'])*/ + '\n' + '_________________________________';
