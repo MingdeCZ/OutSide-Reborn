@@ -147,7 +147,7 @@ if ($response['statusCode'] != 200) {
             //'lg': '乐金',
         };
         if (v[u]) {
-            return v[u]['map'](j);
+            return v[u];
         } else {
             return u;
         }
