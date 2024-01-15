@@ -148,7 +148,7 @@ if ($response['statusCode'] != 200) {
         if (v[u]) {
             return v[u];
         } else {
-            return '🏝️∙' + u;
+            return '🌍∙' + u;
         }
     }
 
@@ -167,7 +167,7 @@ if ($response['statusCode'] != 200) {
     function l(u) {
         var v = '自治机构：', w = u['match'](/ (.*)/)[1], x = j(i(u));
         if (u) {
-            if (x['length'] < 3) {
+            if (x['length'] < 4) {
                 return v + w + ' (' + i(u) + ')';
             } else if (!isNaN(x['substring'](3))) {
                 return v + w;
