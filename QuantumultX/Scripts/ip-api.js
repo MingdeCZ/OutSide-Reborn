@@ -176,7 +176,7 @@ if ($response['statusCode'] != 200) {
     }
 
     function l(u, v, w) {
-    	var x = u['match'](/ (.*)/)[1], y = ' (' + i(u) + ')', z = x + y;
+    	var x = u['match'](/ (.*)/)[1], y = ' (' + i(u) + ')', z;
         if (u == '') {
             u += '暂无数据';
         }
@@ -186,17 +186,18 @@ if ($response['statusCode'] != 200) {
         if (w == '') {
             w += '未知';
         }
-        if (!isNaN(j(i(u))['substring'](1))) {
+        if (!isNaN(j(i(u))['substring'](3))) {
             y = '';
         }
+        z = x + y;
         if (x == v && v == w) {
-            return '自治机构同运营商同数据中心：' + z;
+            return '自治机构 同 运营商 同 数据中心：' + z;
         } else if (x == v) {
-            return '自治机构同运营商：' + z + '\n\n' + '数据中心：' + w;
+            return '自治机构 同 运营商：' + z + '\n\n' + '数据中心：' + w;
         } else if (x == w) {
-            return '自治机构同数据中心：' + z + '\n\n' + '运营商：' + v;
+            return '自治机构 同 数据中心：' + z + '\n\n' + '运营商：' + v;
         } else if (v == w) {
-            return '自治机构：' + z + '\n\n' + '运营商同数据中心：' + v;
+            return '自治机构：' + z + '\n\n' + '运营商 同 数据中心：' + v;
         } else {
             return '自治机构：' + z + '\n\n' + '运营商：' + v + '\n\n' + '数据中心：' + w;
         }
