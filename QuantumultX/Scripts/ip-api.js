@@ -148,7 +148,7 @@ if ($response['statusCode'] != 200) {
         if (v[u]) {
             return v[u];
         } else {
-            return '🌍' + u;
+            return '🌍∙' + u;
         }
     }
 
@@ -167,7 +167,7 @@ if ($response['statusCode'] != 200) {
     function l(u) {
         var v = '自治机构：', w = u['match'](/ (.*)/)[1];
         if (u) {
-            if (!isNaN(j(i(u)))) {
+            if (!isNaN(j(i(u))['substring'](2))) {
                 return v + w;
             } else {
                 return v + w + ' (' + i(u) + ')';
@@ -191,17 +191,17 @@ if ($response['statusCode'] != 200) {
 
     function n(u) {
         if (u > 0) {
-            return '北纬：' + u + '°';
+            return u + '°N';
         } else {
-            return '南纬：' + Math.abs(u) + '°';
+            return Math.abs(u) + '°S';
         }
     }
 
     function o(u) {
         if (u > 0) {
-            return '东经：' + u + '°';
+            return u + '°E';
         } else {
-            return '西经：' + Math.abs(u) + '°';
+            return Math.abs(u) + '°W';
         }
     }
 
