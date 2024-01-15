@@ -175,34 +175,38 @@ if ($response['statusCode'] != 200) {
         return '';
     }
 
-    function l(u) {
-        var v = '自治机构：', w = u['match'](/ (.*)/)[1], x = j(i(u));
-        if (u) {
-            if (x['length'] < 5) {
-                return v + w + ' (' + i(u) + ')';
-            } else if (!isNaN(x['substring'](4))) {
-                return v + w;
-            } else {
-                return v + w + ' (' + i(u) + ')';
-            }
-        } else {
-            return v + '暂无数据';
-        }
-    }
-
-    function m(u, v) {
+    function l(u, v, w) {
+    	var x = u['match'](/ (.*)/)[1], y = ' (' + i(u) + ')', z = x + y;
         if (u == '') {
-            return '运营商：待补充' + '\n\n' + '数据中心：' + v;
-        } else if (v == '') {
-            return '运营商：' + u + '\n\n' + '数据中心：未知';
-        } else if (u == v) {
-            return '运营商同数据中心：' + u;
+            u += '暂无数据';
+        }
+        if (v == '') {
+            v += '待补充';
+        }
+        if (w == '') {
+            w += '未知';
+        }
+        if (x['length'] < 5) {
+            y = ' (' + i(u) + ')';
+        } else if (!isNaN(j(i(u))['substring'](4))) {
+            y = '';
         } else {
-            return '运营商：' + u + '\n\n' + '数据中心：' + v;
+            y = ' (' + i(u) + ')';
+        }
+        if (x == v && v == w) {
+            return '自治机构同运营商同数据中心：' + z;
+        } else if (x == v) {
+            return '自治机构同运营商：' + z + '\n\n' + '数据中心：' + w;
+        } else if (x == w) {
+            return '自治机构同数据中心：' + z + '\n\n' + '运营商：' + v;
+        } else if (v == w) {
+            return '自治机构：' + z + '\n\n' + '运营商同数据中心：' + v;
+        } else {
+            return '自治机构：' + z + '\n\n' + '运营商：' + v + '\n\n' + '数据中心：' + w;
         }
     }
 
-    function n(u) {
+    function m(u) {
         if (u > 0) {
             return u + '°N';
         } else {
@@ -210,7 +214,7 @@ if ($response['statusCode'] != 200) {
         }
     }
 
-    function o(u) {
+    function n(u) {
         if (u > 0) {
             return u + '°E';
         } else {
@@ -222,8 +226,8 @@ if ($response['statusCode'] != 200) {
     var q = a(p['countryCode']) + ' ' + h(g(e(b(p['country'])), f(b(p['regionName']), b(p['city']))));
     var r = j(i(p['as'])) + ' ➟ ' + p['query'];
     var s = p['query'];
-    var t = '\n' + '🔎 结果 👇' + '\n' + '_________________________________' + '\n\n' + k(g(e(b(p['country'])), f(b(p['regionName']), b(p['city'])))) + l(p['as']) + '\n\n' + m(p['isp'], p['org']) + '\n\n' + '📍：' + n(p['lat']) + ' ◆ ' + o(p['lon']) + '\n' + '_________________________________';
-    
+    var t = '\n' + '🔎 结果 👇' + '\n' + '_________________________________' + '\n\n' + k(g(e(b(p['country'])), f(b(p['regionName']), b(p['city'])))) + l(p['as'], p['isp'], p['org']) + '\n\n' + '📍：' + m(p['lat']) + ' ◆ ' + n(p['lon']) + '\n' + '_________________________________';
+
     $done({
         'title': q,
         'subtitle': r,
