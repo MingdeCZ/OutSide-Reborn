@@ -186,7 +186,7 @@ if ($response['statusCode'] != 200) {
         if (w == '') {
             w += '未知';
         }
-        if (!isNaN(j(i(u))['substring'](3))) {
+        if (!isNaN(j(i(u))['substring'](2))) {
             y = '';
         }
         if (x == v && v == w) {
