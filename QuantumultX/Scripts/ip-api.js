@@ -186,7 +186,7 @@ if ($response['statusCode'] != 200) {
         if (w == '') {
             w += '未知';
         }
-        if (!isNaN(j(i(u))['substring'](3))) {
+        if (j(i(u))['includes']("🏝")) {
             y = '';
         }
         z = x + y;
