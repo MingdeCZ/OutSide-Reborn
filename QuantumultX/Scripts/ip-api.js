@@ -40,8 +40,7 @@ if ($response['statusCode'] != 200) {
     }
 
     function f(u, v) {
-        var w = new RegExp('[\u4E00-\u9FA5]+');
-        var x = '';
+        var w = new RegExp('[\u4E00-\u9FA5]+'), x = '';
         if (u['match'](/\ or\ /g)) {
             u = '';
         }
@@ -149,13 +148,12 @@ if ($response['statusCode'] != 200) {
         if (v[u]) {
             return v[u];
         } else {
-            return u;
+            return '🌍' + u;
         }
     }
 
     function k(u) {
-        v = u['indexOf'](' ');
-        w = '归属地：';
+        var v = u['indexOf'](' '), w = '归属地：';
         if (u['replace'](/\s+/g, '')['length'] > 9) {
             if (u['substring'](v + 1)['replace'](/\s+/g, '')['length'] > 9) {
                 return w + u['substring'](0, u['lastIndexOf'](' ')) + '\n\n';
@@ -167,9 +165,13 @@ if ($response['statusCode'] != 200) {
     }
 
     function l(u) {
-        var v = '自治机构：';
+        var v = '自治机构：', w = u['match'](/ (.*)/)[1];
         if (u) {
-            return v + u['match'](/ (.*)/)[1] + ' (' + i(u) + ')';
+            if (!isNaN(j(i(u)))) {
+                return v + w;
+            } else {
+                return v + w + ' (' + i(u) + ')';
+            }
         } else {
             return v + '暂无数据';
         }
@@ -205,9 +207,9 @@ if ($response['statusCode'] != 200) {
 
     var p = JSON['parse']($response['body']);
     var q = a(p['countryCode']) + ' ' + h(g(e(b(p['country'])), f(b(p['regionName']), b(p['city']))));
-    var r = p['query'] + ' ➟ ' + j(i(p['as']));
+    var r = j(i(p['as'])) + ' ➟ ' + p['query'];
     var s = p['query'];
-    var t = '\n' + '🔎 结果 👇' + '\n' + '_________________________________' + '\n\n' + k(g(e(b(p['country'])), f(b(p['regionName']), b(p['city'])))) + l(p['as']) + '\n\n' + m(p['isp'], p['org']) + '\n\n' + n(p['lat']) + '    ' + o(p['lon']) + '\n' + '_________________________________';
+    var t = '\n' + '🔎 结果 👇' + '\n' + '_________________________________' + '\n\n' + k(g(e(b(p['country'])), f(b(p['regionName']), b(p['city'])))) + l(p['as']) + '\n\n' + m(p['isp'], p['org']) + '\n\n' + '📍：' + n(p['lat']) + ' ◆ ' + o(p['lon']) + '\n' + '_________________________________';
     
     $done({
         'title': q,
