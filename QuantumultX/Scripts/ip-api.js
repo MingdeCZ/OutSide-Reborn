@@ -167,7 +167,7 @@ if ($response['statusCode'] != 200) {
     function l(u) {
         var v = '自治机构：', w = u['match'](/ (.*)/)[1];
         if (u) {
-            if (!isNaN(j(i(u))['substring'](2))) {
+            if (!isNaN(j(i(u))['substring'](3))) {
                 return v + w;
             } else {
                 return v + w + ' (' + i(u) + ')';
