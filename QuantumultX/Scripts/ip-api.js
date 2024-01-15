@@ -186,12 +186,8 @@ if ($response['statusCode'] != 200) {
         if (w == '') {
             w += '未知';
         }
-        if (x['length'] < 5) {
-            y = ' (' + i(u) + ')';
-        } else if (!isNaN(j(i(u))['substring'](4))) {
+        if (!isNaN(j(i(u))['substring'](4))) {
             y = '';
-        } else {
-            y = ' (' + i(u) + ')';
         }
         if (x == v && v == w) {
             return '自治机构同运营商同数据中心：' + z;
