@@ -148,7 +148,7 @@ if ($response['statusCode'] != 200) {
         if (v[u]) {
             return v[u];
         } else {
-            return '🌍∙' + u;
+            return '🏝️∙' + u;
         }
     }
 
