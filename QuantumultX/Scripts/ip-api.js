@@ -159,7 +159,7 @@ if ($response['statusCode'] != 200) {
         if (v[u]) {
             return v[u];
         } else {
-            return '🏝∙' + u;
+            return '🏝' + u;
         }
     }
 
@@ -186,7 +186,7 @@ if ($response['statusCode'] != 200) {
         if (w == '') {
             w += '未知';
         }
-        if (!isNaN(j(i(u))['substring'](4))) {
+        if (!isNaN(j(i(u))['substring'](3))) {
             y = '';
         }
         if (x == v && v == w) {
