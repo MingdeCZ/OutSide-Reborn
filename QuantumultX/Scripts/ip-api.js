@@ -169,7 +169,7 @@ if ($response['statusCode'] != 200) {
         if (u) {
             if (x['length'] < 3) {
                 return v + w + ' (' + i(u) + ')';
-            } else if (!isNaN(x['substring'](2))) {
+            } else if (!isNaN(x['substring'](3))) {
                 return v + w;
             } else {
                 return v + w + ' (' + i(u) + ')';
