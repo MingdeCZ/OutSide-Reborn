@@ -87,7 +87,7 @@ if ($response['statusCode'] != 200) {
         if (u) {
             return u['match'](/(?<=^.{2})\S\d+/g)[0];
         } else {
-            return '';
+            return '?';
         }
     }
 
@@ -165,9 +165,11 @@ if ($response['statusCode'] != 200) {
     }
 
     function l(u) {
-        var v = '自治机构：', w = u['match'](/ (.*)/)[1];
+        var v = '自治机构：', w = u['match'](/ (.*)/)[1], x = j(i(u);
         if (u) {
-            if (!isNaN(j(i(u))['substring'](3))) {
+            if (x['length'] < 4) {
+                return v + w + ' (' + i(u) + ')';
+            } else if (!isNaN(j(i(u))['substring'](3))) {
                 return v + w;
             } else {
                 return v + w + ' (' + i(u) + ')';
