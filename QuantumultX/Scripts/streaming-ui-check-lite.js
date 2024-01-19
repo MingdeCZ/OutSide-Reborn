@@ -12,12 +12,12 @@ const STATUS_TIMEOUT = -1;
 const STATUS_ERROR = -2;
 
 var opts = {
-  policy: $environment.params;
+  policy: $environment.params
 };
 
 var opts1 = {
   policy: $environment.params,
-  redirection: false;
+  redirection: false
 };
 
 function flag(s) {
@@ -28,7 +28,7 @@ let result = {
   "title": "节点：" + $environment.params,
   "Netflix": '<b>NF: </b>⚠️',
   "Disney": "<b>Dᐩ: </b>❗️",
-  "ChatGPT" : "<b>GPT: </b>‼️"
+  "ChatGPT" : "<b>GPT: </b>‼️",
   //"Google": "Google 定位：检测失败，请重试"
 };
 
@@ -54,9 +54,7 @@ const message = {
     } else if (status == STATUS_TIMEOUT) {
         result["Disney"] = "<b>Dᐩ: </b>⌛️";
     }
-    
     let content = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + "</br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + `</p>`;
-    
     $configuration.sendMessage(message).then(resolve => {
         if (resolve.error) {
             console.log(resolve.error);
@@ -93,7 +91,7 @@ const message = {
         // Normally will never happen.
         $done();
     });
-    $done({"title": result["title"], "htmlMessage": `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + '----------------------</br></br>' + "🚥 检测异常" + '</br></br>----------------------</br>' + output + `</p>`})
+    $done({"title": result["title"], "htmlMessage": `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + '----------------------</br></br>' + "🚥 检测异常" + '</br></br>----------------------</br>' + output + `</p>`});
 });
 
 async function testDisneyPlus() {
@@ -144,7 +142,11 @@ function getLocationInfo() {
             'Content-Type': 'application/json',
             'User-Agent': UA
         },
-        body: JSON.stringify({query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) { grant { grantType assertion } } }', variables: {input: {applicationRuntime: 'chrome', attributes: {browserName: 'chrome',  browserVersion: '94.0.4606', manufacturer: 'apple', model: null, operatingSystem: 'macintosh', operatingSystemVersion: '10.15.7', osDeviceIds: []}, deviceFamily: 'browser', deviceLanguage: 'en', deviceProfile: 'macosx'}}})
+        body: JSON.stringify({
+        query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) {grant{grantType assertion}}}',
+        variables: {input: {applicationRuntime: 'chrome', attributes: {
+            browserName: 'chrome',  browserVersion: '94.0.4606', manufacturer: 'apple', model: null, operatingSystem: 'macintosh', operatingSystemVersion: '10.15.7', osDeviceIds: []}, deviceFamily: 'browser', deviceLanguage: 'en', deviceProfile: 'macosx'}}
+        })
         };
         $task.fetch(opts0).then(response => {
             let data = response.body;
@@ -163,8 +165,8 @@ function getLocationInfo() {
         }, reason => {
             reject('Error');
             return
-        })
-    })
+        });
+    });
 }
 
 function testHomePage() {
@@ -175,8 +177,8 @@ function testHomePage() {
         headers: {
             'Accept-Language': 'en',
             'User-Agent': UA
-        },
         }
+        };
         $task.fetch(opts0).then(response => {
             let data = response.body;
             console.log("DisneyPlus: homepage" + response.statusCode);
@@ -198,8 +200,8 @@ function testHomePage() {
         }, reason => {
             reject('Error');
             return
-        })
-    })
+        });
+    });
 }
 
 function testPublicGraphqlAPI(accessToken) {
@@ -214,11 +216,11 @@ function testPublicGraphqlAPI(accessToken) {
         },
         body: JSON.stringify({
         query: 'query($preferredLanguages: [String!]!, $version: String) {globalization(version: $version) {uiLanguage(preferredLanguages: $preferredLanguages)}}',
-        variables: {version: '1.5.0', preferredLanguages: ['en']},
+        variables: {version: '1.5.0', preferredLanguages: ['en']}
         })
         };
         $task.fetch(opts).then(response => {
-            resolve(response.status === 200)
+            resolve(response.status === 200);
         }, reason => {
             reject('Error');
             return
@@ -272,12 +274,13 @@ function testNf(filmId) {
                 resolve("nf:" + result["Netflix"]);
                 return
             }
+            resolve("Netflix Test Error");
         }, reason => {
             result["Netflix"] = "<b>NF: </b>⌛️";
             console.log(result["Netflix"]);
             resolve("timeout");
-        })
-    })
+        });
+    });
 }
 
 support_countryCodes = ["T1","XX","AL","DZ","AD","AO","AG","AR","AM","AU","AT","AZ","BS","BD","BB","BE","BZ","BJ","BT","BA","BW","BR","BG","BF","CV","CA","CL","CO","KM","CR","HR","CY","DK","DJ","DM","DO","EC","SV","EE","FJ","FI","FR","GA","GM","GE","DE","GH","GR","GD","GT","GN","GW","GY","HT","HN","HU","IS","IN","ID","IQ","IE","IL","IT","JM","JP","JO","KZ","KE","KI","KW","KG","LV","LB","LS","LR","LI","LT","LU","MG","MW","MY","MV","ML","MT","MH","MR","MU","MX","MC","MN","ME","MA","MZ","MM","NA","NR","NP","NL","NZ","NI","NE","NG","MK","NO","OM","PK","PW","PA","PG","PE","PH","PL","PT","QA","RO","RW","KN","LC","VC","WS","SM","ST","SN","RS","SC","SL","SG","SK","SI","SB","ZA","ES","LK","SR","SE","CH","TH","TG","TO","TT","TN","TR","TV","UG","AE","US","UY","VU","ZM","BO","BN","CG","CZ","VA","FM","MD","PS","KR","TW","TZ","TL","GB"];
@@ -327,6 +330,6 @@ function testChatGPT() {
         }, reason => {
             console.log("ChatGPT-Error" + reason);
             resolve("ChatGPT failed");
-        })
-    })
+        });
+    });
 }
