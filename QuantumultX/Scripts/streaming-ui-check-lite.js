@@ -162,6 +162,14 @@ function testNf(filmId) {
     });
 }
 
+function timeout(delay = 5000) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            reject("Timeout")
+        }, delay)
+    });
+}
+
 async function testDisneyPlus() {
     try {
         let {region, cnbl} = await Promise.race([testHomePage(), timeout(7000)])
@@ -292,61 +300,6 @@ function testPublicGraphqlAPI(accessToken) {
         }, reason => {
             reject('Error');
             return
-        });
-    });
-}
-
-function timeout(delay = 5000) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            reject('Timeout')
-        }, delay)
-    });
-}
-
-function testNf(filmId) {
-    return new Promise((resolve, reject) => {
-        let option = {
-        url: 'https://www.netflix.com/title/' + filmId,
-        opts: opts,
-        timeout: 5200,
-        headers: {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36'
-        }
-        };
-        $task.fetch(option).then(response => {
-            //$notify("nf:"+response.statusCode);
-            console.log("nf:" + response.statusCode);
-            if (response.statusCode === 404) {
-                result["Netflix"] = "<b>NF: </b>©️";
-                console.log("nf:" + result["Netflix"]);
-                resolve('Not Found');
-                return
-            } else if (response.statusCode === 403) {
-                //console.log("nfnf");
-                result["Netflix"] = "<b>NF: </b>🚫";
-                console.log("nf:" + result["Netflix"]);
-                //$notify("nf:"+result["Netflix"]);
-                resolve('Not Available');
-                return
-            } else if (response.statusCode === 200) {
-                let url = response.headers['X-Originating-URL'];
-                let region = url.split('/')[3]
-                region = region.split('-')[0];
-                if (region == 'title') {
-                    region = 'us';
-                }
-                console.log("nf:" + region);
-                result["Netflix"] = "<b>NF: </b>" + flag(region);
-                //$notify("nf:" + result["Netflix"]);
-                resolve("nf:" + result["Netflix"]);
-                return
-            }
-            resolve("Netflix Test Error");
-        }, reason => {
-            result["Netflix"] = "<b>NF: </b>⌛️";
-            console.log(result["Netflix"]);
-            resolve("timeout");
         });
     });
 }
