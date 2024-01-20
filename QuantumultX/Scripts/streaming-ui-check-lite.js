@@ -289,12 +289,24 @@ function testHomePage() {
 
 function testPublicGraphqlAPI(accessToken) {
     return new Promise((resolve, reject) => {
-        //let opts = {url: "https://disney.api.edge.bamgrid.com/v1/public/graphql", headers: {"Accept-Language": "en", Authorization: accessToken, "Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36"}, body: JSON.stringify({query: "query($preferredLanguages: [String!]!, $version: String) {globalization(version: $version) {uiLanguage(preferredLanguages: $preferredLanguages)}}", variables: {version: "1.5.0", preferredLanguages: ["en"]}})};
-        $task.fetch({url: "https://disney.api.edge.bamgrid.com/v1/public/graphql", headers: {"Accept-Language": "en", Authorization: accessToken, "Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36"}, body: JSON.stringify({query: "query($preferredLanguages: [String!]!, $version: String) {globalization(version: $version) {uiLanguage(preferredLanguages: $preferredLanguages)}}", variables: {version: "1.5.0", preferredLanguages: ["en"]}})}).then(response => {
+        let opts = {
+        url: 'https://disney.api.edge.bamgrid.com/v1/public/graphql',
+        headers: {
+            'Accept-Language': 'en',
+            Authorization: accessToken,
+            'Content-Type': 'application/json',
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36'
+        },
+        body: JSON.stringify({
+        query: 'query($preferredLanguages: [String!]!, $version: String) {globalization(version: $version) {uiLanguage(preferredLanguages: $preferredLanguages)}}',
+        variables: {version: '1.5.0', preferredLanguages: ['en']}
+        })
+        };
+        $task.fetch(opts).then(response => {
             resolve(response.status === 200);
         }, reason => {
-            reject("Error");
-            return;
+            reject('Error');
+            return
         });
     });
 }
