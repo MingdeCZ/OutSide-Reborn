@@ -9,7 +9,7 @@ var optsgpt = {
 let result = {
     "title": "节点：" + $environment.params,
     "ChatGPT": "<font color = #8A2BE2>" + "<b>GPT</b>" + "</font>",
-    "Google": "<font color = #8A2BE2>" + "<b>Gg</b>" + "</font>",
+    "Google": "<font color = #8A2BE2>" + "<b>G</b>" + "</font>",
     "Netflix": "<font color = #8A2BE2>" + "<b>NF</b>" + "</font>",
     "Disney": "<font color = #8A2BE2>" + "<b>Dᐩ</b>" + "</font>"
 };
@@ -28,10 +28,10 @@ function flag(a) {
     //console.log(`Disney+: region = ${region}, status = ${status}`);
     if (status == 2) {
         //console.log(1);
-        result["Disney"] = "<font color = #FFD700>" + "<b>Dᐩ</b>" + "</font>" + ": " + flag(region);
+        result["Disney"] = "<font color = #FFD700>" + "<b>Dᐩ</b>" + "</font>" + "<b>: </b>" + flag(region);
     } else if (status == 1){
         //console.log(2);
-        result["Disney"] = "<font color = #05FF64>" + "<b>Dᐩ</b>" + "</font>" + ": " + flag(region);
+        result["Disney"] = "<font color = #05FF64>" + "<b>Dᐩ</b>" + "</font>" + "<b>: </b>" + flag(region);
         //console.log(result["Disney"]);
     } else if (status == 0) {
         //console.log(3);
@@ -89,7 +89,7 @@ function testGPT() {
                     let region = response.body.split("loc=")[1].split("\n")[0];
                     //console.log("ChatGPT Region: " + region);
                     if (["T1","XX","AL","DZ","AD","AO","AG","AR","AM","AU","AT","AZ","BS","BD","BB","BE","BZ","BJ","BT","BA","BW","BR","BG","BF","CV","CA","CL","CO","KM","CR","HR","CY","DK","DJ","DM","DO","EC","SV","EE","FJ","FI","FR","GA","GM","GE","DE","GH","GR","GD","GT","GN","GW","GY","HT","HN","HU","IS","IN","ID","IQ","IE","IL","IT","JM","JP","JO","KZ","KE","KI","KW","KG","LV","LB","LS","LR","LI","LT","LU","MG","MW","MY","MV","ML","MT","MH","MR","MU","MX","MC","MN","ME","MA","MZ","MM","NA","NR","NP","NL","NZ","NI","NE","NG","MK","NO","OM","PK","PW","PA","PG","PE","PH","PL","PT","QA","RO","RW","KN","LC","VC","WS","SM","ST","SN","RS","SC","SL","SG","SK","SI","SB","ZA","ES","LK","SR","SE","CH","TH","TG","TO","TT","TN","TR","TV","UG","AE","US","UY","VU","ZM","BO","BN","CG","CZ","VA","FM","MD","PS","KR","TW","TZ","TL","GB"].indexOf(region) != -1) {
-                        result["ChatGPT"] = "<font color = #05FF64>" + "<b>GPT</b>" + "</font>" + ": " + flag(region);
+                        result["ChatGPT"] = "<b>GPT: </b>" + flag(region);
                         //console.log("支持 ChatGPT");
                         resolve("支持 ChatGPT");
                         return;
@@ -140,7 +140,7 @@ function testNF(filmID) {
             //$notify("nf: " + response.statusCode);
             //console.log("nf: " + response.statusCode);
             if (response.statusCode === 404) {
-                result["Netflix"] = "<font color = #FFD700>" + "<b>NF</b>" + "</font>" + ": " + flag(region);
+                result["Netflix"] = "<font color = #FFD700>" + "<b>NF</b>" + "</font>" + "<b>: </b>" + flag(region);
                 //console.log("nf: " + result["Netflix"]);
                 resolve("Not Found");
                 return;
@@ -157,7 +157,7 @@ function testNF(filmID) {
                     region = "us";
                 }
                 //console.log("nf: " + region);
-                result["Netflix"] = "<font color = #05FF64>" + "<b>NF</b>" + "</font>" + ": " + flag(region);
+                result["Netflix"] = "<font color = #05FF64>" + "<b>NF</b>" + "</font>" + "<b>: </b>" + flag(region);
                 //$notify("nf: " + result["Netflix"]);
                 resolve("nf: " + result["Netflix"]);
                 return;
