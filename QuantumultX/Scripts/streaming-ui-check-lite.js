@@ -1,5 +1,4 @@
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36';
-
 // 即将登陆
 const STATUS_COMING = 2;
 // 支持解锁
@@ -10,20 +9,13 @@ const STATUS_NOT_AVAILABLE = 0;
 const STATUS_TIMEOUT = -1;
 // 检测异常
 const STATUS_ERROR = -2;
-
 var opts = {
   policy: $environment.params
 };
-
 var optsgpt = {
   policy: $environment.params,
   redirection: false
 };
-
-function flag(s) {
-    return String.fromCodePoint(...s.toUpperCase().split('').map((char) => 127397 + char.charCodeAt()));
-}
-
 let result = {
   "title": "节点：" + $environment.params,
   "Netflix": '<b>NF: </b>⚠️',
@@ -31,11 +23,14 @@ let result = {
   "ChatGPT" : "<b>GPT: </b>‼️",
   //"Google": "Google 定位：检测失败，请重试"
 };
-
 const message = {
   action: "get_policy_state",
   content: $environment.params
 };
+
+function flag(a) {
+    return String.fromCodePoint(...a.toUpperCase().split('').map((char) => 127397 + char.charCodeAt()));
+}
 
 ;(async () => {
     let [{region, status}] = await Promise.all([testDisneyPlus(), testNf(81280792), testChatGPT()]);
@@ -126,6 +121,43 @@ function testChatGPT() {
         }, reason => {
             console.log("ChatGPT-Error: " + reason);
             resolve("ChatGPT Failed");
+        });
+    });
+}
+
+function testNf(filmId) {
+    return new Promise((resolve, reject) => {
+        $task.fetch({url: "https://www.netflix.com/title/" + filmId, opts: opts, timeout: 5200, headers: {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"}}).then(response => {
+            //$notify("nf: " + response.statusCode);
+            console.log("nf: " + response.statusCode);
+            if (response.statusCode === 404) {
+                result["Netflix"] = "<b>NF: </b>©️";
+                console.log("nf: " + result["Netflix"]);
+                resolve("Not Found");
+                return;
+            } else if (response.statusCode === 403) {
+                //console.log("nfnf");
+                result["Netflix"] = "<b>NF: </b>🚫";
+                console.log("nf: " + result["Netflix"]);
+                //$notify("nf: " + result["Netflix"]);
+                resolve("Not Available");
+                return;
+            } else if (response.statusCode === 200) {
+                let region =  response.headers["X-Originating-URL"].split("/")[3].split("-")[0];
+                if (region == "title") {
+                    region = "us";
+                }
+                console.log("nf: " + region);
+                result["Netflix"] = "<b>NF: </b>" + flag(region);
+                //$notify("nf: " + result["Netflix"]);
+                resolve("nf: " + result["Netflix"]);
+                return;
+            }
+            resolve("Netflix Test Error");
+        }, reason => {
+            result["Netflix"] = "<b>NF: </b>⌛️";
+            console.log(result["Netflix"]);
+            resolve("timeout");
         });
     });
 }
