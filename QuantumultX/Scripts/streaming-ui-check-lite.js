@@ -35,7 +35,7 @@ function flag(a) {
 ;(async() => {
     let {region, status} = await Promise.all([testDisneyPlus(), testNf(81280792), testChatGPT()]);
     console.log("Netflix: " + result["Netflix"]);
-    console.log(`Disney+: region = ${region}, status = ${status}`);
+    console.log(`Disney+: region=${region}, status=${status}`);
     if (status == STATUS_COMING) {
         //console.log(1);
         result["Disney"] = "<b>Dᐩ: </b>🛵";
