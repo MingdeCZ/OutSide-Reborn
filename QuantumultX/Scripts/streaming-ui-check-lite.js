@@ -1,14 +1,14 @@
-const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36';
+const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36";
 // 即将登陆
-const STATUS_COMING = 2;
+//const STATUS_COMING = 2;
 // 支持解锁
-const STATUS_AVAILABLE = 1;
+//const STATUS_AVAILABLE = 1;
 // 不支持解锁
-const STATUS_NOT_AVAILABLE = 0;
+//const STATUS_NOT_AVAILABLE = 0;
 // 检测超时
-const STATUS_TIMEOUT = -1;
+//const STATUS_TIMEOUT = -1;
 // 检测异常
-const STATUS_ERROR = -2;
+//const STATUS_ERROR = -2;
 var opts = {
   policy: $environment.params
 };
@@ -17,11 +17,11 @@ var optsgpt = {
   redirection: false
 };
 let result = {
-  "title": "节点：" + $environment.params,
-  "Netflix": '<b>NF: </b>⚠️',
-  "Disney": "<b>Dᐩ: </b>❗️",
-  "ChatGPT" : "<b>GPT: </b>‼️",
-  //"Google": "Google 定位：检测失败，请重试"
+    "title": "节点：" + $environment.params,
+    "ChatGPT": "<b>GPT: </b>‼️",
+    //"Google": "Google 定位：检测失败，请重试",
+    "Netflix": "<b>NF: </b>⚠️",
+    "Disney": "<b>Dᐩ: </b>❗️",
 };
 const message = {
   action: "get_policy_state",
@@ -35,29 +35,29 @@ function flag(a) {
 ;(async() => {
     let [{region, status}] = await Promise.all([testDisneyPlus(), testNf(81280792), testChatGPT()]);
     console.log("Netflix: " + result["Netflix"]);
-    console.log(`Disney+: region=${region}, status=${status}`);
-    if (status == STATUS_COMING) {
+    console.log(`Disney+: region = ${region}, status = ${status}`);
+    if (status == 2) {
         //console.log(1);
         result["Disney"] = "<b>Dᐩ: </b>🛵";
-    } else if (status == STATUS_AVAILABLE){
+    } else if (status == 1){
         //console.log(2);
         result["Disney"] = "<b>Dᐩ: </b>" + flag(region);
         console.log(result["Disney"]);
-    } else if (status == STATUS_NOT_AVAILABLE) {
+    } else if (status == 0) {
         //console.log(3);
         result["Disney"] = "<b>Dᐩ: </b>❌";
-    } else if (status == STATUS_TIMEOUT) {
+    } else if (status == -1) {
         result["Disney"] = "<b>Dᐩ: </b>⌛️";
     }
-    let content = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + "</br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + `</p>`;
+    let content = '<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">' + "<br>" +  ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + "</p>";
     $configuration.sendMessage(message).then(resolve => {
         if (resolve.error) {
             console.log(resolve.error);
             $done();
         }
         if (resolve.ret) {
-            let output = JSON.stringify(resolve.ret[message.content])? JSON.stringify(resolve.ret[message.content]).replace(/\"|\[|\]/g,"").replace(/\,/g," ➟ ") : $environment.params;
-            let content = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + "</br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + `</p>`;
+            let output = JSON.stringify(resolve.ret[message.content])? JSON.stringify(resolve.ret[message.content]).replace(/\"|\[|\]/g, "").replace(/\,/g, " ➟ "): $environment.params;
+            let content = '<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">' + "<br>" +  ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + "</p>";
             //$notify(typeof(output),output);
             console.log(output);
             $done({"title": result["title"], "htmlMessage": content});
@@ -75,8 +75,8 @@ function flag(a) {
             $done();
         }
         if (resolve.ret) {
-            let output = JSON.stringify(resolve.ret[message.content])? JSON.stringify(resolve.ret[message.content]).replace(/\"|\[|\]/g,"").replace(/\,/g," ➟ ") : $environment.params;
-            let content = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + "</br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + `</p>`;
+            let output = JSON.stringify(resolve.ret[message.content]) ? JSON.stringify(resolve.ret[message.content]).replace(/\"|\[|\]/g, "").replace(/\,/g, " ➟ "): $environment.params;
+            let content = '<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">' + "<br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + "</p>";
             //$notify(typeof(output), output);
             console.log(output);
             $done({"title": result["title"], "htmlMessage": content});
@@ -86,7 +86,7 @@ function flag(a) {
         // Normally will never happen.
         $done();
     });
-    $done({"title": result["title"], "htmlMessage": `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + '----------------------</br></br>' + "🚥 检测异常" + '</br></br>----------------------</br>' + output + `</p>`});
+    $done({"title": result["title"], "htmlMessage": '<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">' + "----------------------<br><br>" + "🚥 检测异常" + "<br><br>----------------------<br>" + output + "</p>"});
 });
 
 function testChatGPT() {
@@ -180,29 +180,29 @@ async function testDisneyPlus() {
         console.log("region:" + region);
         // 即将登陆
         if (inSupportedLocation === false || inSupportedLocation === 'false') {
-            return {region, status: STATUS_COMING};
+            return {region, status: 2};
         } else {
             // 支持解锁
-            return {region, status: STATUS_AVAILABLE};
+            return {region, status: 1};
         }
         let support = await Promise.race([testPublicGraphqlAPI(accessToken),  timeout(7000)]);
         if (!support) {
-            return {status: STATUS_NOT_AVAILABLE};
+            return {status: 0};
         }
         // 支持解锁
-        return {region, status: STATUS_AVAILABLE};
+        return {region, status: 1};
     } catch (error) {
         console.log("error:" + error);
         // 不支持解锁
         if (error === 'Not Available') {
             console.log("不支持");
-            return {status: STATUS_NOT_AVAILABLE};
+            return {status: 0};
         }
         // 检测超时
         if (error === 'Timeout') {
-            return {status: STATUS_TIMEOUT};
+            return {status: -1};
         }
-        return {status: STATUS_ERROR};
+        return {status: -2};
     }
 }
 
