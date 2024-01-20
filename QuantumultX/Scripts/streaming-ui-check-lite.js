@@ -208,29 +208,14 @@ async function testDisneyPlus() {
 
 function getLocationInfo() {
     return new Promise((resolve, reject) => {
-        let opts0 = {
-        url: 'https://disney.api.edge.bamgrid.com/graph/v1/device/graphql',
-        method: "POST",
-        opts: opts,
-        headers: {
-            'Accept-Language': 'en',
-            "Authorization": 'ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84',
-            'Content-Type': 'application/json',
-            'User-Agent': UA
-        },
-        body: JSON.stringify({
-        query: 'mutation registerDevice($input: RegisterDeviceInput!) { registerDevice(registerDevice: $input) {grant{grantType assertion}}}',
-        variables: {input: {applicationRuntime: 'chrome', attributes: {
-            browserName: 'chrome',  browserVersion: '94.0.4606', manufacturer: 'apple', model: null, operatingSystem: 'macintosh', operatingSystemVersion: '10.15.7', osDeviceIds: []}, deviceFamily: 'browser', deviceLanguage: 'en', deviceProfile: 'macosx'}}
-        })
-        };
-        $task.fetch(opts0).then(response => {
+        //let opts0 = {url: "https://disney.api.edge.bamgrid.com/graph/v1/device/graphql", method: "POST", opts: opts, headers: {"Accept-Language": "en", "Authorization":  "ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84", "Content-Type": "application/json", "User-Agent": UA}, body: JSON.stringify({query: "mutation registerDevice($input: RegisterDeviceInput!) {registerDevice(registerDevice: $input) {grant{grantType assertion}}}", variables: {input: {applicationRuntime: "chrome", attributes: {browserName: "chrome", browserVersion: "94.0.4606", manufacturer:  "apple", model: null, operatingSystem: "macintosh",  operatingSystemVersion: "10.15.7", osDeviceIds: []},  deviceFamily: "browser", deviceLanguage: "en", deviceProfile:  "macosx"}}})};
+        $task.fetch({url: "https://disney.api.edge.bamgrid.com/graph/v1/device/graphql", method: "POST", opts: opts, headers: {"Accept-Language": "en", "Authorization":  "ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84", "Content-Type": "application/json", "User-Agent": UA}, body: JSON.stringify({query: "mutation registerDevice($input: RegisterDeviceInput!) {registerDevice(registerDevice: $input) {grant{grantType assertion}}}", variables: {input: {applicationRuntime: "chrome", attributes: {browserName: "chrome", browserVersion: "94.0.4606", manufacturer:  "apple", model: null, operatingSystem: "macintosh",  operatingSystemVersion: "10.15.7", osDeviceIds: []},  deviceFamily: "browser", deviceLanguage: "en", deviceProfile:  "macosx"}}})}).then(response => {
             let data = response.body;
-            console.log("locationinfo:" + response.statusCode);
+            console.log("locationinfo: " + response.statusCode);
             if (response.statusCode !== 200) {
-                console.log('getLocationInfo: ' + data);
-                reject('Not Available');
-                return
+                console.log("getLocationInfo: " + data);
+                reject("Not Available");
+                return;
             } else {
                 let {
                 token: {accessToken},
@@ -239,8 +224,8 @@ function getLocationInfo() {
                 resolve({inSupportedLocation, countryCode, accessToken});
             }
         }, reason => {
-            reject('Error');
-            return
+            reject("Error");
+            return;
         });
     });
 }
