@@ -172,7 +172,7 @@ function testNf(filmId) {
 function timeout(delay = 5000) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
-            reject("Timeout")
+            reject('Timeout')
         }, delay)
     });
 }
