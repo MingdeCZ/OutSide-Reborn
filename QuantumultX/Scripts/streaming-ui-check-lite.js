@@ -20,6 +20,10 @@ var opts1 = {
   redirection: false
 };
 
+function flag(s) {
+    return String.fromCodePoint(...s.toUpperCase().split('').map((char) => 127397 + char.charCodeAt()));
+}
+
 let result = {
   "title": "节点：" + $environment.params,
   "Netflix": '<b>NF: </b>⚠️',
@@ -32,10 +36,6 @@ const message = {
   action: "get_policy_state",
   content: $environment.params
 };
-
-function flag(a) {
-    return String.fromCodePoint(...a.toUpperCase().split("").map((char) => 127397 + char.charCodeAt()));
-}
 
 ;(async () => {
     let [{region, status}] = await Promise.all([testDisneyPlus(), testNf(81280792), testChatGPT()]);
