@@ -247,35 +247,28 @@ function getLocationInfo() {
 
 function testHomePage() {
     return new Promise((resolve, reject) => {
-        let opts0 = {
-        url: 'https://www.disneyplus.com/',
-        opts: opts,
-        headers: {
-            'Accept-Language': 'en',
-            'User-Agent': UA
-        }
-        };
-        $task.fetch(opts0).then(response => {
+        //let opts0 = {url: "https://www.disneyplus.com/", opts: opts, headers: {"Accept-Language": "en", "User-Agent": UA}};
+        $task.fetch({url: "https://www.disneyplus.com/", opts: opts, headers: {"Accept-Language": "en", "User-Agent": UA}}).then(response => {
             let data = response.body;
-            console.log("DisneyPlus: homepage" + response.statusCode);
-            if (response.statusCode !== 200 || data.indexOf('not available in your region') !== -1) {
-                reject('Not Available');
-                return
+            console.log("DisneyPlus: homepage " + response.statusCode);
+            if (response.statusCode !== 200 || data.indexOf("not available in your region") !== -1) {
+                reject("Not Available");
+                return;
             } else {
                 let match = data.match(/Region: ([A-Za-z]{2})[\s\S]*?CNBL: ([12])/);
                 if (!match) {
-                    resolve({region: '', cnbl: ''});
-                    return
+                    resolve({region: "", cnbl: ""});
+                    return;
                 } else {
                     let region = match[1];
                     let cnbl = match[2];
-                    //console.log("homepage" + region+cnbl);
+                    //console.log("homepage: " + region + cnbl);
                     resolve({region, cnbl});
                 }
             }
         }, reason => {
-            reject('Error');
-            return
+            reject("Error");
+            return;
         });
     });
 }
