@@ -23,7 +23,7 @@ function flag(a) {
 }
 
 ;(async() => {
-    let [{region, status}] = await Promise.all([testGPT(), testGg(), testNF(81280792), testDSNY()]);
+    let [{region, status}] = await Promise.all([testDSNY(), testGg(), testNF(81280792), testGPT()]);
     //console.log("Netflix: " + result["Netflix"]);
     //console.log(`Disney+: region = ${region}, status = ${status}`);
     if (status == 2) {
