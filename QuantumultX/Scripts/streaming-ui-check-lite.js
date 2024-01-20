@@ -1,14 +1,14 @@
 const UA = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36";
 // 即将登陆
-//const STATUS_COMING = 2;
+const STATUS_COMING = 2;
 // 支持解锁
-//const STATUS_AVAILABLE = 1;
+const STATUS_AVAILABLE = 1;
 // 不支持解锁
-//const STATUS_NOT_AVAILABLE = 0;
+const STATUS_NOT_AVAILABLE = 0;
 // 检测超时
-//const STATUS_TIMEOUT = -1;
+const STATUS_TIMEOUT = -1;
 // 检测异常
-//const STATUS_ERROR = -2;
+const STATUS_ERROR = -2;
 var opts = {
     policy: $environment.params
 };
@@ -180,36 +180,36 @@ function timeout(delay = 5000) {
 async function testDisneyPlus() {
     try {
         let {region, cnbl} = await Promise.race([testHomePage(), timeout(7000)])
-        console.log(`homepage: region = ${region}, cnbl = ${cnbl}`);
+        console.log(`homepage: region=${region}, cnbl=${cnbl}`);
         let {countryCode, inSupportedLocation, accessToken} = await Promise.race([getLocationInfo(), timeout(7000)]);
         console.log(`getLocationInfo: countryCode = ${countryCode},  inSupportedLocation = ${inSupportedLocation}`);
         region = countryCode ?? region;
-        console.log("region: " + region);
+        console.log("region:" + region);
         // 即将登陆
-        if (inSupportedLocation === false || inSupportedLocation === "false") {
-            return {region, status: 2};
+        if (inSupportedLocation === false || inSupportedLocation === 'false') {
+            return {region, status: STATUS_COMING};
         } else {
             // 支持解锁
-            return {region, status: 1};
+            return {region, status: STATUS_AVAILABLE};
         }
-        //let support = await Promise.race([testPublicGraphqlAPI(accessToken),  timeout(7000)]);
-        if (!await Promise.race([testPublicGraphqlAPI(accessToken),  timeout(7000)])) {
-            return {status: 0};
+        let support = await Promise.race([testPublicGraphqlAPI(accessToken),  timeout(7000)]);
+        if (!support) {
+            return {status: STATUS_NOT_AVAILABLE};
         }
         // 支持解锁
-        return {region, status: 1};
+        return {region, status: STATUS_AVAILABLE};
     } catch (error) {
-        console.log("error: " + error);
+        console.log("error:" + error);
         // 不支持解锁
-        if (error === "Not Available") {
+        if (error === 'Not Available') {
             console.log("不支持");
-            return {status: 0};
+            return {status: STATUS_NOT_AVAILABLE};
         }
         // 检测超时
-        if (error === "Timeout") {
-            return {status: -1};
+        if (error === 'Timeout') {
+            return {status: STATUS_TIMEOUT};
         }
-        return {status: -2};
+        return {status: STATUS_ERROR};
     }
 }
 
