@@ -32,10 +32,10 @@ function flag(a) {
     return String.fromCodePoint(...a.toUpperCase().split('').map((char) => 127397 + char.charCodeAt()));
 }
 
-;(async () => {
-    let [{region, status}] = await Promise.all([testDisneyPlus(), testNf(81280792), testChatGPT()]);
+;(async() => {
+    let {region, status} = await Promise.all([testDisneyPlus(), testNf(81280792), testChatGPT()]);
     console.log("Netflix: " + result["Netflix"]);
-    console.log(`Disney+: region=${region}, status=${status}`);
+    console.log(`Disney+: region = ${region}, status = ${status}`);
     if (status == STATUS_COMING) {
         //console.log(1);
         result["Disney"] = "<b>Dᐩ: </b>🛵";
@@ -49,15 +49,15 @@ function flag(a) {
     } else if (status == STATUS_TIMEOUT) {
         result["Disney"] = "<b>Dᐩ: </b>⌛️";
     }
-    let content = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + "</br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + `</p>`;
+    let content = '<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">' + "<br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + "</p>";
     $configuration.sendMessage(message).then(resolve => {
         if (resolve.error) {
             console.log(resolve.error);
             $done();
         }
         if (resolve.ret) {
-            let output = JSON.stringify(resolve.ret[message.content])? JSON.stringify(resolve.ret[message.content]).replace(/\"|\[|\]/g,"").replace(/\,/g," ➟ ") : $environment.params;
-            let content = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + "</br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + `</p>`;
+            let output = JSON.stringify(resolve.ret[message.content])? JSON.stringify(resolve.ret[message.content]).replace(/\"|\[|\]/g, "").replace(/\,/g, " ➟ "): $environment.params;
+            let content = '<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">' + "<br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + "</p>";
             //$notify(typeof(output),output);
             console.log(output);
             $done({"title": result["title"], "htmlMessage": content});
@@ -75,8 +75,8 @@ function flag(a) {
             $done();
         }
         if (resolve.ret) {
-            let output = JSON.stringify(resolve.ret[message.content])? JSON.stringify(resolve.ret[message.content]).replace(/\"|\[|\]/g,"").replace(/\,/g," ➟ ") : $environment.params;
-            let content = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + "</br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + `</p>`;
+            let output = JSON.stringify(resolve.ret[message.content])? JSON.stringify(resolve.ret[message.content]).replace(/\"|\[|\]/g, "").replace(/\,/g, " ➟ "): $environment.params;
+            let content = '<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">' + "<br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + "</p>";
             //$notify(typeof(output), output);
             console.log(output);
             $done({"title": result["title"], "htmlMessage": content});
@@ -86,7 +86,7 @@ function flag(a) {
         // Normally will never happen.
         $done();
     });
-    $done({"title": result["title"], "htmlMessage": `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + '----------------------</br></br>' + "🚥 检测异常" + '</br></br>----------------------</br>' + output + `</p>`});
+    $done({"title": result["title"], "htmlMessage": '<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">' + "----------------------<br><br>" + "🚥 检测异常" + "<br><br>----------------------<br>" + output + "</p>"});
 });
 
 function testChatGPT() {
