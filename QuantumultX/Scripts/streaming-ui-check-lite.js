@@ -37,17 +37,17 @@ function flag(a) {
     let {region, status} = await Promise.all([testDisneyPlus(), testNf(81280792), testChatGPT()]);
     console.log("Netflix: " + result["Netflix"]);
     console.log(`Disney+: region = ${region}, status = ${status}`);
-    if (status == 2) {
+    if (status == STATUS_COMING) {
         //console.log(1);
         result["Disney"] = "<b>Dᐩ: </b>🛵";
-    } else if (status == 1){
+    } else if (status == STATUS_AVAILABLE){
         //console.log(2);
         result["Disney"] = "<b>Dᐩ: </b>" + flag(region);
         console.log(result["Disney"]);
-    } else if (status == 0) {
+    } else if (status == STATUS_NOT_AVAILABLE) {
         //console.log(3);
         result["Disney"] = "<b>Dᐩ: </b>❌";
-    } else if (status == -1) {
+    } else if (status == STATUS_TIMEOUT) {
         result["Disney"] = "<b>Dᐩ: </b>⌛️";
     }
     let content = '<p style = "text-align: center; font-family: -apple-system;  font-size: large; font-weight: thin">' + "<br>" + ([result["Netflix"], result["ChatGPT"], result["Disney"]]).join("｜") + "</font>" + '</p>';
