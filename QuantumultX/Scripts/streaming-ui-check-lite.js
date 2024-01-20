@@ -11,7 +11,7 @@ let result = {
     "ChatGPT": "<b>GPT: </b>‼️",
     //"Google": "Google 定位：检测失败，请重试",
     "Netflix": "<b>NF: </b>⚠️",
-    "Disney": "<b>Dᐩ: </b>❗️",
+    "Disney": "<b>Dᐩ: </b>❗️"
 };
 const message = {
   action: "get_policy_state",
@@ -23,7 +23,7 @@ function flag(a) {
 }
 
 ;(async() => {
-    let [{region, status}] = await Promise.all([testDisneyPlus(), testNf(81280792), testChatGPT()]);
+    let [{region, status}] = await Promise.all([testDSNY(), testNF(81280792), testGPT()]);
     //console.log("Netflix: " + result["Netflix"]);
     //console.log(`Disney+: region = ${region}, status = ${status}`);
     if (status == 2) {
@@ -79,7 +79,7 @@ function flag(a) {
     $done({"title": result["title"], "htmlMessage": '<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">' + "----------------------<br><br>" + "🚥 检测异常" + "<br><br>----------------------<br>" + output + "</p>"});
 });
 
-function testChatGPT() {
+function testGPT() {
     return new Promise((resolve, reject) => {
         $task.fetch({url: "https://chat.openai.com/", opts: optsgpt, timeout: 2800}).then(response => {
             //console.log("ChatGPT Main Test");
@@ -115,7 +115,7 @@ function testChatGPT() {
     });
 }
 
-function testNf(filmId) {
+function testNF(filmId) {
     return new Promise((resolve, reject) => {
         $task.fetch({url: "https://www.netflix.com/title/" + filmId, opts: opts, timeout: 5200, headers: {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.61 Safari/537.36"}}).then(response => {
             //$notify("nf: " + response.statusCode);
@@ -152,7 +152,7 @@ function testNf(filmId) {
     });
 }
 
-function timeout(delay = 5000) {
+function DSNYTO(delay = 5000) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             reject("Timeout")
@@ -160,11 +160,11 @@ function timeout(delay = 5000) {
     });
 }
 
-async function testDisneyPlus() {
+async function testDSNY() {
     try {
-        let {region, cnbl} = await Promise.race([testHomePage(), timeout(7000)])
+        let {region, cnbl} = await Promise.race([testDSNYHP(), DSNYTO(7000)])
         //console.log(`homepage: region=${region}, cnbl=${cnbl}`);
-        let {countryCode, inSupportedLocation, accessToken} = await Promise.race([getLocationInfo(), timeout(7000)]);
+        let {countryCode, inSupportedLocation, accessToken} = await Promise.race([getDSNYLI(), DSNYTO(7000)]);
         //console.log(`getLocationInfo: countryCode = ${countryCode},  inSupportedLocation = ${inSupportedLocation}`);
         region = countryCode ?? region;
         //console.log("region: " + region);
@@ -175,8 +175,8 @@ async function testDisneyPlus() {
             // 支持解锁
             return {region, status: 1};
         }
-        //let support = await Promise.race([testPublicGraphqlAPI(accessToken),  timeout(7000)]);
-        if (!await Promise.race([testPublicGraphqlAPI(accessToken), timeout(7000)])) {
+        //let support = await Promise.race([testDSNYAPI(accessToken),  DSNYTO(7000)]);
+        if (!await Promise.race([testDSNYAPI(accessToken), DSNYTO(7000)])) {
             return {status: 0};
         }
         // 支持解锁
@@ -196,7 +196,7 @@ async function testDisneyPlus() {
     }
 }
 
-function getLocationInfo() {
+function getDSNYLI() {
     return new Promise((resolve, reject) => {
         $task.fetch({url: "https://disney.api.edge.bamgrid.com/graph/v1/device/graphql", method: "POST", opts: opts, headers: {"Accept-Language": "en", "Authorization": "ZGlzbmV5JmJyb3dzZXImMS4wLjA.Cu56AgSfBTDag5NiRA81oLHkDZfu5L3CKadnefEAY84", "Content-Type": "application/json", "User-Agent": UA}, body: JSON.stringify({query: "mutation registerDevice($input: RegisterDeviceInput!) {registerDevice(registerDevice: $input) {grant{grantType assertion}}}", variables: {input: {applicationRuntime: "chrome", attributes: {browserName: "chrome", browserVersion: "94.0.4606", manufacturer:  "apple", model: null, operatingSystem: "macintosh",  operatingSystemVersion: "10.15.7", osDeviceIds: []},  deviceFamily: "browser", deviceLanguage: "en", deviceProfile:  "macosx"}}})}).then(response => {
             let data = response.body;
@@ -219,7 +219,7 @@ function getLocationInfo() {
     });
 }
 
-function testHomePage() {
+function testDSNYHP() {
     return new Promise((resolve, reject) => {
         $task.fetch({url: "https://www.disneyplus.com/", opts: opts, headers: {"Accept-Language": "en", "User-Agent": UA}}).then(response => {
             let data = response.body;
@@ -246,7 +246,7 @@ function testHomePage() {
     });
 }
 
-function testPublicGraphqlAPI(accessToken) {
+function testDSNYAPI(accessToken) {
     return new Promise((resolve, reject) => {
         $task.fetch({url: "https://disney.api.edge.bamgrid.com/v1/public/graphql", headers: {"Accept-Language": "en", Authorization: accessToken, "Content-Type": "application/json", "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.71 Safari/537.36"}, body: JSON.stringify({query: "query($preferredLanguages: [String!]!, $version: String) {globalization(version: $version) {uiLanguage(preferredLanguages: $preferredLanguages)}}", variables: {version: "1.5.0", preferredLanguages: ["en"]}})}).then(response => {
             resolve(response.status === 200);
