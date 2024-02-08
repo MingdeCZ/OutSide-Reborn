@@ -49,7 +49,7 @@ if ($response['statusCode'] != 200) {
             u = '';
         }
         if (u && v) {
-            x = u + '•' + v;
+            x = u + '・' + v;
         } else if (u) {
             x = u;
         } else if (v) {
@@ -62,7 +62,7 @@ if ($response['statusCode'] != 200) {
         if (u == v || u == '') {
             return v;
         } else {
-            return u + '•' + v;
+            return u + '・' + v;
         }
     }
 
