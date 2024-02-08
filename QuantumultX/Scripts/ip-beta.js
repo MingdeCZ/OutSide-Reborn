@@ -27,8 +27,8 @@ if ($response['statusCode'] != 200) {
 
     function e(u) {
         u = b(u);
-        if (u == '中华民国') {
-            return '台湾';
+        if (u == '香港' || u == '新加坡' || u == '台湾' || u == '澳门' || u == '美国' || u == '日本' || u == '韩国'|| u == '中华民国') {
+        return '';
         } else {
             return u;
         }
