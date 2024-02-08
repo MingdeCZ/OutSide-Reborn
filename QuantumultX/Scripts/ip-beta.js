@@ -1,10 +1,5 @@
 if ($response['statusCode'] != 200) {
-    $done({
-        'title': '⚠️ 落地失联',
-        'subtitle': '错误代码：' + $response['statusCode'],
-        'ip': '127.0.0.1',
-        'description': '\n' + '🔎 结果 👇' + '\n' + '_________________________________' + '\n\n' + '同左上角↖️'
-    });
+    $done({});
 } else {
     function a(u) {
         return String['fromCodePoint'](...u['toUpperCase']()['split']('')['map']((char) => 127397 + char['charCodeAt']()));
@@ -67,7 +62,7 @@ if ($response['statusCode'] != 200) {
         if (u == v || u == '') {
             return v;
         } else {
-            return u + ' ' + v;
+            return u + '•' + v;
         }
     }
 
