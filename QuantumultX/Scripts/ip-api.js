@@ -146,7 +146,7 @@ if ($response['statusCode'] != 200) {
         if (u > 0) {
             return u + '°N';
         } else {
-            return Math.abs(u) + '°S';
+            return Math['abs'](u) + '°S';
         }
     }
 
@@ -154,15 +154,11 @@ if ($response['statusCode'] != 200) {
         if (u > 0) {
             return u + '°E';
         } else {
-            return Math.abs(u) + '°W';
+            return Math['abs'](u) + '°W';
         }
     }
 
-    var p = JSON['parse']($response['body']);
-    var q = a(p['countryCode']) + ' ' + h(g(e(b(p['country'])), f(b(p['regionName']), b(p['city']))));
-    var r = j(i(p['as'])) + ' ➟ ' + p['query'];
-    var s = p['query'];
-    var t = '\n' + '🔎 结果 👇' + '\n' + '_________________________________' + '\n\n' + k(g(e(b(p['country'])), f(b(p['regionName']), b(p['city'])))) + l(p['as'], p['isp'], p['org']) + '\n\n' + '📍: ' + m(p['lat']) + ' ◆ ' + n(p['lon']) + '\n' + '_________________________________';
+    var p = JSON['parse']($response['body']), q = a(p['countryCode']) + ' ' + h(g(e(b(p['country'])), f(b(p['regionName']), b(p['city'])))), r = j(i(p['as'])) + ' ➟ ' + p['query'], s = p['query'], t = '\n' + '🔎 结果 👇' + '\n' + '_________________________________' + '\n\n' + k(g(e(b(p['country'])), f(b(p['regionName']), b(p['city'])))) + l(p['as'], p['isp'], p['org']) + '\n\n' + '📍: ' + m(p['lat']) + ' ◆ ' + n(p['lon']) + '\n' + '_________________________________';
 
     $done({
         'title': q,
