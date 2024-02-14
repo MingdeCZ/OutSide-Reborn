@@ -85,13 +85,13 @@ function i(m, n, o) {
     if (p == n && n == o) {
         return '自治机构 同 运营商 同 数据中心：' + r;
     } else if (p == n) {
-        return '自治机构 同 运营商：' + r + '\n\n' + '数据中心：' + o;
+        return '自治机构 同 运营商：' + r + '\n' + '数据中心：' + o;
     } else if (p == o) {
-        return '自治机构 同 数据中心：' + r + '\n\n' + '运营商：' + n;
+        return '自治机构 同 数据中心：' + r + '\n' + '运营商：' + n;
     } else if (v == o) {
-        return '自治机构：' + r + '\n\n' + '运营商 同 数据中心：' + n;
+        return '自治机构：' + r + '\n' + '运营商 同 数据中心：' + n;
     } else {
-        return '自治机构：' + r + '\n\n' + '运营商：' + n + '\n\n' + '数据中心：' + o;
+        return '自治机构：' + r + '\n' + '运营商：' + n + '\n' + '数据中心：' + o;
     }
 }
 
@@ -111,7 +111,7 @@ function k(m) {
     }
 }
 
-$httpClient['get']("http://ip-api.com/json/?lang=zh-CN", (error, response, data) => {
+$httpClient['get']('http://ip-api.com/json/?lang=zh-CN', (error, response, data) => {
     let jsonData = JSON['parse'](data)
     let country = jsonData.country
     let flag = g(jsonData.countryCode)
@@ -123,11 +123,6 @@ $httpClient['get']("http://ip-api.com/json/?lang=zh-CN", (error, response, data)
     let lat = jsonData.lat
     let lon = jsonData.lon
     let ip = jsonData.query
-    body = {
-    title: "节点信息🔎结果👇",
-    content: "归属地：" + f(d(a(country)), e(a(regionName), a(city))) + " ➟ ⟦" + flag + "⟧" + "\nIP：" + ip + "\n" + i(as, isp, org) + "\n" + '📍: ' + j(lat) + " ◆ " + k(lon),
-    icon: "globe.asia.australia.fill",
-    backgroundColor: '#0C9DFA'
-    }
-    $done(body)
+
+    $done({title: '节点信息🔎结果👇', content: '归属地：' + f(d(a(country)), e(a(regionName), a(city))) + ' ➟ ⟦' + flag + '⟧' + '\nIP：' + ip + '\n' + i(as, isp, org) + '\n' + '📍: ' + j(lat) + ' ◆ ' + k(lon), icon: 'globe.asia.australia.fill', backgroundColor: '#0C9DFA'})
 })
