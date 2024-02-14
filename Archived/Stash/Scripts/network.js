@@ -112,17 +112,17 @@ function k(m) {
 }
 
 $httpClient['get']('http://ip-api.com/json/?lang=zh-CN', (error, response, data) => {
-    let jsonData = JSON['parse'](data)
-    let country = jsonData.country
-    let flag = g(jsonData.countryCode)
-    let city = jsonData.city
-    let regionName = jsonData.regionName
-    let isp = jsonData.isp
-    let org = jsonData.org
-    let as = jsonData.as
-    let lat = jsonData.lat
-    let lon = jsonData.lon
-    let ip = jsonData.query
+    var l = JSON['parse'](data);
+    //let country = l.country
+    //let flag = g(l.countryCode)
+    //let city = l.city
+    //let regionName = l.regionName
+    //let isp = l.isp
+    //let org = l.org
+    //let as = l.as
+    //let lat = l.lat
+    //let lon = l.lon
+    //let ip = l.query
 
-    $done({title: '节点信息🔎结果👇', content: '归属地：' + f(d(a(country)), e(a(regionName), a(city))) + ' ➟ ⟦' + flag + '⟧' + '\nIP：' + ip + '\n' + i(as, isp, org) + '\n' + '📍: ' + j(lat) + ' ◆ ' + k(lon), icon: 'globe.asia.australia.fill', backgroundColor: '#0C9DFA'})
+    $done({title: '节点信息🔎结果👇', content: '归属地：' + f(d(a(l.country)), e(a(l.regionName), a(l.city))) + ' ➟ ⟦' + g(l.countryCode) + '⟧' + '\nIP：' + l.query + '\n' + i(l.as, l.isp, l.org) + '\n' + '📍: ' + j(l.lat) + ' ◆ ' + k(l.lon), icon: 'globe.asia.australia.fill', backgroundColor: '#0C9DFA'})
 })
