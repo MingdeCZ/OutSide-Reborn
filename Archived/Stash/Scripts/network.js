@@ -67,7 +67,7 @@ function h(m) {
     if (m) {
         return m['match'](/(?<=^.{2})\S\d+/g)[0];
     } else {
-        return '?'
+        return '?';
     }
 }
 
