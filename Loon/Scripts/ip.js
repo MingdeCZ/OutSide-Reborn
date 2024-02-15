@@ -218,7 +218,7 @@ async function lookUp(t, e, o) {
             hideIP && (addr = HIP(addr));
             province == city && (province = "");
             isp = isp.replace(/.*广电.*/g, "广电");
-            bgn = `<b><font>归属：</font></b><font>${country} ${province} ${city}  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(latitude)}&nbsp&nbsp&nbsp${k(longitude)} </font><br>`;
+            bgn = `<b><font>归属：</font></b><font>${country} ${province} ${city}  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍: </font></b><font>${j(latitude)} &nbsp&nbsp${k(longitude)}</font><br>`;
         } else {
             bgn = `<br>BIli Api Failed 查询超时!<br>`;
         }
@@ -228,9 +228,9 @@ async function lookUp(t, e, o) {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon, tk} = Arvl;
             hideIP && (query = HIP(query));
             var lquery = query;
-            outs = `<b><font>归属</font>：</b><font>${f(d(a(country)), e(a(regionName), a(city)))}&nbsp➟&nbsp⟦${g(countryCode)}⟧&nbsp; ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍</font>:&nbsp</b><font>${j(lat)}&nbsp&nbsp&nbsp${k(lon)}</font><br>`;
+            outs = `<b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍: </font></b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
         } else {
-            let ArvlFailed = "查询失败: " + JSON.stringify(Arvl), outs = `<br>ArvlFailed 超时!<br>`;
+            let ArvlFailed = "查询失败：" + JSON.stringify(Arvl), outs = `<br>ArvlFailed 超时!<br>`;
         }
         
         if (nodeIp == lquery) {
@@ -245,7 +245,7 @@ async function lookUp(t, e, o) {
                     city == province && (city = "");
                     isp = isp.replace(/中国/g, "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>-------------------<br>`;
+                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍: </font></b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>----------------------------`;
                 } else {
                     INFailed = "国内入口信息查询失败：" + JSON.stringify(inDprt);
                     ins = `<br>SPFailed 超时!<br><br>`;
@@ -262,7 +262,7 @@ async function lookUp(t, e, o) {
                     hideIP && (query = HIP(query));
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>-------------------<br>`;
+                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍: </font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>----------------------------`;
                 } else {
                     INFailed = "国外入口信息查询失败：" + JSON.stringify(outDprt);
                     ins = `<br>INFailed 超时!<br><br>`;
@@ -270,22 +270,12 @@ async function lookUp(t, e, o) {
             }
         }
 
-        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br>--------------------<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>--------------------<br>--------------------------------<br>入网信息🔎结果👇<br><br>${bgn}-------------------${ins}落地信息🔎结果👇<br><br>${outs}_____________________________`;
-        $done({
-            title: nodeName,
-            htmlMessage: message
-        });
+        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br>--------------------<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>--------------------<br>---------------------------------<br>入网信息🔎结果👇<br><br>${bgn}----------------------------${ins}<br>落地信息🔎结果👇<br><br>${outs}_____________________________`;
+        $done({title: nodeName, htmlMessage: message});
     } catch (error) {
-        console.log("Errk: " + error.message);
-        $done({
-            title: nodeName,
-            htmlMessage: error.message + "<br><br> 查询失败 反馈@Key",
-        });
+        $done({title: nodeName, htmlMessage: error.message + "<br><br> 查询失败 反馈给 @MingdeCZ",});
     } finally {
-        $done({
-            title: nodeName,
-            htmlMessage: 'See Log'
-        });
+        $done({title: nodeName, htmlMessage: "详见日志"});
     }
 })();
 
