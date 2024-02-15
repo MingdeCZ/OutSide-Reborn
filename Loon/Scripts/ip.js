@@ -263,7 +263,7 @@ async function lookUp(t, e, o) {
             }
         }
 
-        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>---------------------------------<br>入网信息🔎结果👇<br><br>${bgn}----------------------------${ins}<br>落地信息🔎结果👇<br><br>${outs}_____________________________`;
+        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>---------------------------------<br>入网信息🔎结果👇<br><br>${bgn}----------------------------${ins}<br>落地信息🔎结果👇<br><br>${outs}_____________________________`;
         $done({title: nodeName, htmlMessage: message});
     } catch (error) {
         $done({title: nodeName, htmlMessage: error.message + "<br><br> 查询失败 反馈给 @MingdeCZ"});
