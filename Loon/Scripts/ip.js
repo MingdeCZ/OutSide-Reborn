@@ -197,15 +197,12 @@ async function lookUp(t, e, o) {
     return i;
 }
 
-const scriptName = "入口落地查询";
-
 (async () => {
     try {
         let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000),
             hideIP = $persistentStore.read("是否隐藏真实IP") === "隐藏";
         nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address,
-            INIPS = false, serverip = ipCtlg(nodeIp),
-            nodeCtlgCnclsn = `国内中转`;
+            INIPS = false, ins = "", serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = `国内中转`;
         
         if (serverip === "domain") {
             const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", timein);
@@ -248,7 +245,7 @@ const scriptName = "入口落地查询";
                     city == province && (city = "");
                     isp = isp.replace(/中国/g, "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br><br>-------------------<br>`;
+                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>-------------------<br>`;
                 } else {
                     INFailed = "国内入口信息查询失败：" + JSON.stringify(inDprt);
                     ins = `<br>SPFailed 超时!<br><br>`;
@@ -265,7 +262,7 @@ const scriptName = "入口落地查询";
                     hideIP && (query = HIP(query));
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>-------------------<br>`;
+                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>-------------------<br>`;
                 } else {
                     INFailed = "国外入口信息查询失败：" + JSON.stringify(outDprt);
                     ins = `<br>INFailed 超时!<br><br>`;
@@ -273,21 +270,20 @@ const scriptName = "入口落地查询";
             }
         }
 
-        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br>--------------------<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>--------------------<br><br>------------------------------------<br>入网信息🔎结果👇<br><br>${bgn}-------------------<br><br>
-    ${ins}落地信息🔎结果👇<br><br>${outs}_____________________________`;
+        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br>--------------------<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>--------------------<br>--------------------------------<br>入网信息🔎结果👇<br><br>${bgn}-------------------${ins}落地信息🔎结果👇<br><br>${outs}_____________________________`;
         $done({
-            title: scriptName,
+            title: nodeName,
             htmlMessage: message
         });
     } catch (error) {
         console.log("Errk: " + error.message);
         $done({
-            title: scriptName,
+            title: nodeName,
             htmlMessage: error.message + "<br><br> 查询失败 反馈@Key",
         });
     } finally {
         $done({
-            title: scriptName,
+            title: nodeName,
             htmlMessage: 'See Log'
         });
     }
