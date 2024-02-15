@@ -201,31 +201,24 @@ const scriptName = "入口落地查询";
 
 (async () => {
     try {
-        const loon = $loon.split(" ");
-        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000),
-            timei = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000),
+        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000),
             hideIP = $persistentStore.read("是否隐藏真实IP") === "隐藏";
-        inputParams = $environment.params, nodeName = inputParams.node, nodeIp = inputParams.nodeInfo.address,
-            INIPS = false, INFailed = "", ins = "", outs = "", serverip = ipCtlg(nodeIp),
+        nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address,
+            INIPS = false, serverip = ipCtlg(nodeIp),
             cfw = `⟦\x20\u4e2d\u8f6c\u0020<font\x20style=\x22text-decoration:line-through;\x22>\u9632\u706b\u5899</font>\x20⟧`;
+        
         if (serverip === "domain") {
-            const Ali = await lookUp(
-                `http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`,
-                "",
-                timein
-            );
+            const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", timein);
             if (Ali?.length > 0) {
-                console.log("Ali inIp: " + Ali[0]);
                 nodeIp = Ali[0];
                 serverip = ipCtlg(nodeIp);
-            } else {
-                console.log("Ali Dns Failed: " + JSON.stringify(Ali, "", 2));
             }
         }
+        
         const LD = await lookUp(
             "http://ip-api.com/json/?lang=zh-CN",
             nodeName,
-            timei
+            timeot
         );
         if (LD?.status === "success") {
             LDTF = true;
@@ -346,7 +339,7 @@ const scriptName = "入口落地查询";
                 const IO = await lookUp(
                     `http://ip-api.com/json/${nodeIp}?lang=zh-CN`,
                     "",
-                    timei
+                    timeot
                 );
                 if (IO?.status === "success") {
                     console.log("IO: " + JSON.stringify(IO, "", 2));
@@ -392,9 +385,7 @@ const scriptName = "入口落地查询";
     <b><font>${cfw}</font></b>
     <br>-------------------<br><br>
     ${outs}
-    <br>-------------------------------<br><br>
-    <b>节点</b>  ➟  ${nodeName} <br>
-    <b>设备</b>  ➟ ${loon[1]} ${loon[2]}</p>`;
+    <br>-------------------------------`;
         $done({
             title: scriptName,
             htmlMessage: message
