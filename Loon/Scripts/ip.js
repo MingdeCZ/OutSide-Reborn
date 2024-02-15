@@ -248,7 +248,7 @@ const scriptName = "入口落地查询";
                     city == province && (city = "");
                     isp = isp.replace(/中国/g, "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `入口信息🔎 结果 👇<br>-------------------<br><br><b><font>归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br><br>`;
+                    ins = `入口信息🔎结果👇<br><br><br><b><font>归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br><br>`;
                 } else {
                     INFailed = "国内入口信息查询失败：" + JSON.stringify(inDprt);
                     ins = `<br>SPFailed 超时!<br><br>`;
@@ -265,7 +265,7 @@ const scriptName = "入口落地查询";
                     hideIP && (query = HIP(query));
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `入口信息🔎 结果 👇<br>-------------------<br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
+                    ins = `入口信息🔎结果👇<br><br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
                 } else {
                     INFailed = "国外入口信息查询失败：" + JSON.stringify(outDprt);
                     ins = `<br>INFailed 超时!<br><br>`;
@@ -273,8 +273,8 @@ const scriptName = "入口落地查询";
             }
         }
 
-        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_______________________________<br><br>-------------------<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>-------------------<br><br>-------------------<br>入网信息🔎 结果 👇<br><br>${bgn}-------------------<br><br>
-    ${ins}-------------------<br><br>落地信息🔎 结果 👇<br><br>${outs}-------------------<br><br>_______________________________`;
+        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">______________________________<br><br>-------------------<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>-------------------<br><br>---------------------------<br>入网信息🔎结果👇<br><br>${bgn}-------------------<br><br>
+    ${ins}-------------------<br><br>落地信息🔎结果👇<br><br>${outs}<br><br>______________________________`;
         $done({
             title: scriptName,
             htmlMessage: message
