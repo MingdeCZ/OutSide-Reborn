@@ -199,10 +199,7 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000),
-            hideIP = $persistentStore.read("是否隐藏真实IP") === "隐藏";
-        nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address,
-            INIPS = false, ins = "", serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = `国内中转`;
+        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000),nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, INIPS = false, ins = "", serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = `国内中转`;
         
         if (serverip === "domain") {
             const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", timein);
@@ -215,7 +212,6 @@ async function lookUp(t, e, o) {
         const Strt = await lookUp("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", "", timein);
         if (Strt.code === 0) {
             let {country, province, city, addr, isp, latitude, longitude} = Strt.data, tk = Strt.tk;
-            hideIP && (addr = HIP(addr));
             province == city && (province = "");
             isp = isp.replace(/.*广电.*/g, "广电");
             bgn = `<b><font>归属：</font></b><font>${country} ${province} ${city}  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍: </font></b><font>${j(latitude)} &nbsp&nbsp${k(longitude)}</font><br>`;
@@ -226,7 +222,6 @@ async function lookUp(t, e, o) {
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon, tk} = Arvl;
-            hideIP && (query = HIP(query));
             var lquery = query;
             outs = `<b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍: </font></b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
         } else {
@@ -240,7 +235,6 @@ async function lookUp(t, e, o) {
                 const inDprt = await lookUp(`https://api-v3.speedtest.cn/ip?ip=${nodeIp}`, "", timein);
                 if (inDprt?.data?.country === "中国") {
                     let {countryCode, country, city, province, district, isp, ip, lat, lon} = inDprt.data, tk = inDprt.tk;
-                    hideIP && (nodeIp = HIP(nodeIp));
                     city == district && (city = "");
                     city == province && (city = "");
                     isp = isp.replace(/中国/g, "");
@@ -259,7 +253,6 @@ async function lookUp(t, e, o) {
                 const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", timeot);
                 if (outDprt?.status === "success") {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt, tk = outDprt.tk;
-                    hideIP && (query = HIP(query));
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
                     ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍: </font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>----------------------------`;
@@ -273,12 +266,8 @@ async function lookUp(t, e, o) {
         let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br>--------------------<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>--------------------<br>---------------------------------<br>入网信息🔎结果👇<br><br>${bgn}----------------------------${ins}<br>落地信息🔎结果👇<br><br>${outs}_____________________________`;
         $done({title: nodeName, htmlMessage: message});
     } catch (error) {
-        $done({title: nodeName, htmlMessage: error.message + "<br><br> 查询失败 反馈给 @MingdeCZ",});
+        $done({title: nodeName, htmlMessage: error.message + "<br><br> 查询失败 反馈给 @MingdeCZ"});
     } finally {
         $done({title: nodeName, htmlMessage: "详见日志"});
     }
 })();
-
-function HIP(ip) {
-    return ip.replace(/(\w{1,4})(\.|\:)(\w{1,4}|\*)$/, (_, x, y, z) => `${"∗".repeat(x.length)}.${"∗".repeat(z.length)}`);
-}
