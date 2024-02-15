@@ -111,19 +111,18 @@ function k(m) {
     }
 }
 
-function serverTF(t) {
+function ipCtlg(t) {
     if (/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(t)) {
-        return "v4"
+        return "v4";
     } else if (/^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/.test(t)) {
-        return "v6"
+        return "v6";
     } else {
-        return "domain"
+        return "domain";
     }
 }
 
-async function tKey(t, e, o) {
-    let r = 1,
-        s = 1;
+async function lookUp(t, e, o) {
+    let r = s = 1;
     const i = new Promise(((i, l) => {
         const a = async f => {
             try {
@@ -213,10 +212,10 @@ const scriptName = "入口落地查询";
             timei = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000),
             hideIP = $persistentStore.read("是否隐藏真实IP") === "隐藏";
         inputParams = $environment.params, nodeName = inputParams.node, nodeIp = inputParams.nodeInfo.address,
-            INIPS = false, INFailed = "", ins = "", outs = "", serverip = serverTF(nodeIp),
+            INIPS = false, INFailed = "", ins = "", outs = "", serverip = ipCtlg(nodeIp),
             cfw = `⟦\x20\u4e2d\u8f6c\u0020<font\x20style=\x22text-decoration:line-through;\x22>\u9632\u706b\u5899</font>\x20⟧`;
         if (serverip === "domain") {
-            const Ali = await tKey(
+            const Ali = await lookUp(
                 `http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`,
                 "",
                 timein
@@ -224,12 +223,12 @@ const scriptName = "入口落地查询";
             if (Ali?.length > 0) {
                 console.log("Ali inIp: " + Ali[0]);
                 nodeIp = Ali[0];
-                serverip = serverTF(nodeIp);
+                serverip = ipCtlg(nodeIp);
             } else {
                 console.log("Ali Dns Failed: " + JSON.stringify(Ali, "", 2));
             }
         }
-        const LD = await tKey(
+        const LD = await lookUp(
             "http://ip-api.com/json/?lang=zh-CN",
             nodeName,
             timei
@@ -270,7 +269,7 @@ const scriptName = "入口落地查询";
         }
         if (nodeIp == lquery) {
             cfw = `⟦\x20\u76f4\u8fde\u0020\u9632\u706b\u5899\x20⟧`;
-            const LO = await tKey(
+            const LO = await lookUp(
                 "https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr",
                 "",
                 timein
@@ -306,7 +305,7 @@ const scriptName = "入口落地查询";
         } else {
             if (serverip === "v4") {
                 console.log("v4");
-                const SP = await tKey(
+                const SP = await lookUp(
                     `https://api-v3.speedtest.cn/ip?ip=${nodeIp}`,
                     "",
                     timein
@@ -350,7 +349,7 @@ const scriptName = "入口落地查询";
                 console.log("v6");
             }
             if (INIPS) {
-                const IO = await tKey(
+                const IO = await lookUp(
                     `http://ip-api.com/json/${nodeIp}?lang=zh-CN`,
                     "",
                     timei
