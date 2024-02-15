@@ -28,7 +28,7 @@ function d(m) {
 }
 
 function e(m, n) {
-    var o = new RegExp('[\u4E00-\u9FA5]+'), p = "";
+    var o = new RegExp("[\u4E00-\u9FA5]+"), p = "";
     if (m.match(/\ or\ /g)) {
         m = "";
     }
@@ -221,9 +221,9 @@ const scriptName = "入口落地查询";
             hideIP && (addr = HIP(addr));
             province == city && (province = "");
             isp = isp.replace(/.*广电.*/g, "广电");
-            bgn = `<b><font>归属：</font></b><font>${country} ${province} ${city}  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(latitude)}&nbsp&nbsp&nbsp${k(longitude)} </font><br><br>`;
+            bgn = `<b><font>归属：</font></b><font>${country} ${province} ${city}  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(latitude)}&nbsp&nbsp&nbsp${k(longitude)} </font><br>`;
         } else {
-            bgn = `<br>BIli Api Failed 查询超时!<br><br>`;
+            bgn = `<br>BIli Api Failed 查询超时!<br>`;
         }
         
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
@@ -233,7 +233,7 @@ const scriptName = "入口落地查询";
             var lquery = query;
             outs = `<b><font>归属</font>：</b><font>${f(d(a(country)), e(a(regionName), a(city)))}&nbsp➟&nbsp⟦${g(countryCode)}⟧&nbsp; ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍</font>:&nbsp</b><font>${j(lat)}&nbsp&nbsp&nbsp${k(lon)}</font><br>`;
         } else {
-            let ArvlFailed = "查询失败: " + JSON.stringify(Arvl), outs = `<br>ArvlFailed 超时!<br><br>`;
+            let ArvlFailed = "查询失败: " + JSON.stringify(Arvl), outs = `<br>ArvlFailed 超时!<br>`;
         }
         
         if (nodeIp == lquery) {
@@ -248,7 +248,7 @@ const scriptName = "入口落地查询";
                     city == province && (city = "");
                     isp = isp.replace(/中国/g, "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `入口信息🔎结果👇<br><br><br><b><font>归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br><br>`;
+                    ins = `入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br><br>-------------------<br>`;
                 } else {
                     INFailed = "国内入口信息查询失败：" + JSON.stringify(inDprt);
                     ins = `<br>SPFailed 超时!<br><br>`;
@@ -265,7 +265,7 @@ const scriptName = "入口落地查询";
                     hideIP && (query = HIP(query));
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `入口信息🔎结果👇<br><br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
+                    ins = `入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>-------------------<br>`;
                 } else {
                     INFailed = "国外入口信息查询失败：" + JSON.stringify(outDprt);
                     ins = `<br>INFailed 超时!<br><br>`;
@@ -273,8 +273,8 @@ const scriptName = "入口落地查询";
             }
         }
 
-        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">______________________________<br><br>-------------------<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>-------------------<br><br>---------------------------<br>入网信息🔎结果👇<br><br>${bgn}-------------------<br><br>
-    ${ins}-------------------<br><br>落地信息🔎结果👇<br><br>${outs}<br><br>______________________________`;
+        let message = `<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br>--------------------<br><b><font>节点类型：${nodeCtlgCnclsn}</font></b><br>--------------------<br><br>------------------------------------<br>入网信息🔎结果👇<br><br>${bgn}-------------------<br><br>
+    ${ins}落地信息🔎结果👇<br><br>${outs}_____________________________`;
         $done({
             title: scriptName,
             htmlMessage: message
