@@ -245,7 +245,7 @@ const scriptName = "入口落地查询";
                     hideIP && (nodeIp = HIP(nodeIp));
                     city == district && (city = "");
                     city == province && (city = "");
-                    isp = isp.replace(/.*中国.*/g, "");
+                    isp = isp.replace(/中国/g, "");
                     countryCode !== "CN" && (cfw = `⟦\x20\u9632\u706b\u5899\x20⟧`);
                     ins = `<b><font>入口归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br><br>`;
                 } else {
@@ -277,13 +277,14 @@ const scriptName = "入口落地查询";
     font-family: -apple-system;
     font-size: large;
     font-weight: thin">
-    <br>-------------------------------<br><br>
+    <br>___________________________<br><br>
+        -------------------<br>
+        <b><font>${cfw}</font></b>
+        <br>-------------------<br><br>
     ${ins}
-    -------------------<br>
-    <b><font>${cfw}</font></b>
-    <br>-------------------<br><br>
+    
     ${outs}
-    <br>-------------------------------`;
+    <br>___________________________`;
         $done({
             title: scriptName,
             htmlMessage: message
