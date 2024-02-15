@@ -88,7 +88,7 @@ function i(m, n, o) {
         return "<b><font>自治机构 同 运营商：</b><font>" + r + "<br><br>" + "<b><font>数据中心：</b><font>" + o;
     } else if (p == o) {
         return "<b><font>自治机构 同 数据中心：</b><font>" + r + "<br><br>" + "<b><font>运营商：</b><font>" + n;
-    } else if (v == o) {
+    } else if (n == o) {
         return "<b><font>自治机构：</b><font>" + r + "<br><br>" + "<b><font>运营商 同 数据中心：</b><font>" + n;
     } else {
         return "<b><font>自治机构：</b><font>" + r + "<br><br>" + "<b><font>运营商：</b><font>" + n + "<br><br>" + "<b><font>数据中心：</b><font>" + o;
@@ -220,40 +220,21 @@ const scriptName = "入口落地查询";
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon, tk} = Arvl;
             hideIP && (query = HIP(query));
             var lquery = query;
-            outs = `<b><font>落地归属</font>：</b><font>${f(d(a(country)), e(a(regionName), a(city)))}&nbsp➟&nbsp⟦${g(countryCode)}⟧&nbsp; ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍</font>:&nbsp</b><font>${j(lat)}${k(lon)}</font><br>`;
+            outs = `<b><font>落地归属</font>：</b><font>${f(d(a(country)), e(a(regionName), a(city)))}&nbsp➟&nbsp⟦${g(countryCode)}⟧&nbsp; ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍</font>:&nbsp</b><font>${j(lat)}&nbsp&nbsp&nbsp${k(lon)}</font><br>`;
         } else {
             let ArvlFailed = "落地信息查询失败: " + JSON.stringify(Arvl), outs = `<br>ArvlFailed 超时!<br><br>`;
         }
         
         if (nodeIp == lquery) {
             cfw = `⟦\x20\u76f4\u8fde\u0020\u9632\u706b\u5899\x20⟧`;
-            const LO = await lookUp("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", "", timein);
-            if (LO.code === 0) {
-                let {
-                    addr,
-                    province,
-                    city,
-                    isp,
-                    country
-                } = LO.data,
-                    tk = LO.tk;
+            const Strt = await lookUp("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", "", timein);
+            if (Strt.code === 0) {
+                let {country, province, city, addr, isp, latitude, longitude} = Strt.data, tk = Strt.tk;
                 hideIP && (addr = HIP(addr));
                 province == city && (province = "");
-                country == "中国" && (country = "🇨🇳中国");
                 isp = isp.replace(/.*广电.*/g, "广电");
-                ins = `<b><font>本机国家</font>:</b>
-        <font>${country}&nbsp; ${tk}ms</font><br><br>
-        
-        <b><font>本机入口</font>:</b>
-        <font>${isp}</font><br><br>
-      
-        <b><font>本机IP</font>:</b>
-        <font>${addr}</font><br><br>
-    
-        <b><font>本机位置</font>:</b>
-        <font>${province} ${city} </font><br><br>`;
+                ins = `<b><font>入网归属：</font></b><font>${country}&nbsp${province} ${city}; ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(latitude)}&nbsp&nbsp&nbsp${k(longitude)} </font><br><br>`;
             } else {
-                console.log("BIli api Failed: " + JSON.stringify(LO, "", 2));
                 ins = `<br>BIli Api Failed 查询超时<br><br>`;
             }
         } else {
