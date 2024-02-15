@@ -211,19 +211,19 @@ async function lookUp(t, e, o) {
         
         const Strt = await lookUp("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", "", timein);
         if (Strt.code === 0) {
-            let {country, province, city, addr, isp, latitude, longitude} = Strt.data, tk = Strt.tk;
+            let {country, province, city, addr, isp, latitude, longitude} = Strt.data;
             province == city && (province = "");
             isp = isp.replace(/.*广电.*/g, "广电");
-            bgn = `<b><font>归属：</font></b><font>${country} ${province} ${city}  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍: </font></b><font>${j(latitude)} &nbsp&nbsp${k(longitude)}</font><br>`;
+            bgn = `<b><font>归属：</font></b><font>${country} ${province} ${city}</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍: </font></b><font>${j(latitude)} &nbsp&nbsp${k(longitude)}</font><br>`;
         } else {
             bgn = `<br>BIli Api Failed 查询超时!<br>`;
         }
         
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
-            let {countryCode, country, regionName, city, query, isp, org, as, lat, lon, tk} = Arvl;
+            let {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
             var lquery = query;
-            outs = `<b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍: </font></b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
+            outs = `<b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍: </font></b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
         } else {
             let ArvlFailed = "查询失败：" + JSON.stringify(Arvl), outs = `<br>ArvlFailed 超时!<br>`;
         }
@@ -234,12 +234,12 @@ async function lookUp(t, e, o) {
             if (serverip === "v4") {
                 const inDprt = await lookUp(`https://api-v3.speedtest.cn/ip?ip=${nodeIp}`, "", timein);
                 if (inDprt?.data?.country === "中国") {
-                    let {countryCode, country, city, province, district, isp, ip, lat, lon} = inDprt.data, tk = inDprt.tk;
+                    let {countryCode, country, city, province, district, isp, ip, lat, lon} = inDprt.data;
                     city == district && (city = "");
                     city == province && (city = "");
                     isp = isp.replace(/中国/g, "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍: </font></b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>----------------------------`;
+                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${province} ${city} ${district}</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍: </font></b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>----------------------------`;
                 } else {
                     INFailed = "国内入口信息查询失败：" + JSON.stringify(inDprt);
                     ins = `<br>SPFailed 超时!<br><br>`;
@@ -252,10 +252,10 @@ async function lookUp(t, e, o) {
             if (INIPS) {
                 const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", timeot);
                 if (outDprt?.status === "success") {
-                    let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt, tk = outDprt.tk;
+                    let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
-                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍: </font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>----------------------------`;
+                    ins = `<br>入口信息🔎结果👇<br><br><b><font>归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍: </font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>----------------------------`;
                 } else {
                     INFailed = "国外入口信息查询失败：" + JSON.stringify(outDprt);
                     ins = `<br>INFailed 超时!<br><br>`;
