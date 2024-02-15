@@ -215,6 +215,17 @@ const scriptName = "入口落地查询";
             }
         }
         
+        const Strt = await lookUp("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", "", timein);
+        if (Strt.code === 0) {
+            let {country, province, city, addr, isp, latitude, longitude} = Strt.data, tk = Strt.tk;
+            hideIP && (addr = HIP(addr));
+            province == city && (province = "");
+            isp = isp.replace(/.*广电.*/g, "广电");
+            bgn = `<b><font>入网归属：</font></b><font>${country} ${province} ${city}  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(latitude)}&nbsp&nbsp&nbsp${k(longitude)} </font><br><br>`;
+        } else {
+            bgn = `<br>BIli Api Failed 查询超时<br><br>`;
+        }
+        
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon, tk} = Arvl;
@@ -227,16 +238,6 @@ const scriptName = "入口落地查询";
         
         if (nodeIp == lquery) {
             nodeCtlgCnclsn = `直连`;
-            const Strt = await lookUp("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", "", timein);
-            if (Strt.code === 0) {
-                let {country, province, city, addr, isp, latitude, longitude} = Strt.data, tk = Strt.tk;
-                hideIP && (addr = HIP(addr));
-                province == city && (province = "");
-                isp = isp.replace(/.*广电.*/g, "广电");
-                ins = `<b><font>入网归属：</font></b><font>${country} ${province} ${city}  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(latitude)}&nbsp&nbsp&nbsp${k(longitude)} </font><br><br>`;
-            } else {
-                ins = `<br>BIli Api Failed 查询超时<br><br>`;
-            }
         } else {
             if (serverip === "v4") {
                 const inDprt = await lookUp(`https://api-v3.speedtest.cn/ip?ip=${nodeIp}`, "", timein);
@@ -277,14 +278,14 @@ const scriptName = "入口落地查询";
     font-family: -apple-system;
     font-size: large;
     font-weight: thin">
-    <br>___________________________<br><br>
+    <br>_____________________________<br><br>
         -------------------<br>
         <b><font>节点类型：${nodeCtlgCnclsn}</font></b>
         <br>-------------------<br><br>
+    ${bgn}
     ${ins}
-    
     ${outs}
-    <br>___________________________`;
+    <br>_____________________________`;
         $done({
             title: scriptName,
             htmlMessage: message
