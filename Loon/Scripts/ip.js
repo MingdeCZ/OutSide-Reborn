@@ -205,7 +205,7 @@ const scriptName = "入口落地查询";
             hideIP = $persistentStore.read("是否隐藏真实IP") === "隐藏";
         nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address,
             INIPS = false, serverip = ipCtlg(nodeIp),
-            cfw = `⟦\x20\u4e2d\u8f6c\u0020<font\x20style=\x22text-decoration:line-through;\x22>\u9632\u706b\u5899</font>\x20⟧`;
+            nodeCtlgCnclsn = "国内中转";
         
         if (serverip === "domain") {
             const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", timein);
@@ -226,7 +226,7 @@ const scriptName = "入口落地查询";
         }
         
         if (nodeIp == lquery) {
-            cfw = `⟦\x20\u76f4\u8fde\u0020\u9632\u706b\u5899\x20⟧`;
+            nodeCtlgCnclsn = "直连";
             const Strt = await lookUp("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", "", timein);
             if (Strt.code === 0) {
                 let {country, province, city, addr, isp, latitude, longitude} = Strt.data, tk = Strt.tk;
@@ -246,7 +246,7 @@ const scriptName = "入口落地查询";
                     city == district && (city = "");
                     city == province && (city = "");
                     isp = isp.replace(/中国/g, "");
-                    countryCode !== "CN" && (cfw = `⟦\x20\u9632\u706b\u5899\x20⟧`);
+                    countryCode !== "CN" && (nodeCtlgCnclsn = "国外中转");
                     ins = `<b><font>入口归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br><br>`;
                 } else {
                     INFailed = "国内入口信息查询失败：" + JSON.stringify(inDprt);
@@ -263,7 +263,7 @@ const scriptName = "入口落地查询";
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt, tk = outDprt.tk;
                     hideIP && (query = HIP(query));
                     regionName == city && (city = "");
-                    countryCode !== "CN" && (cfw = `⟦\x20\u9632\u706b\u5899\x20⟧`);
+                    countryCode !== "CN" && (nodeCtlgCnclsn = "国外中转";
                     ins = `<b><font>入口归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
                 } else {
                     INFailed = "国外入口信息查询失败：" + JSON.stringify(outDprt);
@@ -279,7 +279,7 @@ const scriptName = "入口落地查询";
     font-weight: thin">
     <br>___________________________<br><br>
         -------------------<br>
-        <b><font>${cfw}</font></b>
+        <b><font>节点类型：</font></b> nodeCtlgCnclsn
         <br>-------------------<br><br>
     ${ins}
     
