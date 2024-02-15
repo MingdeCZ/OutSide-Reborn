@@ -263,7 +263,7 @@ const scriptName = "入口落地查询";
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt, tk = outDprt.tk;
                     hideIP && (query = HIP(query));
                     regionName == city && (city = "");
-                    countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`;
+                    countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
                     ins = `<b><font>入口归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
                 } else {
                     INFailed = "国外入口信息查询失败：" + JSON.stringify(outDprt);
