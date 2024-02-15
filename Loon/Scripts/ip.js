@@ -215,45 +215,16 @@ const scriptName = "入口落地查询";
             }
         }
         
-        const LD = await lookUp(
-            "http://ip-api.com/json/?lang=zh-CN",
-            nodeName,
-            timeot
-        );
-        if (LD?.status === "success") {
-            LDTF = true;
-            console.log("LD: " + JSON.stringify(LD, "", 2));
-            let {
-                country,
-                countryCode,
-                regionName,
-                city,
-                query,
-                isp,
-                as,
-                tk
-            } = LD;
+        const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
+        if (Arvl?.status === "success") {
+            let {countryCode, country, regionName, city, query, isp, org, as, lat, lon, tk} = Arvl;
             hideIP && (query = HIP(query));
             var lquery = query;
-            outs = `<b><font>落地位置</font>:</b>
-        <font>${g(countryCode)}${country}&nbsp; ${tk}ms</font><br><br>
-    
-        <b><font>落地地区</font>:</b>
-        <font>${countryCode} ${regionName} ${city}</font><br><br>
-        
-        <b><font>落地IP地址</font>:</b>
-        <font>${query}</font><br><br>
-    
-        <b><font>落地ISP</font>:</b>
-        <font>${isp}</font><br><br>
-    
-        <b><font>落地ASN</font>:</b>
-        <font>${as}</font><br>`;
+            outs = `<b><font>落地归属</font>：</b><font>${f(d(a(country)), e(a(regionName), a(city)))}&nbsp➟&nbsp⟦${g(countryCode)}⟧&nbsp; ${tk}ms</font><br><br><b><font>IP：</font>:</b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍</font>:&nbsp</b><font>${j(lat)}${k(lon)}</font><br>`;
         } else {
-            let LDFailed = "LD: " + JSON.stringify(LD);
-            outs = `<br>LDFailed 查询超时<br><br>`;
-            console.log(LDFailed);
+            let ArvlFailed = "落地信息查询失败: " + JSON.stringify(Arvl), outs = `<br>ArvlFailed 超时!<br><br>`;
         }
+        
         if (nodeIp == lquery) {
             cfw = `⟦\x20\u76f4\u8fde\u0020\u9632\u706b\u5899\x20⟧`;
             const LO = await lookUp(
