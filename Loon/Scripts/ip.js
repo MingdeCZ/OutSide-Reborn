@@ -128,15 +128,11 @@ async function lookUp(t, e, o) {
             try {
                 const r = await Promise.race([new Promise(((n, o) => {
                     let r = Date.now();
-                    $httpClient.get({
-                        url: t,
-                        node: e
-                    }, ((t, e, s) => {
+                    $httpClient.get({url: t, node: e}, ((t, e, s) => {
                         if (t) {
-                            o(t)
+                            o(t);
                         } else {
-                            let t = Date.now() - r;
-                            let o = e.status;
+                            let t = Date.now() - r, o = e.status;
                             switch (o) {
                                 case 200:
                                     let o = e.headers["Content-Type"];
@@ -155,7 +151,7 @@ async function lookUp(t, e, o) {
                                                 let [o, r] = e.split("=");
                                                 n[o] = r;
                                                 n.tk = t;
-                                                return n
+                                                return n;
                                             }), {});
                                             n(i);
                                             break;
@@ -164,18 +160,16 @@ async function lookUp(t, e, o) {
                                             break;
                                         default:
                                             n("未知");
-                                            break
+                                            break;
                                     }
                                     break;
                                 case 204:
-                                    let r = {
-                                        tk: t
-                                    };
+                                    let r = {tk: t};
                                     n(r);
                                     break;
                                 default:
                                     n("nokey");
-                                    break
+                                    break;
                             }
                         }
                     }))
@@ -183,24 +177,24 @@ async function lookUp(t, e, o) {
                     setTimeout((() => n(new Error("timeout"))), o)
                 }))]);
                 if (r) {
-                    i(r)
+                    i(r);
                 } else {
                     i("超时");
-                    l(new Error(n.message))
+                    l(new Error(n.message));
                 }
             } catch (t) {
                 if (f < r) {
                     s++;
-                    a(f + 1)
+                    a(f + 1);
                 } else {
                     i("检测失败, 重试次数" + s);
-                    l(t)
+                    l(t);
                 }
             }
         };
-        a(0)
+        a(0);
     }));
-    return i
+    return i;
 }
 
 const scriptName = "入口落地查询";
