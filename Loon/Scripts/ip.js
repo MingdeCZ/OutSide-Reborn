@@ -239,16 +239,17 @@ const scriptName = "入口落地查询";
             }
         } else {
             if (serverip === "v4") {
-                const Dprt = await lookUp(`https://api-v3.speedtest.cn/ip?ip=${nodeIp}`, "", timein);
-                if (Dprt?.data?.country === "中国") {
-                    let {countryCode, country, city, province, district, isp, ip, lat, lon} = Dprt.data, tk = Dprt.tk;
+                const inDprt = await lookUp(`https://api-v3.speedtest.cn/ip?ip=${nodeIp}`, "", timein);
+                if (inDprt?.data?.country === "中国") {
+                    let {countryCode, country, city, province, district, isp, ip, lat, lon} = inDprt.data, tk = inDprt.tk;
                     hideIP && (nodeIp = HIP(nodeIp));
                     city == district && (city = "");
                     city == province && (city = "");
+                    isp = isp.replace(/.*中国.*/g, "");
                     countryCode !== "CN" && (cfw = `⟦\x20\u9632\u706b\u5899\x20⟧`);
                     ins = `<b><font>入口归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br><br>`;
                 } else {
-                    INFailed = "国内入口信息查询失败：" + JSON.stringify(Dprt);
+                    INFailed = "国内入口信息查询失败：" + JSON.stringify(inDprt);
                     ins = `<br>SPFailed 超时!<br><br>`;
                     INIPS = true;
                 }
@@ -257,40 +258,16 @@ const scriptName = "入口落地查询";
             }
             
             if (INIPS) {
-                const IO = await lookUp(
-                    `http://ip-api.com/json/${nodeIp}?lang=zh-CN`,
-                    "",
-                    timeot
-                );
-                if (IO?.status === "success") {
-                    console.log("IO: " + JSON.stringify(IO, "", 2));
-                    let {
-                        country,
-                        city,
-                        regionName,
-                        countryCode,
-                        isp,
-                        query
-                    } = IO,
-                    tk = IO.tk;
+                const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", timeot);
+                if (outDprt?.status === "success") {
+                    let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt, tk = outDprt.tk;
                     hideIP && (query = HIP(query));
                     regionName == city && (city = "");
                     countryCode !== "CN" && (cfw = `⟦\x20\u9632\u706b\u5899\x20⟧`);
-                    ins = `<b><font>入口位置</font>:</b>
-          <font>${g(countryCode)}${country}&nbsp; ${tk}ms</font><br><br>
-      
-          <b><font>入口ISP</font>:</b>
-          <font>${isp}</font><br><br>
-      
-          <b><font>入口IPAPI</font>:</b>
-          <font>${query}</font><br><br>
-      
-          <b><font>入口地区</font>:</b>
-          <font>${regionName} ${city}</font><br><br>`;
+                    ins = `<b><font>入口归属：</font></b><font>${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${query}</font><br><br><font>${i(as, isp, org)}</font><br><br><b><font>📍:</font> </b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br>`;
                 } else {
-                    INFailed = "IPApi Failed: " + JSON.stringify(IO);
-                    ins = `<br>INFailed 查询超时<br><br>`;
-                    console.log(INFailed);
+                    INFailed = "国外入口信息查询失败：" + JSON.stringify(outDprt);
+                    ins = `<br>INFailed 超时!<br><br>`;
                 }
             }
         }
