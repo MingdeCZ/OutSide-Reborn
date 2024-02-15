@@ -233,56 +233,29 @@ const scriptName = "入口落地查询";
                 hideIP && (addr = HIP(addr));
                 province == city && (province = "");
                 isp = isp.replace(/.*广电.*/g, "广电");
-                ins = `<b><font>入网归属：</font></b><font>${country}&nbsp${province} ${city}; ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(latitude)}&nbsp&nbsp&nbsp${k(longitude)} </font><br><br>`;
+                ins = `<b><font>入网归属：</font></b><font>${country} ${province} ${city}  ${tk}ms</font><br><br><b><font>IP：</font></b><font>${addr}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(latitude)}&nbsp&nbsp&nbsp${k(longitude)} </font><br><br>`;
             } else {
                 ins = `<br>BIli Api Failed 查询超时<br><br>`;
             }
         } else {
             if (serverip === "v4") {
-                console.log("v4");
-                const SP = await lookUp(
-                    `https://api-v3.speedtest.cn/ip?ip=${nodeIp}`,
-                    "",
-                    timein
-                );
-                if (SP?.data?.country === "中国") {
-                    console.log("SP: " + JSON.stringify(SP.data, "", 2));
-                    let {
-                        country,
-                        city,
-                        province,
-                        district,
-                        countryCode,
-                        isp,
-                        ip
-                    } =
-                    SP.data,
-                        tk = SP.tk;
+                const Dprt = await lookUp(`https://api-v3.speedtest.cn/ip?ip=${nodeIp}`, "", timein);
+                if (Dprt?.data?.country === "中国") {
+                    let {countryCode, country, city, province, district, isp, ip, lat, lon} = Dprt.data, tk = Dprt.tk;
                     hideIP && (nodeIp = HIP(nodeIp));
                     city == district && (city = "");
                     city == province && (city = "");
                     countryCode !== "CN" && (cfw = `⟦\x20\u9632\u706b\u5899\x20⟧`);
-                    ins = `<b><font>入口ISP</font>:</b>
-        <font>${isp}</font><br><br>
-      
-        <b><font>入口位置</font>:</b>
-        <font>${g(countryCode)}${country}&nbsp; ${tk}ms</font><br><br>
- 
-        <b><font>入口CNAPI</font>:</b>
-        <font>${nodeIp}</font><br><br>
-    
-        <b><font>入口地区</font>:</b>
-        <font>${province} ${city} ${district}</font><br><br>`;
+                    ins = `<b><font>入口归属：</font></b><font>${province} ${city} ${district} ${tk}ms</font><br><br><b><font>IP：</font></b><font>${nodeIp}</font><br><br><b><font>运营商：</font></b><font>${isp}</font><br><br><b><font>📍</font>:</b><font>${j(lat)} &nbsp&nbsp${k(lon)}</font><br><br>`;
                 } else {
-                    INFailed = "SP Api Failed: " + JSON.stringify(SP);
-                    ins = `<br>SPFailed 查询超时<br><br>`;
+                    INFailed = "国内入口信息查询失败：" + JSON.stringify(Dprt);
+                    ins = `<br>SPFailed 超时!<br><br>`;
                     INIPS = true;
-                    console.log(INFailed);
                 }
             } else {
-                INIPS = true;
-                console.log("v6");
+                INIPS = true;//v6
             }
+            
             if (INIPS) {
                 const IO = await lookUp(
                     `http://ip-api.com/json/${nodeIp}?lang=zh-CN`,
