@@ -218,8 +218,8 @@ async function lookUp(t, e, o) {
             var lquery = query;
             outs = `<font><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}</font><br>`;
         } else {
-            let ArvlFailed = "<font><b>❌失败</b>(" + JSON.stringify(Arvl);
-            outs = `ArvlFailed：超时)</font><br>`;
+            let ArvlFailed = "<font><b>❌失联</b>(" + JSON.stringify(Arvl);
+            outs = `${ArvlFailed}：超时)</font><br>`;
         }
 
         if (serverip === "domain") {
