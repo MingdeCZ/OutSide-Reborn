@@ -238,6 +238,7 @@ async function lookUp(t, e, o) {
                     city == district && (city = "");
                     city == province && (city = "");
                     isp = isp.replace(/中国/g, "");
+                    nodeCtlgCnclsn = `国内中转`;
                     ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${province} ${city} ${district}<br><br><b>IP</b>：${nodeIp}<br><br><b>运营商</b>：${isp}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------</font>`;
                 } else {
                     INFailed = "<b>⛔️失败</b>(" + JSON.stringify(inDprt);
