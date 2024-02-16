@@ -250,7 +250,7 @@ async function lookUp(t, e, o) {
         } else {
             if (serverip === "v4") {
                 const inDprtPI = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", timein);
-                if (inDprtPI?.data?.country_code === "CN") {
+                if (inDprtPI?.country_code === "CN") {
                     var {province, city, distinct, ip, isp} = inDprtPI.data, insP, insI;
                     province == city && (province = "");
                     //isp = isp.replace(/中国/g, "");
