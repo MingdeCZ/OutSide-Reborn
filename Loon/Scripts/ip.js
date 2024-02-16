@@ -200,17 +200,32 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000), bgn, nodeName = $environment.params.node, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = `不清楚`, INIPS = false, ins = "", INFailed;
+        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000), bgn, nodeName = $environment.params.node, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = "不清楚", INIPS = false, ins = "", INFailed;
 
-        const Strt = await lookUp("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", "", timein);
-        if (Strt.code === 0) {
-            let {province, city, addr, isp, latitude, longitude} = Strt.data;
-            province == city && (province = "");
-            isp = isp.replace(/.*广电.*/g, "广电");
-            bgn = `<font><b>归属地</b>：${province} ${city}<br><br><b>IP</b>：${addr}<br><br><b>运营商</b>：${isp}<br><br><b>📍</b>: ${j(latitude)} &nbsp&nbsp${k(longitude)}</font><br>`;
+        const StrtPAC = await lookUp("https://rmb.pingan.com.cn/itam/mas/linden/ip/request", "", timein);
+        if (StrtPAC.code === 0) {
+            var {region, city, ip, isp} = StrtPAC.data, bgnPAC, bgnIAI;
+            region == city && (region = "");
+            isp = isp.replace(/中国/g, "");
+            bgnPAC = `${region} ${city}`;
+            bgnIAI = `${ip}<br><br><b>运营商</b>：${isp}`;
         } else {
-            bgn = `<font><b>❗️失败</b>(超时)</font><br>`;
+            bgnPAC = "<b>❗️(位置)失败</b>(超时)";
+            bgnIAI = "<b>❗️(IP)失败</b>(超时)<br><br>";
         }
+        
+        const StrtD = await http({url: "https://ip.im/info", headers: {"User-Agent": "curl/7.16.3 (powerpc-apple-darwin9.0) libcurl/7.16.3"}});
+        let district = String($.lodash_get(StrtD, 'body')).match(/(^|\s+)Districts\s*(:|：)\s*(.*)/m)?.[3].filter(i => i);
+        
+        const StrtAALL = await lookUp("https://api.ip.plus", "", timein);
+        if (StrtAALL.code === 200) {
+            var {asn, latitude, longitude} = StrtAALL.data, bgnAALL;
+            bgnAALL = `(${h(asn)})<br><br><b>📍</b>: ${j(latitude)} &nbsp&nbsp${k(longitude)}`;
+        } else {
+            bgnAALL = "<b>❗️(坐标)失败</b>(超时)";
+        }
+        
+        bgn = `<font><b>归属地</b>：${bgnPAC} ${district}<br><br><b>IP</b>：${bgnIAI} ${bgnAALL}</font><br>`;
 
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
