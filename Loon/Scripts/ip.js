@@ -203,7 +203,7 @@ async function lookUp(t, e, o) {
         let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000), bgn, nodeName = $environment.params.node, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = "不清楚", INIPS = false, ins = "", INFailed;
 
         const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", timein);
-        if (StrtPI.statusCode === 200) {
+        if (StrtPI.ip) {
             var {province, city, distinct, ip, isp} = StrtPI.data, bgnP, bgnI;
             province == city && (province = "");
             //isp = isp.replace(/中国/g, "");
@@ -250,7 +250,7 @@ async function lookUp(t, e, o) {
         } else {
             if (serverip === "v4") {
                 const inDprtPI = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", timein);
-                if (inDprtPI?.data?.country_code === "CN") {
+                if (inDprtPI?.country_code === "CN") {
                     var {province, city, distinct, ip, isp} = inDprtPI.data, insP, insI;
                     province == city && (province = "");
                     //isp = isp.replace(/中国/g, "");
