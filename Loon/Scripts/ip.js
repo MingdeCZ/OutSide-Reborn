@@ -214,8 +214,8 @@ async function lookUp(t, e, o) {
             bgnIAI = "<b>❗️(IP)失败</b>(超时)<br><br>";
         }
         
-        const StrtD = await http({url: "https://ip.im/info}", headers: {"User-Agent": "curl/7.16.3 (powerpc-apple-darwin9.0) libcurl/7.16.3"}});
-        let district = String($.lodash_get(StrtD, 'body')).match(/(^|\s+)Districts\s*(:|：)\s*(.*)/m)?.[3];
+        const StrtD = await http({url: "https://ip.im/info", headers: {"User-Agent": "curl/7.16.3 (powerpc-apple-darwin9.0) libcurl/7.16.3"}});
+        let district = String(StrtD.body).match(/(^|\s+)Districts\s*(:|：)\s*(.*)/m)?.[3];
         
         const StrtAALL = await lookUp("https://api.ip.plus", "", timein);
         if (StrtAALL.code === 200) {
