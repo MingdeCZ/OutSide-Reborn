@@ -188,7 +188,7 @@ async function lookUp(t, e, o) {
                     s++;
                     a(f + 1);
                 } else {
-                    i("检测失败, 重试次数" + s);
+                    i("检测失败, 重试次数：" + s);
                     l(t);
                 }
             }
@@ -202,30 +202,30 @@ async function lookUp(t, e, o) {
     try {
         let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000), bgn, nodeName = $environment.params.node, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = "不清楚", INIPS = false, ins = "", INFailed;
 
-        const StrtPAC = await lookUp("https://rmb.pingan.com.cn/itam/mas/linden/ip/request", "", timein);
-        if (StrtPAC.code === 0) {
-            var {region, city, ip, isp} = StrtPAC.data, bgnPAC, bgnIAI;
-            region == city && (region = "");
-            isp = isp.replace(/中国/g, "");
-            bgnPAC = `${region} ${city}`;
-            bgnIAI = `${ip}<br><br><b>运营商</b>：${isp}`;
+        const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", timein);
+        if (StrtPI.statusCode === 200) {
+            var {province, city, distinct, ip, isp} = StrtPI.data, bgnP, bgnI;
+            province == city && (province = "");
+            //isp = isp.replace(/中国/g, "");
+            bgnP = `${province} ${city} ${distinct}`;
+            bgnI = `${ip}<br><br><b>运营商</b>：${isp}`;
         } else {
-            bgnPAC = "<b>❗️(位置)失败</b>(超时)";
-            bgnIAI = "<b>❗️(IP)失败</b>(超时)<br><br>";
+            bgnP = "<b>❗️失败</b>(超时)";
+            bgnI = "<b>❗️失败</b>(超时)<br><br>";
         }
 
         //const StrtD = await lookUp("https://ip.im/info", "", timein);
         //let {Districts} = StrtD.data;
 
-        const StrtAALL = await lookUp("https://api.ip.plus", "", timein);
-        if (StrtAALL.code === 200) {
-            var {asn, latitude, longitude} = StrtAALL.data, bgnAALL;
-            bgnAALL = `(${h(asn)})<br><br><b>📍</b>: ${j(latitude)} &nbsp&nbsp${k(longitude)}`;
+        const StrtAL = await lookUp("https://api.ip.plus", "", timein);
+        if (StrtAL.code === 200) {
+            var {asn, as_name, latitude, longitude} = StrtAL.data, bgnAL;
+            bgnAL = `(${as_name})(${h(asn)})<br><br><b>📍</b>: ${j(latitude)} &nbsp&nbsp${k(longitude)}`;
         } else {
-            bgnAALL = "<b>❗️(坐标)失败</b>(超时)";
+            bgnAL = "<b>❗️(坐标)失败</b>(超时)";
         }
 
-        bgn = `<font><b>归属地</b>：${bgnPAC}<br><br><b>IP</b>：${bgnIAI} ${bgnAALL}</font><br>`;
+        bgn = `<font><b>归属地</b>：${bgnP}<br><br><b>IP</b>：${bgnI} ${bgnAL}</font><br>`;
 
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
@@ -249,29 +249,30 @@ async function lookUp(t, e, o) {
             nodeCtlgCnclsn = "直连";
         } else {
             if (serverip === "v4") {
-                const inDprtPAC = await lookUp(`https://rmb.pingan.com.cn/itam/mas/linden/ip/request?ip=${nodeIp}`, "", timein);
-                if (inDprtPAC.code === 0) {
-                    var {region, city, ip, isp} = inDprtPAC.data, insPAC, insIAI;
-                    region == city && (region = "");
-                    isp = isp.replace(/中国/g, "");
-                    insPAC = `${region} ${city}`;
-                    insIAI = `${ip}<br><br><b>运营商</b>：${isp}`;
-                } else {
-                    insPAC = `<b>❗️失败</b>(${JSON.stringify(inDprtPAC)}：超时)`;
-                    insIAI = `<b>❗️失败</b>(${JSON.stringify(inDprtPAC)}：超时)<br><br>`;
-                }
-
-                const inDprtAALL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", timein);
-                if (inDprtAALL?.data?.country_code === "CN") {
-                    var {asn, latitude, longitude} = inDprtAALL.data, insAALL;
+                const inDprtPI = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", timein);
+                if (inDprtPI?.data?.country_code === "CN") {
+                    var {province, city, distinct, ip, isp} = inDprtPI.data, insP, insI;
+                    province == city && (province = "");
+                    //isp = isp.replace(/中国/g, "");
                     nodeCtlgCnclsn = "国内中转";
-                    insAALL = `(${h(asn)})<br><br><b>📍</b>: ${j(latitude)} &nbsp&nbsp${k(longitude)}`;
+                    insP = `${province} ${city} ${distinct}`;
+                    insI = `${ip}<br><br><b>运营商</b>：${isp}`;
                 } else {
-                    insAALL = `<b>❗️(坐标)失败</b>(${JSON.stringify(inDprtAALL)}：超时)`;
+                    insP = `<b>❗️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
+                    insI = `<b>❗️失败</b>(${JSON.stringify(inDprtPI)}：超时)<br><br>`;
                     INIPS = true;
                 }
 
-                ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${insPAC}<br><br><b>IP</b>：${insIAI} ${insAALL}<br>----------------------------</font>`;
+                const inDprtAL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", timein);
+                if (inDprtAL?.data?.country_code === "CN") {
+                    var {asn, as_name, latitude, longitude} = inDprtAL.data, insAL;
+                    insAL = `(${as_name})(${h(asn)})<br><br><b>📍</b>: ${j(latitude)} &nbsp&nbsp${k(longitude)}`;
+                } else {
+                    insAL = `<b>❗️(坐标)失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
+                    INIPS = true;
+                }
+
+                ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${insP}<br><br><b>IP</b>：${insI} ${insAL}<br>----------------------------</font>`;
             } else {
                 INIPS = true;
             }
