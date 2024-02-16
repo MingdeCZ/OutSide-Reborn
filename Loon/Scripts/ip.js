@@ -234,11 +234,10 @@ async function lookUp(t, e, o) {
             if (serverip === "v4") {
                 const inDprt = await lookUp(`https://api-v3.speedtest.cn/ip?ip=${nodeIp}`, "", timein);
                 if (inDprt?.data?.country === "中国") {
-                    let {countryCode, country, city, province, district, isp, ip, lat, lon} = inDprt.data;
+                    let {countryCode, country, city, province, district, isp, ip, lat, lon} = inDprt.data, nodeCtlgCnclsn = `国内中转`;
                     city == district && (city = "");
                     city == province && (city = "");
                     isp = isp.replace(/中国/g, "");
-                    countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
                     ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${province} ${city} ${district}<br><br><b>IP</b>：${nodeIp}<br><br><b>运营商</b>：${isp}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------</font>`;
                 } else {
                     INFailed = "<b>⛔️失败</b>(" + JSON.stringify(inDprt);
@@ -246,7 +245,7 @@ async function lookUp(t, e, o) {
                     INIPS = true;
                 }
             } else {
-                INIPS = true;//v6
+                INIPS = true;
             }
             
             if (INIPS) {
