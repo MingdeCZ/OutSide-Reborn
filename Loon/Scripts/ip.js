@@ -213,10 +213,10 @@ async function lookUp(t, e, o) {
             bgnPAC = "<b>❗️(位置)失败</b>(超时)";
             bgnIAI = "<b>❗️(IP)失败</b>(超时)<br><br>";
         }
-        
-        const StrtD = await lookUp("https://ip.im/info", "", timein);
-        let {Districts} = StrtD.data;
-        
+
+        //const StrtD = await lookUp("https://ip.im/info", "", timein);
+        //let {Districts} = StrtD.data;
+
         const StrtAALL = await lookUp("https://api.ip.plus", "", timein);
         if (StrtAALL.code === 200) {
             var {asn, latitude, longitude} = StrtAALL.data, bgnAALL;
@@ -224,8 +224,8 @@ async function lookUp(t, e, o) {
         } else {
             bgnAALL = "<b>❗️(坐标)失败</b>(超时)";
         }
-        
-        bgn = `<font><b>归属地</b>：${bgnPAC} ${Districts}<br><br><b>IP</b>：${bgnIAI} ${bgnAALL}</font><br>`;
+
+        bgn = `<font><b>归属地</b>：${bgnPAC}<br><br><b>IP</b>：${bgnIAI} ${bgnAALL}</font><br>`;
 
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
@@ -246,22 +246,32 @@ async function lookUp(t, e, o) {
         }
 
         if (nodeIp == lquery) {
-            nodeCtlgCnclsn = `直连`;
+            nodeCtlgCnclsn = "直连";
         } else {
             if (serverip === "v4") {
-                const inDprt = await lookUp(`https://api-v3.speedtest.cn/ip?ip=${nodeIp}`, "", timein);
-                if (inDprt?.data?.country === "中国" && inDprt?.data?.countryCode === "CN") {
-                    let {city, province, district, isp, ip, lat, lon} = inDprt.data;
-                    city == district && (city = "");
-                    city == province && (city = "");
+                const inDprtPAC = await lookUp(`https://rmb.pingan.com.cn/itam/mas/linden/ip/request?ip=${nodeIp}`, "", timein);
+                if (inDprtPAC.code === 0) {
+                    var {region, city, ip, isp} = inDprtPAC.data, insPAC, insIAI;
+                    region == city && (region = "");
                     isp = isp.replace(/中国/g, "");
-                    nodeCtlgCnclsn = `国内中转`;
-                    ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${province} ${city} ${district}<br><br><b>IP</b>：${nodeIp}<br><br><b>运营商</b>：${isp}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------</font>`;
+                    insPAC = `${region} ${city}`;
+                    insIAI = `${ip}<br><br><b>运营商</b>：${isp}`;
                 } else {
-                    INFailed = "<b>⛔️失败</b>(" + JSON.stringify(inDprt);
-                    ins = `<br><font>入口🔎结果👇<br><br>${INFailed}：超时)<br>----------------------------</font>`;
+                    insPAC = `<b>❗️失败</b>(${JSON.stringify(inDprtPAC)}：超时)`;
+                    insIAI = `<b>❗️失败</b>(${JSON.stringify(inDprtPAC)}：超时)<br><br>`;
+                }
+
+                const inDprtAALL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", timein);
+                if (inDprtAALL?.data?.country_code === "CN") {
+                    var {asn, latitude, longitude} = inDprtAALL.data, insAALL;
+                    nodeCtlgCnclsn = "国内中转";
+                    insAALL = `(${h(asn)})<br><br><b>📍</b>: ${j(latitude)} &nbsp&nbsp${k(longitude)}`;
+                } else {
+                    insAALL = `<b>❗️(坐标)失败</b>(${JSON.stringify(inDprtAALL)}：超时)`;
                     INIPS = true;
                 }
+
+                ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${insPAC}<br><br><b>IP</b>：${insIAI} ${insAALL}<br>----------------------------</font>`;
             } else {
                 INIPS = true;
             }
@@ -271,7 +281,7 @@ async function lookUp(t, e, o) {
                 if (outDprt?.status === "success") {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
-                    countryCode !== "CN" && (nodeCtlgCnclsn = `国外中转`);
+                    countryCode !== "CN" && (nodeCtlgCnclsn = "国外中转");
                     ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------</font>`;
                 } else {
                     INFailed = "<b>🚫失败</b>(" + JSON.stringify(outDprt);
