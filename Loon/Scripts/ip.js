@@ -1,5 +1,5 @@
 function a(m) {
-    var n = "", o = b(), p = c(), q;
+    let n = "", o = b(), p = c(), q;
     for (q = 0; q < m.length; q++) {
         if (m.charCodeAt(q) > 10000 && p.indexOf(m.charAt(q)) != -1) {
             n += o.charAt(p.indexOf(m.charAt(q)));
@@ -28,7 +28,7 @@ function d(m) {
 }
 
 function e(m, n) {
-    var o = new RegExp("[\u4E00-\u9FA5]+"), p = "";
+    let o = new RegExp("[\u4E00-\u9FA5]+"), p = "";
     if (m.match(/\ or\ /g)) {
         m = "";
     }
@@ -72,7 +72,7 @@ function h(m) {
 }
 
 function i(m, n, o) {
-    var p = m.match(/ (.*)/)[1], q = " (" + h(m) + ")", r = p + q;
+    let p = m.match(/ (.*)/)[1], q = " (" + h(m) + ")", r = p + q;
     if (m == "") {
         m += "暂无数据";
     }
@@ -132,7 +132,8 @@ async function lookUp(t, e, o) {
                         if (t) {
                             o(t);
                         } else {
-                            let t = Date.now() - r, o = e.status;
+                            let t = Date.now() - r;
+                            o = e.status;
                             switch (o) {
                                 case 200:
                                     let o = e.headers["Content-Type"];
@@ -199,16 +200,8 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000), nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, INIPS = false, ins = "", serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = `不清楚`;
-        
-        if (serverip === "domain") {
-            const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", timein);
-            if (Ali?.length > 0) {
-                nodeIp = Ali[0];
-                serverip = ipCtlg(nodeIp);
-            }
-        }
-        
+        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000), bgn, nodeName = $environment.params.node, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = `不清楚`, INIPS = false, ins = "", INFailed;
+
         const Strt = await lookUp("https://api.live.bilibili.com/ip_service/v1/ip_service/get_ip_addr", "", timein);
         if (Strt.code === 0) {
             let {province, city, addr, isp, latitude, longitude} = Strt.data;
@@ -218,16 +211,25 @@ async function lookUp(t, e, o) {
         } else {
             bgn = `<font><b>❗️失败</b>(超时)</font><br>`;
         }
-        
+
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
             var lquery = query;
             outs = `<font><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}</font><br>`;
         } else {
-            let ArvlFailed = "<font><b>❌失败</b></font>(" + JSON.stringify(Arvl), outs = `ArvlFailed：超时)<br>`;
+            let ArvlFailed = "<font><b>❌失败</b>(" + JSON.stringify(Arvl);
+            outs = `ArvlFailed：超时)</font><br>`;
         }
-        
+
+        if (serverip === "domain") {
+            const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", timein);
+            if (Ali?.length > 0) {
+                nodeIp = Ali[0];
+                serverip = ipCtlg(nodeIp);
+            }
+        }
+
         if (nodeIp == lquery) {
             nodeCtlgCnclsn = `直连`;
         } else {
@@ -242,13 +244,13 @@ async function lookUp(t, e, o) {
                     ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${province} ${city} ${district}<br><br><b>IP</b>：${nodeIp}<br><br><b>运营商</b>：${isp}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------</font>`;
                 } else {
                     INFailed = "<b>⛔️失败</b>(" + JSON.stringify(inDprt);
-                    ins = `<br><font>入口🔎结果👇<br><br>INFailed：超时)<br>----------------------------</font>`;
+                    ins = `<br><font>入口🔎结果👇<br><br>${INFailed}：超时)<br>----------------------------</font>`;
                     INIPS = true;
                 }
             } else {
                 INIPS = true;
             }
-            
+
             if (INIPS) {
                 const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", timeot);
                 if (outDprt?.status === "success") {
@@ -258,7 +260,7 @@ async function lookUp(t, e, o) {
                     ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------</font>`;
                 } else {
                     INFailed = "<b>🚫失败</b>(" + JSON.stringify(outDprt);
-                    ins = `<br><font>入口🔎结果👇<br><br>INFailed：超时)<br>----------------------------</font>`;
+                    ins = `<br><font>入口🔎结果👇<br><br>${INFailed}：超时)<br>----------------------------</font>`;
                 }
             }
         }
