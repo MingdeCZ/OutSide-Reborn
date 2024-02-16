@@ -214,6 +214,9 @@ async function lookUp(t, e, o) {
             bgnIAI = "<b>❗️(IP)失败</b>(超时)<br><br>";
         }
         
+        const StrtD = await http({url: "https://ip.im/info}", headers: {"User-Agent": "curl/7.16.3 (powerpc-apple-darwin9.0) libcurl/7.16.3"}});
+        let district = String($.lodash_get(StrtD, 'body')).match(/(^|\s+)Districts\s*(:|：)\s*(.*)/m)?.[3];
+        
         const StrtAALL = await lookUp("https://api.ip.plus", "", timein);
         if (StrtAALL.code === 200) {
             var {asn, latitude, longitude} = StrtAALL.data, bgnAALL;
@@ -222,7 +225,7 @@ async function lookUp(t, e, o) {
             bgnAALL = "<b>❗️(坐标)失败</b>(超时)";
         }
         
-        bgn = `<font><b>归属地</b>：${bgnPAC}<br><br><b>IP</b>：${bgnIAI} ${bgnAALL}</font><br>`;
+        bgn = `<font><b>归属地</b>：${bgnPAC} ${district}<br><br><b>IP</b>：${bgnIAI} ${bgnAALL}</font><br>`;
 
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
