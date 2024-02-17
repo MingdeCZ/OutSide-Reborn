@@ -200,7 +200,7 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000), bgn, nodeName = $environment.params.node, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = "不清楚", INIPS = false, ins = "", INFailed;
+        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000), bgn, nodeName = $environment.params.node, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = "不清楚", INIPS = false, ins = "";
 
         const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", timein);
         if (StrtPI?.country_code === "CN") {
@@ -232,8 +232,7 @@ async function lookUp(t, e, o) {
             var lquery = query;
             outs = `<font><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}</font><br>`;
         } else {
-            let ArvlFailed = "<font><b>❌失联</b>(" + JSON.stringify(Arvl);
-            outs = `${ArvlFailed}：超时)</font><br>`;
+            outs = `<font><b>❌失联</b>(${JSON.stringify(Arvl)}：超时)</font><br>`;
         }
 
         if (serverip === "domain") {
@@ -258,9 +257,9 @@ async function lookUp(t, e, o) {
                     insIP = `${ip}`;
                     insISP = `${isp}`;
                 } else {
-                    insP = `<b>❗️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
-                    insIP = `<b>❗️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
-                    insISP = `<b>❗️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
+                    insP = `<b>⛔️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
+                    insIP = `<b>⛔️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
+                    insISP = `<b>⛔️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
                     INIPS = true;
                 }
                 const inDprtAL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", timein);
@@ -269,8 +268,8 @@ async function lookUp(t, e, o) {
                     insA = `${as_name}(${h(asn)})`;
                     insL = `${j(latitude)} &nbsp&nbsp${k(longitude)}`;
                 } else {
-                    insA = `<b>❗️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
-                    insL = `<b>❗️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
+                    insA = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
+                    insL = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
                     INIPS = true;
                 }
                 ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br><b>📍</b>: ${insL}<br>----------------------------</font>`;
@@ -286,8 +285,7 @@ async function lookUp(t, e, o) {
                     countryCode !== "CN" && (nodeCtlgCnclsn = "国外中转");
                     ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------</font>`;
                 } else {
-                    INFailed = "<b>🚫失败</b>(" + JSON.stringify(outDprt);
-                    ins = `<br><font>入口🔎结果👇<br><br>${INFailed}：超时)<br>----------------------------</font>`;
+                    ins = `<br><font>入口🔎结果👇<br><br><b>🚫失败</b>(${JSON.stringify(outDprt)}：超时)<br>----------------------------</font>`;
                 }
             }
         }
