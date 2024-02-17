@@ -232,7 +232,7 @@ async function lookUp(t, e, o) {
             var lquery = query;
             outs = `<font><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}</font><br>`;
         } else {
-            outs = `<font><b>❌失联</b>(：超时)</font><br>`;
+            outs = `<font><b>❌失联</b>(${JSON.stringify(Arvl)}：超时)</font><br>`;
         }
 
         if (serverip === "domain") {
