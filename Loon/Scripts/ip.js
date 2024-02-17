@@ -204,28 +204,27 @@ async function lookUp(t, e, o) {
 
         const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", timein);
         if (StrtPI?.country_code === "CN") {
-            var {province, city, distinct, ip, isp} = StrtPI, bgnP, bgnI;
+            var {province, city, distinct, ip, isp} = StrtPI, bgnP, bgnIP, bgnISP;
             province == city && (province = "");
             //isp = isp.replace(/中国/g, "");
             bgnP = `${province} ${city} ${distinct}`;
-            bgnI = `${ip}<br><br><b>运营商</b>：${isp}`;
+            bgnIP = `${ip}`;
+            bgnISP = `${isp}`;
         } else {
             bgnP = "<b>❗️失败</b>(超时)";
-            bgnI = "<b>❗️失败</b>(超时)<br><br>";
+            bgnIP = "<b>❗️失败</b>(超时)";
+            bgnISP = "<b>❗️失败</b>(超时)";
         }
-
-        //const StrtD = await lookUp("https://ip.im/info", "", timein);
-        //let {Districts} = StrtD.data;
-
         const StrtAL = await lookUp("https://api.ip.plus", "", timein);
         if (StrtAL.code === 200) {
-            var {asn, as_name, latitude, longitude} = StrtAL.data, bgnAL;
-            bgnAL = `(${as_name})(${h(asn)})<br><br><b>📍</b>: ${j(latitude)} &nbsp&nbsp${k(longitude)}`;
+            var {as_name, asn, latitude, longitude} = StrtAL.data, bgnA, bgnL;
+            bgnA = `${as_name}(${h(asn)})`;
+            bgnL = `${j(latitude)} &nbsp&nbsp${k(longitude)}`;
         } else {
-            bgnAL = "<b>❗️(坐标)失败</b>(超时)";
+            bgnA = "<b>❗️失败</b>(超时)";
+            bgnL = "<b>❗️失败</b>(超时)";
         }
-
-        bgn = `<font><b>归属地</b>：${bgnP}<br><br><b>IP</b>：${bgnI} ${bgnAL}</font><br>`;
+        bgn = `<font><b>归属地</b>：${bgnP}<br><br><b>IP</b>：${bgnI}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br><b>📍</b>: ${bgnL}</font><br>`;
 
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
@@ -251,28 +250,30 @@ async function lookUp(t, e, o) {
             if (serverip === "v4") {
                 const inDprtPI = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", timein);
                 if (inDprtPI?.country_code === "CN") {
-                    var {province, city, distinct, ip, isp} = inDprtPI, insP, insI;
+                    var {province, city, distinct, ip, isp} = inDprtPI, insP, insIP, insISP;
                     province == city && (province = "");
                     //isp = isp.replace(/中国/g, "");
                     nodeCtlgCnclsn = "国内中转";
                     insP = `${province} ${city} ${distinct}`;
-                    insI = `${ip}<br><br><b>运营商</b>：${isp}`;
+                    insIP = `${ip}`;
+                    insISP = `${isp}`;
                 } else {
                     insP = `<b>❗️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
-                    insI = `<b>❗️失败</b>(${JSON.stringify(inDprtPI)}：超时)<br><br>`;
+                    insIP = `<b>❗️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
+                    insISP = `<b>❗️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
                     INIPS = true;
                 }
-
                 const inDprtAL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", timein);
                 if (inDprtAL?.data?.country_code === "CN") {
-                    var {asn, as_name, latitude, longitude} = inDprtAL.data, insAL;
-                    insAL = `(${as_name})(${h(asn)})<br><br><b>📍</b>: ${j(latitude)} &nbsp&nbsp${k(longitude)}`;
+                    var {as_name, asn, latitude, longitude} = inDprtAL.data, insA, insL;
+                    insA = `${as_name}(${h(asn)})`;
+                    insL = `${j(latitude)} &nbsp&nbsp${k(longitude)}`;
                 } else {
-                    insAL = `<b>❗️(坐标)失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
+                    insA = `<b>❗️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
+                    insL = `<b>❗️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
                     INIPS = true;
                 }
-
-                ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${insP}<br><br><b>IP</b>：${insI} ${insAL}<br>----------------------------</font>`;
+                ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br><b>📍</b>: ${insL}<br>----------------------------</font>`;
             } else {
                 INIPS = true;
             }
