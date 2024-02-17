@@ -215,7 +215,7 @@ async function lookUp(t, e, o) {
         const StrtAL = await lookUp("https://api.ip.plus", "", 2000);
         if (StrtAL.code === 200) {
             var {as_name, asn, latitude, longitude} = StrtAL.data, bgnA, bgnL;
-            bgnA = `${as_name}(${h(asn)})`;
+            bgnA = `${as_name} (${h(asn)})`;
             bgnL = `${j(latitude)} &nbsp&nbsp${k(longitude)}`;
         } else {
             bgnA = bgnL = "<b>❗️失败</b>(超时)";
@@ -258,7 +258,7 @@ async function lookUp(t, e, o) {
                 const inDprtAL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", 2000);
                 if (inDprtAL?.data?.country_code === "CN") {
                     var {as_name, asn, latitude, longitude} = inDprtAL.data, insA, insL;
-                    insA = `${as_name}(${h(asn)})`;
+                    insA = `${as_name} (${h(asn)})`;
                     insL = `${j(latitude)} &nbsp&nbsp${k(longitude)}`;
                 } else {
                     insA = insL = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
