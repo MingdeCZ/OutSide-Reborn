@@ -1,14 +1,12 @@
 #!name = Loon 插件合集 lite
 #!desc = 搜集了网上 Loon 的插件，建议先点击下面的链接查看使用方法和注意事项👇。所有资源均搜集于网络，欢迎留言添加、修改和纠错👏
 #!openUrl = https://github.com/MingdeCZ/OutSide-Reborn/blob/main/Loon/Rewrites/minor.plugin
-#!author = @MingdeCZ https://github.com/MingdeCZ
-#!homepage = https://github.com/MingdeCZ/OutSide-Reborn/tree/main/Loon
+#!author = @MingdeCZ
+#!homepage = https://github.com/MingdeCZ
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 24.02.15
+#!date = 24.02.17
 #!other = 
-#!select = 入口查询超时时间ms, 100, 200, 500, 800, 1000, 1200, 2000, 5000, 10000
-#!select = 落地查询超时时间ms, 100, 200, 500, 1000, 1500, 2000, 3000, 5000, 10000
 #!select = 仅输出字幕译文（YouTube）, 是, 否
 #!select = 字幕译文的位置（YouTube）, 译文位于原文之上, 译文位于原文之下
 

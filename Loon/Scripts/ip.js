@@ -83,15 +83,15 @@ function i(m, n, o) {
         o += "未知";
     }
     if (p == n && n == o) {
-        return "<font><b>自治机构 同 运营商 同 数据中心</b>：</font>" + r;
+        return "<b>自治机构 同 运营商 同 数据中心</b>：" + r;
     } else if (p == n) {
-        return "<font><b>自治机构 同 运营商</b>：" + r + "<br><br>" + "<b>数据中心</b>：</font>" + o;
+        return "<b>自治机构 同 运营商</b>：" + r + "<br><br>" + "<b>数据中心</b>：" + o;
     } else if (p == o) {
-        return "<font><b>自治机构 同 数据中心</b>：" + r + "<br><br>" + "<b>运营商</b>：</font>" + n;
+        return "<b>自治机构 同 数据中心</b>：" + r + "<br><br>" + "<b>运营商</b>：" + n;
     } else if (n == o) {
-        return "<font><b>自治机构</b>：" + r + "<br><br>" + "<b>运营商 同 数据中心</b>：</font>" + n;
+        return "<b>自治机构</b>：" + r + "<br><br>" + "<b>运营商 同 数据中心</b>：" + n;
     } else {
-        return "<font><b>自治机构</b>：" + r + "<br><br>" + "<b>运营商</b>：" + n + "<br><br>" + "<b>数据中心</b>：</font>" + o;
+        return "<b>自治机构</b>：" + r + "<br><br>" + "<b>运营商</b>：" + n + "<br><br>" + "<b>数据中心</b>：" + o;
     }
 }
 
@@ -200,43 +200,39 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let timein = parseInt($persistentStore.read("入口查询超时时间ms") ?? 2000), timeot = parseInt($persistentStore.read("落地查询超时时间ms") ?? 5000), bgn, nodeName = $environment.params.node, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = "不清楚", INIPS = false, ins = "";
+        let bgn, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = "不清楚", INIPS = false, ins = "";
 
-        const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", timein);
+        const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
         if (StrtPI?.country_code === "CN") {
             var {province, city, distinct, ip, isp} = StrtPI, bgnP, bgnIP, bgnISP;
             province == city && (province = "");
-            //isp = isp.replace(/中国/g, "");
             bgnP = `${province} ${city} ${distinct}`;
             bgnIP = `${ip}`;
             bgnISP = `${isp}`;
         } else {
-            bgnP = "<b>❗️失败</b>(超时)";
-            bgnIP = "<b>❗️失败</b>(超时)";
-            bgnISP = "<b>❗️失败</b>(超时)";
+            bgnP = bgnIP = bgnISP = "<b>❗️失败</b>(超时)";
         }
-        const StrtAL = await lookUp("https://api.ip.plus", "", timein);
+        const StrtAL = await lookUp("https://api.ip.plus", "", 2000);
         if (StrtAL.code === 200) {
             var {as_name, asn, latitude, longitude} = StrtAL.data, bgnA, bgnL;
             bgnA = `${as_name}(${h(asn)})`;
             bgnL = `${j(latitude)} &nbsp&nbsp${k(longitude)}`;
         } else {
-            bgnA = "<b>❗️失败</b>(超时)";
-            bgnL = "<b>❗️失败</b>(超时)";
+            bgnA = bgnL = "<b>❗️失败</b>(超时)";
         }
-        bgn = `<font><b>归属地</b>：${bgnP}<br><br><b>IP</b>：${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br><b>📍</b>: ${bgnL}</font><br>`;
+        bgn = `<b>归属地</b>：${bgnP}<br><br><b>IP</b>：${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br><b>📍</b>: ${bgnL}<br>`;
 
-        const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
+        const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", $environment.params.node, 5000);
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
             var lquery = query;
-            outs = `<font><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}</font><br>`;
+            outs = `<b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}<br>`;
         } else {
-            outs = `<font><b>❌失联</b>(${JSON.stringify(Arvl)}：超时)</font><br>`;
+            outs = `<b>❌失联</b>(${JSON.stringify(Arvl)}：超时)<br>`;
         }
 
         if (serverip === "domain") {
-            const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", timein);
+            const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", 2000);
             if (Ali?.length > 0) {
                 nodeIp = Ali[0];
                 serverip = ipCtlg(nodeIp);
@@ -247,54 +243,50 @@ async function lookUp(t, e, o) {
             nodeCtlgCnclsn = "直连";
         } else {
             if (serverip === "v4") {
-                const inDprtPI = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", timein);
+                const inDprtPI = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", 2000);
                 if (inDprtPI?.country_code === "CN") {
                     var {province, city, distinct, ip, isp} = inDprtPI, insP, insIP, insISP;
                     province == city && (province = "");
-                    //isp = isp.replace(/中国/g, "");
                     nodeCtlgCnclsn = "国内中转";
                     insP = `${province} ${city} ${distinct}`;
                     insIP = `${ip}`;
                     insISP = `${isp}`;
                 } else {
-                    insP = `<b>⛔️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
-                    insIP = `<b>⛔️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
-                    insISP = `<b>⛔️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
+                    insP = insIP = insISP = `<b>⛔️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
                     INIPS = true;
                 }
-                const inDprtAL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", timein);
+                const inDprtAL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", 2000);
                 if (inDprtAL?.data?.country_code === "CN") {
                     var {as_name, asn, latitude, longitude} = inDprtAL.data, insA, insL;
                     insA = `${as_name}(${h(asn)})`;
                     insL = `${j(latitude)} &nbsp&nbsp${k(longitude)}`;
                 } else {
-                    insA = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
-                    insL = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
+                    insA = insL = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
                     INIPS = true;
                 }
-                ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br><b>📍</b>: ${insL}<br>----------------------------</font>`;
+                ins = `<br>入口🔎结果👇<br><br><b>归属地</b>：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br><b>📍</b>: ${insL}<br>----------------------------`;
             } else {
                 INIPS = true;
             }
 
             if (INIPS) {
-                const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", timeot);
+                const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 5000);
                 if (outDprt?.status === "success") {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = "国外中转");
-                    ins = `<br><font>入口🔎结果👇<br><br><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------</font>`;
+                    ins = `<br>入口🔎结果👇<br><br><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------`;
                 } else {
-                    ins = `<br><font>入口🔎结果👇<br><br><b>🚫失败</b>(${JSON.stringify(outDprt)}：超时)<br>----------------------------</font>`;
+                    ins = `<br>入口🔎结果👇<br><br><b>🚫失败</b>(${JSON.stringify(outDprt)}：超时)<br>----------------------------`;
                 }
             }
         }
 
         let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br><font><b>节点类型：${nodeCtlgCnclsn}</b><br>----------------------------------<br>入网🔎结果👇<br><br>${bgn}----------------------------${ins}<br>落地🔎结果👇<br><br>${outs}_____________________________</font>`;
-        $done({title: nodeName, htmlMessage: message});
+        $done({title: $environment.params.node, htmlMessage: message});
     } catch (error) {
-        $done({title: nodeName, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br><font><b>‼️失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>_____________________________</font>`});
+        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br><font><b>‼️失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>_____________________________</font>`});
     } finally {
-        $done({title: nodeName, htmlMessage: "详见日志"});
+        $done({title: $environment.params.node, htmlMessage: "详见日志"});
     }
 })();
