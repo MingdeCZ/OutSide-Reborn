@@ -224,7 +224,7 @@ async function lookUp(t, e, o) {
             bgnA = "<b>❗️失败</b>(超时)";
             bgnL = "<b>❗️失败</b>(超时)";
         }
-        bgn = `<font><b>归属地</b>：${bgnP}<br><br><b>IP</b>：${bgnI}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br><b>📍</b>: ${bgnL}</font><br>`;
+        bgn = `<font><b>归属地</b>：${bgnP}<br><br><b>IP</b>：${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br><b>📍</b>: ${bgnL}</font><br>`;
 
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, timeot);
         if (Arvl?.status === "success") {
