@@ -216,7 +216,7 @@ async function lookUp(t, e, o) {
         if (StrtAL.code === 200) {
             var {as_name, asn, latitude, longitude} = StrtAL.data, bgnA, bgnL;
             bgnA = `${as_name} (${h(asn)})`;
-            bgnL = `${j(latitude)} &nbsp&nbsp${k(longitude)}`;
+            bgnL = `${j(latitude)} ◆ ${k(longitude)}`;
         } else {
             bgnA = bgnL = "<b>❗️失败</b>(超时)";
         }
@@ -259,12 +259,12 @@ async function lookUp(t, e, o) {
                 if (inDprtAL?.data?.country_code === "CN") {
                     var {as_name, asn, latitude, longitude} = inDprtAL.data, insA, insL;
                     insA = `${as_name} (${h(asn)})`;
-                    insL = `${j(latitude)} &nbsp&nbsp${k(longitude)}`;
+                    insL = `${j(latitude)} ◆ ${k(longitude)}`;
                 } else {
                     insA = insL = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
                     INIPS = true;
                 }
-                ins = `<br>入口🔎结果👇<br><br><b>归属地</b>：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br><b>📍</b>: ${insL}<br>----------------------------`;
+                ins = `<br>入口🔎结果👇<br><br><b>归属地</b>：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br><b>📍</b>: ${insL}<br>-----------------------------`;
             } else {
                 INIPS = true;
             }
@@ -275,17 +275,17 @@ async function lookUp(t, e, o) {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = "国外中转");
-                    ins = `<br>入口🔎结果👇<br><br><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} &nbsp&nbsp${k(lon)}<br>----------------------------`;
+                    ins = `<br>入口🔎结果👇<br><br><b>归属地</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}<br>-----------------------------`;
                 } else {
-                    ins = `<br>入口🔎结果👇<br><br><b>🚫失败</b>(${JSON.stringify(outDprt)}：超时)<br>----------------------------`;
+                    ins = `<br>入口🔎结果👇<br><br><b>🚫失败</b>(${JSON.stringify(outDprt)}：超时)<br>-----------------------------`;
                 }
             }
         }
 
-        let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br><font><b>节点类型：${nodeCtlgCnclsn}</b><br>----------------------------------<br>入网🔎结果👇<br><br>${bgn}----------------------------${ins}<br>落地🔎结果👇<br><br>${outs}_____________________________</font>`;
+        let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">—————————————————————————————<br><br><font><b>节点类型：${nodeCtlgCnclsn}</b><br><br>-----------------------------------<br>入网🔎结果👇<br><br>${bgn}-----------------------------${ins}<br>落地🔎结果👇<br><br>${outs}—————————————————————————————</font>`;
         $done({title: $environment.params.node, htmlMessage: message});
     } catch (error) {
-        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br><font><b>‼️失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>_____________________________</font>`});
+        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">—————————————————————————————<br><br><font><b>‼️失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>—————————————————————————————</font>`});
     } finally {
         $done({title: $environment.params.node, htmlMessage: "详见日志"});
     }
