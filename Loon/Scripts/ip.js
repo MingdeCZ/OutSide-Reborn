@@ -282,10 +282,10 @@ async function lookUp(t, e, o) {
             }
         }
 
-        let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">—————————————————————————————<br><br><font><b>节点类型：${nodeCtlgCnclsn}</b><br><br>-----------------------------------<br>入网🔎结果👇<br><br>${bgn}-----------------------------${ins}<br>落地🔎结果👇<br><br>${outs}—————————————————————————————</font>`;
+        let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br><font><b>节点类型：${nodeCtlgCnclsn}</b><br>----------------------------------<br>入网🔎结果👇<br><br>${bgn}-----------------------------${ins}<br>落地🔎结果👇<br><br>${outs}_____________________________</font>`;
         $done({title: $environment.params.node, htmlMessage: message});
     } catch (error) {
-        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">—————————————————————————————<br><br><font><b>‼️失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>—————————————————————————————</font>`});
+        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">_____________________________<br><br><font><b>‼️失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>_____________________________</font>`});
     } finally {
         $done({title: $environment.params.node, htmlMessage: "详见日志"});
     }
