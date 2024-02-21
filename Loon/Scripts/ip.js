@@ -226,7 +226,7 @@ async function lookUp(t, e, o) {
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
             var lquery = query;
-            outs = `<b>⛳️</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}<br>`;
+            outs = `<b>⛳️</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ✦ ${k(lon)}<br>`;
         } else {
             outs = `<b>❌失联</b>(${JSON.stringify(Arvl)}：超时)<br>`;
         }
@@ -247,7 +247,7 @@ async function lookUp(t, e, o) {
                 if (inDprtPI?.country_code === "CN") {
                     var {province, city, distinct, ip, isp} = inDprtPI, insP, insIP, insISP;
                     province == city && (province = "");
-                    nodeCtlgCnclsn = "国内中转";
+                    nodeCtlgCnclsn = "国内🔄";
                     insP = `${province} ${city} ${distinct}`;
                     insIP = `${ip}`;
                     insISP = `${isp}`;
@@ -259,7 +259,7 @@ async function lookUp(t, e, o) {
                 if (inDprtAL?.data?.country_code === "CN") {
                     var {as_name, asn, latitude, longitude} = inDprtAL.data, insA, insL;
                     insA = `${as_name} (${h(asn)})`;
-                    insL = `${j(latitude)} ∙ ${k(longitude)}`;
+                    insL = `${j(latitude)} ✡︎ ${k(longitude)}`;
                 } else {
                     insA = insL = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
                     INIPS = true;
@@ -274,8 +274,8 @@ async function lookUp(t, e, o) {
                 if (outDprt?.status === "success") {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
-                    countryCode !== "CN" && (nodeCtlgCnclsn = "国外中转");
-                    ins = `<br><b>🚆</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ▴ ${k(lon)}<br>-----------------------------`;
+                    countryCode !== "CN" && (nodeCtlgCnclsn = "国外🔄");
+                    ins = `<br><b>🚆</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ✡︎ ${k(lon)}<br>-----------------------------`;
                 } else {
                     ins = `<br><b>🚫失败</b>(${JSON.stringify(outDprt)}：超时)<br>-----------------------------`;
                 }
