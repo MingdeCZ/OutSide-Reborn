@@ -226,9 +226,9 @@ async function lookUp(t, e, o) {
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
             var lquery = query;
-            outs = `⛳️：${f(d(a(country)), e(a(regionName), a(city)))} ➜〔${g(countryCode)}〕<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✦ ${k(lon)}<br>`;
+            outs = `⛳️：${f(d(a(country)), e(a(regionName), a(city)))} ➜〔${g(countryCode)}〕<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✦ ${k(lon)}`;
         } else {
-            outs = `❌<b>失联</b>(${JSON.stringify(Arvl)}：超时)<br>`;
+            outs = `❌<b>失联</b>(${JSON.stringify(Arvl)}：超时)`;
         }
 
         if (serverip === "domain") {
@@ -285,7 +285,7 @@ async function lookUp(t, e, o) {
         let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br><b>类型：${nodeCtlgCnclsn}</b><br>--------------------------------<br>${bgn}--------------------------${ins}<br>${outs}</font>`;
         $done({title: $environment.params.node, htmlMessage: message});
     } catch (error) {
-        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br>‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font><br><br>`});
+        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br>‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font>`});
     } finally {
         $done({title: $environment.params.node, htmlMessage: "详见日志"});
     }
