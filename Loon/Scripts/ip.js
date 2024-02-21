@@ -275,7 +275,7 @@ async function lookUp(t, e, o) {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = "国外🔄");
-                    ins = `<br>🚆：${f(d(a(country)), e(a(regionName), a(city)))} ➜〔${g(countryCode)}〕<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>--------------------------`;
+                    ins = `<br>🚆：${f(d(a(country)), e(a(regionName), a(city)))} &nbsp➜〔${g(countryCode)}〕<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>--------------------------`;
                 } else {
                     ins = `<br>🚫<b>失败</b>(${JSON.stringify(outDprt)}：超时)<br>--------------------------`;
                 }
