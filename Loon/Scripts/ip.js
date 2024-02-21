@@ -216,17 +216,17 @@ async function lookUp(t, e, o) {
         if (StrtAL.code === 200) {
             var {as_name, asn, latitude, longitude} = StrtAL.data, bgnA, bgnL;
             bgnA = `${as_name} (${h(asn)})`;
-            bgnL = `${j(latitude)} ◆ ${k(longitude)}`;
+            bgnL = `${j(latitude)}・${k(longitude)}`;
         } else {
             bgnA = bgnL = "<b>❗️失败</b>(超时)";
         }
-        bgn = `<b>入网归属</b>：${bgnP}<br><br><b>IP</b>：${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br><b>📍</b>: ${bgnL}<br>`;
+        bgn = `<b>🌸</b>：${bgnP}<br><br><b>IP</b>：${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br><b>📍</b>: ${bgnL}<br>`;
 
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", $environment.params.node, 5000);
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
             var lquery = query;
-            outs = `<b>落地归属</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}<br>`;
+            outs = `<b>⛳️</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}<br>`;
         } else {
             outs = `<b>❌失联</b>(${JSON.stringify(Arvl)}：超时)<br>`;
         }
@@ -259,12 +259,12 @@ async function lookUp(t, e, o) {
                 if (inDprtAL?.data?.country_code === "CN") {
                     var {as_name, asn, latitude, longitude} = inDprtAL.data, insA, insL;
                     insA = `${as_name} (${h(asn)})`;
-                    insL = `${j(latitude)} ◆ ${k(longitude)}`;
+                    insL = `${j(latitude)} ∙ ${k(longitude)}`;
                 } else {
                     insA = insL = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
                     INIPS = true;
                 }
-                ins = `<br><b>入口归属</b>：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br><b>📍</b>: ${insL}<br>-----------------------------`;
+                ins = `<br><b>🛫</b>：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br><b>📍</b>: ${insL}<br>-----------------------------`;
             } else {
                 INIPS = true;
             }
@@ -275,17 +275,17 @@ async function lookUp(t, e, o) {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = "国外中转");
-                    ins = `<br><b>入口归属</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ◆ ${k(lon)}<br>-----------------------------`;
+                    ins = `<br><b>🚆</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ▴ ${k(lon)}<br>-----------------------------`;
                 } else {
                     ins = `<br><b>🚫失败</b>(${JSON.stringify(outDprt)}：超时)<br>-----------------------------`;
                 }
             }
         }
 
-        let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🔎 结果 👇<br>_____________________________<br><br><b>节点类型：${nodeCtlgCnclsn}</b><br>----------------------------------<br>${bgn}-----------------------------${ins}<br>${outs}_____________________________</font>`;
+        let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br><b>节点类型：${nodeCtlgCnclsn}</b><br>----------------------------------<br>${bgn}-----------------------------${ins}<br>${outs}_____________________________</font>`;
         $done({title: $environment.params.node, htmlMessage: message});
     } catch (error) {
-        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🔎 结果 👇<br>_____________________________<br><br><b>‼️失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>_____________________________</font>`});
+        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br><b>‼️失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>_____________________________</font>`});
     } finally {
         $done({title: $environment.params.node, htmlMessage: "详见日志"});
     }
