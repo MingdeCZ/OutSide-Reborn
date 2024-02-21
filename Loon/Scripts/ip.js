@@ -226,7 +226,7 @@ async function lookUp(t, e, o) {
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
             var lquery = query;
-            outs = `⛳️：${f(d(a(country)), e(a(regionName), a(city)))} ➜〔${g(countryCode)}〕<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✦ ${k(lon)}`;
+            outs = `⛳️：${f(d(a(country)), e(a(regionName), a(city)))}  ➜〔${g(countryCode)}〕<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✦ ${k(lon)}`;
         } else {
             outs = `❌<b>失联</b>(${JSON.stringify(Arvl)}：超时)`;
         }
@@ -275,7 +275,7 @@ async function lookUp(t, e, o) {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = "国外🔄");
-                    ins = `<br>🚆：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>--------------------------`;
+                    ins = `<br>🚆：${f(d(a(country)), e(a(regionName), a(city)))} ➜〔${g(countryCode)}〕<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>--------------------------`;
                 } else {
                     ins = `<br>🚫<b>失败</b>(${JSON.stringify(outDprt)}：超时)<br>--------------------------`;
                 }
