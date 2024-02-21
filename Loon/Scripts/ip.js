@@ -213,7 +213,7 @@ async function lookUp(t, e, o) {
             bgnP = bgnIP = bgnISP = "❗️<b>失败</b>(超时)";
         }
         const StrtAL = await lookUp("https://api.ip.plus", "", 2000);
-        if (StrtAL.code === 200) {
+        if (StrtAL?.code === 200) {
             var {as_name, asn, latitude, longitude} = StrtAL.data, bgnA, bgnL;
             bgnA = `${as_name} (${h(asn)})`;
             bgnL = `${j(latitude)}・${k(longitude)}`;
@@ -226,7 +226,7 @@ async function lookUp(t, e, o) {
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
             var lquery = query;
-            outs = `⛳️：${f(d(a(country)), e(a(regionName), a(city)))} &nbsp➜〔${g(countryCode)}〕<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✦ ${k(lon)}`;
+            outs = `⛳️：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✦ ${k(lon)}`;
         } else {
             outs = `❌<b>失联</b>(${JSON.stringify(Arvl)}：超时)`;
         }
