@@ -210,7 +210,7 @@ async function lookUp(t, e, o) {
             bgnIP = `${ip}`;
             bgnISP = `${isp}`;
         } else {
-            bgnP = bgnIP = bgnISP = "<b>❗️失败</b>(超时)";
+            bgnP = bgnIP = bgnISP = "❗️<b>失败</b>(超时)";
         }
         const StrtAL = await lookUp("https://api.ip.plus", "", 2000);
         if (StrtAL.code === 200) {
@@ -218,17 +218,17 @@ async function lookUp(t, e, o) {
             bgnA = `${as_name} (${h(asn)})`;
             bgnL = `${j(latitude)}・${k(longitude)}`;
         } else {
-            bgnA = bgnL = "<b>❗️失败</b>(超时)";
+            bgnA = bgnL = "❗️<b>失败</b>(超时)";
         }
-        bgn = `<b>🌸</b>：${bgnP}<br><br><b>IP</b>：${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br><b>📍</b>: ${bgnL}<br>`;
+        bgn = `🌸：${bgnP}<br><br><b>IP</b>：${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br>📍: ${bgnL}<br>`;
 
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", $environment.params.node, 5000);
         if (Arvl?.status === "success") {
             let {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
             var lquery = query;
-            outs = `<b>⛳️</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ✦ ${k(lon)}<br>`;
+            outs = `⛳️：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b></b>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✦ ${k(lon)}<br>`;
         } else {
-            outs = `<b>❌失联</b>(${JSON.stringify(Arvl)}：超时)<br>`;
+            outs = `❌<b>失联</b>(${JSON.stringify(Arvl)}：超时)<br>`;
         }
 
         if (serverip === "domain") {
@@ -252,7 +252,7 @@ async function lookUp(t, e, o) {
                     insIP = `${ip}`;
                     insISP = `${isp}`;
                 } else {
-                    insP = insIP = insISP = `<b>⛔️失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
+                    insP = insIP = insISP = `⛔️<b>失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
                     INIPS = true;
                 }
                 const inDprtAL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", 2000);
@@ -261,10 +261,10 @@ async function lookUp(t, e, o) {
                     insA = `${as_name} (${h(asn)})`;
                     insL = `${j(latitude)} ✡︎ ${k(longitude)}`;
                 } else {
-                    insA = insL = `<b>⛔️失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
+                    insA = insL = `⛔️<b>失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
                     INIPS = true;
                 }
-                ins = `<br><b>🛫</b>：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br><b>📍</b>: ${insL}<br>-----------------------------`;
+                ins = `<br>♐️：${insP}<br><br><b>IP</b>：${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br>📍: ${insL}<br>-----------------------------`;
             } else {
                 INIPS = true;
             }
@@ -275,9 +275,9 @@ async function lookUp(t, e, o) {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
                     countryCode !== "CN" && (nodeCtlgCnclsn = "国外🔄");
-                    ins = `<br><b>🚆</b>：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br><b>📍</b>: ${j(lat)} ✡︎ ${k(lon)}<br>-----------------------------`;
+                    ins = `<br>🚆：${f(d(a(country)), e(a(regionName), a(city)))} ➟ ⟦${g(countryCode)}⟧<br><br><b>IP</b>：${query}<br><br>${i(as, isp, org)}<br><br>📍: ${j(lat)} ✡︎ ${k(lon)}<br>-----------------------------`;
                 } else {
-                    ins = `<br><b>🚫失败</b>(${JSON.stringify(outDprt)}：超时)<br>-----------------------------`;
+                    ins = `<br>🚫<b>失败</b>(${JSON.stringify(outDprt)}：超时)<br>-----------------------------`;
                 }
             }
         }
@@ -285,7 +285,7 @@ async function lookUp(t, e, o) {
         let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br><b>节点类型：${nodeCtlgCnclsn}</b><br>----------------------------------<br>${bgn}-----------------------------${ins}<br>${outs}_____________________________</font>`;
         $done({title: $environment.params.node, htmlMessage: message});
     } catch (error) {
-        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br><b>‼️失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>_____________________________</font>`});
+        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br>‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ<br><br>_____________________________</font>`});
     } finally {
         $done({title: $environment.params.node, htmlMessage: "详见日志"});
     }
