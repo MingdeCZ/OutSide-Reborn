@@ -200,7 +200,7 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let bgn, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), INIPS = true, ins = "";
+        let bgn, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), INIPS = false, ins = "";
 
         const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
         if (StrtPI?.country_code === "CN") {
@@ -247,9 +247,11 @@ async function lookUp(t, e, o) {
                     province == city && (province = "");
                     insP = `${province} ${city} ${distinct}`;
                     insIP = `${ip}`;
-                    insISP = `${isp}`;
+                    insISP = `<b>运营商</b>：${isp}<br><br>`;
+                    if (isp === "电信" || isp === "移动" || isp === "联通") {
+                        insISP = "";
+                    }
                 } else {
-                    insP = insIP = insISP = `⛔️<b>失败</b>(${JSON.stringify(inDprtPI)}：超时)`;
                     INIPS = true;
                 }
                 const inDprtAL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", 2000);
@@ -258,10 +260,9 @@ async function lookUp(t, e, o) {
                     insA = `${as_name} (${h(asn)})`;
                     insL = `${j(latitude)} ✡︎ ${k(longitude)}`;
                 } else {
-                    insA = insL = `⛔️<b>失败</b>(${JSON.stringify(inDprtAL)}：超时)`;
                     INIPS = true;
                 }
-                ins = `<br>♐️：${insP}<br><br>${insIP}<br><br><b>自治机构</b>：${insA}<br><br><b>运营商</b>：${insISP}<br><br>${insL}<br>--------------------------`;
+                ins = `<br>♐️：${insP}<br><br>${insIP}<br><br><b>自治机构</b>：${insA}<br><br>${insISP}${insL}<br>--------------------------`;
             } else {
                 INIPS = true;
             }
@@ -271,7 +272,7 @@ async function lookUp(t, e, o) {
                 if (outDprt?.status === "success") {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
-                    ins = `<br>🚆：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>--------------------------`;
+                    ins = `<br>☯️：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>--------------------------`;
                 } else {
                     ins = `<br>🚫<b>失败</b>(${JSON.stringify(outDprt)}：超时)<br>--------------------------`;
                 }
