@@ -3,8 +3,7 @@
            2.检测时有将近一般的概率会全部检测失败或超时，原因同上，待研究
         */
 
-const NF_BASE_URL = "https://www.netflix.com/title/";
-const FILM_ID = 81280792
+const NF_BASE_URL = "https://www.netflix.com/title/81280792";
 const DISNEY_BASE_URL = 'https://www.disneyplus.com';
 const DISNEY_LOCATION_BASE_URL = 'https://disney.api.edge.bamgrid.com/graph/v1/device/graphql';
 const YTB_BASE_URL = "https://www.youtube.com/premium";
@@ -36,7 +35,7 @@ let result = {
 
 let arrow = " ➟ "
 
-Promise.all([ytbTest(),disneyLocation(),nfTest(FILM_ID),daznTest(),parmTest(),discoveryTest(),gptTest()]).then(value => {
+Promise.all([ytbTest(),disneyLocation(),nfTest(),daznTest(),parmTest(),discoveryTest(),gptTest()]).then(value => {
     let content = "</br>------------------------------------</br>"+([result["Dazn"],result["Discovery"],result["Paramount"],result["Disney"],result["ChatGPT"],result["Netflix"],result["YouTube"]]).join("</br></br>")
     content = content + "</br>------------------------------------</br>"+"<font color=#CD5C5C>"+"<b>节点</b> ➟ " + nodeName+ "</font>"
     content =`<p style="text-align: center; font-family: -apple-system; font-size: large; font-weight: thin">` + content + `</p>`
@@ -346,10 +345,10 @@ function discoveryTest() {
     })
 }
 
-function nfTest(filmId) {
+function nfTest() {
     return new Promise((resolve, reject) => {
         let params = {
-            url: NF_BASE_URL + filmId,
+            url: NF_BASE_URL,
             node: nodeName,
             timeout: 6000, //ms
             headers: {
