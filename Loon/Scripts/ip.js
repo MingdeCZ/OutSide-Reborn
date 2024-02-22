@@ -200,7 +200,7 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let bgn, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), nodeCtlgCnclsn = "不清楚", INIPS = false, ins = "";
+        let bgn, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), INIPS = false, ins = "";
 
         const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
         if (StrtPI?.country_code === "CN") {
@@ -240,14 +240,12 @@ async function lookUp(t, e, o) {
         }
 
         if (nodeIp == lquery) {
-            nodeCtlgCnclsn = "↔️";
         } else {
             if (serverip === "v4") {
                 const inDprtPI = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", 2000);
                 if (inDprtPI?.country_code === "CN") {
                     var {province, city, distinct, ip, isp} = inDprtPI, insP, insIP, insISP;
                     province == city && (province = "");
-                    nodeCtlgCnclsn = "国内🔄";
                     insP = `${province} ${city} ${distinct}`;
                     insIP = `${ip}`;
                     insISP = `${isp}`;
@@ -274,7 +272,6 @@ async function lookUp(t, e, o) {
                 if (outDprt?.status === "success") {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
                     regionName == city && (city = "");
-                    countryCode !== "CN" && (nodeCtlgCnclsn = "国外🔄");
                     ins = `<br>🚆：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>--------------------------`;
                 } else {
                     ins = `<br>🚫<b>失败</b>(${JSON.stringify(outDprt)}：超时)<br>--------------------------`;
@@ -282,7 +279,7 @@ async function lookUp(t, e, o) {
             }
         }
 
-        let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br>${bgn}--------------------------${ins}<br>${outs}</font>`;
+        let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵️<br>_____________________________<br><br>${bgn}--------------------------${ins}<br>${outs}</font>`;
         $done({title: $environment.params.node, htmlMessage: message});
     } catch (error) {
         $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br>‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font>`});
