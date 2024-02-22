@@ -200,7 +200,7 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let bgn, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), INIPS = false, ins = "";
+        let bgn, outs, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), INIPS = true, ins = "";
 
         const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
         if (StrtPI?.country_code === "CN") {
