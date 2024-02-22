@@ -282,7 +282,7 @@ async function lookUp(t, e, o) {
         let message = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵️<br>_____________________________<br><br>${bgn}--------------------------${ins}<br>${outs}</font>`;
         $done({title: $environment.params.node, htmlMessage: message});
     } catch (error) {
-        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵️<br>_____________________________<br><br>‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font>`});
+        $done({title: $environment.params.node, htmlMessage: `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵︎<br>_____________________________<br><br>‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font>`});
     } finally {
         $done({title: $environment.params.node, htmlMessage: "详见日志"});
     }
