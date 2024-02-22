@@ -204,13 +204,12 @@ async function lookUp(t, e, o) {
 
         const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
         if (StrtPI?.country_code === "CN") {
-            var {province, city, distinct, ip, isp} = StrtPI, bgnP, bgnIP, bgnISP;
+            var {province, city, distinct, ip} = StrtPI, bgnP, bgnIP;
             province == city && (province = "");
             bgnP = `${province} ${city} ${distinct}`;
             bgnIP = `${ip}`;
-            bgnISP = `${isp}`;
         } else {
-            bgnP = bgnIP = bgnISP = "❗️<b>失败</b>(超时)";
+            bgnP = bgnIP = "❗️<b>失败</b>(超时)";
         }
         const StrtAL = await lookUp("https://api.ip.plus", "", 2000);
         if (StrtAL?.code === 200) {
@@ -220,7 +219,7 @@ async function lookUp(t, e, o) {
         } else {
             bgnA = bgnL = "❗️<b>失败</b>(超时)";
         }
-        bgn = `🌸：${bgnP}<br><br>${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br><b>运营商</b>：${bgnISP}<br><br>${bgnL}<br>`;
+        bgn = `🌸：${bgnP}<br><br>${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br>${bgnL}<br>`;
 
         const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", $environment.params.node, 5000);
         if (Arvl?.status === "success") {
