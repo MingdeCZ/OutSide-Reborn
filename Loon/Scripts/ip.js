@@ -204,7 +204,7 @@ async function lookUp(t, e, o) {
 
         const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
         if (StrtPI?.country_code === "CN") {
-            let {province, city, distinct, ip} = StrtPI, bgnP, bgnIP;
+            var {province, city, distinct, ip} = StrtPI, bgnP, bgnIP;
             //province == city && (province = "");
             bgnP = `${province} ${city} ${distinct}`;
             bgnIP = `${ip}`;
@@ -262,7 +262,7 @@ async function lookUp(t, e, o) {
             } else {
                 INIPS = true;
             }
-            
+
             if (INIPS) {
                 const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 5000);
                 if (outDprt?.status === "success") {
@@ -274,7 +274,7 @@ async function lookUp(t, e, o) {
             }
         }
 
-        let hd = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵️<br>_____________________________<br><br>`;
+        var hd = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵️<br>_____________________________<br><br>`;
         $done({title: nodeName, htmlMessage: hd + `${bgn}--------------------------${ins}<br>${outs}</font>`});
     } catch (error) {
         $done({title: nodeName, htmlMessage: hd + `‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font>`});
