@@ -5,7 +5,7 @@
 #!homepage = https://github.com/MingdeCZ
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 24.02.17
+#!date = 24.02.23
 #!other = 
 #!select = 仅输出字幕译文（YouTube）, 是, 否
 #!select = 字幕译文的位置（YouTube）, 译文位于原文之上, 译文位于原文之下
@@ -1133,10 +1133,10 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject
 
 [Script]
 # 查询节点信息
-generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/ip.js, timeout=300, tag=查询节点信息, img-url=location.fill.viewfinder
+generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/ip.js, timeout=300, tag=🛂节点ℹ️, img-url=location.fill.viewfinder
 
 # 节点流媒体解锁检测
-generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/streaming-ui-check-lite.js, timeout=300, tag=解锁检测 lite, img-url=checkmark.seal
+generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/streaming-ui-check-lite.js, timeout=300, tag=解锁检测lite, img-url=checkmark.seal
 
 # @NobyDa （更多脚本信息请自行在 https://github.com/NobyDa/Script 中查找）
 # TestFlight 账户管理（自动存储/合并多个 TestFlight 账户列表，并可分享/导出 TestFlight APP）testflight.apple.com
