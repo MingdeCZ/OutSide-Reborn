@@ -83,15 +83,15 @@ function i(m, n, o) {
         o += "未知";
     }
     if (p == n && n == o) {
-        return "<b>自治机构 同 运营商 同 数据中心</b>：" + r;
+        return "<b>自治机构 同 🈂️ 同</b> 📶：" + r;
     } else if (p == n) {
-        return "<b>自治机构 同 运营商</b>：" + r + "<br><br>" + "<b>数据中心</b>：" + o;
+        return "<b>自治机构 同</b> 🈂️：" + r + "<br><br>📶：" + o;
     } else if (p == o) {
-        return "<b>自治机构 同 数据中心</b>：" + r + "<br><br>" + "<b>运营商</b>：" + n;
+        return "<b>自治机构 同</b> 📶：" + r + "<br><br>🈂️：" + n;
     } else if (n == o) {
-        return "<b>自治机构</b>：" + r + "<br><br>" + "<b>运营商 同 数据中心</b>：" + n;
+        return "<b>自治机构</b>：" + r + "<br><br>🈂️ <b>同</b> 📶：" + n;
     } else {
-        return "<b>自治机构</b>：" + r + "<br><br>" + "<b>运营商</b>：" + n + "<br><br>" + "<b>数据中心</b>：" + o;
+        return "<b>自治机构</b>：" + r + "<br><br>🈂️：" + n + "<br><br>📶：" + o;
     }
 }
 
@@ -111,10 +111,10 @@ function k(m) {
     }
 }
 
-function ipCtlg(t) {
-    if (/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(t)) {
+function l(m) {
+    if (/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(m)) {
         return "v4";
-    } else if (/^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/.test(t)) {
+    } else if (/^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/.test(m)) {
         return "v6";
     } else {
         return "domain";
@@ -188,7 +188,7 @@ async function lookUp(t, e, o) {
                     s++;
                     a(f + 1);
                 } else {
-                    i("检测失败, 重试次数：" + s);
+                    i("检测失败，重试次数：" + s);
                     l(t);
                 }
             }
@@ -200,7 +200,7 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let bgn, outs, nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, serverip = ipCtlg(nodeIp), INIPS = false, ins = "";
+        let bgn, outs, nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, serverip = l(nodeIp), INIPS = false, ins = "";
 
         const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
         if (StrtPI?.country_code === "CN") {
@@ -233,7 +233,7 @@ async function lookUp(t, e, o) {
             const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", 2000);
             if (Ali?.length > 0) {
                 nodeIp = Ali[0];
-                serverip = ipCtlg(nodeIp);
+                serverip = l(nodeIp);
             }
         }
 
