@@ -267,14 +267,14 @@ async function lookUp(t, e, o) {
                 const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 5000);
                 if (outDprt?.status === "success") {
                     let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
-                    ins = `<br>☯️：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>--------------------------`;
+                    ins = `<br>⚛️：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>--------------------------`;
                 } else {
                     ins = `<br>🚫<b>失败</b>(超时，${JSON.stringify(outDprt)})<br>--------------------------`;
                 }
             }
         }
 
-        var hd = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><br><font>🛂 结果 ⤵️<br>_____________________________<br><br>`;
+        var hd = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><font>_____________________________<br><br>`;
         $done({title: nodeName, htmlMessage: hd + `${bgn}--------------------------${ins}<br>${outs}</font>`});
     } catch (error) {
         $done({title: nodeName, htmlMessage: hd + `‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font>`});
