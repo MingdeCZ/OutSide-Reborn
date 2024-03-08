@@ -207,7 +207,7 @@ async function lookUp(t, e, o) {
             var {province, city, distinct, ip, lat, lon} = StrtPIL, bgnP, bgnIP, bgnL;
             bgnP = `${province} ${city} ${distinct}`;
             bgnIP = `${ip}`;
-            bgnL = `${j(lat).toFixed(4)}・${k(lon).toFixed(4)}`;
+            bgnL = `${parseFloat(j(lat)).toFixed(4)}・${parseFloat(k(lon)).toFixed(4)}`;
         } else {
             bgnP = bgnIP = bgnL = "❗️<b>失败</b>(超时)";
         }
