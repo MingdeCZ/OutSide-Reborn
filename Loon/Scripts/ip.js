@@ -251,7 +251,7 @@ async function lookUp(t, e, o) {
                 const inDprtA = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 2000);
                 if (inDprtA?.status === "success") {
                     var {as, isp, org} = inDprtA, insA;
-                    insA = IEPLC ? `<b>自治机构</b>：${as.match(/ (.*)/)[1]} (${h(as)})` : i(as, isp, org);
+                    insA = IEPLC ? i(as, isp, org) : `<b>自治机构</b>：${as.match(/ (.*)/)[1]} (${h(as)})`;
                 } else {
                     INIPS = true;
                 }
