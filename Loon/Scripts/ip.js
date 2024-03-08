@@ -200,7 +200,7 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let bgn, outs, nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, serverip = l(nodeIp), INIPS = false, ins = "";
+        let bgn, outs, nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, serverip = l(nodeIp), INIPS = false, ins = "", IEPLC = false;
 
         const StrtPIL = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
         if (StrtPIL?.country_code === "CN") {
@@ -238,25 +238,24 @@ async function lookUp(t, e, o) {
 
         if (nodeIp != query) {
             if (serverip === "v4") {
-                const inDprtPI = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", 2000);
-                if (inDprtPI?.country_code === "CN") {
-                    var {province, city, distinct, ip, isp} = inDprtPI, insP, insIP, insISP;
+                const inDprtPIL = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", 2000);
+                if (inDprtPIL?.country_code === "CN") {
+                    var {province, city, distinct, ip, isp, lat, lon} = inDprtPIL, insP, insIP, insL;
                     insP = `${province} ${city} ${distinct}`;
                     insIP = `${ip}`;
-                    insISP = `<b>运营商</b>：${isp}<br><br>`;
-                    if (isp === "电信" || isp === "移动" || isp === "联通") {
-                        insISP = "";
+                    insL = `${j(parseFloat(lat).toFixed(4))}・${k(parseFloat(lon).toFixed(4))}`;
+                    if (isp !== "电信" && isp !== "移动" && isp !== "联通") {
+                        IEPLC = true;
                     }
                 }
-                const inDprtAL = await lookUp(`https://api.ip.plus/${nodeIp}`, "", 2000);
-                if (inDprtAL?.data?.country_code === "CN") {
-                    var {as_name, asn, latitude, longitude} = inDprtAL.data, insA, insL;
-                    insA = `${as_name} (${h(asn)})`;
-                    insL = `${j(latitude)} ✡︎ ${k(longitude)}`;
+                const inDprtA = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 2000);
+                if (inDprtA?.status === "success") {
+                    var {as, isp, org} = inDprtA, insA;
+                    insA = IEPLC ? `<b>自治机构</b>：${as.match(/ (.*)/)[1]} (${h(as)})` : i(as, isp, org);
                 } else {
                     INIPS = true;
                 }
-                ins = `<br>♐️：${insP}<br><br>${insIP}<br><br><b>自治机构</b>：${insA}<br><br>${insISP}${insL}<br>--------------------------`;
+                ins = `<br>♐️：${insP}<br><br>${insIP}<br><br>${insA}<br><br>${insL}<br>--------------------------`;
             } else {
                 INIPS = true;
             }
