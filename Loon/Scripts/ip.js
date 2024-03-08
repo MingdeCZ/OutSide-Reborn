@@ -213,8 +213,8 @@ async function lookUp(t, e, o) {
         }
         const StrtA = await lookUp(`http://ip-api.com/json/${ip}?lang=zh-CN`, "", 2000);
         if (StrtA?.status === "success") {
-            var {asn} = StrtA, bgnA;
-            bgnA = `${asn.match(/ (.*)/)[1]} (${h(asn)})`;
+            var {as} = StrtA, bgnA;
+            bgnA = `${as.match(/ (.*)/)[1]} (${h(as)})`;
         } else {
             bgnA = "❗️<b>失败</b>(超时)";
         }
