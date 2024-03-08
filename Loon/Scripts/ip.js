@@ -202,22 +202,21 @@ async function lookUp(t, e, o) {
     try {
         let bgn, outs, nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, serverip = l(nodeIp), INIPS = false, ins = "";
 
-        const StrtPI = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
-        if (StrtPI?.country_code === "CN") {
-            var {province, city, distinct, ip} = StrtPI, bgnP, bgnIP;
-            //province == city && (province = "");
+        const StrtPIL = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
+        if (StrtPIL?.country_code === "CN") {
+            var {province, city, distinct, ip, lat, lon} = StrtPIL, bgnP, bgnIP, bgnL;
             bgnP = `${province} ${city} ${distinct}`;
             bgnIP = `${ip}`;
+            bgnL = `${j(lat).toFixed(4)}・${k(lon).toFixed(4)}`;
         } else {
-            bgnP = bgnIP = "❗️<b>失败</b>(超时)";
+            bgnP = bgnIP = bgnL = "❗️<b>失败</b>(超时)";
         }
-        const StrtAL = await lookUp("https://api.ip.plus", "", 2000);
-        if (StrtAL?.code === 200) {
-            var {as_name, asn, latitude, longitude} = StrtAL.data, bgnA, bgnL;
-            bgnA = `${as_name} (${h(asn)})`;
-            bgnL = `${j(latitude)}・${k(longitude)}`;
+        const StrtA = await lookUp(`http://ip-api.com/json/${ip}?lang=zh-CN`, "", 2000);
+        if (StrtA?.status === "success") {
+            var {asn} = StrtA, bgnA;
+            bgnA = `${asn.match(/ (.*)/)[1]} (${h(asn)})`;
         } else {
-            bgnA = bgnL = "❗️<b>失败</b>(超时)";
+            bgnA = "❗️<b>失败</b>(超时)";
         }
         bgn = `🌸：${bgnP}<br><br>${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br>${bgnL}<br>`;
 
@@ -242,7 +241,6 @@ async function lookUp(t, e, o) {
                 const inDprtPI = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", 2000);
                 if (inDprtPI?.country_code === "CN") {
                     var {province, city, distinct, ip, isp} = inDprtPI, insP, insIP, insISP;
-                    //province == city && (province = "");
                     insP = `${province} ${city} ${distinct}`;
                     insIP = `${ip}`;
                     insISP = `<b>运营商</b>：${isp}<br><br>`;
