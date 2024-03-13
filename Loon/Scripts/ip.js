@@ -247,13 +247,13 @@ async function lookUp(t, e, o) {
                     if (isp !== "电信" && isp !== "移动" && isp !== "联通") {
                         IEPLC = true;
                     }
+                } else {
+                    INIPS = true;
                 }
                 const inDprtA = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 2000);
                 if (inDprtA?.status === "success") {
                     var {as, isp, org} = inDprtA, insA;
                     insA = IEPLC ? as.match(/ (.*)/)[1] === isp ? `<b>自治机构 同 运营商</b>：${as.match(/ (.*)/)[1]} (${h(as)})` : `<b>自治机构</b>：${as.match(/ (.*)/)[1]} (${h(as)})<br><br><b>运营商</b>：${isp}` : `<b>自治机构</b>：${as.match(/ (.*)/)[1]} (${h(as)})`;
-                } else {
-                    INIPS = true;
                 }
                 ins = `<br>♐️：${insP}<br><br>${insIP}<br><br>${insA}<br><br>${insL}<br>-------------------------`;
             } else {
