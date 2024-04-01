@@ -15,8 +15,7 @@
 #!select = 字幕译文的位置（YouTube）, 译文位于原文之上, 译文位于原文之下
 
 [General]
-skip-proxy = iosapps.itunes.apple.com
-# @VirgilClyne
+# @VirgilClyne（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/GetSomeFries 中查找）
 # 🍟 整点薯条: 🌐 通用设置增强（(📱 iOS 版) 1.添加跳过代理部分段内容 2.添加返回真实 IP 段内容 3.添加不可 MitM 的域名，防止打断连接）
 # 跳过代理
 # 跳过某个域名或者 IP 段，这些目标主机将不会由 Loon Proxy 处理。
@@ -5297,42 +5296,42 @@ IP-ASN,212237,DIRECT // Changgong Zhang
 # IP-ASN,216405,DIRECT // Zheng Chao 【未广播中国大陆IP】
 
 # 🍟 整点薯条: 🚫 阻止常见的 HTTPDNS 服务器
-# Alibaba
+# 阿里巴巴
 DOMAIN,httpdns.alicdn.com,REJECT
-# Aliyun
-# refer: https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/download%2Fpdf%2F30114%2F%25E7%2594%25A8%25E6%2588%25B7%25E6%258C%2587%25E5%258D%2597_cn_zh-CN.pdf
+# 阿里云
+# 参考：https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/download%2Fpdf%2F30114%2F%25E7%2594%25A8%25E6%2588%25B7%25E6%258C%2587%25E5%258D%2597_cn_zh-CN.pdf
 DOMAIN,httpdns-api.aliyuncs.com,REJECT
 DOMAIN,httpdns-sc.aliyuncs.com,REJECT
-# refer: http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/pdf/httpdns-api-reference-cn-zh-2016-05-12.pdf
-# refer: http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/pdf/httpdns-product-introduction-cn-zh-2017-05-24.pdf
-# refer: https://help.aliyun.com/document_detail/435282.html
-# refer: https://alidocs.dingtalk.com/i/p/Y7kmbokZp3pgGLq2/docs/lo1YvX0prG98kvEewqNyJPw7xzbmLdEZ
+# 参考：http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/pdf/httpdns-api-reference-cn-zh-2016-05-12.pdf
+# 参考：http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/pdf/httpdns-product-introduction-cn-zh-2017-05-24.pdf
+# 参考：https://help.aliyun.com/document_detail/435282.html
+# 参考：https://alidocs.dingtalk.com/i/p/Y7kmbokZp3pgGLq2/docs/lo1YvX0prG98kvEewqNyJPw7xzbmLdEZ
 IP-CIDR,203.107.1.0/24,REJECT,no-resolve
-# Baidu
+# 百度
 DOMAIN,httpsdns.baidu.com,REJECT
 DOMAIN,httpdns.baidu.com,REJECT
-# BaiduBCE
-# refer: https://bce-cdn.bj.bcebos.com/p3m/pdf/bce-doc/online/HTTPDNS/HTTPDNS.pdf
+# 百度 BCE
+# 参考：https://bce-cdn.bj.bcebos.com/p3m/pdf/bce-doc/online/HTTPDNS/HTTPDNS.pdf
 DOMAIN,httpdns.baidubce.com,REJECT
 IP-CIDR,186.76.76.200/32,REJECT,no-resolve
-# Bilibili
+# 哔哩哔哩
 DOMAIN,httpdns.bilivideo.com,REJECT
-# Huawei
+# 华为
 DOMAIN,httpdns.c.cdnhwc2.com,REJECT
-# JD
+# 京东
 DOMAIN,dns.jd.com,REJECT
 IP-CIDR,101.124.19.122/32,REJECT,no-resolve
 IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
-# JD Cloud
-# refer: https://docs.jdcloud.com/cn/jd-cloud-dns/HTTPDNS
-# refer: https://docs.jdcloud.com/cn/httpdns/interface-specification
+# 京东云
+# 参考：https://docs.jdcloud.com/cn/jd-cloud-dns/HTTPDNS
+# 参考：https://docs.jdcloud.com/cn/httpdns/interface-specification
 IP-CIDR,103.224.222.208/32,REJECT,no-resolve
-# Kuaishou
+# 快手
 DOMAIN,kuaishou.httpdns.pro,REJECT
-# Meituan
+# 美团
 DOMAIN,httpdns.meituan.com,REJECT
-# NetEase
-# refer: https://lbs.netease.im/lbs/conf.jsp
+# 网易
+# 参考：https://lbs.netease.im/lbs/conf.jsp
 DOMAIN,httpdns.n.netease.com,REJECT
 DOMAIN,httpdns.music.163.com,REJECT
 DOMAIN,music.httpdns.c.163.com,REJECT
@@ -5343,22 +5342,22 @@ IP-CIDR,115.236.121.51/32,REJECT,no-resolve
 IP-CIDR,115.236.121.195/32,REJECT,no-resolve
 # Oppo
 DOMAIN,httpdns.push.oppomobile.com,REJECT
-# Sina
-# refer: https://github.com/CNSRE/HTTPDNSLib
-# Tencent Cloud
+# 新浪
+# 参考：https://github.com/CNSRE/HTTPDNSLib
+# 腾讯云
 # refer：https://cloud.tencent.com/document/product/379/95497
 IP-CIDR,119.29.29.98/32,REJECT,no-resolve
 IP-CIDR,119.29.29.99/32,REJECT,no-resolve
 # Volcengine
-# refer: https://www.volcengine.com/docs/6758/174756
+# 参考：https://www.volcengine.com/docs/6758/174756
 DOMAIN,httpdns.volcengineapi.com,REJECT
-# Weibo
+# 微博
 DOMAIN,dns.weibo.cn,REJECT
 IP-CIDR,39.97.128.148/32,REJECT,no-resolve
 IP-CIDR,39.97.130.51/32,REJECT,no-resolve
-# Weixin
-# refer: http://dns.weixin.qq.com/cgi-bin/micromsg-bin/newgetdns
-# refer: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Mini_Programs/HTTPDNS.html
+# 微信
+# 参考：http://dns.weixin.qq.com/cgi-bin/micromsg-bin/newgetdns
+# 参考：https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Mini_Programs/HTTPDNS.html
 DOMAIN,dns.weixin.qq.com,REJECT
 DOMAIN,dns.weixin.qq.com.cn,REJECT
 IP-CIDR,42.81.232.18/32,REJECT,no-resolve
@@ -5369,11 +5368,11 @@ IP-CIDR,123.151.54.50/32,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1900:1700:0:9554:1ad9:c3a/128,REJECT,no-resolve
 IP-CIDR6,240e:928:1400:10::25/128,REJECT,no-resolve
 # Wework
-# refer: https://res.mail.qq.com/zh_CN/wework_ip/latest.html
+# 参考：https://res.mail.qq.com/zh_CN/wework_ip/latest.html
 IP-CIDR,182.254.116.117/32,REJECT,no-resolve
 IP-CIDR,182.254.118.119/32,REJECT,no-resolve
-# Zhihu
-# refer: https://github.com/lwd-temp/anti-ip-attribution/issues/24
+# 知乎
+# 参考：https://github.com/lwd-temp/anti-ip-attribution/issues/24
 IP-CIDR,118.89.204.198/23,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 
@@ -5573,14 +5572,14 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 ^http:\/\/114\.110\.96\.26\/d - reject
 ^http:\/\/114\.110\.97\.97\/d - reject
 # QCloud
-# refer: https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
-# refer: https://main.qcloudimg.com/raw/document/product/pdf/379_3513_cn.pdf
-# refer: https://cloud.tencent.com/document/product/379/61200
+# 参考：https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
+# 参考：https://main.qcloudimg.com/raw/document/product/pdf/379_3513_cn.pdf
+# 参考：https://cloud.tencent.com/document/product/379/61200
 ^https?:\/\/119\.29\.29\.29\/d - reject
 # QQmusic
 ^http:\/\/182\.256\.116\.116\/d - reject
 # Weibo
-# refer: https://github.com/CNSRE/HTTPDNSLib-for-iOS
+# 参考：https://github.com/CNSRE/HTTPDNSLib-for-iOS
 ^http:\/\/api\.weibo\.cn\/2\/httpdns\/config - reject
 ^http:\/\/api\.weibo\.cn\/httpdns\/config - reject
 # Weixin
@@ -5590,11 +5589,11 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 ^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
 ^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
 # Wework
-# refer: https://res.mail.qq.com/zh_CN/wework_ip/latest.html
+# 参考：https://res.mail.qq.com/zh_CN/wework_ip/latest.html
 ^http:\/\/182\.254\.116\.117\/d - reject
 ^http:\/\/182\.254\.118\.119\/d - reject
 # Zhihu
-# refer: https://github.com/lwd-temp/anti-ip-attribution/issues/24
+# 参考：https://github.com/lwd-temp/anti-ip-attribution/issues/24
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
 
 # 百度网盘去广告
@@ -5963,14 +5962,14 @@ _hotspot_.m2m = server:system
 # csl Wi-Fi
 hotspot.cslwifi.com = server:system
 # Apple
-# refer: https://support.apple.com/zh-cn/HT210060
+# 参考：https://support.apple.com/zh-cn/HT210060
 networking.apple = server:https://doh.dns.apple.com/dns-query
 # Apple.com
 *.apple.com = server:https://doh.dns.apple.com/dns-query
 # iCloud.com
 *.icloud.com = server:https://doh.dns.apple.com/dns-query
 # Alphabet
-# refer: https://developers.google.com/speed/public-dns/docs/doh?hl=zh-cn
+# 参考：https://developers.google.com/speed/public-dns/docs/doh?hl=zh-cn
 *.google = server:https://dns.google/dns-query
 *.google.com = server:https://dns.google/dns-query
 *.google.com.?? = server:https://dns.google/dns-query
@@ -6017,7 +6016,7 @@ networking.apple = server:https://doh.dns.apple.com/dns-query
 # Google URL Shortener
 goo.gl = server:https://dns.google/dns-query
 # Cloudflare
-# refer: https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/
+# 参考：https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/
 *.cloudflare.com = server:https://cloudflare-dns.com/dns-query
 # Cloudflare Stream
 *.cloudflarestream.com = server:https://cloudflare-dns.com/dns-query
@@ -6034,7 +6033,7 @@ goo.gl = server:https://dns.google/dns-query
 # CloudFlare Workers
 *.workers.dev = server:https://cloudflare-dns.com/dns-query
 # 阿里巴巴
-# refer: https://www.alidns.com
+# 参考：https://www.alidns.com
 *.alibaba.cn = server:https://dns.alidns.com/dns-query
 *.alibaba.com.cn = server:https://dns.alidns.com/dns-query
 # Alibaba 中国
@@ -6062,7 +6061,7 @@ goo.gl = server:https://dns.google/dns-query
 # 淘宝短网址
 tb.cn = server:https://dns.alidns.com/dns-query
 # 阿里云
-# refer: https://www.alidns.com
+# 参考：https://www.alidns.com
 # 阿里云
 *.aliyun.* = server:https://dns.alidns.com/dns-query
 # 阿里云 CDN
@@ -6080,7 +6079,7 @@ tb.cn = server:https://dns.alidns.com/dns-query
 # 阿里云内部
 *.aliyun-inc.com = server:https://dns.alidns.com/dns-query
 # 蚂蚁集团
-# refer: https://www.alidns.com
+# 参考：https://www.alidns.com
 *.antgroup.com = server:https://dns.alidns.com/dns-query
 # 蚂蚁金服
 *.antfin.com = server:https://dns.alidns.com/dns-query
@@ -6099,7 +6098,7 @@ tb.cn = server:https://dns.alidns.com/dns-query
 # 支付宝开放技术生态体系
 *.alipay-eco.com = server:https://dns.alidns.com/dns-query
 # 腾讯
-# refer: https://www.dnspod.cn/products/publicdns
+# 参考：https://www.dnspod.cn/products/publicdns
 *.tencent.com = server:https://doh.pub/dns-query
 # 腾讯云
 *.qcloud.com = server:https://doh.pub/dns-query
@@ -6157,7 +6156,7 @@ tb.cn = server:https://dns.alidns.com/dns-query
 # 腾讯短网址
 url.cn = server:https://doh.pub/dns-query
 # 百度
-# refer: https://dudns.baidu.com/support/localdns/Address/index.html
+# 参考：https://dudns.baidu.com/support/localdns/Address/index.html
 *.baidu = server:180.76.76.76
 *.baidu.com = server:180.76.76.76
 # 百度静态资源
@@ -6192,7 +6191,7 @@ url.cn = server:https://doh.pub/dns-query
 # 百度短网址
 dwz.cn = server:180.76.76.76
 # 360
-# refer: https://sdns.360.net/dnsPublic.html#course
+# 参考：https://sdns.360.net/dnsPublic.html#course
 # 360 安全中心
 *.360.cn = server:https://doh.360.cn/dns-query
 # 360 安全卫士
@@ -6225,7 +6224,7 @@ dwz.cn = server:180.76.76.76
 # 360 短网址
 urlqh.cn = server:https://doh.360.cn/dns-query
 # Bytedance
-# refer: https://www.volcengine.com/docs/6758/179060
+# 参考：https://www.volcengine.com/docs/6758/179060
 # 艾特迷
 *.amemv.com = server:180.184.1.1
 # 西瓜图片服务
@@ -6385,7 +6384,7 @@ http-response https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user requires
 # 微信去除公众号文章底部广告（23.03.14） mp.weixin.qq.com
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js, tag=微信去除公众号文章底部广告
 
-# @VirgilClyne （更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/iRingo 中查找）
+# @VirgilClyne（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/iRingo 中查找）
 # 解锁原装
 # 定位服务（V3）（全面自定义「定位服务」的功能）gspe1-ssl.ls.apple.com
 # 📍 Country Code
