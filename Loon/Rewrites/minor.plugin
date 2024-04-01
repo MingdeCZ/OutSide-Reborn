@@ -5299,7 +5299,6 @@ IP-ASN,212237,DIRECT // Changgong Zhang
 # 🍟 整点薯条: 🚫 阻止常见的 HTTPDNS 服务器
 # Alibaba
 DOMAIN,httpdns.alicdn.com,REJECT
-
 # Aliyun
 # refer: https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/download%2Fpdf%2F30114%2F%25E7%2594%25A8%25E6%2588%25B7%25E6%258C%2587%25E5%258D%2597_cn_zh-CN.pdf
 DOMAIN,httpdns-api.aliyuncs.com,REJECT
@@ -5309,38 +5308,29 @@ DOMAIN,httpdns-sc.aliyuncs.com,REJECT
 # refer: https://help.aliyun.com/document_detail/435282.html
 # refer: https://alidocs.dingtalk.com/i/p/Y7kmbokZp3pgGLq2/docs/lo1YvX0prG98kvEewqNyJPw7xzbmLdEZ
 IP-CIDR,203.107.1.0/24,REJECT,no-resolve
-
 # Baidu
 DOMAIN,httpsdns.baidu.com,REJECT
 DOMAIN,httpdns.baidu.com,REJECT
-
 # BaiduBCE
 # refer: https://bce-cdn.bj.bcebos.com/p3m/pdf/bce-doc/online/HTTPDNS/HTTPDNS.pdf
 DOMAIN,httpdns.baidubce.com,REJECT
 IP-CIDR,186.76.76.200/32,REJECT,no-resolve
-
 # Bilibili
 DOMAIN,httpdns.bilivideo.com,REJECT
-
 # Huawei
 DOMAIN,httpdns.c.cdnhwc2.com,REJECT
-
 # JD
 DOMAIN,dns.jd.com,REJECT
 IP-CIDR,101.124.19.122/32,REJECT,no-resolve
 IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
-
 # JD Cloud
 # refer: https://docs.jdcloud.com/cn/jd-cloud-dns/HTTPDNS
 # refer: https://docs.jdcloud.com/cn/httpdns/interface-specification
 IP-CIDR,103.224.222.208/32,REJECT,no-resolve
-
 # Kuaishou
 DOMAIN,kuaishou.httpdns.pro,REJECT
-
 # Meituan
 DOMAIN,httpdns.meituan.com,REJECT
-
 # NetEase
 # refer: https://lbs.netease.im/lbs/conf.jsp
 DOMAIN,httpdns.n.netease.com,REJECT
@@ -5351,27 +5341,21 @@ IP-CIDR,59.111.239.61/32,REJECT,no-resolve
 IP-CIDR,59.111.239.62/32,REJECT,no-resolve
 IP-CIDR,115.236.121.51/32,REJECT,no-resolve
 IP-CIDR,115.236.121.195/32,REJECT,no-resolve
-
 # Oppo
 DOMAIN,httpdns.push.oppomobile.com,REJECT
-
 # Sina
 # refer: https://github.com/CNSRE/HTTPDNSLib
-
 # Tencent Cloud
 # refer：https://cloud.tencent.com/document/product/379/95497
 IP-CIDR,119.29.29.98/32,REJECT,no-resolve
 IP-CIDR,119.29.29.99/32,REJECT,no-resolve
-
 # Volcengine
 # refer: https://www.volcengine.com/docs/6758/174756
 DOMAIN,httpdns.volcengineapi.com,REJECT
-
 # Weibo
 DOMAIN,dns.weibo.cn,REJECT
 IP-CIDR,39.97.128.148/32,REJECT,no-resolve
 IP-CIDR,39.97.130.51/32,REJECT,no-resolve
-
 # Weixin
 # refer: http://dns.weixin.qq.com/cgi-bin/micromsg-bin/newgetdns
 # refer: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Mini_Programs/HTTPDNS.html
@@ -5384,20 +5368,21 @@ IP-CIDR,42.187.184.154/32,REJECT,no-resolve
 IP-CIDR,123.151.54.50/32,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1900:1700:0:9554:1ad9:c3a/128,REJECT,no-resolve
 IP-CIDR6,240e:928:1400:10::25/128,REJECT,no-resolve
-
 # Wework
 # refer: https://res.mail.qq.com/zh_CN/wework_ip/latest.html
 IP-CIDR,182.254.116.117/32,REJECT,no-resolve
 IP-CIDR,182.254.118.119/32,REJECT,no-resolve
-
 # Zhihu
 # refer: https://github.com/lwd-temp/anti-ip-attribution/issues/24
 IP-CIDR,118.89.204.198/23,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 
+# 解锁原装
+# 定位服务（V3）
 # Country Code
 DOMAIN,gspe1-ssl.ls.apple.com,DIRECT
 
+# 地图（V3）
 # 🗺️ Tiles
 DOMAIN,gspe19-cn-ssl.ls.apple.com,DIRECT
 # 🗺️ Dispatcher
@@ -5405,6 +5390,7 @@ DOMAIN,dispatcher.is.autonavi.com,DIRECT
 # 🗺️ Directions & ETA
 DOMAIN,direction2.is.autonavi.com,DIRECT
 
+# News（V3）
 # iCloud
 DOMAIN,gateway.icloud.com,PROXY
 # News
@@ -5553,11 +5539,9 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 ^https?:\/\/2400:B200:1005:3000::155\/squery - reject
 ^https?:\/\/2400:B200:1005:3000::1D3\/squery - reject
 ^https?:\/\/2400:B200:5000:B000::C8\/squery - reject
-
 # Baidu
 ^http:\/\/180\.76\.76\.112\/v4\/resolve - reject
 ^http:\/\/180\.76\.76\.220\/v4\/resolve - reject
-
 # Bilibili
 # KEY_EXT_P2P_HTTPDNS_BILI_IP
 ^http:\/\/47\.101\.175\.206\/resolve - reject
@@ -5579,45 +5563,36 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 ^http:\/\/116\.63\.10\.31\/resolve - reject
 ^http:\/\/112\.64\.218\.119\/resolve - reject
 ^http:\/\/112\.65\.200\.117\/resolve - reject
-
 # JD
 ^https:\/\/dns\.jd\.com\/v6\/b - reject
-
 # Meituan
 ^http:\/\/103\.37\.155\.60\/fetch - reject
-
 # Pinduoduo
 ^http:\/\/101\.35\.204\.35\/d - reject
 ^http:\/\/101\.35\.212\.35\/d - reject
 ^http:\/\/114\.110\.96\.26\/d - reject
 ^http:\/\/114\.110\.97\.97\/d - reject
-
 # QCloud
 # refer: https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
 # refer: https://main.qcloudimg.com/raw/document/product/pdf/379_3513_cn.pdf
 # refer: https://cloud.tencent.com/document/product/379/61200
 ^https?:\/\/119\.29\.29\.29\/d - reject
-
 # QQmusic
 ^http:\/\/182\.256\.116\.116\/d - reject
-
 # Weibo
 # refer: https://github.com/CNSRE/HTTPDNSLib-for-iOS
 ^http:\/\/api\.weibo\.cn\/2\/httpdns\/config - reject
 ^http:\/\/api\.weibo\.cn\/httpdns\/config - reject
-
 # Weixin
 # 注意: 以下域名 HTTPS 无法 MitM，如通过此链接查询，无法处理
 ^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns - reject
 ^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns - reject
 ^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
 ^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
-
 # Wework
 # refer: https://res.mail.qq.com/zh_CN/wework_ip/latest.html
 ^http:\/\/182\.254\.116\.117\/d - reject
 ^http:\/\/182\.254\.118\.119\/d - reject
-
 # Zhihu
 # refer: https://github.com/lwd-temp/anti-ip-attribution/issues/24
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
@@ -5683,10 +5658,10 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 ^https:\/\/gw\.alicdn\.com\/tps\/.+\d{3,4}-\d{4} reject
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome reject
 # QQ
-# QQ钱包广告 m.qianbao.qq.com
+# 钱包广告 m.qianbao.qq.com
 ^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getQQshopData\? reject-dict
 ^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getGameData\? reject-dict
-# QQ钱包公益广告
+# 钱包公益广告
 ^https:\/\/m\.qianbao\.qq\.com\/services\/walletHome\/getFootData\? reject-dict
 # 和风天气 hfapp-service.qweather.net
 ^https:\/\/hfapp-service\.qweather\.net\/v2\.0\/app\/ad\/list\? reject-dict
@@ -5876,7 +5851,7 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 [Host]
 # 🍟 整点薯条: 🌐 DNS 增强（1.域名按所属 DNS 进行分流解析 2.路由器地址使用系统 DNS 进行解析 3.特殊地址使用规范 DNS 进行解析）
 # --- CUSTOM HOSTS ---
-# > IPv6
+# IPv6
 ip6-localhost = ::1
 ip6-loopback = ::1
 ip6-localnet = fe00::0
@@ -5884,7 +5859,7 @@ ip6-mcastprefix = ff00::0
 ip6-allnodes = ff02::1
 ip6-allrouters = ff02::2
 ip6-allhosts = ff02::3
-# > Encrypted DNS
+# Encrypted DNS
 dns.google = 8.8.8.8
 dns64.dns.google = 2001:4860:4860::6464
 cloudflare-dns.com = 104.16.249.249
@@ -5897,7 +5872,7 @@ doh.360.cn = 23.6.48.18
 dot.360.cn = 101.198.198.198
 dns.twnic.tw = 101.101.101.101
 ordns.he.net = 74.82.42.42
-# > Modify Contents
+# Modify Contents
 # Google API Services China
 services.googleapis.cn = 74.125.193.94
 # Firebase Cloud Messaging
@@ -5915,7 +5890,7 @@ alt8-mtalk.google.com = 3.3.3.3
 dl.google.com = 180.163.151.161
 dl.l.google.com = 180.163.151.161
 # --- CUSTOM DNS ---
-# > Modify Contents
+# Modify Contents
 # Google CDN
 blog.google = server:119.29.29.29
 googletraveladservices.com = server:119.29.29.29
@@ -5929,7 +5904,7 @@ fonts.gstatic.com = server:119.29.29.29
 # Google STUN
 stun.l.google.com = server:system
 stun?.l.google.com = server:system
-# > Router Admin Panel
+# Router Admin Panel
 # Ubiquiti Unifi Network App
 *.id.ui.direct = server:system
 # Ubiquiti Unifi Portal
@@ -5987,14 +5962,14 @@ peiluyou.com = server:system
 _hotspot_.m2m = server:system
 # csl Wi-Fi
 hotspot.cslwifi.com = server:system
-# > Apple
+# Apple
 # refer: https://support.apple.com/zh-cn/HT210060
 networking.apple = server:https://doh.dns.apple.com/dns-query
 # Apple.com
 *.apple.com = server:https://doh.dns.apple.com/dns-query
 # iCloud.com
 *.icloud.com = server:https://doh.dns.apple.com/dns-query
-# > Alphabet
+# Alphabet
 # refer: https://developers.google.com/speed/public-dns/docs/doh?hl=zh-cn
 *.google = server:https://dns.google/dns-query
 *.google.com = server:https://dns.google/dns-query
@@ -6041,7 +6016,7 @@ networking.apple = server:https://doh.dns.apple.com/dns-query
 *.gle = server:https://dns.google/dns-query
 # Google URL Shortener
 goo.gl = server:https://dns.google/dns-query
-# > Cloudflare
+# Cloudflare
 # refer: https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/
 *.cloudflare.com = server:https://cloudflare-dns.com/dns-query
 # Cloudflare Stream
@@ -6058,7 +6033,7 @@ goo.gl = server:https://dns.google/dns-query
 *.cloudflare-dns.com = server:https://cloudflare-dns.com/dns-query
 # CloudFlare Workers
 *.workers.dev = server:https://cloudflare-dns.com/dns-query
-# > 阿里巴巴
+# 阿里巴巴
 # refer: https://www.alidns.com
 *.alibaba.cn = server:https://dns.alidns.com/dns-query
 *.alibaba.com.cn = server:https://dns.alidns.com/dns-query
@@ -6086,7 +6061,7 @@ goo.gl = server:https://dns.google/dns-query
 *.mmstat.com = server:https://dns.alidns.com/dns-query
 # 淘宝短网址
 tb.cn = server:https://dns.alidns.com/dns-query
-# > 阿里云
+# 阿里云
 # refer: https://www.alidns.com
 # 阿里云
 *.aliyun.* = server:https://dns.alidns.com/dns-query
@@ -6104,7 +6079,7 @@ tb.cn = server:https://dns.alidns.com/dns-query
 *.aliyundunwaf.com = server:https://dns.alidns.com/dns-query
 # 阿里云内部
 *.aliyun-inc.com = server:https://dns.alidns.com/dns-query
-# > 蚂蚁集团
+# 蚂蚁集团
 # refer: https://www.alidns.com
 *.antgroup.com = server:https://dns.alidns.com/dns-query
 # 蚂蚁金服
@@ -6123,7 +6098,7 @@ tb.cn = server:https://dns.alidns.com/dns-query
 *.alipayobjects.com = server:https://dns.alidns.com/dns-query
 # 支付宝开放技术生态体系
 *.alipay-eco.com = server:https://dns.alidns.com/dns-query
-# > 腾讯
+# 腾讯
 # refer: https://www.dnspod.cn/products/publicdns
 *.tencent.com = server:https://doh.pub/dns-query
 # 腾讯云
@@ -6181,7 +6156,7 @@ tb.cn = server:https://dns.alidns.com/dns-query
 *.smtcdns.net = server:https://doh.pub/dns-query
 # 腾讯短网址
 url.cn = server:https://doh.pub/dns-query
-# > 百度
+# 百度
 # refer: https://dudns.baidu.com/support/localdns/Address/index.html
 *.baidu = server:180.76.76.76
 *.baidu.com = server:180.76.76.76
@@ -6216,7 +6191,7 @@ url.cn = server:https://doh.pub/dns-query
 *.bcehosts.com = server:180.76.76.76
 # 百度短网址
 dwz.cn = server:180.76.76.76
-# > 360
+# 360
 # refer: https://sdns.360.net/dnsPublic.html#course
 # 360 安全中心
 *.360.cn = server:https://doh.360.cn/dns-query
@@ -6249,7 +6224,7 @@ dwz.cn = server:180.76.76.76
 *.yunpan.com = server:https://doh.360.cn/dns-query
 # 360 短网址
 urlqh.cn = server:https://doh.360.cn/dns-query
-# > Bytedance
+# Bytedance
 # refer: https://www.volcengine.com/docs/6758/179060
 # 艾特迷
 *.amemv.com = server:180.184.1.1
@@ -6327,7 +6302,7 @@ urlqh.cn = server:https://doh.360.cn/dns-query
 *.zjbyte.com = server:180.184.1.1
 # 字节跳动 CDN
 *.zjcdn.com = server:180.184.1.1
-# > BiliBili
+# BiliBili
 # BiliBili upos 视频服务器（阿里云）
 upos-sz-mirrorali.bilivideo.com = server:https://dns.alidns.com/dns-query
 upos-sz-mirrorali?.bilivideo.com = server:https://dns.alidns.com/dns-query
@@ -6342,12 +6317,12 @@ upos-sz-mirrorcos??.bilivideo.com = server:https://doh.pub/dns-query
 upos-sz-upcdnbd??.bilivideo.com = server:180.76.76.76
 # BiliBili upos 视频服务器（腾讯云）
 upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
-# > 🇨🇳 CHN
+# 🇨🇳 CHN
 # CNNIC SDNS
 # 中国政府网
 # *.gov.cn = server:1.2.4.8
 # *.政务 = server:1.2.4.8
-# > 🇭🇰 HKG
+# 🇭🇰 HKG
 # PCCW Enterprises Limited
 # *.pccw.com = server:dns1.pccw.com
 # 1O1O
@@ -6376,7 +6351,7 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
 # *.cabletv.com.hk = server:dns2.hkcable.com.hk
 # KDDI Hong Kong Limited
 # *.hk.kddi.com = server:apple.kdd.net.hk
-# > 🇹🇼 TWN
+# 🇹🇼 TWN
 # 中华电信
 *.cht.com.tw = server:https://dns.hinet.net/dns-query
 # 中华电信 HiNet
@@ -6389,7 +6364,7 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
 # Taiwan Network Information Center
 *.tw = server:https://dns.twnic.tw/dns-query
 *.taipei = server:https://dns.twnic.tw/dns-query
-# > 🇺🇸 USA
+# 🇺🇸 USA
 # Hurricane Electric
 *.he.net = server:https://ordns.he.net/dns-query
 
@@ -6583,4 +6558,8 @@ http-response ^https:\/\/appcloud2\.zhihu\.com\/v3\/config script-path = https:/
 http-response ^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body = true, tag = 拦截服务器推送配置
 
 [MITM]
-hostname = m.qianbao.qq.com, hfapp-service.qweather.net, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, res.pizzahut.com.cn, api.mcd.cn, 3pp.starbucks.com.cn, common.diditaxi.com.cn, capis*.didapinche.com, conf.diditaxi.com.cn, wxs-weixin.sd.zhumanggroup.com, s.jiediankeji.com, smarket.dian.so, file.dian.so, aag.enmonster.com, tm-api.pin-dao.cn, api-fouth-mem.huazhu.com, mxsa.mxbc.net, htwkop.xiaojukeji.com, cbd-gateway-service-applets.hualala.com, m.ctrip.com, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, testflight.apple.com, pan.baidu.com, gspe1-ssl.ls.apple.com, api*.smoot.apple.com, api*.smoot.apple.cn, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, uts-api.itunes.apple.com, umc-tempo-api.apple.com, news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com, sub.store, raw.githubusercontent.com, gist.githubusercontent.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, weixin110.qq.com, security.wechat.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, ad.12306.cn, mobile.12306.cn, api.alipan.com, member.alipan.com, m.baidu.com, www.baidu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com, cn-acs.m.cainiao.com, api.m.jd.com, gql.reddit.com, gql-fed.reddit.com, 114.115.217.129, home.umetrip.com, ump.ems.com.cn, miniapp.sexytea2013.com, coco-com.e.verystar.net, cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, newton.gumingnc.com, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, -redirector*.googlevideo.com, api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, link.zhihu.com, zhuanlan.zhihu.com, m-cloud.zhihu.com, api.pinduoduo.com, api.yangkeduo.com, gw.alicdn.com
+# 🍟 整点薯条: 🌐 通用设置增强（不可 MitM 也不应该被打断连接的域名）-gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, -pan.baidu.com
+
+# 🍟 整点薯条: 🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
+
+hostname = -gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, -pan.baidu.com, 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, m.qianbao.qq.com, hfapp-service.qweather.net, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, res.pizzahut.com.cn, api.mcd.cn, 3pp.starbucks.com.cn, common.diditaxi.com.cn, capis*.didapinche.com, conf.diditaxi.com.cn, wxs-weixin.sd.zhumanggroup.com, s.jiediankeji.com, smarket.dian.so, file.dian.so, aag.enmonster.com, tm-api.pin-dao.cn, api-fouth-mem.huazhu.com, mxsa.mxbc.net, htwkop.xiaojukeji.com, cbd-gateway-service-applets.hualala.com, m.ctrip.com, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, testflight.apple.com, pan.baidu.com, gspe1-ssl.ls.apple.com, api*.smoot.apple.com, api*.smoot.apple.cn, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, uts-api.itunes.apple.com, umc-tempo-api.apple.com, news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com, sub.store, raw.githubusercontent.com, gist.githubusercontent.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, weixin110.qq.com, security.wechat.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, ad.12306.cn, mobile.12306.cn, api.alipan.com, member.alipan.com, m.baidu.com, www.baidu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com, cn-acs.m.cainiao.com, api.m.jd.com, gql.reddit.com, gql-fed.reddit.com, 114.115.217.129, home.umetrip.com, ump.ems.com.cn, miniapp.sexytea2013.com, coco-com.e.verystar.net, cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, newton.gumingnc.com, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, -redirector*.googlevideo.com, api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, link.zhihu.com, zhuanlan.zhihu.com, m-cloud.zhihu.com, api.pinduoduo.com, api.yangkeduo.com, gw.alicdn.com
