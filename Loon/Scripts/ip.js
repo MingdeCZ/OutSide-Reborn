@@ -1,11 +1,7 @@
 function a(m) {
     let n = "", o = b(), p = c(), q;
     for (q = 0; q < m.length; q++) {
-        if (m.charCodeAt(q) > 10000 && p.indexOf(m.charAt(q)) != -1) {
-            n += o.charAt(p.indexOf(m.charAt(q)));
-        } else {
-            n += m.charAt(q);
-        }
+        m.charCodeAt(q) > 10000 && p.indexOf(m.charAt(q)) != -1 ? n += o.charAt(p.indexOf(m.charAt(q))) : n += m.charAt(q);
     }
     return n;
 }
@@ -19,12 +15,7 @@ function c() {
 }
 
 function d(m) {
-    m = a(m);
-    if (m == "中华民国") {
-        return "台湾";
-    } else {
-        return m;
-    }
+    return a(m) == "中华民国" ? "台湾" : a(m);
 }
 
 function e(m, n) {
@@ -52,11 +43,7 @@ function e(m, n) {
 }
 
 function f(m, n) {
-    if (m == n || m == "") {
-        return n;
-    } else {
-        return m + " " + n;
-    }
+    return m == n || m == "" ? n : m + " " + n;
 }
 
 function g(m) {
@@ -64,22 +51,15 @@ function g(m) {
 }
 
 function h(m) {
-    if (m) {
-        return m.match(/(?<=^.{2})\S\d+/g)[0];
-    } else {
-        return "?";
-    }
+    return m ? m.match(/(?<=^.{2})\S\d+/g)[0] : "?";
 }
 
 function i(m, n, o) {
-    let p = m.match(/ (.*)/)[1], q = " (" + h(m) + ")", r = p + q;
-    if (m == "") {
-        m += "暂无数据";
-    }
-    if (n == "") {
+    let p = m ? m.match(/ (.*)/)[1] : "暂无数据", q = "【" + h(m) + "】", r = p + q;
+    if (!n) {
         n += "待补充";
     }
-    if (o == "") {
+    if (!o) {
         o += "未知";
     }
     if (p == n && n == o) {
@@ -96,29 +76,15 @@ function i(m, n, o) {
 }
 
 function j(m) {
-    if (m > 0) {
-        return m + "°N";
-    } else {
-        return Math.abs(m) + "°S";
-    }
+    return m > 0 ? m + "°N" : Math.abs(m) + "°S";
 }
 
 function k(m) {
-    if (m > 0) {
-        return m + "°E";
-    } else {
-        return Math.abs(m) + "°W";
-    }
+    return m > 0 ? m + "°E" : Math.abs(m) + "°W";
 }
 
 function l(m) {
-    if (/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(m)) {
-        return "v4";
-    } else if (/^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/.test(m)) {
-        return "v6";
-    } else {
-        return "domain";
-    }
+    return /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(m) ? "v4" : /^([0-9a-fA-F]{1,4}:){7}[0-9a-fA-F]{1,4}$/.test(m) ? "v6" : "domain";
 }
 
 async function lookUp(t, e, o) {
@@ -214,7 +180,7 @@ async function lookUp(t, e, o) {
         const StrtA = await lookUp(`http://ip-api.com/json/${ip}?lang=zh-CN`, nodeName, 2000);
         if (StrtA?.status === "success") {
             var {as} = StrtA, bgnA;
-            bgnA = `${as.match(/ (.*)/)[1]} (${h(as)})`;
+            bgnA = `${as.match(/ (.*)/)[1]}《${h(as)}》`;
         } else {
             bgnA = "❗️<b>失败</b>(超时)";
         }
@@ -253,7 +219,7 @@ async function lookUp(t, e, o) {
                 const inDprtA = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 2000);
                 if (inDprtA?.status === "success") {
                     var {as, isp, org} = inDprtA, insA;
-                    insA = IEPLC ? as.match(/ (.*)/)[1] === isp ? `<b>自治机构 同 运营商</b>：${as.match(/ (.*)/)[1]} (${h(as)})` : `<b>自治机构</b>：${as.match(/ (.*)/)[1]} (${h(as)})<br><br><b>运营商</b>：${isp}` : `<b>自治机构</b>：${as.match(/ (.*)/)[1]} (${h(as)})`;
+                    insA = IEPLC ? as.match(/ (.*)/)[1] === isp ? `<b>自治机构 同 运营商</b>：${as.match(/ (.*)/)[1]}『${h(as)}』` : `<b>自治机构</b>：${as.match(/ (.*)/)[1]} (${h(as)})<br><br><b>运营商</b>：${isp}` : `<b>自治机构</b>：${as.match(/ (.*)/)[1]}『${h(as)}』`;
                 }
                 ins = `<br>♐️：${insP}<br><br>${insIP}<br><br>${insA}<br><br>${insL}<br>-------------------------`;
             } else {

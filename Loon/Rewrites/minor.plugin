@@ -5,7 +5,7 @@
 #!homepage = https://github.com/MingdeCZ
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 24.04.01
+#!date = 24.04.03
 #!other = 
 #!category = 
 #!select = 节点缓存有效期（Sub Store）,1分钟,5分钟,10分钟,30分钟,1小时,2小时,3小时,6小时,12小时,24小时,48小时,72小时,参数传入
@@ -15,8 +15,9 @@
 #!select = 字幕译文的位置（YouTube）, 译文位于原文之上, 译文位于原文之下
 
 [General]
-# @VirgilClyne（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/GetSomeFries 中查找）
-# 🍟 整点薯条: 🌐 通用设置增强（(📱 iOS 版) 1.添加跳过代理部分段内容 2.添加返回真实 IP 段内容 3.添加不可 MitM 的域名，防止打断连接）
+# @VirgilClyne
+# 🍟 整点薯条（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/GetSomeFries 中查找）
+# 🌐 通用设置增强（(📱 iOS 版) 1.添加跳过代理部分段内容 2.添加返回真实 IP 段内容 3.添加不可 MitM 的域名，防止打断连接）
 # 跳过代理
 # 跳过某个域名或者 IP 段，这些目标主机将不会由 Loon Proxy 处理。
 skip-proxy = localhost, *.local, captive.apple.com, e.crashlytics.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, 10.0.0.0/8, 127.0.0.1/32, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, ::1/128, fe80::/10
@@ -24,11 +25,11 @@ skip-proxy = localhost, *.local, captive.apple.com, e.crashlytics.com, www.baidu
 # DNS 数据包将被转发到上游 DNS 服务器。
 real-ip = *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, cable.auth.com, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
 
-# 🍟 整点薯条: 🚫 阻止常见的 HTTPDNS 服务器
+# 🚫 阻止常见的 HTTPDNS 服务器
 force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, 203.107.1.65:80, 203.107.1.66:80
 
 [Rule]
-# 🍟 整点薯条: 🌐 中国大陆 ASN (按 ASN 分流中国大陆 IP 与域名直连)
+# 🌐 中国大陆 ASN (按 ASN 分流中国大陆 IP 与域名直连)
 IP-ASN,4134,DIRECT // 中国电信骨干网
 IP-ASN,4538,DIRECT // 中国教育科研网络中心
 IP-ASN,4611,DIRECT // 中国新华网
@@ -5295,7 +5296,7 @@ IP-ASN,212237,DIRECT // Changgong Zhang
 # IP-ASN,216373,DIRECT // Xin Xu 【未广播中国大陆IP】
 # IP-ASN,216405,DIRECT // Zheng Chao 【未广播中国大陆IP】
 
-# 🍟 整点薯条: 🚫 阻止常见的 HTTPDNS 服务器
+# 🚫 阻止常见的 HTTPDNS 服务器
 # 阿里巴巴
 DOMAIN,httpdns.alicdn.com,REJECT
 # 阿里云
@@ -6374,18 +6375,18 @@ generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/ma
 # 节点流媒体解锁检测
 generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/streaming-ui-check-lite.js, timeout=300, tag=解锁检测lite, img-url=checkmark.seal
 
-# @NobyDa （更多脚本信息请自行在 https://github.com/NobyDa/Script 中查找）
+# @NobyDa（更多脚本信息请自行在 https://github.com/NobyDa/Script 中查找）
 # TestFlight 账户管理（自动存储/合并多个 TestFlight 账户列表，并可分享/导出 TestFlight APP）testflight.apple.com
 http-request ^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/ requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js,tag=TestFlight 账户管理
 
-# 百度网盘解锁在线视频倍率和清晰度（23.03.14） pan.baidu.com
+# 百度网盘解锁在线视频倍率和清晰度（23.03.14）pan.baidu.com
 http-response https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, tag=百度网盘解锁在线视频倍率和清晰度
 
-# 微信去除公众号文章底部广告（23.03.14） mp.weixin.qq.com
+# 微信去除公众号文章底部广告（23.03.14）mp.weixin.qq.com
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js, tag=微信去除公众号文章底部广告
 
-# @VirgilClyne（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/iRingo 中查找）
-# 解锁原装
+# @VirgilClyne
+# 解锁原装（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/iRingo 中查找）
 # 定位服务（V3）（全面自定义「定位服务」的功能）gspe1-ssl.ls.apple.com
 # 📍 Country Code
 http-response ^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, tag=📍 Location.pep.gcc.response, argument=
@@ -6428,11 +6429,11 @@ http-request ^https?:\/\/news(-todayconfig)?-edge\.apple\.com\/v1\/configs(\?.*)
 http-request ^https?:\/\/news(-sports)?-events\.apple\.com\/analyticseventsv2\/async(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, tag=📰 News.analyticseventsv2.async.request
 http-request ^https?:\/\/news-client-search\.apple\.com\/v1\/search(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, tag=📰 News.v1.search.request
 
-# @Peng-YM（更多脚本信息请自行在 https://github.com/Peng-YM/QuanX 及 https://github.com/sub-store-org/Sub-Store 中查找）
-# Sub Store（高级订阅管理工具）（需开启 脚本、复写和 MitM 等功能，并指定代理策略，后访问 https://sub.store）sub.store
+# @Sub-Store（高级订阅管理工具）（需开启 脚本、复写和 MitM 等功能，并指定代理策略，后访问 https://sub.store）（更多脚本信息请自行在 https://github.com/sub-store-org/Sub-Store 中查找）sub.store
 http-request ^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body=true, timeout=120, tag=Sub Store Core
 http-request ^https?:\/\/sub\.store script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body=true, timeout=120, tag=Sub Store Simple
 
+# @Peng-YM（更多脚本信息请自行在 https://github.com/Peng-YM/QuanX 中查找）
 # GitHub 访问私有仓库 raw.githubusercontent.com, gist.githubusercontent.com
 http-request ^https?:\/\/(raw|gist)\.githubusercontent.com, requires-body=0, script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GithubPrivate/github-private-repo.js, tag=GitHub 访问私有仓库
 
@@ -6441,8 +6442,8 @@ http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopshowapi\
 
 # @yichahucha （更多脚本信息请自行在 https://github.com/yichahucha/surge 中查找）
 # Netflix 评分 ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com
-http-request ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, tag=奈飞评分 1
-http-response ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, tag=奈飞评分 2
+http-request ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, tag=奈飞评分1
+http-response ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, tag=奈飞评分2
 http-response ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/warmer/.+type=show-ath requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating_season.js, tag=单集评分
 
 # @zZPiglet（更多脚本信息请自行在 https://github.com/zZPiglet/Task/tree/master 中查找）
@@ -6495,7 +6496,7 @@ http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBu
 # 京东去广告（移除开屏广告，精简我的页面产品推广）api.m.jd.com
 http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_remove_ads.js, requires-body = true, tag = 移除京东广告
 
-# Reddit 去广告（过滤应用内推广，阻止 NSFW 提示） gql.reddit.com, gql-fed.reddit.com
+# Reddit 去广告（过滤应用内推广，阻止 NSFW 提示）gql.reddit.com, gql-fed.reddit.com
 http-response ^https?:\/\/gql(-fed)?\.reddit\.com script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Reddit/Reddit_remove_ads.js, requires-body=true, tag = Reddit 移除广告
 
 # 淘宝去广告 acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
@@ -6557,8 +6558,9 @@ http-response ^https:\/\/appcloud2\.zhihu\.com\/v3\/config script-path = https:/
 http-response ^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body = true, tag = 拦截服务器推送配置
 
 [MITM]
-# 🍟 整点薯条: 🌐 通用设置增强（不可 MitM 也不应该被打断连接的域名）-gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, -pan.baidu.com
+# 🍟 整点薯条
+# 🌐 通用设置增强（不可 MitM 也不应该被打断连接的域名）-gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, -pan.baidu.com
 
-# 🍟 整点薯条: 🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
+# 🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
 
 hostname = -gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, -pan.baidu.com, 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, m.qianbao.qq.com, hfapp-service.qweather.net, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, res.pizzahut.com.cn, api.mcd.cn, 3pp.starbucks.com.cn, common.diditaxi.com.cn, capis*.didapinche.com, conf.diditaxi.com.cn, wxs-weixin.sd.zhumanggroup.com, s.jiediankeji.com, smarket.dian.so, file.dian.so, aag.enmonster.com, tm-api.pin-dao.cn, api-fouth-mem.huazhu.com, mxsa.mxbc.net, htwkop.xiaojukeji.com, cbd-gateway-service-applets.hualala.com, m.ctrip.com, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, testflight.apple.com, pan.baidu.com, gspe1-ssl.ls.apple.com, api*.smoot.apple.com, api*.smoot.apple.cn, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, uts-api.itunes.apple.com, umc-tempo-api.apple.com, news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com, sub.store, raw.githubusercontent.com, gist.githubusercontent.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, weixin110.qq.com, security.wechat.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, ad.12306.cn, mobile.12306.cn, api.alipan.com, member.alipan.com, m.baidu.com, www.baidu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com, cn-acs.m.cainiao.com, api.m.jd.com, gql.reddit.com, gql-fed.reddit.com, 114.115.217.129, home.umetrip.com, ump.ems.com.cn, miniapp.sexytea2013.com, coco-com.e.verystar.net, cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, newton.gumingnc.com, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, -redirector*.googlevideo.com, api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, link.zhihu.com, zhuanlan.zhihu.com, m-cloud.zhihu.com, api.pinduoduo.com, api.yangkeduo.com, gw.alicdn.com
