@@ -176,7 +176,7 @@ async function lookUp(t, e, o) {
         const StrtA = await lookUp(`http://ip-api.com/json/${ip}?lang=zh-CN`, nodeName, 2000);
         if (StrtA?.status === "success") {
             var {as} = StrtA, bgnA;
-            bgnA = `${as.match(/ (.*)/)[1]}《${h(as)}》`;
+            bgnA = `${as.match(/ (.*)/)[1]}〈${h(as)}〉`;
         } else {
             bgnA = "❗️<b>失败</b>(超时)";
         }
@@ -232,9 +232,9 @@ async function lookUp(t, e, o) {
         }
 
         var hd = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><font>_____________________________<br><br>`;
-        $done({title: nodeName, htmlMessage: hd + `${bgn}-------------------------${ins}<br>${outs}</font>`});
+        $done({title: nodeName, htmlMessage: `${hd}${bgn}-------------------------${ins}<br>${outs}</font>`});
     } catch (error) {
-        $done({title: nodeName, htmlMessage: hd + `‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font>`});
+        $done({title: nodeName, htmlMessage: `${hd}‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font>`});
     } finally {
         $done({title: nodeName, htmlMessage: "详见日志"});
     }
