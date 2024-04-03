@@ -55,7 +55,7 @@ if ($response['statusCode'] != 200) {
     }
 
     function g(u, v) {
-        return (u == v || u == '') ? v : u + ' ' + v;
+        return u == v || u == '' ? v : u + ' ' + v;
     }
 
     function h(u) {
@@ -83,14 +83,14 @@ if ($response['statusCode'] != 200) {
     }
 
     function l(u, v, w) {
-    	var x = u ? u['match'](/ (.*)/)[1] : "暂无数据", y = '【' + i(u) + '】', z;
-        if (v == '') {
+    	var x = u ? u['match'](/ (.*)/)[1] : '暂无数据', y = '【' + i(u) + '】', z;
+        if (!v) {
             v += '待补充';
         }
-        if (w == '') {
+        if (!w) {
             w += '未知';
         }
-        if (j(i(u))['includes']("🏝")) {
+        if (j(i(u))['includes']('🏝')) {
             y = '';
         }
         z = x + y;
