@@ -56,12 +56,8 @@ function h(m) {
 
 function i(m, n, o) {
     let p = m ? m.match(/ (.*)/)[1] : "暂无数据", q = "【" + h(m) + "】", r = p + q;
-    if (!n) {
-        n += "待补充";
-    }
-    if (!o) {
-        o += "未知";
-    }
+    !n && n += "待补充";
+    !o && o += "未知";
     if (p == n && n == o) {
         return "<b>自治机构 同 运营商 同 数据中心</b>：" + r;
     } else if (p == n) {
@@ -210,9 +206,7 @@ async function lookUp(t, e, o) {
                     insP = `${province} ${city} ${distinct}`;
                     insIP = `${ip}`;
                     insL = `${j(parseFloat(lat).toFixed(4))} ✡︎ ${k(parseFloat(lon).toFixed(4))}`;
-                    if (isp !== "电信" && isp !== "移动" && isp !== "联通") {
-                        IEPLC = true;
-                    }
+                    isp !== "电信" && isp !== "移动" && isp !== "联通" && IEPLC = true;
                 } else {
                     INIPS = true;
                 }
