@@ -8,8 +8,8 @@
 #!date = 24.04.03
 #!other = 
 #!category = 
-#!select = 节点缓存有效期（Sub Store）,1分钟,5分钟,10分钟,30分钟,1小时,2小时,3小时,6小时,12小时,24小时,48小时,72小时,参数传入
-#!select = 响应头缓存有效期（Sub Store）,1分钟,5分钟,10分钟,30分钟,1小时,2小时,3小时,6小时,12小时,24小时,48小时,72小时,参数传入
+#!select = 节点缓存有效期（Sub Store）,1分钟, 5分钟, 10分钟, 30分钟, 1小时,2 小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
+#!select = 响应头缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
 #!select = 自动显示翻译字幕（YouTube）, 是, 否
 #!select = 仅输出字幕译文（YouTube）, 是, 否
 #!select = 字幕译文的位置（YouTube）, 译文位于原文之上, 译文位于原文之下
@@ -5872,7 +5872,7 @@ dot.360.cn = 101.198.198.198
 dns.twnic.tw = 101.101.101.101
 ordns.he.net = 74.82.42.42
 # Modify Contents
-# 谷歌 API Services China
+# 谷歌 API 服务 中国
 services.googleapis.cn = 74.125.193.94
 # Firebase Cloud Messaging
 talk.google.com = 108.177.125.188
@@ -5965,7 +5965,7 @@ hotspot.cslwifi.com = server:system
 # 参考：https://support.apple.com/zh-cn/HT210060
 networking.apple = server:https://doh.dns.apple.com/dns-query
 # Apple.com
-*.apple.com = server:https://doh.dns.apple.com/dns-query
+# *.apple.com = server:https://doh.dns.apple.com/dns-query
 # iCloud.com
 *.icloud.com = server:https://doh.dns.apple.com/dns-query
 # Alphabet
@@ -5973,35 +5973,35 @@ networking.apple = server:https://doh.dns.apple.com/dns-query
 *.google = server:https://dns.google/dns-query
 *.google.com = server:https://dns.google/dns-query
 *.google.com.?? = server:https://dns.google/dns-query
-# Google sites
+# 谷歌 sites
 *.goog = server:https://dns.google/dns-query
-# Google 静态资源
+# 谷歌静态资源
 *.gstatic.com = server:https://dns.google/dns-query
-# Google Photos
+# 谷歌照片
 *.ggpht.com = server:https://dns.google/dns-query
-# Google 用户上传数据
+# 谷歌用户上传数据
 *.googleusercontent.com = server:https://dns.google/dns-query
-# Google APIs
+# 谷歌 APIs
 *.googleapis.com = server:https://dns.google/dns-query
-# Google backbone
+# 谷歌 backbone
 *.1e100.net = server:https://dns.google/dns-query
-# Youtube sites
+# 油管 sites
 *.youtube = server:https://dns.google/dns-query
-# Youtube
+# 油管
 *.youtube.com = server:https://dns.google/dns-query
-# Youtube 图片
+# 油管图片
 *.ytimg.com = server:https://dns.google/dns-query
-# Youtube Video
+# 油管视频
 *.googlevideo.com = server:https://dns.google/dns-query
-# Google Video Thumbnails
+# 谷歌视频 Thumbnails
 *.gvt?.com = server:https://dns.google/dns-query
 # reCaptcha
 *.recaptcha.net = server:https://dns.google/dns-query
 # Gmail
 *.gmail.com = server:https://dns.google/dns-query
-# Google Source
+# 谷歌资源
 *.googlesource.com = server:https://dns.google/dns-query
-# Google AD Services
+# 谷歌广告资源
 *.googleadservices.com = server:https://dns.google/dns-query
 # DoubleClick
 *.doubleclick.net = server:https://dns.google/dns-query
@@ -6011,18 +6011,17 @@ networking.apple = server:https://doh.dns.apple.com/dns-query
 *.adsensecustomsearchads.com = server:https://dns.google/dns-query
 # AdSense for mobile apps
 *.adsenseformobileapps.com = server:https://dns.google/dns-query
-# Google shortened URLs
+# 谷歌短链接
 *.gle = server:https://dns.google/dns-query
-# Google URL Shortener
 goo.gl = server:https://dns.google/dns-query
 # 云耀
 # 参考：https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/
 *.cloudflare.com = server:https://cloudflare-dns.com/dns-query
-# Stream
+# 流
 *.cloudflarestream.com = server:https://cloudflare-dns.com/dns-query
 # Client
 *.cloudflareclient.com = server:https://cloudflare-dns.com/dns-query
-# Web Analytics
+# 网站分析
 *.cloudflareinsights.com = server:https://cloudflare-dns.com/dns-query
 # 1.1.1.1
 *.every1dns.net = server:https://cloudflare-dns.com/dns-query
@@ -6312,33 +6311,33 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
 *.政务 = server:1.2.4.8
 # 🇭🇰
 # PCCW Enterprises Limited
-# *.pccw.com = server:dns1.pccw.com
+*.pccw.com = server:dns1.pccw.com
 # 1O1O
-# *.1010.com.hk = server:dns1.pccw.com
+*.1010.com.hk = server:dns1.pccw.com
 # csl.
-# *.hkcsl.com = server:dns1.pccw.com
+*.hkcsl.com = server:dns1.pccw.com
 # The CLUB by HKT
-# *.theclub.com.hk = server:dns1.pccw.com
+*.theclub.com.hk = server:dns1.pccw.com
 # now.com
-# *.now.com = server:dns2.pccw.com
+*.now.com = server:dns2.pccw.com
 # Now E
-# *.nowe.com = server:dns2.pccw.com
+*.nowe.com = server:dns2.pccw.com
 # Now TV
-# *.now-tv.com = server:dns2.pccw.com
+*.now-tv.com = server:dns2.pccw.com
 # MOOV
-# *.moov.hk = server:dns3.pccw.com
+*.moov.hk = server:dns3.pccw.com
 # viu
-# *.viu.com = server:dns3.pccw.com
+*.viu.com = server:dns3.pccw.com
 # viu tv
-# *.viu.tv = server:dns3.pccw.com
+*.viu.tv = server:dns3.pccw.com
 # Hong Kong Cable Television Limited
-# *.hkcable.com.hk = server:dns1.hkcable.com.hk
+*.hkcable.com.hk = server:dns1.hkcable.com.hk
 # i-CABLE
-# *.i-cable.com = server:dns2.hkcable.com.hk
+*.i-cable.com = server:dns2.hkcable.com.hk
 # CABLE TV Service
-# *.cabletv.com.hk = server:dns2.hkcable.com.hk
+*.cabletv.com.hk = server:dns2.hkcable.com.hk
 # KDDI Hong Kong Limited
-# *.hk.kddi.com = server:apple.kdd.net.hk
+*.hk.kddi.com = server:apple.kdd.net.hk
 # 🇹🇼
 # 中华电信
 *.cht.com.tw = server:https://dns.hinet.net/dns-query
@@ -6347,8 +6346,8 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
 # emome
 *.emome.net = server:https://dns.hinet.net/dns-query
 # So-net Entertainment Taiwan
-# so-net.net.tw = server:ns1.so-net.net.tw
-# so-net.tw = server:ns1.so-net.net.tw
+so-net.net.tw = server:ns1.so-net.net.tw
+so-net.tw = server:ns1.so-net.net.tw
 # Taiwan Network Information Center
 *.tw = server:https://dns.twnic.tw/dns-query
 *.taipei = server:https://dns.twnic.tw/dns-query
