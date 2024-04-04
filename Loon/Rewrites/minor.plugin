@@ -1,11 +1,11 @@
 #!name = Loon 插件合集 lite
-#!desc = 搜集了网上 Loon 的插件，建议先点击下面的链接查看使用方法和注意事项👇。所有资源均搜集于网络，欢迎留言添加、修改和纠错👏
+#!desc = 整合了网上有关 Loon 的部分插件（原则上仅适配 i(Pad)OS），建议先点击下方链接查看使用方法及注意事项👇。所有资源均搜集于网络，欢迎留言添加和修正✍️
 #!openUrl = https://github.com/MingdeCZ/OutSide-Reborn/blob/main/Loon/Rewrites/minor.plugin
 #!author = @MingdeCZ
 #!homepage = https://github.com/MingdeCZ
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 24.04.03
+#!date = 24.04.04
 #!other = 
 #!category = 
 #!select = 节点缓存有效期（Sub Store）,1分钟, 5分钟, 10分钟, 30分钟, 1小时,2 小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
@@ -27,6 +27,9 @@ real-ip = *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com
 
 # 🚫 阻止常见的 HTTPDNS 服务器
 force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, 203.107.1.65:80, 203.107.1.66:80
+
+# TestFlight 账户管理
+skip-proxy = iosapps.itunes.apple.com
 
 [Rule]
 # 🌐 中国大陆 ASN (按 ASN 分流中国大陆 IP 与域名直连)
@@ -5965,7 +5968,7 @@ hotspot.cslwifi.com = server:system
 # 参考：https://support.apple.com/zh-cn/HT210060
 networking.apple = server:https://doh.dns.apple.com/dns-query
 # Apple.com
-# *.apple.com = server:https://doh.dns.apple.com/dns-query
+*.apple.com = server:https://doh.dns.apple.com/dns-query
 # iCloud.com
 *.icloud.com = server:https://doh.dns.apple.com/dns-query
 # Alphabet
@@ -6363,8 +6366,8 @@ generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/ma
 generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/streaming-ui-check-lite.js, timeout=300, tag=解锁检测lite, img-url=checkmark.seal
 
 # @NobyDa（更多脚本信息请自行在 https://github.com/NobyDa/Script 中查找）
-# TestFlight 账户管理（自动存储和合并多个 TestFlight 账户列表，并可分享/导出 TestFlight APP）testflight.apple.com
-http-request ^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/ requires-body=1,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js,tag=TestFlight 账户管理
+# TestFlight 账户管理（24.03.25）（自动存储并合并多个 TestFlight 账户列表，并可分享及导出 TestFlight 应用）testflight.apple.com
+http-request ^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/ requires-body=1,timeout=120,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js,tag=TestFlight 账户管理
 
 # 百度网盘解锁在线视频倍率和清晰度（23.03.14）pan.baidu.com
 http-response https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Surge/JS/BaiduCloud.js, tag=百度网盘解锁在线视频倍率和清晰度
@@ -6374,11 +6377,11 @@ http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,m
 
 # @VirgilClyne
 # 解锁原装（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/iRingo 中查找）
-# 定位服务（V3）（全面自定义「定位服务」的功能）gspe1-ssl.ls.apple.com
+# 定位服务（V3.4）（全面自定义「定位服务」的功能）gspe1-ssl.ls.apple.com
 # 📍 Country Code
 http-response ^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, tag=📍 Location.pep.gcc.response, argument=
 
-# Siri 与搜索（V3）（全面自定义「Siri 与搜索」的功能）api*.smoot.apple.com, api*.smoot.apple.cn
+# Siri 与搜索（V3.1）（全面自定义「Siri 与搜索」的功能）api*.smoot.apple.com, api*.smoot.apple.cn
 # Bag (iOS/macOS)
 http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.bag.request
 http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.bag.response
@@ -6395,7 +6398,7 @@ http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/flight(\?.*)?$ script-
 http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.card.request
 http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.card.response
 
-# 地图（V3）（全面自定义「地图」的功能）configuration.ls.apple.com, gspe35-ssl.ls.apple.com
+# 地图（V3.4）（全面自定义「地图」的功能）configuration.ls.apple.com, gspe35-ssl.ls.apple.com
 # 🗺️ Network Defaults
 http-request ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.request.js, requires-body=0, tag=🗺️ Maps.config.defaults.request, argument=
 http-response ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, tag=🗺️ Maps.config.defaults.response, argument=
@@ -6406,7 +6409,7 @@ http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements
 http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.request.js, requires-body=0, tag=🗺️ Maps.config.announcements.request, argument=
 http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.geo_manifest.dynamic.config.response, argument=
 
-# TV（V3）（全面自定义「TV app」功能）uts-api.itunes.apple.com, umc-tempo-api.apple.com
+# TV（V3.2）（全面自定义「TV app」功能）uts-api.itunes.apple.com, umc-tempo-api.apple.com
 http-request ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/.* script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js, requires-body=1, tag=📺 TV.uts.request
 http-response ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/.* script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.response.js, requires-body=1, tag=📺 TV.uts.response
 http-request ^https?:\/\/umc-tempo-api\.apple\.com\/(v1|v2|v3)\/.* script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js, requires-body=1, tag=📺 TV.umc.request
@@ -6509,11 +6512,11 @@ http-response ^https:\/\/cappapi\.alittle-tea\.com\/open\?method=catering\.set\.
 # 古茗 newton.gumingnc.com
 http-response ^https:\/\/newton\.gumingnc\.com\/newton-buyer\/newton\/buyer\/(ump|touch|external\/front) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/WexinMiniPrograms/ming/ming.js, requires-body = true, tag = 古茗去广告
 
-# YouTube 去广告（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及解锁更多的字幕地区功能。移除 YouTube Music 底部的上传、选段和升级按钮，二者支持后台播放。此插件不能与其他具有 YouTube 广告过滤能力的插件一起使用，并且需要禁用 UDP 协议的 443 端口。此插件仅建议 iOS15 以上设备使用，支持 Premium 订阅用户使用，不支持 tvOS）*.googlevideo.com, youtubei.googleapis.com
+# YouTube 去广告（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及解锁更多的字幕地区功能。移除 YouTube Music 底部的上传、选段和升级按钮，二者支持后台播放。此插件不能与其他具有 YouTube 广告过滤能力的插件一起使用，并且需要禁用 UDP 协议的 443 端口。此插件仅建议 iOS15 以上设备使用，支持 Premium 订阅用户使用）*.googlevideo.com, youtubei.googleapis.com
 # 来自 Maasea 的作品
 http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads_request.js, requires-body = true, binary-body-mode = true, tag = YouTube 请求
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = YouTube 响应
-# 字幕翻译（字幕增强及双语翻译，支持 Youtube Music 歌词翻译。此插件需要置于 YouTube 去广告插件之下，不支持 tvOS）www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, youtubei.googleapis.com, -redirector*.googlevideo.com, *.googlevideo.com
+# 字幕翻译（字幕增强及双语翻译，支持 Youtube Music 歌词翻译。此插件需要置于 YouTube 去广告插件之下）www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, youtubei.googleapis.com, -redirector*.googlevideo.com, *.googlevideo.com
 # YouTube
 http-request https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_request.js, requires-body = true, tag = JSON·YouTube 播放器请求, argument = 
 http-response ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_response.js, requires-body = true, tag = JSON·YouTube 播放器响应, argument = 
