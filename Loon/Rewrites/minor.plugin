@@ -5,7 +5,7 @@
 #!homepage = https://github.com/MingdeCZ
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 24.04.04
+#!date = 24.04.10
 #!other = 
 #!category = 
 #!select = 节点缓存有效期（Sub Store）,1分钟, 5分钟, 10分钟, 30分钟, 1小时,2 小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
@@ -6551,14 +6551,9 @@ http-response ^https:\/\/www\.zhihu\.com\/api\/v4\/(articles|answers)\/\d+\/reco
 http-response ^https:\/\/appcloud2\.zhihu\.com\/v3\/config script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body = true, tag = 拦截服务器推送配置
 http-response ^https:\/\/m-cloud\.zhihu\.com\/api\/cloud\/config\/all\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body = true, tag = 拦截服务器推送配置
 
-# @Test
-# Vista 看天下解锁 VIP（23.10.24）（3.4.3）open3.vistastory.com
-http-response https://open3.vistastory.com/v3/api/poster/share_poster? script-path = https://raw.githubusercontent.com/Yu9191/Rewrite/main/Vista.js, requires-body = true, tag = 看天下我的照片
-http-response https://open3.vistastory.com/v3/api/my/home/get_home_center? script-path = https://raw.githubusercontent.com/Yu9191/Rewrite/main/vistamy.js, requires-body = true, tag = 看天下我的
-http-response https://open3.vistastory.com/v3/api/vip/get_vip script-path = https://raw.githubusercontent.com/Yu9191/Rewrite/main/vistavip.js, requires-body = true, tag = 看天下解锁 vip
-http-response https://open3.vistastory.com/v3/api/magazine script-path = https://raw.githubusercontent.com/Yu9191/Rewrite/main/vistavip.js, requires-body=true, tag = 看天下解锁 vip2
-http-response https://open3.vistastory.com/v3/api/featured/column/get_content? script-path = https://raw.githubusercontent.com/Yu9191/Rewrite/main/vistavip.js, requires-body = true, tag = 看天下解锁 vip3
-http-response https://open3.vistastory.com/v3/api/article/article_detail2? script-path = https://raw.githubusercontent.com/Yu9191/Rewrite/main/vistavip.js, requires-body = true, tag = 看天下解锁 vip4
+# @Beta
+# Vista 看天下解锁 VIP（22.11.17）（3.3.2）open3.vistastory.com
+http-response ^http[s]?:\/\/open3.vistastory.com script-path = https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Vista.js, requires-body = true, tag = 看天下解锁 VIP
 
 # Github 解锁 Pro（1.42.1）（除了 AI 功能，其他功能都可用）api.github.com
 http-response https://api.github.com/graphql script-path = https://raw.githubusercontent.com/Yu9191/Rewrite/main/Github.js, requires-body = true, tag = Github 解锁 Pro
