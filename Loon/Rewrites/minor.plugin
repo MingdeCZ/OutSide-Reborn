@@ -5,7 +5,7 @@
 #!homepage = https://github.com/MingdeCZ
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 24.04.30
+#!date = 24.05.11
 #!other = 
 #!category = 
 #!select = 节点缓存有效期（Sub Store）,1分钟, 5分钟, 10分钟, 30分钟, 1小时,2 小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
@@ -5743,15 +5743,6 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 ^https:\/\/capis(-\d)?\.didapinche\.com\/adbase reject
 # 滴滴打车 conf.diditaxi.com.cn 
 ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core reject-dict
-# 搜电充电 wxs-weixin.sd.zhumanggroup.com
-^https:\/\/wxs-weixin\.sd\.zhumanggroup\.com\/api\/v2\/ad reject-dict
-# 街电 s.jiediankeji.com
-^https:\/\/s\.jiediankeji\.com\/adv reject-dict
-# 小电充电 smarket.dian.so,file.dian.so
-^https:\/\/smarket\.dian\.so reject-dict
-^https:\/\/file\.dian\.so\/c\/leto reject-dict
-# 怪兽充电 aag.enmonster.com
-^https:\/\/aag\.enmonster\.com\/apa\/index\/advert\/skin reject
 # 奈雪 tm-api.pin-dao.cn
 ^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2 reject-dict
 ^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes reject-dict
@@ -6377,6 +6368,9 @@ http-response https:\/\/pan\.baidu\.com\/rest\/\d\.\d\/membership\/user requires
 # 微信去除公众号文章底部广告（23.03.14）mp.weixin.qq.com
 http-response ^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/File/Wechat.js, tag=微信去除公众号文章底部广告
 
+# Disney+ 评分（24.05.04）（剧集页显示 IMDb/烂番茄/豆瓣评分，由于 OMDb API 所限，部分剧集可能无法显示）disney.api.edge.bamgrid.com
+http-response ^https:\/\/disney\.api\.edge\.bamgrid\.com\/explore\/v\d\.\d\/page\/entity- script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Disney/DisneyRating.js, requires-body=true, tag=Disney+ 评分
+
 # @VirgilClyne
 # 解锁原装（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/iRingo 中查找）
 # 定位服务（V3.4）（全面自定义「定位服务」的功能）gspe1-ssl.ls.apple.com
@@ -6385,20 +6379,20 @@ http-response ^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc script-path=https:
 
 # Siri 与搜索（V3.1）（全面自定义「Siri 与搜索」的功能）api*.smoot.apple.com, api*.smoot.apple.cn
 # Bag (iOS/macOS)
-http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.bag.request
-http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.bag.response
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.bag.request
+http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.bag.response
 # Spotlight & Look Up Search (iOS/macOS)
-http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.search.request
-http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.search.response
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.search.request
+http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.search.response
 # warm (unknown)
-http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/warm(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.warm.request
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/warm script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.warm.request
 # render (unknown)
-http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/render(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.render.request
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/render script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.render.request
 # Flight Search (iOS/macOS)
-http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/flight(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.flight.request
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/flight script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.flight.request
 # Siri Infomation Card (macOS)
-http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.card.request
-http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.card.response
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.card.request
+http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.card.response
 
 # 地图（V3.4）（全面自定义「地图」的功能）configuration.ls.apple.com, gspe35-ssl.ls.apple.com
 # 🗺️ Network Defaults
@@ -6412,28 +6406,18 @@ http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\
 http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.geo_manifest.dynamic.config.response, argument=
 
 # TV（V3.2）（全面自定义「TV app」功能）uts-api.itunes.apple.com, umc-tempo-api.apple.com
-http-request ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/.* script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js, requires-body=1, tag=📺 TV.uts.request
-http-response ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/.* script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.response.js, requires-body=1, tag=📺 TV.uts.response
-http-request ^https?:\/\/umc-tempo-api\.apple\.com\/(v1|v2|v3)\/.* script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js, requires-body=1, tag=📺 TV.umc.request
+http-request ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js, requires-body=1, tag=📺 TV.uts.request
+http-response ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.response.js, requires-body=1, tag=📺 TV.uts.response
+http-request ^https?:\/\/umc-tempo-api\.apple\.com\/(v1|v2|v3)\/ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js, requires-body=1, tag=📺 TV.umc.request
 
 # News（V3）（1.自定义解锁 News 的地区 2.Coming Soon… 注：该插件包含代理规则，安装过程中需要匹配代理策略组为 🇺🇸🇬🇧🇨🇦🇦🇺 线路，使用过程中 gateway.icloud.com 会走与 News 相同的代理线路）news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com
-http-request ^https?:\/\/news(-todayconfig)?-edge\.apple\.com\/v1\/configs(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, requires-body=true, tag=📰 News.v1.configs.request
-http-request ^https?:\/\/news(-sports)?-events\.apple\.com\/analyticseventsv2\/async(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, tag=📰 News.analyticseventsv2.async.request
-http-request ^https?:\/\/news-client-search\.apple\.com\/v1\/search(\?.*)?$ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, tag=📰 News.v1.search.request
+http-request ^https?:\/\/news(-todayconfig)?-edge\.apple\.com\/v1\/configs script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, requires-body=true, tag=📰 News.v1.configs.request
+http-request ^https?:\/\/news(-sports)?-events\.apple\.com\/analyticseventsv2\/async script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, tag=📰 News.analyticseventsv2.async.request
+http-request ^https?:\/\/news-client-search\.apple\.com\/v1\/search script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, tag=📰 News.v1.search.request
 
 # @Sub-Store（高级订阅管理工具）（需开启 脚本、复写和 MitM 等功能，并指定代理策略，后访问 https://sub.store）（更多脚本信息请自行在 https://github.com/sub-store-org/Sub-Store 中查找）sub.store
 http-request ^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body=true, timeout=120, tag=Sub Store Core
 http-request ^https?:\/\/sub\.store script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body=true, timeout=120, tag=Sub Store Simple
-
-# @Peng-YM（更多脚本信息请自行在 https://github.com/Peng-YM/QuanX 中查找）
-# GitHub 访问私有仓库 raw.githubusercontent.com, gist.githubusercontent.com
-#http-request ^https?:\/\/(raw|gist)\.githubusercontent.com, requires-body=0, script-path=https://raw.githubusercontent.com/Peng-YM/QuanX/master/Rewrites/GithubPrivate/github-private-repo.js, tag=GitHub 访问私有仓库
-
-# @yichahucha （更多脚本信息请自行在 https://github.com/yichahucha/surge 中查找）
-# Netflix 评分 ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com
-http-request ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, tag=奈飞评分1
-http-response ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/user/.+path=%5B%22videos%22%2C%\d+%22%2C%22summary%22%5D requires-body=1,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating.js, tag=奈飞评分2
-http-response ^https?://ios(-.*)?\.prod\.ftl\.netflix\.com/iosui/warmer/.+type=show-ath requires-body=1,max-size=0,script-path=https://raw.githubusercontent.com/yichahucha/surge/master/nf_rating_season.js, tag=单集评分
 
 # @zZPiglet（更多脚本信息请自行在 https://github.com/zZPiglet/Task/tree/master 中查找）
 # 跳过中间界面，支付宝链接和被封禁淘宝链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选）（群聊 / 扫码均可使用，可选项可在脚本2、3行更改，也可在 BoxJs 中更改）weixin110.qq.com, security.wechat.com
@@ -6479,12 +6463,6 @@ http-response ^https:\/\/cn-acs\.m\.cainiao\.com\/gw\/mtop\.nbfriend\.message\.c
 # 支付宝小程序
 http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Cainiao/Cainiao_remove_ads.js, requires-body = true, tag = 移除菜鸟小程序推广
 
-# 京东比价（在应用内嵌入比价信息，点击商品标题即可查看。仅支持京东的标准模式）api.m.jd.com
-#http-response ^https?://api\.m\.jd\.com/(client\.action|api)\?functionId=(wareBusiness|serverConfig|basicConfig|lite_wareBusiness|pingou_item) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_Price.js, requires-body = true, tag = 京东比价
-
-# 京东去广告（移除开屏广告，精简我的页面产品推广）api.m.jd.com
-http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/JD/JD_remove_ads.js, requires-body = true, tag = 移除京东广告
-
 # Reddit 去广告（过滤应用内推广，阻止 NSFW 提示）gql.reddit.com, gql-fed.reddit.com
 http-response ^https?:\/\/gql(-fed)?\.reddit\.com script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Reddit/Reddit_remove_ads.js, requires-body=true, tag = Reddit 移除广告
 
@@ -6503,11 +6481,11 @@ http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5 script-path = htt
 # 滴滴青桔 htwkop.xiaojukeji.com
 http-response ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/WexinMiniPrograms/qingju/qingju.js, requires-body = true, tag = 滴滴青桔去广告
 
-# YouTube 去广告（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及解锁更多的字幕地区功能。移除 YouTube Music 底部的上传、选段和升级按钮，二者支持后台播放。此插件不能与其他具有 YouTube 广告过滤能力的插件一起使用，并且需要禁用 UDP 协议的 443 端口。此插件仅建议 iOS15 以上设备使用，支持 Premium 订阅用户使用）*.googlevideo.com, youtubei.googleapis.com
+# YouTube 去广告（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及解锁更多的字幕地区功能。支持后台播放。此插件不能与其他具有 YouTube 广告过滤能力的插件一起使用，并且需要禁用 UDP 协议的 443 端口。此插件仅建议 iOS15 以上设备使用，支持 Premium 订阅用户使用）*.googlevideo.com, youtubei.googleapis.com
 # 来自 Maasea 的作品
 http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads_request.js, requires-body = true, binary-body-mode = true, tag = YouTube 请求
 http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = YouTube 响应
-# 字幕翻译（字幕增强及双语翻译，支持 Youtube Music 歌词翻译。此插件需要置于 YouTube 去广告插件之下）www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, youtubei.googleapis.com, -redirector*.googlevideo.com, *.googlevideo.com
+# 字幕翻译（字幕增强及双语翻译）www.youtube.com, m.youtube.com, tv.youtube.com, youtubei.googleapis.com, -redirector*.googlevideo.com, *.googlevideo.com
 # YouTube
 http-request https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_request.js, requires-body = true, tag = JSON·YouTube 播放器请求, argument = 
 http-response ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_response.js, requires-body = true, tag = JSON·YouTube 播放器响应, argument = 
@@ -6516,11 +6494,6 @@ http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player script
 http-request ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_request.js, requires-body = false, tag = YouTube 定时文本请求, argument = 
 http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=(Official|External) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Composite_Subtitles_response.js, requires-body = true, tag = YouTube 合成定时文本响应, argument = 
 http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=Translate script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate_response.js, requires-body = true, tag = YouTube 翻译定时文本响应, argument = 
-# YouTube Music
-#http-request ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_request.js, requires-body = true, tag = JSON·YouTube Music 浏览请求, argument = 
-#http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_request.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube Music 浏览请求, argument = 
-#http-response ^https?:\/\/music\.youtube\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate_response.js, requires-body = true, tag = JSON·YouTube Music 翻译歌词响应, argument = 
-#http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/browse\?(.*)subtype=Translate script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate_response.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube Music 翻译歌词响应, argument = 
 
 # 知乎去广告（去除各部广告，建议卸载知乎重新安装）api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, link.zhihu.com, zhuanlan.zhihu.com, m-cloud.zhihu.com
 # 首页 - 悬浮图标、顶部横幅、开屏广告、关注页推荐、推荐信息流、热榜信息流、热榜直播、回答底部卡片
@@ -6528,6 +6501,9 @@ http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=Tra
 #http-response ^https:\/\/api\.zhihu\.com\/feed\/render\/tab\/config\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body = true, tag = 移除首页推广
 #http-response ^https:\/\/api\.zhihu\.com\/(moments_v3|topstory\/hot-lists\/total|topstory\/recommend) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body = true, tag = 移除首页推广
 #http-response ^https:\/\/api\.zhihu\.com\/v2\/topstory\/hot-lists\/everyone-seeing\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body = true, tag = 移除首页推广
+#http-response ^https:\/\/api\.zhihu\.com\/(answers|articles)\/v2\/\d+ script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body = true, tag = 移除首页推广
+# 会员页面 - 弹窗、悬浮动图
+#http-response ^https:\/\/api\.zhihu\.com\/bazaar\/vip_tab\/header\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Zhihu/Zhihu_remove_ads.js, requires-body = true, tag = 移除会员页面推广
 # 搜索页 - 关键词、猜你想搜
 #http-response ^https:\/\/api\.zhihu\.com\/search\/recommend_query\/v2\? script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/CommonScript/replace-body.js, requires-body = true, argument = ""recommend_queries":\{.+\}->"recommend_queries":{}", tag = 移除搜索页关键词
 # 回答详情页 - 评论区顶部、下一个回答
@@ -6551,4 +6527,4 @@ http-response https://api.github.com/graphql script-path = https://raw.githubuse
 
 # 🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
 
-hostname = -gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, m.qianbao.qq.com, hfapp-service.qweather.net, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, res.pizzahut.com.cn, api.mcd.cn, 3pp.starbucks.com.cn, common.diditaxi.com.cn, capis*.didapinche.com, conf.diditaxi.com.cn, wxs-weixin.sd.zhumanggroup.com, s.jiediankeji.com, smarket.dian.so, file.dian.so, aag.enmonster.com, tm-api.pin-dao.cn, api-fouth-mem.huazhu.com, mxsa.mxbc.net, htwkop.xiaojukeji.com, cbd-gateway-service-applets.hualala.com, m.ctrip.com, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, testflight.apple.com, pan.baidu.com, gspe1-ssl.ls.apple.com, api*.smoot.apple.com, api*.smoot.apple.cn, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, uts-api.itunes.apple.com, umc-tempo-api.apple.com, news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com, sub.store, raw.githubusercontent.com, gist.githubusercontent.com, ios-*.prod.ftl.netflix.com, ios.prod.ftl.netflix.com, weixin110.qq.com, security.wechat.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, ad.12306.cn, mobile.12306.cn, api.alipan.com, member.alipan.com, m.baidu.com, www.baidu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com, cn-acs.m.cainiao.com, api.m.jd.com, gql.reddit.com, gql-fed.reddit.com, 114.115.217.129, home.umetrip.com, ump.ems.com.cn, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, m.youtube.com, tv.youtube.com, music.youtube.com, -redirector*.googlevideo.com, api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, link.zhihu.com, zhuanlan.zhihu.com, m-cloud.zhihu.com, api.pinduoduo.com, api.yangkeduo.com, gw.alicdn.com, open3.vistastory.com, api.github.com
+hostname = -gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, m.qianbao.qq.com, hfapp-service.qweather.net, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, res.pizzahut.com.cn, api.mcd.cn, 3pp.starbucks.com.cn, common.diditaxi.com.cn, capis*.didapinche.com, conf.diditaxi.com.cn, tm-api.pin-dao.cn, api-fouth-mem.huazhu.com, mxsa.mxbc.net, htwkop.xiaojukeji.com, cbd-gateway-service-applets.hualala.com, m.ctrip.com, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, testflight.apple.com, pan.baidu.com, gspe1-ssl.ls.apple.com, api*.smoot.apple.com, api*.smoot.apple.cn, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, uts-api.itunes.apple.com, umc-tempo-api.apple.com, news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com, sub.store, weixin110.qq.com, security.wechat.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, ad.12306.cn, mobile.12306.cn, api.alipan.com, member.alipan.com, m.baidu.com, www.baidu.com, app.bilibili.com, api.bilibili.com, api.live.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, live.bilibili.com, cn-acs.m.cainiao.com, gql.reddit.com, gql-fed.reddit.com, 114.115.217.129, home.umetrip.com, ump.ems.com.cn, *.googlevideo.com, youtubei.googleapis.com, www.youtube.com, m.youtube.com, tv.youtube.com, -redirector*.googlevideo.com, api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, link.zhihu.com, zhuanlan.zhihu.com, m-cloud.zhihu.com, api.pinduoduo.com, api.yangkeduo.com, gw.alicdn.com, open3.vistastory.com, api.github.com, disney.api.edge.bamgrid.com
