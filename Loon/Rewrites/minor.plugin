@@ -5,7 +5,7 @@
 #!homepage = https://github.com/MingdeCZ
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 24.05.11
+#!date = 24.05.12
 #!other = 
 #!category = 
 #!select = 节点缓存有效期（Sub Store）,1分钟, 5分钟, 10分钟, 30分钟, 1小时,2 小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
@@ -540,7 +540,7 @@ IP-ASN,134419,DIRECT // 北海
 IP-ASN,134420,DIRECT // 重庆电信
 IP-ASN,134425,DIRECT // CHINANET 安徽省合肥市祁门路IDC网络
 IP-ASN,134477,DIRECT // 绍兴 Junruiyunjisuan 有限公司
-IP-ASN,134478,DIRECT // JSMSR
+# IP-ASN,134478,DIRECT // JSMSR 【未广播中国大陆IP】
 IP-ASN,134488,DIRECT // CTJ's Global Network
 IP-ASN,134542,DIRECT // 中国联通IP网络
 IP-ASN,134543,DIRECT // 中国联通广东IP网络
@@ -5336,6 +5336,7 @@ DOMAIN,kuaishou.httpdns.pro,REJECT
 DOMAIN,httpdns.meituan.com,REJECT
 # 网易
 # 参考：https://lbs.netease.im/lbs/conf.jsp
+DOMAIN,httpdns.yunxindns.com,REJECT
 DOMAIN,httpdns.n.netease.com,REJECT
 DOMAIN,httpdns.music.163.com,REJECT
 DOMAIN,music.httpdns.c.163.com,REJECT
