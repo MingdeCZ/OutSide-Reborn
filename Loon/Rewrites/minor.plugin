@@ -5,11 +5,15 @@
 #!homepage = https://github.com/MingdeCZ
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 24.05.12
+#!date = 24.05.30
 #!other = 
 #!category = 
 #!select = 节点缓存有效期（Sub Store）,1分钟, 5分钟, 10分钟, 30分钟, 1小时,2 小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
 #!select = 响应头缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
+#!select = 隐藏上传按钮（YouTube）, true, false
+#!select = 隐藏选段按钮（YouTube）, true, false
+#!select = 字幕翻译语言（YouTube）, zh-Hans, zh-Hant, ja, ko, en, off
+#!select = 启用调试模式（YouTube）, true, false
 #!select = 自动显示翻译字幕（YouTube）, 是, 否
 #!select = 仅输出字幕译文（YouTube）, 是, 否
 #!select = 字幕译文的位置（YouTube）, 译文位于原文之上, 译文位于原文之下
@@ -5346,11 +5350,11 @@ IP-CIDR,59.111.239.62/32,REJECT,no-resolve
 IP-CIDR,115.236.121.51/32,REJECT,no-resolve
 IP-CIDR,115.236.121.195/32,REJECT,no-resolve
 # OPPO
-DOMAIN,httpdns.push.oppomobile.com,REJECT
+# DOMAIN,httpdns.push.oppomobile.com,REJECT
 # 新浪
 # 参考：https://github.com/CNSRE/HTTPDNSLib
 # 腾讯云
-# refer：https://cloud.tencent.com/document/product/379/95497
+# 参考：https://cloud.tencent.com/document/product/379/95497
 IP-CIDR,119.29.29.98/32,REJECT,no-resolve
 IP-CIDR,119.29.29.99/32,REJECT,no-resolve
 # Volcengine
@@ -5515,6 +5519,10 @@ DOMAIN, adashx.m.taobao.com, REJECT
 DOMAIN, h-adashx.ut.taobao.com, REJECT
 DOMAIN, ut.taobao.com, REJECT
 
+# YouTube 去广告
+AND, ((DOMAIN-SUFFIX, googlevideo.com),  (PROTOCOL, QUIC)), REJECT
+AND, ((DOMAIN-SUFFIX, googlevideo.com),  (PROTOCOL, QUIC)), REJECT
+
 # 知乎去广告
 DOMAIN, appcloud.zhihu.com, REJECT
 DOMAIN, appcloud2.in.zhihu.com, REJECT
@@ -5612,10 +5620,13 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 ^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders reject-dict
 
 # B 站屏蔽
-# 漫画去广告
-^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/Flash reject-dict
-^https?:\/\/manga\.bilibili\.com\/twirp\/comic\.v\d\.Comic\/ListFlash reject-dict
-# IP 请求、地理位置请求 api.bilibili.com
+# 移除搜索中的默认关键词
+^https?:\/\/(grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ reject
+# 移除动态中的最常访问
+^https?:\/\/api\.vc\.bilibili\.com\/dynamic_svr\/v1\/dynamic_svr\/mix_uplist reject-dict
+# 屏蔽默认搜索框关键词
+^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords reject
+# 屏蔽 IP 及地理位置请求 api.bilibili.com
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject
 ^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-200
 # 移除视频链接跟踪参数
@@ -5795,8 +5806,8 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128, REJECT
 ^https:\/\/daijia\.kuaidadi\.com\/gateway\?api=prado\.cms\.delivery\.batch&apiVe reject-dict
 
 # YouTube 去广告
-# 使用 reject-200 方法以减少开销
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
+# 使用 reject-dict 方法以减少开销
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-dict
 
 # 知乎去广告
 # 首页 - 悬浮图标、顶部横幅、开屏、关注页推荐、推荐信息流、热榜信息流、热榜直播、回答底部卡片
@@ -5962,7 +5973,7 @@ hotspot.cslwifi.com = server:system
 # 参考：https://support.apple.com/zh-cn/HT210060
 networking.apple = server:https://doh.dns.apple.com/dns-query
 # Apple.com
-*.apple.com = server:https://doh.dns.apple.com/dns-query
+# *.apple.com = server:https://doh.dns.apple.com/dns-query
 # iCloud.com
 *.icloud.com = server:https://doh.dns.apple.com/dns-query
 # Alphabet
@@ -6447,9 +6458,7 @@ http-response ^https?:\/\/(www|m)\.baidu\.com\/?($|\?from=\w{8,9}) script-path =
 # 移除交互式弹幕
 http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Bilibili/Bilibili_helper_beta.js, requires-body = true, binary-body-mode = true, tag = 移除交互式弹幕
 # 移除青少年模式弹窗
-http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Bilibili/Bilibili_helper_beta.js, requires-body = true, binary-body-mode = true, tag = 移除青少年弹窗
-# 移除直播内容和大会员专享
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/feed\/index\/story script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Bilibili/Bilibili_remove_ads.js, requires-body = true, tag = 移除直播内容和大会员专享
+#http-response ^https:\/\/grpc\.biliapi\.net\/bilibili\.app\.interface\.v1\.Teenagers\/ModeStatus script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Bilibili/Bilibili_helper_beta.js, requires-body = true, binary-body-mode = true, tag = 移除青少年弹窗
 # 精简我的页面
 http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine\?|mine\/ipad\?) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Bilibili/Bilibili_remove_ads.js, requires-body = true, tag = 精简我的页面
 
@@ -6482,19 +6491,17 @@ http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5 script-path = htt
 # 滴滴青桔 htwkop.xiaojukeji.com
 http-response ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/WexinMiniPrograms/qingju/qingju.js, requires-body = true, tag = 滴滴青桔去广告
 
-# YouTube 去广告（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及解锁更多的字幕地区功能。支持后台播放。此插件不能与其他具有 YouTube 广告过滤能力的插件一起使用，并且需要禁用 UDP 协议的 443 端口。此插件仅建议 iOS15 以上设备使用，支持 Premium 订阅用户使用）*.googlevideo.com, youtubei.googleapis.com
-# 来自 Maasea 的作品
-http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads_request.js, requires-body = true, binary-body-mode = true, tag = YouTube 请求
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = YouTube 响应
+# YouTube 去广告（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及字幕翻译功能。支持后台播放。需要版本 3.1.7(677) 及以上，且需要启用 QUIC 回退保护。支持 Premium 订阅用户使用。）*.googlevideo.com, youtubei.googleapis.com
+http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|reel\/reel_watch_sequence|get_watch) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_request.js, requires-body = true, binary-body-mode = true, tag = YouTube请求
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = YouTube响应
 # 字幕翻译（字幕增强及双语翻译）www.youtube.com, m.youtube.com, tv.youtube.com, youtubei.googleapis.com, -redirector*.googlevideo.com, *.googlevideo.com
-# YouTube
-http-request https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_request.js, requires-body = true, tag = JSON·YouTube 播放器请求, argument = 
-http-response ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_response.js, requires-body = true, tag = JSON·YouTube 播放器响应, argument = 
-http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_request.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube 播放器请求, argument = 
-http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_response.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube 播放器响应, argument = 
-http-request ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_request.js, requires-body = false, tag = YouTube 定时文本请求, argument = 
-http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=(Official|External) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Composite_Subtitles_response.js, requires-body = true, tag = YouTube 合成定时文本响应, argument = 
-http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=Translate script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate_response.js, requires-body = true, tag = YouTube 翻译定时文本响应, argument = 
+http-request https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, tag = JSON·YouTube播放器请求, argument = 
+http-response ^https?:\/\/(www|m|tv)\.youtube\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_response.js, requires-body = true, tag = JSON·YouTube播放器响应, argument = 
+http-request ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube播放器请求, argument = 
+http-response ^https?:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/player script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_response.js, requires-body = true, binary-body-mode = true, tag = Proto·YouTube播放器响应, argument = 
+http-request ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_request.js, requires-body = false, tag = YouTube定时文本请求, argument = 
+http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=(Official|External) script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Composite_Subtitles_response.js, requires-body = true, tag = YouTube合成定时文本响应, argument = 
+http-response ^https?:\/\/(www|m)\.youtube\.com\/api\/timedtext\?(.*)subtype=Translate script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/YouTube/YouTube_Subtitles_Translate/YouTube_Subtitles_Translate_response.js, requires-body = true, tag = YouTube翻译定时文本响应, argument = 
 
 # 知乎去广告（去除各部广告，建议卸载知乎重新安装）api.zhihu.com, www.zhihu.com, appcloud2.zhihu.com, link.zhihu.com, zhuanlan.zhihu.com, m-cloud.zhihu.com
 # 首页 - 悬浮图标、顶部横幅、开屏广告、关注页推荐、推荐信息流、热榜信息流、热榜直播、回答底部卡片
