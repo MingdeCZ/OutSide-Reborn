@@ -1,8 +1,0 @@
-/*
-ruleset=DIRECT,[]GEOIP,CN
-ruleset=选,[]FINAL
-
-custom_proxy_group=选`select`.*
-
-# 订阅链接：https://api.v1.mk/sub?target=clash&url=机场|链接&config=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Archived/Cl.ini&tfo=true&clash.doh=true
-# GeoIP 地址：https://github.com/Hackl0us/GeoIP2-CN/raw/release/Country.mmdb

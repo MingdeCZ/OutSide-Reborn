@@ -55,19 +55,19 @@ function h(m) {
 }
 
 function i(m, n, o) {
-    let p = m ? m.match(/ (.*)/)[1] : "暂无数据", q = "【" + h(m) + "】", r = p + q;
-    !n && (n += "待补充");
-    !o && (o += "未知");
+    let p = m ? m.match(/ (.*)/)[1] : "<font color=#EE6363>暂未分配</font>", q = "【<font color=#CD96CD>" + h(m) + "</font>】", r = p + "</b></font>" + q;
+    !n && (n += "<font color=#9F79EE>待补充</font>");
+    !o && (o += "<font color=#CDB38B>不详</font>");
     if (p == n && n == o) {
-        return "<b>自治机构 同 运营商 同 数据中心</b>：" + r;
+        return "<font color=#66CD00><b>自治机构 同 运营商 同 数据中心：" + r;
     } else if (p == n) {
-        return "<b>自治机构 同 运营商</b>：" + r + "<br><br><b>数据中心</b>：" + o;
+        return "<font color=#66CD00><b>自治机构 同 运营商：" + r + "<br><br><font color=#63B8FF><b>数据中心</b>：" + o + "</font>";
     } else if (p == o) {
-        return "<b>自治机构 同 数据中心</b>：" + r + "<br><br><b>运营商</b>：" + n;
+        return "<font color=#66CD00><b>自治机构 同 数据中心：" + r + "<br><br><font color=#CDB7B5>运营商</font>：" + n;
     } else if (n == o) {
-        return "<b>自治机构</b>：" + r + "<br><br><b>运营商 同 数据中心</b>：" + n;
+        return "<font color=#66CD00><b>自治机构：" + r + "<br><br><font color=#63B8FF><b>运营商 同 数据中心</b>：" + n + "</font>";
     } else {
-        return "<b>自治机构</b>：" + r + "<br><br><b>运营商</b>：" + n + "<br><br><b>数据中心</b>：" + o;
+        return "<font color=#66CD00><b>自治机构：" + r + "<br><br><font color=#CDB7B5>运营商</font>：" + n + "<br><br><font color=#63B8FF><b>数据中心</b>：" + o + "</font>";
     }
 }
 
@@ -99,6 +99,7 @@ async function lookUp(t, e, o) {
                             switch (o) {
                                 case 200:
                                     let o = e.headers["Content-Type"];
+                                    !o && (o = e.headers["content-type"]);
                                     switch (true) {
                                         case o.includes("application/json"):
                                             let e = JSON.parse(s);
@@ -162,32 +163,58 @@ async function lookUp(t, e, o) {
 
 (async () => {
     try {
-        let bgn, outs, nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, serverip = l(nodeIp), INIPS = false, ins = "", IEPLC = false;
+        let bgn, outs, nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, serverip = l(nodeIp), INIPS = false, ins = "";
 
-        const StrtPIL = await lookUp("https://forge.speedtest.cn/api/location/info", "", 2000);
-        if (StrtPIL?.country_code === "CN") {
-            var {province, city, distinct, ip, lat, lon} = StrtPIL, bgnP, bgnIP, bgnL;
-            bgnP = `${province} ${city} ${distinct}`;
-            bgnIP = `${ip}`;
-            bgnL = `${j(parseFloat(lat).toFixed(4))}・${k(parseFloat(lon).toFixed(4))}`;
+        const StrtPIL = await lookUp("https://uapi.woobx.cn/app/ip-location", "", 2000);
+        if (StrtPIL?.data.showapi_res_body.en_name_short === "CN") {
+            let {region, city, county, ip, isp, lat, lnt} = StrtPIL.data.showapi_res_body;
+            bgn = `${region} ${city} <font color=#00CD66>${county}</font> <font color=#FF6EB4>${isp}</font>〈<font color=#00C5CD>${$utils.ipasn(ip)}</font>〉<br><br>${ip}<br><br>${j(parseFloat(lat).toFixed(4))}<font color=#8B668B>・</font>${k(parseFloat(lnt).toFixed(4))}<br>`;
         } else {
-            bgnP = bgnIP = bgnL = "❗️<b>失败</b>(超时)";
+            bgn = "<br><font color=#FF3030><b>网络故障</b></font> 或 <font color=#EEC900><b>定位不在大陆</b></font>，此内容跳过";
         }
-        const StrtA = await lookUp(`http://ip-api.com/json/${ip}?lang=zh-CN`, nodeName, 2000);
-        if (StrtA?.status === "success") {
-            var {as} = StrtA, bgnA;
-            bgnA = `${as.match(/ (.*)/)[1]}〈${h(as)}〉`;
-        } else {
-            bgnA = "❗️<b>失败</b>(超时)";
-        }
-        bgn = `🌸：${bgnP}<br><br>${bgnIP}<br><br><b>自治机构</b>：${bgnA}<br><br>${bgnL}<br>`;
 
-        const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, 5000);
-        if (Arvl?.status === "success") {
-            var {countryCode, country, regionName, city, query, isp, org, as, lat, lon} = Arvl;
-            outs = `⛳️：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✦ ${k(lon)}`;
-        } else {
-            outs = `❌<b>失联</b>(超时，${JSON.stringify(Arvl)})`;
+        {
+            let loc, lft = "", warng = "<font color=#EEC900><b>";
+            const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, 5000);
+            if (Arvl?.status === "success") {
+                let {country, regionName, city, query} = Arvl;
+                var Ip = query;
+                loc = f(d(a(country)), e(a(regionName), a(city))).split(" ");
+                loc.length == 2 && (lft = "<font color=#228B22>" + loc[1] + "</font>");
+                loc.length == 3 && (lft = "<font color=#EEAD0E>" + loc[1] + "</font>" + " <font color=#228B22>" + loc[2] + "</font>");
+            }
+
+            const Ipck = await lookUp("https://ipinfo.io/widget", nodeName, 5000);
+            if (Arvl?.status === "success" && Ipck) {
+                if (Ipck != "Too Many Requests") {
+                    let {ip, country, asn, company, privacy, abuse} = Ipck, type = "", expl = "";
+                    if (ip == Ip) {
+                        (country != Arvl.countryCode | asn.asn.slice(2) != h(Arvl.as)) && (warng += "信息可能有误，增补差异值作参考<br><br>");
+                        asn.type == "business" && (expl += "商宽 ");
+                        if (asn.type == "isp" | asn.type == "education") {
+                            type = "<font color=#00CD66>";
+                            expl += asn.type == "education" ? "教育网 " : "";
+                        } else {
+                            expl += country == abuse.country ? "<font color=#3CB371><b>原生 </b></font>" : "<font color=#1C86EE>广播 </font>";
+                            company?.type == "education" && (expl += "/教育网 ");
+                        }
+                        (asn.type != "business" & company?.type == "business") && (expl += "/商宽 ");
+                        (company?.type == "isp" | company?.type == "education") && (type += "<b>");
+                        privacy.vpn && (expl += "<font color=#EEC900><b>VPN </b></font>");
+                        privacy.proxy && (expl += "<font color=#EEC900><b>代理 </b></font>");
+                        let lastSpaceIndex = expl.lastIndexOf(' ');
+                        expl && (expl = "（" + expl.substring(0, lastSpaceIndex) + expl.substring(lastSpaceIndex + 1) + "）");
+                    } else {
+                        warng += "IP 有异，取消类型检测<br><br>";
+                    }
+                    outs = `${warng}</b></font><font color=#FF3030><b>${loc[0]}</b></font> ${lft} <font color=#3A5FCD>➜</font> ${g(Arvl.countryCode)}${"<font color=#EEC900><b>" + (ip == Ip ? country == Arvl.countryCode ? "" : "（" + g(country) + "）" : "") + "</b></font>"}<br><br>${type}${Ip}</b></font>${expl}<br><br>${ip == Ip ? (asn.asn.slice(2) == h(Arvl.as) ? "" : "<font color=#EEC900><b>自治机构：" + asn.name + "</b>【" + asn.asn.slice(2) + "】</font><br><br>") : ""}${i(Arvl.as, Arvl.isp, Arvl.org)}<br><br>${j(Arvl.lat)} <font color=#E9967A>✦</font> ${k(Arvl.lon)}`;
+                } else {
+                    warng += "类型检测频繁，此次检测跳过<br><br>";
+                    outs = `${warng}</b></font><font color=#FF3030><b>${loc[0]}</b></font> ${lft} <font color=#3A5FCD>➜</font> ${g(Arvl.countryCode)}<br><br>${type}${Ip}</b></font>${expl}<br><br>${i(Arvl.as, Arvl.isp, Arvl.org)}<br><br>${j(Arvl.lat)} <font color=#E9967A>✦</font> ${k(Arvl.lon)}`;
+                }
+            } else {
+                outs = `<br><font color=#FF3030><b>失联</b></font>（<font color=#EEC900>故障</font>）`;
+            }
         }
 
         if (serverip === "domain") {
@@ -198,24 +225,18 @@ async function lookUp(t, e, o) {
             }
         }
 
-        if (nodeIp != query) {
+        if (nodeIp != Ip) {
             if (serverip === "v4") {
-                const inDprtPIL = await lookUp(`https://forge.speedtest.cn/api/location/info?ip=${nodeIp}`, "", 2000);
-                if (inDprtPIL?.country_code === "CN") {
-                    var {province, city, distinct, ip, isp, lat, lon} = inDprtPIL, insP, insIP, insL;
-                    insP = `${province} ${city} ${distinct}`;
-                    insIP = `${ip}`;
-                    insL = `${j(parseFloat(lat).toFixed(4))} ✡︎ ${k(parseFloat(lon).toFixed(4))}`;
-                    (isp !== "电信" && isp !== "移动" && isp !== "联通") && (IEPLC = true);
+                const inDprtPIL = await lookUp(`https://uapi.woobx.cn/app/ip-location?ip=${nodeIp}`, "", 2000);
+                if (inDprtPIL?.data.showapi_res_body.en_name_short === "CN") {
+                    let {region, city, county, ip, isp, lat, lnt} = inDprtPIL.data.showapi_res_body;
+                    let arr = f(region, city).split(" "), loc;
+                    arr.length == 1 && (loc = "<font color=#FF8247>" + arr[0] + "</font>");
+                    arr.length == 2 && (loc = "<font color=#008B8B>" + arr[0] + "</font>" + " <font color=#FF8247>" + arr[1] + "</font>");
+                    ins = `<br>${loc} <font color=#8B8B7A>${county}</font> <font color=#9B30FF><b>${isp}</b></font>『<font color=#BDB76B>${$utils.ipasn(ip)}</font>』<br><br>${ip}<br><br>${isp.includes("UCloud") ? `<font color=#9C9C9C><b>自治机构</b>：${$utils.ipaso(ip)}</font><br><br>` : ""}${j(parseFloat(lat).toFixed(4))} <font color=#8DB6CD>✡︎</font> ${k(parseFloat(lnt).toFixed(4))}<br>-------------------------`;
                 } else {
                     INIPS = true;
                 }
-                const inDprtA = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 2000);
-                if (inDprtA?.status === "success") {
-                    var {as, isp, org} = inDprtA, insA;
-                    insA = IEPLC ? as.match(/ (.*)/)[1] === isp ? `<b>自治机构 同 运营商</b>：${as.match(/ (.*)/)[1]}『${h(as)}』` : `<b>自治机构</b>：${as.match(/ (.*)/)[1]} (${h(as)})<br><br><b>运营商</b>：${isp}` : `<b>自治机构</b>：${as.match(/ (.*)/)[1]}『${h(as)}』`;
-                }
-                ins = `<br>♐️：${insP}<br><br>${insIP}<br><br>${insA}<br><br>${insL}<br>-------------------------`;
             } else {
                 INIPS = true;
             }
@@ -234,7 +255,7 @@ async function lookUp(t, e, o) {
         var hd = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><font>_____________________________<br><br>`;
         $done({title: nodeName, htmlMessage: `${hd}${bgn}-------------------------${ins}<br>${outs}</font>`});
     } catch (error) {
-        $done({title: nodeName, htmlMessage: `${hd}‼️<b>失败</b><br><br>缘由分析：<b>${error.message}</b><br><br>建议反馈给 @MingdeCZ</font>`});
+        $done({title: nodeName, htmlMessage: `${hd}<font color=#FF3030><b>失败</b></font><br><br>缘由分析：<font color=#EEC900>${error.message}</font><br><br>建议反馈给 @MingdeCZ</font>`});
     } finally {
         $done({title: nodeName, htmlMessage: "详见日志"});
     }
