@@ -166,7 +166,7 @@ async function lookUp(url, nodeName, timeout) {
         const StrtPIL = await lookUp("https://uapi.woobx.cn/app/ip-location", "", 1000);
         if (StrtPIL?.data.showapi_res_body.en_name_short === "CN") {
             let {region, city, county, ip, isp, lat, lnt} = StrtPIL.data.showapi_res_body;
-            bgn = `${region} ${city} <font color=#00CD66>${county}</font> <font color=#FF6EB4>${isp}</font>〈<font color=#00C5CD>${$utils.ipasn(ip)}</font>〉<br><br>${ip}<br><br>${j(parseFloat(lat).toFixed(4))}<font color=#8B668B>・</font>${k(parseFloat(lnt).toFixed(4))}<br>`;
+            bgn = `${region} ${city} <font color=#00CD66>${county}</font> <font color=#FF6EB4>${isp.replace("中国", "")}</font>〈<font color=#00C5CD>${$utils.ipasn(ip)}</font>〉<br><br>${ip}<br><br>${j(parseFloat(lat).toFixed(4))}<font color=#8B668B>・</font>${k(parseFloat(lnt).toFixed(4))}<br>`;
         } else {
             bgn = "<br><font color=#FF3030><b>网络故障</b></font> 或 <font color=#EEC900><b>定位不在大陆</b></font>，此内容跳过";
         }
@@ -180,60 +180,28 @@ async function lookUp(url, nodeName, timeout) {
             loc.length == 2 && (lft = "<font color=#228B22>" + loc[1] + "</font>");
             loc.length == 3 && (lft = "<font color=#EEAD0E>" + loc[1] + "</font>" + " <font color=#228B22>" + loc[2] + "</font>");
 
-            const Ipck = await lookUp("https://ipinfo.io/widget", nodeName, 3500);
-            let warng = "<font color=#EEC900><b>", type = "", expl = "";
-            if (Ipck != "Too Many Requests") {
-                let {ip, country, asn, company, privacy, abuse} = Ipck;
-                if (ip == Ip) {
-                    (country != Arvl.countryCode | asn.asn.slice(2) != h(Arvl.as)) && (warng += "信息可能有误，增补差异值作参考<br><br>");
-                    asn.type == "business" && (expl += "商宽 ");
-                    if (asn.type == "isp" | asn.type == "education") {
-                        type = "<font color=#00CD66>";
-                        expl += asn.type == "education" ? "教育网 " : "";
-                    } else {
-                        expl += country == abuse.country ? "<font color=#3CB371><b>原生 </b></font>" : "<font color=#1C86EE>广播 </font>";
-                        company?.type == "education" && (expl += "/教育网 ");
-                    }
-                    (asn.type != "business" & company?.type == "business") && (expl += "/商宽 ");
-                    (company?.type == "isp" | company?.type == "education") && (type += "<b>");
-                    privacy.vpn && (expl += "<font color=#EEC900><b>VPN </b></font>");
-                    privacy.proxy && (expl += "<font color=#EEC900><b>代理 </b></font>");
-                } else {
-                    warng += "IP 有异，取消类型检测<br><br>";
-                }
-            } else {
-                warng += "类型检测频繁，此次检测跳过<br><br>";
-            }
-
             const Riskck = await lookUp(`https://scamalytics.com/ip/${Ip}`, "", 3500);
             if (Riskck) {
                 let score = Riskck.indexOf(`"score":`) != -1 ? Riskck.split(`"score":`)[1].split("\n")[0].replace(/"|,/g,"") : "⁇";
                 let risk = Riskck.indexOf(`"risk":`) != -1 ? Riskck.split(`"risk":`)[1].split("\n")[0].replace(/"|,/g,"") : "未找到";
                 switch (risk) {
                     case "low":
-                        risk = "<font color=#32CD32><b>低风险</b>(" + score + ")</font> ";
+                        risk = "<font color=#32CD32><b>低风险</b>(" + score + ")</font>";
                         break;
                     case "medium":
-                        risk = "<font color=#CDAD00><b>中风险</b>(" + score + ")</font> ";
+                        risk = "<font color=#CDAD00><b>中风险</b>(" + score + ")</font>";
                         break;
                     case "high":
-                        risk = "<font color=#CD6839><b>高风险</b>(" + score + ")</font> ";
+                        risk = "<font color=#CD6839><b>高风险</b>(" + score + ")</font>";
                         break
                     case "very high":
-                        risk = "<font color=#CD3700><b>极高风险</b>(" + score + ")</font> ";
+                        risk = "<font color=#CD3700><b>极高风险</b>(" + score + ")</font>";
                         break;
                     default:
-                        risk = "<font color=#828282><b>空</b>-" + score + "</font> ";
+                        risk = "<font color=#828282><b>空</b>-" + score + "</font>";
                         break;
                 }
-                expl += risk;
-                let lastSpaceIndex = expl.lastIndexOf(' ');
-                expl && (expl = " ⎨" + expl.substring(0, lastSpaceIndex) + expl.substring(lastSpaceIndex + 1) + "⎬");
-                if (Ipck.ip) {
-                    outs = `${warng}</b></font><font color=#FF3030><b>${loc[0]}</b></font> ${lft} <font color=#3A5FCD>➜</font> ${g(Arvl.countryCode)}${"<font color=#EEC900><b>" + (Ipck.ip == Ip ? Ipck.country == Arvl.countryCode ? "" : "（" + g(Ipck.country) + "）" : "") + "</b></font>"}<br><br>${type}${Ip}</b></font>${expl}<br><br>${Ipck.ip == Ip ? (Ipck.asn.asn.slice(2) == h(Arvl.as) ? "" : "<font color=#EEC900><b>自治机构：" + Ipck.asn.name + "</b>【" + Ipck.asn.asn.slice(2) + "】</font><br><br>") : ""}${i(Arvl.as, Arvl.isp, Arvl.org)}<br><br>${j(Arvl.lat)} <font color=#E9967A>✦</font> ${k(Arvl.lon)}`;
-                } else {
-                    outs = `${warng}</b></font><font color=#FF3030><b>${loc[0]}</b></font> ${lft} <font color=#3A5FCD>➜</font> ${g(Arvl.countryCode)}<br><br>${Ip}</b></font>${expl}<br><br>${i(Arvl.as, Arvl.isp, Arvl.org)}<br><br>${j(Arvl.lat)} <font color=#E9967A>✦</font> ${k(Arvl.lon)}`;
-                }
+                outs = `<font color=#FF3030><b>${loc[0]}</b></font> ${lft} <font color=#3A5FCD>➜</font> ${g(Arvl.countryCode)}<br><br>${Ip}⎨${risk}⎬<br><br>${i(Arvl.as, Arvl.isp, Arvl.org)}<br><br>${j(Arvl.lat)} <font color=#E9967A>✦</font> ${k(Arvl.lon)}`;
             }
         } else {
             outs = `<br><font color=#FF3030><b>失联</b></font>（<font color=#EEC900>故障</font>）`;
@@ -255,7 +223,7 @@ async function lookUp(url, nodeName, timeout) {
                     let arr = f(region, city).split(" "), loc;
                     arr.length == 1 && (loc = "<font color=#FF8247>" + arr[0] + "</font>");
                     arr.length == 2 && (loc = "<font color=#008B8B>" + arr[0] + "</font>" + " <font color=#FF8247>" + arr[1] + "</font>");
-                    ins = `<br>${loc} <font color=#8B8B7A>${county}</font> <font color=#9B30FF><b>${isp}</b></font>『<font color=#BDB76B>${$utils.ipasn(ip)}</font>』<br><br>${ip}<br><br>${isp.includes("UCloud") ? `<font color=#9C9C9C><b>自治机构</b>：${$utils.ipaso(ip)}</font><br><br>` : ""}${j(parseFloat(lat).toFixed(4))} <font color=#8DB6CD>✡︎</font> ${k(parseFloat(lnt).toFixed(4))}<br>-------------------------`;
+                    ins = `<br>${loc} <font color=#8B8B7A>${county}</font> <font color=#9B30FF><b>${isp.replace("中国", "")}</b></font>『<font color=#BDB76B>${$utils.ipasn(ip)}</font>』<br><br>${ip}<br><br>${(isp.includes("UCloud") || isp.includes("Amazon")) ? `<font color=#9C9C9C><b>自治机构</b>：${$utils.ipaso(ip)}</font><br><br>` : ""}${j(parseFloat(lat).toFixed(4))} <font color=#8DB6CD>✡︎</font> ${k(parseFloat(lnt).toFixed(4))}<br>-------------------------`;
                 } else {
                     INIPS = true;
                 }

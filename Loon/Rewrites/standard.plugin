@@ -1249,7 +1249,7 @@ https?:\/\/m\.sd\.10086\.cn\/zapi\/app_common\/homeWelcome\/welcome.do - reject
 generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/ip.js, timeout=300, tag=查询节点信息, img-url=location.fill.viewfinder
 
 # 节点流媒体解锁检测
-generic script-path=https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/streaming-ui-check.js, timeout=300, tag=解锁检测, img-url=checkmark.seal
+generic script-path=https://raw.githubusercontent.com/Loon0x00/LoonScript/main/MediaCheck/check.js, timeout=300, tag=解锁检测, img-url=checkmark.seal
 
 # @I-am-R-E（更多脚本信息请自行在 https://github.com/I-am-R-E/Functional-Store-Hub 中查找）
 # WPS 解锁本地会员（支持大陆版以及非大陆版）（22.07.10）account.wps.cn, *account.wps.com

@@ -1,0 +1,1277 @@
+#!name = 瑞士军刀
+#!desc = 专为 i(Pad)OS 的 TUN Only 模式优化
+#!openUrl = 
+#!author = @MingdeCZ
+#!keyword = 
+#!homepage = https://github.com/MingdeCZ
+#!manual = 
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
+#!date = 24.08.01
+#!other = 
+#!category = 
+#!select = 节点缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
+#!select = 响应头缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
+#!select = 隐藏上传按钮（YouTube）, true, false
+#!select = 隐藏选段按钮（YouTube）, true, false
+#!select = 启用调试模式（YouTube）, true, false
+
+[General]
+bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32
+
+# @VirgilClyne
+# 🍟 整点薯条（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/GetSomeFries 中查找）
+# 🌐 通用设置增强（(📱 iOS 版) #1.添加跳过代理部分段内容 2.添加返回真实 IP 段内容 3.添加不可 MitM 的域名，防止打断连接）
+# Always Real IP Hosts
+# DNS 数据包将被转发到上游 DNS 服务器。
+real-ip = *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, mdn.open.wo.cn, opencloud.wostore.cn, auth.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
+
+# 🚫 阻止常见的 HTTPDNS 服务器
+force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, 203.107.1.65:80, 203.107.1.66:80
+
+# TestFlight 账户管理
+# skip-proxy = iosapps.itunes.apple.com
+
+[Rule]
+# 🌐 中国大陆 ASN (按 ASN 分流中国大陆 IP 与域名直连)
+#IP-ASN,132203,DIRECT // 科技中医大道腾讯大厦
+
+# 🚫 阻止常见的 HTTPDNS 服务器
+# 阿里巴巴
+DOMAIN,httpdns.alicdn.com,REJECT
+# 阿里云
+# 参考：https://static-aliyun-doc.oss-cn-hangzhou.aliyuncs.com/download%2Fpdf%2F30114%2F%25E7%2594%25A8%25E6%2588%25B7%25E6%258C%2587%25E5%258D%2597_cn_zh-CN.pdf
+DOMAIN,httpdns-api.aliyuncs.com,REJECT
+DOMAIN,httpdns-sc.aliyuncs.com,REJECT
+# 参考：http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/pdf/httpdns-api-reference-cn-zh-2016-05-12.pdf
+# 参考：http://docs-aliyun.cn-hangzhou.oss.aliyun-inc.com/pdf/httpdns-product-introduction-cn-zh-2017-05-24.pdf
+# 参考：https://help.aliyun.com/document_detail/435282.html
+# 参考：https://alidocs.dingtalk.com/i/p/Y7kmbokZp3pgGLq2/docs/lo1YvX0prG98kvEewqNyJPw7xzbmLdEZ
+IP-CIDR,203.107.1.0/24,REJECT,no-resolve
+# 百度
+DOMAIN,httpsdns.baidu.com,REJECT
+DOMAIN,httpdns.baidu.com,REJECT
+# 百度 BCE
+# 参考：https://bce-cdn.bj.bcebos.com/p3m/pdf/bce-doc/online/HTTPDNS/HTTPDNS.pdf
+DOMAIN,httpdns.baidubce.com,REJECT
+IP-CIDR,186.76.76.200/32,REJECT,no-resolve
+# 哔哩哔哩
+DOMAIN,httpdns.bilivideo.com,REJECT
+# 华为
+DOMAIN,httpdns.c.cdnhwc2.com,REJECT
+# 京东
+DOMAIN,dns.jd.com,REJECT
+IP-CIDR,101.124.19.122/32,REJECT,no-resolve
+IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
+# 京东云
+# 参考：https://docs.jdcloud.com/cn/jd-cloud-dns/HTTPDNS
+# 参考：https://docs.jdcloud.com/cn/httpdns/interface-specification
+IP-CIDR,103.224.222.208/32,REJECT,no-resolve
+# 快手
+DOMAIN,kuaishou.httpdns.pro,REJECT
+# 美团
+DOMAIN,httpdns.meituan.com,REJECT
+# 网易
+# 参考：https://lbs.netease.im/lbs/conf.jsp
+DOMAIN,httpdns.yunxindns.com,REJECT
+DOMAIN,httpdns.n.netease.com,REJECT
+DOMAIN,httpdns.music.163.com,REJECT
+DOMAIN,music.httpdns.c.163.com,REJECT
+DOMAIN,lofter.httpdns.c.163.com,REJECT
+IP-CIDR,59.111.239.61/32,REJECT,no-resolve
+IP-CIDR,59.111.239.62/32,REJECT,no-resolve
+IP-CIDR,115.236.121.51/32,REJECT,no-resolve
+IP-CIDR,115.236.121.195/32,REJECT,no-resolve
+# OPPO
+# DOMAIN,httpdns.push.oppomobile.com,REJECT
+# 新浪
+# 参考：https://github.com/CNSRE/HTTPDNSLib
+# 腾讯云
+# 参考：https://cloud.tencent.com/document/product/379/95497
+IP-CIDR,119.29.29.98/32,REJECT,no-resolve
+IP-CIDR,119.29.29.99/32,REJECT,no-resolve
+# Volcengine
+# 参考：https://www.volcengine.com/docs/6758/174756
+DOMAIN,httpdns.volcengineapi.com,REJECT
+# 微博
+DOMAIN,dns.weibo.cn,REJECT
+IP-CIDR,39.97.128.148/32,REJECT,no-resolve
+IP-CIDR,39.97.130.51/32,REJECT,no-resolve
+# 微信
+# 参考：http://dns.weixin.qq.com/cgi-bin/micromsg-bin/newgetdns
+# 参考：https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/Mini_Programs/HTTPDNS.html
+DOMAIN,dns.weixin.qq.com,REJECT
+DOMAIN,dns.weixin.qq.com.cn,REJECT
+IP-CIDR,42.81.232.18/32,REJECT,no-resolve
+IP-CIDR,42.187.182.106/32,REJECT,no-resolve
+IP-CIDR,42.187.182.123/32,REJECT,no-resolve
+IP-CIDR,42.187.184.154/32,REJECT,no-resolve
+IP-CIDR,123.151.54.50/32,REJECT,no-resolve
+IP-CIDR6,2402:4e00:1900:1700:0:9554:1ad9:c3a/128,REJECT,no-resolve
+IP-CIDR6,240e:928:1400:10::25/128,REJECT,no-resolve
+# Wework
+# 参考：https://res.mail.qq.com/zh_CN/wework_ip/latest.html
+IP-CIDR,182.254.116.117/32,REJECT,no-resolve
+IP-CIDR,182.254.118.119/32,REJECT,no-resolve
+# 知乎
+# 参考：https://github.com/lwd-temp/anti-ip-attribution/issues/24
+IP-CIDR,118.89.204.198/23,REJECT,no-resolve
+IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
+
+# 解锁原装
+# 定位服务（V3）
+# Country Code
+DOMAIN,gspe1-ssl.ls.apple.com,DIRECT
+
+# 地图（V3）
+# 🗺️ Tiles
+DOMAIN,gspe19-cn-ssl.ls.apple.com,DIRECT
+# 🗺️ Dispatcher
+DOMAIN,dispatcher.is.autonavi.com,DIRECT
+# 🗺️ Directions & ETA
+DOMAIN,direction2.is.autonavi.com,DIRECT
+
+# News（V3）
+# iCloud
+DOMAIN,gateway.icloud.com,PROXY
+# News
+DOMAIN,news-edge.apple.com,PROXY
+DOMAIN,news-events.apple.com,PROXY
+DOMAIN,apple.comscoreresearch.com,PROXY
+# News+ Audio
+URL-REGEX,^https?:\/\/news-assets\.apple\.com\/(audio-narrative|podcast\/audio)\/.*,PROXY
+
+# Sub Store
+DOMAIN, sub-store.vercel.app, PROXY
+
+# 12306 去广告
+DOMAIN, ad.12306.cn, DIRECT
+
+# 百度网盘去广告
+IP-CIDR, 180.76.76.112/32, REJECT, no-resolve
+IP-CIDR, 180.76.76.200/32, REJECT, no-resolve
+
+# 广告平台拦截器（拦截腾讯、字节跳动、快手、百度、邑盟、倍孜、艾狄墨搏、袤博、极光、个推、友盟、阿里、优比客思、秒针、网易、美团、小米、京东、天目、讯飞、泛连、锐讯灵通等广告平台的广告请求）
+# 字节跳动广告
+AND, ((DOMAIN-KEYWORD, -ad-), (DOMAIN-SUFFIX, byteimg.com)), REJECT
+AND, ((DOMAIN-KEYWORD, -ttam-), (DOMAIN-SUFFIX, ibyteimg.com)), REJECT
+AND, ((DOMAIN-KEYWORD, ssdk-), (DOMAIN-SUFFIX, pangle.io)), REJECT
+AND, ((DOMAIN-KEYWORD, pangolin), (DOMAIN-SUFFIX, sgsnssdk.com)), REJECT
+AND, ((DOMAIN-KEYWORD, lf), (DOMAIN-KEYWORD, -short.bytetos.com)), REJECT
+AND, ((DOMAIN-KEYWORD, v), (DOMAIN-KEYWORD, -be-pack.pglstatp-toutiao.com)), REJECT
+AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -be-pack.pglstatp-toutiao.com)), REJECT
+AND, ((DOMAIN-KEYWORD, s), (DOMAIN-KEYWORD, -fe-scm.pglstatp-toutiao.com)), REJECT
+AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -ttcdn-tos.pstatp.com)), REJECT
+AND, ((DOMAIN-KEYWORD, p), (DOMAIN-KEYWORD, -be-pack-sign.pglstatp-toutiao.com)), REJECT
+AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -fe-tos.pglstatp-toutiao.com)), REJECT
+AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -static.i18n-pglstatp.com)), REJECT
+AND, ((DOMAIN-KEYWORD, if), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
+AND, ((DOMAIN-KEYWORD, lf), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
+AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, normal), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
+AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, -access-), (DOMAIN-SUFFIX, pangle.io)), REJECT
+AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, -log-), (DOMAIN-SUFFIX, pangle.io)), REJECT
+AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, -dual-event-), (DOMAIN-SUFFIX, pangle.io)), REJECT
+AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, pangolin), (DOMAIN-SUFFIX, sgsnssdk.com)), REJECT
+AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, -normal-lq), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
+DOMAIN, mon.zijieapi.com, REJECT
+DOMAIN, i.snssdk.com, REJECT
+DOMAIN, is.snssdk.com, REJECT
+DOMAIN, bds.snssdk.com, REJECT
+DOMAIN, dm.bytedance.com, REJECT
+DOMAIN, dm.pstatp.com, REJECT
+DOMAIN, dm.toutiao.com, REJECT
+DOMAIN, log.snssdk.com, REJECT
+DOMAIN, s3a.pstatp.com, REJECT
+DOMAIN, sdfp.snssdk.com, REJECT
+DOMAIN, tosv.boe.byted.org, REJECT
+DOMAIN, tosv.byted.org, REJECT
+DOMAIN, extlog.snssdk.com, REJECT
+DOMAIN, mssdk-bu.bytedance.com, REJECT
+DOMAIN, toblog.ctobsnssdk.com, REJECT
+DOMAIN, mssdk.volces.com, REJECT
+DOMAIN, pangolin.snssdk.com, REJECT
+DOMAIN, gromore.pangolin-sdk-toutiao.com, REJECT
+DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
+DOMAIN-KEYWORD, api-access.pangolin-sdk-toutiao, REJECT
+DOMAIN-KEYWORD, log-api.pangolin-sdk-toutiao, REJECT
+DOMAIN-KEYWORD, -ad.byteoversea.com, REJECT
+DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
+DOMAIN-KEYWORD, asiad.byteactivity, REJECT
+# 讯飞 AI 营销
+DOMAIN-KEYWORD, iflyad.bj.openstorage.cn, REJECT
+DOMAIN-KEYWORD, bjimp.voiceads.cn, REJECT
+# InMobi - 邑盟信息技术（上海）有限公司
+DOMAIN, config.inmobi.cn, REJECT
+# 北京锐讯灵通科技有限公司
+DOMAIN, ztoken.uyunad.com, REJECT
+# 快手联盟 - 广告服务商
+DOMAIN, gdfp.gifshow.com, REJECT
+DOMAIN, open.e.kuaishou.com, REJECT
+DOMAIN-SUFFIX, adukwai.com, REJECT
+# SupersonicAds
+DOMAIN, init.supersonicads.com, REJECT
+# 上海倍孜
+DOMAIN, sdk.beizi.biz, REJECT
+# 秒针系统 - 广告服务商
+DOMAIN, admaster.com.cn, REJECT
+DOMAIN-SUFFIX, miaozhen.com, REJECT
+# 艾狄墨搏 - 广告服务商
+DOMAIN, monitor.ssp.admobile.top, REJECT
+DOMAIN, sdk.ssp.admobile.top, REJECT
+DOMAIN-SUFFIX, admobile.top, REJECT
+# 袤博 - 广告服务商
+DOMAIN, api-c.dutils.com, REJECT
+DOMAIN, api-d.dutils.com, REJECT
+DOMAIN, api-p0.yksdks.com, REJECT
+DOMAIN, cache-verify.dutils.com, REJECT
+DOMAIN, cdn-api-verify.dutils.com, REJECT
+DOMAIN, devs-data.dutils.com, REJECT
+DOMAIN, log-verify.dutils.com, REJECT
+DOMAIN, m.mpl.dutils.com, REJECT
+DOMAIN, api.share.mob.com, REJECT
+DOMAIN, api.verify.mob.com, REJECT
+DOMAIN, log-verify.mob.com, REJECT
+DOMAIN, sdk.push.mob.com, REJECT
+# 极光 - 广告服务商
+DOMAIN-SUFFIX, jiguang.cn, REJECT
+DOMAIN-SUFFIX, jpush.cn, REJECT
+DOMAIN-SUFFIX, jpush.io, REJECT
+# 百度联盟 - 广告服务商
+DOMAIN, mobads.baidu.com, REJECT
+DOMAIN, mobads-logs.baidu.com, REJECT
+DOMAIN, wn.pos.baidu.com, REJECT
+DOMAIN, bgg.baidu.com, REJECT
+DOMAIN, als.baidu.com, REJECT
+DOMAIN, mobads-pre-config.cdn.bcebos.com, REJECT
+DOMAIN, cpro.baidustatic.com, REJECT
+DOMAIN, feed-image.baidu.com, REJECT
+DOMAIN, nadvideo2.baidu.com, REJECT
+DOMAIN-SUFFIX, union.baidu.cn, REJECT
+DOMAIN-SUFFIX, union.baidu.com, REJECT
+# 腾讯
+DOMAIN, adsmind.gdtimg.com, REJECT
+DOMAIN, huatuocode.huatuo.qq.com, REJECT
+DOMAIN, info4.video.qq.com, REJECT
+DOMAIN, info6.video.qq.com, REJECT
+DOMAIN, ios.bugly.qq.com, REJECT
+DOMAIN, ios.video.mpush.qq.com, REJECT
+DOMAIN, mazu.m.qq.com, REJECT
+DOMAIN, otheve.beacon.qq.com, REJECT
+DOMAIN, pgdt.gtimg.cn, REJECT
+DOMAIN, qzonestyle.gtimg.cn, REJECT
+DOMAIN, qzs.gdtimg.com, REJECT
+DOMAIN, qzs.qq.com, REJECT
+DOMAIN, rmonitor.qq.com, REJECT
+DOMAIN, sdk.e.qq.com, REJECT
+DOMAIN, sdkconfig.video.qq.com, REJECT
+DOMAIN, tmead.y.qq.com, REJECT-NO-DROP
+DOMAIN, tmeadbak.y.qq.com, REJECT
+DOMAIN, tmeadcomm.y.qq.com, REJECT
+DOMAIN, tpns.qq.com, REJECT
+DOMAIN, wup.imtt.qq.com, REJECT
+DOMAIN, tpstelemetry.tencent.com, REJECT
+DOMAIN-KEYWORD, trace.qq.com, REJECT
+DOMAIN-KEYWORD, trace.video.qq.com, REJECT
+DOMAIN-SUFFIX, gdt.qq.com, REJECT
+DOMAIN-SUFFIX, l.qq.com, REJECT
+DOMAIN-SUFFIX, ugdtimg.com, REJECT
+IP-CIDR, 47.110.187.87/32, REJECT, no-resolve
+# App 全渠道统计
+DOMAIN-SUFFIX, openinstall.io, REJECT
+# 个推
+DOMAIN, sdk-open-phone.getui.com, REJECT
+DOMAIN, c-hzgt2.getui.com, REJECT
+DOMAIN, sdk-conf.getui.com, REJECT
+DOMAIN-SUFFIX, mobileservice.cn, REJECT
+DOMAIN-SUFFIX, getui.com, REJECT
+DOMAIN-SUFFIX, igexin.com, REJECT
+# 友盟
+DOMAIN, cnlogs.umeng.com, REJECT
+DOMAIN, errlog.umeng.com, REJECT
+DOMAIN, errnewlog.umeng.com, REJECT
+DOMAIN, ucc.umeng.com, REJECT
+DOMAIN, ulogs.umeng.com, REJECT
+DOMAIN, utoken.umeng.com, REJECT
+DOMAIN, deeplink.umeng.com, REJECT
+DOMAIN, aspect-upush.umeng.com, REJECT
+DOMAIN, plbslog.umeng.com, REJECT
+DOMAIN, log.umtrack.com, REJECT
+DOMAIN, aaid.umeng.com, REJECT
+# FUNLINK - 北京泛连科技
+DOMAIN, adtracker.adfunlink.com, REJECT
+# 天目 - 广告服务商
+DOMAIN, sdk.tianmu.mobi, REJECT
+# 上海优比客思科技有限公司 - 广告服务商
+DOMAIN, e-u1.ubixioe.com, REJECT
+DOMAIN, sdk-data.ubixioe.com, REJECT
+DOMAIN, tower.ubixioe.com, REJECT
+DOMAIN, tx-cfg-u1.ubixioe.com, REJECT
+DOMAIN, tx-data-u1.ubixioe.com, REJECT
+# 阿里巴巴
+DOMAIN, ossgw.alicdn.com, REJECT
+DOMAIN, ems.youku.com, REJECT
+DOMAIN, hudong.alicdn.com, REJECT
+DOMAIN, et.tanx.com, REJECT
+DOMAIN, beacon-api.aliyuncs.com, REJECT
+DOMAIN, adash.man.aliyuncs.com, REJECT
+DOMAIN, applog.uc.cn, REJECT
+AND, ((DOMAIN-KEYWORD, adash), (DOMAIN-SUFFIX, ut.taobao.com)), REJECT
+# 网易
+DOMAIN, nex.163.com, REJECT
+DOMAIN, iad.g.163.com, REJECT
+DOMAIN, adx-bj.anythinktech.com, REJECT
+DOMAIN, api.anythinktech.com, REJECT
+DOMAIN, tk.anythinktech.com, REJECT
+DOMAIN, da.anythinktech.com, REJECT
+# 美团
+DOMAIN, al-log.d.meituan.net, REJECT
+DOMAIN, babel-statistics-android.d.meituan.net, REJECT
+DOMAIN, maplocatesdksnapshot.d.meituan.net, REJECT
+DOMAIN, metrics-picture.d.meituan.net, REJECT
+DOMAIN, route-stats.d.meituan.net, REJECT
+# 京东
+DOMAIN, dsp-x.jd.com, REJECT
+DOMAIN, xlog.jd.com, REJECT
+DOMAIN, janapi.jd.com, REJECT
+
+# 航旅纵横去广告
+URL-REGEX, ^http?:\/\/(discardrp|startup)\.umetrip\.com\/gateway\/api\/umetrip\/native, REJECT
+
+# 广告过滤器
+# 小米
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT-DROP
+DOMAIN, data.mistat.xiaomi.com, REJECT
+DOMAIN, tracking.intl.miui.com, REJECT
+# 米家
+DOMAIN, sdkconfig.ad.xiaomi.com, REJECT
+# 通用广告
+DOMAIN-SUFFIX, doubleclick-cn.net, REJECT
+DOMAIN-SUFFIX, doubleclick.net, REJECT
+
+# 淘宝去广告
+DOMAIN, adashx.m.taobao.com, REJECT
+DOMAIN, h-adashx.ut.taobao.com, REJECT
+DOMAIN, ut.taobao.com, REJECT
+
+# 微信小程序去广告
+# 通用规则
+DOMAIN, wxsmsdy.video.qq.com, REJECT
+# 收钱吧
+DOMAIN, ads-shopping.shouqianba.com, REJECT
+# 猫眼电影
+DOMAIN, ad.maoyan.com, REJECT
+
+GEOIP,cn,DIRECT
+
+# Beta
+# 阿里云盘去广告
+IP-CIDR, 203.107.1.1/24, REJECT, no-resolve
+
+# Apple 去广告
+DOMAIN-SUFFIX, iadsdk.apple.com, REJECT
+
+# 建设银行去广告
+DOMAIN-KEYWORD, adv.ccb.com, REJECT
+
+# 微信去广告
+DOMAIN, badjs.weixinbridge.com, REJECT
+DOMAIN, wxsnsdy.wxs.qq.com, REJECT
+DOMAIN, wxsnsdythumb.wxs.qq.com, REJECT
+URL-REGEX, ^http:\/\/[\d\.]+(:49155)?\/finderpdd\.video\.qq\.com\/\d+\/\d+\/stodownload\?, REJECT-DICT
+
+# YouTube 去广告
+AND, ((DOMAIN-SUFFIX, googlevideo.com), (PROTOCOL, QUIC)), REJECT
+AND, ((DOMAIN-SUFFIX, youtubei.googleapis.com), (PROTOCOL, QUIC)), REJECT
+
+# 安全浏览限制解除
+DOMAIN, lookup.api.bsb.baidu.com, REJECT
+DOMAIN-KEYWORD, safebrowsing, REJECT
+DOMAIN-SUFFIX, u3.ucweb.com, REJECT
+
+# 其它
+DOMAIN-KEYWORD, policy.jd.com, REJECT
+DOMAIN-SUFFIX, dreport.meituan.net, REJECT
+DOMAIN-SUFFIX, apoll.m.taobao.com, REJECT
+
+[Rewrite]
+# 🍟 整点薯条: 🚫 阻止常见的 HTTPDNS 服务器
+# 支付宝
+^https?:\/\/amdc\.alipay\.com\/s?query - reject
+^https?:\/\/amdc-sibling\.alipay\.com\.cn\/s?query - reject
+^https?:\/\/110\.76\.8\.150\/squery - reject
+^https?:\/\/203\.209\.230\.39\/squery - reject
+^https?:\/\/203\.209\.245\.102\/squery - reject
+^https?:\/\/203\.209\.245\.158\/squery - reject
+^https?:\/\/203\.209\.247\.95\/squery - reject
+^https?:\/\/203\.209\.250\.41\/squery - reject
+^https?:\/\/203\.209\.250\.114\/squery - reject
+^https?:\/\/203\.209\.251\.147\/squery - reject
+^https?:\/\/2400:B180:6001::18F\/squery - reject
+^https?:\/\/2400:B200:1005:3000::155\/squery - reject
+^https?:\/\/2400:B200:1005:3000::1D3\/squery - reject
+^https?:\/\/2400:B200:5000:B000::C8\/squery - reject
+# 百度
+^http:\/\/180\.76\.76\.112\/v4\/resolve - reject
+^http:\/\/180\.76\.76\.220\/v4\/resolve - reject
+# 哔哩哔哩
+# KEY_EXT_P2P_HTTPDNS_BILI_IP
+^http:\/\/47\.101\.175\.206\/resolve - reject
+^http:\/\/47\.100\.123\.169\/resolve - reject
+^http:\/\/120\.46\.169\.234\/resolve - reject
+^http:\/\/121\.36\.72\.124\/resolve - reject
+# KEY_EXT_P2P_BILIDNS_CMCC_IP
+^http:\/\/116\.63\.10\.135\/resolve - reject
+^http:\/\/122\.9\.7\.134\/resolve - reject
+^http:\/\/117\.185\.228\.108\/resolve - reject
+^http:\/\/117\.144\.238\.29\/resolve - reject
+# KEY_EXT_P2P_BILIDNS_CT_IP
+^http:\/\/122\.9\.13\.79\/resolve - reject
+^http:\/\/122\.9\.15\.129\/resolve - reject
+^http:\/\/101\.91\.140\.224\/resolve - reject
+^http:\/\/101\.91\.140\.124\/resolve - reject
+# KEY_EXT_P2P_BILIDNS_CU_IP
+^http:\/\/114\.116\.215\.110\/resolve - reject
+^http:\/\/116\.63\.10\.31\/resolve - reject
+^http:\/\/112\.64\.218\.119\/resolve - reject
+^http:\/\/112\.65\.200\.117\/resolve - reject
+# 京东
+^https:\/\/dns\.jd\.com\/v6\/b - reject
+# 美团
+^http:\/\/103\.37\.155\.60\/fetch - reject
+# 拼多多
+^http:\/\/101\.35\.204\.35\/d - reject
+^http:\/\/101\.35\.212\.35\/d - reject
+^http:\/\/114\.110\.96\.26\/d - reject
+^http:\/\/114\.110\.97\.97\/d - reject
+# 青云
+# 参考：https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
+# 参考：https://main.qcloudimg.com/raw/document/product/pdf/379_3513_cn.pdf
+# 参考：https://cloud.tencent.com/document/product/379/61200
+^https?:\/\/119\.29\.29\.29\/d - reject
+# QQ 音乐
+^http:\/\/182\.256\.116\.116\/d - reject
+# 微博
+# 参考：https://github.com/CNSRE/HTTPDNSLib-for-iOS
+^http:\/\/api\.weibo\.cn\/2\/httpdns\/config - reject
+^http:\/\/api\.weibo\.cn\/httpdns\/config - reject
+# 微信
+# 注意: 以下域名 HTTPS 无法 MitM，如通过此链接查询，无法处理
+^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns - reject
+^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns - reject
+^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
+^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
+# Wework
+# 参考：https://res.mail.qq.com/zh_CN/wework_ip/latest.html
+^http:\/\/182\.254\.116\.117\/d - reject
+^http:\/\/182\.254\.118\.119\/d - reject
+# 知乎
+# 参考：https://github.com/lwd-temp/anti-ip-attribution/issues/24
+^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
+
+# 广告平台拦截器 ether-pack.pangolin-sdk-toutiao.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+# 字节跳动广告
+^https:\/\/ether-pack\.pangolin-sdk-toutiao\.com\/union\/endcard\/ reject
+# 拼多多广告平台
+^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ reject
+^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union reject
+^https:\/\/images\.pinduoduo\.com\/mrk\/ reject
+^https:\/\/images\.pinduoduo\.com\/marketing_api\/ reject
+
+# 广告过滤器 api-mifit*.huami.com, api-mifit.huami.com, api.jr.mi.com, api.m.mi.com, home.mi.com, home.umetrip.com, iyes.youku.com, m.qianbao.qq.com, umerp.umetrip.com
+# 米家
+^https:\/\/home\.mi\.com\/cgi-op\/api\/v1\/recommendation\/(banner|carousel\/banners|myTab|openingBanner) reject-dict
+# 小米
+^https?:\/\/api\.m\.mi\.com\/v\d\/app\/start reject-200
+^https?:\/\/api\.jr\.mi\.com\/v\d\/adv\/ reject-200
+^https?:\/\/api\.jr\.mi\.com\/jr\/api\/playScreen reject-200
+^https?:\/\/api-mifit.+?\.huami\.com\/discovery\/mi\/discovery\/.+?_ad\? reject-200
+^https?:\/\/home\.mi\.com\/cgi-op\/api\/v\d\/recommendation\/banner reject
+^https?:\/\/(api-mifit|api-mifit-\w+)\.huami\.com\/discovery\/mi\/discovery\/\w+_ad\? reject
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/homepage_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sleep_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sport_summary_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sport_training_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/step_detail_ad\? reject-img
+^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/training_video_ad\? reject-img
+# 航旅纵横 @Dragon
+# 首页悬浮标签
+^http:\/\/home\.umetrip\.com\/gateway\/api\/umetrip\/native reject
+# 我的页面轮播图
+^http:\/\/umerp\.umetrip\.com\/gateway\/api\/umetrip\/native reject
+# 闲鱼 - 开屏
+^https:\/\/iyes\.youku\.com\/uts\/v1\/start\/ reject-dict
+
+# QQ 链接解锁（解除访问非白名单之外的地址提示停止访问该页面的限制，并移除跟踪参数。需要 3.1.4(649) 或以上版本，使用前需要清除缓存数据）pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com
+(^https:\/\/c\.pc\.qq\.com\/middlem\.html\?pfurl=)(http.*)(&pfuin=.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/middlect\.html\?pfuin=.*&pfurl=)(http.*)(&gjsublevel=.*) 302 $2
+(^https:\/\/pingtas\.qq\.com\/webview\/pingd\?dm=c\.pc\.qq\.com&pvi=\d+&si=s\d+&url=\/middlem\.html\?pfurl%3d)(http.*)(%26pfuin%3d.*%26pfuin%3d.*) 302 $2
+(^https:\/\/cgi\.connect\.qq\.com\/qqconnectopen\/get_urlinfoForQQV2\?url=)(http.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/index\.html\?pfurl=)(http.*)(&pfuin=.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/ios\.html\?url=)(http.*)(&level=.*) 302 $2
+(^https:\/\/pingtas\.qq\.com\/webview\/pingd\?dm=c\.pc\.qq\.com&pvi=\d+&si=s\d+&url=\/ios\.html\?url%3d)(http.*)(%26level.*%26level.*) 302 $2
+
+# Beta
+# B 站优化
+# 满意度调研
+^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? reject-dict
+# 移除搜索框关键词
+^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords reject
+# 移除可能的一些推广（Beta）
+^https?:\/\/api\.bili(bili\.com|api\.net)\/pgc\/season\/app\/related\/recommend\? reject-dict
+# 屏蔽 IP 及地理位置请求
+^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
+^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-dict
+# 移除视频链接跟踪参数
+(^https:\/\/(www|m)\.bilibili\.com\/video\/((BV\w{10})|(av\d{9})))(\/\?.*) 302 $1
+
+# Vista 看天下
+# 解锁 VIP
+^https:\/\/open3\.vistastory\.com\/v3\/api\/(notice\/need_read_notice_number?|index\/loading_ad2?) reject
+# 去广告
+^https?:\/\/open3\.vistastory\.com\/v\d\/api.*get_popup reject
+
+# 阿里云盘去广告
+# 首页活动日历
+^https:\/\/member\.alipan\.com\/v2\/activity\/sign_in_luckyBottle reject-dict
+# 首页板块入口
+^https:\/\/api\.alipan\.com\/adrive\/v1\/file\/getTopFolders reject-dict
+
+# 百度网盘去广告
+^https?:\/\/pan\.baidu\.com\/(act\/(api\/activityentry|v2\/(bchannel|welfare)\/list)|rest\/\d\.\d\/(pcs\/adv|membership\/user\?method=gamecenter)|api\/get(config|syscfg)|feed\/cardinfos) reject-dict
+^https:\/\/sofire\.baidu\.com\/ios\/.+ reject
+^https?:\/\/update\.pan\.baidu\.com\/statistics reject
+
+# 谷歌搜索送中重定向
+^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 302
+
+# 建设银行去广告
+^http:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png reject
+
+# 微信公众号去广告 *.wxs.qq.com
+^http:\/\/\w+\.wxs\.qq\.com\/\d+\/\d+\/(snscosdownload|snssvpdownload)\/(SH|SZ)\/reserved\/\w+ reject-dict
+# 移除公众号中的推广内容 mp.weixin.qq.com
+^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? reject-dict
+
+# 淘宝去广告
+# 阿里巴巴 acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome reject-dict
+^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources reject-dict
+^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 reject-dict
+^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) reject-dict
+
+# 微信小程序净化
+# 茶百道
+^https:\/\/cbd-gateway-service-applets\.hualala\.com\/arch\/api\/banner\/QueryBannerImgList reject-dict
+# 滴滴打车
+# ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core reject-dict
+# 滴滴代驾
+# 横幅广告
+^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/conf\?ns=daijia-front&name= reject-dict
+^https?:\/\/daijia\.kuaidadi\.com\/gateway\?api=prado\.cms\.delivery\.batch&apiVe reject-dict
+# 肯德基
+^https:\/\/orders\.kfc\.com\.cn\/preorder-portal\/api\/v2\/(coupon|activity) reject-dict
+^https:\/\/dynamicad\.kfc\.com\.cn\/api reject-dict
+^https:\/\/res\.kfc\.com\.cn\/CRM\/kfcad\/custom_v2\/wxapp reject-dict
+# 麦当劳
+^https:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity reject-dict
+# 蜜雪冰城
+^https:\/\/mxsa\.mxbc\.net\/api\/v1\/adinfo\/adplace\/query reject-dict
+# 猫眼
+# 弹窗 + 横幅广告
+^https:\/\/ad\.maoyan\.com\/api\/position\/detail reject-dict
+# 电竞 + 热门赛事
+^https:\/\/wx\.maoyan\.com\/maoyansh\/api\/mobile\/(hotMatchList|eSportsIps) reject-dict
+# 放映厅
+^https:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json reject-dict
+# 精彩演出
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow reject-dict
+# 七日精选
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0 reject-dict
+# 今日必抢
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main reject-dict
+# 大咖新动态
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query reject-dict
+# 为你推荐
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances reject-dict
+# 首页底部推荐
+^https:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v2\/list\.json reject-dict
+# 演出页面全部拦截
+^https:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/ad\/detail reject-dict
+# 青桔
+^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=(cms\.htw\.delivery|hm\.fa\.(combineHomepageInfo|mallRecommend)) reject-dict
+# 顺丰
+^https?:\/\/mcs-mimp-web\.sf-express\.com\/mcs-mimp\/integralPlanet\/getCxAdvertiseList reject-dict
+^https?:\/\/ucmp-static\.sf-express\.com\/proxy\/wxbase\/wxTicket\/wxLiveStreamInfo\?pageNo reject-dict
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/(esgcempcore\/member(Goods\/pointMallService\/goodsList|Manage\/memberEquity\/queryRecommendEquity|ActLengthy\/fullGiveActivityService\/fullGiveInfo)|operation-platform\/info-flow-adver\/query) reject-dict
+
+# 拼多多 api.pinduoduo.com, api.yangkeduo.com
+^https:\/\/api\.(pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash reject
+
+# 滴滴出行去广告
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/(xp|m)get reject-dict
+^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds reject-dict
+^https:\/\/daijia\.kuaidadi\.com\/gateway reject-dict
+^https:\/\/freight\.xiaojukeji\.com\/gateway reject-dict
+^https:\/\/daijia\.kuaidadi\.com:443\/gateway reject-dict
+^https:\/\/conf\.diditaxi\.com\.cn\/(homepage\/v\d\/other\/fast|dynamic\/conf) reject-dict
+
+# YouTube 去广告
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-dict
+
+# 得物去广告 app.dewu.com
+^https?:\/\/app\.dewu\.com\/api\/v\d\/app\/advertisement\/ reject
+
+# Pornhub 去广告
+^https:\/\/(cn|www)\.pornhub\.com\/_xa\/ads reject-dict
+
+^https?:\/\/acs\.m\.taobao\.com\/gw\/mtop\.damai\.wireless\.home\.welcome reject-200
+
+[Host]
+# 🍟 整点薯条: 🌐 DNS 增强（1.域名按所属 DNS 进行分流解析 2.路由器地址使用系统 DNS 进行解析 3.特殊地址使用规范 DNS 进行解析）
+# --- 自定义 HOSTS ---
+# IPV6
+ip6-localhost = ::1
+ip6-loopback = ::1
+ip6-localnet = fe00::0
+ip6-mcastprefix = ff00::0
+ip6-allnodes = ff02::1
+ip6-allrouters = ff02::2
+ip6-allhosts = ff02::3
+# 加密 DNS
+dns.google = 8.8.8.8
+dns64.dns.google = 2001:4860:4860::6464
+cloudflare-dns.com = 104.16.249.249
+1dot1dot1dot1.cloudflare-dns.com = 1.1.1.1
+one.one.one.one = 1.1.1.1
+dns.alidns.com = 223.5.5.5
+doh.pub = 1.12.12.12
+dot.pub = 1.12.12.12
+doh.360.cn = 23.6.48.18
+dot.360.cn = 101.198.198.198
+dns.twnic.tw = 101.101.101.101
+ordns.he.net = 74.82.42.42
+# Modify Contents
+# 谷歌 API 服务 中国
+services.googleapis.cn = 74.125.193.94
+# Firebase Cloud Messaging
+talk.google.com = 108.177.125.188
+mtalk.google.com = 108.177.125.188
+alt1-mtalk.google.com = 3.3.3.3
+alt2-mtalk.google.com = 3.3.3.3
+alt3-mtalk.google.com = 74.125.200.188
+alt4-mtalk.google.com = 74.125.200.188
+alt5-mtalk.google.com = 3.3.3.3
+alt6-mtalk.google.com = 3.3.3.3
+alt7-mtalk.google.com = 74.125.200.188
+alt8-mtalk.google.com = 3.3.3.3
+# 谷歌 CDN
+dl.google.com = 180.163.151.161
+dl.l.google.com = 180.163.151.161
+# --- 自定义 DNS ---
+# Modify Contents
+# 谷歌 CDN
+blog.google = server:119.29.29.29
+googletraveladservices.com = server:119.29.29.29
+dl.google.com = server:119.29.29.29
+dl.l.google.com = server:119.29.29.29
+clientservices.googleapis.com = server:119.29.29.29
+update.googleapis.com = server:119.29.29.29
+translate.googleapis.com = server:119.29.29.29
+fonts.googleapis.com = server:119.29.29.29
+fonts.gstatic.com = server:119.29.29.29
+# 谷歌 STUN
+stun.l.google.com = server:system
+stun?.l.google.com = server:system
+# 路由器管理面板
+# Ubiquiti Unifi Network App
+# *.id.ui.direct = server:system
+# Ubiquiti Unifi Portal
+# unifi.ui.com = server:system
+# Ubiquiti Unifi OS
+# unifi.local = server:system
+# Ubiquiti Unifi Controller
+# network.unifi.ui.com = server:system
+# Ubiquiti Amplifi
+# amplifi.lan = server:system
+# 群晖
+router.synology.com = server:system
+# Razer Sila
+# sila.razer.com = server:system
+# Asus
+# router.asus.com = server:system
+# Netgear
+# routerlogin.net = server:system
+# Netgear Obri
+# orbilogin.com = server:system
+# Linksys
+# www.LinksysSmartWiFi.com = server:system
+# LinksysSmartWiFi.com = server:system
+# myrouter.local = server:system
+# Aurba
+# instant.arubanetworks.com = server:system
+# setmeup.arubanetworks.com = server:system
+# 小米
+www.miwifi.com = server:system
+miwifi.com = server:system
+# 华为
+# mediarouter.home = server:system
+# TP-Link
+tplogin.cn = server:system
+tplinklogin.net = server:system
+tplinkwifi.net = server:system
+# 水星
+# melogin.cn = server:system
+# 迅捷
+# falogin.cn = server:system
+# 腾达
+# tendawifi.com = server:system
+# 磊科
+# leike.cc = server:system
+# 中兴
+# zte.home = server:system
+# 斐讯
+# p.to = server:system
+# phicomm.me = server:system
+# 极路由
+# hiwifi.com = server:system
+# 迅雷路由
+# peiluyou.com = server:system
+# M2M routers at MiFi Hotspot
+# _hotspot_.m2m = server:system
+# csl Wi-Fi
+# hotspot.cslwifi.com = server:system
+# 
+# 参考：https://support.apple.com/zh-cn/HT210060
+networking.apple = server:https://doh.dns.apple.com/dns-query
+# Apple.com
+*.apple.com = server:https://doh.dns.apple.com/dns-query
+# iCloud.com
+*.icloud.com = server:https://doh.dns.apple.com/dns-query
+# Alphabet
+# 参考：https://developers.google.com/speed/public-dns/docs/doh?hl=zh-cn
+*.google = server:https://dns.google/dns-query
+*.google.com = server:https://dns.google/dns-query
+*.google.com.?? = server:https://dns.google/dns-query
+# 谷歌 sites
+*.goog = server:https://dns.google/dns-query
+# 谷歌静态资源
+*.gstatic.com = server:https://dns.google/dns-query
+# 谷歌照片
+*.ggpht.com = server:https://dns.google/dns-query
+# 谷歌用户上传数据
+*.googleusercontent.com = server:https://dns.google/dns-query
+# 谷歌 APIs
+*.googleapis.com = server:https://dns.google/dns-query
+# 谷歌 backbone
+*.1e100.net = server:https://dns.google/dns-query
+# 油管 sites
+*.youtube = server:https://dns.google/dns-query
+# 油管
+*.youtube.com = server:https://dns.google/dns-query
+# 油管图片
+*.ytimg.com = server:https://dns.google/dns-query
+# 油管视频
+*.googlevideo.com = server:https://dns.google/dns-query
+# 谷歌视频 Thumbnails
+*.gvt?.com = server:https://dns.google/dns-query
+# reCaptcha
+*.recaptcha.net = server:https://dns.google/dns-query
+# Gmail
+*.gmail.com = server:https://dns.google/dns-query
+# 谷歌资源
+*.googlesource.com = server:https://dns.google/dns-query
+# 谷歌广告资源
+*.googleadservices.com = server:https://dns.google/dns-query
+# DoubleClick
+*.doubleclick.net = server:https://dns.google/dns-query
+# AdSense
+*.adsense.com = server:https://dns.google/dns-query
+# AdSense Custom Search Ads
+*.adsensecustomsearchads.com = server:https://dns.google/dns-query
+# AdSense for mobile apps
+*.adsenseformobileapps.com = server:https://dns.google/dns-query
+# 谷歌短链接
+*.gle = server:https://dns.google/dns-query
+goo.gl = server:https://dns.google/dns-query
+# 云耀
+# 参考：https://developers.cloudflare.com/1.1.1.1/encryption/dns-over-https/make-api-requests/
+*.cloudflare.com = server:https://cloudflare-dns.com/dns-query
+# 流
+*.cloudflarestream.com = server:https://cloudflare-dns.com/dns-query
+# Client
+*.cloudflareclient.com = server:https://cloudflare-dns.com/dns-query
+# 网站分析
+*.cloudflareinsights.com = server:https://cloudflare-dns.com/dns-query
+# 1.1.1.1
+*.every1dns.net = server:https://cloudflare-dns.com/dns-query
+# SSL 证书
+*.cloudflaressl.com = server:https://cloudflare-dns.com/dns-query
+# DNS
+*.cloudflare-dns.com = server:https://cloudflare-dns.com/dns-query
+# Workers
+*.workers.dev = server:https://cloudflare-dns.com/dns-query
+# 阿里巴巴
+# 参考：https://www.alidns.com
+*.alibaba.cn = server:https://dns.alidns.com/dns-query
+*.alibaba.com.cn = server:https://dns.alidns.com/dns-query
+# 阿里巴巴中国
+*.china.alibaba.com = server:https://dns.alidns.com/dns-query
+# 1688
+*.1688.com = server:https://dns.alidns.com/dns-query
+# 淘宝
+*.taobao.com = server:https://dns.alidns.com/dns-query
+# 淘宝缓存
+*.tbcache.com = server:https://dns.alidns.com/dns-query
+# 天猫
+*.tmall.com = server:https://dns.alidns.com/dns-query
+# 阿里 CDN
+*.alicdn.com = server:https://dns.alidns.com/dns-query
+# 阿里昆仑
+*.alikunlun.com = server:https://dns.alidns.com/dns-query
+# 云引擎应用平台
+*.aliapp.com = server:https://dns.alidns.com/dns-query
+# 上云平台
+*.aliapp.org = server:https://dns.alidns.com/dns-query
+# 阿里用户上传资料
+*.alibabausercontent.com = server:https://dns.alidns.com/dns-query
+# mmstat 数据统计广告追踪
+*.mmstat.com = server:https://dns.alidns.com/dns-query
+# 淘宝短网址
+tb.cn = server:https://dns.alidns.com/dns-query
+# 阿里云
+# 参考：https://www.alidns.com
+*.aliyun.* = server:https://dns.alidns.com/dns-query
+# CDN
+*.aliyuncdn.* = server:https://dns.alidns.com/dns-query
+# API 服务
+*.aliyuncs.com = server:https://dns.alidns.com/dns-query
+# DDoS 防护
+*.aliyunddos????.com = server:https://dns.alidns.com/dns-query
+# 云盘
+*.aliyundrive.com = server:https://dns.alidns.com/dns-query
+# 云盾
+*.aliyundun.com = server:https://dns.alidns.com/dns-query
+# 云盾 Web 应用防火墙
+*.aliyundunwaf.com = server:https://dns.alidns.com/dns-query
+# 内部
+*.aliyun-inc.com = server:https://dns.alidns.com/dns-query
+# 蚂蚁集团
+# 参考：https://www.alidns.com
+*.antgroup.com = server:https://dns.alidns.com/dns-query
+# 金服
+*.antfin.com = server:https://dns.alidns.com/dns-query
+*.antfinancial.com = server:https://dns.alidns.com/dns-query
+# 支付宝
+*.alipay.com = server:https://dns.alidns.com/dns-query
+*.alipay.com.cn = server:https://dns.alidns.com/dns-query
+# 支付宝 HTTP DNS
+*.alipaydns.com = server:https://dns.alidns.com/dns-query
+# 支付宝商家资源
+*.alipayeshop.com = server:https://dns.alidns.com/dns-query
+# 支付宝 Mdap
+*.alipaylog.com = server:https://dns.alidns.com/dns-query
+# 支付宝静态资源
+*.alipayobjects.com = server:https://dns.alidns.com/dns-query
+# 支付宝开放技术生态体系
+*.alipay-eco.com = server:https://dns.alidns.com/dns-query
+# 腾讯
+# 参考：https://www.dnspod.cn/products/publicdns
+*.tencent.com = server:https://doh.pub/dns-query
+# 腾讯云
+*.qcloud.com = server:https://doh.pub/dns-query
+# 腾讯云 CDN
+*.qcloudcdn.cn = server:https://doh.pub/dns-query
+*.qcloudcdn.com = server:https://doh.pub/dns-query
+# 腾讯云对象储存
+*.qcloudcos.com = server:https://doh.pub/dns-query
+# 腾讯云静态资源
+*.qcloudimg.com = server:https://doh.pub/dns-query
+# 腾讯云超级管家
+*.qcloudcjgj.com = server:https://doh.pub/dns-query
+# 腾讯云网站管家
+*.qcloudwzgj.com = server:https://doh.pub/dns-query
+# 腾讯云主页管家
+*.qcloudzygj.com = server:https://doh.pub/dns-query
+# 腾讯开放云
+*.myqcloud.com = server:https://doh.pub/dns-query
+# 腾讯云
+*.tencent-cloud.net = server:https://doh.pub/dns-query
+# 腾讯云 aiot 解决方案
+*.tencentcloud-aiot.com = server:https://doh.pub/dns-query
+# 腾讯云 API
+*.tencentcloudapi.com = server:https://doh.pub/dns-query
+# 腾讯云容器镜像服务 TCR
+*.tencentcloudcr.com = server:https://doh.pub/dns-query
+# 腾讯云云市场
+*.tencentcloudmarket.com = server:https://doh.pub/dns-query
+# QQ
+*.qq.com = server:https://doh.pub/dns-query
+# 腾讯头像
+*.qlogo.cn = server:https://doh.pub/dns-query
+# 腾讯图片
+*.qpic.cn = server:https://doh.pub/dns-query
+# 微信
+*.weixin.qq.com = server:https://doh.pub/dns-query
+*.wx.qq.com = server:https://doh.pub/dns-query
+*.weixin.com = server:https://doh.pub/dns-query
+# 公众平台
+*.weixinbridge.com = server:https://doh.pub/dns-query
+# WeChat
+*.wechat.com = server:https://doh.pub/dns-query
+# 小程序
+*.servicewechat.com = server:https://doh.pub/dns-query
+# 微云
+*.weiyun.com = server:https://doh.pub/dns-query
+# 腾讯图片静态资源
+*.gtimg.cn = server:https://doh.pub/dns-query
+*.idqqimg.com = server:https://doh.pub/dns-query
+# 腾讯静态资源 CDN
+*.cdn-go.cn = server:https://doh.pub/dns-query
+# 腾讯云智能云解析 DNS
+*.smtcdns.com = server:https://doh.pub/dns-query
+*.smtcdns.net = server:https://doh.pub/dns-query
+# 腾讯短网址
+url.cn = server:https://doh.pub/dns-query
+# 百度
+# 参考：https://dudns.baidu.com/support/localdns/Address/index.html
+*.baidu = server:180.76.76.76
+*.baidu.com = server:180.76.76.76
+# 静态资源
+*.bdimg.com = server:180.76.76.76
+*.bdstatic.com = server:180.76.76.76
+# 网盘
+*.baidupcs.* = server:180.76.76.76
+# 百度云 CDN
+*.baiduyuncdn.* = server:180.76.76.76
+# 百度云 DNS
+*.baiduyundns.* = server:180.76.76.76
+# 百度云 DNS
+*.bdydns.* = server:180.76.76.76
+# 百度云 CDN
+*.bdycdn.* = server:180.76.76.76
+# 百度云域名
+*.bdysite.com = server:180.76.76.76
+*.bdysites.com = server:180.76.76.76
+# 百度智能云
+*.baidubce.* = server:180.76.76.76
+# 百度智能云 DNS
+*.bcedns.* = server:180.76.76.76
+# 百度智能云对象存储 BOS
+*.bcebos.com = server:180.76.76.76
+# 百度智能云播放器服务
+*.bcevod.com = server:180.76.76.76
+# 百度智能云图片服务
+*.bceimg.com = server:180.76.76.76
+# 百度智能云主机
+*.bcehost.com = server:180.76.76.76
+*.bcehosts.com = server:180.76.76.76
+# 短网址
+dwz.cn = server:180.76.76.76
+# 360
+# 参考：https://sdns.360.net/dnsPublic.html#course
+# 安全中心
+*.360.cn = server:https://doh.360.cn/dns-query
+# 安全卫士
+*.360safe.com = server:https://doh.360.cn/dns-query
+# 快资讯
+*.360kuai.com = server:https://doh.360.cn/dns-query
+# 搜索
+*.so.com = server:https://doh.360.cn/dns-query
+# 网页快照服务
+*.360webcache.com = server:https://doh.360.cn/dns-query
+# 奇虎 api
+*.qihuapi.com = server:https://doh.360.cn/dns-query
+# 图床
+*.qhimg.com = server:https://doh.360.cn/dns-query
+*.qhimgs.com = server:https://doh.360.cn/dns-query
+*.qhimgs?.com = server:https://doh.360.cn/dns-query
+*.qhmsg.com = server:https://doh.360.cn/dns-query
+# 奇虎静态资源
+*.qhres.com = server:https://doh.360.cn/dns-query
+*.qhres?.com = server:https://doh.360.cn/dns-query
+# 导航静态文件
+*.dhrest.com = server:https://doh.360.cn/dns-query
+*.qhupdate.com = server:https://doh.360.cn/dns-query
+# 安全云盘
+*.yunpan.cn = server:https://doh.360.cn/dns-query
+*.yunpan.com.cn = server:https://doh.360.cn/dns-query
+*.yunpan.com = server:https://doh.360.cn/dns-query
+# 短网址
+urlqh.cn = server:https://doh.360.cn/dns-query
+# 字节跳动
+# 参考：https://www.volcengine.com/docs/6758/179060
+# 艾特迷
+*.amemv.com = server:180.184.1.1
+# 西瓜图片服务
+*.bdxiguaimg.com = server:180.184.1.1
+# 西瓜静态资源
+*.bdxiguastatic.com = server:180.184.1.1
+# UNPKG
+*.byted-static.com = server:180.184.1.1
+*.bytedance.* = server:180.184.1.1
+# DNS
+*.bytedns.net = server:180.184.1.1
+# CDN 文件存储
+*.bytednsdoc.com = server:180.184.1.1
+# Goofy
+*.bytegoofy.com = server:180.184.1.1
+# 图片服务
+*.byteimg.com = server:180.184.1.1
+# SCM
+*.bytescm.com = server:180.184.1.1
+# TOS
+*.bytetos.com = server:180.184.1.1
+# 飞书企业服务平台
+*.bytexservice.com = server:180.184.1.1
+# 抖音
+*.douyin.com = server:180.184.1.1
+# 静态资源
+*.douyinpic.com = server:180.184.1.1
+*.douyinstatic.com = server:180.184.1.1
+*.douyinvod.com = server:180.184.1.1
+# FeelGood 平台
+*.feelgood.cn = server:180.184.1.1
+# 飞聊官网
+*.feiliao.com = server:180.184.1.1
+# 快手
+*.gifshow.com = server:180.184.1.1
+# 火山网
+*.huoshan.com = server:180.184.1.1
+# 火山直播
+*.huoshanzhibo.com = server:180.184.1.1
+# 抖音 dapm
+*.ibytedapm.com = server:180.184.1.1
+# 抖音 CDN
+*.iesdouyin.com = server:180.184.1.1
+# 西瓜视频
+*.ixigua.com = server:180.184.1.1
+# 快手
+*.kspkg.com = server:180.184.1.1
+# 抖音静态资源
+*.pstatp.com = server:180.184.1.1
+# 今日头条
+*.snssdk.com = server:180.184.1.1
+*.toutiao.com = server:180.184.1.1
+*.toutiao13.com = server:180.184.1.1
+# 静态资源
+*.toutiao???.??? = server:180.184.1.1
+# 头条云
+*.toutiaocloud.cn = server:180.184.1.1
+*.toutiaocloud.com = server:180.184.1.1
+# 今日头条建站
+*.toutiaopage.com = server:180.184.1.1
+# 悟空
+*.wukong.com = server:180.184.1.1
+# 字节跳动 API
+*.zijieapi.com = server:180.184.1.1
+# 字节跳动图片服务
+*.zijieimg.com = server:180.184.1.1
+# 今日头条网页版
+*.zjbyte.com = server:180.184.1.1
+# 字节跳动 CDN
+*.zjcdn.com = server:180.184.1.1
+# 哔哩哔哩
+# upos 视频服务器（阿里云）
+upos-sz-mirrorali.bilivideo.com = server:https://dns.alidns.com/dns-query
+upos-sz-mirrorali?.bilivideo.com = server:https://dns.alidns.com/dns-query
+upos-sz-mirrorali??.bilivideo.com = server:https://dns.alidns.com/dns-query
+# upos 视频服务器（百度云）
+upos-sz-mirrorbos.bilivideo.com = server:180.76.76.76
+upos-sz-upcdnbd??.bilivideo.com = server:180.76.76.76
+# upos 视频服务器（腾讯云）
+upos-sz-mirrorcos.bilivideo.com = server:https://doh.pub/dns-query
+upos-sz-mirrorcos?.bilivideo.com = server:https://doh.pub/dns-query
+upos-sz-mirrorcos??.bilivideo.com = server:https://doh.pub/dns-query
+upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
+# 🇨🇳
+# CNNIC SDNS
+# 中国政府网
+*.gov.cn = server:1.2.4.8
+*.政务 = server:1.2.4.8
+# 🇭🇰
+# PCCW Enterprises Limited
+*.pccw.com = server:dns1.pccw.com
+# 1O1O
+*.1010.com.hk = server:dns1.pccw.com
+# csl.
+*.hkcsl.com = server:dns1.pccw.com
+# The CLUB by HKT
+*.theclub.com.hk = server:dns1.pccw.com
+# now.com
+*.now.com = server:dns2.pccw.com
+# Now E
+*.nowe.com = server:dns2.pccw.com
+# Now TV
+*.now-tv.com = server:dns2.pccw.com
+# MOOV
+*.moov.hk = server:dns3.pccw.com
+# viu
+*.viu.com = server:dns3.pccw.com
+# viu tv
+*.viu.tv = server:dns3.pccw.com
+# Hong Kong Cable Television Limited
+*.hkcable.com.hk = server:dns1.hkcable.com.hk
+# i-CABLE
+*.i-cable.com = server:dns2.hkcable.com.hk
+# CABLE TV Service
+*.cabletv.com.hk = server:dns2.hkcable.com.hk
+# KDDI Hong Kong Limited
+*.hk.kddi.com = server:apple.kdd.net.hk
+# 🇹🇼
+# 中华电信
+*.cht.com.tw = server:https://dns.hinet.net/dns-query
+# HiNet
+*.hinet.net = server:https://dns.hinet.net/dns-query
+# emome
+*.emome.net = server:https://dns.hinet.net/dns-query
+# So-net Entertainment Taiwan
+so-net.net.tw = server:ns1.so-net.net.tw
+so-net.tw = server:ns1.so-net.net.tw
+# Taiwan Network Information Center
+*.tw = server:https://dns.twnic.tw/dns-query
+*.taipei = server:https://dns.twnic.tw/dns-query
+# 🇺🇸
+# Hurricane Electric
+*.he.net = server:https://ordns.he.net/dns-query
+
+[Script]
+# @MingdeCZ （更多脚本信息请自行在 https://github.com/MingdeCZ/OutSide-Reborn/tree/main/Loon/Scripts 中查找）
+# 查询节点信息（建议版本 3.1.10(692) 及以上，效果更佳）
+generic script-path = https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/ip.js, tag = 🛂节点ℹ️, img-url = location.fill.viewfinder
+
+# 节点流媒体解锁检测（需要版本 3.1.10(692) 及以上）
+generic script-path = https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/streaming-ui-check-lite.js, tag = 解锁检测lite, img-url = checkmark.seal
+
+# @NobyDa（更多脚本信息请自行在 https://github.com/NobyDa/Script 中查找）
+# TestFlight 账户管理（24.03.25）（自动存储并合并多个 TestFlight 账户列表，并可分享及导出 TestFlight 应用）testflight.apple.com
+#http-request ^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/ requires-body=1,timeout=120,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js, tag=TestFlight 账户管理
+
+# Disney+ 评分（24.05.04）（剧集页显示 IMDb/烂番茄/豆瓣评分，由于 OMDb API 所限，部分剧集可能无法显示）disney.api.edge.bamgrid.com
+http-response ^https:\/\/disney\.api\.edge\.bamgrid\.com\/explore\/v\d\.\d\/page\/entity- script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Disney/DisneyRating.js, requires-body=true, tag=Disney+ 评分
+
+# @VirgilClyne
+# 解锁原装（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/iRingo 中查找）
+# 定位服务（V3.4）（全面自定义「定位服务」的功能）gspe1-ssl.ls.apple.com
+# 📍 Country Code
+http-response ^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, tag=📍 Location.pep.gcc.response, argument=
+
+# Siri 与搜索（V3.1）（全面自定义「Siri 与搜索」的功能）api*.smoot.apple.com, api*.smoot.apple.cn
+# Bag (iOS/macOS)
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.bag.request
+http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/bag script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.bag.response
+# Spotlight & Look Up Search (iOS/macOS)
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.search.request
+http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/search script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.search.response
+# warm (unknown)
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/warm script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.warm.request
+# render (unknown)
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/render script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.render.request
+# Flight Search (iOS/macOS)
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/flight script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.flight.request
+# Siri Infomation Card (macOS)
+http-request ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.request.js, timeout=5, tag=🔍 Siri.card.request
+http-response ^https?:\/\/api(.*)\.smoot\.apple\.(com|cn)\/card script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/Siri.response.js, requires-body=1, timeout=10, tag=🔍 Siri.card.response
+
+# 地图（V3.4）（全面自定义「地图」的功能）configuration.ls.apple.com, gspe35-ssl.ls.apple.com
+# 🗺️ Network Defaults
+http-request ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.request.js, requires-body=0, tag=🗺️ Maps.config.defaults.request, argument=
+http-response ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, tag=🗺️ Maps.config.defaults.response, argument=
+# 🗺️ Announcements
+http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.request.js, requires-body=0, tag=🗺️ Maps.config.announcements.request, argument=
+http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.config.announcements.response, argument=
+# 🗺️ Resource Manifest
+http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.request.js, requires-body=0, tag=🗺️ Maps.config.announcements.request, argument=
+http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.geo_manifest.dynamic.config.response, argument=
+
+# TV（V3.2）（全面自定义「TV app」功能）uts-api.itunes.apple.com, umc-tempo-api.apple.com
+http-request ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js, requires-body=1, tag=📺 TV.uts.request
+http-response ^https?:\/\/uts-api\.itunes\.apple\.com\/uts\/(v1|v2|v3)\/ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.response.js, requires-body=1, tag=📺 TV.uts.response
+http-request ^https?:\/\/umc-tempo-api\.apple\.com\/(v1|v2|v3)\/ script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/TV.request.js, requires-body=1, tag=📺 TV.umc.request
+
+# News（V3）（1.自定义解锁 News 的地区 2.Coming Soon… 注：该插件包含代理规则，安装过程中需要匹配代理策略组为 🇺🇸🇬🇧🇨🇦🇦🇺 线路，使用过程中 gateway.icloud.com 会走与 News 相同的代理线路）news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com
+http-request ^https?:\/\/news(-todayconfig)?-edge\.apple\.com\/v1\/configs script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, requires-body=true, tag=📰 News.v1.configs.request
+http-request ^https?:\/\/news(-sports)?-events\.apple\.com\/analyticseventsv2\/async script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, tag=📰 News.analyticseventsv2.async.request
+http-request ^https?:\/\/news-client-search\.apple\.com\/v1\/search script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/News.request.js, tag=📰 News.v1.search.request
+
+# @Sub-Store（高级订阅管理工具）（需开启 脚本、复写和 MitM 等功能，并指定代理策略，后访问 https://sub.store）（更多脚本信息请自行在 https://github.com/sub-store-org/Sub-Store 中查找）sub.store
+http-request ^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))) script-path = https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body = true, timeout = 120, tag = Sub Store Core
+http-request ^https?:\/\/sub\.store script-path = https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body = true, timeout = 120, tag = Sub Store Simple
+
+# @zZPiglet（更多脚本信息请自行在 https://github.com/zZPiglet/Task/tree/master 中查找）
+# 跳过中间界面，支付宝链接和被封禁淘宝链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选）（群聊 / 扫码均可使用，可选项可在脚本 2、3 行更改，也可在 BoxJs 中更改）weixin110.qq.com, security.wechat.com
+http-response ^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path = https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js, requires-body = true, timeout = 10, tag = 解除微信链接限制
+
+# @lodepuly（更多脚本信息请自行在 https://gitlab.com/lodepuly/vpn_tool 中查找）
+# 航旅纵横去广告 114.115.217.129, home.umetrip.com
+http-response ^http?:\/\/(114\.115\.217\.129)|(home\.umetrip\.com)\/gateway\/api\/umetrip\/native$ script-path = https://gitlab.com/lodepuly/vpn_tool/-/raw/master/Resource/Script/Umetrip/Umetrip_remove_ads.js, tag = 航旅纵横移除首页广告
+
+# @Beta
+# B 站优化（此插件仅建议 iOS 15 以上设备使用，且必须启用 MitM-over-HTTP/2 功能）app.bilibili.com, api.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, api.biliapi.net
+# 移除交互式弹幕
+http-response ^https:\/\/(app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 哔哩哔哩移除交互式弹幕
+# 精简我的页面
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(mine(\/ipad)?|myinfo)\? script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/bilibili/json.js, requires-body = true, tag = 哔哩哔哩精简我的页面
+
+# Dualsub（Disney+, Star+, HBO Max, Hulu, Netflix, Paramount+, Prime Video, YouTube 等流媒体双语字幕，配合捷径设置字幕。捷径地址：https://www.icloud.com/shortcuts/8ec4a2a3af514282bf27a11050f39fc2）*.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com
+http-response ^http.+(media.(dss|star)ott|manifests.v2.api.hbo|hbomaxcdn|nflxvideo|cbs(aa|i)video|cloudfront|akamaihd|avi-cdn|huluim|youtube).(com|net)\/(.+\.vtt($|\?m=\d+)|.+-all-.+\.m3u8.*|hls\.m3u8.+|\?o=\d+&v=\d+&e=.+|\w+\/2\$.+\/[a-zA-Z0-9-]+\.m3u8|api\/timedtext.+) script-path = https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js, requires-body = true, tag = 流媒体双语字幕
+http-request ^http.+(setting|general).(media.dssott|hbomaxcdn|nflxvideo|youtube|cbsivideo|cloudfront|huluim).(com|net)\/\?action=(g|s)et script-path = https://raw.githubusercontent.com/Neurogram-R/Surge/master/Dualsub.js, requires-body = true, tag = 流媒体双语字幕设置
+
+# Vista 看天下解锁 VIP（22.11.17）（3.3.2）open3.vistastory.com
+http-response ^http[s]?:\/\/open3.vistastory.com script-path = https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Vista.js, requires-body = true, tag = 看天下解锁 VIP
+
+# 12306 去广告（过滤应用内广告及开屏广告）ad.12306.cn, mobile.12306.cn
+# 开屏
+http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/12306.js, requires-body = true, tag = 移除 12306 开屏广告
+# 应用内
+http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/header.js, tag = 移除 12306 应用内广告
+
+# 阿里云盘去广告 *api.alipan.com, member.alipan.com
+http-response ^https:\/\/(biz)?api\.alipan\.com\/apps\/v\d\/users?\/home\/(news|widgets) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/adrive.js, requires-body = true, tag = 阿里云盘去广告
+http-response ^https:\/\/member\.alipan\.com\/v1\/users\/onboard_list script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/adrive.js, requires-body = true, tag = 阿里云盘去广告
+
+# 百度首页净化（23.09.12） m.baidu.com, www.baidu.com
+http-response ^https?:\/\/(?:www|m)\.baidu\.com(?:\/|\/\?(tn=&)?from=\w+)?$ script-path=https://raw.githubusercontent.com/Keywos/rule/master/script/baidu_index/js/index.js, requires-body = true, tag = 百度首页净化
+
+# 阿里巴巴去广告 guide-acs.m.taobao.com, poplayer.template.alibaba.com
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.guoguo\.nbnetflow\.ads\.mshow script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/cainiao.js, requires-body = true, tag = 阿里巴巴去广告
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body = true, tag = 阿里巴巴去广告
+http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path = https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/myBlockAds.js, requires-body = true, tag = 阿里巴巴去广告
+
+# 百度网盘启用部分会员 pan.baidu.com
+http-response ^https:\/\/pan\.baidu\.com\/((rest\/\d\.\d\/membership\/(volume|product|user))|cms\/config\?method=query|act\/v2\/skin\/(userset|inuse)|api\/user\/getinfo|wap\/vip\/memberChannel).* script-path = https://raw.githubusercontent.com/ClydeTime/Surge/main/Script/BDWP/BaiduCloud.js, requires-body = true, tag = 百度网盘启用部分会员
+
+# 微信小程序净化 cbd-gateway-service-applets.hualala.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, htwkop.xiaojukeji.com, mcs-mimp-web.sf-express.com, ucmp-static.sf-express.com, ucmp.sf-express.com, as.xiaojukeji.com, daijia.kuaidadi.com
+# 滴滴出行个人中心
+http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5 script-path = https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didi.js, requires-body = true, tag = 滴滴出行微信小程序个人中心净化
+# 青桔
+http-response ^https:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig script-path = https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/qingju.js, requires-body = true, tag = 青桔微信小程序净化
+
+# 小猿搜题解锁 VIP xyst.yuanfudao.com
+http-response ^https:\/\/xyst\.yuanfudao\.com\/solar-vip\/(api|iphone)\/users/* script-path = https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/xyst.js, requires-body = true, tag = 小猿搜题解锁 VIP
+
+# 滴滴出行去广告 common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 139.199.240.84
+http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js, requires-body = true, tag = 滴滴出行去广告
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js, requires-body = true, tag = 滴滴出行去广告
+http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js, requires-body = true, tag = 滴滴出行去广告
+http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js, requires-body = true, tag = 滴滴出行去广告
+
+# YouTube 去广告（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及字幕翻译功能。支持后台播放。需要版本 3.1.7(677) 及以上，且需要启用 QUIC 回退保护。支持 Premium 订阅用户使用）*.googlevideo.com, youtubei.googleapis.com
+http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|get_watch|next|player|reel\/reel_watch_sequence) script-path = https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.request.preview.js, requires-body = true, binary-body-mode = true, tag = YouTube 去广告·请求
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(account\/get_setting|browse|get_watch|guide|next|player|reel\/reel_watch_sequence|search) script-path = https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/dist/youtube.response.preview.js, requires-body = true, binary-body-mode = true, tag = YouTube 去广告·响应
+
+# Pornhub 优化 *.pornhub.com
+http-response ^https?:/\/(cn|www)\.pornhub\.com\/($|(view|video).*$) script-path = https://github.com/ddgksf2013/Scripts/raw/master/pornhub.js, requires-body = true, tag = Pornhub 优化
+
+[MITM]
+# 🍟 整点薯条
+# 🌐 通用设置增强（不可 MitM 也不应该被打断连接的域名）-gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, -pan.baidu.com
+
+# 🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
+
+hostname = -gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, pan.baidu.com, gspe1-ssl.ls.apple.com, api*.smoot.apple.com, api*.smoot.apple.cn, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, uts-api.itunes.apple.com, umc-tempo-api.apple.com, news-edge.apple.com, news-todayconfig-edge.apple.com, news-events.apple.com, news-sports-events.apple.com, news-client.apple.com, news-client-search.apple.com, sub.store, weixin110.qq.com, security.wechat.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, ad.12306.cn, mobile.12306.cn, *api.alipan.com, member.alipan.com, m.baidu.com, www.baidu.com, app.bilibili.com, api.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, api.biliapi.net, 114.115.217.129, home.umetrip.com, *.googlevideo.com, youtubei.googleapis.com, api.pinduoduo.com, api.yangkeduo.com, open3.vistastory.com, disney.api.edge.bamgrid.com, *.wxs.qq.com, ether-pack.pangolin-sdk-toutiao.com, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, api-mifit*.huami.com, api-mifit.huami.com, api.jr.mi.com, api.m.mi.com, home.mi.com, iyes.youku.com, umerp.umetrip.com, cbd-gateway-service-applets.hualala.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, htwkop.xiaojukeji.com, mcs-mimp-web.sf-express.com, ucmp-static.sf-express.com, ucmp.sf-express.com, as.xiaojukeji.com, daijia.kuaidadi.com, *.pornhub.com, xyst.yuanfudao.com, freight.xiaojukeji.com, ct.xiaojukeji.com, res.xiaojukeji.com, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 139.199.240.84, img.umetrip.com, app.dewu.com, image1.ccb.com, update.pan.baidu.com, sofire.baidu.com
