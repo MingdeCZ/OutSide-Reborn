@@ -90,7 +90,7 @@ async function lookUp(url, nodeName, timeout) {
             try {
                 const outCome = await Promise.race([new Promise(((n, o) => {
                     let starTime = Date.now();
-                    $httpClient.get({url: url, node: nodeName}, ((errorMsg, response, data) => {
+                    $httpClient.get({ url: url, node: nodeName }, ((errorMsg, response, data) => {
                         if (errorMsg) {
                             o(errorMsg);
                         } else {
@@ -126,7 +126,7 @@ async function lookUp(url, nodeName, timeout) {
                                     }
                                     break;
                                 case 204:
-                                    n({tk: runTime});
+                                    n({ tk: runTime });
                                     break;
                                 default:
                                     n("nokey");
@@ -137,7 +137,7 @@ async function lookUp(url, nodeName, timeout) {
                 })), new Promise(((t, n) => {
                     setTimeout((() => n(new Error("超时"))), timeout)
                 }))
-            ]);
+                ]);
                 if (outCome) {
                     i(outCome);
                 } else {
@@ -165,46 +165,10 @@ async function lookUp(url, nodeName, timeout) {
 
         const StrtPIL = await lookUp("https://uapi.woobx.cn/app/ip-location", "", 1000);
         if (StrtPIL?.data.showapi_res_body.en_name_short === "CN") {
-            let {region, city, county, ip, isp, lat, lnt} = StrtPIL.data.showapi_res_body;
+            let { region, city, county, ip, isp, lat, lnt } = StrtPIL.data.showapi_res_body;
             bgn = `${region} ${city} <font color=#00CD66>${county}</font> <font color=#FF6EB4>${isp.replace("中国", "")}</font>〈<font color=#00C5CD>${$utils.ipasn(ip)}</font>〉<br><br>${ip}<br><br>${j(parseFloat(lat).toFixed(4))}<font color=#8B668B>・</font>${k(parseFloat(lnt).toFixed(4))}<br>`;
         } else {
             bgn = "<br><font color=#FF3030><b>网络故障</b></font> 或 <font color=#EEC900><b>定位不在大陆</b></font>，此内容跳过";
-        }
-
-        const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, 3500);
-        if (Arvl?.status === "success") {
-            let {country, regionName, city, query} = Arvl;
-            var Ip = query;
-            let loc, lft = "";
-            loc = f(d(a(country)), e(a(regionName), a(city))).split(" ");
-            loc.length == 2 && (lft = "<font color=#228B22>" + loc[1] + "</font>");
-            loc.length == 3 && (lft = "<font color=#EEAD0E>" + loc[1] + "</font>" + " <font color=#228B22>" + loc[2] + "</font>");
-
-            const Riskck = await lookUp(`https://scamalytics.com/ip/${Ip}`, "", 3500);
-            if (Riskck) {
-                let score = Riskck.indexOf(`"score":`) != -1 ? Riskck.split(`"score":`)[1].split("\n")[0].replace(/"|,/g,"") : "⁇";
-                let risk = Riskck.indexOf(`"risk":`) != -1 ? Riskck.split(`"risk":`)[1].split("\n")[0].replace(/"|,/g,"") : "未找到";
-                switch (risk) {
-                    case "low":
-                        risk = "<font color=#32CD32><b>低风险</b>(" + score + ")</font>";
-                        break;
-                    case "medium":
-                        risk = "<font color=#CDAD00><b>中风险</b>(" + score + ")</font>";
-                        break;
-                    case "high":
-                        risk = "<font color=#CD6839><b>高风险</b>(" + score + ")</font>";
-                        break
-                    case "very high":
-                        risk = "<font color=#CD3700><b>极高风险</b>(" + score + ")</font>";
-                        break;
-                    default:
-                        risk = "<font color=#828282><b>空</b>-" + score + "</font>";
-                        break;
-                }
-                outs = `<font color=#FF3030><b>${loc[0]}</b></font> ${lft} <font color=#3A5FCD>➜</font> ${g(Arvl.countryCode)}<br><br>${Ip}⎨${risk}⎬<br><br>${i(Arvl.as, Arvl.isp, Arvl.org)}<br><br>${j(Arvl.lat)} <font color=#E9967A>✦</font> ${k(Arvl.lon)}`;
-            }
-        } else {
-            outs = `<br><font color=#FF3030><b>失联</b></font>（<font color=#EEC900>故障</font>）`;
         }
 
         if (serverip === "domain") {
@@ -215,38 +179,82 @@ async function lookUp(url, nodeName, timeout) {
             }
         }
 
-        if (nodeIp != Ip) {
-            if (serverip === "v4") {
-                const inDprtPIL = await lookUp(`https://uapi.woobx.cn/app/ip-location?ip=${nodeIp}`, "", 1000);
-                if (inDprtPIL?.data.showapi_res_body.en_name_short === "CN") {
-                    let {region, city, county, ip, isp, lat, lnt} = inDprtPIL.data.showapi_res_body;
-                    let arr = f(region, city).split(" "), loc;
-                    arr.length == 1 && (loc = "<font color=#FF8247>" + arr[0] + "</font>");
-                    arr.length == 2 && (loc = "<font color=#008B8B>" + arr[0] + "</font>" + " <font color=#FF8247>" + arr[1] + "</font>");
-                    ins = `<br>${loc} <font color=#8B8B7A>${county}</font> <font color=#9B30FF><b>${isp.replace("中国", "")}</b></font>『<font color=#BDB76B>${$utils.ipasn(ip)}</font>』<br><br>${ip}<br><br>${(isp.includes("UCloud") || isp.includes("Amazon")) ? `<font color=#9C9C9C><b>自治机构</b>：${$utils.ipaso(ip)}</font><br><br>` : ""}${j(parseFloat(lat).toFixed(4))} <font color=#8DB6CD>✡︎</font> ${k(parseFloat(lnt).toFixed(4))}<br>-------------------------`;
+        if (serverip != "domain") {
+            const Arvl = await lookUp("http://ip-api.com/json/?lang=zh-CN", nodeName, 3500);
+            if (Arvl?.status === "success") {
+                let { country, regionName, city, query } = Arvl;
+                var Ip = query;
+                let loc, lft = "";
+                loc = f(d(a(country)), e(a(regionName), a(city))).split(" ");
+                loc.length == 2 && (lft = "<font color=#228B22>" + loc[1] + "</font>");
+                loc.length == 3 && (lft = "<font color=#EEAD0E>" + loc[1] + "</font>" + " <font color=#228B22>" + loc[2] + "</font>");
+
+                const Riskck = await lookUp(`https://scamalytics.com/ip/${Ip}`, "", 3500);
+                if (Riskck) {
+                    let score = Riskck.indexOf(`"score":`) != -1 ? Riskck.split(`"score":`)[1].split("\n")[0].replace(/"|,/g, "") : "⁇";
+                    let risk = Riskck.indexOf(`"risk":`) != -1 ? Riskck.split(`"risk":`)[1].split("\n")[0].replace(/"|,/g, "") : "未找到";
+                    switch (risk) {
+                        case "low":
+                            risk = "<font color=#32CD32><b>低风险</b>(" + score + ")</font>";
+                            break;
+                        case "medium":
+                            risk = "<font color=#CDAD00><b>中风险</b>(" + score + ")</font>";
+                            break;
+                        case "high":
+                            risk = "<font color=#CD6839><b>高风险</b>(" + score + ")</font>";
+                            break
+                        case "very high":
+                            risk = "<font color=#CD3700><b>极高风险</b>(" + score + ")</font>";
+                            break;
+                        default:
+                            risk = "<font color=#828282><b>空</b>-" + score + "</font>";
+                            break;
+                    }
+                    outs = `<font color=#FF3030><b>${loc[0]}</b></font> ${lft} <font color=#3A5FCD>➜</font> ${g(Arvl.countryCode)}<br><br>${Ip}⎨${risk}⎬<br><br>${i(Arvl.as, Arvl.isp, Arvl.org)}<br><br>${j(Arvl.lat)} <font color=#E9967A>✦</font> ${k(Arvl.lon)}`;
+                }
+            } else {
+                outs = `<br><font color=#FF3030><b>失联</b></font>（<font color=#EEC900>故障</font>）`;
+            }
+
+            if (nodeIp != Ip) {
+                if (serverip === "v4") {
+                    const inDprtPIL = await lookUp(`https://uapi.woobx.cn/app/ip-location?ip=${nodeIp}`, "", 1000);
+                    if (inDprtPIL?.code == "200") {
+                        if (inDprtPIL.data.showapi_res_body.en_name_short === "CN") {
+                            let { region, city, county, ip, isp, lat, lnt } = inDprtPIL.data.showapi_res_body;
+                            let arr = f(region, city).split(" "), loc;
+                            arr.length == 1 && (loc = "<font color=#FF8247>" + arr[0] + "</font>");
+                            arr.length == 2 && (loc = "<font color=#008B8B>" + arr[0] + "</font>" + " <font color=#FF8247>" + arr[1] + "</font>");
+                            ins = `<br>${loc} <font color=#8B8B7A>${county}</font> <font color=#9B30FF><b>${isp.replace("中国", "")}</b></font>『<font color=#BDB76B>${$utils.ipasn(ip)}</font>』<br><br>${ip}<br><br>${(isp.includes("UCloud") || isp.includes("Amazon")) ? `<font color=#9C9C9C><b>自治机构</b>：${$utils.ipaso(ip)}</font><br><br>` : ""}${j(parseFloat(lat).toFixed(4))} <font color=#8DB6CD>✡︎</font> ${k(parseFloat(lnt).toFixed(4))}<br>-------------------------`;
+                        } else {
+                            INIPS = true;
+                        }
+                    } else {
+                        ins = `<br>🚫<b>失败</b>(状态码：${inDprtPIL.code}，错误原因：${inDprtPIL.message})<br>-------------------------`;
+                    }
                 } else {
                     INIPS = true;
                 }
-            } else {
-                INIPS = true;
-            }
 
-            if (INIPS) {
-                const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 3500);
-                if (outDprt?.status === "success") {
-                    let {countryCode, country, city, regionName, isp, org, as, query, lat, lon} = outDprt;
-                    ins = `<br>⚛️：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>-------------------------`;
-                } else {
-                    ins = `<br>🚫<b>失败</b>(超时，${JSON.stringify(outDprt)})<br>-------------------------`;
+                if (INIPS) {
+                    const outDprt = await lookUp(`http://ip-api.com/json/${nodeIp}?lang=zh-CN`, "", 3500);
+                    if (outDprt?.status === "success") {
+                        let { countryCode, country, city, regionName, isp, org, as, query, lat, lon } = outDprt;
+                        ins = `<br>⚛️：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>-------------------------`;
+                    } else {
+                        ins = `<br>🚫<b>失败</b>(超时，${JSON.stringify(outDprt)})<br>-------------------------`;
+                    }
                 }
             }
+        } else {
+            outs = `<br>🚫<b>故障</b>（节点地址解析失败）`;
         }
 
         var hd = `<p style = "text-align: center; font-family: -apple-system; font-size: large; font-weight: thin"><font>_____________________________<br><br>`;
-        $done({title: nodeName, htmlMessage: `${hd}${bgn}-------------------------${ins}<br>${outs}</font>`});
+        $done({ title: nodeName, htmlMessage: `${hd}${bgn}-------------------------${ins}<br>${outs}</font>` });
     } catch (error) {
-        $done({title: nodeName, htmlMessage: `${hd}<font color=#FF3030><b>失败</b></font><br><br>缘由分析：<font color=#EEC900>${error.message}</font><br><br>建议反馈给 @MingdeCZ</font>`});
+        $done({ title: nodeName, htmlMessage: `${hd}<font color=#FF3030><b>失败</b></font><br><br>缘由分析：<font color=#EEC900>${error.message}</font><br><br>建议反馈给 @MingdeCZ</font>` });
     } finally {
-        $done({title: nodeName, htmlMessage: "详见日志"});
+        $done({ title: nodeName, htmlMessage: "详见日志" });
     }
 })();
