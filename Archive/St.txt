@@ -9,7 +9,7 @@ tiles:
 
 script-providers:
   IPlookup:
-    url: https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Archived/Stash/Scripts/network.js
+    url: https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Archive/Stash/Scripts/network.js
     interval: 86400
 
 Scripts:

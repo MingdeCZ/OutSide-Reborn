@@ -5,7 +5,7 @@
 #!homepage = 
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 24.10.7
+#!date = 24.11.7
 #!other = 
 #!category = 
 #!input = 
@@ -16,11 +16,12 @@
 #!select = 启用调试模式（YouTube）, true, false
 #!system = iOS, iPadOS
 #!system_version = 
-#!loon_version = 3.2.1(749)
+#!loon_version = 3.2.1(745)
 #!tag = 
 
 [General]
 bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.0.2.0/24, 192.88.99.0/24, 192.168.0.0/16, 198.51.100.0/24, 203.0.113.0/24, 224.0.0.0/4, 255.255.255.255/32
+# force-http-engine-hosts = :0
 
 # @VirgilClyne
 # 🍟 整点薯条（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/GetSomeFries 中查找）
@@ -30,10 +31,13 @@ bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/
 real-ip = *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, opencloud.wostore.cn, id.mail.wo.cn, mdn.open.wo.cn, hmrz.wo.cn, nishub1.10010.com, enrichgw.10010.com, *.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, *.microdone.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
 
 # 🚫 阻止常见的 HTTPDNS 服务器
-force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, 203.107.1.65:80, 203.107.1.66:80
+force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, 203.107.1.65:80, 203.107.1.66:80, :0, :8000
 
 # TestFlight 账户管理
 # skip-proxy = iosapps.itunes.apple.com
+
+# B 站优化
+# force-http-engine-hosts = :8000
 
 [Rule]
 # 🌐 中国大陆 ASN (按 ASN 分流中国大陆 IP 与域名直连)
@@ -137,8 +141,11 @@ DOMAIN,direction2.is.autonavi.com,DIRECT
 # Sub Store
 DOMAIN, sub-store.vercel.app, PROXY
 
-# @lodepuly（更多脚本信息请自行在 https://gitlab.com/lodepuly/vpn_tool/-/tree/master/Tool/Loon/Plugin 中查找）
-# 广告平台拦截器（拦截腾讯、字节跳动、快手、百度、邑盟、倍孜、艾狄墨搏、袤博、极光、个推、友盟、阿里、优比客思、秒针、网易、美团、小米、京东、天目、讯飞、泛连、锐讯灵通、聚次方、美数、嗨量、钧云、变现猫、章鱼、分秒、泰之菩、翼信、快易、数萤技术、方麟、益起、上量优选、新义互联、腾云天下、布里奇、塔酷、SupersonicAds、APPSAD 等广告平台的广告请求）
+# 百度网盘
+IP-CIDR, 180.76.76.112/32, REJECT, no-resolve
+IP-CIDR, 180.76.76.200/32, REJECT, no-resolve
+
+# 广告平台拦截器（拦截腾讯、字节跳动、快手、百度、邑盟、倍孜、艾狄墨搏、袤博、极光、个推、友盟、阿里、优比客思、秒针、网易、美团、小米、京东、天目、讯飞、泛连、锐讯灵通、聚次方、美数、嗨量、钧云、变现猫、章鱼、分秒、泰之菩、翼信、快易、数萤技术、方麟、益起、上量优选、新义互联、腾云天下、布里奇、塔酷、丽声、SupersonicAds、APPSAD 等广告平台的广告请求）
 # 字节跳动广告
 AND, ((DOMAIN-KEYWORD, -ad-), (DOMAIN-SUFFIX, byteimg.com)), REJECT
 AND, ((DOMAIN-KEYWORD, -ttam-), (DOMAIN-SUFFIX, ibyteimg.com)), REJECT
@@ -151,8 +158,9 @@ AND, ((DOMAIN-KEYWORD, s), (DOMAIN-KEYWORD, -fe-scm.pglstatp-toutiao.com)), REJE
 AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -ttcdn-tos.pstatp.com)), REJECT
 AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -fe-tos.pglstatp-toutiao.com)), REJECT
 AND, ((DOMAIN-KEYWORD, sf), (DOMAIN-KEYWORD, -static.i18n-pglstatp.com)), REJECT
-AND, ((DOMAIN-KEYWORD, if), (DOMAIN-KEYWORD, -cdn-tos.bytescm.com)), REJECT //误杀
+AND, ((DOMAIN-KEYWORD, if), (DOMAIN-KEYWORD, -cdn-tos.bytescm.com)), REJECT
 AND, ((DOMAIN-KEYWORD, if), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
+AND, ((DOMAIN-KEYWORD, lf), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
 AND, ((DOMAIN-KEYWORD, lf), (DOMAIN-KEYWORD, -analytics.bytescm.com)), REJECT
 AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, normal), (DOMAIN-SUFFIX, zijieapi.com)), REJECT
 AND, ((DOMAIN-KEYWORD, api), (DOMAIN-KEYWORD, -access-), (DOMAIN-SUFFIX, pangle.io)), REJECT
@@ -205,10 +213,13 @@ DOMAIN, config.inmobi.cn, REJECT
 # 北京锐讯灵通科技有限公司
 DOMAIN, ztoken.uyunad.com, REJECT
 DOMAIN, aaid.uyunad.com, REJECT
+DOMAIN, yumao.puata.info, REJECT
 # 快手联盟 - 广告服务商
 DOMAIN, gdfp.gifshow.com, REJECT
 DOMAIN, open.e.kuaishou.com, REJECT
+DOMAIN, adtrack.e.kuaishou.com, REJECT
 DOMAIN-SUFFIX, adukwai.com, REJECT
+DOMAIN-SUFFIX, adbkwai.com, REJECT
 # SupersonicAds
 DOMAIN, init.supersonicads.com, REJECT
 # APPSAD
@@ -239,6 +250,19 @@ DOMAIN, api.verify.mob.com, REJECT
 DOMAIN, log-verify.mob.com, REJECT
 DOMAIN, sdk.push.mob.com, REJECT
 # 极光 - 广告服务商
+DOMAIN, ali-stats.jpush.cn, REJECT
+DOMAIN, ce3e75d5.jpush.cn, REJECT
+DOMAIN, config-junion.jpush.cn, REJECT
+DOMAIN, config.jpush.cn, REJECT
+DOMAIN, fcapi-ipv6.jpush.cn, REJECT
+DOMAIN, gd-stats.jpush.cn, REJECT
+DOMAIN, s.jpush.cn, REJECT
+DOMAIN, sdk.verification.jiguang.cn, REJECT
+DOMAIN, sis-ipv6.jpush.cn, REJECT
+DOMAIN, smartop-sdkapi.jiguang.cn, REJECT
+DOMAIN, status-ipv6.jpush.cn, REJECT
+DOMAIN, tsis.jpush.cn, REJECT
+DOMAIN, user.jpush.cn, REJECT
 DOMAIN-SUFFIX, jiguang.cn, REJECT
 DOMAIN-SUFFIX, jpush.cn, REJECT
 DOMAIN-SUFFIX, jpush.io, REJECT
@@ -259,22 +283,31 @@ DOMAIN-SUFFIX, union.baidu.cn, REJECT
 DOMAIN-SUFFIX, union.baidu.com, REJECT
 # 腾讯
 DOMAIN, adsmind.gdtimg.com, REJECT
+DOMAIN, adsmind.ugdtimg.com, REJECT
+DOMAIN, c2.gdt.qq.com, REJECT
 DOMAIN, huatuocode.huatuo.qq.com, REJECT
 DOMAIN, info4.video.qq.com, REJECT
 DOMAIN, info6.video.qq.com, REJECT
 DOMAIN, ios.bugly.qq.com, REJECT
+DOMAIN, pro.bugly.qq.com, REJECT
 DOMAIN, ios.video.mpush.qq.com, REJECT
+DOMAIN, mi.gdt.qq.com, REJECT
 DOMAIN, otheve.beacon.qq.com, REJECT
 DOMAIN, pgdt.gtimg.cn, REJECT
+DOMAIN, pgdt.ugdtimg.com, REJECT
 DOMAIN, qzs.gdtimg.com, REJECT
 DOMAIN, qzs.qq.com, REJECT
 DOMAIN, rmonitor.qq.com, REJECT
 DOMAIN, sdk.e.qq.com, REJECT
 DOMAIN, sdkconfig.video.qq.com, REJECT
+DOMAIN, t.gdt.qq.com, REJECT
 DOMAIN, tmead.y.qq.com, REJECT
 DOMAIN, tmeadbak.y.qq.com, REJECT
 DOMAIN, tmeadcomm.y.qq.com, REJECT
 DOMAIN, tpns.qq.com, REJECT
+DOMAIN, v.gdt.qq.com, REJECT
+DOMAIN, v2.gdt.qq.com, REJECT
+DOMAIN, win.gdt.qq.com, REJECT
 DOMAIN, wup.imtt.qq.com, REJECT
 DOMAIN, tpstelemetry.tencent.com, REJECT
 DOMAIN, ii.gdt.qq.com, REJECT
@@ -328,6 +361,7 @@ DOMAIN, ossgw.alicdn.com, REJECT
 DOMAIN, ems.youku.com, REJECT
 DOMAIN, hudong.alicdn.com, REJECT
 DOMAIN, et.tanx.com, REJECT
+DOMAIN, df.tanx.com, REJECT
 DOMAIN, beacon-api.aliyuncs.com, REJECT
 DOMAIN, adash.man.aliyuncs.com, REJECT
 DOMAIN, applog.uc.cn, REJECT
@@ -400,10 +434,29 @@ DOMAIN, api.bridgeoos.com, REJECT
 DOMAIN, adx-os.bridgeoos.com, REJECT
 DOMAIN, adx-sg-req.bridgeoos.com, REJECT
 DOMAIN-SUFFIX, bridgeoos.com, REJECT
+# 海南丽声影视文化传播有限公司
+DOMAIN, ad-evods.tianya.tv, REJECT
 
 # 闲鱼净化
-# 拦截广告下发
+# 移除广告下发请求
 AND, ((URL-REGEX, ^http:\/\/amdc\.m\.taobao\.com\/amdc\/mobileDispatch), (USER-AGENT, %E9%97%B2%E9%B1%BC*)), REJECT
+
+# 京东去广告
+URL-REGEX, ^http:\/\/\w{32}\.jddebug\.com\/diagnose\?, REJECT
+
+# 拼多多净化
+# 拦截 HTTPDNS
+AND, ((URL-REGEX, ^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d), (USER-AGENT, *com.xunmeng.pinduoduo*)), REJECT
+AND, ((URL-REGEX, ^http:\/\/\[((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))\]\/d4\?), (USER-AGENT, *com.xunmeng.pinduoduo*)), REJECT
+DOMAIN, ta-a.pinduoduo.com, REJECT
+DOMAIN, ta.pinduoduo.com, REJECT
+DOMAIN, th-a.pinduoduo.com, REJECT
+DOMAIN, th-b.pinduoduo.com, REJECT
+DOMAIN, th.pinduoduo.com, REJECT
+DOMAIN, titan.pinduoduo.com, REJECT
+
+# 小红书净化
+AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, xiaohongshu.com)), REJECT
 
 # 广告过滤器
 # 小米
@@ -418,13 +471,21 @@ DOMAIN, adashx.m.taobao.com, REJECT
 DOMAIN, h-adashx.ut.taobao.com, REJECT
 DOMAIN, ut.taobao.com, REJECT
 
-# 微信小程序去广告
+# 微信去广告
+DOMAIN, badjs.weixinbridge.com, REJECT
+DOMAIN-SUFFIX, wxs.qq.com, REJECT
+
+# 微信小程序净化
 # 通用规则
 DOMAIN, wxsmsdy.video.qq.com, REJECT
 # 收钱吧
 DOMAIN, ads-shopping.shouqianba.com, REJECT
 # 猫眼电影
 DOMAIN, ad.maoyan.com, REJECT
+
+# YouTube 去广告
+AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 
 # 修正广告拦截
 DOMAIN, ca.iadsdk.apple.com, DIRECT
@@ -436,29 +497,8 @@ DOMAIN-SUFFIX, iadsdk.apple.com, REJECT
 DOMAIN, lookup.api.bsb.baidu.com, REJECT
 DOMAIN-SUFFIX, u3.ucweb.com, REJECT
 DOMAIN-KEYWORD, safebrowsing., REJECT
-# 百度网盘
-IP-CIDR, 180.76.76.112/32, REJECT, no-resolve
-IP-CIDR, 180.76.76.200/32, REJECT, no-resolve
 # 建设银行
 DOMAIN-KEYWORD, adv.ccb.com, REJECT
-# 微信
-DOMAIN, badjs.weixinbridge.com, REJECT
-DOMAIN-SUFFIX, wxs.qq.com, REJECT
-
-# 拼多多净化
-# 拦截 HTTPDNS
-AND, ((URL-REGEX, ^http:\/\/((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\/d), (USER-AGENT, *com.xunmeng.pinduoduo*)), REJECT
-AND, ((URL-REGEX, ^http:\/\/\[s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*\]\/d), (USER-AGENT, *com.xunmeng.pinduoduo*)), REJECT
-DOMAIN, ta-a.pinduoduo.com, REJECT
-DOMAIN, ta.pinduoduo.com, REJECT
-DOMAIN, th-a.pinduoduo.com, REJECT
-DOMAIN, th-b.pinduoduo.com, REJECT
-DOMAIN, th.pinduoduo.com, REJECT
-DOMAIN, titan.pinduoduo.com, REJECT
-
-# YouTube 去广告
-AND,((DOMAIN,youtubei.googleapis.com), (PROTOCOL,UDP)),REJECT
-AND,((DOMAIN-SUFFIX,googlevideo.com), (PROTOCOL,UDP)),REJECT
 
 GEOIP,cn,DIRECT
 
@@ -522,6 +562,9 @@ DOMAIN-SUFFIX, alipaydns.com, REJECT
 ^http:\/\/101\.35\.212\.35\/d - reject
 ^http:\/\/114\.110\.96\.26\/d - reject
 ^http:\/\/114\.110\.97\.97\/d - reject
+^http:\/\/240c:409f::3:0:163\/d - reject
+^http:\/\/240c:409f::3:0:359\/d - reject
+^http:\/\/2402:4e00:1411:201:0:9964:ba21:5a41\/d - reject
 # 青云
 # 参考：https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
 # 参考：https://main.qcloudimg.com/raw/document/product/pdf/379_3513_cn.pdf
@@ -547,10 +590,126 @@ DOMAIN-SUFFIX, alipaydns.com, REJECT
 # 参考：https://github.com/lwd-temp/anti-ip-attribution/issues/24
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
 
-# 广告平台拦截器 video-dsp.pddpic.com, t-dsp.pinduoduo.com
+# B 站优化
+# 满意度调研
+^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? reject-dict
+# 屏蔽默认搜索框关键词
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords reject-dict
+# 屏蔽 IP 和地理位置请求
+^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-dict
+^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
+# 移除视频链接跟踪参数
+(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) 302 $1
+
+# 猫耳 FM 净化
+# 开屏广告
+^https:\/\/app\.missevan\.com\/site\/launch\? response-body-json-del info
+# 首页 - 直播 - 热门 - 主播横幅推广
+^https:\/\/fm\.missevan\.com\/api\/v2\/meta\/banner$ response-body-json-del info
+# 首页 - 推荐 - 热门搜索词、轮播图推广
+^https:\/\/app\.missevan\.com\/site\/get-top$ response-body-json-del info.extra_banners
+# 首页 - 推荐 - 主播推荐列表
+^https:\/\/fm\.missevan\.com\/api\/v2\/recommended\/top$ response-body-json-del info
+# 首页 - 广播剧 - 轮播图推广、热门搜索词
+^https:\/\/app\.missevan\.com\/drama\/catalog-homepage\? response-body-json-del info.extra_banners
+# 首页 - 声音恋人 - 轮播图推广、热门搜索词
+^https:\/\/app\.missevan\.com\/catalog\/sound-homepage\? response-body-json-del info.extra_banners
+# 播放器 - 主播推荐
+^https:\/\/fm\.missevan\.com\/api\/v2\/chatroom\/sound\/recommend\? response-body-json-del info
+# 青少年模式
+^https:\/\/app\.missevan\.com\/site\/config$ response-body-json-del info.teenager_popup_mode
+
+# 闲鱼净化
+# 首页顶部标签
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/ reject-dict
+# 商品详情为你推荐
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.recommend\.list\/ reject-dict
+# 这些宝贝超好卖
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.item\.resell\.recommendorhotcate\/ reject-dict
+# 消息列表推广
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.playboy\.recommend\/ reject-dict
+# 我的页面
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.topic\.banner\/ reject-dict
+# 首页动画样式
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/ reject-dict
+# 用闲鱼币买更便宜
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.idle\.coin\.nextfresh\/ reject-dict
+# 搜索列表
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ reject-dict
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/ reject-dict
+^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ reject-dict
+^https:\/\/h5\.m\.goofish\.com\/wow\/moyu\/moyu-project\/[\w-]*search[\w-]*\/pages\/ reject-200
+
+# 谷歌送中重定向 www.google.cn
+^https?:\/\/www\.google\.cn 302 https://www.google.com
+
+# 盖得排行净化 zone.guiderank-app.com
+# 首页 AI 推广 - 恐一回龙
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkPromotionInfoBySceneType reject-dict
+# 弹窗
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/popUpAdCollection\/getActiveCollection\.do reject-dict
+# 分类页面横幅推广
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkPromotionInfoBySceneType reject-dict
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getWeworkCategoryPromotionInfo reject-dict
+# 首页精简
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/home\/getHomePageV response-body-json-del data.countdownBanner data.newEvaluations data.freeToPayBannerPhotoUrl data.groupBuyingList data.multiCountdownBanner data.banners data.multiPlatformBanner data.specialSaleBannerPhotoUrl data.guide90Evaluation data.insurancePromotions
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/stockTaking\/pageStockTakingForHomePage reject-dict
+# 单单返 - 好物推荐、小编精选
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/common\/getInitData\.do response-body-json-del data.SpecialSalePageMidTabConfig
+# 单单返 - 好物推荐
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/specialSale\/pageRecommendedItems reject-dict
+# 单单返 - 小编精选
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/manualOperationGoods\/pageManualOperationGoods reject-dict
+# 单单返 - 轮播图
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/specialSale\/listSpecialSalePageBanner reject-dict
+# 我的 - 横幅推广
+^https:\/\/zone\.guiderank-app\.com\/guiderank-web\/app\/personal\/getPersonPageInfo\.do reject-dict
+
+# 京东去广告
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) reject-dict
+
+# 拼多多净化
+^https:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash\? reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up\? reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/aquarius\/hungary\/global\/homepage\? reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/(?:likes|my_order_group|new_chat_group|order_express_group|personal) reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/flow\/hungary\/window\/global\/v2\? reject-dict
+^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render response-body-json-del bottom_section_list ui.bottom_section ui.live_section.float_info
+^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub\? response-body-json-del monthly_card_entrance personal_center_style_v2_vo icon_set.icons icon_set.top_personal_icons title_bar_items
+^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data reject-dict
+^https:\/\/api\.pinduoduo\.com\/search response-body-json-del expansion
+^https:\/\/api\.pinduoduo\.com\/search_hotquery\? reject-dict
+
+# QQ 链接解锁（解除访问非白名单之外的地址提示停止访问该页面的限制，并移除跟踪参数。需要 3.1.4(649) 或以上版本，使用前需要清除缓存数据）pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com
+(^https:\/\/c\.pc\.qq\.com\/middlem\.html\?pfurl=)(http.*)(&pfuin=.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/middlect\.html\?pfuin=.*&pfurl=)(http.*)(&gjsublevel=.*) 302 $2
+(^https:\/\/pingtas\.qq\.com\/webview\/pingd\?dm=c\.pc\.qq\.com&pvi=\d+&si=s\d+&url=\/middlem\.html\?pfurl%3d)(http.*)(%26pfuin%3d.*%26pfuin%3d.*) 302 $2
+(^https:\/\/cgi\.connect\.qq\.com\/qqconnectopen\/get_urlinfoForQQV2\?url=)(http.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/index\.html\?pfurl=)(http.*)(&pfuin=.*) 302 $2
+(^https:\/\/c\.pc\.qq\.com\/ios\.html\?url=)(http.*)(&level=.*) 302 $2
+(^https:\/\/pingtas\.qq\.com\/webview\/pingd\?dm=c\.pc\.qq\.com&pvi=\d+&si=s\d+&url=\/ios\.html\?url%3d)(http.*)(%26level.*%26level.*) 302 $2
+
+# 广告平台拦截器 video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
 # 拼多多广告平台
 ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ reject
 ^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_union reject
+^https:\/\/images\.pinduoduo\.com\/mrk\/ reject
+^https:\/\/images\.pinduoduo\.com\/marketing_api\/ reject
+
+# 小红书净化
+# 惊喜弹窗
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) reject-dict
+^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? reject-dict
+# 信息流
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/guide\/user_banner|v3\/note\/guide) reject-dict
+^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(?:v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) reject-dict
+# 搜索页
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/banner_list$ response-body-json-replace data {}
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/hot_list$ response-body-json-replace data.items []
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/hint response-body-json-replace data.hint_words []
+^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/trending\? response-body-json-replace data.queries [] data.hint_word {}
 
 # 广告过滤器 api-mifit*.huami.com, api-mifit.huami.com, api.jr.mi.com, api.m.mi.com, home.mi.com, iyes.youku.com, m.qianbao.qq.com
 # 米家
@@ -568,30 +727,8 @@ DOMAIN-SUFFIX, alipaydns.com, REJECT
 ^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/sport_training_ad\? reject-img
 ^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/step_detail_ad\? reject-img
 ^https?:\/\/api-mifit\.huami\.com\/discovery\/mi\/discovery\/training_video_ad\? reject-img
-# 闲鱼 - 开屏
-^https:\/\/iyes\.youku\.com\/uts\/v1\/start\/ reject-dict
 
-# QQ 链接解锁（解除访问非白名单之外的地址提示停止访问该页面的限制，并移除跟踪参数。需要 3.1.4(649) 或以上版本，使用前需要清除缓存数据）pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com
-(^https:\/\/c\.pc\.qq\.com\/middlem\.html\?pfurl=)(http.*)(&pfuin=.*) 302 $2
-(^https:\/\/c\.pc\.qq\.com\/middlect\.html\?pfuin=.*&pfurl=)(http.*)(&gjsublevel=.*) 302 $2
-(^https:\/\/pingtas\.qq\.com\/webview\/pingd\?dm=c\.pc\.qq\.com&pvi=\d+&si=s\d+&url=\/middlem\.html\?pfurl%3d)(http.*)(%26pfuin%3d.*%26pfuin%3d.*) 302 $2
-(^https:\/\/cgi\.connect\.qq\.com\/qqconnectopen\/get_urlinfoForQQV2\?url=)(http.*) 302 $2
-(^https:\/\/c\.pc\.qq\.com\/index\.html\?pfurl=)(http.*)(&pfuin=.*) 302 $2
-(^https:\/\/c\.pc\.qq\.com\/ios\.html\?url=)(http.*)(&level=.*) 302 $2
-(^https:\/\/pingtas\.qq\.com\/webview\/pingd\?dm=c\.pc\.qq\.com&pvi=\d+&si=s\d+&url=\/ios\.html\?url%3d)(http.*)(%26level.*%26level.*) 302 $2
-
-# B 站优化
-# 满意度调研
-^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? reject-dict
-# 屏蔽默认搜索框关键词
-^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords reject-dict
-# 屏蔽 IP 和地理位置请求
-^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-dict
-^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
-# 移除视频链接跟踪参数
-(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) 302 $1
-
-# 去广告
+# 淘宝去广告
 # 阿里巴巴 acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) reject-dict
 ^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv reject-dict
@@ -604,29 +741,23 @@ DOMAIN-SUFFIX, alipaydns.com, REJECT
 ^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(?:octopus|tps-1125-1602|tps-1080-1920)\.(?:jpg|png)_(?:1\d{3}|9\d{2})x(?:1\d{3}|9\d{2})q[59]0 reject-dict
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.cainiao\.adx\.flyad\.getad reject-dict
 ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) reject-dict
-# 谷歌送中重定向 www.google.cn
-^https?:\/\/www\.google\.cn 302 https://www.google.com
-# 建设银行
-^https?:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(?:nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png reject
-# 微信
-^https?:\/\/mp\.weixin\.qq\.com\/mp\/(?:cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle) reject-dict
 
-# 拼多多净化
-^https:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash\? reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/alexa\/goods\/back_up\? reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/brand-olay\/goods_detail\/bybt_guide reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/caterham\/v3\/query\/(?:likes|my_order_group|new_chat_group|order_express_group|personal) reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/engels\/reviews\/require\/append reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/flow\/hungary\/window\/global\/v2\? reject-dict
-^https:\/\/api\.pinduoduo\.com\/api\/oak\/integration\/render response-body-json-del bottom_section_list ui.bottom_section ui.live_section.float_info
-^https:\/\/api\.pinduoduo\.com\/api\/philo\/personal\/hub\? response-body-json-del monthly_card_entrance personal_center_style_v2_vo icon_set.icons icon_set.top_personal_icons title_bar_items
-^https:\/\/api\.pinduoduo\.com\/api\/zaire_biz\/chat\/resource\/get_list_data reject-dict
-^https:\/\/api\.pinduoduo\.com\/search response-body-json-del expansion
-^https:\/\/api\.pinduoduo\.com\/search_hotquery\? reject-dict
+# 微信去广告
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/(?:cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle) reject-dict
 
 # YouTube 去广告
 # 使用 reject-dict 方法以减少开销
 ^https:\/\/rr[\w-]+\.googlevideo\.com\/initplayback\? reject-dict
+
+# TG 外部链接跳转 Swiftgram t.me
+(https:\/\/)?t\.me\/(.+) 302 sg://resolve?domain=$2
+
+# 建设银行
+^https?:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(?:nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png reject
+# 得物 app.dewu.com
+^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement reject
+# 微信公众号文章下方广告 mp.weixin.qq.com
+^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad response-body-replace-regex advertisement fmz200
 
 # 去广告合集
 # 百度网盘 pan.baidu.com, ndstatic.cdn.bcebos.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com, update.pan.baidu.com
@@ -647,14 +778,29 @@ DOMAIN-SUFFIX, alipaydns.com, REJECT
 ^https:\/\/pan\.baidu\.com\/coins\/center\/notice reject-200
 # 超星学习通 learn.chaoxing.com
 ^https?:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig\? reject
-# 得物 app.dewu.com
-^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement reject
+#志愿汇屏蔽开屏广告
+^https:\/\/ipv6\.zyh365\.com\/index4\/startup reject-200
+
+# Beta
+# Vista 看天下
+# 解锁 VIP
+^https:\/\/open3\.vistastory\.com\/v3\/api\/(notice\/need_read_notice_number?|index\/loading_ad2?) reject
+# 去广告
+^https?:\/\/open3\.vistastory\.com\/v\d\/api.*get_popup reject
+
+# 滴滴出行去广告
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/((xp|m)get|getMulti\?) reject-dict
+^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds reject-dict
+^https:\/\/freight\.xiaojukeji\.com\/gateway reject-dict
+^https:\/\/daijia\.kuaidadi\.com:443\/gateway reject-dict
+^https:\/\/conf\.diditaxi\.com\.cn\/(homepage\/v\d\/other\/(fast|slow)|dynamic\/conf) reject-dict
+
+# 红版报 fbchina.flipchina.cn
+^https?:\/\/fbchina\.flipchina\.cn\/v\d\/ad\/query reject
 # 瑞幸咖啡 ecapi.lkcoffee.com, img0*.luckincoffeecdn.com
 ^https?:\/\/(ec|c)api\.lkcoffee\.com\/resource\/m\/eorder\/product\/popAppTagProductList reject
 ^https?:\/\/img0[1-9]{1}\.luckincoffeecdn\.com\/group\d/M00/[A-Z0-9]{2}/[A-Z0-9]{2}/[a-zA-Z0-9]{29}\.(jpg|jpeg)_\.webp reject-200
-# 微信公众号文章下方广告 mp.weixin.qq.com
-^https?:\/\/mp\.weixin\.qq\.com\/mp\/getappmsgad response-body-replace-regex advertisement fmz200
-# 微信小程序
+# 微信小程序净化
 # 茶百道
 ^https?:\/\/cbd-gateway-service-applets\.hualala\.com\/arch\/api\/banner\/QueryBannerImgList reject-dict
 # 滴滴出行
@@ -698,37 +844,10 @@ DOMAIN-SUFFIX, alipaydns.com, REJECT
 # 顺丰速运+
 ^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query reject-dict
 ^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList reject-dict
-# 闲鱼净化
-# 我的页面横幅
-^https:\/\/dinamicx\.alibabausercontent\.com\/pub\/fish_home_top_kingkong_new\/ reject
-# 搜索页面净化
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.item\.search\.activate\/ reject-dict
-^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.discover\/ reject-dict
-#志愿汇屏蔽开屏广告
-^https:\/\/ipv6\.zyh365\.com\/index4\/startup reject-200
-
-# Beta
-# Vista 看天下
-# 解锁 VIP
-^https:\/\/open3\.vistastory\.com\/v3\/api\/(notice\/need_read_notice_number?|index\/loading_ad2?) reject
-# 去广告
-^https?:\/\/open3\.vistastory\.com\/v\d\/api.*get_popup reject
-
-# 滴滴出行去广告
-^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/(xp|m)get reject-dict
-^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds reject-dict
-^https:\/\/freight\.xiaojukeji\.com\/gateway reject-dict
-^https:\/\/daijia\.kuaidadi\.com:443\/gateway reject-dict
-^https:\/\/conf\.diditaxi\.com\.cn\/(homepage\/v\d\/other\/fast|dynamic\/conf) reject-dict
-
-# 红版报 fbchina.flipchina.cn
-^https?:\/\/fbchina\.flipchina\.cn\/v\d\/ad\/query reject
-# > 猫耳FM - MISSEVAN
-^https?:\/\/app\.missevan\.com\/site\/launch\? reject
-# 微信小程序净化
 # 奈雪点单 tm-api.pin-dao.cn
 ^https?:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/ reject-dict
 ^https?:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes reject-dict
+^https?:\/\/tm-api\.pin-dao\.cn\/activity\/pop\/popUp reject-dict
 # 古茗茶饮点单 newton.gumingnc.com
 ^https?:\/\/newton\.gumingnc\.com\/newton-buyer\/newton\/buyer\/(ump|touch|external\/front) reject-dict
 # > 通用规则<微信小程序> - WechatAppletGeneralRewrite
@@ -1256,35 +1375,35 @@ so-net.tw = server:ns1.so-net.net.tw
 *.he.net = server:https://ordns.he.net/dns-query
 
 [Script]
-# @MingdeCZ （更多脚本信息请自行在 https://github.com/MingdeCZ/OutSide-Reborn/tree/main/Loon/Scripts 中查找）
+# @MingdeCZ（更多脚本信息请自行在 https://github.com/MingdeCZ/OutSide-Reborn/tree/main/Loon/Scripts 中查找）
 # 查询节点信息（建议版本 3.1.10(692) 及以上，效果更佳）
-generic script-path = https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/ip.js, tag = 🛂节点ℹ️, img-url = location.fill.viewfinder
+generic script-path = https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/ip.js, tag = 🛂节点ℹ️, img-url = location.magnifyingglass
 # 节点流媒体解锁检测（需要版本 3.1.10(692) 及以上）
-generic script-path = https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/streaming-ui-check-lite.js, tag = 解锁检测lite, img-url = checkmark.seal
+generic script-path = https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/streaming-ui-check-lite.js, tag = 解锁检测lite, img-url = lock.open.fill
 
 # @NobyDa（更多脚本信息请自行在 https://github.com/NobyDa/Script 中查找）
 # TestFlight 账户管理（24.03.25）（自动存储并合并多个 TestFlight 账户列表，并可分享及导出 TestFlight 应用）testflight.apple.com
 #http-request ^https:\/\/testflight\.apple\.com\/v\d\/(app|account|invite)s\/ requires-body=1,timeout=120,script-path=https://raw.githubusercontent.com/NobyDa/Script/master/TestFlight/TestFlightAccount.js, tag=TestFlight 账户管理
 
 # Disney+ 评分（24.05.04）（剧集页显示 IMDb/烂番茄/豆瓣评分，由于 OMDb API 所限，部分剧集可能无法显示）disney.api.edge.bamgrid.com
-http-response ^https:\/\/disney\.api\.edge\.bamgrid\.com\/explore\/v\d\.\d\/page\/entity- script-path=https://raw.githubusercontent.com/NobyDa/Script/master/Disney/DisneyRating.js, requires-body=true, tag=Disney+ 评分
+http-response ^https:\/\/disney\.api\.edge\.bamgrid\.com\/explore\/v\d\.\d\/page\/entity- script-path = https://raw.githubusercontent.com/NobyDa/Script/master/Disney/DisneyRating.js, requires-body = true, tag = Disney+ 评分
 
-# @VirgilClyne
-# 解锁原装（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/iRingo 中查找）
+# @NSRingo
+# 解锁原装（更多脚本信息、用法和教程请自行在 https://github.com/orgs/NSRingo/repositories 中查找）
 # 定位服务（V3.4）（全面自定义「定位服务」的功能）gspe1-ssl.ls.apple.com
 # 📍 Country Code
-http-response ^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, tag=📍 Location.pep.gcc.response, argument=
+http-response ^https?:\/\/gspe1-ssl\.ls\.apple\.com\/pep\/gcc script-path=https://github.com/NSRingo/GeoServices/releases/latest/download/response.js, requires-body=1, tag=📍 Location.pep.gcc.response, argument=
 
 # 地图（V3.4）（全面自定义「地图」的功能）configuration.ls.apple.com, gspe35-ssl.ls.apple.com
 # 🗺️ Network Defaults
-http-request ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.request.js, requires-body=0, tag=🗺️ Maps.config.defaults.request, argument=
-http-response ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, tag=🗺️ Maps.config.defaults.response, argument=
+http-request ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://github.com/NSRingo/GeoServices/releases/latest/download/request.js, requires-body=0, tag=🗺️ Maps.config.defaults.request, argument=
+http-response ^https?:\/\/configuration\.ls\.apple\.com\/config\/defaults script-path=https://github.com/NSRingo/GeoServices/releases/latest/download/response.js, requires-body=1, tag=🗺️ Maps.config.defaults.response, argument=
 # 🗺️ Announcements
-http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.request.js, requires-body=0, tag=🗺️ Maps.config.announcements.request, argument=
-http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.config.announcements.response, argument=
+http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements script-path=https://github.com/NSRingo/GeoServices/releases/latest/download/request.js, requires-body=0, tag=🗺️ Maps.config.announcements.request, argument=
+http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/config\/announcements script-path=https://github.com/NSRingo/GeoServices/releases/latest/download/response.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.config.announcements.response, argument=
 # 🗺️ Resource Manifest
-http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.request.js, requires-body=0, tag=🗺️ Maps.config.announcements.request, argument=
-http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://raw.githubusercontent.com/VirgilClyne/iRingo/main/js/GeoServices.response.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.geo_manifest.dynamic.config.response, argument=
+http-request ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://github.com/NSRingo/GeoServices/releases/latest/download/request.js, requires-body=0, tag=🗺️ Maps.config.announcements.request, argument=
+http-response ^https?:\/\/gspe35-ssl\.ls\.apple\.(com|cn)\/geo_manifest\/dynamic\/config script-path=https://github.com/NSRingo/GeoServices/releases/latest/download/response.js, requires-body=1, binary-body-mode=1, tag=🗺️ Maps.geo_manifest.dynamic.config.response, argument=
 
 # Siri 与搜索（V3.1）（全面自定义「Siri 与搜索」中的「Siri 建议」功能。⚠️Siri 区分「询问 Siri」和「Siri 建议」两部分，从 i(Pad)OS 17.6 开始，「Siri 建议」的网络请求使用的 `api.smoot.apple.com`，不可以通过 MitM 改写请求。低于此版本仍可正常使用。「询问 Siri」的网络请求使用的 `guzzoni.apple.com`，不可以通过 MitM 改写请求。本模块不含自定义「Siri 与搜索」中的「询问 Siri」功能，注意鉴别需求与说明）api*.smoot.apple.com, api.smoot.apple.cn
 # Bag (iOS/macOS)
@@ -1313,52 +1432,70 @@ http-request ^http.+(setting|general).(media.dssott|hbomaxcdn|nflxvideo|youtube|
 # 百度首页净化 m.baidu.com, www.baidu.com
 http-response ^https?:\/\/(?:www|m)\.baidu\.com(?:\/|\/\?(tn=&)?from=\w+)?$ script-path = https://raw.githubusercontent.com/Keywos/rule/master/script/baidu_index/js/index.js, requires-body = true, tag = 百度首页净化
 
-# @RuCu6（更多脚本信息请自行在 https://github.com/RuCu6/Loon 中查找）
+# @luestr（更多脚本信息请自行在 https://github.com/luestr/ProxyResource/blob/main/README.md 中查找）
 # B 站优化 ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com
 # 移除交互式弹幕
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 哔哩哔哩移除交互式弹幕
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView script-path = https://kelee.one/Resource/Script/Bilibili/Bilibili_helper_beta.js, requires-body = true, binary-body-mode = true, tag = 哔哩哔哩移除交互式弹幕
 # 精简我的页面
-http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine(\/ipad)?|myinfo) script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/bilibili/json.js, requires-body = true, tag = 哔哩哔哩精简我的页面
-# 会员特效弹幕处理
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmSegMobile script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/bilibili/protoC.js, requires-body = true, binary-body-mode = true, tag = 会员特效弹幕处理
+http-response ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/(?:mine(\/ipad)?|myinfo) script-path = https://kelee.one/Resource/Script/Bilibili/Bilibili_remove_ads.js, requires-body = true, tag = 哔哩哔哩精简我的页面
 
-# 去广告
-# 12306 ad.12306.cn, mobile.12306.cn
-http-request ^https:\/\/ad\.12306\.cn\/ad\/ser\/getAdList$ script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/12306.js, requires-body = true, tag = 移除 12306 开屏广告
-http-response ^https:\/\/mobile\.12306\.cn\/otsmobile\/app\/mgs\/mgw\.htm$ script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/header.js, tag = 移除 12306 应用内广告
-# 阿里巴巴 guide-acs.m.taobao.com, poplayer.template.alibaba.com
-http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/myBlockAds.js, requires-body = true, tag = 淘宝去广告
-http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/myBlockAds.js, requires-body = true, tag = 淘宝去广告
+# 猫耳 FM 净化 app.missevan.com, fm.missevan.com
+# 首页顶部入口
+http-response ^https:\/\/app\.missevan\.com\/site\/icons\? script-path = https://kelee.one/Resource/Script/CatEarFM/CatEarFM_remove_ads.js, requires-body = true, tag = 猫耳 FM 精简首页顶部入口
+# 发现页面 - 直播间、广播剧、免流服务
+http-response ^https:\/\/app\.missevan\.com\/discovery\/list$ script-path = https://kelee.one/Resource/Script/CatEarFM/CatEarFM_remove_ads.js, requires-body = true, tag = 猫耳 FM 精简发现页面
+
+# 闲鱼净化 *.m.goofish.com
+# 我的页面
+http-response ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.idle\.user\.page\.my\.adapter\/ script-path = https://kelee.one/Resource/Script/FleaMarket/FleaMarket_remove_ads.js, requires-body = true, tag = 闲鱼移除我的页面推广
+# 首页信息流
+http-response ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/ script-path = https://kelee.one/Resource/Script/FleaMarket/FleaMarket_remove_ads.js, requires-body = true, tag = 闲鱼移除首页信息流推广
+# 首页顶部标签
+http-response ^https:\/\/acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.circle\.list\/ script-path = https://kelee.one/Resource/Script/FleaMarket/FleaMarket_remove_ads.js, requires-body = true, tag = 闲鱼移除首页顶部标签推广
+# 搜索结果广告
+http-response ^https:\/\/g-acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ script-path = https://kelee.one/Resource/Script/FleaMarket/FleaMarket_remove_ads.js, requires-body = true, tag = 闲鱼移除搜索结果广告
+
+# 京东去广告 api.m.jd.com
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://kelee.one/Resource/Script/JD/JD_remove_ads.js, requires-body = true, tag = 移除京东广告
 
 # 拼多多净化 api.pinduoduo.com, api.yangkeduo.com
-http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/pdd.js, requires-body = true, tag = 拼多多精简首页
+http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path = https://kelee.one/Resource/Script/PinDuoDuo/PinDuoDuo_remove_ads.js, requires-body = true, tag = 拼多多精简首页
+
+# 小红书净化 edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save) script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除图片和实况照片水印
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除开屏广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除开屏广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed) script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除详情页小部件、关注页感兴趣的人
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\? script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除信息流广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\? script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 移除详情页感兴趣的人
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\? script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除信息流广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\? script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除搜索页广告
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed) script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除图片和视频水印
+http-response ^https:\/\/(?:edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/note\/videofeed|v10\/note\/video\/save) script-path = https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js, requires-body = true, tag = 小红书移除视频水印
+
+# 淘宝去广告 guide-acs.m.taobao.com, poplayer.template.alibaba.com
+http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path = https://kelee.one/Resource/Script/Taobao/Taobao_remove_ads.js, requires-body = true, tag = 淘宝移除开屏广告
+http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path = https://kelee.one/Resource/Script/Taobao/Taobao_remove_ads.js, requires-body = true, tag = 淘宝移除开屏广告
 
 # YouTube 去广告 rr*.googlevideo.com, youtubei.googleapis.com
 # 请求体
-http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|reel\/reel_watch_sequence|get_watch) script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/youtube/request.js, requires-body = true, binary-body-mode = true, tag = YouTube 去广告·请求
+http-request ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|reel\/reel_watch_sequence|get_watch) script-path = https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_request.js, requires-body = true, binary-body-mode = true, tag = YouTube 去广告·请求
 # 响应体
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://raw.githubusercontent.com/RuCu6/Loon/main/Scripts/youtube/response.js, requires-body = true, binary-body-mode = true, tag = YouTube 去广告·响应
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(?:browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, tag = YouTube 去广告·响应
 
 # @fmz200（更多脚本信息请自行在 https://github.com/fmz200/wool_scripts/tree/main/Loon 中查找）
 # 去广告合集
 # 微信小程序净化 cbd-gateway-service-applets.hualala.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, mcs-mimp-web.sf-express.com, ucmp-static.sf-express.com, ucmp.sf-express.com, as.xiaojukeji.com, daijia.kuaidadi.com
 # 滴滴出行个人中心
 #http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5 script-path = https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didi.js, requires-body = true, tag = 滴滴出行微信小程序个人中心净化
-# 闲鱼净化 acs.m.goofish.com, g-acs.m.goofish.com, dinamicx.alibabausercontent.com
-# 首页顶部标签
-http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.home\.whale\.modulet\/ script-path = https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js, requires-body = true, timeout = 60, tag = 闲鱼移除首页顶部标签
-# 搜索栏填充词
-http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\.shade\/ script-path = https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js, requires-body = true, timeout = 60, tag = 闲鱼屏蔽搜索栏填充词
-# 首页闲鱼币入口和底部发布球
-http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.user\.strategy\.list\/ script-path = https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js,, requires-body = true, timeout = 60, tag = 闲鱼移除首页闲鱼币入口和底部发布球
-# 商品信息流广告
-http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.home\.nextfresh\/ script-path = https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js, requires-body = true, timeout = 60, tag = 闲鱼屏蔽商品信息流广告
-# 定位地区页面的信息流广告
-http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idle\.local\.home\/ script-path = https://github.com/fmz200/wool_scripts/raw/main/Scripts/xianyu/xianyu_ads.js, requires-body = true, timeout = 60, tag = 闲鱼屏蔽定位地区页面的信息流广告
+
+# @sooyaaabo（更多脚本信息请自行在 https://github.com/sooyaaabo/Loon 中查找）
 
 # @Beta
 # Vista 看天下解锁 VIP（22.11.17）（3.3.2）open3.vistastory.com
 http-response ^http[s]?:\/\/open3.vistastory.com script-path = https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Vista.js, requires-body = true, tag = 看天下解锁 VIP
+# 画涯解锁 VIP（24.10.08）（1.5.2）api.huaya.cc
+http-response ^http[s]?:\/\/api.huaya.cc\/Handler\/Users_Head.ashx script-path = https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/huaya.js, requires-body = true, tag = 画涯解锁 VIP
 
 # 小猿搜题解锁 VIP xyst.yuanfudao.com
 http-response ^https:\/\/xyst\.yuanfudao\.com\/solar-vip\/(api|iphone)\/users/* script-path = https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/xyst.js, requires-body = true, tag = 小猿搜题解锁 VIP
@@ -1380,4 +1517,4 @@ http-response ^https?:\/\/miniapp\.sexytea2013\.com\/cms\/slot\/queryByCodes\?co
 
 # 🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
 
-hostname = -gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, gspe1-ssl.ls.apple.com, api*.smoot.apple.com, api.smoot.apple.cn, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, sub.store, weixin110.qq.com, security.wechat.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, ad.12306.cn, mobile.12306.cn, m.baidu.com, www.baidu.com, ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, rr*.googlevideo.com, youtubei.googleapis.com, api.pinduoduo.com, api.yangkeduo.com, open3.vistastory.com, disney.api.edge.bamgrid.com, api-mifit*.huami.com, api-mifit.huami.com, api.jr.mi.com, api.m.mi.com, home.mi.com, iyes.youku.com, cbd-gateway-service-applets.hualala.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, ucmp.sf-express.com, as.xiaojukeji.com, daijia.kuaidadi.com, xyst.yuanfudao.com, freight.xiaojukeji.com, ct.xiaojukeji.com, res.xiaojukeji.com, api.udache.com, app.dewu.com, learn.chaoxing.com, image1.ccb.com, update.pan.baidu.com, acs.m.goofish.com, g-acs.m.goofish.com, dinamicx.alibabausercontent.com, www.google.cn, pan.baidu.com, ndstatic.cdn.bcebos.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com, ecapi.lkcoffee.com, img0*.luckincoffeecdn.com, mapi.ghsmpwalmart.com, m.dianping.com, mapi.dianping.com, miniapp.sexytea2013.com, newton.gumingnc.com, tm-api.pin-dao.cn, app.missevan.com, fbchina.flipchina.cn, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
+hostname = 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, gspe1-ssl.ls.apple.com, api*.smoot.apple.com, api.smoot.apple.cn, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, sub.store, weixin110.qq.com, security.wechat.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, m.baidu.com, www.baidu.com, ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, rr*.googlevideo.com, youtubei.googleapis.com, api.pinduoduo.com, api.yangkeduo.com, open3.vistastory.com, disney.api.edge.bamgrid.com, api-mifit*.huami.com, api-mifit.huami.com, api.jr.mi.com, api.m.mi.com, home.mi.com, cbd-gateway-service-applets.hualala.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, ucmp.sf-express.com, as.xiaojukeji.com, daijia.kuaidadi.com, xyst.yuanfudao.com, freight.xiaojukeji.com, ct.xiaojukeji.com, res.xiaojukeji.com, api.udache.com, app.dewu.com, learn.chaoxing.com, image1.ccb.com, update.pan.baidu.com, *.m.goofish.com, www.google.cn, pan.baidu.com, ndstatic.cdn.bcebos.com, staticsns.cdn.bcebos.com, issuecdn.baidupcs.com, ecapi.lkcoffee.com, img0*.luckincoffeecdn.com, mapi.ghsmpwalmart.com, m.dianping.com, mapi.dianping.com, miniapp.sexytea2013.com, newton.gumingnc.com, tm-api.pin-dao.cn, fbchina.flipchina.cn, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, api.m.jd.com, zone.guiderank-app.com, app.missevan.com, fm.missevan.com, t.me, api.huaya.cc
