@@ -25,10 +25,9 @@ hosts:
 dns:
   enable: true
   enhanced-mode: redir-host
-  default-nameserver:
-    - 119.29.29.29
   nameserver:
     - https://223.5.5.5/dns-query#h3=true
+    - 119.29.29.29
   nameserver-policy:
     "blog.google,googletraveladservices.com,dl.google.com,dl.l.google.com,clientservices.googleapis.com,update.googleapis.com,fonts.googleapis.com,fonts.gstatic.com": "119.29.29.29"
     "www.miwifi.com,miwifi.com,tplogin.cn,tplinklogin.net,tplinkwifi.net": system
