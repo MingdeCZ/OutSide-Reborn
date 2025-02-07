@@ -5,7 +5,7 @@
 #!homepage = 
 #!manual = 
 #!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 25.1.9
+#!date = 25.2.7
 #!other = 
 #!category = 
 #!input = 
@@ -69,7 +69,7 @@ debug=switch,false,true,tag=启用调试模式,desc=此插件的调试模式
 # 🌐 通用设置增强（(📱 iOS 版) #1.添加跳过代理部分段内容 2.添加返回真实 IP 段内容 3.添加不可 MitM 的域名，防止打断连接）
 # Always Real IP Hosts
 # DNS 数据包将被转发到上游 DNS 服务器。
-# real-ip = *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, opencloud.wostore.cn, id.mail.wo.cn, mdn.open.wo.cn, hmrz.wo.cn, nishub1.10010.com, enrichgw.10010.com, *.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, *.microdone.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
+real-ip = *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, opencloud.wostore.cn, id.mail.wo.cn, mdn.open.wo.cn, hmrz.wo.cn, nishub1.10010.com, enrichgw.10010.com, *.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, *.microdone.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
 # real-ip = xbox.*.microsoft.com, stun.*, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
 
 # 🚫 阻止常见的 HTTPDNS 服务器
@@ -113,6 +113,8 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 # 参考：https://docs.jdcloud.com/cn/jd-cloud-dns/HTTPDNS
 # 参考：https://docs.jdcloud.com/cn/httpdns/interface-specification
 IP-CIDR,103.224.222.208/32,REJECT,no-resolve
+# Keep
+DOMAIN,httpdns.calorietech.com,REJECT
 # 快手
 DOMAIN,kuaishou.httpdns.pro,REJECT
 # 美团
@@ -515,7 +517,7 @@ DOMAIN,adashx.m.taobao.com,REJECT
 DOMAIN,ut.taobao.com,REJECT
 
 # 微信去广告
-DOMAIN, badjs.weixinbridge.com, REJECT
+DOMAIN,badjs.weixinbridge.com,REJECT
 DOMAIN-SUFFIX,wxs.qq.com,REJECT
 
 # 微信小程序净化
@@ -531,15 +533,15 @@ AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,QUIC)),REJECT
 AND,((DOMAIN-SUFFIX,youtubei.googleapis.com),(PROTOCOL,QUIC)),REJECT
 
 # 修正广告拦截
-DOMAIN, ca.iadsdk.apple.com, DIRECT
+DOMAIN,ca.iadsdk.apple.com,DIRECT
 
 # 去广告
 # Apple
-DOMAIN-SUFFIX, iadsdk.apple.com, REJECT
+DOMAIN-SUFFIX,iadsdk.apple.com,REJECT
 # 安全浏览限制解除
-DOMAIN, lookup.api.bsb.baidu.com, REJECT
-DOMAIN-SUFFIX, u3.ucweb.com, REJECT
-DOMAIN-KEYWORD, safebrowsing., REJECT
+DOMAIN,lookup.api.bsb.baidu.com,REJECT
+DOMAIN-SUFFIX,u3.ucweb.com,REJECT
+DOMAIN-KEYWORD,safebrowsing.,REJECT
 # 建设银行
 DOMAIN-KEYWORD, adv.ccb.com, REJECT
 
@@ -1422,7 +1424,7 @@ upos-sz-upcdntx.bilivideo.com = server:https://doh.pub/dns-query
 # CNNIC SDNS
 # 中国政府网
 *.gov.cn = server:1.2.4.8
-*.政务 = server:1.2.4.8
+# *.政务 = server:1.2.4.8
 # 🇭🇰
 # PCCW Enterprises Limited
 # *.pccw.com = server:dns1.pccw.com

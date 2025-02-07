@@ -38,3 +38,4 @@ DOMAIN-SUFFIX,ocsp.apple.com
 DOMAIN,lookup-api.apple.com
 DOMAIN-SUFFIX,apps.apple.com
 DOMAIN,api-glb-sea.smoot.apple.com
+DOMAIN-SUFFIX,ess.apple.com

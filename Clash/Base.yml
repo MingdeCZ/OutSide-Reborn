@@ -38,8 +38,7 @@ dns:
     "+.amemv.com,+.bdxiguaimg.com,+.bdxiguastatic.com,+.byted-static.com,+.bytedance.+,+.bytedns.net,+.bytednsdoc.com,+.bytegoofy.com,+.byteimg.com,+.bytescm.com,+.bytetos.com,+.bytexservice.com,+.douyin.com,+.douyinpic.com,+.douyinstatic.com,+.douyinvod.com,+.feelgood.cn,+.feiliao.com,+.gifshow.com,+.huoshan.com,+.huoshanzhibo.com,+.ibytedapm.com,+.iesdouyin.com,+.ixigua.com,+.kspkg.com,+.pstatp.com,+.snssdk.com,+.toutiao.com,+.toutiao13.com,+.toutiao???.???,+.toutiaocloud.cn,+.toutiaocloud.com,+.toutiaopage.com,+.wukong.com,+.zijieapi.com,+.zijieimg.com,+.zjbyte.com,+.zjcdn.com": "180.184.1.1"
     "+.gov.cn": "1.2.4.8"
 geox-url:
-  mmdb: "https://github.com/soffchen/GeoIP2-CN/raw/release/Country.mmdb"
-geo-auto-update: true
+  mmdb: "https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb"
 rules:
   - DOMAIN,httpdns.alicdn.com,REJECT
   - DOMAIN,httpdns-api.aliyuncs.com,REJECT
@@ -55,6 +54,7 @@ rules:
   - IP-CIDR,101.124.19.122/32,REJECT,no-resolve
   - IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
   - IP-CIDR,103.224.222.208/32,REJECT,no-resolve
+  - DOMAIN,httpdns.calorietech.com,REJECT
   - DOMAIN,kuaishou.httpdns.pro,REJECT
   - DOMAIN,httpdns.meituan.com,REJECT
   - DOMAIN,httpdns.yunxindns.com,REJECT
