@@ -225,7 +225,7 @@ async function lookUp(url, nodeName, timeout) {
                             let arr = f(region, city).split(" "), loc;
                             arr.length == 1 && (loc = "<font color=#FF8247>" + arr[0] + "</font>");
                             arr.length == 2 && (loc = "<font color=#008B8B>" + arr[0] + "</font>" + " <font color=#FF8247>" + arr[1] + "</font>");
-                            ins = `<br>${loc} <font color=#8B8B7A>${county}</font> <font color=#9B30FF><b>${isp.replace("中国", "")}</b></font>『<font color=#BDB76B>${$utils.ipasn(ip)}</font>』<br><br>${ip}<br><br>${(isp.includes("UCloud") || isp.includes("Amazon")) ? `<font color=#9C9C9C><b>自治机构</b>：${$utils.ipaso(ip)}</font><br><br>` : ""}${j(parseFloat(lat).toFixed(4))} <font color=#8DB6CD>✡︎</font> ${k(parseFloat(lnt).toFixed(4))}<br>-------------------------`;
+                            ins = `<br>${loc} <font color=#8B8B7A>${county}</font> <font color=#9B30FF><b>${isp.replace("中国", "")}</b></font>『<font color=#BDB76B>${$utils.ipasn(ip)}</font>』<br><br>${ip}<br><br>${(isp.includes("UCloud") || isp.includes("Amazon") || isp.includes("Azure") || isp.includes("快快网络")) ? `<font color=#9C9C9C><b>自治机构</b>：${$utils.ipaso(ip)}</font><br><br>` : ""}${j(parseFloat(lat).toFixed(4))} <font color=#8DB6CD>✡︎</font> ${k(parseFloat(lnt).toFixed(4))}<br>-------------------------`;
                         } else {
                             INIPS = true;
                         }
