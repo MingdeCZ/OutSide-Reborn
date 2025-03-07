@@ -24,7 +24,6 @@ hosts:
   alt8-mtalk.google.com: "3.3.3.3"
 dns:
   enable: true
-  enhanced-mode: redir-host
   nameserver:
     - https://223.5.5.5/dns-query#h3=true
     - 119.29.29.29
@@ -47,7 +46,7 @@ rules:
   - DOMAIN,httpsdns.baidu.com,REJECT
   - DOMAIN,httpdns.baidu.com,REJECT
   - DOMAIN,httpdns.baidubce.com,REJECT
-  - IP-CIDR,186.76.76.200/32,REJECT,no-resolve
+  - IP-CIDR,180.76.76.200/32,REJECT,no-resolve
   - DOMAIN,httpdns.bilivideo.com,REJECT
   - DOMAIN,httpdns.c.cdnhwc2.com,REJECT
   - DOMAIN,dns.jd.com,REJECT
@@ -55,8 +54,9 @@ rules:
   - IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
   - IP-CIDR,103.224.222.208/32,REJECT,no-resolve
   - DOMAIN,httpdns.calorietech.com,REJECT
-  - DOMAIN,kuaishou.httpdns.pro,REJECT
   - DOMAIN,httpdns.meituan.com,REJECT
+  - IP-CIDR,202.90.108.13/32,REJECT,no-resolve
+  - IP-CIDR,202.90.110.46/32,REJECT,no-resolve
   - DOMAIN,httpdns.yunxindns.com,REJECT
   - DOMAIN,httpdns.n.netease.com,REJECT
   - DOMAIN,httpdns.music.163.com,REJECT
@@ -66,6 +66,7 @@ rules:
   - IP-CIDR,59.111.239.62/32,REJECT,no-resolve
   - IP-CIDR,115.236.121.51/32,REJECT,no-resolve
   - IP-CIDR,115.236.121.195/32,REJECT,no-resolve
+  - DOMAIN-SUFFIX,kuaishou.httpdns.pro,REJECT
   - IP-CIDR,119.29.29.98/32,REJECT,no-resolve
   - IP-CIDR,119.29.29.99/32,REJECT,no-resolve
   - DOMAIN,httpdns.volcengineapi.com,REJECT
@@ -83,7 +84,7 @@ rules:
   - IP-CIDR6,240e:928:1400:10::25/128,REJECT,no-resolve
   - IP-CIDR,182.254.116.117/32,REJECT,no-resolve
   - IP-CIDR,182.254.118.119/32,REJECT,no-resolve
-  - IP-CIDR,118.89.204.198/23,REJECT,no-resolve
+  - IP-CIDR,118.89.204.198/32,REJECT,no-resolve
   - IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
   - DOMAIN-SUFFIX,doubleclick-cn.net,REJECT
   - DOMAIN-SUFFIX,doubleclick.net,REJECT
@@ -96,6 +97,10 @@ rules:
   - DOMAIN,lookup.api.bsb.baidu.com,REJECT
   - DOMAIN-SUFFIX,u3.ucweb.com,REJECT
   - DOMAIN-KEYWORD,safebrowsing.,REJECT
+  - DOMAIN,api.biliapi.com,REJECT
+  - DOMAIN,api.biliapi.net,REJECT
+  - DOMAIN,app.biliapi.com,REJECT
+  - DOMAIN,app.biliapi.net,REJECT
   - AND,((DOMAIN-KEYWORD,-ad-),(DOMAIN-SUFFIX,byteimg.com)),REJECT
   - AND,((DOMAIN-KEYWORD,-ttam-),(DOMAIN-SUFFIX,ibyteimg.com)),REJECT
   - AND,((DOMAIN-KEYWORD,ssdk-),(DOMAIN-SUFFIX,pangle.io)),REJECT
@@ -307,5 +312,9 @@ rules:
   - DOMAIN,ad-evods.tianya.tv,REJECT
   - DOMAIN,adx.tuia.cn,REJECT
   - DOMAIN-SUFFIX,66mobi.com,REJECT
+  - DOMAIN,o33249.ingest.sentry.io,REJECT
+  - DOMAIN,events.statsigapi.net,REJECT
+  - DOMAIN,api.mixpanel.com,REJECT
+  - DOMAIN,browser-intake-datadoghq.com,REJECT
 unified-delay: true
 find-process-mode: always

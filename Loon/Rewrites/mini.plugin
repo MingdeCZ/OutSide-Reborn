@@ -4,14 +4,14 @@
 #!openUrl = 
 #!homepage = 
 #!manual = 
-#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Drill.png
-#!date = 25.2.7
+#!icon = https://github.com/Koolson/Qure/raw/master/IconSet/Color/Drill.png
+#!date = 25.3.7
 #!other = 
 #!category = 
 #!input = 
 #!select = 
-# 节点缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
-# 响应头缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
+节点缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
+响应头缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
 #!system = iOS, iPadOS
 #!system_version = 18
 #!loon_version = 3.2.4(787)
@@ -100,7 +100,7 @@ DOMAIN,httpdns.baidu.com,REJECT
 # 百度 BCE
 # 参考：https://bce-cdn.bj.bcebos.com/p3m/pdf/bce-doc/online/HTTPDNS/HTTPDNS.pdf
 DOMAIN,httpdns.baidubce.com,REJECT
-IP-CIDR,186.76.76.200/32,REJECT,no-resolve
+IP-CIDR,180.76.76.200/32,REJECT,no-resolve
 # 哔哩哔哩
 DOMAIN,httpdns.bilivideo.com,REJECT
 # 华为
@@ -115,10 +115,10 @@ IP-CIDR6,2402:db40:5100:1011::5/128,REJECT,no-resolve
 IP-CIDR,103.224.222.208/32,REJECT,no-resolve
 # Keep
 DOMAIN,httpdns.calorietech.com,REJECT
-# 快手
-DOMAIN,kuaishou.httpdns.pro,REJECT
 # 美团
 DOMAIN,httpdns.meituan.com,REJECT
+IP-CIDR,202.90.108.13/32,REJECT,no-resolve
+IP-CIDR,202.90.110.46/32,REJECT,no-resolve
 # 网易
 # 参考：https://lbs.netease.im/lbs/conf.jsp
 DOMAIN,httpdns.yunxindns.com,REJECT
@@ -136,6 +136,7 @@ IP-CIDR,115.236.121.195/32,REJECT,no-resolve
 # 参考：https://github.com/CNSRE/HTTPDNSLib
 # 腾讯云
 # 参考：https://cloud.tencent.com/document/product/379/95497
+DOMAIN-SUFFIX,kuaishou.httpdns.pro,REJECT
 IP-CIDR,119.29.29.98/32,REJECT,no-resolve
 IP-CIDR,119.29.29.99/32,REJECT,no-resolve
 # Volcengine
@@ -163,7 +164,7 @@ IP-CIDR,182.254.116.117/32,REJECT,no-resolve
 IP-CIDR,182.254.118.119/32,REJECT,no-resolve
 # 知乎
 # 参考：https://github.com/lwd-temp/anti-ip-attribution/issues/24
-IP-CIDR,118.89.204.198/23,REJECT,no-resolve
+IP-CIDR,118.89.204.198/32,REJECT,no-resolve
 IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 
 # 解锁原装
@@ -183,8 +184,15 @@ IP-CIDR6,2402:4e00:1200:ed00:0:9089:6dac:96b6/128,REJECT,no-resolve
 DOMAIN,weather-analytics-events.apple.com,REJECT-DROP
 DOMAIN-SUFFIX,tthr.apple.com,REJECT-DROP
 
-# Sub Store
+# Sub-Store
 # DOMAIN, sub-store.vercel.app, PROXY
+
+# 哔哩哔哩优化
+# 备用域名
+DOMAIN,api.biliapi.com,REJECT
+DOMAIN,api.biliapi.net,REJECT
+DOMAIN,app.biliapi.com,REJECT
+DOMAIN,app.biliapi.net,REJECT
 
 # 广告平台拦截器（拦截腾讯、字节跳动、快手、百度、邑盟、倍孜、艾狄墨搏、袤博、极光、个推、友盟、阿里、优比客思、秒针、网易、美团、小米、京东、天目、讯飞、泛连、锐讯灵通、聚次方、美数、嗨量、钧云、变现猫、章鱼、分秒、泰之菩、翼信、快易、数萤技术、方麟、益起、上量优选、新义互联、腾云天下、布里奇、塔酷、丽声、推啊、旺脉、SupersonicAds、APPSAD 等广告平台的广告请求）
 # 字节跳动广告
@@ -545,11 +553,17 @@ DOMAIN-KEYWORD,safebrowsing.,REJECT
 # 建设银行
 DOMAIN-KEYWORD, adv.ccb.com, REJECT
 
-# 防止 TG 加载转圈
+# 防止 TG 加载转圈（β）
 IP-CIDR,95.161.76.100/31,REJECT-NO-DROP,no-resolve
 
 # 防止哔哩哔哩之类的白嫖上传以及 WebRTC 泄漏
 PROTOCOL,STUN,REJECT
+
+# OpenAI 各类跟踪器 
+DOMAIN,o33249.ingest.sentry.io,REJECT
+DOMAIN,events.statsigapi.net,REJECT
+DOMAIN,api.mixpanel.com,REJECT
+DOMAIN,browser-intake-datadoghq.com,REJECT
 
 # 苹果优化
 # 音乐
@@ -614,6 +628,7 @@ DOMAIN-SUFFIX,ocsp.apple.com,PROXY
 DOMAIN,lookup-api.apple.com,PROXY
 DOMAIN-SUFFIX,apps.apple.com,PROXY
 DOMAIN,api-glb-sea.smoot.apple.com,PROXY
+DOMAIN-SUFFIX,ess.apple.com,PROXY
 
 [Rewrite]
 # 🍟 整点薯条: 🚫 阻止常见的 HTTPDNS 服务器
@@ -656,6 +671,8 @@ DOMAIN,api-glb-sea.smoot.apple.com,PROXY
 ^http:\/\/116\.63\.10\.31\/resolve - reject
 ^http:\/\/112\.64\.218\.119\/resolve - reject
 ^http:\/\/112\.65\.200\.117\/resolve - reject
+# 字节跳动
+^https?:\/\/.+\.zijieapi\.com\/get_domains\/ - reject
 # 京东
 ^https:\/\/dns\.jd\.com\/v6\/b - reject
 # 美团
@@ -694,15 +711,20 @@ DOMAIN,api-glb-sea.smoot.apple.com,PROXY
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
 
 # 哔哩哔哩优化
+# 播放页开通会员的横幅
+^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? mock-response-body data-type=text status-code=200 data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}"
+^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\? response-body-json-jq 'del(.data.payment)'
 # 满意度调研
 ^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? reject-dict
-# 屏蔽默认搜索框关键词
-^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ reject-dict
 # 屏蔽 IP 和地理位置请求
 ^https:\/\/app\.bilibili\.com\/x\/resource\/ip reject-dict
 ^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp reject-dict
+# 屏蔽默认搜索框关键词
+^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ reject-dict
+# 移除直播间链接跟踪参数
+(^https:\/\/live\.bilibili\.com\/\d+)(?:\/?\?.*) 302 $1
 # 移除视频链接跟踪参数
-(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(\/?\?.*) 307 $1
+(^https:\/\/(?:www|m)\.bilibili\.com\/video\/(?:BV\w{10}|av\d{9}))(?:\/?\?.*) 302 $1
 
 # 广告平台拦截器 video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
 # 拼多多广告平台
@@ -734,6 +756,18 @@ DOMAIN,api-glb-sea.smoot.apple.com,PROXY
 ^https:\/\/fm\.missevan\.com\/api\/v\d\/meta\/banner$ reject-dict
 # 首页顶部入口
 ^https:\/\/app\.missevan\.com\/site\/icons\? response-body-json-jq '.info.icons |= (if . == null then null else map(select(.title != "直播" and .title != "周边商城")) end)'
+
+# 滴滴出行去广告 common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com
+^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/((xp|m)get|getMulti\?) reject-dict
+^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds reject-dict
+^https:\/\/freight\.xiaojukeji\.com\/gateway reject-dict
+^https:\/\/daijia\.kuaidadi\.com:443\/gateway reject-dict
+^https:\/\/conf\.diditaxi\.com\.cn\/(homepage\/v\d\/other\/(fast|slow)|dynamic\/conf) reject-dict
+^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me response-body-json-jq '.data.cards |= map(select(.title != "天天领福利" and .title != "金融服务" and .title != "更多服务" and .title != "企业服务" and .title != "安全中心")) | .data.cards[] |= if .tag == "wallet" then .items |= map(select(.title == "优惠券")) | if .card_type == 4 then .bottom_items |= map(select(.title == "省钱套餐" or .title == "出行里程")) else . end else . end'
+^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core response-body-json-jq '.data.order_cards.nav_list_card.data |= map(select(.nav_id == "dache_anycar" or .nav_id == "driverservice" or .nav_id == "bike" or .nav_id == "carmate")) | .data.disorder_cards.bottom_nav_list.data |= map(select(.id == "v6x_home" or .id == "home_page" or .id == "user_center"))'
+^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList response-body-json-jq '.data.scene_list |= map(select(.text != "优惠商城")) | .data.show_data[] |= (if .scene_ids then .scene_ids |= map(select(. != "scene_coupon_mall")) else . end)'
+^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList response-body-json-jq '.data.disorder_cards.top_banner_card.data |= if .[0].T == "yuentu_top_banner" then .[1:] else . end'
+^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout response-body-json-jq '.data.order_components |= map(select(.name != "passenger_common_casper"))'
 
 # 闲鱼净化
 # 首页顶部标签
@@ -885,21 +919,12 @@ DOMAIN,api-glb-sea.smoot.apple.com,PROXY
 # 去广告
 ^https?:\/\/open3\.vistastory\.com\/v\d\/api.*get_popup reject
 
-# 滴滴出行去广告
-^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/((xp|m)get|getMulti\?) reject-dict
-^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds reject-dict
-^https:\/\/freight\.xiaojukeji\.com\/gateway reject-dict
-^https:\/\/daijia\.kuaidadi\.com:443\/gateway reject-dict
-^https:\/\/conf\.diditaxi\.com\.cn\/(homepage\/v\d\/other\/(fast|slow)|dynamic\/conf) reject-dict
-
 # 红版报 fbchina.flipchina.cn
 ^https?:\/\/fbchina\.flipchina\.cn\/v\d\/ad\/query reject
 
 # 微信小程序净化
 # 茶百道
 ^https?:\/\/cbd-gateway-service-applets\.hualala\.com\/arch\/api\/banner\/QueryBannerImgList reject-dict
-# 滴滴出行
-# ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/core reject-dict
 # 滴滴代驾
 # 横幅广告
 ^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/conf\?ns=daijia-front&name= reject-dict
@@ -1478,10 +1503,6 @@ generic script-path = https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/
 # 节点流媒体解锁检测（需要版本 3.1.10(692) 及以上）
 generic script-path = https://raw.githubusercontent.com/MingdeCZ/OutSide-Reborn/main/Loon/Scripts/streaming-ui-check-lite.js, tag = 解锁检测lite, img-url = lock.open.fill
 
-# @NobyDa（更多脚本信息请自行在 https://github.com/NobyDa/Script 中查找）
-# Disney+ 评分（24.05.04）（剧集页显示 IMDb/烂番茄/豆瓣评分，由于 OMDb API 所限，部分剧集可能无法显示）disney.api.edge.bamgrid.com
-http-response ^https:\/\/disney\.api\.edge\.bamgrid\.com\/explore\/v\d\.\d\/page\/entity- script-path = https://raw.githubusercontent.com/NobyDa/Script/master/Disney/DisneyRating.js, requires-body = true, tag = Disney+ 评分
-
 # @NSRingo
 # 解锁原装（更多脚本信息、用法和教程请自行在 https://github.com/orgs/NSRingo/repositories 中查找）
 # 定位服务（V4.2.2）（自定义「定位服务」 通过「基于网络的地区检测」结果始终为用户设置的地区。）gspe1-ssl.ls.apple.com
@@ -1520,11 +1541,6 @@ http-request ^https?:\/\/sub\.store script-path = https://raw.githubusercontent.
 # 跳过中间界面，支付宝链接和被封禁淘宝链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选）（群聊 / 扫码均可使用，可选项可在脚本 2、3 行更改，也可在 BoxJs 中更改）weixin110.qq.com, security.wechat.com
 http-response ^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\? script-path = https://raw.githubusercontent.com/zZPiglet/Task/master/asset/UnblockURLinWeChat.js, requires-body = true, timeout = 10, tag = 解除微信链接限制
 
-# @chengkongyiban（更多脚本信息请自行在 https://github.com/chengkongyiban/Loon/tree/main 中查找）
-# Dualsub（Disney+, Star+, HBO Max, Hulu, Netflix, Paramount+, Prime Video, YouTube 等流媒体双语字幕，配合捷径设置字幕。捷径地址：https://www.icloud.com/shortcuts/8ec4a2a3af514282bf27a11050f39fc2）*.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com
-http-response ^http.+(media.(dss|star)ott|manifests.v2.api.hbo|hbomaxcdn|nflxvideo|cbs(aa|i)video|cloudfront|akamaihd|avi-cdn|huluim|youtube).(com|net)\/(.+\.vtt($|\?m=\d+)|.+-all-.+\.m3u8.*|hls\.m3u8.+|\?o=\d+&v=\d+&e=.+|\w+\/2\$.+\/[a-zA-Z0-9-]+\.m3u8|api\/timedtext.+) script-path = https://github.com/chengkongyiban/Loon/raw/main/js/Dualsub.js, requires-body = true, tag = 流媒体双语字幕
-http-request ^http.+(setting|general).(media.dssott|hbomaxcdn|nflxvideo|youtube|cbsivideo|cloudfront|huluim).(com|net)\/\?action=(g|s)et script-path = https://github.com/chengkongyiban/Loon/raw/main/js/Dualsub.js, requires-body = true, tag = 流媒体双语字幕设置
-
 # @Keywos（更多脚本信息请自行在 https://github.com/Keywos/rule/tree/main 中查找）
 # 百度首页净化 m.baidu.com, www.baidu.com
 http-response ^https?:\/\/(?:www|m)\.baidu\.com(?:\/|\/\?(tn=&)?from=\w+)?$ script-path = https://raw.githubusercontent.com/Keywos/rule/master/script/baidu_index/js/index.js, requires-body = true, tag = 百度首页净化
@@ -1532,7 +1548,7 @@ http-response ^https?:\/\/(?:www|m)\.baidu\.com(?:\/|\/\?(tn=&)?from=\w+)?$ scri
 # @luestr（更多脚本信息请自行在 https://github.com/luestr/ProxyResource/blob/main/README.md 中查找）
 # 哔哩哔哩优化 ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com
 # 移除动态页面最常访问
-http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js,requires-body=true,binary-body-mode=true,,argument=[{showUpList}],tag=哔哩哔哩移除动态页面最常访问
+http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js,requires-body=true,binary-body-mode=true,tag=哔哩哔哩移除动态页面最常访问,argument=[{showUpList}]
 # 移除交互式弹幕
 http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.community\.service\.dm\.v1\.DM\/DmView$ script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js,requires-body=true,binary-body-mode=true,tag=哔哩哔哩移除交互式弹幕
 # 精简我的页面
@@ -1554,8 +1570,9 @@ http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLay
 # 拼多多净化 api.pinduoduo.com, api.yangkeduo.com
 http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path=https://kelee.one/Resource/Script/PinDuoDuo/PinDuoDuo_remove_ads.js,requires-body=true,tag=拼多多精简首页
 
-# 小红书净化 edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com
+# 小红书净化（过滤信息流推广，移除图片及视频水印，如有异常，请先清除缓存再尝试）edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save) script-path=https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js,requires-body=true,tag=小红书移除图片和实况照片水印
+http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system\/service\/ui\/config\? script-path=https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js,requires-body=true,tag=小红书移除整体配置
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\? script-path=https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js,requires-body=true,tag=小红书移除开屏广告
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config script-path=https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js,requires-body=true,tag=小红书移除开屏广告
 http-response ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed) script-path=https://kelee.one/Resource/Script/RedPaper/RedPaper_remove_ads.js,requires-body=true,tag=小红书移除详情页小部件、关注页感兴趣的人
@@ -1585,18 +1602,8 @@ http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|p
 # Vista 看天下解锁 VIP（22.11.17）（3.3.2）open3.vistastory.com
 http-response ^http[s]?:\/\/open3.vistastory.com script-path = https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Vista.js, requires-body = true, tag = 看天下解锁 VIP
 
-# 画涯解锁 VIP（24.10.08）（1.5.2）api.huaya.cc
-http-response ^http[s]?:\/\/api.huaya.cc\/Handler\/Users_Head.ashx script-path = https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/huaya.js, requires-body = true, tag = 画涯解锁 VIP
-
 # 小猿搜题解锁 VIP xyst.yuanfudao.com
 http-response ^https:\/\/xyst\.yuanfudao\.com\/solar-vip\/(api|iphone)\/users/* script-path = https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/xyst.js, requires-body = true, tag = 小猿搜题解锁 VIP
-
-# 滴滴出行去广告 common.diditaxi.com.cn, freight.xiaojukeji.com, daijia.kuaidadi.com, ct.xiaojukeji.com, res.xiaojukeji.com, conf.diditaxi.com.cn, api.udache.com, 123.207.209.*, 112.53.55.225, 120.241.142.*, 120.241.143.*, 116.85.2.*, 139.199.240.84
-http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v\d\/usercenter\/me script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js, requires-body = true, tag = 滴滴出行去广告
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v\d\/core script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js, requires-body = true, tag = 滴滴出行去广告
-http-response ^https:\/\/api\.udache\.com\/gulfstream\/pre-sale\/v1\/other\/pGetSceneList script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js, requires-body = true, tag = 滴滴出行去广告
-http-response ^https:\/\/conf\.diditaxi\.com\.cn\/ota\/na\/yuantu\/infoList script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js, requires-body = true, tag = 滴滴出行去广告
-http-response ^https:\/\/api\.udache\.com\/gulfstream\/passenger-center\/v2\/other\/pInTripLayout script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/main/Didichuxing.js, requires-body = true, tag = 滴滴出行去广告
 
 # 微信小程序净化
 # 茶颜悦色 miniapp.sexytea2013.com
@@ -1606,10 +1613,14 @@ http-response ^https?:\/\/miniapp\.sexytea2013\.com\/cms\/slot\/queryByCodes\?co
 http-response ^https?:\/\/api\.m\.jd\.com/client\.action\?functionId=(wareBusiness|serverConfig|basicConfig) script-path = https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js, requires-body = true, tag = 京东比价
 http-response ^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path = https://raw.githubusercontent.com/wf021325/qx/master/js/jd_price.js, requires-body = true, tag = 京东比价
 
+# 端传媒解锁手机 APP 和网页端文章阅读权限（无需登录，直接打开文章观看）app.theinitium.com, api.wallkit.net
+http-response ^https?:\/\/app\.theinitium\.com\/subs\/[a-zA-Z_]+\/verify_subscription script-path = https://github.com/ddgksf2013/MoYu/raw/master/DuanChuanMeiProCrack.js, requires-body = true, tag = 端传媒解锁阅读权限
+http-response ^https?:\/\/api\.wallkit\.net\/api\/v\d/user script-path = https://github.com/ddgksf2013/MoYu/raw/master/DuanChuanMeiProCrack.js, requires-body = true, tag = 端传媒解锁阅读权限
+
 [MITM]
 # 🍟 整点薯条
 # 🌐 通用设置增强（不可 MitM 也不应该被打断连接的域名）-gateway.icloud.com, -gateway.icloud.com.cn, -weather-data.apple.com, -buy.itunes.apple.com, -pan.baidu.com
 
 # 🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
 
-hostname = 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, gspe1-ssl.ls.apple.com, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, weixin110.qq.com, security.wechat.com, *.media.dssott.com, *.media.starott.com, *.api.hbo.com, *.hbomaxcdn.com, *.huluim.com, *.nflxvideo.net, *.cbsaavideo.com, *.cbsivideo.com, *.cloudfront.net, *.akamaihd.net, *.avi-cdn.net, *.youtube.com, m.baidu.com, www.baidu.com, ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, *.googlevideo.com, youtubei.googleapis.com, api.pinduoduo.com, api.yangkeduo.com, open3.vistastory.com, disney.api.edge.bamgrid.com, api-mifit*.huami.com, api-mifit.huami.com, api.jr.mi.com, api.m.mi.com, home.mi.com, cbd-gateway-service-applets.hualala.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, ucmp.sf-express.com, as.xiaojukeji.com, daijia.kuaidadi.com, xyst.yuanfudao.com, freight.xiaojukeji.com, ct.xiaojukeji.com, res.xiaojukeji.com, api.udache.com, app.dewu.com, learn.chaoxing.com, image1.ccb.com, *.m.goofish.com, www.google.cn, capi.lkcoffee.com, ecapi.lkcoffee.com, img0*.luckincoffeecdn.com, mapi.ghsmpwalmart.com, m.dianping.com, mapi.dianping.com, miniapp.sexytea2013.com, newton.gumingnc.com, tm-api.pin-dao.cn, fbchina.flipchina.cn, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, api.m.jd.com, zone.guiderank-app.com, app.missevan.com, fm.missevan.com, t.me, api.huaya.cc, rms.meituan.com, sub.store, weatherkit.apple.com, guzzoni.smoot.apple.com, api2.smoot.apple.com, api-*.smoot.apple.com, in.m.jd.com
+hostname = 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.zijieapi.com, *.httpdns.pro, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, gspe1-ssl.ls.apple.com, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, weixin110.qq.com, security.wechat.com, m.baidu.com, www.baidu.com, *live.bilibili.com, ap?.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, *.googlevideo.com, youtubei.googleapis.com, api.pinduoduo.com, api.yangkeduo.com, open3.vistastory.com,  api-mifit*.huami.com, api-mifit.huami.com, api.jr.mi.com, api.m.mi.com, home.mi.com, cbd-gateway-service-applets.hualala.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, ucmp.sf-express.com, as.xiaojukeji.com, daijia.kuaidadi.com, xyst.yuanfudao.com, freight.xiaojukeji.com, ct.xiaojukeji.com, res.xiaojukeji.com, api.udache.com, app.dewu.com, learn.chaoxing.com, image1.ccb.com, *.m.goofish.com, www.google.cn, capi.lkcoffee.com, ecapi.lkcoffee.com, img0*.luckincoffeecdn.com, mapi.ghsmpwalmart.com, m.dianping.com, mapi.dianping.com, miniapp.sexytea2013.com, newton.gumingnc.com, tm-api.pin-dao.cn, fbchina.flipchina.cn, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, api.m.jd.com, zone.guiderank-app.com, app.missevan.com, fm.missevan.com, rms.meituan.com, sub.store, weatherkit.apple.com, guzzoni.smoot.apple.com, api2.smoot.apple.com, api-*.smoot.apple.com, in.m.jd.com, app.theinitium.com, api.wallkit.net
