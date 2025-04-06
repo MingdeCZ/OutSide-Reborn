@@ -66,7 +66,7 @@ rules:
   - IP-CIDR,59.111.239.62/32,REJECT,no-resolve
   - IP-CIDR,115.236.121.51/32,REJECT,no-resolve
   - IP-CIDR,115.236.121.195/32,REJECT,no-resolve
-  - DOMAIN-SUFFIX,kuaishou.httpdns.pro,REJECT
+  - DOMAIN-SUFFIX,httpdns.pro,REJECT
   - IP-CIDR,119.29.29.98/32,REJECT,no-resolve
   - IP-CIDR,119.29.29.99/32,REJECT,no-resolve
   - DOMAIN,httpdns.volcengineapi.com,REJECT
@@ -97,10 +97,6 @@ rules:
   - DOMAIN,lookup.api.bsb.baidu.com,REJECT
   - DOMAIN-SUFFIX,u3.ucweb.com,REJECT
   - DOMAIN-KEYWORD,safebrowsing.,REJECT
-  - DOMAIN,api.biliapi.com,REJECT
-  - DOMAIN,api.biliapi.net,REJECT
-  - DOMAIN,app.biliapi.com,REJECT
-  - DOMAIN,app.biliapi.net,REJECT
   - AND,((DOMAIN-KEYWORD,-ad-),(DOMAIN-SUFFIX,byteimg.com)),REJECT
   - AND,((DOMAIN-KEYWORD,-ttam-),(DOMAIN-SUFFIX,ibyteimg.com)),REJECT
   - AND,((DOMAIN-KEYWORD,ssdk-),(DOMAIN-SUFFIX,pangle.io)),REJECT

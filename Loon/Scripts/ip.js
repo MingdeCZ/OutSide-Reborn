@@ -168,7 +168,7 @@ async function lookUp(url, nodeName, timeout) {
             let { region, city, county, ip, isp, lat, lnt } = StrtPIL.data.showapi_res_body;
             bgn = `${region} ${city} <font color=#00CD66>${county}</font> <font color=#FF6EB4>${isp.replace("中国", "")}</font>〈<font color=#00C5CD>${$utils.ipasn(ip)}</font>〉<br><br>${ip}<br><br>${j(parseFloat(lat).toFixed(4))}<font color=#8B668B>・</font>${k(parseFloat(lnt).toFixed(4))}<br>`;
         } else {
-            bgn = "<br><font color=#FF3030><b>网络故障</b></font> 或 <font color=#EEC900><b>定位不在大陆</b></font>，此内容跳过";
+            bgn = "<font color=#FF3030><b>网络故障</b></font> 或 <font color=#EEC900><b>定位不在大陆</b></font>，此内容跳过<br><br>";
         }
 
         if (serverip === "domain") {
@@ -230,7 +230,7 @@ async function lookUp(url, nodeName, timeout) {
                             INIPS = true;
                         }
                     } else {
-                        ins = `<br>🚫<b>失败</b>(状态码：${inDprtPIL.code}，错误原因：${inDprtPIL.message})<br>-------------------------`;
+                        ins = `<br><br>🚫<b>失败</b>(状态码：${inDprtPIL.code}，错误原因：${inDprtPIL.message})<br><br>-------------------------`;
                     }
                 } else {
                     INIPS = true;
@@ -242,7 +242,7 @@ async function lookUp(url, nodeName, timeout) {
                         let { countryCode, country, city, regionName, isp, org, as, query, lat, lon } = outDprt;
                         ins = `<br>⚛️：${f(d(a(country)), e(a(regionName), a(city)))} ➜ ${g(countryCode)}<br><br>${query}<br><br>${i(as, isp, org)}<br><br>${j(lat)} ✡︎ ${k(lon)}<br>-------------------------`;
                     } else {
-                        ins = `<br>🚫<b>失败</b>(超时，${JSON.stringify(outDprt)})<br>-------------------------`;
+                        ins = `<br><br>🚫<b>失败</b>(超时，${JSON.stringify(outDprt)})<br><br>-------------------------`;
                     }
                 }
             }
