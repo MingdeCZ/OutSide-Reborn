@@ -89,33 +89,33 @@ async function lookUp(url, nodeName, timeout) {
         const run = async f => {
             try {
                 const outCome = await Promise.race([new Promise(((n, o) => {
-                    let starTime = Date.now();
                     $httpClient.get({ url: url, node: nodeName }, ((errorMsg, response, data) => {
                         if (errorMsg) {
                             o(errorMsg);
                         } else {
-                            let runTime = Date.now() - starTime;
                             switch (response.status) {
                                 case 200:
-                                    let type = response.headers["Content-Type"];
-                                    !type && (type = response.headers["content-type"]);
+                                    let type = Object.keys(response.headers).reduce((result, key) => {
+                                        return key.toLowerCase() === "content-type" ? response.headers[key] : result;
+                                    }, null);
                                     switch (true) {
                                         case type.includes("application/json"):
-                                            let dealeData = JSON.parse(data);
-                                            dealeData.tk = runTime;
-                                            n(dealeData);
+                                            n(JSON.parse(data));
                                             break;
                                         case type.includes("text/html"):
                                             n(data);
                                             break;
                                         case type.includes("text/plain"):
-                                            let i = data.split("\n").reduce(((n, e) => {
-                                                let [o, r] = e.split("=");
-                                                n[o] = r;
-                                                n.tk = runTime;
-                                                return n;
-                                            }), {});
-                                            n(i);
+                                            try {
+                                                n(JSON.parse(data));
+                                                break;
+                                            } catch (e) { }
+                                            const ipMatch = data.match(/^IP[:：]\s*([\d.]+)$/i);
+                                            if (ipMatch) {
+                                                n({ ip: ipMatch[1] });
+                                                break;
+                                            }
+                                            n(data);
                                             break;
                                         case type.includes("image/svg+xml"):
                                             n("image/svg+xml");
@@ -126,7 +126,7 @@ async function lookUp(url, nodeName, timeout) {
                                     }
                                     break;
                                 case 204:
-                                    n({ tk: runTime });
+                                    n("No Content");
                                     break;
                                 default:
                                     n("nokey");
@@ -163,16 +163,20 @@ async function lookUp(url, nodeName, timeout) {
     try {
         let bgn, outs, nodeName = $environment.params.node, nodeIp = $environment.params.nodeInfo.address, serverip = l(nodeIp), INIPS = false, ins = "";
 
-        const StrtPIL = await lookUp("https://uapi.woobx.cn/app/ip-location", "", 1000);
-        if (StrtPIL?.data.showapi_res_body.en_name_short === "CN") {
-            let { region, city, county, ip, isp, lat, lnt } = StrtPIL.data.showapi_res_body;
-            bgn = `${region} ${city} <font color=#00CD66>${county}</font> <font color=#FF6EB4>${isp.replace("中国", "")}</font>〈<font color=#00C5CD>${$utils.ipasn(ip)}</font>〉<br><br>${ip}<br><br>${j(parseFloat(lat).toFixed(4))}<font color=#8B668B>・</font>${k(parseFloat(lnt).toFixed(4))}<br>`;
+        const StrtIP = await lookUp("https://www.uc.cn/ip", "", 900);
+        if ($utils.geoip(StrtIP.ip) === "CN") {
+            const StrtLoc = await lookUp(`https://apimobile.meituan.com/locate/v2/ip/loc?rgeo=true&ip=${StrtIP.ip}`, "", 900);
+            const StrtISP = await lookUp(`https://uapi.woobx.cn/app/ip-location?ip=${StrtIP.ip}`, "", 900);
+            let { province, city, district } = StrtLoc.data.rgeo;
+            let { lat, lng } = StrtLoc.data;
+            let isp = StrtISP.data.showapi_res_body.isp;
+            bgn = `${f(province.replace(/[省市]/g, ""), city)} <font color=#00CD66>${district.replace("区", "")}</font> <font color=#FF6EB4>${isp.replace("中国", "")}</font>〈<font color=#00C5CD>${$utils.ipasn(StrtIP.ip)}</font>〉<br><br>${StrtIP.ip}<br><br>${j(parseFloat(lat).toFixed(2))}<font color=#8B668B>・</font>${k(parseFloat(lng).toFixed(2))}<br>`;
         } else {
             bgn = "<font color=#FF3030><b>网络故障</b></font> 或 <font color=#EEC900><b>定位不在大陆</b></font>，此内容跳过<br><br>";
         }
 
         if (serverip === "domain") {
-            const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", 1000);
+            const Ali = await lookUp(`http://223.5.5.5/resolve?name=${nodeIp}&type=A&short=1`, "", 900);
             if (Ali?.length > 0) {
                 nodeIp = Ali[0];
                 serverip = l(nodeIp);
@@ -218,14 +222,17 @@ async function lookUp(url, nodeName, timeout) {
 
             if (nodeIp != Ip) {
                 if (serverip === "v4") {
-                    const inDprtPIL = await lookUp(`https://uapi.woobx.cn/app/ip-location?ip=${nodeIp}`, "", 1000);
-                    if (inDprtPIL?.code == "200") {
-                        if (inDprtPIL.data.showapi_res_body.en_name_short === "CN") {
-                            let { region, city, county, ip, isp, lat, lnt } = inDprtPIL.data.showapi_res_body;
-                            let arr = f(region, city).split(" "), loc;
+                    const inDprtLoc = await lookUp(`https://apimobile.meituan.com/locate/v2/ip/loc?rgeo=true&ip=${nodeIp}`, "", 900);
+                    const inDprtPIL = await lookUp(`https://uapi.woobx.cn/app/ip-location?ip=${nodeIp}`, "", 900);
+                    if (inDprtLoc?.data && inDprtPIL?.code == "200") {
+                        if (inDprtLoc.data.rgeo.country === "中国" && inDprtPIL.data.showapi_res_body.country === "中国") {
+                            let { province, city, district } = inDprtLoc.data.rgeo;
+                            let { ip, isp, lat, lnt } = inDprtPIL.data.showapi_res_body;
+                            let arr = f(province.replace(/[省市]/g, ""), city).split(" "), loc;
                             arr.length == 1 && (loc = "<font color=#FF8247>" + arr[0] + "</font>");
                             arr.length == 2 && (loc = "<font color=#008B8B>" + arr[0] + "</font>" + " <font color=#FF8247>" + arr[1] + "</font>");
-                            ins = `<br>${loc} <font color=#8B8B7A>${county}</font> <font color=#9B30FF><b>${isp.replace("中国", "")}</b></font>『<font color=#BDB76B>${$utils.ipasn(ip)}</font>』<br><br>${ip}<br><br>${(isp.includes("UCloud") || isp.includes("Amazon") || isp.includes("Azure") || isp.includes("快快网络")) ? `<font color=#9C9C9C><b>自治机构</b>：${$utils.ipaso(ip)}</font><br><br>` : ""}${j(parseFloat(lat).toFixed(4))} <font color=#8DB6CD>✡︎</font> ${k(parseFloat(lnt).toFixed(4))}<br>-------------------------`;
+                            let specialPubCloud = ["UCloud", "Amazon", "Azure", "快快网络", "蒲公英"];
+                            ins = `<br>${loc} <font color=#8B8B7A>${district.replace("市", "") == city ? "" : district.replace("区", "")}</font> <font color=#9B30FF><b>${isp.replace("中国", "")}</b></font>『<font color=#BDB76B>${$utils.ipasn(ip)}</font>』<br><br>${ip}<br><br>${specialPubCloud.some(specialPubCloud => isp.includes(specialPubCloud)) ? `<font color=#9C9C9C><b>自治机构</b>：${$utils.ipaso(ip)}</font><br><br>` : ""}${j(parseFloat(lat).toFixed(4))} <font color=#8DB6CD>✡︎</font> ${k(parseFloat(lnt).toFixed(4))}<br>-------------------------`;
                         } else {
                             INIPS = true;
                         }

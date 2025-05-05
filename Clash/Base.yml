@@ -37,6 +37,7 @@ dns:
     "+.amemv.com,+.bdxiguaimg.com,+.bdxiguastatic.com,+.byted-static.com,+.bytedance.+,+.bytedns.net,+.bytednsdoc.com,+.bytegoofy.com,+.byteimg.com,+.bytescm.com,+.bytetos.com,+.bytexservice.com,+.douyin.com,+.douyinpic.com,+.douyinstatic.com,+.douyinvod.com,+.feelgood.cn,+.feiliao.com,+.gifshow.com,+.huoshan.com,+.huoshanzhibo.com,+.ibytedapm.com,+.iesdouyin.com,+.ixigua.com,+.kspkg.com,+.pstatp.com,+.snssdk.com,+.toutiao.com,+.toutiao13.com,+.toutiao???.???,+.toutiaocloud.cn,+.toutiaocloud.com,+.toutiaopage.com,+.wukong.com,+.zijieapi.com,+.zijieimg.com,+.zjbyte.com,+.zjcdn.com": "180.184.1.1"
     "+.gov.cn": "1.2.4.8"
 geox-url:
+  geosite: "https://github.com/Loyalsoldier/v2ray-rules-dat/releases/latest/download/geosite.dat"
   mmdb: "https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb"
 rules:
   - DOMAIN,httpdns.alicdn.com,REJECT
@@ -312,5 +313,6 @@ rules:
   - DOMAIN,events.statsigapi.net,REJECT
   - DOMAIN,api.mixpanel.com,REJECT
   - DOMAIN,browser-intake-datadoghq.com,REJECT
+  - GEOSITE,category-ads-all,REJECT
 unified-delay: true
 find-process-mode: always

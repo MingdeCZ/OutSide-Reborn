@@ -5,13 +5,12 @@
 #!homepage = 
 #!manual = 
 #!icon = https://github.com/Koolson/Qure/raw/master/IconSet/Color/Drill.png
-#!date = 25.4.6
+#!date = 25.5.5
 #!other = 
 #!category = 
 #!input = 
-#!select = 节点缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
-#!select = 响应头缓存有效期（Sub Store）, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
-#!select = 弹窗通知, true, false
+#!select = 节点缓存有效期, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
+#!select = 响应头缓存有效期, 1分钟, 5分钟, 10分钟, 30分钟, 1小时, 2小时, 3小时, 6小时, 12小时, 24小时, 48小时, 72小时, 参数传入
 #!system = iOS, iPadOS
 #!system_version = 18
 #!loon_version = 3.2.9(837)
@@ -54,17 +53,17 @@ API.WAQI.Token = input,"",tag=[API] WAQI 令牌,desc=WAQI API 令牌，填写此
 LogLevel = select,"WARN","OFF","ERROR","INFO","DEBUG","ALL",tag=[调试] 日志等级,desc=选择脚本日志的输出等级，低于所选等级的日志将全部输出。
 
 # 哔哩哔哩优化
-showUpList=select,"auto","true","false",tag=[动态]中[最常访问]的显示方式,desc=auto：仅当列表中存在直播状态时显示；true：始终显示；false：始终隐藏。
+showUpList = select, "auto", "true", "false", tag = [动态]中[最常访问]的显示方式, desc = auto：仅当列表中存在直播状态时显示；true：始终显示；false：始终隐藏。
+filterTopReplies = switch, "true", "false", tag = 移除评论区置顶广告, desc = 移除评论区置顶广告
+enableAirborne = switch, "false", "true", tag = 空降助手自动版, desc = 空降助手自动版
 
 # YouTube 优化
-blockUpload=switch,false,true,tag=隐藏上传按钮,desc=用于隐藏 YouTube 底栏的上传按钮
-blockShorts=switch,false,true,tag=隐藏 Shorts 按钮,desc=用于隐藏 YouTube 底栏的 Shorts 按钮
-captionLang=select,"zh-Hans","zh-Hant","ja","ko","en","off",tag=字幕翻译语言,desc=需要把 YouTube 字幕翻译翻译为何种语言
-debug=switch,false,true,tag=启用调试模式,desc=YouTube 插件的调试模式
+blockUpload = switch, "false", "true", tag = 隐藏上传按钮, desc = 用于隐藏 YouTube 底栏的上传按钮
+blockShorts = switch, "false", "true", tag = 隐藏 Shorts 按钮, desc = 用于隐藏 YouTube 底栏的 Shorts 按钮
+captionLang = select, "zh-Hans", "zh-Hant", "ja", "ko", "en", "off", tag = 字幕翻译语言, desc = 需要把 YouTube 字幕翻译翻译为何种语言
+debug = switch, "false", "true", tag = 启用调试模式, desc = YouTube 插件的调试模式
 
 [General]
-# force-http-engine-hosts = :0
-
 # @VirgilClyne
 # 🍟 整点薯条（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/GetSomeFries 中查找）
 # 🌐 通用设置增强（(📱 iOS 版) #1.添加跳过代理部分段内容 2.添加返回真实 IP 段内容 3.添加不可 MitM 的域名，防止打断连接）
@@ -73,7 +72,7 @@ debug=switch,false,true,tag=启用调试模式,desc=YouTube 插件的调试模�
 real-ip = *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, global.turn.twilio.com, global.stun.twilio.com, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, opencloud.wostore.cn, id.mail.wo.cn, mdn.open.wo.cn, hmrz.wo.cn, nishub1.10010.com, enrichgw.10010.com, *.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, *.microdone.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*
 
 # 🚫 阻止常见的 HTTPDNS 服务器
-force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, 203.107.1.65:80, 203.107.1.66:80, :0
+force-http-engine-hosts = 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443, 203.107.1.65:80, 203.107.1.66:80
 
 [Rule]
 # 🚫 阻止常见的 HTTPDNS 服务器
@@ -482,7 +481,7 @@ DOMAIN-SUFFIX,66mobi.com,REJECT
 AND,((URL-REGEX,"^http:\/\/.+\/amdc\/mobileDispatch"),(USER-AGENT,"%E9%97%B2%E9%B1%BC*")),REJECT
 
 # 京东去广告
-URL-REGEX,"^http:\/\/\w{32}\.jddebug\.com\/diagnose\?",REJECT
+URL-REGEX, "^http:\/\/\w{32}\.jddebug\.com\/diagnose\?", REJECT
 
 # 拼多多净化
 # 拦截 HTTPDNS
@@ -523,9 +522,9 @@ DOMAIN,ads-shopping.shouqianba.com,REJECT
 # 猫眼电影
 DOMAIN,ad.maoyan.com,REJECT
 
-# YouTube 去广告
-AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,QUIC)),REJECT
-AND,((DOMAIN-SUFFIX,youtubei.googleapis.com),(PROTOCOL,QUIC)),REJECT
+# YouTube 优化
+AND, ((DOMAIN-SUFFIX, googlevideo.com), (PROTOCOL, QUIC)), REJECT
+AND, ((DOMAIN-SUFFIX, youtubei.googleapis.com), (PROTOCOL, QUIC)), REJECT
 
 # 修正广告拦截
 DOMAIN,ca.iadsdk.apple.com,DIRECT
@@ -617,6 +616,9 @@ DOMAIN-SUFFIX,apps.apple.com,PROXY
 DOMAIN,api-glb-sea.smoot.apple.com,PROXY
 DOMAIN-SUFFIX,ess.apple.com,PROXY
 
+# 直连修正
+DOMAIN-SUFFIX,imetyou.top,PROXY
+
 [Rewrite]
 # 🍟 整点薯条: 🚫 阻止常见的 HTTPDNS 服务器
 # 支付宝
@@ -698,9 +700,6 @@ DOMAIN-SUFFIX,ess.apple.com,PROXY
 ^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
 
 # 哔哩哔哩优化
-# 播放页开通会员的横幅
-# ^https:\/\/api\.bilibili\.com\/pgc\/activity\/deliver\/material\/receive\? mock-response-body data-type=text status-code=200 data="{"code":0,"data":{"closeType":"close_win","container":[],"showTime":""},"message":"success"}"
-# ^https:\/\/api\.bilibili\.com\/pgc\/view\/v2\/app\/season\? response-body-json-jq 'del(.data.payment)'
 # 精简我的页面
 ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/mine(?:\/ipad)?\? response-body-json-jq jq-path="https://kelee.one/Resource/JQLang/Bilibili/mine_Bilibili_remove_ads.jq"
 ^https:\/\/app\.bilibili\.com\/x\/v2\/account\/myinfo\? response-body-json-jq '.data.vip |= if . != null and .status == 0 then . + { status: 1, type: 2, due_date: 9005270400000, role: 15 } else . end'
@@ -807,6 +806,7 @@ DOMAIN-SUFFIX,ess.apple.com,PROXY
 
 # 京东去广告
 ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) reject-dict
+^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=basicConfig response-body-json-replace data.JDMessage.socketmonitor.isSocketEstablishedAhead 0 data.JDMessage.socketmonitor.isSocketReport 0 data.JDHttpToolKit.httpdns.httpdns 0
 
 # 拼多多净化
 ^https:\/\/api\.(?:pinduoduo|yangkeduo)\.com\/api\/cappuccino\/splash\? reject-dict
@@ -881,14 +881,16 @@ DOMAIN-SUFFIX,ess.apple.com,PROXY
 # 微信公众号去广告
 ^https:\/\/mp\.weixin\.qq\.com\/mp\/(cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle)\? reject-dict
 
-# YouTube 去广告
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad mock-response-body data-type=text status-code=502
+# YouTube 优化
+^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad reject-200
 
 # TG 外部链接跳转 Swiftgram t.me
 # (https:\/\/)?t\.me\/(.+) 302 sg://resolve?domain=$2
 
 # 建设银行
 ^https?:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(?:nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png reject
+^https?:\/\/imageadv\.ccb\.com\/adpic\/(nctm\/ad|sszserver\/upload\/activity)\/\d{8}\/\w+\.(?>gif|png|jpg)$ reject
+^https?:\/\/cy\.cloud\.ccb\.com\/\/gateway\/user-server\/user\/qyCenter\/getCustomizedAdv reject-dict
 # 得物 app.dewu.com
 ^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement reject
 # 微信公众号文章下方广告 mp.weixin.qq.com
@@ -901,12 +903,16 @@ DOMAIN-SUFFIX,ess.apple.com,PROXY
 # 去广告合集
 # 超星学习通 learn.chaoxing.com
 ^https?:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig\? reject
-#志愿汇屏蔽开屏广告
-^https:\/\/ipv6\.zyh365\.com\/index4\/startup reject-200
 
 # Beta
 # 红版报 fbchina.flipchina.cn
 ^https?:\/\/fbchina\.flipchina\.cn\/v\d\/ad\/query reject
+
+# 看天下
+^https?:\/\/ktx\.cn\/v\d\/api\/index\/loading_ad reject
+^https?:\/\/ktx\.cn\/v\d\/api.*get_popup reject
+# 去升级提示
+^https?:\/\/ktx\.cn\/v\d\/api\/notice\/need_read_notice_number reject
 
 # 微信小程序净化
 # 茶百道
@@ -915,6 +921,9 @@ DOMAIN-SUFFIX,ess.apple.com,PROXY
 # 横幅广告
 ^https?:\/\/as\.xiaojukeji\.com\/ep\/as\/conf\?ns=daijia-front&name= reject-dict
 ^https?:\/\/daijia\.kuaidadi\.com\/gateway\?api=prado\.cms\.delivery\.batch&apiVe reject-dict
+# 滴滴青桔
+^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=cms\.htw\.delivery reject-dict
+^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.(?>combineHomepageInfo|mallRecommend) reject-dict
 # 肯德基
 ^https:\/\/orders\.kfc\.com\.cn\/preorder-portal\/api\/v2\/(coupon|activity) reject-dict
 ^https?:\/\/dynamicad\.kfc\.com\.cn\/api reject-dict
@@ -947,20 +956,23 @@ DOMAIN-SUFFIX,ess.apple.com,PROXY
 ^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/ad\/detail reject-dict
 # 收钱吧买单 api.pinduoduo.com
 ^https?:\/\/api\.pinduoduo\.com\/api\/ktt_gateway\/activity\/feeds\/personal_home_page\/ reject
+# 瑞幸咖啡
+^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/order\/orderBanner reject-dict
+^https?:\/\/capi\.lkcoffee\.com\/resource\/market\/receiveCoupon\/receiveCouponPop reject-dict
 # 顺丰速运+
 ^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query reject-dict
 ^https?:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList reject-dict
+# 腾讯乘车码
+^https?:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi reject
 # 美团点餐
 ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\? response-body-json-del data.popUpWindows
-# 奈雪点单 tm-api.pin-dao.cn
-^https?:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/ reject-dict
-^https?:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes reject-dict
-^https?:\/\/tm-api\.pin-dao\.cn\/activity\/pop\/popUp reject-dict
 # 古茗茶饮点单 newton.gumingnc.com
 ^https?:\/\/newton\.gumingnc\.com\/newton-buyer\/newton\/buyer\/(ump|touch|external\/front) reject-dict
-# > 通用规则<微信小程序> - WechatAppletGeneralRewrite
+# 通用规则
 ^https?:\/\/mp\.weixin\.qq\.com\/wapad\/getaddata\?action=getad reject-200
 ^https?:\/\/mp\.weixin\.qq\.com\/wapad\/reportaddata\?action=exposure_report reject-200
+# 霸王茶姬
+^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert reject
 # 茶颜悦色 miniapp.sexytea2013.com
 ^https?:\/\/miniapp\.sexytea2013\.com\/cms\/slot\/byCode\?code=MALL_INDEX_SLOT reject-dict
 # 大众点评 m.dianping.com, mapi.dianping.com
@@ -969,10 +981,46 @@ DOMAIN-SUFFIX,ess.apple.com,PROXY
 ^https?:\/\/m\.dianping\.com\/wxmapi\/shop\/friendslike reject-dict
 ^https?:\/\/mapi\.dianping\.com\/mapi\/mgw\/growth\/clipboardquery reject-dict
 # 沃尔玛 mapi.ghsmpwalmart.com
+# 首页角标
 ^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/navigation\/page\/getPageActivityTab reject-dict
+# 首页弹窗
 ^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/navigation\/spread\/querySpreadList reject-dict
+# 我的页横幅
 ^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/navigation\/user\/getAdvertisementPlayModuleInfo reject-dict
+# 我的页省钱卡
 ^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/user\/couponPackage\/couponPackageAccess reject-dict
+
+# 同程旅行
+^https:\/\/wx\.17u\.cn\/xcxhomeapi\/aggregator\/index reject-dict
+^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/blankflight reject-dict
+^https:\/\/wx\.17u\.cn\/membermessageuserapi\/message\/list reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/messageBox reject-dict
+^https:\/\/wx\.17u\.cn\/membermessageuserapi\/category\/getCategory reject-dict
+^https:\/\/wx\.17u\.cn\/homemarketapi\/search\/recommend reject-dict
+^https:\/\/wx\.17u\.cn\/mytourapi\/blankpage\/recommendList reject-dict
+^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator\/index reject-dict
+^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService\/getAd reject-dict
+^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator\/index reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/orderRemind reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/icons reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberShow reject-dict
+^https:\/\/wx\.17u\.cn\/xcxhomeapi\/home\/converge reject-dict
+^https:\/\/wx\.17u\.cn\/platformpubapi\/customer\/lead\/getInfo reject-dict
+^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/toptips reject-dict
+^https:\/\/wx\.17u\.cn\/vacation\/webapp\/tailor\/miniHomeConfig reject-dict
+^https:\/\/wx\.17u\.cn\/mytourapi\/recommendation\/arriveCity reject-dict
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberInfo reject-dict
+^https:\/\/wx\.17u\.cn\/wireless\/monitor\/wx\/common\/compressevent reject-dict
+^https:\/\/a1d5b283e-wx621112590b635086\.sh\.wxgateway\.com\/xcxhomeapi\/home\/screen reject-dict
+# 美团
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone reject-dict
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources reject-dict
+^https:\/\/npay\.meituan\.com\/conch\/flow\/mypage-wallet-info reject-dict
+^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow reject-dict
+^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window reject-dict
+^https:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword reject-dict
+# 京东
+^https:\/\/api\.m\.jd\.com\/\?loginType=11 reject-dict
 
 [Host]
 # 🍟 整点薯条: 🌐 DNS 增强（1.域名按所属 DNS 进行分流解析 2.路由器地址使用系统 DNS 进行解析 3.特殊地址使用规范 DNS 进行解析）
@@ -1532,7 +1580,9 @@ http-response ^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspams
 http-response ^https?:\/\/(?:www|m)\.baidu\.com(?:\/|\/\?(tn=&)?from=\w+)?$ script-path = https://raw.githubusercontent.com/Keywos/rule/master/script/baidu_index/js/index.js, requires-body = true, tag = 百度首页净化
 
 # @luestr（更多脚本信息请自行在 https://github.com/luestr/ProxyResource/blob/main/README.md 中查找）
-# 哔哩哔哩优化 ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com
+# 哔哩哔哩优化（过滤广告、移除交互式弹幕、移除无用功能和链接跟踪参数，增加空降助手以便跳过视频中插入的广告。此插件必须启用 MitM-over-HTTP/2 功能。空降助手是第三方提供的功能，依赖于 Android 版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关） ap*.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com
+# 空降助手自动版
+http-request ^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.playerunite\.v1\.Player\/PlayViewUnite$ script-path = https://raw.githubusercontent.com/kokoryh/Sparkle/refs/heads/master/dist/bilibili.airborne.js,  requires-body = true, binary-body-mode = true, enable = {enableAirborne}, tag = 哔哩哔哩空降助手自动版
 # 移除动态页面最常访问
 http-response ^https:\/\/(?:app\.bilibili\.com|grpc\.biliapi\.net)\/bilibili\.app\.dynamic\.v2\.Dynamic\/DynAll$ script-path=https://kelee.one/Resource/Script/Bilibili/Bilibili_proto_kokoryh.js,requires-body=true,binary-body-mode=true,tag=哔哩哔哩移除动态页面最常访问,argument=[{showUpList}]
 # 移除交互式弹幕
@@ -1550,8 +1600,8 @@ http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlehome\.
 # 搜索结果广告
 http-response ^https:\/\/(g-)?acs\.m\.goofish\.com\/gw\/mtop\.taobao\.idlemtopsearch\.search\/ script-path=https://kelee.one/Resource/Script/FleaMarket/FleaMarket_remove_ads.js,requires-body=true,tag=闲鱼移除搜索结果广告
 
-# 京东去广告（移除广告，精简我的页面产品推广） api.m.jd.com
-http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path=https://kelee.one/Resource/Script/JD/JD_remove_ads.js,requires-body=true,tag=移除京东广告
+# 京东去广告（移除开屏广告，精简我的页面产品推广） api.m.jd.com
+http-response ^https:\/\/api\.m\.jd\.com\/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome) script-path = https://kelee.one/Resource/Script/JD/JD_remove_ads.js, requires-body = true, tag = 移除京东广告
 
 # 拼多多净化 api.pinduoduo.com, api.yangkeduo.com
 http-response ^https:\/\/api\.pinduoduo\.com\/api\/alexa\/homepage\/hub\? script-path=https://kelee.one/Resource/Script/PinDuoDuo/PinDuoDuo_remove_ads.js,requires-body=true,tag=拼多多精简首页
@@ -1574,8 +1624,8 @@ http-response ^https:\/\/(?:edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/n
 http-response ^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get) script-path=https://kelee.one/Resource/Script/Taobao/Taobao_remove_ads.js,requires-body=true,tag=移除淘宝开屏广告
 http-response ^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json script-path=https://kelee.one/Resource/Script/Taobao/Taobao_remove_ads.js,requires-body=true,tag=移除淘宝开屏广告
 
-# YouTube 去广告（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及字幕翻译功能。移除 Music 底部的上传、选段和升级按钮，增加歌词翻译，支持二者的后台播放。需要启用 MitM over HTTP/2 和 QUIC 回退保护。支持 Premium 订阅用户使用）*.googlevideo.com, youtubei.googleapis.com
-http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path=https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_response.js,requires-body=true,binary-body-mode=true,argument=[{blockUpload},{blockShorts},{blockImmersive},{captionLang},{lyricLang},{debug}],tag=YouTube 去广告
+# YouTube 优化（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及字幕翻译功能。移除 Music 底部的上传、选段和升级按钮，增加歌词翻译，支持二者的后台播放。需要启用 MitM over HTTP/2 和 QUIC 回退保护。支持 Premium 订阅用户使用）*.googlevideo.com, youtubei.googleapis.com
+http-response ^https:\/\/youtubei\.googleapis\.com\/youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch) script-path = https://kelee.one/Resource/Script/YouTube/YouTube_remove_ads/YouTube_remove_ads_response.js, requires-body = true, binary-body-mode = true, argument = [{blockUpload},{blockShorts},{captionLang},{debug}], tag = YouTube 优化
 
 # 京东比价（需在商品详情页面查看比价内容）in.m.jd.com
 http-response ^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-path=https://kelee.one/Resource/Script/JD/JD_Price.js,requires-body=true,timeout=10,tag=京东比价
@@ -1586,19 +1636,26 @@ http-response ^https:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html script-pat
 # 滴滴出行个人中心
 #http-response ^https:\/\/common\.diditaxi\.com\.cn\/common\/v5 script-path = https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/didi/didi.js, requires-body = true, tag = 滴滴出行微信小程序个人中心净化
 
-# @Yswag（更多脚本信息请自行在 https://github.com/Yswag/for-own-use/tree/main 中查找）
-# 去除 VOD 插入式广告 m3u8.heimuertv.com, m3u8.hmrvideo.com
-http-response ^https?:\/\/m3u8\.(hmrvideo|heimuertv)\.com\/play\/(.+).m3u8 script-path=https://raw.githubusercontent.com/Yswag/for-own-use/main/js/cmsAdblock.js, requires-body=true, tag= 黑木耳去广告
-
 # @sooyaaabo（更多脚本信息请自行在 https://github.com/sooyaaabo/Loon 中查找）
 
 # @Beta
+# 看天下解锁 VIP ktx.cn
+http-response ^http[s]?:\/\/ktx\.cn script-path = https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Vista.js, requires-body = true, tag = 看天下解锁 VIP
+
 # 小猿搜题解锁 VIP xyst.yuanfudao.com
 http-response ^https:\/\/xyst\.yuanfudao\.com\/solar-vip\/(api|iphone)\/users/* script-path = https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/xyst.js, requires-body = true, tag = 小猿搜题解锁 VIP
 
 # 微信小程序净化
+# 滴滴青桔 htwkop.xiaojukeji.com
+http-response ^https?:\/\/htwkop\.xiaojukeji\.com\/gateway\?api=hm\.fa\.homeConfig script-path = https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js, requires-body = true, tag = 滴滴青桔微信小程序去广告
 # 茶颜悦色 miniapp.sexytea2013.com
 http-response ^https?:\/\/miniapp\.sexytea2013\.com\/cms\/slot\/queryByCodes\?codes=INDEX_TOP_BANNER script-path = https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/wechatApplet.js, requires-body = true, tag = 茶颜悦色微信小程序去广告
+# 霸王茶姬 webapi.qmai.cn, miniapp.qmai.cn
+http-response ^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo script-path = https://raw.githubusercontent.com/zirawell/R-Store/main/Res/Scripts/AntiAd/qmai.js, requires-body = true, tag = 霸王茶姬微信小程序去广告
+
+# 美团
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/tabbar\/all\/query script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MeiTuanNoAd.js, requires-body = true, tag = 美团微信小程序去广告
+http-response ^https:\/\/web\.meituan\.com\/api\/miniprogram\/index\/aggregate script-path = https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MeiTuanNoAd.js, requires-body = true, tag = 美团微信小程序去广告
 
 # 端传媒解锁手机 APP 和网页端文章阅读权限（无需登录，直接打开文章观看）app.theinitium.com, api.wallkit.net
 http-response ^https?:\/\/app\.theinitium\.com\/subs\/[a-zA-Z_]+\/verify_subscription script-path = https://github.com/ddgksf2013/MoYu/raw/master/DuanChuanMeiProCrack.js, requires-body = true, tag = 端传媒解锁阅读权限
@@ -1610,4 +1667,4 @@ http-response ^https?:\/\/api\.wallkit\.net\/api\/v\d/user script-path = https:/
 
 # 🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
 
-hostname = 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, gspe1-ssl.ls.apple.com, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, weixin110.qq.com, security.wechat.com, m.baidu.com, www.baidu.com, *live.bilibili.com, ap?.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, *.googlevideo.com, youtubei.googleapis.com, api.pinduoduo.com, api.yangkeduo.com, api-mifit*.huami.com, api-mifit.huami.com, api.jr.mi.com, api.m.mi.com, home.mi.com, cbd-gateway-service-applets.hualala.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, ucmp.sf-express.com, as.xiaojukeji.com, daijia.kuaidadi.com, xyst.yuanfudao.com, freight.xiaojukeji.com, ct.xiaojukeji.com, res.xiaojukeji.com, api.udache.com, app.dewu.com, learn.chaoxing.com, image1.ccb.com, *.m.goofish.com, www.google.cn, capi.lkcoffee.com, ecapi.lkcoffee.com, img0*.luckincoffeecdn.com, mapi.ghsmpwalmart.com, m.dianping.com, mapi.dianping.com, miniapp.sexytea2013.com, newton.gumingnc.com, tm-api.pin-dao.cn, fbchina.flipchina.cn, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, api.m.jd.com, zone.guiderank-app.com, app.missevan.com, fm.missevan.com, rms.meituan.com, sub.store, weatherkit.apple.com, guzzoni.smoot.apple.com, api2.smoot.apple.com, api-*.smoot.apple.com, in.m.jd.com, app.theinitium.com, api.wallkit.net, m3u8.heimuertv.com, m3u8.hmrvideo.com
+hostname = 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, pingtas.qq.com, c.pc.qq.com, cgi.connect.qq.com, mp.weixin.qq.com, gspe1-ssl.ls.apple.com, configuration.ls.apple.com, gspe35-ssl.ls.apple.com, weixin110.qq.com, security.wechat.com, m.baidu.com, www.baidu.com, *live.bilibili.com, ap?.bilibili.com, grpc.biliapi.net, www.bilibili.com, m.bilibili.com, *.googlevideo.com, youtubei.googleapis.com, api.pinduoduo.com, api.yangkeduo.com, api-mifit*.huami.com, api-mifit.huami.com, api.jr.mi.com, api.m.mi.com, home.mi.com, cbd-gateway-service-applets.hualala.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, ucmp.sf-express.com, as.xiaojukeji.com, daijia.kuaidadi.com, xyst.yuanfudao.com, freight.xiaojukeji.com, ct.xiaojukeji.com, res.xiaojukeji.com, api.udache.com, app.dewu.com, learn.chaoxing.com, image1.ccb.com, *.m.goofish.com, www.google.cn, capi.lkcoffee.com, ecapi.lkcoffee.com, img0*.luckincoffeecdn.com, mapi.ghsmpwalmart.com, m.dianping.com, mapi.dianping.com, miniapp.sexytea2013.com, newton.gumingnc.com, fbchina.flipchina.cn, video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, api.m.jd.com, zone.guiderank-app.com, app.missevan.com, fm.missevan.com, rms.meituan.com, sub.store, weatherkit.apple.com, guzzoni.smoot.apple.com, api2.smoot.apple.com, api-*.smoot.apple.com, in.m.jd.com, app.theinitium.com, api.wallkit.net, htwkop.xiaojukeji.com, ccmsupport-sz.tenpay.com, ktx.cn, webapi.qmai.cn, miniapp.qmai.cn, wx.17u.cn, web.meituan.com, npay.meituan.com, a1d5b283e-wx621112590b635086.sh.wxgateway.com, apimobile.meituan.com, imageadv.ccb.com, cy.cloud.ccb.com
