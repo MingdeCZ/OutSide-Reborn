@@ -24,6 +24,14 @@ DOMAIN-KEYWORD,vpimg
 DOMAIN-KEYWORD,wb_ad
 DOMAIN-KEYWORD,weibo
 DOMAIN-KEYWORD,westlawchina
+DOMAIN-SUFFIX,apple-cloudkit.com
+DOMAIN-SUFFIX,apple-mapkit.com
+DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,cdn-apple-mapkit.com
+DOMAIN-SUFFIX,itunes-apple.com.akadns.net
+DOMAIN-SUFFIX,ls.apple.com.edgesuite.net
+DOMAIN-SUFFIX,icloud.com
+DOMAIN-SUFFIX,local
 GEOSITE,cn
 GEOSITE,google-cn
 DOMAIN,ai.ytimg.com
@@ -142,7 +150,6 @@ IP-CIDR,162.254.192.0/21,no-resolve
 IP-CIDR,169.254.0.0/16,no-resolve
 IP-CIDR,17.0.0.0/8,no-resolve
 IP-CIDR,172.16.0.0/12,no-resolve
-IP-CIDR,185.199.108.0/22,no-resolve
 IP-CIDR,185.25.182.0/23,no-resolve
 IP-CIDR,190.217.32.0/22,no-resolve
 IP-CIDR,192.0.0.0/22,no-resolve
