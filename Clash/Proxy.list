@@ -11,7 +11,6 @@ DOMAIN-SUFFIX,audio.itunes.apple.com
 DOMAIN,cdn.apple-cloudkit.com
 DOMAIN,cvws.icloud-content.com
 DOMAIN,hls-svod.itunes.apple.com
-DOMAIN,itunes.apple.com
 DOMAIN,apple-relay.apple.com
 DOMAIN,mask.icloud.com
 DOMAIN,mask-h2.icloud.com
@@ -35,7 +34,4 @@ DOMAIN,news-client.apple.com
 DOMAIN,np-edge.itunes.apple.com
 DOMAIN,play-edge.itunes.apple.com
 DOMAIN-SUFFIX,ocsp.apple.com
-DOMAIN,lookup-api.apple.com
-DOMAIN-SUFFIX,apps.apple.com
-DOMAIN,api-glb-sea.smoot.apple.com
 DOMAIN-SUFFIX,ess.apple.com
