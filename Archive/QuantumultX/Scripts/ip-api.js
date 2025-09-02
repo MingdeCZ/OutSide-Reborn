@@ -1,7 +1,7 @@
 if (!$response || $response.statusCode != 200) {
     $done({
-        title: '🚨📴⚠️ 失联 🪛💤✝️',
-        subtitle: '错误代码：' + $response?.statusCode,
+        title: '🚨📴⚠️ 异常 🪛💤✝️',
+        subtitle: $response?.statusCode ? '服务出错，状态：' + $response.statusCode : '网络问题，无法请求服务',
         ip: '127.0.0.1',
         description: '_________' + '\n\n' + '同左上角↖️' + '\n' + '_________'
     });
@@ -193,17 +193,20 @@ if (!$response || $response.statusCode != 200) {
     }
 
     function b(u) {
-        const olCrctrz = u.replace(/\s+/g, '');
-        if (olCrctrz.length <= 9) {
-            return u;
+        if (u.replace(/\s+/g, '').length <= 9) {
+            return { smrz: u, dtlz: '' };
         }
-        const rst = u.match(/^(\S+\s)([\s\S]*)$/);
-        if (!rst) {
-            return u;
+        const fstSps = u.indexOf(' ');
+        if (fstSps === -1) {
+            return { smrz: u, dtlz: `🔭：${u}\n\n` };
         }
-        const [, , lst] = rst;
-        const lstCrctrz = lst.replace(/\s+/g, '');
-        return lstCrctrz.length > 9 ? lst.replace(/^\S+\s/, '') : lst;
+        const rst = u.substring(fstSps + 1);
+        const rstCrctrzLnth = rst.replace(/\s+/g, '').length;
+        const smrz = rstCrctrzLnth > 9 ? rst.replace(/^\S+\s/, '') : rst;
+        const dtlz = rstCrctrzLnth > 9
+            ? `🔭：${u.substring(0, u.lastIndexOf(' '))}\n\n`
+            : `🔭：${u.substring(0, fstSps)}\n\n`;
+        return { smrz, dtlz };
     }
 
     function c(u) {
@@ -231,29 +234,28 @@ if (!$response || $response.statusCode != 200) {
         return Array.from(cc.toUpperCase()).map(c => String.fromCodePoint(127397 + c.charCodeAt())).join('');
     }
 
-    function h(m) {
-        if (!m) {
-            return '?';
-        }
-        const asn = m.match(/.{2}(\S\d+)/);
-        return asn ? asn[1] : '?';
-    }
-
     function i(m, n, o) {
-        const p = m ? m.match(/ (.*)/)[1] : '暂未分配', q = '【' + h(m) + '】', r = p + q;
-        !n && (n += '待补充');
-        !o && (o += '不详');
-        if (p == n && n == o) {
-            return '自治机构 同 运营商 同 数据中心：' + r;
-        } else if (p == n) {
-            return '自治机构 同 运营商：' + r + '数据中心</b>：' + o;
-        } else if (p == o) {
-            return '自治机构 同 数据中心：' + r + '运营商</font>：' + n;
-        } else if (n == o) {
-            return '自治机构：' + r + '运营商 同 数据中心</b>：' + n;
+        n = n || '待补充';
+        o = o || '不详';
+        const [blnz, p, q] = m
+            ? (() => {
+                const prts = m.split(/ (.*)/), s = prts[0].replace(/\D/g, ''), t = c(s);
+                return [t, prts[1], t.startsWith('🏝') ? '' : `【${s}】`];
+            })()
+            : ['🏝?', '暂未分配', ''], r = p + q, smPN = p === n, smPO = p === o, smNO = n === o;
+        let mrIf = '自治机构';
+        if (smPN && smNO) {
+            mrIf += ` 同 运营商 同 数据中心：${r}`;
+        } else if (smPN) {
+            mrIf += ` 同 运营商：${r}\n\n数据中心：${o}`;
+        } else if (smPO) {
+            mrIf += ` 同 数据中心：${r}\n\n运营商：${n}`;
+        } else if (smNO) {
+            mrIf += `：${r}\n\n运营商 同 数据中心：${n}`;
         } else {
-            return '自治机构：' + r + '运营商：' + n + '数据中心：' + o;
+            mrIf += `：${r}\n\n运营商：${n}\n\n数据中心：${o}`;
         }
+        return { blnz, mrIf };
     }
 
     function fLLng(vlu, pztvDrctn, ngtvDrctn) {
@@ -268,30 +270,12 @@ if (!$response || $response.statusCode != 200) {
         return fLLng(m, 'E', 'W');
     }
 
-    function l(u) {
-        const w = '🆔：';
-        const olCrctrz = u.replace(/\s+/g, '');
-        if (olCrctrz.length <= 9) {
-            return '';
-        }
-        const frstSps = u.indexOf(' ');
-        if (frstSps === -1) {
-            return w + u + '\n\n';
-        }
-        const rst = u.substring(frstSps + 1).replace(/\s+/g, '');
-        if (rst.length > 9) {
-            return w + u.substring(0, u.lastIndexOf(' ')) + '\n\n';
-        } else {
-            return w + u.substring(0, frstSps) + '\n\n';
-        }
-    }
-
-    const { country, countryCode, regionName, city, query, as, isp, org, lat, lon } = $response.body;
+    const { country, countryCode, regionName, city, query, as, isp, org, lat, lon } = JSON.parse($response.body), loc = f(d(a(country)), e(a(regionName), a(city))), { smrz, dtlz } = b(loc), { blnz, mrIf } = i(as, isp, org);
 
     $done({
-        title: g(countryCode) + ' ' + b(f(d(a(country)), e(a(regionName), a(city)))),
-        subtitle: c(h(as)) + ' ➜ ' + query,
+        title: g(countryCode) + ' ' + smrz,
+        subtitle: blnz + ' ➜ ' + query,
         ip: query,
-        description: '_________________________________' + '\n\n' + l(f(d(a(country)), e(a(regionName), a(city)))) + i(as, isp, org) + '\n\n' + j(lat) + ' ✦ ' + k(lon) + '\n' + '_________________________________'
+        description: '_________________________________' + '\n\n' + dtlz + mrIf + '\n\n' + j(lat) + ' ✦ ' + k(lon) + '\n' + '_________________________________'
     });
 }
