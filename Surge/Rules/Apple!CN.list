@@ -1,0 +1,60 @@
+# 苹果优化
+# 音乐
+DOMAIN-SUFFIX, blobstore.apple.com
+DOMAIN-SUFFIX, itsliveradio.apple.com
+DOMAIN-SUFFIX, aodp-ssl.apple.com
+DOMAIN-SUFFIX, video-ssl.itunes.apple.com
+DOMAIN-SUFFIX, mvod.itunes.apple.com
+DOMAIN-SUFFIX, hls.itunes.apple.com
+DOMAIN-SUFFIX, hls-amt.itunes.apple.com
+DOMAIN-SUFFIX, audio-ssl.itunes.apple.com
+DOMAIN-SUFFIX, streamingaudio.itunes.apple.com
+DOMAIN-SUFFIX, audio.itunes.apple.com
+DOMAIN, cdn.apple-cloudkit.com
+DOMAIN, cvws.icloud-content.com
+DOMAIN, hls-svod.itunes.apple.com
+# .cdn-apple.com
+# AI
+DOMAIN, apple-relay.apple.com
+# iCloud 代理
+DOMAIN, mask.icloud.com
+DOMAIN, mask-h2.icloud.com
+DOMAIN, mask-api.icloud.com
+DOMAIN, mask-canary.icloud.com
+# mask.apple-dns.net
+# canary.mask.apple-dns.net
+# 开发者
+DOMAIN, developer.apple.com
+DOMAIN, devimages-cdn.apple.com
+DOMAIN, devstreaming-cdn.apple.com
+DOMAIN, js-cdn.music.apple.com
+DOMAIN, docs-assets.developer.apple.com
+# .digicert.com
+DOMAIN, testflight.apple.com
+DOMAIN, sandbox.itunes.apple.com
+# TV
+DOMAIN-SUFFIX, tv.apple.com
+# tv.applemusic.com
+# USER-AGENT, AppleTV*
+# USER-AGENT, com.apple.tv*
+DOMAIN, uts-api.itunes.apple.com
+# 图书
+DOMAIN, books.itunes.apple.com
+# Fitness+
+DOMAIN, amp-api.fitness.apple.com
+# 新闻
+# USER-AGENT, AppleNews*
+# .apple.news
+DOMAIN, news-events.apple.com
+DOMAIN, news-edge.apple.com
+# gspe1-ssl.ls.apple.com
+DOMAIN, news-assets.apple.com
+DOMAIN, news-client.apple.com
+# USER-AGENT, com.apple.news*
+# 其它
+# .apple-dns.net
+DOMAIN, np-edge.itunes.apple.com
+DOMAIN, play-edge.itunes.apple.com
+DOMAIN-SUFFIX, ocsp.apple.com
+# USER-AGENT, com.apple.trustd*
+DOMAIN-SUFFIX, ess.apple.com

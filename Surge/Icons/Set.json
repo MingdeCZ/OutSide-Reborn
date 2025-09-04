@@ -1,0 +1,41 @@
+{
+    "name": "大乱炖",
+    "icons": [
+        {
+            "name": "保护伞公司",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Umbrella_Corp..png"
+        },
+        {
+            "name": "冲浪",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Surfing.png"
+        },
+        {
+            "name": "国外流媒体",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Streaming!CN.png"
+        },
+        {
+            "name": "大流量传输",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Transfer.png"
+        },
+        {
+            "name": "推特",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Twitter.png"
+        },
+        {
+            "name": "服务集群",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Servers.png"
+        },
+        {
+            "name": "荷兰皇家航空",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/KLM.png"
+        },
+        {
+            "name": "迈阿密",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Miami.png"
+        },
+        {
+            "name": "鱼尾狮",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Merlion.png"
+        }
+    ]
+}

@@ -228,7 +228,7 @@ async function lookUp(url, nodeName, timeout) {
                             if (iDLoc && iDPIL?.code == "200") {
                                 if (iDPIL.data.showapi_res_body.en_name_short == "CN") {
                                     const { region, isp, ip, lat, lnt } = iDPIL.data.showapi_res_body;
-                                    let province = iDLoc.data.rgeo.province.replace(/[省市]/g, ""), city, district;
+                                    let province = iDLoc.data.rgeo.province?.replace(/[省市]/g, ""), city, district;
                                     if (iDLoc.data?.rgeo.country === "中国" && province == region) {
                                         city = iDLoc.data.rgeo.city;
                                         district = iDLoc.data.rgeo.district.replace("区", "");
