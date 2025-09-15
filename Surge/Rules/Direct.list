@@ -1,3 +1,22 @@
+# 优化补充
+DOMAIN, b23.tv
+DOMAIN, bit.ly
+DOMAIN-SUFFIX, amp-api.shazam.apple.com
+DOMAIN-SUFFIX, appcenter.ms
+DOMAIN-SUFFIX, cloudflare-dns.com
+DOMAIN-SUFFIX, config-chr.health.apple.com
+DOMAIN-SUFFIX, configruation.ls.apple.com
+DOMAIN-SUFFIX, gspe19-ssl.ls.apple.com
+DOMAIN-SUFFIX, gspe76-ssl.ls.apple.com
+DOMAIN-SUFFIX, gspe79-ssl.ls.apple.com
+DOMAIN-SUFFIX, gspe85-cn-ssl.ls.apple.com
+DOMAIN-SUFFIX, infuseku.xyz
+DOMAIN-SUFFIX, init.gc.apple.com
+DOMAIN-SUFFIX, known-issues.apple.com
+DOMAIN-SUFFIX, konut-cdn.apple.com
+DOMAIN-SUFFIX, ontology.health.apple.com
+DOMAIN-SUFFIX, sse-ws.apple.com
+DOMAIN-SUFFIX, themoviedb.org
 # Apple 国内 CDN
 DOMAIN-SUFFIX, a1.mzstatic.com
 DOMAIN-SUFFIX, a2.mzstatic.com
@@ -203,7 +222,8 @@ DOMAIN-SUFFIX, wscont1.apps.microsoft.com
 DOMAIN-SUFFIX, wscont2.apps.microsoft.com
 URL-REGEX, ^http://www\.microsoft\.com/pki/
 URL-REGEX, ^http://www\.microsoft\.com/pkiops/
-# 软件更新、操作系统等大文件下载
+# 软件更新、操作系统等大文件下载（最后更新：25-09-15）
+testflight.apple.com
 DOMAIN, addins.deepl.com
 DOMAIN, amupdatedl.microsoft.com
 DOMAIN, amupdatedl2.microsoft.com
@@ -256,6 +276,7 @@ DOMAIN, aus5.mozilla.org
 DOMAIN, autoupdate.termius.com
 DOMAIN, az764295.vo.msecnd.net
 DOMAIN, b2.mcarchive.net
+DOMAIN, bigfiles.virustotal.com
 DOMAIN, binaries.prisma.sh
 DOMAIN, blizzard.gcdn.cloudn.co.kr
 DOMAIN, blzddist1-a.akamaihd.net
@@ -284,6 +305,7 @@ DOMAIN, cdn.organicmaps.app
 DOMAIN, cdn.zoom.us
 DOMAIN, cdnorg.d.miui.com
 DOMAIN, charts.verdaccio.org
+DOMAIN, chnroutes2.cdn.skk.moe
 DOMAIN, ciscobinary.openh264.org
 DOMAIN, clarkson.edu
 DOMAIN, client.hikarifield.co.jp
@@ -293,7 +315,6 @@ DOMAIN, codeload.github.com
 DOMAIN, componentupdater.brave.com
 DOMAIN, content-origin.steampowered.com
 DOMAIN, cpan-mirror.rbc.ru
-DOMAIN, cpan.catalyst.net.nz
 DOMAIN, cpan.cpantesters.org
 DOMAIN, cpan.cs.utah.edu
 DOMAIN, cpan.dcc.uchile.cl
@@ -436,6 +457,7 @@ DOMAIN, download3.epicgames.com
 DOMAIN, download4.epicgames.com
 DOMAIN, downloadr2.apkmirror.com
 DOMAIN, downloads.1password.com
+DOMAIN, downloads.broadcom.com
 DOMAIN, downloads.cloudflareclient.com
 DOMAIN, downloads.cursor.com
 DOMAIN, downloads.lemonsqueezy.com
@@ -447,6 +469,7 @@ DOMAIN, downloads.wordpress.org
 DOMAIN, downloads.x-wrt.com
 DOMAIN, downloads.xiph.org
 DOMAIN, downloads.xrite.com
+DOMAIN, downloads2.broadcom.com
 DOMAIN, drive.massgrave.dev
 DOMAIN, edge.steam-dns.top.comcast.net
 DOMAIN, edgedl.me.gvt1.com
@@ -458,6 +481,7 @@ DOMAIN, fastly-download.epicgames.com
 DOMAIN, fedorapeople.org
 DOMAIN, file.chobit.cc
 DOMAIN, files2.freedownloadmanager.org
+DOMAIN, filters.cdn.skk.moe
 DOMAIN, formulae.brew.sh
 DOMAIN, fr2.rpmfind.net
 DOMAIN, freedif.org
@@ -546,6 +570,7 @@ DOMAIN, ftp.wrz.de
 DOMAIN, ftp.yz.yamagata-u.ac.jp
 DOMAIN, ftp1.nluug.nl
 DOMAIN, ftp2.nluug.nl
+DOMAIN, ftpdownloads.broadcom.com
 DOMAIN, ftpmirror.gnu.org
 DOMAIN, ftpmirror1.infania.net
 DOMAIN, gamedownloads-rockstargames-com.akamaized.net
@@ -833,6 +858,7 @@ DOMAIN, repo1.maven.org
 DOMAIN, repository.jboss.org
 DOMAIN, repository.su
 DOMAIN, rpm.xpipe.io
+DOMAIN, ruleset.skk.moe
 DOMAIN, s3.teckids.org
 DOMAIN, searchcpan.org
 DOMAIN, security.debian.org
@@ -843,6 +869,7 @@ DOMAIN, skimdb.npmjs.com
 DOMAIN, snt.utwente.nl
 DOMAIN, softwareupdate.pilotmoon.com
 DOMAIN, sotirov-bg.net
+DOMAIN, speedtest-net-servers.cdn.skk.moe
 DOMAIN, static.adguard.com
 DOMAIN, static.adtidy.org
 DOMAIN, static.redox-os.org

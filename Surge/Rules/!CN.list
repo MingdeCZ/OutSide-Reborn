@@ -111,23 +111,7 @@ DOMAIN-SUFFIX, openart.ai
 DOMAIN-SUFFIX, perplexity.ai
 DOMAIN-SUFFIX, poe.com
 DOMAIN-SUFFIX, x.ai
-# 待分配电报
-DOMAIN-SUFFIX, 64gr.am
-DOMAIN-SUFFIX, graph.org
-DOMAIN-SUFFIX, legra.ph
-DOMAIN-SUFFIX, swiftgram.app
-DOMAIN-SUFFIX, t.me
-DOMAIN-SUFFIX, tdesktop.com
-DOMAIN-SUFFIX, telega.one
-DOMAIN-SUFFIX, telegra.ph
-DOMAIN-SUFFIX, telegram.dog
-DOMAIN-SUFFIX, telegram.me
-DOMAIN-SUFFIX, telegram.org
-DOMAIN-SUFFIX, telegram.space
-DOMAIN-SUFFIX, telesco.pe
-DOMAIN-SUFFIX, tg.dev
-DOMAIN-SUFFIX, tx.me
-# 其它常见海外服务
+# 其它常见海外服务（最后更新：25-09-15）
 DOMAIN, ccmdl.adobe.com
 DOMAIN, community.oneplus.com
 DOMAIN, ees.elsevier.com
@@ -200,6 +184,7 @@ DOMAIN-SUFFIX, amplience.com
 DOMAIN-SUFFIX, android.com
 DOMAIN-SUFFIX, androidify.com
 DOMAIN-SUFFIX, androidpolice.com
+DOMAIN-SUFFIX, anilist.co
 DOMAIN-SUFFIX, animes.garden
 DOMAIN-SUFFIX, annas-archive.org
 DOMAIN-SUFFIX, anyporn.com
@@ -239,6 +224,7 @@ DOMAIN-SUFFIX, avgle.com
 DOMAIN-SUFFIX, avtoday.io
 DOMAIN-SUFFIX, aweber.com
 DOMAIN-SUFFIX, aws
+DOMAIN-SUFFIX, aws.dev
 DOMAIN-SUFFIX, axios.com
 DOMAIN-SUFFIX, azure-mobile.net
 DOMAIN-SUFFIX, azurecontainer.io
@@ -482,6 +468,7 @@ DOMAIN-SUFFIX, gate.io
 DOMAIN-SUFFIX, gcld-line.com
 DOMAIN-SUFFIX, gd
 DOMAIN-SUFFIX, geekbench.com
+DOMAIN-SUFFIX, gelbooru.com
 DOMAIN-SUFFIX, genius.com
 DOMAIN-SUFFIX, getchu.com
 DOMAIN-SUFFIX, getmdl.io
@@ -918,6 +905,7 @@ DOMAIN-SUFFIX, rfc-editor.org
 DOMAIN-SUFFIX, rferl.org
 DOMAIN-SUFFIX, rip
 DOMAIN-SUFFIX, ripe.net
+DOMAIN-SUFFIX, roboflow.com
 DOMAIN-SUFFIX, rottentomatoes.com
 DOMAIN-SUFFIX, rs
 DOMAIN-SUFFIX, rtings.com
@@ -1206,6 +1194,7 @@ DOMAIN-SUFFIX, za
 DOMAIN-SUFFIX, zbporn.com
 DOMAIN-SUFFIX, zello.com
 DOMAIN-SUFFIX, zendesk.com
+DOMAIN-SUFFIX, zerochan.net
 DOMAIN-SUFFIX, zndsk.com
 USER-AGENT, Roam*
 # 待分配流媒体

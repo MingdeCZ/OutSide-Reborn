@@ -1,7 +1,7 @@
 # 防止 TG 加载转圈（β）
-#IP-CIDR, 95.161.76.100/31
+IP-CIDR, 95.161.76.100/31
 
-# 阻止 YouTube、Bilibili 和斗鱼的视频 CDN 的 QUIC，以及阻止斗鱼将用户的手机电脑变成 PCDN
+# 阻止 YouTube 和 Bilibili 的视频 CDN 的 QUIC（最后更新：25-09-15）
 AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, googlevideo.com))
 DOMAIN, livewebbs2pcdn.msstatic.com
 DOMAIN, qn-cdnfile1pcdn.msstatic.com
@@ -27,3 +27,4 @@ DOMAIN-SUFFIX, xycdn.com
 DOMAIN-SUFFIX, yfcdn.net
 DOMAIN-SUFFIX, yfcloud.com
 DOMAIN-SUFFIX, yfp2p.net
+DOMAIN-WILDCARD, p2p*.qq.com
