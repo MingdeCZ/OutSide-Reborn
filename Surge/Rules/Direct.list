@@ -1,6 +1,7 @@
 # 优化补充
 DOMAIN, b23.tv
 DOMAIN, bit.ly
+DOMAIN, testflight.apple.com
 DOMAIN-SUFFIX, amp-api.shazam.apple.com
 DOMAIN-SUFFIX, appcenter.ms
 DOMAIN-SUFFIX, cloudflare-dns.com
@@ -223,7 +224,6 @@ DOMAIN-SUFFIX, wscont2.apps.microsoft.com
 URL-REGEX, ^http://www\.microsoft\.com/pki/
 URL-REGEX, ^http://www\.microsoft\.com/pkiops/
 # 软件更新、操作系统等大文件下载（最后更新：25-09-15）
-testflight.apple.com
 DOMAIN, addins.deepl.com
 DOMAIN, amupdatedl.microsoft.com
 DOMAIN, amupdatedl2.microsoft.com
