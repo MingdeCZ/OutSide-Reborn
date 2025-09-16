@@ -17,7 +17,6 @@ DOMAIN-SUFFIX, known-issues.apple.com
 DOMAIN-SUFFIX, konut-cdn.apple.com
 DOMAIN-SUFFIX, ontology.health.apple.com
 DOMAIN-SUFFIX, sse-ws.apple.com
-DOMAIN-SUFFIX, themoviedb.org
 # Apple 国内 CDN
 DOMAIN-SUFFIX, a1.mzstatic.com
 DOMAIN-SUFFIX, a2.mzstatic.com
