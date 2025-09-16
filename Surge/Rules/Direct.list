@@ -223,7 +223,6 @@ DOMAIN-SUFFIX, wscont2.apps.microsoft.com
 URL-REGEX, ^http://www\.microsoft\.com/pki/
 URL-REGEX, ^http://www\.microsoft\.com/pkiops/
 # 软件更新、操作系统等大文件下载（最后更新：25-09-15）
-DOMAIN, addins.deepl.com
 DOMAIN, amupdatedl.microsoft.com
 DOMAIN, amupdatedl2.microsoft.com
 DOMAIN, amupdatedl3.microsoft.com
@@ -951,14 +950,12 @@ DOMAIN-SUFFIX, debian.map.fastlydns.net
 DOMAIN-SUFFIX, delivery.mp.microsoft.com
 DOMAIN-SUFFIX, desktop.docker.com
 DOMAIN-SUFFIX, digitaloceanspaces.com
-DOMAIN-SUFFIX, dl.discordapp.net
 DOMAIN-SUFFIX, dl.dlsite.com
 DOMAIN-SUFFIX, dl.dropboxusercontent.com
 DOMAIN-SUFFIX, dl.elementary.io
 DOMAIN-SUFFIX, dl.playstation.net
 DOMAIN-SUFFIX, dl.sourceforge.net
 DOMAIN-SUFFIX, dl.wireshark.org
-DOMAIN-SUFFIX, dl2.discordapp.net
 DOMAIN-SUFFIX, download.autodesk.com
 DOMAIN-SUFFIX, download.cdp.bethesda.net
 DOMAIN-SUFFIX, download.dm.origin.com
@@ -993,8 +990,6 @@ DOMAIN-SUFFIX, ks3-sgp.ksyuncs.com
 DOMAIN-SUFFIX, launchpadlibrarian.net
 DOMAIN-SUFFIX, linodeobjects.com
 DOMAIN-SUFFIX, mega.co.nz
-DOMAIN-SUFFIX, mega.io
-DOMAIN-SUFFIX, mega.nz
 DOMAIN-SUFFIX, mirror.ac.za
 DOMAIN-SUFFIX, mirror.amaze.com.au
 DOMAIN-SUFFIX, mirror.anlx.net
