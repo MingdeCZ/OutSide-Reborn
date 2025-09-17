@@ -2,6 +2,7 @@
 DOMAIN, addins.deepl.com
 DOMAIN, smsactivate.s3.eu-central-1.amazonaws.com
 DOMAIN, update.greasyfork.org
+DOMAIN, www.jibapps.com
 DOMAIN-SUFFIX, boylove.cc
 DOMAIN-SUFFIX, cloudflare.com
 DOMAIN-SUFFIX, cnbeta.com.tw
@@ -17,7 +18,10 @@ DOMAIN-SUFFIX, linux.do
 DOMAIN-SUFFIX, mega.io
 DOMAIN-SUFFIX, mega.nz
 DOMAIN-SUFFIX, nodeseek.com
+DOMAIN-SUFFIX, pilotmoon.com
 DOMAIN-SUFFIX, popclip.app
+DOMAIN-SUFFIX, rectangleapp.com
+DOMAIN-SUFFIX, sveinbjorn.org
 DOMAIN-SUFFIX, themoviedb.org
 DOMAIN-SUFFIX, trakt.tv
 DOMAIN-SUFFIX, v2ex.com

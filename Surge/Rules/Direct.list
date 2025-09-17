@@ -1,12 +1,16 @@
 # 优化补充
 DOMAIN, b23.tv
 DOMAIN, bit.ly
+DOMAIN, localhost.weixin.qq.com
 DOMAIN, testflight.apple.com
+DOMAIN-SUFFIX, 5km.tech
 DOMAIN-SUFFIX, amp-api.shazam.apple.com
 DOMAIN-SUFFIX, appcenter.ms
+DOMAIN-SUFFIX, apphousekitchen.com
 DOMAIN-SUFFIX, cloudflare-dns.com
 DOMAIN-SUFFIX, config-chr.health.apple.com
 DOMAIN-SUFFIX, configruation.ls.apple.com
+DOMAIN-SUFFIX, dockdoor.net
 DOMAIN-SUFFIX, gspe19-ssl.ls.apple.com
 DOMAIN-SUFFIX, gspe76-ssl.ls.apple.com
 DOMAIN-SUFFIX, gspe79-ssl.ls.apple.com
@@ -16,6 +20,7 @@ DOMAIN-SUFFIX, init.gc.apple.com
 DOMAIN-SUFFIX, known-issues.apple.com
 DOMAIN-SUFFIX, konut-cdn.apple.com
 DOMAIN-SUFFIX, ontology.health.apple.com
+DOMAIN-SUFFIX, shortcat.app
 DOMAIN-SUFFIX, sse-ws.apple.com
 # Apple 国内 CDN
 DOMAIN-SUFFIX, a1.mzstatic.com
