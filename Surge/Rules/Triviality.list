@@ -30,6 +30,17 @@ DOMAIN-SUFFIX, sveinbjorn.org
 DOMAIN-SUFFIX, themoviedb.org
 DOMAIN-SUFFIX, trakt.tv
 DOMAIN-SUFFIX, v2ex.com
+IP-CIDR, 162.208.16.0/24
+IP-CIDR, 185.206.24.0/22
+IP-CIDR, 66.203.126.0/23
+IP-CIDR, 94.24.36.0/23
+IP-CIDR6, 2a0b:e40:1::/48
+IP-CIDR6, 2a0b:e40:2::/47
+IP-CIDR6, 2a0b:e41:1::/48
+IP-CIDR6, 2a0b:e42:1::/48
+IP-CIDR6, 2a0b:e43:1::/48
+IP-CIDR6, 2a0b:e44:1::/48
+IP-CIDR6, 2a0b:e45:1::/48
 # 第三方电报
 DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, swiftgram.app
@@ -112,9 +123,6 @@ DOMAIN, app.quotemedia.com
 DOMAIN, app.roboflow.com
 DOMAIN, app.viral-loops.com
 DOMAIN, appassets.mvtdev.com
-DOMAIN, apple-relay.apple.com
-DOMAIN, apple-relay.cloudflare.com
-DOMAIN, apple-relay.fastly-edge.com
 DOMAIN, apps-static.route4me.com
 DOMAIN, apps.bazaarvoice.com
 DOMAIN, apps.profitihub.com
@@ -3825,6 +3833,9 @@ DOMAIN-WILDCARD, video-thumbnail?.liaoningmovie.net
 DOMAIN-WILDCARD, video?-thumbnail?.fc2.com
 DOMAIN-WILDCARD, video?-thumbnail?.liaoningmovie.net
 DOMAIN-WILDCARD, vip-videoprem*-thumbnail?.fc2.com
+IP-CIDR, 162.159.200.1/32
+IP-CIDR, 162.159.200.123/32
+IP-CIDR, 185.199.108.0/22
 # Emby
 DOMAIN-SUFFIX, emby.moe
 DOMAIN-SUFFIX, xmsl.org

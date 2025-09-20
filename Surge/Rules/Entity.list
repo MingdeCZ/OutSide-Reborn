@@ -18,7 +18,7 @@ DOMAIN-SUFFIX, anthropic.com
 DOMAIN-SUFFIX, claude.ai
 DOMAIN-SUFFIX, claudeusercontent.com
 
-# Gemini
+# 谷歌
 DOMAIN, ai.google.dev
 DOMAIN, alkalimakersuite-pa.clients6.google.com
 DOMAIN, jules.google.com
@@ -33,8 +33,19 @@ DOMAIN-SUFFIX, gemini.google.com
 DOMAIN-SUFFIX, generativeai.google
 DOMAIN-SUFFIX, generativelanguage.googleapis.com
 DOMAIN-SUFFIX, makersuite.google.com
+DOMAIN-SUFFIX, notebooklm.google
+DOMAIN-SUFFIX, notebooklm.google.com
 DOMAIN-SUFFIX, proactivebackend-pa.googleapis.com
 
 # Augment
 DOMAIN-SUFFIX, augment.com
 DOMAIN-SUFFIX, augmentcode.com
+
+# 苹果
+DOMAIN, apple-relay.apple.com
+#DOMAIN, apple-relay.cloudflare.com
+#DOMAIN, apple-relay.fastly-edge.com
+
+# Grok
+DOMAIN-SUFFIX, grok.com
+DOMAIN-SUFFIX, x.ai
