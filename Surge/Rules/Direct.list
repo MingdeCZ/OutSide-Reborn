@@ -3,30 +3,18 @@ DOMAIN, appstoreconnect.apple.com
 DOMAIN, b23.tv
 DOMAIN, bit.ly
 DOMAIN, fonts.gstatic.com
+DOMAIN, fonts.googleapis.com
 DOMAIN, localhost.weixin.qq.com
-DOMAIN, testflight.apple.com
 DOMAIN-SUFFIX, 5km.tech
 DOMAIN-SUFFIX, amp-api.shazam.apple.com
-DOMAIN-SUFFIX, appcenter.ms
 DOMAIN-SUFFIX, apphousekitchen.com
 DOMAIN-SUFFIX, autonavi.com
-DOMAIN-SUFFIX, cdn.prod.website-files.com
-DOMAIN-SUFFIX, config-chr.health.apple.com
-DOMAIN-SUFFIX, configuration.ls.apple.com
 DOMAIN-SUFFIX, devimages-cdn.apple.com
 DOMAIN-SUFFIX, dockdoor.net
 DOMAIN-SUFFIX, gspe12-cn-ssl.ls.apple.com
-DOMAIN-SUFFIX, gspe19-ssl.ls.apple.com
-DOMAIN-SUFFIX, gspe76-ssl.ls.apple.com
-DOMAIN-SUFFIX, gspe79-ssl.ls.apple.com
 DOMAIN-SUFFIX, gspe85-cn-ssl.ls.apple.com
-DOMAIN-SUFFIX, infuseku.xyz
 DOMAIN-SUFFIX, init.gc.apple.com
-DOMAIN-SUFFIX, known-issues.apple.com
-DOMAIN-SUFFIX, konut-cdn.apple.com
-DOMAIN-SUFFIX, ontology.health.apple.com
 DOMAIN-SUFFIX, shortcat.app
-DOMAIN-SUFFIX, sse-ws.apple.com
 # Apple 国内 CDN
 DOMAIN-SUFFIX, a1.mzstatic.com
 DOMAIN-SUFFIX, a2.mzstatic.com
@@ -232,7 +220,7 @@ DOMAIN-SUFFIX, wscont1.apps.microsoft.com
 DOMAIN-SUFFIX, wscont2.apps.microsoft.com
 URL-REGEX, ^http://www\.microsoft\.com/pki/
 URL-REGEX, ^http://www\.microsoft\.com/pkiops/
-# 软件更新、操作系统等大文件下载（最后更新：25-09-15）
+# 软件更新、操作系统等大文件下载（最后更新：25-09-23）
 DOMAIN, amupdatedl.microsoft.com
 DOMAIN, amupdatedl2.microsoft.com
 DOMAIN, amupdatedl3.microsoft.com
@@ -479,6 +467,7 @@ DOMAIN, downloads.xiph.org
 DOMAIN, downloads.xrite.com
 DOMAIN, downloads2.broadcom.com
 DOMAIN, drive.massgrave.dev
+DOMAIN, dw.uptodown.net
 DOMAIN, edge.steam-dns.top.comcast.net
 DOMAIN, edgedl.me.gvt1.com
 DOMAIN, edgeupdates.microsoft.com
@@ -621,6 +610,8 @@ DOMAIN, lysator.liu.se
 DOMAIN, mac-release-static.stash.ws
 DOMAIN, marwan.ma
 DOMAIN, maven.google.com
+DOMAIN, maven.is-quite.gay
+DOMAIN, maven.neoforged.net
 DOMAIN, meta.omaps.app
 DOMAIN, meta.prismlauncher.org
 DOMAIN, mirror-cdn.xtom.com
@@ -862,6 +853,7 @@ DOMAIN, repo.hex.pm
 DOMAIN, repo.maven.apache.org
 DOMAIN, repo.nextdns.io
 DOMAIN, repo.powerdns.com
+DOMAIN, repo.sleeping.town
 DOMAIN, repo1.maven.org
 DOMAIN, repository.jboss.org
 DOMAIN, repository.su

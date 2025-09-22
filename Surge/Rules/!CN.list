@@ -1,4 +1,6 @@
 # 补充/优化
+DOMAIN-SUFFIX, crisp.chat
+DOMAIN-SUFFIX, fast.com
 DOMAIN-SUFFIX, onetrust.com
 # 苹果
 DOMAIN-SUFFIX, aaplimg.com
@@ -121,7 +123,7 @@ DOMAIN-SUFFIX, meta.ai
 DOMAIN-SUFFIX, openart.ai
 DOMAIN-SUFFIX, perplexity.ai
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：25-09-15）
+# 其它常见海外服务（最后更新：25-09-23）
 DOMAIN, ccmdl.adobe.com
 DOMAIN, community.oneplus.com
 DOMAIN, ees.elsevier.com
@@ -892,6 +894,7 @@ DOMAIN-SUFFIX, qz.com
 DOMAIN-SUFFIX, raspberrypi.com
 DOMAIN-SUFFIX, re
 DOMAIN-SUFFIX, readme.com
+DOMAIN-SUFFIX, readmoo.com
 DOMAIN-SUFFIX, realgfporn.com
 DOMAIN-SUFFIX, recaptcha.net
 DOMAIN-SUFFIX, recombee.com
@@ -1205,6 +1208,7 @@ DOMAIN-SUFFIX, za
 DOMAIN-SUFFIX, zbporn.com
 DOMAIN-SUFFIX, zello.com
 DOMAIN-SUFFIX, zendesk.com
+DOMAIN-SUFFIX, zenn.dev
 DOMAIN-SUFFIX, zerochan.net
 DOMAIN-SUFFIX, zndsk.com
 USER-AGENT, Roam*
