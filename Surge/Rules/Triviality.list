@@ -16,16 +16,14 @@ DOMAIN-SUFFIX, happymh.com
 DOMAIN-SUFFIX, hostloc.com
 DOMAIN-SUFFIX, i4store.net
 DOMAIN-SUFFIX, infuseku.xyz
-DOMAIN-SUFFIX, kepler.cafe
 DOMAIN-SUFFIX, linux.do
+DOMAIN-SUFFIX, mega.co.nz
 DOMAIN-SUFFIX, mega.io
 DOMAIN-SUFFIX, mega.nz
 DOMAIN-SUFFIX, nodeseek.com
 DOMAIN-SUFFIX, nssurge.com
-DOMAIN-SUFFIX, pilotmoon.com
-DOMAIN-SUFFIX, popclip.app
 DOMAIN-SUFFIX, rectangleapp.com
-DOMAIN-SUFFIX, sveinbjorn.org
+DOMAIN-SUFFIX, stash.ws
 DOMAIN-SUFFIX, themoviedb.org
 DOMAIN-SUFFIX, trakt.tv
 DOMAIN-SUFFIX, v2ex.com
@@ -43,7 +41,7 @@ IP-CIDR6, 2a0b:e45:1::/48
 # 第三方电报
 DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, swiftgram.app
-# 国外静态 CDN 资源（最后更新：25-09-23）
+# 国外静态 CDN 资源（最后更新：25-09-30）
 DOMAIN, 0x0.st
 DOMAIN, 3dna.nationbuilder.com
 DOMAIN, 4gtvimg2.4gtv.tv
@@ -194,6 +192,7 @@ DOMAIN, assets.dictionary.com
 DOMAIN, assets.dify.ai
 DOMAIN, assets.dnsfilter.com
 DOMAIN, assets.documentcloud.org
+DOMAIN, assets.dub.co
 DOMAIN, assets.dwncdn.net
 DOMAIN, assets.ecomm.ui.com
 DOMAIN, assets.embeddables.com
@@ -230,6 +229,7 @@ DOMAIN, assets.ifttt.com
 DOMAIN, assets.ipstack.com
 DOMAIN, assets.jable.tv
 DOMAIN, assets.jolipage.co
+DOMAIN, assets.juksy.com
 DOMAIN, assets.kagi.com
 DOMAIN, assets.keysquare.io
 DOMAIN, assets.khoros.com
@@ -286,6 +286,7 @@ DOMAIN, assets.static-upwork.com
 DOMAIN, assets.stickpng.com
 DOMAIN, assets.stigg.io
 DOMAIN, assets.swoogo.com
+DOMAIN, assets.tatlerasia.com
 DOMAIN, assets.the-independent.com
 DOMAIN, assets.time.com
 DOMAIN, assets.toiimg.com
@@ -799,6 +800,7 @@ DOMAIN, cdn.sunofbeaches.com
 DOMAIN, cdn.svgator.com
 DOMAIN, cdn.syftdata.com
 DOMAIN, cdn.tailwindcss.com
+DOMAIN, cdn.tatlerasia.com
 DOMAIN, cdn.termius.com
 DOMAIN, cdn.theatlantic.com
 DOMAIN, cdn.thenewstack.io
@@ -833,6 +835,7 @@ DOMAIN, cdn.vidyard.com
 DOMAIN, cdn.viglink.com
 DOMAIN, cdn.violet.vin
 DOMAIN, cdn.virtuoussoftware.com
+DOMAIN, cdn.vnoc.com
 DOMAIN, cdn.vuukle.com
 DOMAIN, cdn.wccftech.com
 DOMAIN, cdn.webclicks24.com
@@ -870,6 +873,7 @@ DOMAIN, cdn1.bigcommerce.com
 DOMAIN, cdn1.dan.com
 DOMAIN, cdn1.edgedatg.com
 DOMAIN, cdn1.epicgames.com
+DOMAIN, cdn1.ettoday.net
 DOMAIN, cdn1.hentaicity.com
 DOMAIN, cdn1.hotmoza.tv
 DOMAIN, cdn1.iconfinder.com
@@ -1015,6 +1019,7 @@ DOMAIN, code.upscope.io
 DOMAIN, comm.res.easebar.com
 DOMAIN, common-header.nimg.jp
 DOMAIN, components.clever-cloud.com
+DOMAIN, components.cyclingfactory.be
 DOMAIN, components.justanswer.com
 DOMAIN, components.trynow.net
 DOMAIN, components.unrealengine.com
@@ -1319,6 +1324,7 @@ DOMAIN, i.iwara.tv
 DOMAIN, i.jpg.dog
 DOMAIN, i.kickstarter.com
 DOMAIN, i.loli.best
+DOMAIN, i.magecdn.com
 DOMAIN, i.mediatek.com
 DOMAIN, i.mij.rip
 DOMAIN, i.mt.lv
@@ -1413,6 +1419,7 @@ DOMAIN, images.carfax.com
 DOMAIN, images.contentful.com
 DOMAIN, images.contentstack.io
 DOMAIN, images.crunchbase.com
+DOMAIN, images.cyclingfactory.be
 DOMAIN, images.design-editor.com
 DOMAIN, images.dmca.com
 DOMAIN, images.drata.com
@@ -1463,6 +1470,7 @@ DOMAIN, images.tokopedia.net
 DOMAIN, images.typeform.com
 DOMAIN, images.unsplash.com
 DOMAIN, images.videolan.org
+DOMAIN, images.voguehk.com
 DOMAIN, images.web3.storage
 DOMAIN, images.weserv.nl
 DOMAIN, images.wikia.com
@@ -1490,6 +1498,7 @@ DOMAIN, img-5-cdn.airdroid.com
 DOMAIN, img-api.mac4ever.com
 DOMAIN, img-cos.mandaoo.com
 DOMAIN, img-en.fs.com
+DOMAIN, img-fnc.ebc.net.tw
 DOMAIN, img-prod-cms-rt-microsoft-com.akamaized.net
 DOMAIN, img-s-msn-com.akamaized.net
 DOMAIN, img.177pica.com
@@ -1741,6 +1750,7 @@ DOMAIN, media-cms.onesignal.com
 DOMAIN, media-s3-us-east-1.ceros.com
 DOMAIN, media.beehiiv.com
 DOMAIN, media.breitbart.com
+DOMAIN, media.bundlehunt.com
 DOMAIN, media.cleanshot.cloud
 DOMAIN, media.cmx.edu.kg
 DOMAIN, media.cnn.com
@@ -1753,6 +1763,7 @@ DOMAIN, media.dev.to
 DOMAIN, media.discordapp.net
 DOMAIN, media.dlsite.com
 DOMAIN, media.e4le.me
+DOMAIN, media.ettoday.net
 DOMAIN, media.evolv.ai
 DOMAIN, media.fc2.com
 DOMAIN, media.flaticon.com
@@ -2010,6 +2021,7 @@ DOMAIN, r2.1hanime.com
 DOMAIN, r2.leadsy.ai
 DOMAIN, r2cdn.myshopline.com
 DOMAIN, r2cdn.perplexity.ai
+DOMAIN, r34xyz.b-cdn.net
 DOMAIN, rapid-cdn.yottaa.com
 DOMAIN, raw.github.com
 DOMAIN, rawmarkdown.cloudflareaccess.org
@@ -2044,6 +2056,7 @@ DOMAIN, resources.digital-cloud.medallia.com
 DOMAIN, resources.help.salesforce.com
 DOMAIN, resources.whatwg.org
 DOMAIN, rest.happierleads.com
+DOMAIN, reviews-badge.capterra.com
 DOMAIN, rs-cdn.splashtop.com
 DOMAIN, rsi.grafana.com
 DOMAIN, rtcg-access.bytevcloud.com
@@ -2202,6 +2215,7 @@ DOMAIN, sp.replit.com
 DOMAIN, sp.streamlabs.com
 DOMAIN, spcdn.incartupsell.com
 DOMAIN, spoprod-a.akamaihd.net
+DOMAIN, spotlightimage.biggo.com
 DOMAIN, sprig.figma.com
 DOMAIN, ss7.vzw.com
 DOMAIN, st-eu.dynamicyield.com
@@ -2233,6 +2247,7 @@ DOMAIN, static-assets.clubhouseapi.com
 DOMAIN, static-assets.codecademy.com
 DOMAIN, static-assets.coinbase.com
 DOMAIN, static-assets.freeanimehentai.net
+DOMAIN, static-assets.juksy.com
 DOMAIN, static-assets.mapbox.com
 DOMAIN, static-assets.npr.org
 DOMAIN, static-assets.vinted.com
@@ -2384,6 +2399,7 @@ DOMAIN, static.launchdarkly.com
 DOMAIN, static.licdn.com
 DOMAIN, static.linear.app
 DOMAIN, static.lingq.com
+DOMAIN, static.lwn.net
 DOMAIN, static.macupdate.com
 DOMAIN, static.maxmind.com
 DOMAIN, static.mediafire.com
@@ -2539,6 +2555,7 @@ DOMAIN, storage.gra.cloud.ovh.net
 DOMAIN, storage.ko-fi.com
 DOMAIN, storage.moegirl.tw
 DOMAIN, storage.sciencecast.org
+DOMAIN, storage.tally.so
 DOMAIN, storage.windiscover.com
 DOMAIN, storage.withfabric.xyz
 DOMAIN, storageapi.fleek.co
@@ -2593,6 +2610,7 @@ DOMAIN, thumbor.forbes.com
 DOMAIN, thumbs.onlyfans.com
 DOMAIN, thumbs2.sendvid.com
 DOMAIN, thumbsnap.com
+DOMAIN, tile2.intervals.icu
 DOMAIN, tiles.openfreemap.org
 DOMAIN, tiles.stadiamaps.com
 DOMAIN, tiles.versatiles.org
@@ -2603,6 +2621,7 @@ DOMAIN, time.apple.com
 DOMAIN, time.cloudflare.com
 DOMAIN, time.google.com
 DOMAIN, time.windows.com
+DOMAIN, tn.tubepornclassic.com
 DOMAIN, tn.txxx.tube
 DOMAIN, todoist.b-cdn.net
 DOMAIN, tools-static.wmflabs.org
@@ -2717,6 +2736,7 @@ DOMAIN, web-assets.waze.com
 DOMAIN, web-assets.zendesk.co.jp
 DOMAIN, web-assets.zendesk.com
 DOMAIN, web-cdn.bitrise.io
+DOMAIN, web-cdn.bsky.app
 DOMAIN, web-sdk-cdn.eyefitu.com
 DOMAIN, web-sdk.eyefitu.com
 DOMAIN, web-static.archive.org
@@ -3797,6 +3817,7 @@ DOMAIN-SUFFIX, yimg.com
 DOMAIN-SUFFIX, yimg.jp
 DOMAIN-SUFFIX, ymq.cool
 DOMAIN-SUFFIX, yourimageshare.com
+DOMAIN-SUFFIX, ypcdn.com
 DOMAIN-SUFFIX, ypncdn.com
 DOMAIN-SUFFIX, yps.link
 DOMAIN-SUFFIX, ytimg.com

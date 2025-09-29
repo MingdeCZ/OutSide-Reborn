@@ -1,7 +1,11 @@
 # 补充/优化
+DOMAIN-SUFFIX, apple
+DOMAIN-SUFFIX, bit.ly
 DOMAIN-SUFFIX, crisp.chat
 DOMAIN-SUFFIX, fast.com
+DOMAIN-SUFFIX, googlefiber.net
 DOMAIN-SUFFIX, onetrust.com
+DOMAIN-SUFFIX, stripe.com
 # 苹果
 DOMAIN-SUFFIX, aaplimg.com
 DOMAIN-SUFFIX, apple-cloudkit.com
@@ -123,7 +127,7 @@ DOMAIN-SUFFIX, meta.ai
 DOMAIN-SUFFIX, openart.ai
 DOMAIN-SUFFIX, perplexity.ai
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：25-09-23）
+# 其它常见海外服务（最后更新：25-09-30）
 DOMAIN, ccmdl.adobe.com
 DOMAIN, community.oneplus.com
 DOMAIN, ees.elsevier.com
@@ -215,6 +219,7 @@ DOMAIN-SUFFIX, appspot.com
 DOMAIN-SUFFIX, aptoide.com
 DOMAIN-SUFFIX, arc.net
 DOMAIN-SUFFIX, archive-it.org
+DOMAIN-SUFFIX, archive.li
 DOMAIN-SUFFIX, archive.today
 DOMAIN-SUFFIX, archiveofourown.org
 DOMAIN-SUFFIX, artstation.com
@@ -523,6 +528,7 @@ DOMAIN-SUFFIX, goog
 DOMAIN-SUFFIX, googl.com
 DOMAIN-SUFFIX, gooogle.com
 DOMAIN-SUFFIX, gov
+DOMAIN-SUFFIX, gqhongkong.com
 DOMAIN-SUFFIX, grammarly.com
 DOMAIN-SUFFIX, grammarly.io
 DOMAIN-SUFFIX, greasyfork.org
