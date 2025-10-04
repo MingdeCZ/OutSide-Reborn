@@ -1,11 +1,40 @@
 # 补充/优化
+# DOMAIN-SUFFIX, googlefiber.net
+DOMAIN-SUFFIX, 1e100cdn.net
 DOMAIN-SUFFIX, apple
-DOMAIN-SUFFIX, bit.ly
+DOMAIN-SUFFIX, b-cdn.net
+# DOMAIN-SUFFIX, bit.ly
+DOMAIN-SUFFIX, cdn77.org
 DOMAIN-SUFFIX, crisp.chat
 DOMAIN-SUFFIX, fast.com
-DOMAIN-SUFFIX, googlefiber.net
+DOMAIN-SUFFIX, gcorelabs.com
+DOMAIN-SUFFIX, mangafox.me
+DOMAIN-SUFFIX, mesl.cloud
 DOMAIN-SUFFIX, onetrust.com
+DOMAIN-SUFFIX, perfops.io
 DOMAIN-SUFFIX, stripe.com
+DOMAIN-SUFFIX, tero.ink
+DOMAIN-SUFFIX, zenlayer.net
+# 待分配 IP 查询
+DOMAIN-SUFFIX, db-ip.com
+DOMAIN-SUFFIX, ip-api.com
+DOMAIN-SUFFIX, ip-score.com
+# DOMAIN-SUFFIX, ip.sb
+DOMAIN-SUFFIX, ip125.com
+DOMAIN-SUFFIX, ip233.cn
+DOMAIN-SUFFIX, ip2location.com
+DOMAIN-SUFFIX, ipaddress.com
+DOMAIN-SUFFIX, ipdata.co
+DOMAIN-SUFFIX, ipgeolocation.io
+DOMAIN-SUFFIX, ipify.org
+DOMAIN-SUFFIX, ipinfo.io
+DOMAIN-SUFFIX, ipjiance.com
+DOMAIN-SUFFIX, iplark.com
+DOMAIN-SUFFIX, iplocation.net
+DOMAIN-SUFFIX, ipregistry.co
+DOMAIN-SUFFIX, ipstack.com
+# DOMAIN-SUFFIX, ipwho.is
+DOMAIN-SUFFIX, scamalytics.com
 # 苹果
 DOMAIN-SUFFIX, aaplimg.com
 DOMAIN-SUFFIX, apple-cloudkit.com
@@ -416,7 +445,6 @@ DOMAIN-SUFFIX, economist.com
 DOMAIN-SUFFIX, edgeapp.net
 DOMAIN-SUFFIX, edgecastcdn.net
 DOMAIN-SUFFIX, edgecompute.app
-DOMAIN-SUFFIX, edns.ip-api.com
 DOMAIN-SUFFIX, edu
 DOMAIN-SUFFIX, ee
 DOMAIN-SUFFIX, elasticbeanstalk.com
@@ -1268,8 +1296,8 @@ DOMAIN, upos-bstar-mirrorakam.akamaized.net
 DOMAIN, upos-bstar1-mirrorakam.akamaized.net
 DOMAIN, uts-api.itunes.apple.com
 DOMAIN, video.friday.tw
-DOMAIN, youtube.googleapis.com
-DOMAIN, youtubei.googleapis.com
+# DOMAIN, youtube.googleapis.com
+# DOMAIN, youtubei.googleapis.com
 DOMAIN-KEYWORD, -spotify-com
 DOMAIN-KEYWORD, -tiktokcdn-com
 DOMAIN-KEYWORD, avoddashs
@@ -1338,7 +1366,7 @@ DOMAIN-SUFFIX, fls-na.amazon.com
 DOMAIN-SUFFIX, fox.com
 DOMAIN-SUFFIX, foxdcg.com
 DOMAIN-SUFFIX, foxplus.com
-DOMAIN-SUFFIX, googlevideo.com
+# DOMAIN-SUFFIX, googlevideo.com
 DOMAIN-SUFFIX, hayabusa.dev
 DOMAIN-SUFFIX, hayabusa.io
 DOMAIN-SUFFIX, hayabusa.media

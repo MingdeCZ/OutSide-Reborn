@@ -1,4 +1,7 @@
 # 被墙/优化
+# DOMAIN, objects.githubusercontent.com
+# DOMAIN, pkg-containers.githubusercontent.com
+# DOMAIN, release-assets.githubusercontent.com
 DOMAIN, addins.deepl.com
 DOMAIN, appdownload.deepl.com
 DOMAIN, smsactivate.s3.eu-central-1.amazonaws.com
@@ -6,17 +9,20 @@ DOMAIN, testflight.apple.com
 DOMAIN, update.greasyfork.org
 DOMAIN, www.jibapps.com
 DOMAIN-SUFFIX, appcenter.ms
+DOMAIN-SUFFIX, baozimh.com
 DOMAIN-SUFFIX, boylove.cc
 DOMAIN-SUFFIX, cdn.localizeapi.com
 DOMAIN-SUFFIX, cdn.prod.website-files.com
+DOMAIN-SUFFIX, colamanga.com
 DOMAIN-SUFFIX, discordapp.com
 DOMAIN-SUFFIX, dl.discordapp.net
 DOMAIN-SUFFIX, dl2.discordapp.net
-DOMAIN-SUFFIX, happymh.com
+DOMAIN-SUFFIX, godamh.com
 DOMAIN-SUFFIX, hostloc.com
 DOMAIN-SUFFIX, i4store.net
 DOMAIN-SUFFIX, infuseku.xyz
 DOMAIN-SUFFIX, linux.do
+DOMAIN-SUFFIX, mangacopy.com
 DOMAIN-SUFFIX, mega.co.nz
 DOMAIN-SUFFIX, mega.io
 DOMAIN-SUFFIX, mega.nz
@@ -27,6 +33,7 @@ DOMAIN-SUFFIX, stash.ws
 DOMAIN-SUFFIX, themoviedb.org
 DOMAIN-SUFFIX, trakt.tv
 DOMAIN-SUFFIX, v2ex.com
+DOMAIN-SUFFIX, wnacg.com
 IP-CIDR, 162.208.16.0/24
 IP-CIDR, 185.206.24.0/22
 IP-CIDR, 66.203.126.0/23
