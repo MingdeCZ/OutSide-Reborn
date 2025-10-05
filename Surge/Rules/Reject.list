@@ -8,7 +8,8 @@ DOMAIN-SUFFIX, googletagmanager-cn.com
 DOMAIN-SUFFIX, googletagservices-cn.com
 DOMAIN-SUFFIX, googletraveladservices-cn.com
 DOMAIN-SUFFIX, googlevads-cn.com
-# 
+#
+// break fairplay.l.qq.com, vi.l.qq.com
 AND, ((DOMAIN-KEYWORD, -ad-), (DOMAIN-SUFFIX, byteimg.com))
 AND, ((DOMAIN-KEYWORD, adash), (DOMAIN-SUFFIX, ut.taobao.com))
 AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, normal), (DOMAIN-SUFFIX, zijieapi.com))
@@ -32,6 +33,7 @@ DOMAIN, browser-intake-datadoghq.com
 DOMAIN, click-bes.baidu.com
 DOMAIN, dataflow.biliapi.com
 DOMAIN, df.tanx.com
+DOMAIN, dig.bdurl.net
 DOMAIN, dns.jd.com
 DOMAIN, dns.weibo.cn
 DOMAIN, dns.weixin.qq.com
@@ -41,6 +43,7 @@ DOMAIN, eclick.baidu.com
 DOMAIN, ems.youku.com
 DOMAIN, et.tanx.com
 DOMAIN, events.statsigapi.net
+DOMAIN, extlog.snssdk.com
 DOMAIN, feed-image.baidu.com
 DOMAIN, gorgon.youdao.com
 DOMAIN, httpdns-api.aliyuncs.com
@@ -65,9 +68,11 @@ DOMAIN, im-x.jd.com
 DOMAIN, info4.video.qq.com
 DOMAIN, info6.video.qq.com
 DOMAIN, janapi.jd.com
+DOMAIN, lf-ad-ies.bytecdn.cn
 DOMAIN, lookup.api.bsb.baidu.com
 DOMAIN, maplocatesdksnapshot.d.meituan.net
 DOMAIN, mc.tencentmusic.com
+DOMAIN, mcs.snssdk.com
 DOMAIN, mercury-gateway.ixiaochuan.cn
 DOMAIN, metrics-picture.d.meituan.net
 DOMAIN, metrics.icloud.com
@@ -78,6 +83,7 @@ DOMAIN, mobads.baidu.com
 DOMAIN, nadvideo2.baidu.com
 DOMAIN, nex.163.com
 DOMAIN, o33249.ingest.sentry.io
+DOMAIN, opehs.tanx.com
 DOMAIN, open.e.kuaishou.cn
 DOMAIN, open.e.kuaishou.com
 DOMAIN, ossgw.alicdn.com
@@ -122,9 +128,12 @@ DOMAIN-SUFFIX, anythinktech.com
 DOMAIN-SUFFIX, api-adservices.apple.com
 DOMAIN-SUFFIX, applovin.com
 DOMAIN-SUFFIX, appsad.cn
+DOMAIN-SUFFIX, bds.snssdk.com
 DOMAIN-SUFFIX, beizi.biz
 DOMAIN-SUFFIX, bridgeoos.com
 DOMAIN-SUFFIX, bxsnews.com
+DOMAIN-SUFFIX, byteadverts.com
+DOMAIN-SUFFIX, ctobsnssdk.com
 DOMAIN-SUFFIX, domob.cn
 DOMAIN-SUFFIX, doubleclick-cn.net
 DOMAIN-SUFFIX, doubleclick.net
@@ -145,7 +154,6 @@ DOMAIN-SUFFIX, jiguang.cn
 DOMAIN-SUFFIX, jpush.cn
 DOMAIN-SUFFIX, jpush.io
 DOMAIN-SUFFIX, kuaiyiad.com
-// break fairplay.l.qq.com, vi.l.qq.com
 DOMAIN-SUFFIX, l.qq.com
 DOMAIN-SUFFIX, lnk0.com
 DOMAIN-SUFFIX, maplehaze.cn
@@ -155,10 +163,23 @@ DOMAIN-SUFFIX, mob.com
 DOMAIN-SUFFIX, mobrtb.com
 DOMAIN-SUFFIX, motowoo.com
 DOMAIN-SUFFIX, openinstall.io
+DOMAIN-SUFFIX, pangolin-dsp-toutiao-b.com
+DOMAIN-SUFFIX, pangolin-dsp-toutiao.com
+DOMAIN-SUFFIX, pangolin-sdk-toutiao-b.com
+DOMAIN-SUFFIX, pangolin-sdk-toutiao.com
+DOMAIN-SUFFIX, pangolin-sdk-toutiao1.com
+DOMAIN-SUFFIX, pangolin.snssdk.com
+DOMAIN-SUFFIX, panplayable-toutiao-b.com
+DOMAIN-SUFFIX, panplayable-toutiao.com
 DOMAIN-SUFFIX, partner.gifshow.com
+DOMAIN-SUFFIX, pglstatp-sdk-toutiao.com
+DOMAIN-SUFFIX, pglstatp-snssdk-toutiao.com
+DOMAIN-SUFFIX, pglstatp-toutiao-b.com
+DOMAIN-SUFFIX, pglstatp-toutiao.com
 DOMAIN-SUFFIX, puata.info
 DOMAIN-SUFFIX, readgps.com
 DOMAIN-SUFFIX, richmob.cn
+DOMAIN-SUFFIX, sf3-ttcdn-tos.pstatp.com
 DOMAIN-SUFFIX, sigmob.cn
 DOMAIN-SUFFIX, slyxmobi.com
 DOMAIN-SUFFIX, supersonicads.com
@@ -1490,6 +1511,9 @@ DOMAIN-SUFFIX, pubnative.net
 DOMAIN-SUFFIX, push.mcp.weibo.cn
 DOMAIN-SUFFIX, push.qq.com
 DOMAIN-SUFFIX, pv.com.cn
+DOMAIN-SUFFIX, qchannel01.cn
+DOMAIN-SUFFIX, qchannel02.cn
+DOMAIN-SUFFIX, qchannel03.cn
 DOMAIN-SUFFIX, qichexin.com
 DOMAIN-SUFFIX, qinchugudao.com
 DOMAIN-SUFFIX, quanliyouxi.cn

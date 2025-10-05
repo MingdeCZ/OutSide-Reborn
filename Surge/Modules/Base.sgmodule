@@ -1,0 +1,304 @@
+#!name = 基
+#!desc = 适用于手机与电脑端
+#!author = MingdeCZ[https://github.com/MingdeCZ]
+#!homepage =
+#!icon = 
+#!version = 1.0.0
+#!date = 25.10.5
+#!category = N合1
+
+[Host]
+# @VirgilClyne
+# 🍟 整点薯条（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/GetSomeFries 中查找）: 🌐 DNS 增强（1.域名按所属 DNS 进行分流解析 2.路由器地址使用系统 DNS 进行解析 3.特殊地址使用规范 DNS 进行解析）
+# --- 自定义 HOSTS ---
+# IPV6
+ip6-localhost = ::1 // IPv6 Localhost
+ip6-loopback = ::1 // IPv6 Loopback
+ip6-localnet = fe00::0 // IPv6 Link-Local
+ip6-mcastprefix = ff00::0 // IPv6 Multicast
+ip6-allnodes = ff02::1 // IPv6 All Nodes
+ip6-allrouters = ff02::2 // IPv6 All Routers
+ip6-allhosts = ff02::3 // IPv6 All Hosts
+# 加密 DNS
+dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1
+dot.pub = server:119.29.29.29
+doh.pub = server:119.29.29.29
+dns.pub = server:119.29.29.29
+doh.360.cn = server:101.198.198.198
+*.m2m = server:system
+injections.adguard.org = server:system
+local.adguard.org = server:system
+*.bogon = server:system
+*.local = server:system
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/router.conf = server:system
+127.0.0.1.sslip.io = 127.0.0.1
+127.atlas.skk.moe = 127.0.0.1
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/lan_without_real_ip.conf = server:system
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/lan_with_realip.conf = server:system
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/hotspot_captive_portal.conf = server:system
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/alibaba.conf = server:h3://dns.alidns.com/dns-query
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/tencent.conf = server:https://doh.pub/dns-query
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/baidu.conf = server:180.76.76.76
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/qihoo360.conf = server:https://doh.360.cn/dns-query
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bytedance.conf = server:180.184.2.2
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bilibili.conf = server:https://doh.pub/dns-query
+RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/xiaomi.conf = server:https://doh.pub/dns-query
+cdn.jsdelivr.net = cdn.jsdelivr.net.cdn.cloudflare.net
+
+[General]
+hijack-dns = 8.8.8.8:53, 8.8.4.4:53
+
+# 🍟 整点薯条
+# 🌐 DNS 增强
+# 通过代理请求使用本地 DNS 映射结果
+# use-local-host-item-for-proxy = true
+# 加密 DNS 服务器
+# 使加密 DNS 请求通过代理策略执行
+# encrypted-dns-follow-outbound-mode = false
+
+# 🌐 通用设置增强
+# 跳过代理
+# 跳过某个域名或者 IP 段，这些目标主机将不会由 Surge Proxy 处理。
+# macOS 版本中，如果启用了 设置为系统代理， 这些值会被写入到系统网络代理设置
+# skip-proxy = %INSERT% localhost, *.local, captive.apple.com, e.crashlytics.com, sequoia.apple.com, seed-sequoia.siri.apple.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.1/32, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, 224.0.0.0/4, 240.0.0.0/4, 255.255.255.255/32, ::1/128, fc00::/7, fd00::/8, fe80::/10, ff00::/8, 2001::/32, 2001:db8::/32, 2002::/16, ::ffff:0:0:0:0/1, ::ffff:128:0:0:0/1
+skip-proxy = %APPEND% *.local
+# Always Real IP Hosts
+# 当 Surge VIF 处理 DNS 问题时，此选项要求 Surge 返回一个真正的 IP 地址，而不是一个假 IP 地址。
+# DNS 数据包将被转发到上游 DNS 服务器。
+always-real-ip = %APPEND% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, opencloud.wostore.cn, id.mail.wo.cn, mdn.open.wo.cn, hmrz.wo.cn, nishub1.10010.com, enrichgw.10010.com, *.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, *.microdone.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*, dns.msftncsi.com, *.turn.twilio.com, *.stun.twilio.com, stun.syncthing.net, *.sslip.io, *.nip.io
+# Always Raw TCP Hosts
+# 注：always-raw-tcp-hosts 参数的优先级高于 force-http-engine-hosts 参数与 MITM 配置。
+always-raw-tcp-hosts = www.google.com, 91.108.*, 5.28.195.*, 149.154.1*, 185.76.151.*, 91.105.1*
+
+# 🚫 阻止常见的 HTTPDNS 服务器
+force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443
+
+[MITM]
+hostname = %APPEND% 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, sub.store, security.wechat.com, weixin110.qq.com, www.google.cn, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, web.meituan.com, api.szbgcx.cn, ccmsupport-sz.tenpay.com, redirector.googlevideo.com, mp.weixin.qq.com, cbd-gateway-service-applets.hualala.com, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, capi.lkcoffee.com, ucmp.sf-express.com, newton.gumingnc.com, miniapp.sexytea2013.com, m.dianping.com, mapi.dianping.com, mapi.ghsmpwalmart.com, wx.17u.cn, npay.meituan.com, apimobile.meituan.com, api.m.jd.com, rms.meituan.com, img0*.luckincoffeecdn.com, tm-api.pin-dao.cn, cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, szextshort.weixin.qq.com
+
+[URL Rewrite]
+# 🍟 整点薯条：🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
+# 支付宝
+#^https?:\/\/amdc\.alipay\.com\/s?query - reject
+#^https?:\/\/amdc-sibling\.alipay\.com\.cn\/s?query - reject
+^https?:\/\/110\.76\.8\.150\/squery - reject
+^https?:\/\/203\.209\.230\.39\/squery - reject
+^https?:\/\/203\.209\.245\.102\/squery - reject
+^https?:\/\/203\.209\.245\.158\/squery - reject
+^https?:\/\/203\.209\.247\.95\/squery - reject
+^https?:\/\/203\.209\.250\.41\/squery - reject
+^https?:\/\/203\.209\.250\.114\/squery - reject
+^https?:\/\/203\.209\.251\.147\/squery - reject
+^https?:\/\/2400:B180:6001::18F\/squery - reject
+^https?:\/\/2400:B200:1005:3000::155\/squery - reject
+^https?:\/\/2400:B200:1005:3000::1D3\/squery - reject
+^https?:\/\/2400:B200:5000:B000::C8\/squery - reject
+# 百度
+^http:\/\/180\.76\.76\.112\/v4\/resolve - reject
+^http:\/\/180\.76\.76\.220\/v4\/resolve - reject
+# 哔哩哔哩
+# KEY_EXT_P2P_HTTPDNS_BILI_IP
+#^http:\/\/47\.101\.175\.206\/resolve - reject
+#^http:\/\/47\.100\.123\.169\/resolve - reject
+#^http:\/\/120\.46\.169\.234\/resolve - reject
+#^http:\/\/121\.36\.72\.124\/resolve - reject
+# KEY_EXT_P2P_BILIDNS_CMCC_IP
+#^http:\/\/116\.63\.10\.135\/resolve - reject
+#^http:\/\/122\.9\.7\.134\/resolve - reject
+#^http:\/\/117\.185\.228\.108\/resolve - reject
+#^http:\/\/117\.144\.238\.29\/resolve - reject
+# KEY_EXT_P2P_BILIDNS_CT_IP
+#^http:\/\/122\.9\.13\.79\/resolve - reject
+#^http:\/\/122\.9\.15\.129\/resolve - reject
+#^http:\/\/101\.91\.140\.224\/resolve - reject
+#^http:\/\/101\.91\.140\.124\/resolve - reject
+# KEY_EXT_P2P_BILIDNS_CU_IP
+#^http:\/\/114\.116\.215\.110\/resolve - reject
+#^http:\/\/116\.63\.10\.31\/resolve - reject
+#^http:\/\/112\.64\.218\.119\/resolve - reject
+#^http:\/\/112\.65\.200\.117\/resolve - reject
+# 字节跳动
+^https?:\/\/.+\.zijieapi\.com\/get_domains\/ - reject
+# 京东
+#^https:\/\/dns\.jd\.com\/v6\/b - reject
+# 美团
+#^http:\/\/103\.37\.155\.60\/fetch - reject
+# 拼多多
+#^http:\/\/101\.35\.204\.35\/d - reject
+^http:\/\/101\.35\.212\.35\/d - reject
+^http:\/\/114\.110\.96\.26\/d - reject
+#^http:\/\/114\.110\.97\.97\/d - reject
+^http:\/\/240c:409f::3:0:163\/d - reject
+^http:\/\/240c:409f::3:0:359\/d - reject
+^http:\/\/2402:4e00:1411:201:0:9964:ba21:5a41\/d - reject
+# 青云
+# 参考：https://mc.qcloudimg.com/static/qc_doc/d39d48b733835af8a2e223115ac67da7/doc-HttpDNS-Getting+Started.pdf
+# 参考：https://main.qcloudimg.com/raw/document/product/pdf/379_3513_cn.pdf
+# 参考：https://cloud.tencent.com/document/product/379/61200
+^https?:\/\/119\.29\.29\.29\/d - reject
+# QQ 音乐
+^http:\/\/182\.256\.116\.116\/d - reject
+# 微博
+# 参考：https://github.com/CNSRE/HTTPDNSLib-for-iOS
+^http:\/\/api\.weibo\.cn\/2\/httpdns\/config - reject
+^http:\/\/api\.weibo\.cn\/httpdns\/config - reject
+# 微信
+# 注意：以下域名 HTTPS 无法 MitM，如通过此链接查询，无法处理
+#^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns - reject
+#^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns - reject
+^https?:\/\/short\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
+^https?:\/\/hkextshort\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/getcdndns - reject
+# Wework
+# 参考：https://res.mail.qq.com/zh_CN/wework_ip/latest.html
+#^http:\/\/182\.254\.116\.117\/d - reject
+#^http:\/\/182\.254\.118\.119\/d - reject
+# 知乎
+# 参考：https://github.com/lwd-temp/anti-ip-attribution/issues/24
+^http:\/\/103\.41\.167\.237\/v2\/resolv - reject
+
+# 谷歌送中重定向（将谷歌搜索中国重定向至 .com 域名）www.google.cn
+^https?:\/\/(www.)?(g|google)\.cn https://www.google.com 307
+
+# 微信
+# 去广告 mp.weixin.qq.com
+^https://mp\.weixin\.qq\.com/mp/(advertisement_report|ad_complaint|ad_video|cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle|relatedsearchword|report) - reject
+^https?://szextshort\.weixin\.qq\.com/cgi-bin/mmoc-bin/ad - reject
+# 小程序净化 xyst.yuanfudao.com, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, web.meituan.com, api.szbgcx.cn, ccmsupport-sz.tenpay.com, redirector.googlevideo.com, www.youtube.com, mp.weixin.qq.com, cbd-gateway-service-applets.hualala.com, as.xiaojukeji.com, daijia.kuaidadi.com, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, capi.lkcoffee.com, ucmp.sf-express.com, newton.gumingnc.com, miniapp.sexytea2013.com, m.dianping.com, mapi.dianping.com, mapi.ghsmpwalmart.com, wx.17u.cn, npay.meituan.com, apimobile.meituan.com, api.m.jd.com, rms.meituan.com, img0*.luckincoffeecdn.com, tm-api.pin-dao.cn, cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com
+# 收钱吧 @可莉🅥
+^https:\/\/api\.szbgcx\.cn\/account\/adv\/ - reject
+# 腾讯乘车码
+^https?:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi - reject
+# 霸王茶姬
+^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/cmk-center\/marketing\/canvas\/advert - reject
+
+[Map Local]
+# 微信小程序净化
+# 茶百道
+^https?:\/\/cbd-gateway-service-applets\.hualala\.com\/arch\/api\/banner\/QueryBannerImgList data-type=text data="{}" status-code=200
+# 肯德基
+^https://orders\.kfc\.com\.cn/preorder-portal/api/v2/(coupon|activity) data-type=text data="{}" status-code=200
+#^https?://dynamicad\.kfc\.com\.cn/api data-type=text data="{}" status-code=200
+^https?://res\.kfc\.com\.cn/CRM/kfcad/custom_v\d/wxapp data-type=text data="{}" status-code=200
+# 麦当劳
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity data-type=text data="{}" status-code=200
+^https?:\/\/api\.mcd\.cn\/bff\/portal\/richpop data-type=text data="{}" status-code=200
+# 蜜雪冰城
+#^https?:\/\/mxsa\.mxbc\.net\/api\/v\d\/adinfo\/adplace\/query data-type=text data="{}" status-code=200
+# 猫眼
+# 弹窗 + 横幅广告
+#^https:\/\/ad\.maoyan\.com\/api\/position\/detail data-type=text data="{}" status-code=200
+# 电竞 + 热门赛事
+^https?:\/\/wx\.maoyan\.com\/maoyansh\/api\/mobile\/(hotMatchList|eSportsIps) data-type=text data="{}" status-code=200
+# 放映厅
+^https?:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json data-type=text data="{}" status-code=200
+# 精彩演出
+^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow data-type=text data="{}" status-code=200
+# 七日精选
+^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0 data-type=text data="{}" status-code=200
+# 今日必抢
+^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main data-type=text data="{}" status-code=200
+# 大咖新动态
+^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query data-type=text data="{}" status-code=200
+# 为你推荐
+^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances data-type=text data="{}" status-code=200
+# 首页底部推荐
+^https?:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v\d\/list\.json data-type=text data="{}" status-code=200
+# 演出页面全部拦截
+^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/ad\/detail data-type=text data="{}" status-code=200
+# 瑞幸咖啡
+^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/order\/orderBanner data-type=text data="{}" status-code=200
+^https?:\/\/capi\.lkcoffee\.com\/resource\/market\/receiveCoupon\/receiveCouponPop data-type=text data="{}" status-code=200
+# 顺丰速运+
+^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query data-type=text data="{}" status-code=200
+^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList$ data-type=text data="{}" status-code=200
+# 古茗茶饮点单 newton.gumingnc.com
+^https?:\/\/newton\.gumingnc\.com\/newton-buyer\/newton\/buyer\/(ump|touch|external\/front) data-type=text data="{}" status-code=200
+# 通用规则
+^https?:\/\/mp\.weixin\.qq\.com\/wapad\/getaddata\?action=getad data-type=text data="" status-code=200
+^https?:\/\/mp\.weixin\.qq\.com\/wapad\/reportaddata\?action=exposure_report data-type=text data="" status-code=200
+# 茶颜悦色 miniapp.sexytea2013.com
+^https?:\/\/miniapp\.sexytea2013\.com\/cms\/slot\/byCode\?code=MALL_INDEX_SLOT data-type=text data="{}" status-code=200
+# 大众点评 m.dianping.com, mapi.dianping.com
+^https?:\/\/m\.dianping\.com\/an\/gear\/dpmapp\/api\/readLionConfig\/config data-type=text data="{}" status-code=200
+^https?:\/\/m\.dianping\.com\/mapi\/mgw\/growth\/queryhaima data-type=text data="{}" status-code=200
+^https?:\/\/m\.dianping\.com\/wxmapi\/shop\/friendslike data-type=text data="{}" status-code=200
+^https?:\/\/mapi\.dianping\.com\/mapi\/mgw\/growth\/clipboardquery data-type=text data="{}" status-code=200
+# 沃尔玛 mapi.ghsmpwalmart.com
+# 首页角标
+^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/navigation\/page\/getPageActivityTab data-type=text data="{}" status-code=200
+# 首页弹窗
+^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/navigation\/spread\/querySpreadList data-type=text data="{}" status-code=200
+# 我的页横幅
+^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/navigation\/user\/getAdvertisementPlayModuleInfo data-type=text data="{}" status-code=200
+# 我的页省钱卡
+^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/user\/couponPackage\/couponPackageAccess data-type=text data="{}" status-code=200
+# 瑞幸咖啡
+^https?:\/\/img0[1-9]{1}\.luckincoffeecdn\.com\/group\d/M00/[A-Z0-9]{2}/[A-Z0-9]{2}/[a-zA-Z0-9]{29}\.(jpg|jpeg)_\.webp data-type=text data="" status-code=200
+# 奈雪 tm-api.pin-dao.cn
+^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2 data-type=text data="{}" status-code=200
+^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes data-type=text data="{}" status-code=200
+# 一点点 cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com
+#^https:\/\/alittle-tea\.oss-cn-shanghai\.aliyuncs\.com\/images\/platform\/alittle data-type=text data="{}" status-code=200
+
+# 同程旅行
+^https:\/\/wx\.17u\.cn\/xcxhomeapi\/aggregator\/index data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/blankflight data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/membermessageuserapi\/message\/list data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/messageBox data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/membermessageuserapi\/category\/getCategory data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/homemarketapi\/search\/recommend data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/mytourapi\/blankpage\/recommendList data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator\/index data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService\/getAd data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator\/index data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/orderRemind data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/icons data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberShow data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/xcxhomeapi\/home\/converge data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/platformpubapi\/customer\/lead\/getInfo data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/toptips data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/vacation\/webapp\/tailor\/miniHomeConfig data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/mytourapi\/recommendation\/arriveCity data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberInfo data-type=text data="{}" status-code=200
+^https:\/\/wx\.17u\.cn\/wireless\/monitor\/wx\/common\/compressevent data-type=text data="{}" status-code=200
+^https:\/\/a1d5b283e-wx621112590b635086\.sh\.wxgateway\.com\/xcxhomeapi\/home\/screen data-type=text data="{}" status-code=200
+# 美团
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone data-type=text data="{}" status-code=200
+^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources data-type=text data="{}" status-code=200
+^https:\/\/npay\.meituan\.com\/conch\/flow\/mypage-wallet-info data-type=text data="{}" status-code=200
+^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow data-type=text data="{}" status-code=200
+^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window data-type=text data="{}" status-code=200
+^https:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword data-type=text data="{}" status-code=200
+# 京东
+^https:\/\/api\.m\.jd\.com\/\?loginType=11 data-type=text data="{}" status-code=200
+
+[Body Rewrite]
+# 微信小程序净化
+# 瑞幸咖啡
+http-response ^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/(sys\/app\/adposNew|eorder\/product\/popAppTagProductList) \{.+\} '{ "status": "SUCCESS" }'
+# 美团
+http-response-jq ^https:\/\/web\.meituan\.com\/api\/miniprogram\/(tabbar\/all\/query|index\/aggregate) '. as $in | if ($in.data | type) == "array" then .data |= map(select(.name? | IN("首页","神券","我的"))) elif ($in.data | type) == "object" then .data |= del(.oneCentBuy) else . end'
+# 美团点餐
+http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\? 'del(.data.popUpWindows)'
+# 霸王茶姬
+http-response-jq ^https?:\/\/(?>webapi|miniapp)\.qmai\.cn\/web\/catering([0-9]-apiserver)?\/advertising\/ad\/advertiseInfo 'if (.data | type) == "array" and (.data | length > 0) then .data |= map( .detailInfo.popDayLimit = 0 | .detailInfo.adType = 4 | .detailInfo.closeButtonLocation = 0 | .detailInfo.skipButtonLocation = 0 | .detailInfo.adLandingInfoList = [{ id: "", imgSource: null, landingPageModel: "", landingPageLink: null, landingPageType: null, landingGroup: null, styleType: null, orderIndex: 1, landingPageText: null, landingPageImg: "", landingPageName: "", messageModel: null }] ) else . end'
+# 茶颜悦色
+http-response-jq ^https?:\/\/miniapp\.sexytea2013\.com\/cms\/slot\/queryByCodes\?codes=INDEX_TOP_BANNER 'del(.data.INDEX_SLOT_01, .data.INDEX_SLOT_02) | .data.INDEX_TOP_BANNER.contents |= map(del(.bubble, .figure))'
+
+# 一点点
+http-response-jq ^https:\/\/cappapi\.alittle-tea\.com\/open\?method=catering\.set\.ad 'del(.data)'
+
+[Rule]
+# 规则修正
+AND, ((DOMAIN-KEYWORD, tnc, extended-matching), (OR, ((DOMAIN-SUFFIX, capcutapi.com, extended-matching), (DOMAIN-SUFFIX, zijieapi.com, extended-matching), (DOMAIN-SUFFIX, isnssdk.com, extended-matching), (DOMAIN-SUFFIX, toutiaoapi.com, extended-matching), (DOMAIN-SUFFIX, bytedance.com, extended-matching), (DOMAIN-SUFFIX, snssdk.com, extended-matching), (DOMAIN-SUFFIX, sgsnssdk.com, extended-matching)))), DIRECT
+DOMAIN, ca.iadsdk.apple.com, DIRECT, extended-matching
+
+[Script]
+# @Sub-Store（高级订阅管理工具，无 ability 参数版本，不会爆内存， 如果需要使用指定节点功能 例如[加旗帜脚本或者cname脚本] 可以用带 ability 参数）（需开启 脚本、复写和 MitM 等功能，并指定代理策略，后访问 https://sub.store）（更多脚本信息请自行在 https://github.com/sub-store-org/Sub-Store 中查找）sub.store
+# 主程序 已经去掉 Sub-Store Core 的参数 [, ability = http-client-policy] 不会爆内存，这个参数在 Surge 非常占用内存；如果不需要使用指定节点功能 例如[加旗帜脚本或者 cname 脚本] 则可以使用此脚本
+Sub-Store Core = type=http-request, pattern=^https?:\/\/sub\.store\/((download)|api\/(preview|sync|(utils\/node-info))), script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body = true, timeout = 120
+Sub-Store Simple = type=http-request, pattern=^https?:\/\/sub\.store, script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body = true, timeout = 120
+
+# @zZPiglet（更多脚本信息请自行在 https://github.com/zZPiglet/Task/tree/master 中查找）
+# 跳过中间界面，支付宝链接和被封禁淘宝链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选）（iOS/macOS、微信/WeChat 、群聊/扫码均可使用）security.wechat.com, weixin110.qq.com
+解除微信链接限制 = type=http-response, pattern=^https\:\/\/(weixin110\.qq|security.wechat)\.com\/cgi-bin\/mmspamsupport-bin\/newredirectconfirmcgi\?, requires-body = 1, max-size = 0, script-path = https://github.com/zZPiglet/Task/raw/master/asset/UnblockURLinWeChat.js

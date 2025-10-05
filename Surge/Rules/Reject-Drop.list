@@ -1,3 +1,7 @@
+# 其它
+DOMAIN-SUFFIX, undefined
+DOMAIN-SUFFIX, null
+DOMAIN-SUFFIX, in.applicationinsights.azure.com
 # 运营商拦截页面
 IP-ASN, 1012
 IP-ASN, 14651
