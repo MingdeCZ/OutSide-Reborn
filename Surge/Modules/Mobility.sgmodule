@@ -289,7 +289,7 @@ DOMAIN, api.biliapi.com, REJECT, extended-matching
 DOMAIN, app.biliapi.com, REJECT, extended-matching
 DOMAIN, api.biliapi.net, REJECT, extended-matching
 DOMAIN, app.biliapi.net, REJECT, extended-matching
-DOMAIN, line3-h5-mobile-api.biligame.com, REJECT, extended-matching
+# DOMAIN, line3-h5-mobile-api.biligame.com, REJECT, extended-matching
 DOMAIN-SUFFIX, chat.bilibili.com, REJECT, extended-matching
 
 # 滴滴出行优化

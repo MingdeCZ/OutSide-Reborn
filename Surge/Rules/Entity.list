@@ -1,3 +1,4 @@
+# 最后更新：25-10-17
 # ChatGPT
 DOMAIN, api-iam.intercom.io
 DOMAIN, api.statsig.com
@@ -20,8 +21,10 @@ DOMAIN-SUFFIX, claudeusercontent.com
 
 # 谷歌
 DOMAIN, ai.google.dev
+DOMAIN, aisandbox-pa.googleapis.com
 DOMAIN, alkalimakersuite-pa.clients6.google.com
 DOMAIN, jules.google.com
+DOMAIN, robinfrontend-pa.googleapis.com
 DOMAIN, waa-pa.clients6.google.com
 DOMAIN-SUFFIX, aistudio.google.com
 DOMAIN-SUFFIX, apis.google.com

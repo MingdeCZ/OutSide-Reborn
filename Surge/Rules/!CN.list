@@ -8,8 +8,9 @@ DOMAIN-SUFFIX, cdn77.org
 DOMAIN-SUFFIX, crisp.chat
 DOMAIN-SUFFIX, fast.com
 DOMAIN-SUFFIX, gcorelabs.com
-DOMAIN-SUFFIX, mangafox.me
+DOMAIN-SUFFIX, intercom.io
 DOMAIN-SUFFIX, mesl.cloud
+DOMAIN-SUFFIX, ocsp-certum.com
 DOMAIN-SUFFIX, onetrust.com
 DOMAIN-SUFFIX, perfops.io
 DOMAIN-SUFFIX, stripe.com
@@ -156,7 +157,7 @@ DOMAIN-SUFFIX, meta.ai
 DOMAIN-SUFFIX, openart.ai
 DOMAIN-SUFFIX, perplexity.ai
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：25-09-30）
+# 其它常见海外服务（最后更新：25-10-17）
 DOMAIN, ccmdl.adobe.com
 DOMAIN, community.oneplus.com
 DOMAIN, ees.elsevier.com
@@ -211,6 +212,7 @@ DOMAIN-SUFFIX, activated.win
 DOMAIN-SUFFIX, adguard-dns.io
 DOMAIN-SUFFIX, adguard.com
 DOMAIN-SUFFIX, adguard.org
+DOMAIN-SUFFIX, adguardaccount.com
 DOMAIN-SUFFIX, adidas.com
 DOMAIN-SUFFIX, aex.com
 DOMAIN-SUFFIX, afraid.org

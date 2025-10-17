@@ -311,7 +311,7 @@ DOMAIN-SUFFIX, wscont1.apps.microsoft.com
 DOMAIN-SUFFIX, wscont2.apps.microsoft.com
 URL-REGEX, ^http://www\.microsoft\.com/pki/
 URL-REGEX, ^http://www\.microsoft\.com/pkiops/
-# 软件更新、操作系统等大文件下载（最后更新：25-09-30）
+# 软件更新、操作系统等大文件下载（最后更新：25-10-17）
 # DOMAIN, dl.nssurge.com
 # DOMAIN, mac-release-static.stash.ws
 # DOMAIN, releases.stash.ws
@@ -396,6 +396,7 @@ DOMAIN, cdn.zoom.us
 DOMAIN, cdnorg.d.miui.com
 DOMAIN, charts.verdaccio.org
 DOMAIN, chnroutes2.cdn.skk.moe
+DOMAIN, cisco.yuntu.com.tw
 DOMAIN, ciscobinary.openh264.org
 DOMAIN, clarkson.edu
 DOMAIN, client.hikarifield.co.jp
@@ -418,7 +419,6 @@ DOMAIN, cpan.lnx.sk
 DOMAIN, cpan.metacpan.org
 DOMAIN, cpan.mines-albi.fr
 DOMAIN, cpan.mmgdesigns.com.ar
-DOMAIN, cpan.noris.de
 DOMAIN, cpan.pair.com
 DOMAIN, cpan.pesat.net.id
 DOMAIN, cpan.rinet.ru
@@ -568,6 +568,7 @@ DOMAIN, enterprise.proxmox.com
 DOMAIN, epicgames-download1.akamaized.net
 DOMAIN, espejito.fder.edu.uy
 DOMAIN, fastly-download.epicgames.com
+DOMAIN, fdisk.5play.app
 DOMAIN, fedorapeople.org
 DOMAIN, file.chobit.cc
 DOMAIN, files2.freedownloadmanager.org
@@ -887,6 +888,7 @@ DOMAIN, mirrors.xtom.jp
 DOMAIN, mirrors.xtom.nl
 DOMAIN, mirrors.xtom.sg
 DOMAIN, mirrors.xtom.us
+DOMAIN, mirrors.yuntu.com.tw
 DOMAIN, msdl.microsoft.com
 DOMAIN, muug.ca
 DOMAIN, nobara-images.nobaraproject.org
@@ -983,6 +985,7 @@ DOMAIN, tug.ctan.org
 DOMAIN, tux.rainside.sk
 DOMAIN, u.keka.io
 DOMAIN, update.code.visualstudio.com
+DOMAIN, update.cyberduck.io
 DOMAIN, update.parallels.com
 DOMAIN, update.sleazyfork.org
 DOMAIN, updater.snipaste.com
