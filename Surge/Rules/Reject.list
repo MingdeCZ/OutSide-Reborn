@@ -1020,6 +1020,7 @@ DOMAIN-KEYWORD, .srvqck
 DOMAIN-KEYWORD, _vmind.qqvideo.tc.qq.com
 DOMAIN-KEYWORD, adjust.
 DOMAIN-KEYWORD, adktrack
+DOMAIN-KEYWORD, admob
 DOMAIN-KEYWORD, adobeanalytic.
 DOMAIN-KEYWORD, adobeanalytics.
 DOMAIN-KEYWORD, adobemarketing.
@@ -1152,6 +1153,7 @@ DOMAIN-SUFFIX, advmob.cn
 DOMAIN-SUFFIX, adx.io
 DOMAIN-SUFFIX, adx.xiaodutv.com
 DOMAIN-SUFFIX, adx.yixin.im
+DOMAIN-SUFFIX, adxwork.com
 DOMAIN-SUFFIX, agent.ap1.datadoghq.com
 DOMAIN-SUFFIX, agent.datadoghq.com
 DOMAIN-SUFFIX, aic-ngfts.lge.com
