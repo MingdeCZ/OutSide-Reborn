@@ -1,16 +1,19 @@
 # 补充/优化
+# DOMAIN-SUFFIX, bit.ly
 # DOMAIN-SUFFIX, googlefiber.net
 DOMAIN-SUFFIX, 1e100cdn.net
+DOMAIN-SUFFIX, appcenter.ms
 DOMAIN-SUFFIX, apple
 DOMAIN-SUFFIX, b-cdn.net
-# DOMAIN-SUFFIX, bit.ly
 DOMAIN-SUFFIX, cdn77.org
+DOMAIN-SUFFIX, cedexis-radar.net
 DOMAIN-SUFFIX, cedexis-test.com
 DOMAIN-SUFFIX, crisp.chat
 DOMAIN-SUFFIX, duo.com
 DOMAIN-SUFFIX, fast.com
 DOMAIN-SUFFIX, gcorelabs.com
 DOMAIN-SUFFIX, getnoir.app
+DOMAIN-SUFFIX, i4store.net
 DOMAIN-SUFFIX, intercom.io
 DOMAIN-SUFFIX, kaylees.site
 DOMAIN-SUFFIX, lencr.org
@@ -30,10 +33,11 @@ DOMAIN-SUFFIX, tero.ink
 DOMAIN-SUFFIX, vcc.agency
 DOMAIN-SUFFIX, zenlayer.net
 # 待分配 IP 查询
+# DOMAIN-SUFFIX, ip.sb
+# DOMAIN-SUFFIX, ipwho.is
 DOMAIN-SUFFIX, db-ip.com
 DOMAIN-SUFFIX, ip-api.com
 DOMAIN-SUFFIX, ip-score.com
-# DOMAIN-SUFFIX, ip.sb
 DOMAIN-SUFFIX, ip125.com
 DOMAIN-SUFFIX, ip233.cn
 DOMAIN-SUFFIX, ip2location.com
@@ -47,7 +51,6 @@ DOMAIN-SUFFIX, iplark.com
 DOMAIN-SUFFIX, iplocation.net
 DOMAIN-SUFFIX, ipregistry.co
 DOMAIN-SUFFIX, ipstack.com
-# DOMAIN-SUFFIX, ipwho.is
 DOMAIN-SUFFIX, scamalytics.com
 # 苹果
 DOMAIN-SUFFIX, aaplimg.com
