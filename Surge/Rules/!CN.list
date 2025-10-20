@@ -5,16 +5,29 @@ DOMAIN-SUFFIX, apple
 DOMAIN-SUFFIX, b-cdn.net
 # DOMAIN-SUFFIX, bit.ly
 DOMAIN-SUFFIX, cdn77.org
+DOMAIN-SUFFIX, cedexis-test.com
 DOMAIN-SUFFIX, crisp.chat
+DOMAIN-SUFFIX, duo.com
 DOMAIN-SUFFIX, fast.com
 DOMAIN-SUFFIX, gcorelabs.com
+DOMAIN-SUFFIX, getnoir.app
 DOMAIN-SUFFIX, intercom.io
+DOMAIN-SUFFIX, kaylees.site
+DOMAIN-SUFFIX, lencr.org
 DOMAIN-SUFFIX, mesl.cloud
 DOMAIN-SUFFIX, ocsp-certum.com
 DOMAIN-SUFFIX, onetrust.com
+DOMAIN-SUFFIX, onetrust.io
+DOMAIN-SUFFIX, parallels.com
 DOMAIN-SUFFIX, perfops.io
+DOMAIN-SUFFIX, quantumult.app
+DOMAIN-SUFFIX, rapidssl.com
+DOMAIN-SUFFIX, scriptable.app
+DOMAIN-SUFFIX, steampowered.com
 DOMAIN-SUFFIX, stripe.com
+DOMAIN-SUFFIX, tampermonkey.net
 DOMAIN-SUFFIX, tero.ink
+DOMAIN-SUFFIX, vcc.agency
 DOMAIN-SUFFIX, zenlayer.net
 # 待分配 IP 查询
 DOMAIN-SUFFIX, db-ip.com

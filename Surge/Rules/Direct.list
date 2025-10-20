@@ -80,7 +80,6 @@ DOMAIN, www-google-analytics.l.google.com
 DOMAIN, www-googletagmanager.l.google.com
 DOMAIN, www.gstatic.com
 DOMAIN, www.huatools.com
-DOMAIN-SUFFIX, 5km.tech
 DOMAIN-SUFFIX, amp-api.podcasts.apple.com
 DOMAIN-SUFFIX, amp-api.shazam.apple.com
 DOMAIN-SUFFIX, apphousekitchen.com
@@ -92,7 +91,6 @@ DOMAIN-SUFFIX, configuration.ls.apple.com
 DOMAIN-SUFFIX, devimages-cdn.apple.com
 DOMAIN-SUFFIX, devstreaming-cdn.apple.com
 DOMAIN-SUFFIX, discussionschinese.apple.com
-DOMAIN-SUFFIX, dockdoor.net
 DOMAIN-SUFFIX, googleapis-cn.com
 DOMAIN-SUFFIX, googleapps-cn.com
 DOMAIN-SUFFIX, googleflights-cn.net
@@ -107,6 +105,10 @@ DOMAIN-SUFFIX, services.googleapis.cn
 DOMAIN-SUFFIX, shortcat.app
 DOMAIN-SUFFIX, store.storevideos.cdn-apple.com
 DOMAIN-SUFFIX, sveinbjorn.org
+# Steam 下载
+DOMAIN, steamcdn-a.akamaihd.net
+DOMAIN-SUFFIX, cm.steampowered.com
+# DOMAIN-SUFFIX, steamcontent.com
 # Apple 国内 CDN
 # DOMAIN-SUFFIX, iadsdk.apple.com
 DOMAIN-SUFFIX, a1.mzstatic.com
