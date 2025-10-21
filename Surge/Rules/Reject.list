@@ -1,6 +1,11 @@
 # 补充/优化
+DOMAIN, fog.22112211.xyz
+DOMAIN, trk.pinterest.com
 DOMAIN-SUFFIX, 2mdn-cn.net
 DOMAIN-SUFFIX, app-measurement-cn.com
+DOMAIN-SUFFIX, cedexis.com
+DOMAIN-SUFFIX, cedexis-radar.net
+DOMAIN-SUFFIX, cedexis-test.com
 DOMAIN-SUFFIX, google-analytics-cn.com
 DOMAIN-SUFFIX, googleadservices-cn.com
 DOMAIN-SUFFIX, googleoptimize-cn.com
@@ -8,6 +13,8 @@ DOMAIN-SUFFIX, googletagmanager-cn.com
 DOMAIN-SUFFIX, googletagservices-cn.com
 DOMAIN-SUFFIX, googletraveladservices-cn.com
 DOMAIN-SUFFIX, googlevads-cn.com
+DOMAIN-SUFFIX, honeycomb.io
+DOMAIN-SUFFIX, posthog.com
 #
 // break fairplay.l.qq.com, vi.l.qq.com
 AND, ((DOMAIN-KEYWORD, -ad-), (DOMAIN-SUFFIX, byteimg.com))
@@ -143,7 +150,6 @@ DOMAIN-SUFFIX, gdt.qq.com
 DOMAIN-SUFFIX, getui.com
 DOMAIN-SUFFIX, googlesyndication-cn.com
 DOMAIN-SUFFIX, halomobi.com
-DOMAIN-SUFFIX, honeycomb.io
 DOMAIN-SUFFIX, httpdns.pro
 DOMAIN-SUFFIX, hubcloud.com.cn
 DOMAIN-SUFFIX, iads.unity3d.com
@@ -176,7 +182,6 @@ DOMAIN-SUFFIX, pglstatp-sdk-toutiao.com
 DOMAIN-SUFFIX, pglstatp-snssdk-toutiao.com
 DOMAIN-SUFFIX, pglstatp-toutiao-b.com
 DOMAIN-SUFFIX, pglstatp-toutiao.com
-DOMAIN-SUFFIX, posthog.com
 DOMAIN-SUFFIX, puata.info
 DOMAIN-SUFFIX, readgps.com
 DOMAIN-SUFFIX, richmob.cn
@@ -246,8 +251,6 @@ IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128
 IP-CIDR6, 2402:db40:5100:1011::5/128
 IP-CIDR6, 240e:928:1400:10::25/128
 # 其它补充（最后更新：25-10-17）
-# DOMAIN, p2pupdate.gamedl.qq.com
-# DOMAIN, p2pupgrade.gamedl.qq.com
 DOMAIN, 1oavsblobprodcus350.blob.core.windows.net
 DOMAIN, 2016.sina.cn
 DOMAIN, 37bvsblobprodcus311.blob.core.windows.net

@@ -2,10 +2,6 @@
 IP-CIDR, 95.161.76.100/31
 
 # 阻止 YouTube 和 Bilibili 的视频 CDN 的 QUIC（最后更新：25-10-17）
-# DOMAIN-SUFFIX, p2p.qq.com
-# DOMAIN-SUFFIX, p2ptun.qq.com
-# DOMAIN-SUFFIX, p2pupdate.gamedl.qq.com
-# DOMAIN-SUFFIX, p2pupgrade.gamedl.qq.com
 AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, googlevideo.com))
 DOMAIN, livewebbs2pcdn.msstatic.com
 DOMAIN, qn-cdnfile1pcdn.msstatic.com

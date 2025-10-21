@@ -1,13 +1,6 @@
 # 补充/优化
-# DOMAIN-SUFFIX, bit.ly
-# DOMAIN-SUFFIX, googlefiber.net
-DOMAIN-SUFFIX, 1e100cdn.net
-DOMAIN-SUFFIX, appcenter.ms
+DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, apple
-DOMAIN-SUFFIX, b-cdn.net
-DOMAIN-SUFFIX, cdn77.org
-DOMAIN-SUFFIX, cedexis-radar.net
-DOMAIN-SUFFIX, cedexis-test.com
 DOMAIN-SUFFIX, crisp.chat
 DOMAIN-SUFFIX, duo.com
 DOMAIN-SUFFIX, fast.com
@@ -28,6 +21,7 @@ DOMAIN-SUFFIX, rapidssl.com
 DOMAIN-SUFFIX, scriptable.app
 DOMAIN-SUFFIX, steampowered.com
 DOMAIN-SUFFIX, stripe.com
+DOMAIN-SUFFIX, swiftgram.app
 DOMAIN-SUFFIX, tampermonkey.net
 DOMAIN-SUFFIX, tero.ink
 DOMAIN-SUFFIX, vcc.agency
@@ -1265,6 +1259,9 @@ DOMAIN-SUFFIX, zerochan.net
 DOMAIN-SUFFIX, zndsk.com
 USER-AGENT, Roam*
 # 待分配流媒体
+# DOMAIN, youtube.googleapis.com
+# DOMAIN, youtubei.googleapis.com
+# DOMAIN-SUFFIX, googlevideo.com
 DOMAIN, 44wilhpljf.execute-api.ap-southeast-1.amazonaws.com
 DOMAIN, 4gtvfreepcvod-cds.cdn.hinet.net
 DOMAIN, akmcdnoversea-tw.inter.ptqy.gitv.tv
@@ -1314,8 +1311,6 @@ DOMAIN, upos-bstar-mirrorakam.akamaized.net
 DOMAIN, upos-bstar1-mirrorakam.akamaized.net
 DOMAIN, uts-api.itunes.apple.com
 DOMAIN, video.friday.tw
-# DOMAIN, youtube.googleapis.com
-# DOMAIN, youtubei.googleapis.com
 DOMAIN-KEYWORD, -spotify-com
 DOMAIN-KEYWORD, -tiktokcdn-com
 DOMAIN-KEYWORD, avoddashs
@@ -1384,7 +1379,6 @@ DOMAIN-SUFFIX, fls-na.amazon.com
 DOMAIN-SUFFIX, fox.com
 DOMAIN-SUFFIX, foxdcg.com
 DOMAIN-SUFFIX, foxplus.com
-# DOMAIN-SUFFIX, googlevideo.com
 DOMAIN-SUFFIX, hayabusa.dev
 DOMAIN-SUFFIX, hayabusa.io
 DOMAIN-SUFFIX, hayabusa.media

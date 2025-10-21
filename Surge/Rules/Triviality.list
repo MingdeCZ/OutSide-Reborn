@@ -1,7 +1,4 @@
 # 被墙/优化
-# DOMAIN, objects.githubusercontent.com
-# DOMAIN, pkg-containers.githubusercontent.com
-# DOMAIN, release-assets.githubusercontent.com
 DOMAIN, addins.deepl.com
 DOMAIN, appdownload.deepl.com
 DOMAIN, registry-1.docker.io
@@ -9,15 +6,17 @@ DOMAIN, smsactivate.s3.eu-central-1.amazonaws.com
 DOMAIN, testflight.apple.com
 DOMAIN, update.greasyfork.org
 DOMAIN, www.jibapps.com
+DOMAIN-SUFFIX, 1e100cdn.net
 DOMAIN-SUFFIX, 2025copy.com
 DOMAIN-SUFFIX, 5km.tech
+DOMAIN-SUFFIX, b-cdn.net
 DOMAIN-SUFFIX, baozimh.com
 DOMAIN-SUFFIX, bilimanga.net
 DOMAIN-SUFFIX, blcnimghost2.cc
 DOMAIN-SUFFIX, boylove.cc
 DOMAIN-SUFFIX, cdn.localizeapi.com
 DOMAIN-SUFFIX, cdn.prod.website-files.com
-DOMAIN-SUFFIX, cedexis.com
+DOMAIN-SUFFIX, cdn77.org
 DOMAIN-SUFFIX, colamanga.com
 DOMAIN-SUFFIX, discordapp.com
 DOMAIN-SUFFIX, dl.discordapp.net
@@ -59,9 +58,6 @@ IP-CIDR6, 2a0b:e42:1::/48
 IP-CIDR6, 2a0b:e43:1::/48
 IP-CIDR6, 2a0b:e44:1::/48
 IP-CIDR6, 2a0b:e45:1::/48
-# 第三方电报
-DOMAIN-SUFFIX, 64gr.am
-DOMAIN-SUFFIX, swiftgram.app
 # 国外静态 CDN 资源（最后更新：25-10-17）
 # DOMAIN, reviews-badge.capterra.com
 DOMAIN, 0x0.st
