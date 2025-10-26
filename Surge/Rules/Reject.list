@@ -250,7 +250,7 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128
 IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128
 IP-CIDR6, 2402:db40:5100:1011::5/128
 IP-CIDR6, 240e:928:1400:10::25/128
-# 其它补充（最后更新：25-10-17）
+# 其它补充（最后更新：25-10-26）
 DOMAIN, 1oavsblobprodcus350.blob.core.windows.net
 DOMAIN, 2016.sina.cn
 DOMAIN, 37bvsblobprodcus311.blob.core.windows.net
@@ -312,6 +312,7 @@ DOMAIN, ads.msn.com
 DOMAIN, ads.privacy.qq.com
 DOMAIN, ads.servebom.com
 DOMAIN, ads.sina.com
+DOMAIN, ads.weilitoutiao.net
 DOMAIN, adscdn.baidu.com
 DOMAIN, adsclick.qq.com
 DOMAIN, adsdk.yandex.ru
@@ -374,6 +375,7 @@ DOMAIN, analytics-api.samsunghealthcn.com
 DOMAIN, analytics-api.smzdm.com
 DOMAIN, analytics.163.com
 DOMAIN, analytics.githubassets.com
+DOMAIN, analytics.immersivetranslate.com
 DOMAIN, analytics.msn.com
 DOMAIN, analytics.pinterest.com
 DOMAIN, analytics.pointdrive.linkedin.com
@@ -396,7 +398,6 @@ DOMAIN, apilog-web.acfun.cn
 DOMAIN, apiv4-iyes.youku.com
 DOMAIN, app-monitor.ele.me
 DOMAIN, appcfg.v.qq.com
-DOMAIN, appgoad.189.cn
 DOMAIN, applog-perf.uc.cn
 DOMAIN, applog.ucdns.uc.cn
 DOMAIN, applogios.uc.cn
@@ -1117,6 +1118,7 @@ DOMAIN-SUFFIX, admaster.com.cn
 DOMAIN-SUFFIX, admob.com
 DOMAIN-SUFFIX, adnet.qq.com
 DOMAIN-SUFFIX, adnexus.net
+DOMAIN-SUFFIX, adnxs.com
 DOMAIN-SUFFIX, adobe.io
 DOMAIN-SUFFIX, adobestats.io
 DOMAIN-SUFFIX, adpro.cn
@@ -1259,6 +1261,7 @@ DOMAIN-SUFFIX, cpu.baidu.com
 DOMAIN-SUFFIX, cs1.wpc.v0cdn.net
 DOMAIN-SUFFIX, cszlks.com
 DOMAIN-SUFFIX, cudaojia.com
+DOMAIN-SUFFIX, cupid.iqiyi.com
 DOMAIN-SUFFIX, customerevents.netflix.com
 DOMAIN-SUFFIX, da.hunantv.com
 DOMAIN-SUFFIX, da.mgtv.com
@@ -1670,6 +1673,7 @@ DOMAIN-SUFFIX, vdterms.samsungcloudsolution.com
 DOMAIN-SUFFIX, video-dsp.pddpic.com
 DOMAIN-SUFFIX, videoclick.baidu.com
 DOMAIN-SUFFIX, viglink.com
+DOMAIN-SUFFIX, vlion.cn
 DOMAIN-SUFFIX, voiceads.cn
 DOMAIN-SUFFIX, vungle.com
 DOMAIN-SUFFIX, wan.360.cn
@@ -1686,6 +1690,7 @@ DOMAIN-SUFFIX, wspeed.qq.com
 DOMAIN-SUFFIX, wwads.cn
 DOMAIN-SUFFIX, x.baidu.com
 DOMAIN-SUFFIX, xad.js.org
+DOMAIN-SUFFIX, xbk.189.cn
 DOMAIN-SUFFIX, xdrig.com
 DOMAIN-SUFFIX, xlog.jd.com
 DOMAIN-SUFFIX, yandexmetrica.com
@@ -1705,6 +1710,7 @@ DOMAIN-WILDCARD, adv0*.msa.cdn.mediaset.net
 DOMAIN-WILDCARD, f-log*.grammarly.io
 DOMAIN-WILDCARD, info.*.aleragroup.com
 DOMAIN-WILDCARD, mon-*.byteoversea.com
+DOMAIN-WILDCARD, v*.thenewstack.io
 IP-CIDR, 101.35.204.35/32
 IP-CIDR, 103.37.152.97/32
 IP-CIDR, 103.37.155.60/32

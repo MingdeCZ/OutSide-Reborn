@@ -1,13 +1,13 @@
 # 被墙/优化
 DOMAIN, addins.deepl.com
 DOMAIN, appdownload.deepl.com
+DOMAIN, pkgs.netbird.io
 DOMAIN, registry-1.docker.io
 DOMAIN, smsactivate.s3.eu-central-1.amazonaws.com
 DOMAIN, testflight.apple.com
 DOMAIN, update.greasyfork.org
 DOMAIN, www.jibapps.com
 DOMAIN-SUFFIX, 1e100cdn.net
-DOMAIN-SUFFIX, 2025copy.com
 DOMAIN-SUFFIX, 5km.tech
 DOMAIN-SUFFIX, b-cdn.net
 DOMAIN-SUFFIX, baozimh.com
@@ -42,6 +42,8 @@ DOMAIN-SUFFIX, snapkit.com
 DOMAIN-SUFFIX, stash.ws
 DOMAIN-SUFFIX, themoviedb.org
 DOMAIN-SUFFIX, trakt.tv
+DOMAIN-SUFFIX, typekit.net
+DOMAIN-SUFFIX, unpkg.com
 DOMAIN-SUFFIX, v2ex.com
 DOMAIN-SUFFIX, webtype.com
 DOMAIN-SUFFIX, wnacg.com
@@ -58,8 +60,12 @@ IP-CIDR6, 2a0b:e42:1::/48
 IP-CIDR6, 2a0b:e43:1::/48
 IP-CIDR6, 2a0b:e44:1::/48
 IP-CIDR6, 2a0b:e45:1::/48
-# 国外静态 CDN 资源（最后更新：25-10-17）
+# 国外静态 CDN 资源（最后更新：25-10-26）
+# DOMAIN, denali-static.grammarly.com
+# DOMAIN, embed.cloudflarestream.com
 # DOMAIN, reviews-badge.capterra.com
+# DOMAIN, static.grammarly.com
+# DOMAIN, steamcdn-a.akamaihd.net
 DOMAIN, 0x0.st
 DOMAIN, 3dna.nationbuilder.com
 DOMAIN, 4gtvimg2.4gtv.tv
@@ -192,6 +198,7 @@ DOMAIN, assets.bwbx.io
 DOMAIN, assets.byteplus.com
 DOMAIN, assets.calendly.com
 DOMAIN, assets.canny.io
+DOMAIN, assets.cello.so
 DOMAIN, assets.change.org
 DOMAIN, assets.chaos.social
 DOMAIN, assets.chess24.com
@@ -660,6 +667,7 @@ DOMAIN, cdn.iconfinder.com
 DOMAIN, cdn.imageengine.io
 DOMAIN, cdn.img.ly
 DOMAIN, cdn.infoq.com
+DOMAIN, cdn.insightmediagroup.io
 DOMAIN, cdn.ionos.de
 DOMAIN, cdn.ip2location.io
 DOMAIN, cdn.ipregistry.co
@@ -1118,7 +1126,6 @@ DOMAIN, dc-cdn.cdw.com
 DOMAIN, dd.dexscreener.com
 DOMAIN, demo.unified-streaming.com
 DOMAIN, demotiles.maplibre.org
-DOMAIN, denali-static.grammarly.com
 DOMAIN, design-assets.hubspot.com
 DOMAIN, design-system.yext.com
 DOMAIN, design.codeberg.org
@@ -1563,6 +1570,7 @@ DOMAIN, img.fastcybers.com
 DOMAIN, img.foresightnews.pro
 DOMAIN, img.fortawesome.com
 DOMAIN, img.freepik.com
+DOMAIN, img.gs
 DOMAIN, img.hellofresh.com
 DOMAIN, img.hentaihaven.xxx
 DOMAIN, img.huffingtonpost.com
@@ -2416,7 +2424,6 @@ DOMAIN, static.global.visioncritical.com
 DOMAIN, static.gmgard.com
 DOMAIN, static.gnome.org
 DOMAIN, static.gopro.com
-DOMAIN, static.grammarly.com
 DOMAIN, static.guim.co.uk
 DOMAIN, static.heavy-r.com
 DOMAIN, static.helpjuice.com
@@ -2575,6 +2582,7 @@ DOMAIN, static7.lottiefiles.com
 DOMAIN, static8.lottiefiles.com
 DOMAIN, static9.lottiefiles.com
 DOMAIN, staticctf.ubisoft.com
+DOMAIN, statici.icloud.com
 DOMAIN, staticintl.cloudcachetci.com
 DOMAIN, staticm.fastcomments.com
 DOMAIN, statics-marketingsites-eas-ms-com.akamaized.net
@@ -2591,7 +2599,6 @@ DOMAIN, status.canarymail.io
 DOMAIN, status.ui.com
 DOMAIN, stbff.newfold.com
 DOMAIN, stc.utdstc.com
-# DOMAIN, steamcdn-a.akamaihd.net
 DOMAIN, steamusercontent-a.akamaihd.net
 DOMAIN, steamuserimages-a.akamaihd.net
 DOMAIN, steamvideo-a.akamaihd.net
@@ -2867,6 +2874,7 @@ DOMAIN-KEYWORD, fonts.hanime1
 DOMAIN-KEYWORD, images.trustpilot.com
 DOMAIN-KEYWORD, images.trustpilot.net
 DOMAIN-KEYWORD, scripts.trustpilot.com
+DOMAIN-KEYWORD, static.grammarly.com
 DOMAIN-KEYWORD, static.trustpilot.com
 DOMAIN-KEYWORD, vdownload.hanime1
 DOMAIN-KEYWORD, vod-adaptive.akamaized.net
@@ -3200,6 +3208,7 @@ DOMAIN-SUFFIX, flagcdn.com
 DOMAIN-SUFFIX, flaglog.com
 DOMAIN-SUFFIX, flagpedia.net
 DOMAIN-SUFFIX, flk-ipfs.xyz
+DOMAIN-SUFFIX, flsrv.net
 DOMAIN-SUFFIX, fmcdn.net
 DOMAIN-SUFFIX, fncstatic.com
 DOMAIN-SUFFIX, forbesimg.com
@@ -3219,6 +3228,7 @@ DOMAIN-SUFFIX, gammacdn.com
 DOMAIN-SUFFIX, gateway.originprotocol.com
 DOMAIN-SUFFIX, gateway.pinata.cloud
 DOMAIN-SUFFIX, gateway.serph.network
+DOMAIN-SUFFIX, gauthstatic.com
 DOMAIN-SUFFIX, gayzyimage.com
 DOMAIN-SUFFIX, gcr.si
 DOMAIN-SUFFIX, gdvid.info
