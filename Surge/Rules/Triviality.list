@@ -1,14 +1,18 @@
 # 被墙/优化
 DOMAIN, addins.deepl.com
 DOMAIN, appdownload.deepl.com
+DOMAIN, codeload.github.com
+DOMAIN, formulae.brew.sh
 DOMAIN, pkgs.netbird.io
 DOMAIN, registry-1.docker.io
+DOMAIN, repo.maven.apache.org
 DOMAIN, smsactivate.s3.eu-central-1.amazonaws.com
 DOMAIN, testflight.apple.com
 DOMAIN, update.greasyfork.org
 DOMAIN, www.jibapps.com
 DOMAIN-SUFFIX, 1e100cdn.net
 DOMAIN-SUFFIX, 5km.tech
+DOMAIN-SUFFIX, archive.org
 DOMAIN-SUFFIX, b-cdn.net
 DOMAIN-SUFFIX, baozimh.com
 DOMAIN-SUFFIX, bilimanga.net
@@ -27,6 +31,7 @@ DOMAIN-SUFFIX, godamh.com
 DOMAIN-SUFFIX, hostloc.com
 DOMAIN-SUFFIX, infuseku.xyz
 DOMAIN-SUFFIX, linux.do
+DOMAIN-SUFFIX, macked.app
 DOMAIN-SUFFIX, mangacopy.com
 DOMAIN-SUFFIX, mangafunb.fun
 DOMAIN-SUFFIX, mega.co.nz
@@ -35,6 +40,7 @@ DOMAIN-SUFFIX, mega.nz
 DOMAIN-SUFFIX, motiezw.com
 DOMAIN-SUFFIX, nbtool8.com
 DOMAIN-SUFFIX, nodeimage.com
+DOMAIN-SUFFIX, nodequality.com
 DOMAIN-SUFFIX, nodeseek.com
 DOMAIN-SUFFIX, nssurge.com
 DOMAIN-SUFFIX, rectangleapp.com
@@ -60,12 +66,13 @@ IP-CIDR6, 2a0b:e42:1::/48
 IP-CIDR6, 2a0b:e43:1::/48
 IP-CIDR6, 2a0b:e44:1::/48
 IP-CIDR6, 2a0b:e45:1::/48
-# 国外静态 CDN 资源（最后更新：25-10-26）
+# 国外静态 CDN 资源（最后更新：25-11-04）
 # DOMAIN, denali-static.grammarly.com
 # DOMAIN, embed.cloudflarestream.com
 # DOMAIN, reviews-badge.capterra.com
 # DOMAIN, static.grammarly.com
 # DOMAIN, steamcdn-a.akamaihd.net
+# DOMAIN, web-static.archive.org
 DOMAIN, 0x0.st
 DOMAIN, 3dna.nationbuilder.com
 DOMAIN, 4gtvimg2.4gtv.tv
@@ -1088,8 +1095,6 @@ DOMAIN, conversiongorilla.com
 DOMAIN, cookie-cdn.cookiepro.com
 DOMAIN, corp-backend.brevo.com
 DOMAIN, cors-proxy.htmldriven.com
-DOMAIN, cp2.cloudflare.com
-DOMAIN, cp4.cloudflare.com
 DOMAIN, cpwebassets.codepen.io
 DOMAIN, craftassets.unraid.net
 DOMAIN, cravatar.eu
@@ -1296,7 +1301,9 @@ DOMAIN, fscdn.eppo.cloud
 DOMAIN, g-static.ap4r.com
 DOMAIN, g.newsweek.com
 DOMAIN, g1.nyt.com
+DOMAIN, gamemedia.armorgames.com
 DOMAIN, gdb.rferl.org
+DOMAIN, gdb.voanews.com
 DOMAIN, gearbox.imgix.com
 DOMAIN, genesis-cdn.ff.com
 DOMAIN, geoip-js.com
@@ -1382,6 +1389,7 @@ DOMAIN, i3.anysex.com
 DOMAIN, i4.anysex.com
 DOMAIN, ias.r10s.jp
 DOMAIN, ichef.bbci.co.uk
+DOMAIN, icon.icepanel.io
 DOMAIN, icons.buffer.com
 DOMAIN, icons.duckduckgo.com
 DOMAIN, icons.ferndocs.com
@@ -1896,6 +1904,7 @@ DOMAIN, namedotcom-cdn.name.tools
 DOMAIN, nav.yumenosora.co.jp
 DOMAIN, navismithapis-cdn.com
 DOMAIN, nbcnewsdigital-static.nbcuni.com
+DOMAIN, nel.teo-rum.com
 DOMAIN, net-fe-static-assets.network-controller.svc.ui.com
 DOMAIN, netlify.apollo.io
 DOMAIN, newassets.hcaptcha.com
@@ -2063,6 +2072,7 @@ DOMAIN, publicsuffix.org
 DOMAIN, puku-dist.4gamers.com.tw
 DOMAIN, pytorch.org
 DOMAIN, qmod.quotemedia.com
+DOMAIN, quests.armorgames.com
 DOMAIN, quriobot.com
 DOMAIN, r.r10s.jp
 DOMAIN, r2.1hanime.com
@@ -2368,6 +2378,7 @@ DOMAIN, static.c-spanvideo.org
 DOMAIN, static.canva.com
 DOMAIN, static.captcha-delivery.com
 DOMAIN, static.carfax.com
+DOMAIN, static.cdnlogo.com
 DOMAIN, static.chaika.moe
 DOMAIN, static.change.org
 DOMAIN, static.chessarena.com
@@ -2797,7 +2808,6 @@ DOMAIN, web-cdn.bitrise.io
 DOMAIN, web-cdn.bsky.app
 DOMAIN, web-sdk-cdn.eyefitu.com
 DOMAIN, web-sdk.eyefitu.com
-DOMAIN, web-static.archive.org
 DOMAIN, web-static.pages.iheart.com
 DOMAIN, web-toolbar.playstation.com
 DOMAIN, webappassets.smartsheet.com
@@ -3380,6 +3390,7 @@ DOMAIN-SUFFIX, ipfs1.pixura.io
 DOMAIN-SUFFIX, ipfscdn.io
 DOMAIN-SUFFIX, ipfsgateway.makersplace.com
 DOMAIN-SUFFIX, ipns.co
+DOMAIN-SUFFIX, ismcdn.jp
 DOMAIN-SUFFIX, itsre-sumo.mozilla.net
 DOMAIN-SUFFIX, itvstatic.com
 DOMAIN-SUFFIX, jbkcdn.com
@@ -3743,6 +3754,7 @@ DOMAIN-SUFFIX, stylexjs.com
 DOMAIN-SUFFIX, substackcdn.com
 DOMAIN-SUFFIX, supabase.co
 DOMAIN-SUFFIX, superfiliate-cdn.com
+DOMAIN-SUFFIX, superhumanstatic.com
 DOMAIN-SUFFIX, surge.sh
 DOMAIN-SUFFIX, surrit.com
 DOMAIN-SUFFIX, surrit.store

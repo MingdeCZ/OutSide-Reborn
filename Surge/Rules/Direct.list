@@ -31,6 +31,7 @@ DOMAIN, csi.gstatic.com
 DOMAIN, dg-meta.video.google.com
 DOMAIN, dl.google.com
 DOMAIN, dl.l.google.com
+DOMAIN, dl.macked.store
 DOMAIN, download.mlcc.google.com
 DOMAIN, download.tensorflow.google.com
 DOMAIN, emmapplecodevice.googleapis.com
@@ -73,6 +74,7 @@ DOMAIN, staging.databe.floonet.goog
 DOMAIN, tac.googleapis.com
 DOMAIN, tools.google.com
 DOMAIN, tools.l.google.com
+DOMAIN, tv.apple.com
 DOMAIN, update.crashlytics.com
 DOMAIN, update.googleapis.com
 DOMAIN, wear.googleapis.com
@@ -91,6 +93,7 @@ DOMAIN-SUFFIX, configuration.ls.apple.com
 DOMAIN-SUFFIX, devimages-cdn.apple.com
 DOMAIN-SUFFIX, devstreaming-cdn.apple.com
 DOMAIN-SUFFIX, discussionschinese.apple.com
+DOMAIN-SUFFIX, fcs-keys-pub-prod.cdn-apple.com
 DOMAIN-SUFFIX, googleapis-cn.com
 DOMAIN-SUFFIX, googleapps-cn.com
 DOMAIN-SUFFIX, googleflights-cn.net
@@ -102,14 +105,20 @@ DOMAIN-SUFFIX, kepler.cafe
 DOMAIN-SUFFIX, pilotmoon.com
 DOMAIN-SUFFIX, popclip.app
 DOMAIN-SUFFIX, services.googleapis.cn
+DOMAIN-SUFFIX, sfss.cdn-apple.com
 DOMAIN-SUFFIX, shortcat.app
 DOMAIN-SUFFIX, store.storevideos.cdn-apple.com
 DOMAIN-SUFFIX, sveinbjorn.org
 # Steam 下载
-DOMAIN, steamcdn-a.akamaihd.net
-DOMAIN-SUFFIX, cm.steampowered.com
 # DOMAIN-SUFFIX, steamcontent.com
+DOMAIN-SUFFIX, cm.steampowered.com
+DOMAIN, steamcdn-a.akamaihd.net
 # Apple 国内 CDN
+# DOMAIN-SUFFIX, api-p-ap-c.smoot.apple.com
+# DOMAIN-SUFFIX, api-p-ap-d.smoot.apple.com
+# DOMAIN-SUFFIX, api-p-ap-e.smoot.apple.com
+# DOMAIN-SUFFIX, guzzoni.apple.com
+# DOMAIN-SUFFIX, guzzoni.smoot.apple.com
 # DOMAIN-SUFFIX, iadsdk.apple.com
 DOMAIN-SUFFIX, a1.mzstatic.com
 DOMAIN-SUFFIX, a2.mzstatic.com
@@ -120,9 +129,6 @@ DOMAIN-SUFFIX, adcdownload.apple.com
 DOMAIN-SUFFIX, adcdownload.apple.com.akadns.net
 DOMAIN-SUFFIX, amp-api-updates.apps.apple.com
 DOMAIN-SUFFIX, amp-api.media.apple.com
-DOMAIN-SUFFIX, api-p-ap-c.smoot.apple.com
-DOMAIN-SUFFIX, api-p-ap-d.smoot.apple.com
-DOMAIN-SUFFIX, api-p-ap-e.smoot.apple.com
 DOMAIN-SUFFIX, app-site-association.cdn-apple.com
 DOMAIN-SUFFIX, appldnld.apple.com
 DOMAIN-SUFFIX, appldnld.g.aaplimg.com
@@ -186,8 +192,6 @@ DOMAIN-SUFFIX, gspe21.ls.apple.com
 DOMAIN-SUFFIX, gspe35-ssl.ls.apple.com
 DOMAIN-SUFFIX, gspe79-cn-ssl.ls.apple.com
 DOMAIN-SUFFIX, guzzoni-apple-com.v.aaplimg.com
-DOMAIN-SUFFIX, guzzoni.apple.com
-DOMAIN-SUFFIX, guzzoni.smoot.apple.com
 DOMAIN-SUFFIX, icloud-cdn.icloud.com.akadns.net
 DOMAIN-SUFFIX, icloud.cdn-apple.com
 DOMAIN-SUFFIX, images.apple.com
@@ -1014,7 +1018,6 @@ DOMAIN, clarkson.edu
 DOMAIN, client.hikarifield.co.jp
 DOMAIN, cloud.daporkchop.net
 DOMAIN, cloudfront.debian.net
-DOMAIN, codeload.github.com
 DOMAIN, componentupdater.brave.com
 DOMAIN, content-origin.steampowered.com
 DOMAIN, cpan-mirror.rbc.ru
@@ -1186,7 +1189,6 @@ DOMAIN, fedorapeople.org
 DOMAIN, file.chobit.cc
 DOMAIN, files2.freedownloadmanager.org
 DOMAIN, filters.cdn.skk.moe
-DOMAIN, formulae.brew.sh
 DOMAIN, fr2.rpmfind.net
 DOMAIN, freedif.org
 DOMAIN, ftp-chi.osuosl.org
@@ -1557,7 +1559,6 @@ DOMAIN, repo.carbon.sh
 DOMAIN, repo.debiancn.org
 DOMAIN, repo.gradle.org
 DOMAIN, repo.hex.pm
-DOMAIN, repo.maven.apache.org
 DOMAIN, repo.nextdns.io
 DOMAIN, repo.powerdns.com
 DOMAIN, repo.sleeping.town
@@ -1622,7 +1623,6 @@ DOMAIN-SUFFIX, allawnofs.com
 DOMAIN-SUFFIX, androidfilehost.com
 DOMAIN-SUFFIX, apache.si
 DOMAIN-SUFFIX, archive.debian.org
-DOMAIN-SUFFIX, archive.org
 DOMAIN-SUFFIX, archive.ubuntu.com
 DOMAIN-SUFFIX, artfiles.org
 DOMAIN-SUFFIX, artifacts.ui.com

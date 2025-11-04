@@ -1,5 +1,5 @@
-# 最后更新：25-10-17
-# ChatGPT
+# 最后更新：25-11-04
+# OpenAI
 DOMAIN, api-iam.intercom.io
 DOMAIN, api.statsig.com
 DOMAIN, chat.openai.com.cdn.cloudflare.net
@@ -21,6 +21,7 @@ DOMAIN-SUFFIX, claudeusercontent.com
 
 # 谷歌
 DOMAIN, ai.google.dev
+DOMAIN, aida.googleapis.com
 DOMAIN, aisandbox-pa.googleapis.com
 DOMAIN, alkalimakersuite-pa.clients6.google.com
 DOMAIN, jules.google.com
@@ -29,6 +30,7 @@ DOMAIN, waa-pa.clients6.google.com
 DOMAIN-SUFFIX, aistudio.google.com
 DOMAIN-SUFFIX, apis.google.com
 DOMAIN-SUFFIX, bard.google.com
+DOMAIN-SUFFIX, cloudcode-pa.googleapis.com
 DOMAIN-SUFFIX, deepmind.com
 DOMAIN-SUFFIX, deepmind.google
 DOMAIN-SUFFIX, geller-pa.googleapis.com
@@ -41,15 +43,30 @@ DOMAIN-SUFFIX, notebooklm.google
 DOMAIN-SUFFIX, notebooklm.google.com
 DOMAIN-SUFFIX, proactivebackend-pa.googleapis.com
 
-# Augment
-DOMAIN-SUFFIX, augment.com
-DOMAIN-SUFFIX, augmentcode.com
-
 # 苹果
+# 智能
 DOMAIN, apple-relay.apple.com
-#DOMAIN, apple-relay.cloudflare.com
-#DOMAIN, apple-relay.fastly-edge.com
+DOMAIN, apple-relay.cloudflare.com
+DOMAIN, apple-relay.fastly-edge.com
+DOMAIN, cp2.cloudflare.com
+DOMAIN, cp4.cloudflare.com
+# Siri 相关
+DOMAIN, guzzoni.apple.com
+DOMAIN-SUFFIX, smoot.apple.com
+# 新闻
+DOMAIN, apple.comscoreresearch.com
+DOMAIN, news-edge.apple.com
+DOMAIN, news-events.apple.com
+# 音频
+URL-REGEX, ^https?://news-assets\.apple\.com/(audio-narrative|podcast/audio)/.*
 
 # Grok
 DOMAIN-SUFFIX, grok.com
 DOMAIN-SUFFIX, x.ai
+
+# WindSurf
+DOMAIN-SUFFIX, codeium.com
+
+# Augment
+DOMAIN-SUFFIX, augment.com
+DOMAIN-SUFFIX, augmentcode.com
