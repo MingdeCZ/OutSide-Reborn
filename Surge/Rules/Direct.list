@@ -31,7 +31,6 @@ DOMAIN, csi.gstatic.com
 DOMAIN, dg-meta.video.google.com
 DOMAIN, dl.google.com
 DOMAIN, dl.l.google.com
-DOMAIN, dl.macked.store
 DOMAIN, download.mlcc.google.com
 DOMAIN, download.tensorflow.google.com
 DOMAIN, emmapplecodevice.googleapis.com
@@ -46,6 +45,7 @@ DOMAIN, g2.gstatic.com
 DOMAIN, g3.gstatic.com
 DOMAIN, gstaticadssl.l.google.com
 DOMAIN, imasdk.googleapis.com
+DOMAIN, localhost.pan.baidu.com
 DOMAIN, localhost.weixin.qq.com
 DOMAIN, o.pki.goog
 DOMAIN, ocsp.pki.goog
