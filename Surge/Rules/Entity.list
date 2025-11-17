@@ -1,4 +1,4 @@
-# 最后更新：25-11-04
+# 最后更新：25-11-16
 # OpenAI
 DOMAIN, api-iam.intercom.io
 DOMAIN, api.statsig.com
@@ -48,11 +48,8 @@ DOMAIN-SUFFIX, proactivebackend-pa.googleapis.com
 DOMAIN, apple-relay.apple.com
 DOMAIN, apple-relay.cloudflare.com
 DOMAIN, apple-relay.fastly-edge.com
-DOMAIN, cp2.cloudflare.com
 DOMAIN, cp4.cloudflare.com
-# Siri 相关
-DOMAIN, guzzoni.apple.com
-DOMAIN-SUFFIX, smoot.apple.com
+DOMAIN, gspe1-ssl.ls.apple.com
 # 新闻
 DOMAIN, apple.comscoreresearch.com
 DOMAIN, news-edge.apple.com

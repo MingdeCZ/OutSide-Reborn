@@ -1,6 +1,5 @@
 # 补充/优化
 DOMAIN, fog.22112211.xyz
-DOMAIN, trk.pinterest.com
 DOMAIN-SUFFIX, 2mdn-cn.net
 DOMAIN-SUFFIX, app-measurement-cn.com
 DOMAIN-SUFFIX, cedexis-radar.net
@@ -260,7 +259,7 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128
 IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128
 IP-CIDR6, 2402:db40:5100:1011::5/128
 IP-CIDR6, 240e:928:1400:10::25/128
-# 其它补充（最后更新：25-11-04）
+# 其它补充（最后更新：25-11-16）
 DOMAIN, 1oavsblobprodcus350.blob.core.windows.net
 DOMAIN, 2016.sina.cn
 DOMAIN, 37bvsblobprodcus311.blob.core.windows.net
@@ -385,6 +384,7 @@ DOMAIN, analytics-api.samsunghealthcn.com
 DOMAIN, analytics-api.smzdm.com
 DOMAIN, analytics-js-cdn.liferay.com
 DOMAIN, analytics.163.com
+DOMAIN, analytics.blender.org
 DOMAIN, analytics.githubassets.com
 DOMAIN, analytics.immersivetranslate.com
 DOMAIN, analytics.msn.com
@@ -394,6 +394,7 @@ DOMAIN, analytics.query.yahoo.com
 DOMAIN, analytics.samsungknox.com
 DOMAIN, analytics.yahoo.com
 DOMAIN, androidgo.duapp.com
+DOMAIN, ap.cpatrk.net
 DOMAIN, apd-pcdnwxlogin.teg.tencent-cloud.net
 DOMAIN, apd-pcdnwxnat.teg.tencent-cloud.net
 DOMAIN, apd-pcdnwxstat.teg.tencent-cloud.net
@@ -430,6 +431,7 @@ DOMAIN, bingads.microsoft.com
 DOMAIN, bksoup.v.qq.com
 DOMAIN, browsercfg-drcn.cloud.dbankcloud.cn
 DOMAIN, browserkernel.baidu.com
+DOMAIN, browsertdidticket.m.qq.com
 DOMAIN, bsrv.qq.com
 DOMAIN, c-nfa.jd.com
 DOMAIN, c.bing.com
@@ -449,6 +451,7 @@ DOMAIN, cdn-ads.oss-cn-shanghai.aliyuncs.com
 DOMAIN, cdn-haokanapk.baidu.com
 DOMAIN, cdn.24metrics.com
 DOMAIN, cdn.innity.net
+DOMAIN, cdn.matomo.cloud
 DOMAIN, cdn.media.innity.net
 DOMAIN, cdn.perfops.net
 DOMAIN, cdn0.mobmore.com
@@ -515,7 +518,6 @@ DOMAIN, d7.sinaimg.cn
 DOMAIN, d8.sina.com.cn
 DOMAIN, d8.sinaimg.cn
 DOMAIN, d9.sina.com.cn
-DOMAIN, dataflow.bilibili.com
 DOMAIN, datum.jsdelivr.com
 DOMAIN, dcads.sina.com.cn
 DOMAIN, dd.iask.cn
@@ -533,6 +535,7 @@ DOMAIN, dns.m.sm.cn
 DOMAIN, dns.wechat.com
 DOMAIN, doh.iqiyi.com
 DOMAIN, doh.zjurl.cn
+DOMAIN, donate.wikimedia.org
 DOMAIN, doubleclick.ctfile.com
 DOMAIN, download.wan.sohu.com
 DOMAIN, dp.im.weibo.cn
@@ -571,6 +574,7 @@ DOMAIN, file.daihuo.qq.com
 DOMAIN, floor.bz.mgtv.com
 DOMAIN, fm.p0y.cn
 DOMAIN, fms.ipinyou.com
+DOMAIN, foundation.mozilla.org
 DOMAIN, fourier.taobao.com
 DOMAIN, free-aos-cdn-image.amap.com
 DOMAIN, g.163.com
@@ -580,6 +584,8 @@ DOMAIN, galaxy.bjcathay.com
 DOMAIN, galileotelemetry.tencent.com
 DOMAIN, game.weibo.cn
 DOMAIN, game.weibo.com
+DOMAIN, gatherer.m.qq.com
+DOMAIN, gator.volces.com
 DOMAIN, gemini.yahoo.com
 DOMAIN, geo.hicloud.com
 DOMAIN, geolocation.onetrust.com
@@ -714,6 +720,7 @@ DOMAIN, mclean.lato.cloud.360safe.com
 DOMAIN, mclean.uk.cloud.360safe.com
 DOMAIN, mclick.simba.taobao.com
 DOMAIN, mdevstat.qqlive.qq.com
+DOMAIN, me.cpatrk.net
 DOMAIN, metrics.mzstatic.com
 DOMAIN, mg.games.sina.com.cn
 DOMAIN, minfo.wps.cn
@@ -749,6 +756,7 @@ DOMAIN, nmetrics.samsung.com
 DOMAIN, noxagile.duapp.com
 DOMAIN, nsclick.baidu.com
 DOMAIN, o-sdk.mediation.unity3d.com
+DOMAIN, o.send.now
 DOMAIN, offnavi.map.baidu.com
 DOMAIN, omgmta.play.ott.video.qq.com
 DOMAIN, onecollector.cloudapp.aria.akadns.net
@@ -784,6 +792,7 @@ DOMAIN, pre-adv.alimama.com
 DOMAIN, pre2-ad.alimama.com
 DOMAIN, pre3-ad.alimama.com
 DOMAIN, preview.msn.com
+DOMAIN, probe.whatismyipaddress.com
 DOMAIN, prod.nexusrules.live.com
 DOMAIN, promote.biz.weibo.cn
 DOMAIN, proxy-mob-cld.alicdn.com
@@ -833,6 +842,7 @@ DOMAIN, s.qhupdate.com
 DOMAIN, s3.pfp.sina.net
 DOMAIN, samsungcloudsolution.com
 DOMAIN, samsungcloudsolution.net
+DOMAIN, sapi.justwatch.com
 DOMAIN, sax.sina.cn
 DOMAIN, sax.sina.com.cn
 DOMAIN, sax1.sina.com.cn
@@ -869,12 +879,14 @@ DOMAIN, slog.sina.cn
 DOMAIN, slog.sina.com.cn
 DOMAIN, sltint.adv.ott.cibntv.net
 DOMAIN, smetrics.samsung.com
+DOMAIN, snap.licdn.com
 DOMAIN, sngmta.qq.com
 DOMAIN, snowflake.qq.com
 DOMAIN, so.sina.cn
 DOMAIN, sofire.baidu.com
 DOMAIN, soft.data.weather.360.cn
 DOMAIN, soup.v.qq.com
+DOMAIN, sp.pluto.tv
 DOMAIN, sp0.baidu.com
 DOMAIN, sp1.baidu.com
 DOMAIN, splashqqlive.gtimg.com
@@ -894,6 +906,7 @@ DOMAIN, stat.y.qq.com
 DOMAIN, static.vuevideo.net
 DOMAIN, staticadm.leju.sina.com.cn
 DOMAIN, statistic.live.126.net
+DOMAIN, statistic.qzone.qq.com
 DOMAIN, stats.ipinyou.com
 DOMAIN, strip.taobaocdn.com
 DOMAIN, stun.smartgslb.com
@@ -905,6 +918,7 @@ DOMAIN, susapi.lenovomm.com
 DOMAIN, sv.map.baidu.com
 DOMAIN, switch.cup.com.cn
 DOMAIN, ta.qq.com
+DOMAIN, tab.volces.com
 DOMAIN, tanx.com
 DOMAIN, tcbox.baidu.com
 DOMAIN, tdc.qq.com
@@ -1077,6 +1091,7 @@ DOMAIN-SUFFIX, 114so.cn
 DOMAIN-SUFFIX, 17gouwuba.com
 DOMAIN-SUFFIX, 189zj.cn
 DOMAIN-SUFFIX, 1rtb.com
+DOMAIN-SUFFIX, 2345.com
 DOMAIN-SUFFIX, 24.eu
 DOMAIN-SUFFIX, 2mdn.net
 DOMAIN-SUFFIX, 365key.com
@@ -1208,6 +1223,7 @@ DOMAIN-SUFFIX, androidtvwatsonfe-pa.googleapis.com
 DOMAIN-SUFFIX, ap.dongqiudi.com
 DOMAIN-SUFFIX, api.distribution.hulu.com
 DOMAIN-SUFFIX, api.edgeoffer.microsoft.com
+DOMAIN-SUFFIX, apkevery.com
 DOMAIN-SUFFIX, apmplus.volces.com
 DOMAIN-SUFFIX, apoll.m.taobao.com
 DOMAIN-SUFFIX, app-ads-services.com
@@ -1241,6 +1257,8 @@ DOMAIN-SUFFIX, bootcss.com
 DOMAIN-SUFFIX, brand.sogou.com
 DOMAIN-SUFFIX, bryonypie.com
 DOMAIN-SUFFIX, bugly.qq.com
+DOMAIN-SUFFIX, bugsnag.com
+DOMAIN-SUFFIX, buzzcity.net
 DOMAIN-SUFFIX, c-adash.m.taobao.com
 DOMAIN-SUFFIX, call.me.sel.sony.com
 DOMAIN-SUFFIX, capterra.com
@@ -1271,6 +1289,7 @@ DOMAIN-SUFFIX, corpext.msitadfs.glbdns2.microsoft.com
 DOMAIN-SUFFIX, cpc.sogou.com
 DOMAIN-SUFFIX, cpro.baidu.com
 DOMAIN-SUFFIX, cpu.baidu.com
+DOMAIN-SUFFIX, criteo.com
 DOMAIN-SUFFIX, cs1.wpc.v0cdn.net
 DOMAIN-SUFFIX, cszlks.com
 DOMAIN-SUFFIX, cudaojia.com
@@ -1290,6 +1309,7 @@ DOMAIN-SUFFIX, data.mgtv.com
 DOMAIN-SUFFIX, data.microsoft.com
 DOMAIN-SUFFIX, data.msn.com
 DOMAIN-SUFFIX, datacollection.uve.weibo.com
+DOMAIN-SUFFIX, dataflow.bilibili.com
 DOMAIN-SUFFIX, dbm-metrics-intake.datadoghq.com
 DOMAIN-SUFFIX, dbquery-intake.datadoghq.com
 DOMAIN-SUFFIX, demdex.net
@@ -1368,6 +1388,7 @@ DOMAIN-SUFFIX, getui.net
 DOMAIN-SUFFIX, gimg.baidu.com
 DOMAIN-SUFFIX, githubhelp.com
 DOMAIN-SUFFIX, gld.samsungosp.com
+DOMAIN-SUFFIX, go-mpulse.net
 DOMAIN-SUFFIX, go.sohu.com
 DOMAIN-SUFFIX, golden1.sogou.com
 DOMAIN-SUFFIX, google-analytics.com
@@ -1458,10 +1479,12 @@ DOMAIN-SUFFIX, logtransform.hicloud.com
 DOMAIN-SUFFIX, ltheanine.cn
 DOMAIN-SUFFIX, lu.sogou.com
 DOMAIN-SUFFIX, lu.sogoucdn.com
+DOMAIN-SUFFIX, ludashi.com
 DOMAIN-SUFFIX, luimg.baidu.com
 DOMAIN-SUFFIX, m-adash.m.taobao.com
 DOMAIN-SUFFIX, mackeeper.com
 DOMAIN-SUFFIX, mads-eu.amazon.com
+DOMAIN-SUFFIX, magsrv.com
 DOMAIN-SUFFIX, mapi.m.jd.com
 DOMAIN-SUFFIX, mazu.m.qq.com
 DOMAIN-SUFFIX, mcs.zijieapi.com
@@ -1483,6 +1506,7 @@ DOMAIN-SUFFIX, mobileservice.cn
 DOMAIN-SUFFIX, mobisage.com
 DOMAIN-SUFFIX, monitor.azure.com
 DOMAIN-SUFFIX, mopub.com
+DOMAIN-SUFFIX, mozillafoundation.org
 DOMAIN-SUFFIX, mpro.baidu.com
 DOMAIN-SUFFIX, mpush.qq.com
 DOMAIN-SUFFIX, msads.net
@@ -1521,10 +1545,12 @@ DOMAIN-SUFFIX, osb-apps-v2.samsungqbe.com
 DOMAIN-SUFFIX, outlookads.live.com
 DOMAIN-SUFFIX, p2perrorlog.douyucdn.cn
 DOMAIN-SUFFIX, parsely.com
+DOMAIN-SUFFIX, pdfxd.com
 DOMAIN-SUFFIX, personaly.click
 DOMAIN-SUFFIX, phpwind.com
 DOMAIN-SUFFIX, pingtcss.qq.com
 DOMAIN-SUFFIX, pipe.aria.microsoft.com
+DOMAIN-SUFFIX, pixel.ipinfo.io
 DOMAIN-SUFFIX, plus.com
 DOMAIN-SUFFIX, pluto.sogou.com
 DOMAIN-SUFFIX, polyfill-js.cn
@@ -1562,6 +1588,7 @@ DOMAIN-SUFFIX, raptorengineering.com
 DOMAIN-SUFFIX, rdx2.lgtvsdp.com
 DOMAIN-SUFFIX, reachmax.cn
 DOMAIN-SUFFIX, report.meituan.com
+DOMAIN-SUFFIX, report.url.cn
 DOMAIN-SUFFIX, retcode.alicdn.com
 DOMAIN-SUFFIX, rptsys.com
 DOMAIN-SUFFIX, rqd.qq.com
@@ -1604,7 +1631,9 @@ DOMAIN-SUFFIX, sifuge.cn
 DOMAIN-SUFFIX, sifugu.cn
 DOMAIN-SUFFIX, sifuhu.cn
 DOMAIN-SUFFIX, sifuji.cn
+DOMAIN-SUFFIX, siteintercept.qualtrics.com
 DOMAIN-SUFFIX, skdisplay.jd.com
+DOMAIN-SUFFIX, skullmagnets.com
 DOMAIN-SUFFIX, smartadserver.com
 DOMAIN-SUFFIX, smartshare.lgtvsdp.com
 DOMAIN-SUFFIX, snapads.com
@@ -1718,6 +1747,7 @@ DOMAIN-SUFFIX, zhanzhang.net
 DOMAIN-SUFFIX, zhaozecheng.cn
 DOMAIN-SUFFIX, zhenxinet.com
 DOMAIN-SUFFIX, ztd.dds.microsoft.com
+DOMAIN-SUFFIX, zztfly.com
 DOMAIN-WILDCARD, *-pcdn-*.biliapi.net
 DOMAIN-WILDCARD, *.ad.*.prod.hosts.ooklaserver.net
 DOMAIN-WILDCARD, ads-*.tiktok.com
