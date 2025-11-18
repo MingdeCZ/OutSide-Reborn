@@ -144,9 +144,11 @@ hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.
 ^https://api\.pinduoduo\.com/api/wizard/naga/selected/goods\? data-type=text data="{}" status-code=200
 # 去除个人中心-店铺关注下方推荐店铺流
 ^https://api\.pinduoduo\.com/api/light/feeds/integration/render\? data-type=text data="{}" status-code=200
-# 去除个人中心-历史浏览下方推荐商品流
+# 去除个人中心-历史浏览下方推荐商品、视频、店铺、直播流
 ^https://api\.pinduoduo\.com/api/tyrion/arec_list\? data-type=text data="{}" status-code=200
+^https://api\.pinduoduo\.com/api/hub/zb_promotions_scene/weak/list/get\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/caterham/v3/query/footprint\? data-type=text data="{}" status-code=200
+^https://api\.pinduoduo\.com/api/caterham/v3/query/promotion\? data-type=text data="{}" status-code=200
 # 去除个人中心-优惠券下方推荐优惠券流
 ^https://api\.pinduoduo\.com/api/liverpool/coupon_center/user_coupon_page/query_goods_batch_list\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/alexa/goods/back_up\? data-type=text data="{}" status-code=200
@@ -201,8 +203,8 @@ hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.
 ^https?:\/\/cy\.cloud\.ccb\.com\/\/gateway\/user-server\/user\/qyCenter\/getCustomizedAdv data-type=text data="{}" status-code=200
 
 [Body Rewrite]
-# Pinterest 首页信息流去广告
-http-response-jq ^https://api\.pinterest\.com/v3/feeds/home/\? '.data |= map(select(has("ad_data") | not))'
+# Pinterest 首页、贴子详情下方信息流去广告
+http-response-jq ^https://api\.pinterest\.com/v3/(feeds/home|pins/\d+/related/modules)/\? '.data |= map(select(has("ad_data") | not))'
 
 # 哔哩哔哩净化
 # 首页净化
@@ -229,7 +231,7 @@ http-response-jq ^https://common\.diditaxi\.com\.cn(?:/common/v5)?/usercenter/la
 # 首页更多服务净化
 http-response-jq ^https://conf\.diditaxi\.com\.cn/homepage/v1/nav/more\? '.data.category_list |= map( select(.category_name != "公益") | if .category_name == "车主服务" then .nav_list |= map(select(.nav_id != "carsharing" and .nav_id != "yanxuanchepin" and .nav_id != "chepinshangcheng" and .nav_id != "haocheshijia")) elif .category_name == "便民生活" then .nav_list |= map(select(.nav_id == "freight" or .nav_id == "kuaisong" or .nav_id == "banjia")) elif .category_name == "优惠权益" then .nav_list |= map(select(.nav_id != "didizhifu" and .nav_id != "xianjinduoduo" and .nav_id != "xiaodian")) else . end )'
 # 打车页面净化
-http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/dache_homepage_layout\? '.data.instances |= ( del(.dache_main_member, .dache_main_xp, .xp-card-01) | .dache_main_core_icon.data[0].data |= map(select( .content_data.nav_id as $id | ["yuyue","dairenjiaoche","jiesongji","haoyoutongxing"] | index($id) )) )'
+http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/dache_homepage_layout\? '.data.instances |= ( del(.dache_main_member, .dache_main_xp, ."xp-card-01") | .dache_main_core_icon.data[0].data |= map(select( .content_data.nav_id as $id | ["yuyue","dairenjiaoche","jiesongji","haoyoutongxing"] | index($id) )) )'
 # 特价拼车页面优化
 http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/bronze/pinchengle_homepage_layout$ '.data.instances |= del(."swiper-banner-1", ."communicate-card-1", ."nav-banner-1")'
 # 行程中页面净化
