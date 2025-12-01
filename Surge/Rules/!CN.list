@@ -5,6 +5,7 @@ DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, adguard-dns.com
 DOMAIN-SUFFIX, apache.org
 DOMAIN-SUFFIX, apple
+DOMAIN-SUFFIX, canva.com
 DOMAIN-SUFFIX, check.place
 DOMAIN-SUFFIX, coolhub.top
 DOMAIN-SUFFIX, crisp.chat
@@ -135,7 +136,6 @@ DOMAIN-SUFFIX, msappproxy.net
 DOMAIN-SUFFIX, msauth.net
 DOMAIN-SUFFIX, msauthimages.net
 DOMAIN-SUFFIX, msecnd.net
-DOMAIN-SUFFIX, msedge.net
 DOMAIN-SUFFIX, msft.net
 DOMAIN-SUFFIX, msftauth.net
 DOMAIN-SUFFIX, msftidentity.com
@@ -188,6 +188,7 @@ DOMAIN-SUFFIX, groq.com
 DOMAIN-SUFFIX, poe.com
 # 其它常见海外服务（最后更新：25-11-16）
 # DOMAIN-SUFFIX, dcd.gg
+# DOMAIN-SUFFIX, deepmind.com
 # DOMAIN-SUFFIX, pomf.se
 DOMAIN, ccmdl.adobe.com
 DOMAIN, community.oneplus.com
@@ -430,7 +431,6 @@ DOMAIN-SUFFIX, debian.org
 DOMAIN-SUFFIX, debug.com
 DOMAIN-SUFFIX, debuggex.com
 DOMAIN-SUFFIX, deepl.com
-DOMAIN-SUFFIX, deepmind.com
 DOMAIN-SUFFIX, deezer.com
 DOMAIN-SUFFIX, deno.com
 DOMAIN-SUFFIX, desmos.com

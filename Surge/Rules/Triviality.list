@@ -15,6 +15,7 @@ DOMAIN, www.jibapps.com
 DOMAIN-SUFFIX, 196000.xyz
 DOMAIN-SUFFIX, 1e100cdn.net
 DOMAIN-SUFFIX, 5km.tech
+DOMAIN-SUFFIX, apphousekitchen.com
 DOMAIN-SUFFIX, archive.org
 DOMAIN-SUFFIX, b-cdn.net
 DOMAIN-SUFFIX, baozimh.com
@@ -31,10 +32,8 @@ DOMAIN-SUFFIX, dl2.discordapp.net
 DOMAIN-SUFFIX, dockdoor.net
 DOMAIN-SUFFIX, fontawesome.com
 DOMAIN-SUFFIX, godamh.com
-DOMAIN-SUFFIX, hostloc.com
 DOMAIN-SUFFIX, infuseku.xyz
 DOMAIN-SUFFIX, kuaichedao.xyz
-DOMAIN-SUFFIX, linux.do
 DOMAIN-SUFFIX, macked.app
 DOMAIN-SUFFIX, mangacopy.com
 DOMAIN-SUFFIX, mangafunb.fun
@@ -45,18 +44,13 @@ DOMAIN-SUFFIX, motiezw.com
 DOMAIN-SUFFIX, nbtool8.com
 DOMAIN-SUFFIX, nodeimage.com
 DOMAIN-SUFFIX, nodequality.com
-DOMAIN-SUFFIX, nodeseek.com
-DOMAIN-SUFFIX, nssurge.com
 DOMAIN-SUFFIX, rectangleapp.com
 DOMAIN-SUFFIX, snapkit.com
 DOMAIN-SUFFIX, stash.ws
-DOMAIN-SUFFIX, themoviedb.org
 DOMAIN-SUFFIX, trakt.tv
 DOMAIN-SUFFIX, typekit.net
 DOMAIN-SUFFIX, unpkg.com
-DOMAIN-SUFFIX, v2ex.com
 DOMAIN-SUFFIX, webtype.com
-DOMAIN-SUFFIX, wnacg.com
 DOMAIN-SUFFIX, xxblapingpong.cc
 DOMAIN-SUFFIX, youxiaohou.com
 IP-CIDR, 162.208.16.0/24
@@ -70,14 +64,22 @@ IP-CIDR6, 2a0b:e42:1::/48
 IP-CIDR6, 2a0b:e43:1::/48
 IP-CIDR6, 2a0b:e44:1::/48
 IP-CIDR6, 2a0b:e45:1::/48
-# 国外静态 CDN 资源（最后更新：25-11-04）
+# 国外静态 CDN 资源（最后更新：25-11-16）
+# DOMAIN, api.mixpanel.com
 # DOMAIN, c771976b1b.mjedge.net
+# DOMAIN, cdn.perfops.net
 # DOMAIN, denali-static.grammarly.com
 # DOMAIN, embed.cloudflarestream.com
 # DOMAIN, reviews-badge.capterra.com
+# DOMAIN, rum-cdn.perfops.net
 # DOMAIN, static.grammarly.com
 # DOMAIN, steamcdn-a.akamaihd.net
 # DOMAIN, web-static.archive.org
+# DOMAIN, www.gstatic.com
+# DOMAIN-SUFFIX, 2mdn.net
+# DOMAIN-SUFFIX, googleadservices.com
+# DOMAIN-SUFFIX, monitor.azure.com
+# DOMAIN-SUFFIX, siteintercept.qualtrics.com
 DOMAIN, 0x0.st
 DOMAIN, 3dna.nationbuilder.com
 DOMAIN, 4gtvimg2.4gtv.tv
@@ -131,7 +133,6 @@ DOMAIN, api.iconify.design
 DOMAIN, api.indexnow.org
 DOMAIN, api.instantly.ai
 DOMAIN, api.media.atlassian.com
-DOMAIN, api.mixpanel.com
 DOMAIN, api.producthunt.com
 DOMAIN, api.pwnedpasswords.com
 DOMAIN, api.qrserver.com
@@ -754,7 +755,6 @@ DOMAIN, cdn.paritydeals.com
 DOMAIN, cdn.parsely.com
 DOMAIN, cdn.pathfactory.com
 DOMAIN, cdn.pendo.io
-DOMAIN, cdn.perfops.net
 DOMAIN, cdn.permutive.com
 DOMAIN, cdn.pgvt.io
 DOMAIN, cdn.piano.io
@@ -1002,7 +1002,6 @@ DOMAIN, cdnl.tnaflix.com
 DOMAIN, cdnmedia.ero-video.net
 DOMAIN, cdns.gigya.com
 DOMAIN, cdnsecakmi.kaltura.com
-DOMAIN, cdnstatic.tencentcs.com
 DOMAIN, cdnstatic.w1mp.com
 DOMAIN, cdnstatic.w4nkr.com
 DOMAIN, cdntranscend.eventbrite.com
@@ -2125,7 +2124,6 @@ DOMAIN, rules.ac
 DOMAIN, rules1.clearurls.xyz
 DOMAIN, rules2.clearurls.xyz
 DOMAIN, rum-agent.na-01.cloud.solarwinds.com
-DOMAIN, rum-cdn.perfops.net
 DOMAIN, runkit-packages-static-executables.com
 DOMAIN, runkit-packages-static.com
 DOMAIN, rv-assets.softonic.com
@@ -2862,7 +2860,6 @@ DOMAIN, www-static.ripe.net
 DOMAIN, www.10086.win
 DOMAIN, www.acgpix.de
 DOMAIN, www.bbthat.com
-DOMAIN, www.gstatic.com
 DOMAIN, www.paypalobjects.com
 DOMAIN, www.pngmart.com
 DOMAIN, www.tbstat.com
@@ -2897,7 +2894,6 @@ DOMAIN-SUFFIX, 1passwordusercontent.ca
 DOMAIN-SUFFIX, 1passwordusercontent.com
 DOMAIN-SUFFIX, 1passwordusercontent.eu
 DOMAIN-SUFFIX, 2img.net
-DOMAIN-SUFFIX, 2mdn.net
 DOMAIN-SUFFIX, 4cdn.org
 DOMAIN-SUFFIX, 4everland.io
 DOMAIN-SUFFIX, 52netflix.com
@@ -3266,7 +3262,6 @@ DOMAIN-SUFFIX, glass.adidas.com
 DOMAIN-SUFFIX, glbimg.com
 DOMAIN-SUFFIX, global-cdn.me
 DOMAIN-SUFFIX, gold-usergeneratedcontent.net
-DOMAIN-SUFFIX, googleadservices.com
 DOMAIN-SUFFIX, googleusercontent.com
 DOMAIN-SUFFIX, graphql.org
 DOMAIN-SUFFIX, gravatar.com
@@ -3483,7 +3478,6 @@ DOMAIN-SUFFIX, mm.bing.net
 DOMAIN-SUFFIX, mmtcdn.com
 DOMAIN-SUFFIX, mngbcn.com
 DOMAIN-SUFFIX, mobilius.top
-DOMAIN-SUFFIX, monitor.azure.com
 DOMAIN-SUFFIX, motherlessmedia.com
 DOMAIN-SUFFIX, msftauthimages.net
 DOMAIN-SUFFIX, msftstatic.com
@@ -3688,7 +3682,6 @@ DOMAIN-SUFFIX, simgbb.com
 DOMAIN-SUFFIX, simplecastcdn.com
 DOMAIN-SUFFIX, simpleflyingimages.com
 DOMAIN-SUFFIX, sirv.com
-DOMAIN-SUFFIX, siteintercept.qualtrics.com
 DOMAIN-SUFFIX, sitescdn.net
 DOMAIN-SUFFIX, sixyik.com
 DOMAIN-SUFFIX, skyearth8.xyz

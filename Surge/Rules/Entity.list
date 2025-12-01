@@ -1,23 +1,23 @@
 # 最后更新：25-11-16
 # OpenAI
+# DOMAIN-SUFFIX, oaistatic.com
+# DOMAIN-SUFFIX, oaiusercontent.com
+DOMAIN-KEYWORD, openaicom
+DOMAIN-SUFFIX, chat.com
+DOMAIN-SUFFIX, chatgpt.com
+DOMAIN-SUFFIX, openai.com
+DOMAIN-SUFFIX, sora.com
 DOMAIN, api-iam.intercom.io
 DOMAIN, api.statsig.com
 DOMAIN, chat.openai.com.cdn.cloudflare.net
 DOMAIN, chatgpt.livekit.cloud
 DOMAIN, openaiapi-site.azureedge.net
 DOMAIN, sfo3.turn.livekit.cloud
-DOMAIN-KEYWORD, openaicom
-DOMAIN-SUFFIX, chat.com
-DOMAIN-SUFFIX, chatgpt.com
-DOMAIN-SUFFIX, oaistatic.com
-DOMAIN-SUFFIX, oaiusercontent.com
-DOMAIN-SUFFIX, openai.com
-DOMAIN-SUFFIX, sora.com
 
 # Claude
+# DOMAIN-SUFFIX, claudeusercontent.com
 DOMAIN-SUFFIX, anthropic.com
 DOMAIN-SUFFIX, claude.ai
-DOMAIN-SUFFIX, claudeusercontent.com
 
 # 谷歌
 DOMAIN, ai.google.dev

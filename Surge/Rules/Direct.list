@@ -84,7 +84,6 @@ DOMAIN, www.gstatic.com
 DOMAIN, www.huatools.com
 DOMAIN-SUFFIX, amp-api.podcasts.apple.com
 DOMAIN-SUFFIX, amp-api.shazam.apple.com
-DOMAIN-SUFFIX, apphousekitchen.com
 DOMAIN-SUFFIX, appstoreconnect.apple.com
 DOMAIN-SUFFIX, autonavi.com
 DOMAIN-SUFFIX, certs.apple.com
@@ -436,7 +435,6 @@ DOMAIN-SUFFIX, bdatu.com
 DOMAIN-SUFFIX, bendibao.com
 DOMAIN-SUFFIX, benghuai.com
 DOMAIN-SUFFIX, bh3.com
-DOMAIN-SUFFIX, blizzard.com
 DOMAIN-SUFFIX, blzstatic.cn
 DOMAIN-SUFFIX, boc.cn
 DOMAIN-SUFFIX, bosszhipin.com
@@ -553,7 +551,6 @@ DOMAIN-SUFFIX, email.cn
 DOMAIN-SUFFIX, eudic.net
 DOMAIN-SUFFIX, fang.com
 DOMAIN-SUFFIX, feng.com
-DOMAIN-SUFFIX, fengkongcloud.com
 DOMAIN-SUFFIX, firefox.com.cn
 DOMAIN-SUFFIX, flyme.cn
 DOMAIN-SUFFIX, flyme.com
@@ -685,7 +682,6 @@ DOMAIN-SUFFIX, livechina.cn
 DOMAIN-SUFFIX, livechina.com
 DOMAIN-SUFFIX, ljcdn.com
 DOMAIN-SUFFIX, lofter.com
-DOMAIN-SUFFIX, ludashi.com
 DOMAIN-SUFFIX, luojilab.com
 DOMAIN-SUFFIX, m1905.cn
 DOMAIN-SUFFIX, m1905.com
@@ -698,7 +694,6 @@ DOMAIN-SUFFIX, meitu.com
 DOMAIN-SUFFIX, meituan.com
 DOMAIN-SUFFIX, meituan.net
 DOMAIN-SUFFIX, meitudata.com
-DOMAIN-SUFFIX, meitustat.com
 DOMAIN-SUFFIX, meixincdn.com
 DOMAIN-SUFFIX, meizu.cn
 DOMAIN-SUFFIX, meizu.com
@@ -711,7 +706,6 @@ DOMAIN-SUFFIX, mihoyo.com
 DOMAIN-SUFFIX, miot-spec.org
 DOMAIN-SUFFIX, miyoushe.com
 DOMAIN-SUFFIX, mobike.com
-DOMAIN-SUFFIX, mobileservice.cn
 DOMAIN-SUFFIX, moegirl.org.cn
 DOMAIN-SUFFIX, mojicdn.com
 DOMAIN-SUFFIX, mrw.so
@@ -1504,7 +1498,6 @@ DOMAIN, http.krfoss.org
 DOMAIN, httpd-mirror.sergal.org
 DOMAIN, i18n.prismlauncher.org
 DOMAIN, icm.edu.pl
-DOMAIN, index.rubygems.org
 DOMAIN, install.virtfusion.net
 DOMAIN, invent.kde.org
 DOMAIN, ir.ubuntu.sindad.cloud
@@ -2096,7 +2089,6 @@ DOMAIN, pubmirror.plutex.de
 DOMAIN, pubmirrors.dal.corespace.com
 DOMAIN, quantum-mirror.hu
 DOMAIN, redstone-launcher.mojang.com
-DOMAIN, registry-1.docker.io
 DOMAIN, registry-cdn.wapm.io
 DOMAIN, registry.bower.io
 DOMAIN, registry.fedoraproject.org
@@ -2140,7 +2132,6 @@ DOMAIN, rsync.icm.edu.pl
 DOMAIN, rsync.udc.es
 DOMAIN, rsync.uni-bayreuth.de
 DOMAIN, rsync.yuki.net.uk
-DOMAIN, rubygems.org
 DOMAIN, ruleset.skk.moe
 DOMAIN, s3.teckids.org
 DOMAIN, searchcpan.org
@@ -2249,7 +2240,6 @@ DOMAIN, ucmirror.canterbury.ac.nz
 DOMAIN, ulises.hostalia.com
 DOMAIN, update.code.visualstudio.com
 DOMAIN, update.cyberduck.io
-DOMAIN, update.greasyfork.org
 DOMAIN, update.parallels.com
 DOMAIN, update.sleazyfork.org
 DOMAIN, updater.snipaste.com
@@ -2286,7 +2276,6 @@ DOMAIN-SUFFIX, artfiles.org
 DOMAIN-SUFFIX, artifacts.ui.com
 DOMAIN-SUFFIX, autoupdatesvc.delivery.autodesk.com
 DOMAIN-SUFFIX, blob.core.windows.net
-DOMAIN-SUFFIX, catbox.moe
 DOMAIN-SUFFIX, cdimage.debian.org
 DOMAIN-SUFFIX, cdn.blizzard.com
 DOMAIN-SUFFIX, cdn.ea.com
