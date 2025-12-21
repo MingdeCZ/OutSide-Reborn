@@ -1,29 +1,31 @@
-# 最后更新：25-11-16
+# 最后更新：25-12-20
 # OpenAI
 # DOMAIN-SUFFIX, oaistatic.com
 # DOMAIN-SUFFIX, oaiusercontent.com
-DOMAIN-KEYWORD, openaicom
-DOMAIN-SUFFIX, chat.com
-DOMAIN-SUFFIX, chatgpt.com
-DOMAIN-SUFFIX, openai.com
-DOMAIN-SUFFIX, sora.com
 DOMAIN, api-iam.intercom.io
 DOMAIN, api.statsig.com
 DOMAIN, chat.openai.com.cdn.cloudflare.net
 DOMAIN, chatgpt.livekit.cloud
 DOMAIN, openaiapi-site.azureedge.net
 DOMAIN, sfo3.turn.livekit.cloud
+DOMAIN-KEYWORD, openaicom
+DOMAIN-SUFFIX, chat.com
+DOMAIN-SUFFIX, chatgpt.com
+DOMAIN-SUFFIX, openai.com
+DOMAIN-SUFFIX, sora.com
 
 # Claude
 # DOMAIN-SUFFIX, claudeusercontent.com
 DOMAIN-SUFFIX, anthropic.com
 DOMAIN-SUFFIX, claude.ai
+DOMAIN-SUFFIX, claude.com
 
 # 谷歌
 DOMAIN, ai.google.dev
 DOMAIN, aida.googleapis.com
 DOMAIN, aisandbox-pa.googleapis.com
 DOMAIN, alkalimakersuite-pa.clients6.google.com
+DOMAIN, antigravity.google
 DOMAIN, jules.google.com
 DOMAIN, robinfrontend-pa.googleapis.com
 DOMAIN, waa-pa.clients6.google.com
@@ -67,3 +69,6 @@ DOMAIN-SUFFIX, codeium.com
 # Augment
 DOMAIN-SUFFIX, augment.com
 DOMAIN-SUFFIX, augmentcode.com
+
+# OpenRouter
+DOMAIN, openrouter.ai

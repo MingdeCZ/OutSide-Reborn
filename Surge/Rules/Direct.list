@@ -287,6 +287,7 @@ DOMAIN-SUFFIX, www.apple.com.edgekey.net.globalredir.akadns.net
 DOMAIN-SUFFIX, xp.apple.com
 # CN
 # DOMAIN, api.smoot.apple.cn
+DOMAIN, appleintelligencefeedback.care.apple.com
 DOMAIN, gs-loc-cn.apple.com
 DOMAIN-SUFFIX, apple.com.cn
 DOMAIN-SUFFIX, cn-ssl.ls.apple.com
@@ -453,7 +454,6 @@ DOMAIN-SUFFIX, cctv.com
 DOMAIN-SUFFIX, cctvpic.com
 DOMAIN-SUFFIX, cdnjtzy.com
 DOMAIN-SUFFIX, changyan.com
-DOMAIN-SUFFIX, chaoxing.cc
 DOMAIN-SUFFIX, chaoxing.com
 DOMAIN-SUFFIX, chaoxingv.com
 DOMAIN-SUFFIX, chazidian.com
@@ -546,7 +546,7 @@ DOMAIN-SUFFIX, eastmoney.com
 DOMAIN-SUFFIX, eatuo.com
 DOMAIN-SUFFIX, ebay.cn
 DOMAIN-SUFFIX, edu.cn
-DOMAIN-SUFFIX, elseviercdn.cn
+# DOMAIN-SUFFIX, elseviercdn.cn
 DOMAIN-SUFFIX, email.cn
 DOMAIN-SUFFIX, eudic.net
 DOMAIN-SUFFIX, fang.com
@@ -921,8 +921,7 @@ DOMAIN-SUFFIX, zuimeitianqi.com
 USER-AGENT, %E4%BC%98%E9%85%B7*
 USER-AGENT, %E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*
 USER-AGENT, TeslaMap
-# 软件更新、操作系统等大文件下载（最后更新：25-11-16）
-# DOMAIN, archive.mirror.ba
+# 软件更新、操作系统等大文件下载（最后更新：25-12-20）
 # DOMAIN, archive.mirror.rafal.ca
 # DOMAIN, dl.nssurge.com
 # DOMAIN, edgeuno-bog2.mm.fcix.net
@@ -1110,7 +1109,6 @@ DOMAIN, ctan.crest.fr
 DOMAIN, ctan.dcc.uchile.cl
 DOMAIN, ctan.ebinger.cc
 DOMAIN, ctan.gutenberg.eu.org
-DOMAIN, ctan.imsc.res.in
 DOMAIN, ctan.math.ca
 DOMAIN, ctan.math.illinois.edu
 DOMAIN, ctan.math.utah.edu
@@ -1296,6 +1294,7 @@ DOMAIN, downloads.lemonsqueezy.com
 DOMAIN, downloads.majestic.com
 DOMAIN, downloads.openwrt.org
 DOMAIN, downloads.raspberrypi.com
+DOMAIN, downloads.slack-edge.com
 DOMAIN, downloads.sourceforge.net
 DOMAIN, downloads.wordpress.org
 DOMAIN, downloads.x-wrt.com
@@ -1314,6 +1313,7 @@ DOMAIN, epicgames-download1.akamaized.net
 DOMAIN, espejito.fder.edu.uy
 DOMAIN, fastly-download.epicgames.com
 DOMAIN, fdisk.5play.app
+DOMAIN, fdroid.tetaneutral.net
 DOMAIN, fedorapeople.org
 DOMAIN, file.chobit.cc
 DOMAIN, files2.freedownloadmanager.org
@@ -1484,10 +1484,10 @@ DOMAIN, gimp.ip-connect.vn.ua
 DOMAIN, glua.ua.pt
 DOMAIN, gnu.askapache.com
 DOMAIN, gnu.c3sl.ufpr.br
-DOMAIN, gnu.freemirror.org
 DOMAIN, gnualpha.uib.no
 DOMAIN, gnuftp.uib.no
 DOMAIN, go-updater.brave.com
+DOMAIN, go.opentelemetry.io
 DOMAIN, gog-cdn-fastly-cp77.gog.com
 DOMAIN, gog-cdn-fastly.gog.com
 DOMAIN, gopkg.in
@@ -1651,6 +1651,7 @@ DOMAIN, mirror.eu-lo.kamatera.com
 DOMAIN, mirror.eu.4psacloud.com
 DOMAIN, mirror.eu.kamatera.com
 DOMAIN, mirror.eu.oneandone.net
+DOMAIN, mirror.eu.ossplanet.net
 DOMAIN, mirror.evowise.com
 DOMAIN, mirror.facebook.net
 DOMAIN, mirror.faraso.org
@@ -1739,6 +1740,7 @@ DOMAIN, mirror.las.iastate.edu
 DOMAIN, mirror.lc
 DOMAIN, mirror.lchost.net
 DOMAIN, mirror.leitecastro.com
+DOMAIN, mirror.level66.network
 DOMAIN, mirror.library.ucy.ac.cy
 DOMAIN, mirror.limda.net
 DOMAIN, mirror.linkdata.com
@@ -2331,6 +2333,7 @@ DOMAIN-SUFFIX, filebin.net
 DOMAIN-SUFFIX, files.1drv.com
 DOMAIN-SUFFIX, finkmirrors.net
 DOMAIN-SUFFIX, fnbuilds.services
+DOMAIN-SUFFIX, freemirror.org
 DOMAIN-SUFFIX, ftp-master.debian.org
 DOMAIN-SUFFIX, ftp.debian.org
 DOMAIN-SUFFIX, ftp2.de.debian.org

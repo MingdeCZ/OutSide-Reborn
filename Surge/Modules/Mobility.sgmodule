@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.0
-#!date = 25.11.5
+#!version = 1.0.1
+#!date = 25.12.20
 #!category = N合1
 #!system = ios
 
@@ -73,12 +73,13 @@ hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.
 
 # 哔哩哔哩净化
 # 满意度调研
-^https:\/\/api\.bilibili\.com\/x\/v2\/dm\/qoe\/show\? data-type=text data="{}" status-code=200
+^https://api\.bilibili\.com/x/v2/dm/qoe/show\? data-type=text data="{}" status-code=200
 # 屏蔽 IP 和地理位置请求
-^https:\/\/app\.bilibili\.com\/x\/resource\/ip data-type=text data="{}" status-code=200
-^https:\/\/api\.bilibili\.com\/x\/web-interface\/zone\?jsonp data-type=text data="{}" status-code=200
+^https://app\.bilibili\.com/x/resource/ip data-type=text data="{}" status-code=200
+^https://api\.bilibili\.com/x/web-interface/zone\?jsonp data-type=text data="{}" status-code=200
 # 屏蔽默认搜索框关键词
-^https:\/\/(?:grpc\.biliapi\.net|app\.bilibili\.com)\/bilibili\.app\.interface\.v1\.Search\/DefaultWords$ data-type=base64 data="AAAAACkaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7IgAoAToAQgBKAA=="
+^https://grpc\.biliapi\.net/bilibili\.app\.interface\.v1\.Search/DefaultWords$ header="content-type: application/grpc" data-type=base64 data="AAAAACEaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7KAE="
+^https://grpc\.biliapi\.net/bilibili\.app\.(view\.v1\.View\/TFInfo|viewunite\.v1\.View/ViewEndPage)$ header="content-type: application/grpc" data-type=base64 data="AAAAAAA="
 
 # 猫耳 FM 净化
 ^https:\/\/data\.missevan\.com\/site\/ad-track$ data-type=text data="{}" status-code=200
@@ -89,11 +90,11 @@ hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.
 
 # 滴滴出行去广告
 ^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/getMulti\? data-type=text data="{}" status-code=200
-^https:\/\/res\.xiaojukeji\.com\/resapi\/activity\/mget data-type=text data="{}" status-code=200
-^https:\/\/lion\.didialift\.com\/broker\/\? data-type=text data="{}" status-code=200
-^https:\/\/conf\.diditaxi\.com\.cn\/homepage\/v1\/other\/slow\? data-type=text data="{}" status-code=200
-^https:\/\/ct\.xiaojukeji\.com\/agent\/v3\/feeds\? data-type=text data="{}" status-code=200
-^https:\/\/conf\.diditaxi\.com\.cn\/dynamic\/conf data-type=text data="{}" status-code=200
+^https://res\.xiaojukeji\.com/resapi/activity/mget data-type=text data="{}" status-code=200
+^https://lion\.didialift\.com/broker/\? data-type=text data="{}" status-code=200
+^https://conf\.diditaxi\.com\.cn/homepage/v1/other/slow\? data-type=text data="{}" status-code=200
+^https://ct\.xiaojukeji\.com/agent/v3/feeds\? data-type=text data="{}" status-code=200
+^https://conf\.diditaxi\.com\.cn/dynamic/conf data-type=text data="{}" status-code=200
 # 青桔页面净化
 ^https://htwkop\.xiaojukeji\.com/gateway\?api=medel\.marketing\.spot\.delivery\.login& data-type=text data="{}" status-code=200
 # 青桔小程序
@@ -174,13 +175,13 @@ hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.
 
 # 小红书净化
 # 评论区图片水印
-^https:\/\/ci\.xiaohongshu\.com\/system_config\/watermark data-type=tiny-gif status-code=200
+^https://ci\.xiaohongshu\.com/system_config/watermark data-type=tiny-gif status-code=200
 # 惊喜弹窗
-^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/surprisebox\/(?:get_style|open|submit_action) data-type=text data="{}" status-code=200
-^https:\/\/www\.xiaohongshu\.com\/api\/marketing\/box\/trigger\? data-type=text data="{}" status-code=200
+^https://edith\.xiaohongshu\.com/api/sns/v1/surprisebox/(?:get_style|open|submit_action) data-type=text data="{}" status-code=200
+^https://www\.xiaohongshu\.com/api/marketing/box/trigger\? data-type=text data="{}" status-code=200
 # 信息流
-^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/guide\/user_banner|v3\/note\/guide) data-type=text data="{}" status-code=200
-^https:\/\/www\.xiaohongshu\.com\/api\/sns\/(?:v1\/ads\/resource|v2\/hey\/\w+\/hey_gallery) data-type=text data="{}" status-code=200
+^https://edith\.xiaohongshu\.com/api/sns/(?:v2/guide/user_banner|v3/note/guide) data-type=text data="{}" status-code=200
+^https://www\.xiaohongshu\.com/api/sns/(?:v1/ads/resource|v2/hey/\w+/hey_gallery) data-type=text data="{}" status-code=200
 
 # 淘宝去广告
 # 阿里巴巴
@@ -250,6 +251,7 @@ http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.fun\.follo
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.home\.community/ '.data.feedsList |= map(select(.template.name == "idlefish_home_new_commodity_card" or .template.name == "idlefish_home_new_content_card"))'
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.home\.newitem\.page/ '.data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct != "banner" and $ct != "mamaAD"))'
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.local\.flow\.plat\.section/ '.data.data.components |= map(select(.data and (.data|type=="object") and .data.template and (.data.template|type=="object") and .data.template.name and (.data.template.name|type=="string") and (.data.template.name|contains("fish_city_kingkong"))))'
+http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.local\.home\.top/ '.data.data.components |= map(select(.key == "fish_home_second_stage_top_cardV3"))'
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.local\.home/ '.data.sections |= map(select((.template.cardEnum != "ads") and (.cardType == "common")))'
 http-response-jq ^https://g-acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.search/ '.data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType == "ad" then empty else . end) | del(.data.resultPrefixBar)'
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.item\.search\.activate/ '.data.cardList |= map(if has("cardData") and (.cardData | has("hotwords")) then .cardData |= del(.hotwords) else . end)'
@@ -276,19 +278,16 @@ http-response-jq ^https://api\.pinduoduo\.com/search\? 'del(.expansion)'
 
 # 小红书净化
 # 搜索页
-http-response-jq ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/banner_list$ '.data = {}'
-http-response-jq ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/search\/hot_list$ '.data.items = []'
-http-response-jq ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/hint '.data.hint_words = []'
-http-response-jq ^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/search\/trending\? '.data |= . + { queries: [], hint_word: {} }'
+http-response-jq ^https://edith\.xiaohongshu\.com/api/sns/v1/search/banner_list$ '.data = {}'
+http-response-jq ^https://edith\.xiaohongshu\.com/api/sns/v1/search/hot_list$ '.data.items = []'
+http-response-jq ^https://edith\.xiaohongshu\.com/api/sns/v4/search/hint '.data.hint_words = []'
+http-response-jq ^https://edith\.xiaohongshu\.com/api/sns/v4/search/trending\? '.data |= . + { queries: [], hint_word: {} }'
 
 # 微信小程序优化
 # 小猿搜题开启 VIP
-http-response-jq ^https:\/\/xyst\.yuanfudao\.com\/solar-vip\/(api|iphone)\/users/* '. + { renewTexts: { ME: "已开通", VIP_CARD: "已开通" }, payUserStatus: 0, expireTime: 4092599349000, vip: true, autoRenew: true, payUser: true }'
+http-response-jq ^https://xyst\.yuanfudao\.com/solar-vip/(api|iphone)/users/* '. + { renewTexts: { ME: "已开通", VIP_CARD: "已开通" }, payUserStatus: 0, expireTime: 4092599349000, vip: true, autoRenew: true, payUser: true }'
 
 [Rule]
-# 滴滴出行优化
-AND, ((IP-CIDR, 113.46.225.8/31, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
-
 # 哔哩哔哩净化
 # DOMAIN, line3-h5-mobile-api.biligame.com, REJECT, extended-matching
 AND, ((DOMAIN-SUFFIX, chat.bilibili.com, extended-matching), (OR, ((DOMAIN-KEYWORD, stun, extended-matching), (DOMAIN-KEYWORD, tracker, extended-matching)))), REJECT
@@ -299,6 +298,7 @@ DOMAIN, app.biliapi.net, REJECT, extended-matching
 
 # 滴滴出行优化
 AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
+AND, ((IP-ASN, 55990, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 DOMAIN, gwp.xiaojukeji.com, REJECT, extended-matching
 
@@ -339,9 +339,10 @@ AND, ((DOMAIN-SUFFIX, youtubei.googleapis.com, extended-matching), (PROTOCOL, QU
 
 [Script]
 # 哔哩哔哩净化（过滤广告、移除交互式弹幕、移除无用功能和链接跟踪参数，增加空降助手以便跳过视频中插入的广告。此插件必须启用 MitM-over-HTTP/2 功能。空降助手是第三方提供的功能，依赖于 Android 版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关）grpc.biliapi.net, app.bilibili.com, api.bilibili.com
-哔哩哔哩空降助手 = type=http-request, pattern=^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.community\.service\.dm\.v1\.DM/DmSegMobile$, requires-body = 1, binary-body-mode = 1 , max-size = -1, engine = webview, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.request.js, argument = "{ "logLevel": "off" }"
+哔哩哔哩空降助手 = type=http-request, pattern=^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.community\.service\.dm\.v1\.DM/DmSegMobile$, requires-body = 1, binary-body-mode = 1 , max-size = -1, engine = webview, timeout = 10, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.request.js, argument = "{ "logLevel": "5" }"
+哔哩哔哩优化评论区加载 = type=http-request, pattern=^https://(grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$, argument = "{ "purifyComment": 1, "logLevel": "5" }", requires-body = 1, binary-body-mode = 1, max-size = -1, engine = webview, timeout = 10, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.request.js
 # 移除交互式弹幕、搜索结果广告
-bili.protobuf = type=http-response, pattern=^https://(grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.(app\.(show\.v1\.Popular/Index|dynamic\.v2\.Dynamic/DynAll|view(unite)?\.v1\.View/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL/PlayView|playerunite\.v1\.Player/PlayViewUnite)|polymer\.app\.search\.v1\.Search/SearchAll|community\.service\.dm\.v1\.DM/DmView|main\.community\.reply\.v1\.Reply/MainList|pgc\.gateway\.player\.v2\.PlayURL/PlayView)$, argument = "{ "purifyTopReplies": 1, "airborne": "bilibili.airborne", "logLevel": "off" }", requires-body = 1, binary-body-mode = 1, max-size = -1, engine = webview, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.response.js
+bili.protobuf = type=http-response, pattern=^https://(grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.(app\.(show\.v1\.Popular/Index|dynamic\.v2\.Dynamic/DynAll|view(unite)?\.v1\.View/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL/PlayView|playerunite\.v1\.Player/PlayViewUnite)|polymer\.app\.search\.v1\.Search/SearchAll|community\.service\.dm\.v1\.DM/DmView|main\.community\.reply\.v1\.Reply/MainList|pgc\.gateway\.player\.v2\.PlayURL/PlayView)$, argument = "{ "displayUpList": "auto", "purifyComment": 1, "sponsorBlock": "bilibili.airborne", "logLevel": "5" }", requires-body = 1, binary-body-mode = 1, max-size = -1, engine = webview, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.response.js
 
 # 京东去广告 api.m.jd.com
 移除京东广告 = type=http-response, pattern=^https://api\.m\.jd\.com/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path = https://kelee.one/Resource/JavaScript/JD/JD_remove_ads.js, requires-body = true
@@ -351,18 +352,18 @@ bili.protobuf = type=http-response, pattern=^https://(grpc\.biliapi\.net|app\.bi
 京东比价 = type=http-response, pattern=^https?:\/\/in\.m\.jd\.com\/product\/graphext\/\d+\.html, script-path = https://kelee.one/Resource/JavaScript/JD/JD_Price.js, requires-body = true, timeout = 10
 
 # 小红书净化 ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com
-移除图片和实况照片水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/note\/(?:imagefeed|live_photo\/save), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除整体配置 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system\/service\/ui\/config\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除开屏广告-config = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v1\/system_service\/config\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除开屏广告-splash_config = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/system_service\/splash_config, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除详情页小部件、关注页感兴趣的人 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v2\/(?:note\/widgets|user\/followings\/followfeed), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除信息流广告 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v4\/followfeed\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除详情页感兴趣的人 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v5\/recommend\/user\/follow_recommend\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除搜索页广告 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/v10\/search\/notes\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除评论区实况照片水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v1\/interaction\/comment\/video\/download|v5\/note\/comment\/list), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除图片和视频水印 = type=http-response, pattern=^https:\/\/edith\.xiaohongshu\.com\/api\/sns\/(?:v2\/note\/feed|v3\/note\/videofeed), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除信息流广告 = type=http-response, pattern=^https:\/\/(?:edith|rec)\.xiaohongshu\.com\/api\/sns\/v6\/homefeed\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
-移除视频水印 = type=http-response, pattern=^https:\/\/(?:edith|rec|www)\.xiaohongshu\.com\/api\/sns\/(?:v4\/note\/videofeed|v10\/note\/video\/save), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除图片和实况照片水印 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v1/note/(?:imagefeed|live_photo/save), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除整体配置-ui = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v1/system/service/ui/config\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除开屏广告-config = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v1/system_service/config\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除开屏广告-splash_config = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v2/system_service/splash_config, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除详情页小部件、关注页感兴趣的人 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v2/(?:note/widgets|user/followings/followfeed), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除信息流广告 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v4/followfeed\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除详情页感兴趣的人 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v5/recommend/user/follow_recommend\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除评论区实况照片水印 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/(?:v1/interaction/comment/video/download|v5/note/comment/list), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除图片和视频水印 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/(?:v2/note/feed|v3/note/videofeed), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除信息流广告 = type=http-response, pattern=^https://(?:edith|rec)\.xiaohongshu\.com/api/sns/v6/homefeed\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除搜索页广告 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v10/search/notes\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
+小红书移除视频水印 = type=http-response, pattern=^https://(?:edith|rec|www)\.xiaohongshu\.com/api/sns/(?:v4/note/videofeed|v10/note/video/save), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
 
 # 淘宝去广告 acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 移除淘宝开屏广告 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true

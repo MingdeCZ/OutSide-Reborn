@@ -1,6 +1,7 @@
 # 补充/优化
 DOMAIN, api.smoot.apple.cn
 DOMAIN, link.parallels.cn
+DOMAIN, uzu.ma
 DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, adguard-dns.com
 DOMAIN-SUFFIX, apache.org
@@ -11,6 +12,7 @@ DOMAIN-SUFFIX, coolhub.top
 DOMAIN-SUFFIX, crisp.chat
 DOMAIN-SUFFIX, duo.com
 DOMAIN-SUFFIX, fast.com
+DOMAIN-SUFFIX, findcheapsubs.com
 DOMAIN-SUFFIX, gcorelabs.com
 DOMAIN-SUFFIX, geotrust.com
 DOMAIN-SUFFIX, getnoir.app
@@ -44,7 +46,10 @@ DOMAIN-SUFFIX, stripe.com
 DOMAIN-SUFFIX, swiftgram.app
 DOMAIN-SUFFIX, tampermonkey.net
 DOMAIN-SUFFIX, tero.ink
+DOMAIN-SUFFIX, trinetwork.io
 DOMAIN-SUFFIX, vcc.agency
+DOMAIN-SUFFIX, vmiss.com
+DOMAIN-SUFFIX, wins.cool
 DOMAIN-SUFFIX, zenlayer.net
 # 待分配 IP 查询
 # DOMAIN-SUFFIX, ip.sb
@@ -186,7 +191,7 @@ DOMAIN-SUFFIX, yammer.com
 DOMAIN-SUFFIX, clipdrop.co
 DOMAIN-SUFFIX, groq.com
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：25-11-16）
+# 其它常见海外服务（最后更新：25-12-20）
 # DOMAIN-SUFFIX, dcd.gg
 # DOMAIN-SUFFIX, deepmind.com
 # DOMAIN-SUFFIX, pomf.se
@@ -200,6 +205,8 @@ DOMAIN, sgminorshort.wechat.com
 DOMAIN, sgshort.wechat.com
 DOMAIN, store.ui.com.cn
 DOMAIN, wego.here.com
+DOMAIN, www.yymanhua.com
+DOMAIN, yymanhua.com
 DOMAIN-KEYWORD, blogspot
 DOMAIN-KEYWORD, browserleaks
 DOMAIN-KEYWORD, discord
@@ -318,7 +325,9 @@ DOMAIN-SUFFIX, be
 DOMAIN-SUFFIX, beacondb.net
 DOMAIN-SUFFIX, behance.net
 DOMAIN-SUFFIX, bestbuy.com
+DOMAIN-SUFFIX, bet
 DOMAIN-SUFFIX, bet365.com
+DOMAIN-SUFFIX, bg
 DOMAIN-SUFFIX, bgp.tools
 DOMAIN-SUFFIX, bibox.com
 DOMAIN-SUFFIX, bikaa.xyz
@@ -437,6 +446,7 @@ DOMAIN-SUFFIX, desmos.com
 DOMAIN-SUFFIX, detnews.com
 DOMAIN-SUFFIX, deviantart.com
 DOMAIN-SUFFIX, deviantart.net
+DOMAIN-SUFFIX, devmate.com
 DOMAIN-SUFFIX, diagrams.net
 DOMAIN-SUFFIX, dialogflow.com
 DOMAIN-SUFFIX, dictionary.com
@@ -458,6 +468,7 @@ DOMAIN-SUFFIX, dnsleak.privadovpn.com
 DOMAIN-SUFFIX, dnsleaktest.com
 DOMAIN-SUFFIX, dnsleaktest.org
 DOMAIN-SUFFIX, docker.com
+DOMAIN-SUFFIX, dockerstatus.com
 DOMAIN-SUFFIX, doujins.com
 DOMAIN-SUFFIX, downdetector.com
 DOMAIN-SUFFIX, downdetectorapi.com
@@ -472,6 +483,7 @@ DOMAIN-SUFFIX, dwnews.com
 DOMAIN-SUFFIX, dynu.com
 DOMAIN-SUFFIX, dynu.net
 DOMAIN-SUFFIX, e621.net
+DOMAIN-SUFFIX, ec
 DOMAIN-SUFFIX, economist.com
 DOMAIN-SUFFIX, edgeapp.net
 DOMAIN-SUFFIX, edgecastcdn.net
@@ -489,6 +501,7 @@ DOMAIN-SUFFIX, etsy.com
 DOMAIN-SUFFIX, eu
 DOMAIN-SUFFIX, eu.org
 DOMAIN-SUFFIX, euronews.com
+DOMAIN-SUFFIX, everymac.com
 DOMAIN-SUFFIX, explainthis.io
 DOMAIN-SUFFIX, expressvpn.com
 DOMAIN-SUFFIX, f8.com
@@ -505,6 +518,7 @@ DOMAIN-SUFFIX, fc2.com
 DOMAIN-SUFFIX, feedburner.com
 DOMAIN-SUFFIX, feeder.co
 DOMAIN-SUFFIX, feedly.com
+DOMAIN-SUFFIX, ff.im
 DOMAIN-SUFFIX, fide.com
 DOMAIN-SUFFIX, figma.com
 DOMAIN-SUFFIX, findagrave.com
@@ -525,6 +539,9 @@ DOMAIN-SUFFIX, forbes.com
 DOMAIN-SUFFIX, fosshub.com
 DOMAIN-SUFFIX, foxnews.com
 DOMAIN-SUFFIX, fr
+DOMAIN-SUFFIX, framer.com
+DOMAIN-SUFFIX, freebeacon.com
+DOMAIN-SUFFIX, freecodecamp.org
 DOMAIN-SUFFIX, freedownloadmanager.org
 DOMAIN-SUFFIX, freemacsoft.net
 DOMAIN-SUFFIX, freepik.com
@@ -648,11 +665,13 @@ DOMAIN-SUFFIX, icann.org
 DOMAIN-SUFFIX, iconfinder.com
 DOMAIN-SUFFIX, id
 DOMAIN-SUFFIX, idrive.com
+DOMAIN-SUFFIX, ie
 DOMAIN-SUFFIX, ietf.org
 DOMAIN-SUFFIX, ifixit.com
 DOMAIN-SUFFIX, ifttt.com
 DOMAIN-SUFFIX, iheart.com
 DOMAIN-SUFFIX, iina.io
+DOMAIN-SUFFIX, il
 DOMAIN-SUFFIX, iloveimg.com
 DOMAIN-SUFFIX, imagefap.com
 DOMAIN-SUFFIX, imagekit.io
@@ -675,6 +694,7 @@ DOMAIN-SUFFIX, internet.org
 DOMAIN-SUFFIX, intodns.com
 DOMAIN-SUFFIX, ip-scan.adspower.net
 DOMAIN-SUFFIX, ipleak.net
+DOMAIN-SUFFIX, ir
 DOMAIN-SUFFIX, is
 DOMAIN-SUFFIX, issuu.com
 DOMAIN-SUFFIX, istatmenus.app
@@ -684,6 +704,7 @@ DOMAIN-SUFFIX, itasoftware.com
 DOMAIN-SUFFIX, itch.io
 DOMAIN-SUFFIX, ixxx.com
 DOMAIN-SUFFIX, j.mp
+DOMAIN-SUFFIX, jiji.com
 DOMAIN-SUFFIX, jirachecklist.com
 DOMAIN-SUFFIX, jkforum.net
 DOMAIN-SUFFIX, jotform.com
@@ -711,6 +732,7 @@ DOMAIN-SUFFIX, ko-fi.com
 DOMAIN-SUFFIX, kobo.com
 DOMAIN-SUFFIX, komoot.com
 DOMAIN-SUFFIX, komoot.net
+DOMAIN-SUFFIX, konachan.com
 DOMAIN-SUFFIX, kr
 DOMAIN-SUFFIX, kraken.com
 DOMAIN-SUFFIX, kucoin.com
@@ -752,11 +774,13 @@ DOMAIN-SUFFIX, macaddress.io
 DOMAIN-SUFFIX, macpaw.com
 DOMAIN-SUFFIX, macupdate.com
 DOMAIN-SUFFIX, madewithcode.com
+DOMAIN-SUFFIX, mailchimp.com
 DOMAIN-SUFFIX, majsoul.union-game.com
 DOMAIN-SUFFIX, makerworld.com
 DOMAIN-SUFFIX, malwarebytes.com
 DOMAIN-SUFFIX, mangafox.me
 DOMAIN-SUFFIX, manhuabika.com
+DOMAIN-SUFFIX, manhuagui.com
 DOMAIN-SUFFIX, mapbox.com
 DOMAIN-SUFFIX, maptiler.com
 DOMAIN-SUFFIX, material.io
@@ -773,6 +797,9 @@ DOMAIN-SUFFIX, meta.com
 DOMAIN-SUFFIX, metacritic.com
 DOMAIN-SUFFIX, metamask.io
 DOMAIN-SUFFIX, mexc.com
+DOMAIN-SUFFIX, mg
+DOMAIN-SUFFIX, micro.blog
+DOMAIN-SUFFIX, micro.one
 DOMAIN-SUFFIX, mikrotik.com
 DOMAIN-SUFFIX, mil
 DOMAIN-SUFFIX, minecraft-services.net
@@ -850,6 +877,7 @@ DOMAIN-SUFFIX, npmjs.org
 DOMAIN-SUFFIX, npr.org
 DOMAIN-SUFFIX, nsfwr34.com
 DOMAIN-SUFFIX, nssurge.com
+DOMAIN-SUFFIX, ny1.com
 DOMAIN-SUFFIX, nyaa.land
 DOMAIN-SUFFIX, nypost.com
 DOMAIN-SUFFIX, nyt.com
@@ -872,6 +900,7 @@ DOMAIN-SUFFIX, one.com
 DOMAIN-SUFFIX, onepluscommunityserver.com
 DOMAIN-SUFFIX, opencollective.com
 DOMAIN-SUFFIX, openfreemap.org
+DOMAIN-SUFFIX, openlibrary.org
 DOMAIN-SUFFIX, opensea.io
 DOMAIN-SUFFIX, openstreetmap.org
 DOMAIN-SUFFIX, opentable.com
@@ -886,6 +915,7 @@ DOMAIN-SUFFIX, page.link
 DOMAIN-SUFFIX, pagesix.com
 DOMAIN-SUFFIX, party
 DOMAIN-SUFFIX, patreon.com
+DOMAIN-SUFFIX, pawoo.net
 DOMAIN-SUFFIX, pe
 DOMAIN-SUFFIX, peeringdb.com
 DOMAIN-SUFFIX, perfect-privacy.com
@@ -901,6 +931,7 @@ DOMAIN-SUFFIX, ping0.cc
 DOMAIN-SUFFIX, pixelscan.net
 DOMAIN-SUFFIX, pixiv.net
 DOMAIN-SUFFIX, pixiv.org
+DOMAIN-SUFFIX, pk
 DOMAIN-SUFFIX, pl
 DOMAIN-SUFFIX, playboy.com
 DOMAIN-SUFFIX, plurk.com
@@ -959,7 +990,10 @@ DOMAIN-SUFFIX, rfc-editor.org
 DOMAIN-SUFFIX, rferl.org
 DOMAIN-SUFFIX, rip
 DOMAIN-SUFFIX, ripe.net
+DOMAIN-SUFFIX, riseup.net
+DOMAIN-SUFFIX, ro
 DOMAIN-SUFFIX, roboflow.com
+DOMAIN-SUFFIX, rocks
 DOMAIN-SUFFIX, rottentomatoes.com
 DOMAIN-SUFFIX, rs
 DOMAIN-SUFFIX, rtings.com
@@ -1132,6 +1166,7 @@ DOMAIN-SUFFIX, typora.io
 DOMAIN-SUFFIX, ubuntu-touch.io
 DOMAIN-SUFFIX, ubuntu.com
 DOMAIN-SUFFIX, udn.com
+DOMAIN-SUFFIX, uhn.cx
 DOMAIN-SUFFIX, ui.com
 DOMAIN-SUFFIX, uk
 DOMAIN-SUFFIX, umblr.com
@@ -1212,6 +1247,7 @@ DOMAIN-SUFFIX, wsj.net
 DOMAIN-SUFFIX, x-art.com
 DOMAIN-SUFFIX, x.com
 DOMAIN-SUFFIX, x.company
+DOMAIN-SUFFIX, xbooru.com
 DOMAIN-SUFFIX, xchina.co
 DOMAIN-SUFFIX, xdaforums.com
 DOMAIN-SUFFIX, xfinity.com
