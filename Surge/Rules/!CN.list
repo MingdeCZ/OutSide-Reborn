@@ -17,10 +17,13 @@ DOMAIN-SUFFIX, gcorelabs.com
 DOMAIN-SUFFIX, geotrust.com
 DOMAIN-SUFFIX, getnoir.app
 DOMAIN-SUFFIX, gradle.org
+DOMAIN-SUFFIX, happymh.com
 DOMAIN-SUFFIX, hcaptcha.com
 DOMAIN-SUFFIX, i4store.net
 DOMAIN-SUFFIX, intercom.io
 DOMAIN-SUFFIX, kaylees.site
+DOMAIN-SUFFIX, kaze.cloud
+DOMAIN-SUFFIX, kazenat.com
 DOMAIN-SUFFIX, lencr.org
 DOMAIN-SUFFIX, link.com
 DOMAIN-SUFFIX, mesl.cloud
@@ -45,8 +48,6 @@ DOMAIN-SUFFIX, steampowered.com
 DOMAIN-SUFFIX, stripe.com
 DOMAIN-SUFFIX, swiftgram.app
 DOMAIN-SUFFIX, tampermonkey.net
-DOMAIN-SUFFIX, tero.ink
-DOMAIN-SUFFIX, trinetwork.io
 DOMAIN-SUFFIX, vcc.agency
 DOMAIN-SUFFIX, vmiss.com
 DOMAIN-SUFFIX, wins.cool
@@ -184,12 +185,10 @@ DOMAIN-SUFFIX, yammer.com
 # 待分配 AI
 # DOMAIN-SUFFIX, dify.ai
 # DOMAIN-SUFFIX, jasper.ai
-# DOMAIN-SUFFIX, meta.ai
 # DOMAIN-SUFFIX, openart.ai
 # DOMAIN-SUFFIX, perplexity.ai
 # DOMAIN, api.jetbrains.ai
 DOMAIN-SUFFIX, clipdrop.co
-DOMAIN-SUFFIX, groq.com
 DOMAIN-SUFFIX, poe.com
 # 其它常见海外服务（最后更新：25-12-20）
 # DOMAIN-SUFFIX, dcd.gg

@@ -72,3 +72,9 @@ DOMAIN-SUFFIX, augmentcode.com
 
 # OpenRouter
 DOMAIN, openrouter.ai
+
+# Meta
+DOMAIN-SUFFIX, meta.ai
+
+# Groq
+DOMAIN-SUFFIX, groq.com
