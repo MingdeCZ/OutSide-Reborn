@@ -110,8 +110,8 @@ DOMAIN-SUFFIX, store.storevideos.cdn-apple.com
 DOMAIN-SUFFIX, sveinbjorn.org
 # Steam 下载
 # DOMAIN-SUFFIX, steamcontent.com
-DOMAIN-SUFFIX, cm.steampowered.com
 DOMAIN, steamcdn-a.akamaihd.net
+DOMAIN-SUFFIX, cm.steampowered.com
 # Apple 国内 CDN
 # DOMAIN-SUFFIX, iadsdk.apple.com
 DOMAIN-SUFFIX, a1.mzstatic.com
@@ -171,13 +171,13 @@ DOMAIN-SUFFIX, download.developer.apple.com
 DOMAIN-SUFFIX, experiments.apple.com
 DOMAIN-SUFFIX, gs-loc-cn.apple.com
 DOMAIN-SUFFIX, gs-loc.apple.com
+DOMAIN-SUFFIX, gsp10-ssl-cn.ls.apple.com
+DOMAIN-SUFFIX, gsp12-cn.ls.apple.com
+DOMAIN-SUFFIX, gsp13-cn.ls.apple.com
 DOMAIN-SUFFIX, gsp4-cn.ls.apple.com
 DOMAIN-SUFFIX, gsp4-cn.ls.apple.com.edgekey.net
 DOMAIN-SUFFIX, gsp4-cn.ls.apple.com.edgekey.net.globalredir.akadns.net
 DOMAIN-SUFFIX, gsp5-cn.ls.apple.com
-DOMAIN-SUFFIX, gsp10-ssl-cn.ls.apple.com
-DOMAIN-SUFFIX, gsp12-cn.ls.apple.com
-DOMAIN-SUFFIX, gsp13-cn.ls.apple.com
 DOMAIN-SUFFIX, gsp85-cn-ssl.ls.apple.com
 DOMAIN-SUFFIX, gspe19-2-cn-ssl.ls-apple.com.akadns.net
 DOMAIN-SUFFIX, gspe19-2-cn-ssl.ls.apple.com
@@ -316,9 +316,10 @@ DOMAIN-SUFFIX, sdx.microsoft.com
 DOMAIN-SUFFIX, storeedgefd.dsx.mp.microsoft.com
 DOMAIN-SUFFIX, wscont1.apps.microsoft.com
 DOMAIN-SUFFIX, wscont2.apps.microsoft.com
-URL-REGEX, ^http://www\.microsoft\.com/pki/
-URL-REGEX, ^http://www\.microsoft\.com/pkiops/
-# 国内常见互联网公司和服务域名（最后更新：25-10-18）
+URL-REGEX, "^http://www\.microsoft\.com/pki/"
+URL-REGEX, "^http://www\.microsoft\.com/pkiops/"
+# 国内常见互联网公司和服务域名（最后更新：26-1-18）
+# DOMAIN-SUFFIX, elseviercdn.cn
 DOMAIN, assets1.xboxlive.cn
 DOMAIN, assets2.xboxlive.cn
 DOMAIN, c.weixin.com
@@ -546,7 +547,6 @@ DOMAIN-SUFFIX, eastmoney.com
 DOMAIN-SUFFIX, eatuo.com
 DOMAIN-SUFFIX, ebay.cn
 DOMAIN-SUFFIX, edu.cn
-# DOMAIN-SUFFIX, elseviercdn.cn
 DOMAIN-SUFFIX, email.cn
 DOMAIN-SUFFIX, eudic.net
 DOMAIN-SUFFIX, fang.com
@@ -796,6 +796,7 @@ DOMAIN-SUFFIX, samsungcloudcn.com
 DOMAIN-SUFFIX, sandai.net
 DOMAIN-SUFFIX, sankuai.com
 DOMAIN-SUFFIX, saxyit.com
+DOMAIN-SUFFIX, science.org
 DOMAIN-SUFFIX, segmentfault.com
 DOMAIN-SUFFIX, sevencdn.com
 DOMAIN-SUFFIX, sharepoint.cn
@@ -858,6 +859,7 @@ DOMAIN-SUFFIX, wallstreetcn.com
 DOMAIN-SUFFIX, wangsu.com
 DOMAIN-SUFFIX, weather.com.cn
 DOMAIN-SUFFIX, weathercn.com
+DOMAIN-SUFFIX, webofscience.com
 DOMAIN-SUFFIX, webok.net
 DOMAIN-SUFFIX, weibo.cn
 DOMAIN-SUFFIX, weibo.com
@@ -918,13 +920,12 @@ DOMAIN-SUFFIX, zol-img.com.cn
 DOMAIN-SUFFIX, zol.com.cn
 DOMAIN-SUFFIX, zui.com
 DOMAIN-SUFFIX, zuimeitianqi.com
-USER-AGENT, %E4%BC%98%E9%85%B7*
-USER-AGENT, %E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*
-USER-AGENT, TeslaMap
-# 软件更新、操作系统等大文件下载（最后更新：25-12-20）
+USER-AGENT, "%E4%BC%98%E9%85%B7*"
+USER-AGENT, "%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*"
+USER-AGENT, "TeslaMap"
+# 软件更新、操作系统等大文件下载（最后更新：26-1-18）
 # DOMAIN, archive.mirror.rafal.ca
 # DOMAIN, dl.nssurge.com
-# DOMAIN, edgeuno-bog2.mm.fcix.net
 # DOMAIN, ftp.at.debian.org
 # DOMAIN, ftp.au.debian.org
 # DOMAIN, ftp.be.debian.org
@@ -962,7 +963,6 @@ USER-AGENT, TeslaMap
 # DOMAIN, mac-release-static.stash.ws
 # DOMAIN, mirror.amaze.com.au
 # DOMAIN, mirror.clarkson.edu
-# DOMAIN, mirror.famaserver.com
 # DOMAIN, mirror.linux.ro
 # DOMAIN, mirror.liquidtelecom.com
 # DOMAIN, mirror.zzunipark.com
@@ -990,7 +990,6 @@ DOMAIN, apache.crihan.fr
 DOMAIN, apache.cs.utah.edu
 DOMAIN, apache.cs.utah.edu.org
 DOMAIN, apache.cs.uu.nl
-DOMAIN, apache.cu.be
 DOMAIN, apache.forthnet.gr
 DOMAIN, apache.hippo.nl
 DOMAIN, apache.ip-connect.vn.ua
@@ -1119,8 +1118,6 @@ DOMAIN, ctan.net
 DOMAIN, ctan.space-pro.be
 DOMAIN, ctan.tetaneutral.net
 DOMAIN, ctan.uib.no
-DOMAIN, ctan.um.ac.ir
-DOMAIN, ctan.yazd.ac.ir
 DOMAIN, d.myani.org
 DOMAIN, dafi.inf.um.es
 DOMAIN, data.gameflare.com
@@ -1304,6 +1301,7 @@ DOMAIN, downloads2.broadcom.com
 DOMAIN, drive.massgrave.dev
 DOMAIN, drmirror.physi.uni-heidelberg.de
 DOMAIN, dw.uptodown.net
+DOMAIN, eclats.crans.org
 DOMAIN, edge.steam-dns.top.comcast.net
 DOMAIN, edgedl.me.gvt1.com
 DOMAIN, edgeupdates.microsoft.com
@@ -1520,6 +1518,7 @@ DOMAIN, libraries.minecraft.net
 DOMAIN, lidsol.fi-b.unam.mx
 DOMAIN, linorg.usp.br
 DOMAIN, linux-mirrors.fnal.gov
+DOMAIN, linux.cs.nctu.edu.tw
 DOMAIN, linux.domainesia.com
 DOMAIN, linux.purple-cat.net
 DOMAIN, linux.yz.yamagata-u.ac.jp
@@ -1543,7 +1542,6 @@ DOMAIN, mirror-cdn.xtom.com
 DOMAIN, mirror-gw.elastis.id
 DOMAIN, mirror-hk.koddos.net
 DOMAIN, mirror-mk.interspace.com
-DOMAIN, mirror.0-1.cloud
 DOMAIN, mirror.01link.hk
 DOMAIN, mirror.0x.sg
 DOMAIN, mirror.0x626b.com
@@ -1558,7 +1556,6 @@ DOMAIN, mirror.aktkn.sg
 DOMAIN, mirror.alastyr.com
 DOMAIN, mirror.alwyzon.net
 DOMAIN, mirror.amberit.com.bd
-DOMAIN, mirror.aminidc.com
 DOMAIN, mirror.ams.macarne.com
 DOMAIN, mirror.amscloud.co.id
 DOMAIN, mirror.anigil.com
@@ -1569,7 +1566,6 @@ DOMAIN, mirror.aptus.co.tz
 DOMAIN, mirror.arizona.edu
 DOMAIN, mirror.arvancloud.ir
 DOMAIN, mirror.as.kamatera.com
-DOMAIN, mirror.as24220.net
 DOMAIN, mirror.as29550.net
 DOMAIN, mirror.as35701.net
 DOMAIN, mirror.as43289.net
@@ -1628,6 +1624,7 @@ DOMAIN, mirror.debian.ikoula.com
 DOMAIN, mirror.del.albony.in
 DOMAIN, mirror.dewabiz.com
 DOMAIN, mirror.digitaloceans.dev
+DOMAIN, mirror.dimensiondata.com
 DOMAIN, mirror.djvg.sg
 DOMAIN, mirror.dkm.cz
 DOMAIN, mirror.docker.ru
@@ -1862,7 +1859,6 @@ DOMAIN, mirror.twds.com.tw
 DOMAIN, mirror.ubuntu.ikoula.com
 DOMAIN, mirror.ubuntu.serverforge.org
 DOMAIN, mirror.uchile.cl
-DOMAIN, mirror.ucu.ac.ug
 DOMAIN, mirror.uepg.br
 DOMAIN, mirror.ufam.edu.br
 DOMAIN, mirror.ufro.cl
@@ -1931,7 +1927,6 @@ DOMAIN, mirror1.totbb.net
 DOMAIN, mirror2.evolution-host.com
 DOMAIN, mirror2.infomaniak.com
 DOMAIN, mirror2.tuxinator.org
-DOMAIN, mirrorbits.lineageos.org
 DOMAIN, mirrors-ubuntu.behostings.com
 DOMAIN, mirrors.accretive-networks.net
 DOMAIN, mirrors.advancedhosters.com
@@ -1956,7 +1951,6 @@ DOMAIN, mirrors.codec-cluster.org
 DOMAIN, mirrors.concertpass.com
 DOMAIN, mirrors.coreix.net
 DOMAIN, mirrors.datapark.ro
-DOMAIN, mirrors.dc.clear.net.ar
 DOMAIN, mirrors.de.sahilister.net
 DOMAIN, mirrors.edge.kernel.org
 DOMAIN, mirrors.egr.msu.edu
@@ -2069,6 +2063,7 @@ DOMAIN, packages.httpie.io
 DOMAIN, packages.linuxmint.com
 DOMAIN, packages.microsoft.com
 DOMAIN, packages.oth-regensburg.de
+DOMAIN, packages.sury.org
 DOMAIN, packages.termux.dev
 DOMAIN, packages.virtfusion.net
 DOMAIN, packagespc.xboxlive.com
@@ -2111,7 +2106,6 @@ DOMAIN, repo.gradle.org
 DOMAIN, repo.hex.pm
 DOMAIN, repo.ialab.dsu.edu
 DOMAIN, repo.ifca.es
-DOMAIN, repo.iut.ac.ir
 DOMAIN, repo.jztkft.hu
 DOMAIN, repo.linuxmirrors.ir
 DOMAIN, repo.morgan.kr
@@ -2178,7 +2172,6 @@ DOMAIN, ubuntu-archive.interhost.co.il
 DOMAIN, ubuntu-archive.locaweb.com.br
 DOMAIN, ubuntu-mirror.ati.tn
 DOMAIN, ubuntu-mirror.bhtelecom.ba
-DOMAIN, ubuntu-mirror.kimiahost.com
 DOMAIN, ubuntu-mirror.puq.apoapsis.cl
 DOMAIN, ubuntu-mirror.snu.edu.in
 DOMAIN, ubuntu.anexia.at
@@ -2217,7 +2210,6 @@ DOMAIN, ubuntu.otenet.gr
 DOMAIN, ubuntu.pars.host
 DOMAIN, ubuntu.parsvds.com
 DOMAIN, ubuntu.phoenixnap.com
-DOMAIN, ubuntu.pishgaman.net
 DOMAIN, ubuntu.repo.cure.edu.uy
 DOMAIN, ubuntu.rootlicense.com
 DOMAIN, ubuntu.securedservers.com
@@ -2779,7 +2771,7 @@ DOMAIN-WILDCARD, cdn-*.organicmaps.app
 DOMAIN-WILDCARD, download*.mediafire.com
 DOMAIN-WILDCARD, ftp.??.debian.org
 DOMAIN-WILDCARD, ftp.??.freebsd.org
-URL-REGEX, ^http://(.+)\.gvt\d\.com/edgedl
+URL-REGEX, "^http://(.+)\.gvt\d\.com/edgedl"
 # 内网
 DOMAIN, aterm.me
 DOMAIN, console.gl-inet.com
@@ -2843,6 +2835,7 @@ IP-CIDR6, ::1/128
 IP-CIDR6, fc00::/7
 IP-CIDR6, fe80::/10
 # 特定需求
+# PROCESS-NAME, parsecd
 DOMAIN, captive.apple.com
 DOMAIN, hotspot.cslwifi.com
 DOMAIN, injections.adguard.org
@@ -2860,7 +2853,6 @@ DOMAIN-KEYWORD, westlawchina
 DOMAIN-SUFFIX,  open.cd
 DOMAIN-SUFFIX, 127.atlas.skk.moe
 DOMAIN-SUFFIX, 52pt.site
-DOMAIN-SUFFIX, acg.rip
 DOMAIN-SUFFIX, acm.org
 DOMAIN-SUFFIX, aidoru-online.me
 DOMAIN-SUFFIX, alpharatio.cc
@@ -2991,7 +2983,6 @@ PROCESS-NAME, amuled
 PROCESS-NAME, aria2c
 PROCESS-NAME, cloudflared
 PROCESS-NAME, fdm
-# PROCESS-NAME, parsecd
 PROCESS-NAME, privoxy
 PROCESS-NAME, qBittorrent
 PROCESS-NAME, qbittorrent*
@@ -3000,4 +2991,4 @@ PROCESS-NAME, tailscaled
 PROCESS-NAME, transmission-daemon
 PROCESS-NAME, transmission-qt
 PROCESS-NAME, uTorrent
-USER-AGENT, %E8%BF%85%E9%9B%B7
+USER-AGENT, "%E8%BF%85%E9%9B%B7"

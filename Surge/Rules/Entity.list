@@ -1,4 +1,4 @@
-# 最后更新：25-12-20
+# 最后更新：26-1-18
 # OpenAI
 # DOMAIN-SUFFIX, oaistatic.com
 # DOMAIN-SUFFIX, oaiusercontent.com
@@ -25,7 +25,9 @@ DOMAIN, ai.google.dev
 DOMAIN, aida.googleapis.com
 DOMAIN, aisandbox-pa.googleapis.com
 DOMAIN, alkalimakersuite-pa.clients6.google.com
+DOMAIN, antigravity-unleash.goog
 DOMAIN, antigravity.google
+DOMAIN, daily-cloudcode-pa.googleapis.com
 DOMAIN, jules.google.com
 DOMAIN, robinfrontend-pa.googleapis.com
 DOMAIN, waa-pa.clients6.google.com
@@ -35,6 +37,7 @@ DOMAIN-SUFFIX, bard.google.com
 DOMAIN-SUFFIX, cloudcode-pa.googleapis.com
 DOMAIN-SUFFIX, deepmind.com
 DOMAIN-SUFFIX, deepmind.google
+DOMAIN-SUFFIX, g.ai
 DOMAIN-SUFFIX, geller-pa.googleapis.com
 DOMAIN-SUFFIX, gemini.google
 DOMAIN-SUFFIX, gemini.google.com
@@ -57,7 +60,7 @@ DOMAIN, apple.comscoreresearch.com
 DOMAIN, news-edge.apple.com
 DOMAIN, news-events.apple.com
 # 音频
-URL-REGEX, ^https?://news-assets\.apple\.com/(audio-narrative|podcast/audio)/.*
+URL-REGEX, "^https?://news-assets\.apple\.com/(audio-narrative|podcast/audio)/.*"
 
 # Grok
 DOMAIN-SUFFIX, grok.com
@@ -78,3 +81,7 @@ DOMAIN-SUFFIX, meta.ai
 
 # Groq
 DOMAIN-SUFFIX, groq.com
+
+# Finance
+DOMAIN-SUFFIX, paypal.com
+DOMAIN-SUFFIX, stripe.com

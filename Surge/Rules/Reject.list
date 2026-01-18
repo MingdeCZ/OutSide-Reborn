@@ -194,7 +194,6 @@ DOMAIN-SUFFIX, iaddata.com
 DOMAIN-SUFFIX, iads.unity3d.com
 DOMAIN-SUFFIX, iadsdk.apple.com
 DOMAIN-SUFFIX, igexin.com
-DOMAIN-SUFFIX, imtmp.net
 DOMAIN-SUFFIX, inmobi.cn
 DOMAIN-SUFFIX, inmobicdn.net
 DOMAIN-SUFFIX, installtongji.online
@@ -326,7 +325,7 @@ IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128
 IP-CIDR6, 2402:db40:5100:1011::5/128
 IP-CIDR6, 240e:928:1400:10::25/128
 URL-REGEX, "^http://.+/amdc/mobileDispatch"
-# 其它补充（最后更新：25-12-20）
+# 其它补充（最后更新：26-1-18）
 # DOMAIN, securemetrics.apple.com
 # DOMAIN-SUFFIX, admob.com
 DOMAIN, 1oavsblobprodcus350.blob.core.windows.net
@@ -334,6 +333,7 @@ DOMAIN, 2016.sina.cn
 DOMAIN, 37bvsblobprodcus311.blob.core.windows.net
 DOMAIN, 9ibbcq2d.sina.cn
 DOMAIN, a.alimama.cn
+DOMAIN, a.imput.net
 DOMAIN, a.macked.app
 DOMAIN, a.youdao.com
 DOMAIN, abtest.alibaba.com
@@ -446,6 +446,7 @@ DOMAIN, afdconf.baidu.com
 DOMAIN, afp.alicdn.com
 DOMAIN, agoodm.m.taobao.com
 DOMAIN, ajs.ipip.net
+DOMAIN, alimelog.taobao.com
 DOMAIN, amap-aos-info-nogw.amap.com
 DOMAIN, amdc-sibling.alipay.com.cn
 DOMAIN, amdcopen.m.taobao.com
@@ -455,6 +456,7 @@ DOMAIN, analytics-api.smzdm.com
 DOMAIN, analytics-js-cdn.liferay.com
 DOMAIN, analytics-pilot.kaggle.com
 DOMAIN, analytics.163.com
+DOMAIN, analytics.atom.com
 DOMAIN, analytics.blender.org
 DOMAIN, analytics.githubassets.com
 DOMAIN, analytics.immersivetranslate.com
@@ -554,7 +556,7 @@ DOMAIN, cm.baidu.com
 DOMAIN, cm.bilibili.com
 DOMAIN, cm.dmp.sina.cn
 DOMAIN, cm.ipinyou.com
-DOMAIN, cm.mlt01.com
+DOMAIN, cmshow.gtimg.cn
 DOMAIN, collector.wasu.cn
 DOMAIN, commdata.v.qq.com
 DOMAIN, count.taobao.com
@@ -625,7 +627,6 @@ DOMAIN, dsp.simba.taobao.com
 DOMAIN, du.163.com
 DOMAIN, dw-collect.ksosoft.com
 DOMAIN, dynamicad.kfc.com.cn
-DOMAIN, e.duomeng.org
 DOMAIN, e.jparking.cn
 DOMAIN, eaus2watcab01.blob.core.windows.net
 DOMAIN, eaus2watcab02.blob.core.windows.net
@@ -731,7 +732,6 @@ DOMAIN, iflow.uczzd.cn
 DOMAIN, iflow.uczzd.com
 DOMAIN, iflow.uczzd.net
 DOMAIN, ifs.tanx.com
-DOMAIN, ifsk2.tanx.com
 DOMAIN, img-x.jd.com
 DOMAIN, imgad0.pcauto.com.cn
 DOMAIN, imgad0.pconline.com.cn
@@ -790,6 +790,7 @@ DOMAIN, logview.uc.alimama.com
 DOMAIN, m.game.weibo.cn
 DOMAIN, m.simba.taobao.com
 DOMAIN, ma-adx.ctrip.com
+DOMAIN, mamasearchad.cloudvideocdn.taobao.com
 DOMAIN, masdk.3g.qq.com
 DOMAIN, masdkv6.3g.qq.com
 DOMAIN, match.p4p.1688.com
@@ -876,6 +877,7 @@ DOMAIN, prod.nexusrules.live.com
 DOMAIN, promote.biz.weibo.cn
 DOMAIN, proxy-mob-cld.alicdn.com
 DOMAIN, ps.map.baidu.com
+DOMAIN, pub.elevate14r.com
 DOMAIN, public.gdtimg.com
 DOMAIN, push.zhanzhang.baidu.com
 DOMAIN, pushapi.lenovomm.com
@@ -945,6 +947,7 @@ DOMAIN, sdkclick.mobile.sina.cn
 DOMAIN, sdkinit.taobao.com
 DOMAIN, securemvt.apple.com
 DOMAIN, sentry.music.163.com
+DOMAIN, sentry.netease.com
 DOMAIN, serveraddr.service.kugou.com
 DOMAIN, settingsfd-geo.trafficmanager.net
 DOMAIN, show.look.360.cn
@@ -974,13 +977,12 @@ DOMAIN, spynet2.microsoft.com
 DOMAIN, spynetalt.microsoft.com
 DOMAIN, srd.simba.taobao.com
 DOMAIN, ssl-cdn.media.innity.net
-DOMAIN, ssl.360antivirus.org
 DOMAIN, stat.10jqka.com.cn
 DOMAIN, stat.dns.sb
 DOMAIN, stat.loli.net
 DOMAIN, stat.m.jd.com
+DOMAIN, stat.rdap.ss
 DOMAIN, stat.simba.taobao.com
-DOMAIN, stat.srpg.dev
 DOMAIN, stat.v.baidu.com
 DOMAIN, stat.y.qq.com
 DOMAIN, static.vuevideo.net
@@ -988,6 +990,7 @@ DOMAIN, staticadm.leju.sina.com.cn
 DOMAIN, statistic.live.126.net
 DOMAIN, statistic.qzone.qq.com
 DOMAIN, stats.ipinyou.com
+DOMAIN, stats.via.moe
 DOMAIN, stats.wp.com
 DOMAIN, strip.taobaocdn.com
 DOMAIN, stun.smartgslb.com
@@ -1076,6 +1079,7 @@ DOMAIN, wbpctips.mobile.sina.cn
 DOMAIN, weather-community-drcn.weather.dbankcloud.cn
 DOMAIN, weus2watcab01.blob.core.windows.net
 DOMAIN, weus2watcab02.blob.core.windows.net
+DOMAIN, widgets-test.boomio.workers.dev
 DOMAIN, win10.ipv6.microsoft.com
 DOMAIN, win1710.ipv6.microsoft.com
 DOMAIN, wl.hd.sohu.com
@@ -1100,6 +1104,7 @@ DOMAIN, youku-acs.m.taobao.com
 DOMAIN, yt-adp.nosdn.127.net
 DOMAIN, yt-adp.ws.126.net
 DOMAIN, yt-adv.bn.netease.com
+DOMAIN, zhanzhang.toutiao.com
 DOMAIN, zhihu-web-analytics.zhihu.com
 DOMAIN, zz.bdstatic.com
 DOMAIN, zzy1.quyaoya.com
@@ -1257,6 +1262,7 @@ DOMAIN-SUFFIX, adsame.com
 DOMAIN-SUFFIX, adsensor.cn
 DOMAIN-SUFFIX, adserver.yahoo.com
 DOMAIN-SUFFIX, adsfactor.net
+DOMAIN-SUFFIX, adsmogo.net
 DOMAIN-SUFFIX, adss.yahoo.com
 DOMAIN-SUFFIX, adstune.com
 DOMAIN-SUFFIX, adsymptotic.com
@@ -1496,6 +1502,7 @@ DOMAIN-SUFFIX, googletraveladservices.com
 DOMAIN-SUFFIX, goufanli100.com
 DOMAIN-SUFFIX, gouwubang.com
 DOMAIN-SUFFIX, gozendata.com
+DOMAIN-SUFFIX, greedland.net
 DOMAIN-SUFFIX, groc.press
 DOMAIN-SUFFIX, growingio.com
 DOMAIN-SUFFIX, grs.platform.dbankcloud.ru
@@ -1539,6 +1546,7 @@ DOMAIN-SUFFIX, inmobi.com
 DOMAIN-SUFFIX, inte.sogou.com
 DOMAIN-SUFFIX, inte.sogoucdn.com
 DOMAIN-SUFFIX, istreamsche.com
+DOMAIN-SUFFIX, j5s9b.cn
 DOMAIN-SUFFIX, jiagu.360.cn
 DOMAIN-SUFFIX, jiubuhua.com
 DOMAIN-SUFFIX, js-query.com
@@ -1746,6 +1754,7 @@ DOMAIN-SUFFIX, stat.peng.you
 DOMAIN-SUFFIX, stat.xtom.com
 DOMAIN-SUFFIX, staticfile.net
 DOMAIN-SUFFIX, staticfile.org
+DOMAIN-SUFFIX, stats.paypal.com
 DOMAIN-SUFFIX, stats.yinyuetai.com
 DOMAIN-SUFFIX, streamback.ff.avast.com
 DOMAIN-SUFFIX, strongmetrics.io
@@ -1838,6 +1847,7 @@ DOMAIN-SUFFIX, yandexmetrica.com
 DOMAIN-SUFFIX, yfanads.com
 DOMAIN-SUFFIX, yiqifa.com
 DOMAIN-SUFFIX, ynuf.aliapp.org
+DOMAIN-SUFFIX, youshiad.cn
 DOMAIN-SUFFIX, ysm.yahoo.com
 DOMAIN-SUFFIX, yumenetworks.com
 DOMAIN-SUFFIX, zhanzhang.net
@@ -1860,5 +1870,5 @@ IP-CIDR, 103.37.155.60/32
 IP-CIDR, 114.110.97.97/32
 IP-CIDR, 180.76.76.112/32
 IP-CIDR, 180.76.76.220/32
-URL-REGEX, /\d+/resolve
-URL-REGEX, /igd\.xml
+URL-REGEX, "/\d+/resolve"
+URL-REGEX, "/igd\.xml"

@@ -46,7 +46,7 @@ hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.
 ^https://api\.bilibili\.com/x/report/click/ios - reject
 ^https://api\.bilibili\.com/x/report/heartbeat/mobile - reject
 
-^https?://app\.bilibili\.com/x/v\d/(splash/|param|dm/ad|dataflow/report) - reject
+^https?://app\.bilibili\.com/x/v\d/(param|dm/ad|dataflow/report) - reject
 ^https?://app\.bilibili\.com/x/resource/abtest - reject
 ^https?://api\.bilibili\.com/pgc/season/(rank/cn|app/related/recommend) - reject
 ^https?://app\.bilibili\.com/x/v\d/rank.*rid=(168|5) - reject

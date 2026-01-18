@@ -1,5 +1,6 @@
 # 补充/优化
 DOMAIN, api.smoot.apple.cn
+DOMAIN, kox.moe
 DOMAIN, link.parallels.cn
 DOMAIN, uzu.ma
 DOMAIN-SUFFIX, 64gr.am
@@ -13,7 +14,9 @@ DOMAIN-SUFFIX, crisp.chat
 DOMAIN-SUFFIX, duo.com
 DOMAIN-SUFFIX, fast.com
 DOMAIN-SUFFIX, findcheapsubs.com
+DOMAIN-SUFFIX, foobar2000.org
 DOMAIN-SUFFIX, gcorelabs.com
+DOMAIN-SUFFIX, geekuninstaller.com
 DOMAIN-SUFFIX, geotrust.com
 DOMAIN-SUFFIX, getnoir.app
 DOMAIN-SUFFIX, gradle.org
@@ -22,11 +25,12 @@ DOMAIN-SUFFIX, hcaptcha.com
 DOMAIN-SUFFIX, i4store.net
 DOMAIN-SUFFIX, intercom.io
 DOMAIN-SUFFIX, kaylees.site
-DOMAIN-SUFFIX, kaze.cloud
-DOMAIN-SUFFIX, kazenat.com
 DOMAIN-SUFFIX, lencr.org
 DOMAIN-SUFFIX, link.com
+DOMAIN-SUFFIX, linode.com
+DOMAIN-SUFFIX, lycheen.com
 DOMAIN-SUFFIX, mesl.cloud
+DOMAIN-SUFFIX, mhyidc.com
 DOMAIN-SUFFIX, nodejs.org
 DOMAIN-SUFFIX, ocsp-certum.com
 DOMAIN-SUFFIX, officetoolplus.net
@@ -35,7 +39,6 @@ DOMAIN-SUFFIX, onetrust.com
 DOMAIN-SUFFIX, onetrust.io
 DOMAIN-SUFFIX, paddle.com
 DOMAIN-SUFFIX, parallels.com
-DOMAIN-SUFFIX, paypal.com
 DOMAIN-SUFFIX, perfops.io
 DOMAIN-SUFFIX, pockyt.io
 DOMAIN-SUFFIX, quantumult.app
@@ -45,11 +48,12 @@ DOMAIN-SUFFIX, sectigo.com
 DOMAIN-SUFFIX, sparxsystems.com
 DOMAIN-SUFFIX, sqlite.org
 DOMAIN-SUFFIX, steampowered.com
-DOMAIN-SUFFIX, stripe.com
 DOMAIN-SUFFIX, swiftgram.app
 DOMAIN-SUFFIX, tampermonkey.net
 DOMAIN-SUFFIX, vcc.agency
 DOMAIN-SUFFIX, vmiss.com
+DOMAIN-SUFFIX, wedata.net
+DOMAIN-SUFFIX, wikipedia.org
 DOMAIN-SUFFIX, wins.cool
 DOMAIN-SUFFIX, zenlayer.net
 # 待分配 IP 查询
@@ -58,6 +62,7 @@ DOMAIN-SUFFIX, zenlayer.net
 DOMAIN-SUFFIX, db-ip.com
 DOMAIN-SUFFIX, ip-api.com
 DOMAIN-SUFFIX, ip-score.com
+DOMAIN-SUFFIX, ip.im
 DOMAIN-SUFFIX, ip125.com
 DOMAIN-SUFFIX, ip233.cn
 DOMAIN-SUFFIX, ip2location.com
@@ -69,8 +74,11 @@ DOMAIN-SUFFIX, ipinfo.io
 DOMAIN-SUFFIX, ipjiance.com
 DOMAIN-SUFFIX, iplark.com
 DOMAIN-SUFFIX, iplocation.net
+DOMAIN-SUFFIX, ippure.com
 DOMAIN-SUFFIX, ipregistry.co
 DOMAIN-SUFFIX, ipstack.com
+DOMAIN-SUFFIX, ipyard.com
+DOMAIN-SUFFIX, ping0.cc
 DOMAIN-SUFFIX, scamalytics.com
 # 苹果
 # DOMAIN-SUFFIX, appsto.re
@@ -89,16 +97,16 @@ DOMAIN-SUFFIX, itunes.com
 DOMAIN-SUFFIX, me.com
 DOMAIN-SUFFIX, organicfruitapps.com
 DOMAIN-SUFFIX, push-apple.com.akadns.net
-IP-CIDR, 17.0.0.0/8
-IP-CIDR, 63.92.224.0/19
-IP-CIDR, 65.199.22.0/23
 IP-CIDR, 139.178.128.0/18
 IP-CIDR, 144.178.0.0/19
 IP-CIDR, 144.178.36.0/22
 IP-CIDR, 144.178.48.0/20
+IP-CIDR, 17.0.0.0/8
 IP-CIDR, 192.35.50.0/24
 IP-CIDR, 198.183.17.0/24
 IP-CIDR, 205.180.175.0/24
+IP-CIDR, 63.92.224.0/19
+IP-CIDR, 65.199.22.0/23
 PROCESS-NAME, CoreLocationAgent
 PROCESS-NAME, WeatherWidget
 PROCESS-NAME, apsd
@@ -183,14 +191,14 @@ DOMAIN-SUFFIX, xboxlive.com
 DOMAIN-SUFFIX, xboxservices.com
 DOMAIN-SUFFIX, yammer.com
 # 待分配 AI
+# DOMAIN, api.jetbrains.ai
 # DOMAIN-SUFFIX, dify.ai
 # DOMAIN-SUFFIX, jasper.ai
 # DOMAIN-SUFFIX, openart.ai
 # DOMAIN-SUFFIX, perplexity.ai
-# DOMAIN, api.jetbrains.ai
 DOMAIN-SUFFIX, clipdrop.co
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：25-12-20）
+# 其它常见海外服务（最后更新：26-1-18）
 # DOMAIN-SUFFIX, dcd.gg
 # DOMAIN-SUFFIX, deepmind.com
 # DOMAIN-SUFFIX, pomf.se
@@ -199,9 +207,6 @@ DOMAIN, community.oneplus.com
 DOMAIN, ees.elsevier.com
 DOMAIN, help.ubnt.com
 DOMAIN, news.ycombinator.com
-DOMAIN, sglong.wechat.com
-DOMAIN, sgminorshort.wechat.com
-DOMAIN, sgshort.wechat.com
 DOMAIN, store.ui.com.cn
 DOMAIN, wego.here.com
 DOMAIN, www.yymanhua.com
@@ -254,8 +259,6 @@ DOMAIN-SUFFIX, afraid.org
 DOMAIN-SUFFIX, ai
 DOMAIN-SUFFIX, aicoin.com
 DOMAIN-SUFFIX, aimoon.com
-DOMAIN-SUFFIX, airav.cc
-DOMAIN-SUFFIX, airav.io
 DOMAIN-SUFFIX, airtable.com
 DOMAIN-SUFFIX, ajay.app
 DOMAIN-SUFFIX, akamai.net
@@ -302,8 +305,6 @@ DOMAIN-SUFFIX, auth0.com
 DOMAIN-SUFFIX, autodesk.com
 DOMAIN-SUFFIX, autodraw.com
 DOMAIN-SUFFIX, avg.com
-DOMAIN-SUFFIX, avgle.com
-DOMAIN-SUFFIX, avtoday.io
 DOMAIN-SUFFIX, aweber.com
 DOMAIN-SUFFIX, aws
 DOMAIN-SUFFIX, aws.dev
@@ -603,6 +604,7 @@ DOMAIN-SUFFIX, googl.com
 DOMAIN-SUFFIX, gooogle.com
 DOMAIN-SUFFIX, gov
 DOMAIN-SUFFIX, gqhongkong.com
+DOMAIN-SUFFIX, grafana.com
 DOMAIN-SUFFIX, grammarly.com
 DOMAIN-SUFFIX, grammarly.io
 DOMAIN-SUFFIX, greasyfork.org
@@ -626,9 +628,6 @@ DOMAIN-SUFFIX, gvt7.com
 DOMAIN-SUFFIX, gvt9.com
 DOMAIN-SUFFIX, gwtproject.org
 DOMAIN-SUFFIX, hackmd.io
-DOMAIN-SUFFIX, hanime1.com
-DOMAIN-SUFFIX, hanime1.me
-DOMAIN-SUFFIX, hanimeone.me
 DOMAIN-SUFFIX, hanmail.net
 DOMAIN-SUFFIX, haproxy.com
 DOMAIN-SUFFIX, hbg.com
@@ -807,8 +806,8 @@ DOMAIN-SUFFIX, minecraft.tools
 DOMAIN-SUFFIX, minecraft.wiki
 DOMAIN-SUFFIX, minecraftforum.net
 DOMAIN-SUFFIX, minecraftservices.com
+DOMAIN-SUFFIX, mingpao.com
 DOMAIN-SUFFIX, miniclip.com
-DOMAIN-SUFFIX, missav.com
 DOMAIN-SUFFIX, misskey.io
 DOMAIN-SUFFIX, mixcloud.com
 DOMAIN-SUFFIX, mixer.com
@@ -858,7 +857,6 @@ DOMAIN-SUFFIX, nicehash.com
 DOMAIN-SUFFIX, nikkei.com
 DOMAIN-SUFFIX, nitter.net
 DOMAIN-SUFFIX, nj.com
-DOMAIN-SUFFIX, njav.com
 DOMAIN-SUFFIX, nl
 DOMAIN-SUFFIX, no
 DOMAIN-SUFFIX, nodeseek.com
@@ -894,6 +892,7 @@ DOMAIN-SUFFIX, okx.com
 DOMAIN-SUFFIX, olelive.com
 DOMAIN-SUFFIX, olevod.com
 DOMAIN-SUFFIX, olympics.com
+DOMAIN-SUFFIX, on.cc
 DOMAIN-SUFFIX, one
 DOMAIN-SUFFIX, one.com
 DOMAIN-SUFFIX, onepluscommunityserver.com
@@ -926,7 +925,6 @@ DOMAIN-SUFFIX, picacn.xyz
 DOMAIN-SUFFIX, picacomic.com
 DOMAIN-SUFFIX, picacomic.xyz
 DOMAIN-SUFFIX, pikpak.me
-DOMAIN-SUFFIX, ping0.cc
 DOMAIN-SUFFIX, pixelscan.net
 DOMAIN-SUFFIX, pixiv.net
 DOMAIN-SUFFIX, pixiv.org
@@ -940,7 +938,6 @@ DOMAIN-SUFFIX, poeditor.com
 DOMAIN-SUFFIX, polymer-project.org
 DOMAIN-SUFFIX, pomf.cat
 DOMAIN-SUFFIX, pornhub.com
-DOMAIN-SUFFIX, pornhub.org
 DOMAIN-SUFFIX, postmarkapp.com
 DOMAIN-SUFFIX, precisionhydration.com
 DOMAIN-SUFFIX, prisma.io
@@ -977,6 +974,7 @@ DOMAIN-SUFFIX, redditspace.com
 DOMAIN-SUFFIX, redhat.org
 DOMAIN-SUFFIX, redtube.com
 DOMAIN-SUFFIX, redtubepremium.com
+DOMAIN-SUFFIX, regex101.com
 DOMAIN-SUFFIX, reimu.net
 DOMAIN-SUFFIX, render.com
 DOMAIN-SUFFIX, replit.com
@@ -1017,10 +1015,7 @@ DOMAIN-SUFFIX, sendgrid.net
 DOMAIN-SUFFIX, sentry.dev
 DOMAIN-SUFFIX, sentry.io
 DOMAIN-SUFFIX, serverfault.com
-DOMAIN-SUFFIX, serviporno.com
 DOMAIN-SUFFIX, setapp.com
-DOMAIN-SUFFIX, sex
-DOMAIN-SUFFIX, sex.com
 DOMAIN-SUFFIX, sf.net
 DOMAIN-SUFFIX, sfmcompile.club
 DOMAIN-SUFFIX, sg
@@ -1080,10 +1075,10 @@ DOMAIN-SUFFIX, strava.com
 DOMAIN-SUFFIX, streamable.com
 DOMAIN-SUFFIX, stripchat.com
 DOMAIN-SUFFIX, strongleakstest.com
+DOMAIN-SUFFIX, studio
 DOMAIN-SUFFIX, su
 DOMAIN-SUFFIX, substack.com
 DOMAIN-SUFFIX, superuser.com
-DOMAIN-SUFFIX, supjav.com
 DOMAIN-SUFFIX, surfshark.com
 DOMAIN-SUFFIX, surfsharkdns.com
 DOMAIN-SUFFIX, surge-activation.com
@@ -1120,7 +1115,6 @@ DOMAIN-SUFFIX, thesaurus.com
 DOMAIN-SUFFIX, thetvdb.com
 DOMAIN-SUFFIX, theverge.com
 DOMAIN-SUFFIX, thingiverse.com
-DOMAIN-SUFFIX, thisav.com
 DOMAIN-SUFFIX, thisvid.com
 DOMAIN-SUFFIX, threads.com
 DOMAIN-SUFFIX, threads.net
@@ -1140,7 +1134,6 @@ DOMAIN-SUFFIX, tokto-motion.net
 DOMAIN-SUFFIX, tokyomotion.net
 DOMAIN-SUFFIX, tokyonline.com
 DOMAIN-SUFFIX, toolforge.org
-DOMAIN-SUFFIX, toroporno.com
 DOMAIN-SUFFIX, tr
 DOMAIN-SUFFIX, tradingview.com
 DOMAIN-SUFFIX, travis-ci.com
@@ -1171,7 +1164,6 @@ DOMAIN-SUFFIX, uk
 DOMAIN-SUFFIX, umblr.com
 DOMAIN-SUFFIX, upcitemdb.com
 DOMAIN-SUFFIX, updownradar.com
-DOMAIN-SUFFIX, upornia.com
 DOMAIN-SUFFIX, uptimerobot.com
 DOMAIN-SUFFIX, uptodown.com
 DOMAIN-SUFFIX, urlscan.io
@@ -1181,6 +1173,7 @@ DOMAIN-SUFFIX, v2ex.com
 DOMAIN-SUFFIX, v2fly.org
 DOMAIN-SUFFIX, v2ray.com
 DOMAIN-SUFFIX, va
+DOMAIN-SUFFIX, vanityfair.com
 DOMAIN-SUFFIX, vercel.com
 DOMAIN-SUFFIX, vercel.live
 DOMAIN-SUFFIX, verizon.com
@@ -1194,7 +1187,6 @@ DOMAIN-SUFFIX, vikacg.com
 DOMAIN-SUFFIX, vimeo.com
 DOMAIN-SUFFIX, vine.co
 DOMAIN-SUFFIX, vivaldi.com
-DOMAIN-SUFFIX, vjav.com
 DOMAIN-SUFFIX, vk.com
 DOMAIN-SUFFIX, vmware.com
 DOMAIN-SUFFIX, vn
@@ -1279,7 +1271,7 @@ DOMAIN-SUFFIX, zenn.dev
 DOMAIN-SUFFIX, zerochan.net
 DOMAIN-SUFFIX, zndsk.com
 DOMAIN-SUFFIX, zoominfo.com
-USER-AGENT, Roam*
+USER-AGENT, "Roam*"
 # 待分配流媒体
 # DOMAIN, hls-amt.itunes.apple.com
 # DOMAIN, hls.itunes.apple.com
@@ -1531,49 +1523,49 @@ PROCESS-NAME, com.vuclip.viu
 PROCESS-NAME, music
 PROCESS-NAME, tv
 PROCESS-NAME, tv.twitch.android.app
-USER-AGENT, *Spotify*
-USER-AGENT, AbemaTV*
-USER-AGENT, All4*
-USER-AGENT, Anime*
-USER-AGENT, AppleTV*
-USER-AGENT, BBCiPlayer*
-USER-AGENT, DAZN*
-USER-AGENT, Deezer*
-USER-AGENT, FOX NOW*
-USER-AGENT, FOXPlus*
-USER-AGENT, HBO NOW*
-USER-AGENT, HBOMAX*
-USER-AGENT, HWTVMobile*
-USER-AGENT, Himalaya*
-USER-AGENT, Hulu*
-USER-AGENT, ITV_Player*
-USER-AGENT, InstantVideo.US*
-USER-AGENT, JOOX*
-USER-AGENT, KKTV*
-USER-AGENT, LINE TV*
-USER-AGENT, My5*
-USER-AGENT, Naver TV*
-USER-AGENT, Niconico*
-USER-AGENT, Overcast*
-USER-AGENT, PBS*
-USER-AGENT, PPlus*
-USER-AGENT, Pandora*
-USER-AGENT, PeacockMobile*
-USER-AGENT, Prime Video*
-USER-AGENT, SoundCloud*
-USER-AGENT, TIDAL*
-USER-AGENT, TVer-Release*
-USER-AGENT, TaiwanGood*
-USER-AGENT, TikTok*
-USER-AGENT, Viu*
-USER-AGENT, WeMusic*
-USER-AGENT, WeTV*
-USER-AGENT, YouTube*
-USER-AGENT, YouTubeMusic*
-USER-AGENT, com.apple.tv*
-USER-AGENT, com.google.ios.youtube*
-USER-AGENT, com.google.ios.youtubemusic*
-USER-AGENT, com.kktv.ios.kktv*
-USER-AGENT, discovery+*
-USER-AGENT, encoreTVB*
-USER-AGENT, mytv*
+USER-AGENT, "*Spotify*"
+USER-AGENT, "AbemaTV*"
+USER-AGENT, "All4*"
+USER-AGENT, "Anime*"
+USER-AGENT, "AppleTV*"
+USER-AGENT, "BBCiPlayer*"
+USER-AGENT, "DAZN*"
+USER-AGENT, "Deezer*"
+USER-AGENT, "FOX NOW*"
+USER-AGENT, "FOXPlus*"
+USER-AGENT, "HBO NOW*"
+USER-AGENT, "HBOMAX*"
+USER-AGENT, "HWTVMobile*"
+USER-AGENT, "Himalaya*"
+USER-AGENT, "Hulu*"
+USER-AGENT, "ITV_Player*"
+USER-AGENT, "InstantVideo.US*"
+USER-AGENT, "JOOX*"
+USER-AGENT, "KKTV*"
+USER-AGENT, "LINE TV*"
+USER-AGENT, "My5*"
+USER-AGENT, "Naver TV*"
+USER-AGENT, "Niconico*"
+USER-AGENT, "Overcast*"
+USER-AGENT, "PBS*"
+USER-AGENT, "PPlus*"
+USER-AGENT, "Pandora*"
+USER-AGENT, "PeacockMobile*"
+USER-AGENT, "Prime Video*"
+USER-AGENT, "SoundCloud*"
+USER-AGENT, "TIDAL*"
+USER-AGENT, "TVer-Release*"
+USER-AGENT, "TaiwanGood*"
+USER-AGENT, "TikTok*"
+USER-AGENT, "Viu*"
+USER-AGENT, "WeMusic*"
+USER-AGENT, "WeTV*"
+USER-AGENT, "YouTube*"
+USER-AGENT, "YouTubeMusic*"
+USER-AGENT, "com.apple.tv*"
+USER-AGENT, "com.google.ios.youtube*"
+USER-AGENT, "com.google.ios.youtubemusic*"
+USER-AGENT, "com.kktv.ios.kktv*"
+USER-AGENT, "discovery+*"
+USER-AGENT, "encoreTVB*"
+USER-AGENT, "mytv*"
