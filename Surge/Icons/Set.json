@@ -6,10 +6,6 @@
             "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Umbrella_Corp.png"
         },
         {
-            "name": "奈飞",
-            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Netflix.png"
-        },
-        {
             "name": "大流量传输",
             "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Transfer.png"
         },
@@ -24,6 +20,10 @@
         {
             "name": "荷兰皇家航空",
             "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/KLM.png"
+        },
+        {
+            "name": "奈飞",
+            "url": "https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Netflix.png"
         },
         {
             "name": "维萨",

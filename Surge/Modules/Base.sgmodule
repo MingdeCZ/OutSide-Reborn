@@ -17,11 +17,11 @@ dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1
 dns.pub = server:119.29.29.29
 doh.360.cn = server:101.198.198.198
 doh.pub = server:119.29.29.29
+RULE-SET:https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/DNS360.list = server:https://doh.360.cn/dns-query
 RULE-SET:https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/DNSystem.list= server:system
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/alibaba.conf = server:h3://dns.alidns.com/dns-query
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/baidu.conf = server:180.76.76.76
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bytedance.conf = server:180.184.2.2
-RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/qihoo360.conf = server:https://doh.360.cn/dns-query
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/tencent.conf = server:https://doh.pub/dns-query
 
 [General]

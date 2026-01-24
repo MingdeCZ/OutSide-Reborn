@@ -18,12 +18,17 @@ DOMAIN-SUFFIX, posthog.com
 IP-CIDR, 5.28.192.0/21
 #
 // break fairplay.l.qq.com, vi.l.qq.com
+# DOMAIN-KEYWORD, -ad-sign.byteimg.com
 # DOMAIN-SUFFIX, 17admob.com
+# DOMAIN-SUFFIX, admobile.mobi
+# DOMAIN-SUFFIX, admobile.net.cn
 # DOMAIN-SUFFIX, admobile.top
+# DOMAIN-SUFFIX, admobile.vip
 AND, ((DOMAIN-KEYWORD, -ad-), (DOMAIN-SUFFIX, byteimg.com))
 AND, ((DOMAIN-KEYWORD, adash), (DOMAIN-SUFFIX, ut.taobao.com))
 AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, -normal.zijieapi.com))
 DOMAIN, ad-evods.tianya.tv
+DOMAIN, ad.aggrxinc.com
 DOMAIN, ad.maoyan.com
 DOMAIN, ad.shunchangzhixing.com
 DOMAIN, adapi.izuiyou.com
@@ -57,6 +62,10 @@ DOMAIN, et.tanx.com
 DOMAIN, events.statsigapi.net
 DOMAIN, extlog.snssdk.com
 DOMAIN, feed-image.baidu.com
+DOMAIN, firebaseinappmessaging.googleapis.com
+DOMAIN, firebaselogging-pa.googleapis.com
+DOMAIN, firebaseremoteconfig.googleapis.com
+DOMAIN, fundingchoicesmessages.google.com
 DOMAIN, gorgon.youdao.com
 DOMAIN, httpdns-api.aliyuncs.com
 DOMAIN, httpdns-sc.aliyuncs.com
@@ -116,7 +125,6 @@ DOMAIN, tmeadcomm.y.qq.com
 DOMAIN, tpns.qq.com
 DOMAIN, tpstelemetry.tencent.com
 DOMAIN, wxsmsdy.video.qq.com
-DOMAIN-KEYWORD, -ad-sign.byteimg.com
 DOMAIN-KEYWORD, -ad.byteoversea.com
 DOMAIN-KEYWORD, ad.hunyuan.tencent.com
 DOMAIN-KEYWORD, asiad.byteactivity
@@ -130,16 +138,12 @@ DOMAIN-KEYWORD, trace.qq.com
 DOMAIN-KEYWORD, trace.video.qq.com
 DOMAIN-SUFFIX, 1rtb.net
 DOMAIN-SUFFIX, 66mobi.com
-DOMAIN-SUFFIX, ad.aggrxinc.com
 DOMAIN-SUFFIX, ad.xelements.cn
 DOMAIN-SUFFIX, ad.xiaomi.com
 DOMAIN-SUFFIX, adfunlink.com
 DOMAIN-SUFFIX, adhub.com.cn
 DOMAIN-SUFFIX, adintl.cn
 DOMAIN-SUFFIX, adkwai.com
-DOMAIN-SUFFIX, admobile.mobi
-DOMAIN-SUFFIX, admobile.net.cn
-DOMAIN-SUFFIX, admobile.vip
 DOMAIN-SUFFIX, adn-plus.com.cn
 DOMAIN-SUFFIX, adnplus.com.cn
 DOMAIN-SUFFIX, adsappier.com
@@ -152,6 +156,7 @@ DOMAIN-SUFFIX, adsrvr.org
 DOMAIN-SUFFIX, adtaipo.com
 DOMAIN-SUFFIX, adtianmai.com
 DOMAIN-SUFFIX, adukwai.com
+DOMAIN-SUFFIX, advlion.com
 DOMAIN-SUFFIX, adwangmai.com
 DOMAIN-SUFFIX, anyrtb.com
 DOMAIN-SUFFIX, anythinktech.com
@@ -214,6 +219,7 @@ DOMAIN-SUFFIX, lydass.com.cn
 DOMAIN-SUFFIX, lydass.net
 DOMAIN-SUFFIX, maplehaze.cn
 DOMAIN-SUFFIX, medproad.com
+DOMAIN-SUFFIX, mentamob.com
 DOMAIN-SUFFIX, miaozhen.com
 DOMAIN-SUFFIX, mob.com
 DOMAIN-SUFFIX, mobmore.com
@@ -309,7 +315,7 @@ IP-CIDR, 182.254.116.117/32
 IP-CIDR, 182.254.118.119/32
 IP-CIDR, 202.90.108.13/32
 IP-CIDR, 202.90.110.46/32
-IP-CIDR, 203.107.1.0/24
+# IP-CIDR, 203.107.1.0/24
 IP-CIDR, 39.97.128.148/32
 IP-CIDR, 39.97.130.51/32
 IP-CIDR, 42.187.182.106/32

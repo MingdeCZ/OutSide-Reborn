@@ -31,6 +31,7 @@ DOMAIN, daily-cloudcode-pa.googleapis.com
 DOMAIN, jules.google.com
 DOMAIN, robinfrontend-pa.googleapis.com
 DOMAIN, waa-pa.clients6.google.com
+DOMAIN, www.google.com
 DOMAIN-SUFFIX, aistudio.google.com
 DOMAIN-SUFFIX, apis.google.com
 DOMAIN-SUFFIX, bard.google.com
