@@ -43,3 +43,18 @@ DOMAIN-SUFFIX, disneystreaming.com
 DOMAIN-SUFFIX, dssott.com
 USER-AGENT, "DPlus*"
 USER-AGENT, "Disney+*"
+
+# Tiktok
+DOMAIN-KEYWORD, -tiktokcdn-com
+DOMAIN-SUFFIX, byteoversea.com
+DOMAIN-SUFFIX, ipstatp.com
+DOMAIN-SUFFIX, isnssdk.com
+DOMAIN-SUFFIX, muscdn.com
+DOMAIN-SUFFIX, musical.ly
+DOMAIN-SUFFIX, tik-tokapi.com
+DOMAIN-SUFFIX, tiktok.com
+DOMAIN-SUFFIX, tiktok.us
+DOMAIN-SUFFIX, tiktokv.com
+DOMAIN-SUFFIX, tiktokv.us
+DOMAIN-SUFFIX, tiktokw.com
+USER-AGENT, "TikTok*"

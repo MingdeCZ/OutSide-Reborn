@@ -7,7 +7,11 @@ DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, adguard-dns.com
 DOMAIN-SUFFIX, apache.org
 DOMAIN-SUFFIX, apple
+DOMAIN-SUFFIX, byteintl.com
+DOMAIN-SUFFIX, byteintlapi.com
 DOMAIN-SUFFIX, canva.com
+DOMAIN-SUFFIX, capcut.com
+DOMAIN-SUFFIX, capcutapi.com
 DOMAIN-SUFFIX, check.place
 DOMAIN-SUFFIX, coolhub.top
 DOMAIN-SUFFIX, crisp.chat
@@ -23,12 +27,12 @@ DOMAIN-SUFFIX, gradle.org
 DOMAIN-SUFFIX, happymh.com
 DOMAIN-SUFFIX, hcaptcha.com
 DOMAIN-SUFFIX, i4store.net
+DOMAIN-SUFFIX, ibyteimg.com
 DOMAIN-SUFFIX, intercom.io
 DOMAIN-SUFFIX, kaylees.site
 DOMAIN-SUFFIX, lencr.org
 DOMAIN-SUFFIX, link.com
 DOMAIN-SUFFIX, linode.com
-DOMAIN-SUFFIX, lycheen.com
 DOMAIN-SUFFIX, mesl.cloud
 DOMAIN-SUFFIX, mhyidc.com
 DOMAIN-SUFFIX, nodejs.org
@@ -197,6 +201,7 @@ DOMAIN-SUFFIX, yammer.com
 # DOMAIN-SUFFIX, openart.ai
 # DOMAIN-SUFFIX, perplexity.ai
 DOMAIN-SUFFIX, clipdrop.co
+marscode.com
 DOMAIN-SUFFIX, poe.com
 # 其它常见海外服务（最后更新：26-1-18）
 # DOMAIN-SUFFIX, dcd.gg
@@ -1326,7 +1331,6 @@ DOMAIN, upos-bstar-mirrorakam.akamaized.net
 DOMAIN, upos-bstar1-mirrorakam.akamaized.net
 DOMAIN, video.friday.tw
 DOMAIN-KEYWORD, -spotify-com
-DOMAIN-KEYWORD, -tiktokcdn-com
 DOMAIN-KEYWORD, avoddashs
 DOMAIN-KEYWORD, bbcfmt
 DOMAIN-KEYWORD, jooxweb-api
@@ -1362,7 +1366,6 @@ DOMAIN-SUFFIX, bbci.co.uk
 DOMAIN-SUFFIX, bilibili.tv
 DOMAIN-SUFFIX, biliintl.com
 DOMAIN-SUFFIX, byspotify.com
-DOMAIN-SUFFIX, byteoversea.com
 DOMAIN-SUFFIX, c4assets.com
 DOMAIN-SUFFIX, cbsaavideo.com
 DOMAIN-SUFFIX, cbsi.com
@@ -1419,9 +1422,7 @@ DOMAIN-SUFFIX, indaznlab.com
 DOMAIN-SUFFIX, intl-rcd.iqiyi.com
 DOMAIN-SUFFIX, intl-subscription.iqiyi.com
 DOMAIN-SUFFIX, intl.iqiyi.com
-DOMAIN-SUFFIX, ipstatp.com
 DOMAIN-SUFFIX, iq.com
-DOMAIN-SUFFIX, isnssdk.com
 DOMAIN-SUFFIX, itv.com
 DOMAIN-SUFFIX, joox.com
 DOMAIN-SUFFIX, jtvnw.net
@@ -1436,8 +1437,6 @@ DOMAIN-SUFFIX, kktv.me
 DOMAIN-SUFFIX, linetv.tw
 DOMAIN-SUFFIX, location-plus.nhk.jp
 DOMAIN-SUFFIX, max.com
-DOMAIN-SUFFIX, muscdn.com
-DOMAIN-SUFFIX, musical.ly
 DOMAIN-SUFFIX, my5.tv
 DOMAIN-SUFFIX, mytvsuper.com
 DOMAIN-SUFFIX, netflix.ca
@@ -1481,12 +1480,6 @@ DOMAIN-SUFFIX, spotilocal.com
 DOMAIN-SUFFIX, theplatform.com
 DOMAIN-SUFFIX, tidal.com
 DOMAIN-SUFFIX, tidalhifi.com
-DOMAIN-SUFFIX, tik-tokapi.com
-DOMAIN-SUFFIX, tiktok.com
-DOMAIN-SUFFIX, tiktok.us
-DOMAIN-SUFFIX, tiktokv.com
-DOMAIN-SUFFIX, tiktokv.us
-DOMAIN-SUFFIX, tiktokw.com
 DOMAIN-SUFFIX, tospotify.com
 DOMAIN-SUFFIX, ttvnw.net
 DOMAIN-SUFFIX, tv.naver.com
@@ -1556,7 +1549,6 @@ USER-AGENT, "SoundCloud*"
 USER-AGENT, "TIDAL*"
 USER-AGENT, "TVer-Release*"
 USER-AGENT, "TaiwanGood*"
-USER-AGENT, "TikTok*"
 USER-AGENT, "Viu*"
 USER-AGENT, "WeMusic*"
 USER-AGENT, "WeTV*"
