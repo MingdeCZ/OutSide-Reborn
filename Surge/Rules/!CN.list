@@ -33,6 +33,7 @@ DOMAIN-SUFFIX, kaylees.site
 DOMAIN-SUFFIX, lencr.org
 DOMAIN-SUFFIX, link.com
 DOMAIN-SUFFIX, linode.com
+DOMAIN-SUFFIX, marscode.com
 DOMAIN-SUFFIX, mesl.cloud
 DOMAIN-SUFFIX, mhyidc.com
 DOMAIN-SUFFIX, nodejs.org
@@ -201,7 +202,6 @@ DOMAIN-SUFFIX, yammer.com
 # DOMAIN-SUFFIX, openart.ai
 # DOMAIN-SUFFIX, perplexity.ai
 DOMAIN-SUFFIX, clipdrop.co
-marscode.com
 DOMAIN-SUFFIX, poe.com
 # 其它常见海外服务（最后更新：26-1-18）
 # DOMAIN-SUFFIX, dcd.gg
