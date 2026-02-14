@@ -18,6 +18,11 @@ DOMAIN-SUFFIX, posthog.com
 IP-CIDR, 5.28.192.0/21
 #
 // break fairplay.l.qq.com, vi.l.qq.com
+# DOMAIN, al-log.d.meituan.net
+# DOMAIN, babel-statistics-android.d.meituan.net
+# DOMAIN, maplocatesdksnapshot.d.meituan.net
+# DOMAIN, metrics-picture.d.meituan.net
+# DOMAIN, route-stats.d.meituan.net
 # DOMAIN-KEYWORD, -ad-sign.byteimg.com
 # DOMAIN-SUFFIX, 17admob.com
 # DOMAIN-SUFFIX, admobile.mobi
@@ -36,13 +41,11 @@ DOMAIN, ads-shopping.shouqianba.com
 DOMAIN, adsmind.gdtimg.com
 DOMAIN, adtrack.e.kuaishou.com
 DOMAIN, afd.baidu.com
-DOMAIN, al-log.d.meituan.net
 DOMAIN, als.baidu.com
 DOMAIN, api-dsp.8ziben.com
 DOMAIN, api.mixpanel.com
 DOMAIN, api.sm.cn
 DOMAIN, atoken.m.taobao.com
-DOMAIN, babel-statistics-android.d.meituan.net
 DOMAIN, beacon-api.aliyuncs.com
 DOMAIN, browser-intake-datadoghq.com
 DOMAIN, c.sm.cn
@@ -55,6 +58,7 @@ DOMAIN, dns.jd.com
 DOMAIN, dns.weibo.cn
 DOMAIN, dns.weixin.qq.com
 DOMAIN, dns.weixin.qq.com.cn
+DOMAIN, dnspod.meituan.httpdns.start.qcloud.com
 DOMAIN, dsp-x.jd.com
 DOMAIN, eclick.baidu.com
 DOMAIN, ems.youku.com
@@ -75,6 +79,7 @@ DOMAIN, httpdns.baidubce.com
 DOMAIN, httpdns.bilivideo.com
 DOMAIN, httpdns.c.cdnhwc2.com
 DOMAIN, httpdns.calorietech.com
+DOMAIN, httpdns.immomo.com
 DOMAIN, httpdns.meituan.com
 DOMAIN, httpdns.music.163.com
 DOMAIN, httpdns.n.netease.com
@@ -91,10 +96,8 @@ DOMAIN, info6.video.qq.com
 DOMAIN, janapi.jd.com
 DOMAIN, lf-ad-ies.bytecdn.cn
 DOMAIN, lookup.api.bsb.baidu.com
-DOMAIN, maplocatesdksnapshot.d.meituan.net
 DOMAIN, mcs.snssdk.com
 DOMAIN, mercury-gateway.ixiaochuan.cn
-DOMAIN, metrics-picture.d.meituan.net
 DOMAIN, metrics.icloud.com
 DOMAIN, miniapp-ad.cdn.bcebos.com
 DOMAIN, mobads-logs.baidu.com
@@ -111,8 +114,8 @@ DOMAIN, partner.uc.cn
 DOMAIN, pgdt.gtimg.cn
 DOMAIN, qzs.gdtimg.com
 DOMAIN, redirect.shunchangzhixing.com
+DOMAIN, resolvers-cn.httpdns.aliyuncs.com
 DOMAIN, rmonitor.qq.com
-DOMAIN, route-stats.d.meituan.net
 DOMAIN, sdk-log.partner.sm.cn
 DOMAIN, sdk.zhangyuyidong.cn
 DOMAIN, sdkconfig.video.qq.com
@@ -247,6 +250,7 @@ DOMAIN-SUFFIX, rhinokeen.com
 DOMAIN-SUFFIX, richmob.cn
 DOMAIN-SUFFIX, rixengine.com
 DOMAIN-SUFFIX, setway.cn
+DOMAIN-SUFFIX, shanghailingye.cn
 DOMAIN-SUFFIX, sigmob.cn
 DOMAIN-SUFFIX, slyxmobi.com
 DOMAIN-SUFFIX, smadex.com
@@ -315,7 +319,7 @@ IP-CIDR, 182.254.116.117/32
 IP-CIDR, 182.254.118.119/32
 IP-CIDR, 202.90.108.13/32
 IP-CIDR, 202.90.110.46/32
-# IP-CIDR, 203.107.1.0/24
+IP-CIDR, 203.107.1.0/24
 IP-CIDR, 39.97.128.148/32
 IP-CIDR, 39.97.130.51/32
 IP-CIDR, 42.187.182.106/32
@@ -331,9 +335,10 @@ IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128
 IP-CIDR6, 2402:db40:5100:1011::5/128
 IP-CIDR6, 240e:928:1400:10::25/128
 URL-REGEX, "^http://.+/amdc/mobileDispatch"
-# 其它补充（最后更新：26-1-18）
+# 其它补充（最后更新：26-2-14）
 # DOMAIN, securemetrics.apple.com
 # DOMAIN-SUFFIX, admob.com
+# DOMAIN-SUFFIX, data-sdk-uuid-log.d.meituan.net
 DOMAIN, 1oavsblobprodcus350.blob.core.windows.net
 DOMAIN, 2016.sina.cn
 DOMAIN, 37bvsblobprodcus311.blob.core.windows.net
@@ -457,6 +462,7 @@ DOMAIN, amap-aos-info-nogw.amap.com
 DOMAIN, amdc-sibling.alipay.com.cn
 DOMAIN, amdcopen.m.taobao.com
 DOMAIN, amos.alicdn.com
+DOMAIN, amp.thehackernews.com
 DOMAIN, analytics-api.samsunghealthcn.com
 DOMAIN, analytics-api.smzdm.com
 DOMAIN, analytics-js-cdn.liferay.com
@@ -466,7 +472,9 @@ DOMAIN, analytics.atom.com
 DOMAIN, analytics.blender.org
 DOMAIN, analytics.githubassets.com
 DOMAIN, analytics.immersivetranslate.com
+DOMAIN, analytics.lucide.dev
 DOMAIN, analytics.msn.com
+DOMAIN, analytics.newgenre.studio
 DOMAIN, analytics.pinterest.com
 DOMAIN, analytics.pointdrive.linkedin.com
 DOMAIN, analytics.query.yahoo.com
@@ -507,6 +515,7 @@ DOMAIN, badjs.weixinbridge.com
 DOMAIN, baichuan-sdk.alicdn.com
 DOMAIN, bat.bing.com
 DOMAIN, bdlog.tanx.com
+DOMAIN, beacon.riskified.com
 DOMAIN, beaconcdn.qq.com
 DOMAIN, bingads.microsoft.com
 DOMAIN, bksoup.v.qq.com
@@ -601,6 +610,8 @@ DOMAIN, d7.sinaimg.cn
 DOMAIN, d8.sina.com.cn
 DOMAIN, d8.sinaimg.cn
 DOMAIN, d9.sina.com.cn
+DOMAIN, datain.longfor.com
+DOMAIN, datareport.fkw.com
 DOMAIN, datum.jsdelivr.com
 DOMAIN, dcads.sina.com.cn
 DOMAIN, dd.iask.cn
@@ -634,6 +645,7 @@ DOMAIN, du.163.com
 DOMAIN, dw-collect.ksosoft.com
 DOMAIN, dynamicad.kfc.com.cn
 DOMAIN, e.jparking.cn
+DOMAIN, e.pubtailer.com
 DOMAIN, eaus2watcab01.blob.core.windows.net
 DOMAIN, eaus2watcab02.blob.core.windows.net
 DOMAIN, ecma.bdimg.com
@@ -843,6 +855,7 @@ DOMAIN, noxagile.duapp.com
 DOMAIN, nsclick.baidu.com
 DOMAIN, o-sdk.mediation.unity3d.com
 DOMAIN, o.send.now
+DOMAIN, o2oad.elemecdn.com
 DOMAIN, offnavi.map.baidu.com
 DOMAIN, omgmta.play.ott.video.qq.com
 DOMAIN, onecollector.cloudapp.aria.akadns.net
@@ -982,6 +995,7 @@ DOMAIN, spro.so.com
 DOMAIN, spynet2.microsoft.com
 DOMAIN, spynetalt.microsoft.com
 DOMAIN, srd.simba.taobao.com
+DOMAIN, ss.truecable.com
 DOMAIN, ssl-cdn.media.innity.net
 DOMAIN, stat.10jqka.com.cn
 DOMAIN, stat.dns.sb
@@ -1054,6 +1068,7 @@ DOMAIN, uks.b.prd.ags.trafficmanager.net
 DOMAIN, ulog-sdk.gifshow.com
 DOMAIN, ulog.imap.baidu.com
 DOMAIN, ulogjs.gifshow.com
+DOMAIN, umami.diygod.dev
 DOMAIN, umdc.aliapp.org
 DOMAIN, umengacs.m.taobao.com
 DOMAIN, umengjmacs.m.taobao.com
@@ -1323,6 +1338,8 @@ DOMAIN-SUFFIX, ap.dongqiudi.com
 DOMAIN-SUFFIX, api.distribution.hulu.com
 DOMAIN-SUFFIX, api.edgeoffer.microsoft.com
 DOMAIN-SUFFIX, apkevery.com
+DOMAIN-SUFFIX, apm-fe.xiaohongshu.com
+DOMAIN-SUFFIX, apm-native.xiaohongshu.com
 DOMAIN-SUFFIX, apoll.m.taobao.com
 DOMAIN-SUFFIX, app-ads-services.com
 DOMAIN-SUFFIX, app-measurement.com
@@ -1382,8 +1399,10 @@ DOMAIN-SUFFIX, cloudflareinsights.com
 DOMAIN-SUFFIX, cloudmobi.net
 DOMAIN-SUFFIX, cnzz.com
 DOMAIN-SUFFIX, cnzz.mmstat.com
+DOMAIN-SUFFIX, collect.alipay.com
 DOMAIN-SUFFIX, collect.yinyuetai.com
 DOMAIN-SUFFIX, collector.azure.cn
+DOMAIN-SUFFIX, collector.github.com
 DOMAIN-SUFFIX, configserver-dra.platform.hicloud.com
 DOMAIN-SUFFIX, coordinator-production-28516768.us-east-1.elb.amazonaws.com
 DOMAIN-SUFFIX, corp.sts.microsoft.com
@@ -1397,10 +1416,11 @@ DOMAIN-SUFFIX, cszlks.com
 DOMAIN-SUFFIX, cudaojia.com
 DOMAIN-SUFFIX, cupid.iqiyi.com
 DOMAIN-SUFFIX, customerevents.netflix.com
+DOMAIN-SUFFIX, d.meituan.net
 DOMAIN-SUFFIX, da.hunantv.com
 DOMAIN-SUFFIX, da.mgtv.com
 DOMAIN-SUFFIX, dafapromo.com
-DOMAIN-SUFFIX, data-sdk-uuid-log.d.meituan.net
+DOMAIN-SUFFIX, darkvisitors.com
 DOMAIN-SUFFIX, data.360safe.com
 DOMAIN-SUFFIX, data.bilibili.com
 DOMAIN-SUFFIX, data.dbankcloud.cn
@@ -1452,6 +1472,7 @@ DOMAIN-SUFFIX, entry.baidu.com
 DOMAIN-SUFFIX, epro.sogou.com
 DOMAIN-SUFFIX, ers.baidu.com
 DOMAIN-SUFFIX, events.data.trafficmanager.net
+DOMAIN-SUFFIX, events.mapbox.com
 DOMAIN-SUFFIX, events.mz.unity3d.com
 DOMAIN-SUFFIX, events.reddit.com
 DOMAIN-SUFFIX, events.redditmedia.com
@@ -1465,6 +1486,8 @@ DOMAIN-SUFFIX, feedback-dre.platform.hicloud.com
 DOMAIN-SUFFIX, feih.com.cn
 DOMAIN-SUFFIX, femetrics.grammarly.io
 DOMAIN-SUFFIX, fengkongcloud.com
+DOMAIN-SUFFIX, finclip.com
+DOMAIN-SUFFIX, firebaselogging.googleapis.com
 DOMAIN-SUFFIX, fjlqqc.com
 DOMAIN-SUFFIX, flash.cn
 DOMAIN-SUFFIX, flash.xiaohongshu.com
@@ -1577,7 +1600,9 @@ DOMAIN-SUFFIX, log.fc.yahoo.com
 DOMAIN-SUFFIX, log.hunantv.com
 DOMAIN-SUFFIX, log.mgtv.com
 DOMAIN-SUFFIX, logbak.hicloud.com
+DOMAIN-SUFFIX, loggw-ex.alipay.com
 DOMAIN-SUFFIX, logs.amap.com
+DOMAIN-SUFFIX, logs.netflix.com
 DOMAIN-SUFFIX, logservice-dra.platform.hicloud.com
 DOMAIN-SUFFIX, logservice-dre.platform.dbankcloud.cn
 DOMAIN-SUFFIX, logservice-dre.platform.hicloud.com
@@ -1601,6 +1626,7 @@ DOMAIN-SUFFIX, meitustat.com
 DOMAIN-SUFFIX, metrics.apple.com
 DOMAIN-SUFFIX, metrika.yandex.ru
 DOMAIN-SUFFIX, minisplat.cn
+DOMAIN-SUFFIX, mllog.jd.com
 DOMAIN-SUFFIX, mlnbike.com
 DOMAIN-SUFFIX, mlt01.com
 DOMAIN-SUFFIX, mobileads.msn.com
@@ -1618,6 +1644,8 @@ DOMAIN-SUFFIX, mpush.qq.com
 DOMAIN-SUFFIX, msads.net
 DOMAIN-SUFFIX, msedge.net
 DOMAIN-SUFFIX, mtj.baidu.com
+DOMAIN-SUFFIX, mucfc.com
+DOMAIN-SUFFIX, mum.alibabachengdun.com
 DOMAIN-SUFFIX, musicid.samsungcloudsolution.com
 DOMAIN-SUFFIX, mvconf.cloud.360safe.com
 DOMAIN-SUFFIX, my.chinaz.com
@@ -1631,16 +1659,19 @@ DOMAIN-SUFFIX, nexusrules.officeapps.live.com
 DOMAIN-SUFFIX, notice.samsungcloudsolution.com
 DOMAIN-SUFFIX, noticecdn.samsungcloudsolution.com
 DOMAIN-SUFFIX, noticefile.samsungcloudsolution.com
+DOMAIN-SUFFIX, nr-data.net
 DOMAIN-SUFFIX, nsclickvideo.baidu.com
 DOMAIN-SUFFIX, oastify.com
 DOMAIN-SUFFIX, offerstrack.net
 DOMAIN-SUFFIX, offerwall.yandex.net
+DOMAIN-SUFFIX, ogads-pa.clients6.google.com
 DOMAIN-SUFFIX, ok365.com
 DOMAIN-SUFFIX, omtrdc.net
 DOMAIN-SUFFIX, onesignal.com
 DOMAIN-SUFFIX, op.dbankcloud.cn
 DOMAIN-SUFFIX, op.dbankcloud.com
 DOMAIN-SUFFIX, op.hicloud.com
+DOMAIN-SUFFIX, open.kuaishouzt.com
 DOMAIN-SUFFIX, openapi.samsung.com
 DOMAIN-SUFFIX, openlocation-drcn.platform.dbankcloud.com
 DOMAIN-SUFFIX, openpanel.dev
@@ -1666,6 +1697,7 @@ DOMAIN-SUFFIX, polyfill.io
 DOMAIN-SUFFIX, polyfill.top
 DOMAIN-SUFFIX, polyfillcache.com
 DOMAIN-SUFFIX, pos.baidu.com
+DOMAIN-SUFFIX, prd.jwpltx.com
 DOMAIN-SUFFIX, prderrordumphsm.samsungcloudsolution.com
 DOMAIN-SUFFIX, pre.footprintpredict.com
 DOMAIN-SUFFIX, presence.teams.live.com
@@ -1747,6 +1779,7 @@ DOMAIN-SUFFIX, smartadserver.com
 DOMAIN-SUFFIX, smartshare.lgtvsdp.com
 DOMAIN-SUFFIX, snapads.com
 DOMAIN-SUFFIX, spamscanner.net
+DOMAIN-SUFFIX, spider-tracker.xiaohongshu.com
 DOMAIN-SUFFIX, sponsors.vuejs.org
 DOMAIN-SUFFIX, ssacdn.com
 DOMAIN-SUFFIX, ssl2.duapps.com
@@ -1758,6 +1791,7 @@ DOMAIN-SUFFIX, stat.dongqiudi.com
 DOMAIN-SUFFIX, stat.m.360.cn
 DOMAIN-SUFFIX, stat.peng.you
 DOMAIN-SUFFIX, stat.xtom.com
+DOMAIN-SUFFIX, stat2.unicompayment.com
 DOMAIN-SUFFIX, staticfile.net
 DOMAIN-SUFFIX, staticfile.org
 DOMAIN-SUFFIX, stats.paypal.com
@@ -1783,9 +1817,9 @@ DOMAIN-SUFFIX, telemetry.insights.video.a2z.com
 DOMAIN-SUFFIX, telemetry.microsoft.com
 DOMAIN-SUFFIX, telemetry.microsoft.com.nsatc.net
 DOMAIN-SUFFIX, telemetry.microsoft.us
-DOMAIN-SUFFIX, telemetry.mozilla.org
 DOMAIN-SUFFIX, telemetry.remoteapp.windowsazure.com
 DOMAIN-SUFFIX, telemetry.urs.microsoft.com
+DOMAIN-SUFFIX, telemetrydeck.com
 DOMAIN-SUFFIX, test.activity.windows.com
 DOMAIN-SUFFIX, testin.cn
 DOMAIN-SUFFIX, testplus.cn
@@ -1802,6 +1836,7 @@ DOMAIN-SUFFIX, tracker.baidu.com
 DOMAIN-SUFFIX, trackjs.com
 DOMAIN-SUFFIX, tradeshow.globalsources.com
 DOMAIN-SUFFIX, trafficjam.cn
+DOMAIN-SUFFIX, trk.pinterest.com
 DOMAIN-SUFFIX, tuijian.baidu.com
 DOMAIN-SUFFIX, tuisong.baidu.com
 DOMAIN-SUFFIX, tuitiger.com
@@ -1856,6 +1891,7 @@ DOMAIN-SUFFIX, ynuf.aliapp.org
 DOMAIN-SUFFIX, youshiad.cn
 DOMAIN-SUFFIX, ysm.yahoo.com
 DOMAIN-SUFFIX, yumenetworks.com
+DOMAIN-SUFFIX, yun-hl.3g.qq.com
 DOMAIN-SUFFIX, zhanzhang.net
 DOMAIN-SUFFIX, zhaozecheng.cn
 DOMAIN-SUFFIX, zhenxinet.com

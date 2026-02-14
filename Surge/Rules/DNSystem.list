@@ -37,11 +37,10 @@ DOMAIN-SUFFIX, bogon
 DOMAIN-SUFFIX, home
 DOMAIN-SUFFIX, home.arpa
 DOMAIN-SUFFIX, huaweimobilewifi.com
+DOMAIN-SUFFIX, internal
 DOMAIN-SUFFIX, lan
-DOMAIN-SUFFIX, local
 DOMAIN-SUFFIX, localdomain
 DOMAIN-SUFFIX, m2m
-DOMAIN-SUFFIX, nternal
 DOMAIN-SUFFIX, plex.direct
 DOMAIN-SUFFIX, router
 DOMAIN-SUFFIX, routerlogin.com

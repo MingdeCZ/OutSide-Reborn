@@ -3,26 +3,28 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.1
-#!date = 25.11.5
+#!version = 1.0.2
+#!date = 26.2.14
 #!category = N合1
 
 [Host]
 # RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bilibili.conf = server:https://doh.pub/dns-query
 # RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/xiaomi.conf = server:https://doh.pub/dns-query
+*.local = server:null
 127.0.0.1.sslip.io = 127.0.0.1
 127.atlas.skk.moe = 127.0.0.1
-cdn.jsdelivr.net = cdn.jsdelivr.net.cdn.cloudflare.net
-dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1
-dns.pub = server:119.29.29.29
-doh.360.cn = server:101.198.198.198
-doh.pub = server:119.29.29.29
 RULE-SET:https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/DNS360.list = server:https://doh.360.cn/dns-query
 RULE-SET:https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/DNSystem.list= server:system
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/alibaba.conf = server:h3://dns.alidns.com/dns-query
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/baidu.conf = server:180.76.76.76
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bytedance.conf = server:180.184.2.2
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/tencent.conf = server:https://doh.pub/dns-query
+cdn.jsdelivr.net = cdn.jsdelivr.net.cdn.cloudflare.net
+dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1
+dns.pub = server:119.29.29.29
+doh.360.cn = server:101.198.198.198
+doh.pub = server:119.29.29.29
+dot.pub = server:119.29.29.29
 
 [General]
 # @VirgilClyne

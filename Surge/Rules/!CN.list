@@ -1,7 +1,12 @@
 # 补充/优化
 DOMAIN, api.smoot.apple.cn
+DOMAIN, bsbsb.top
 DOMAIN, kox.moe
+DOMAIN, kxx.moe
+DOMAIN, kzz.moe
 DOMAIN, link.parallels.cn
+DOMAIN, mos.caldis.me
+DOMAIN, unogs.com
 DOMAIN, uzu.ma
 DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, adguard-dns.com
@@ -15,6 +20,7 @@ DOMAIN-SUFFIX, capcutapi.com
 DOMAIN-SUFFIX, check.place
 DOMAIN-SUFFIX, coolhub.top
 DOMAIN-SUFFIX, crisp.chat
+DOMAIN-SUFFIX, dpdns.org
 DOMAIN-SUFFIX, duo.com
 DOMAIN-SUFFIX, fast.com
 DOMAIN-SUFFIX, findcheapsubs.com
@@ -24,11 +30,9 @@ DOMAIN-SUFFIX, geekuninstaller.com
 DOMAIN-SUFFIX, geotrust.com
 DOMAIN-SUFFIX, getnoir.app
 DOMAIN-SUFFIX, gradle.org
-DOMAIN-SUFFIX, happymh.com
 DOMAIN-SUFFIX, hcaptcha.com
 DOMAIN-SUFFIX, i4store.net
 DOMAIN-SUFFIX, ibyteimg.com
-DOMAIN-SUFFIX, intercom.io
 DOMAIN-SUFFIX, kaylees.site
 DOMAIN-SUFFIX, lencr.org
 DOMAIN-SUFFIX, link.com
@@ -58,6 +62,7 @@ DOMAIN-SUFFIX, tampermonkey.net
 DOMAIN-SUFFIX, vcc.agency
 DOMAIN-SUFFIX, vmiss.com
 DOMAIN-SUFFIX, wedata.net
+DOMAIN-SUFFIX, wikimedia.org
 DOMAIN-SUFFIX, wikipedia.org
 DOMAIN-SUFFIX, wins.cool
 DOMAIN-SUFFIX, zenlayer.net
@@ -203,7 +208,7 @@ DOMAIN-SUFFIX, yammer.com
 # DOMAIN-SUFFIX, perplexity.ai
 DOMAIN-SUFFIX, clipdrop.co
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：26-1-18）
+# 其它常见海外服务（最后更新：26-2-14）
 # DOMAIN-SUFFIX, dcd.gg
 # DOMAIN-SUFFIX, deepmind.com
 # DOMAIN-SUFFIX, pomf.se
@@ -693,6 +698,7 @@ DOMAIN-SUFFIX, instagr.am
 DOMAIN-SUFFIX, instagram.com
 DOMAIN-SUFFIX, instatus.com
 DOMAIN-SUFFIX, intel.com
+DOMAIN-SUFFIX, intercom.io
 DOMAIN-SUFFIX, internet.org
 DOMAIN-SUFFIX, intodns.com
 DOMAIN-SUFFIX, ip-scan.adspower.net
@@ -740,7 +746,6 @@ DOMAIN-SUFFIX, kr
 DOMAIN-SUFFIX, kraken.com
 DOMAIN-SUFFIX, kucoin.com
 DOMAIN-SUFFIX, kwai.com
-DOMAIN-SUFFIX, la
 DOMAIN-SUFFIX, laby.net
 DOMAIN-SUFFIX, launchdarkly.com
 DOMAIN-SUFFIX, ledger.com
@@ -910,6 +915,7 @@ DOMAIN-SUFFIX, opentable.com
 DOMAIN-SUFFIX, openwrt.org
 DOMAIN-SUFFIX, oracle.com
 DOMAIN-SUFFIX, orbstack.dev
+DOMAIN-SUFFIX, orionbrowser.com
 DOMAIN-SUFFIX, osmand.net
 DOMAIN-SUFFIX, overdrive.com
 DOMAIN-SUFFIX, ovpnleaktest.com

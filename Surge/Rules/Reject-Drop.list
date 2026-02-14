@@ -1,9 +1,10 @@
-# 其它（最后更新：26-1-18）
+# 其它（最后更新：26-2-14）
 DOMAIN, nom.telemetrydeck.com
 DOMAIN, stats.grafana.org
 DOMAIN-SUFFIX, in.applicationinsights.azure.com
 DOMAIN-SUFFIX, null
 DOMAIN-SUFFIX, slackb.com
+DOMAIN-SUFFIX, telemetry.mozilla.org
 DOMAIN-SUFFIX, undefined
 # 运营商拦截页面
 IP-ASN, 1012

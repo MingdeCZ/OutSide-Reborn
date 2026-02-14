@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.1
-#!date = 25.12.20
+#!version = 1.0.2
+#!date = 26.2.14
 #!category = N合1
 #!system = ios
 
@@ -78,8 +78,8 @@ hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.
 ^https://app\.bilibili\.com/x/resource/ip data-type=text data="{}" status-code=200
 ^https://api\.bilibili\.com/x/web-interface/zone\?jsonp data-type=text data="{}" status-code=200
 # 屏蔽默认搜索框关键词
-^https://grpc\.biliapi\.net/bilibili\.app\.interface\.v1\.Search/DefaultWords$ header="content-type: application/grpc" data-type=base64 data="AAAAACEaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7KAE="
-^https://grpc\.biliapi\.net/bilibili\.app\.(view\.v1\.View\/TFInfo|viewunite\.v1\.View/ViewEndPage)$ header="content-type: application/grpc" data-type=base64 data="AAAAAAA="
+^https://grpc\.biliapi\.net/bilibili\.app\.interface\.v1\.Search/DefaultWords$ header="content-type: application/grpc|grpc-status: 0" data-type=base64 data="AAAAACEaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7KAE="
+^https://grpc\.biliapi\.net/bilibili\.app\.(view\.v1\.View/TFInfo|viewunite\.v1\.View/ViewEndPage)$ header="content-type: application/grpc|grpc-status: 0" data-type=base64 data="AAAAAAA="
 
 # 猫耳 FM 净化
 ^https:\/\/data\.missevan\.com\/site\/ad-track$ data-type=text data="{}" status-code=200
@@ -185,20 +185,20 @@ hostname = %APPEND% video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.
 
 # 淘宝去广告
 # 阿里巴巴
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimama\.etao\.config\.query\/.+?etao_advertise data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.etao\.noah\.query\/.+tao_splash data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
-^https:\/\/acs\.m\.taobao\.com\/gw\/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
-^https:\/\/heic\.alicdn\.com\/imgextra\/i\d\/\d*\/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
-^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.alimama\.etao\.config\.query/.+?etao_advertise data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.etao\.noah\.query/.+tao_splash data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
+^https://heic\.alicdn\.com/imgextra/i\d/\d*/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
+^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
 
 # YouTube 优化
-^https?:\/\/[\w-]+\.googlevideo\.com\/initplayback.+&oad data-type=text data="" status-code=200
+^https?://[\w-]+\.googlevideo\.com/initplayback.+&oad data-type=text data="" status-code=200
 
 # 建设银行 cy.cloud.ccb.com
 ^https?:\/\/cy\.cloud\.ccb\.com\/\/gateway\/user-server\/user\/qyCenter\/getCustomizedAdv data-type=text data="{}" status-code=200
@@ -330,16 +330,16 @@ DOMAIN, xg.pinduoduo.com, REJECT, extended-matching
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com, extended-matching)), REJECT
 
 # 淘宝去广告
-AND, ((URL-REGEX, "^http:\/\/.+\/amdc\/mobileDispatch", extended-matching), (USER-AGENT, "%E6%B7%98%E5%AE%9D*")), REJECT
+AND, ((URL-REGEX, "^http://.+/amdc/mobileDispatch", extended-matching), (USER-AGENT, "%E6%B7%98%E5%AE%9D*")), REJECT
 DOMAIN, ut.taobao.com, REJECT, extended-matching
 
 # YouTube 优化
-AND, ((DOMAIN-SUFFIX, googlevideo.com, extended-matching), (PROTOCOL, QUIC)), REJECT
+# AND, ((DOMAIN-SUFFIX, googlevideo.com, extended-matching), (PROTOCOL, QUIC)), REJECT
 AND, ((DOMAIN-SUFFIX, youtubei.googleapis.com, extended-matching), (PROTOCOL, QUIC)), REJECT
 
 [Script]
 # 哔哩哔哩净化（过滤广告、移除交互式弹幕、移除无用功能和链接跟踪参数，增加空降助手以便跳过视频中插入的广告。此插件必须启用 MitM-over-HTTP/2 功能。空降助手是第三方提供的功能，依赖于 Android 版空降助手的服务器数据运作，可能会存在不准确或者失效的问题，此功能与哔哩哔哩官方无关）grpc.biliapi.net, app.bilibili.com, api.bilibili.com
-哔哩哔哩空降助手 = type=http-request, pattern=^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.community\.service\.dm\.v1\.DM/DmSegMobile$, requires-body = 1, binary-body-mode = 1 , max-size = -1, engine = webview, timeout = 10, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.request.js, argument = "{ "logLevel": "5" }"
+哔哩哔哩空降助手 = type=http-request, pattern=^https://(grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.community\.service\.dm\.v1\.DM/DmSegMobile$, requires-body = 1, binary-body-mode = 1 , max-size = -1, engine = webview, timeout = 10, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.request.js, argument = "{ "logLevel": "5" }"
 哔哩哔哩优化评论区加载 = type=http-request, pattern=^https://(grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.(app\.viewunite\.v1\.View\/View|main\.community\.reply\.v1\.Reply\/MainList)$, argument = "{ "purifyComment": 1, "logLevel": "5" }", requires-body = 1, binary-body-mode = 1, max-size = -1, engine = webview, timeout = 10, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.request.js
 # 移除交互式弹幕、搜索结果广告
 bili.protobuf = type=http-response, pattern=^https://(grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.(app\.(show\.v1\.Popular/Index|dynamic\.v2\.Dynamic/DynAll|view(unite)?\.v1\.View/(View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL/PlayView|playerunite\.v1\.Player/PlayViewUnite)|polymer\.app\.search\.v1\.Search/SearchAll|community\.service\.dm\.v1\.DM/DmView|main\.community\.reply\.v1\.Reply/MainList|pgc\.gateway\.player\.v2\.PlayURL/PlayView)$, argument = "{ "displayUpList": "auto", "purifyComment": 1, "sponsorBlock": "bilibili.airborne", "logLevel": "5" }", requires-body = 1, binary-body-mode = 1, max-size = -1, engine = webview, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.response.js
@@ -366,11 +366,11 @@ bili.protobuf = type=http-response, pattern=^https://(grpc\.biliapi\.net|app\.bi
 小红书移除视频水印 = type=http-response, pattern=^https://(?:edith|rec|www)\.xiaohongshu\.com/api/sns/(?:v4/note/videofeed|v10/note/video/save), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
 
 # 淘宝去广告 acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-移除淘宝开屏广告 = type=http-response, pattern=^https:\/\/guide-acs\.m\.taobao\.com\/gw\/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true
-移除淘宝开屏广告 = type=http-response, pattern=^https:\/\/poplayer\.template\.alibaba\.com\/\w+\.json, script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true
+移除淘宝开屏广告 = type=http-response, pattern=^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true
+移除淘宝开屏广告 = type=http-response, pattern=^https://poplayer\.template\.alibaba\.com/\w+\.json, script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true
 
 # YouTube 优化（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及字幕翻译功能。移除 Music 底部的上传、选段和升级按钮，增加歌词翻译，支持二者的后台播放。需要启用 MitM over HTTP/2 和 QUIC 回退保护。支持 Premium 订阅用户使用）*.googlevideo.com, youtubei.googleapis.com
-response = type=http-response, pattern=^https:\/\/youtubei\.googleapis\.com\/(youtubei\/v1\/(browse|next|player|search|reel\/reel_watch_sequence|guide|account\/get_setting|get_watch))(\?(.*))?$, requires-body = 1, max-size = -1, binary-body-mode = 1, script-path = https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/youtube.response.js, argument = "{ "captionLang": "zh-Hans", "blockUpload": true, "blockShorts": true }"
+response = type=http-response, pattern=^https://youtubei\.googleapis\.com/(youtubei/v1/(browse|next|player|search|reel/reel_watch_sequence|guide|account/get_setting|get_watch))(\?(.*))?$, requires-body = 1, max-size = -1, binary-body-mode = 1, script-path = https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/youtube.response.js, argument = "{ "captionLang": "zh-Hans", "blockUpload": true, "blockShorts": true }"
 
 # @Beta
 # 看天下解锁 VIP ktx.cn

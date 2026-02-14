@@ -303,7 +303,7 @@ DOMAIN-SUFFIX, wscont1.apps.microsoft.com
 DOMAIN-SUFFIX, wscont2.apps.microsoft.com
 URL-REGEX, "^http://www\.microsoft\.com/pki/"
 URL-REGEX, "^http://www\.microsoft\.com/pkiops/"
-# 国内常见互联网公司和服务域名（最后更新：26-1-18）
+# 国内常见互联网公司和服务域名（最后更新：26-2-14）
 # DOMAIN-SUFFIX, elseviercdn.cn
 DOMAIN, assets1.xboxlive.cn
 DOMAIN, assets2.xboxlive.cn
@@ -483,12 +483,14 @@ DOMAIN-SUFFIX, coolapkmarket.com
 DOMAIN-SUFFIX, coolapkmarket.net
 DOMAIN-SUFFIX, cowcs.com
 DOMAIN-SUFFIX, cowtransfer.com
+DOMAIN-SUFFIX, cqcbank.com
 DOMAIN-SUFFIX, csdn.com
 DOMAIN-SUFFIX, csdn.net
 DOMAIN-SUFFIX, csdnimg.cn
 DOMAIN-SUFFIX, ctfile.com
 DOMAIN-SUFFIX, ctrip.com
 DOMAIN-SUFFIX, cz88.net
+DOMAIN-SUFFIX, d-ctrip.com
 DOMAIN-SUFFIX, dancf.com
 DOMAIN-SUFFIX, dangdang.com
 DOMAIN-SUFFIX, daocloud.io
@@ -497,6 +499,7 @@ DOMAIN-SUFFIX, dbankcdn.cn
 DOMAIN-SUFFIX, dbankcdn.com
 DOMAIN-SUFFIX, dbankcloud.com
 DOMAIN-SUFFIX, dccnet.com.cn
+DOMAIN-SUFFIX, dcloud.io
 DOMAIN-SUFFIX, dewu.com
 DOMAIN-SUFFIX, dfcfw.com
 DOMAIN-SUFFIX, dianping.com
@@ -511,6 +514,7 @@ DOMAIN-SUFFIX, dizzylab.net
 DOMAIN-SUFFIX, dl.bscstorage.net
 DOMAIN-SUFFIX, dl.eccdnx.com
 DOMAIN-SUFFIX, dl.pinyuncloud.com
+DOMAIN-SUFFIX, dns.la
 DOMAIN-SUFFIX, docer.com
 DOMAIN-SUFFIX, docin.com
 DOMAIN-SUFFIX, docschina.org
@@ -526,6 +530,7 @@ DOMAIN-SUFFIX, douyuscdn.com
 DOMAIN-SUFFIX, douyutv.com
 DOMAIN-SUFFIX, dpfile.com
 DOMAIN-SUFFIX, duba.net
+DOMAIN-SUFFIX, duokanbox.com
 DOMAIN-SUFFIX, dxy.cn
 DOMAIN-SUFFIX, dxycdn.com
 DOMAIN-SUFFIX, eastmoney.com
@@ -569,11 +574,14 @@ DOMAIN-SUFFIX, hicloud.com
 DOMAIN-SUFFIX, hihonor.com
 DOMAIN-SUFFIX, hihonorcdn.com
 DOMAIN-SUFFIX, hihonorcloud.com
+DOMAIN-SUFFIX, hisense.com
 DOMAIN-SUFFIX, hitv.com
 DOMAIN-SUFFIX, hongxiu.com
 DOMAIN-SUFFIX, honor.cn
 DOMAIN-SUFFIX, honor.com
 DOMAIN-SUFFIX, hoopchina.com.cn
+DOMAIN-SUFFIX, huanqiu.com
+DOMAIN-SUFFIX, huanqiucdn.cn
 DOMAIN-SUFFIX, huawei.cn
 DOMAIN-SUFFIX, huawei.com
 DOMAIN-SUFFIX, huawei.com.cn
@@ -666,7 +674,9 @@ DOMAIN-SUFFIX, linkedin.cn
 DOMAIN-SUFFIX, livechina.cn
 DOMAIN-SUFFIX, livechina.com
 DOMAIN-SUFFIX, ljcdn.com
+DOMAIN-SUFFIX, lkcoffee.com
 DOMAIN-SUFFIX, lofter.com
+DOMAIN-SUFFIX, luckincoffeecdn.com
 DOMAIN-SUFFIX, luojilab.com
 DOMAIN-SUFFIX, m1905.cn
 DOMAIN-SUFFIX, m1905.com
@@ -698,6 +708,7 @@ DOMAIN-SUFFIX, msstatic.com
 DOMAIN-SUFFIX, mtyun.com
 DOMAIN-SUFFIX, mubu.com
 DOMAIN-SUFFIX, myoppo.com
+DOMAIN-SUFFIX, myssl.com
 DOMAIN-SUFFIX, myzaker.com
 DOMAIN-SUFFIX, mzres.com
 DOMAIN-SUFFIX, nearme.com.cn
@@ -710,12 +721,14 @@ DOMAIN-SUFFIX, netstatic.net
 DOMAIN-SUFFIX, news.cn
 DOMAIN-SUFFIX, nga.cn
 DOMAIN-SUFFIX, ngabbs.com
+DOMAIN-SUFFIX, niu.com
 DOMAIN-SUFFIX, nmc.cn
 DOMAIN-SUFFIX, ntp.org.cn
 DOMAIN-SUFFIX, nubia.cn
 DOMAIN-SUFFIX, nubia.com
 DOMAIN-SUFFIX, officewebapps.cn
 DOMAIN-SUFFIX, oneplus.cn
+DOMAIN-SUFFIX, oneplus.net
 DOMAIN-SUFFIX, oneplusbbs.com
 DOMAIN-SUFFIX, onlinedown.com
 DOMAIN-SUFFIX, openinstall.io
@@ -731,6 +744,7 @@ DOMAIN-SUFFIX, oray.net
 DOMAIN-SUFFIX, orayimg.com
 DOMAIN-SUFFIX, org.cn
 DOMAIN-SUFFIX, oschina.net
+DOMAIN-SUFFIX, osgeo.cn
 DOMAIN-SUFFIX, ourdvs.com
 DOMAIN-SUFFIX, outlook.cn
 DOMAIN-SUFFIX, pcauto.com.cn
@@ -821,6 +835,7 @@ DOMAIN-SUFFIX, tapimg.com
 DOMAIN-SUFFIX, taptap.cn
 DOMAIN-SUFFIX, tianyancha.com
 DOMAIN-SUFFIX, tnkjmec.com
+DOMAIN-SUFFIX, tool.lu
 DOMAIN-SUFFIX, tripcdn.cn
 DOMAIN-SUFFIX, tvmao.com
 DOMAIN-SUFFIX, tvzhe.com
@@ -902,13 +917,14 @@ DOMAIN-SUFFIX, zhimg.com
 DOMAIN-SUFFIX, zhipin.com
 DOMAIN-SUFFIX, zhuanzfx.com
 DOMAIN-SUFFIX, zol-img.com.cn
+DOMAIN-SUFFIX, zol.com
 DOMAIN-SUFFIX, zol.com.cn
 DOMAIN-SUFFIX, zui.com
 DOMAIN-SUFFIX, zuimeitianqi.com
 USER-AGENT, "%E4%BC%98%E9%85%B7*"
 USER-AGENT, "%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*"
 USER-AGENT, "TeslaMap"
-# 软件更新、操作系统等大文件下载（最后更新：26-1-18）
+# 软件更新、操作系统等大文件下载（最后更新：26-2-14）
 # DOMAIN, archive.mirror.rafal.ca
 # DOMAIN, dl.nssurge.com
 # DOMAIN, ftp.at.debian.org
@@ -1028,6 +1044,7 @@ DOMAIN, bzip.org
 DOMAIN, c.1password.com
 DOMAIN, ca.dyi.ng
 DOMAIN, cache.agilebits.com
+DOMAIN, cas-bridge.xethub.hf.co
 DOMAIN, cdimage.kali.org
 DOMAIN, cdn-builds.paw.cloud
 DOMAIN, cdn-images.orbstack.dev
@@ -1104,6 +1121,7 @@ DOMAIN, ctan.space-pro.be
 DOMAIN, ctan.tetaneutral.net
 DOMAIN, ctan.uib.no
 DOMAIN, d.myani.org
+DOMAIN, d2.myani.org
 DOMAIN, dafi.inf.um.es
 DOMAIN, data.gameflare.com
 DOMAIN, deb-mir1.naitways.net
@@ -2227,6 +2245,7 @@ DOMAIN, updates.bravesoftware.com
 DOMAIN, updates.edovia.com
 DOMAIN, updates.istatmenus.app
 DOMAIN, us.dyi.ng
+DOMAIN, version.cyberduck.io
 DOMAIN, versioncheck-bg.addons.mozilla.org
 DOMAIN, versioncheck.addons.mozilla.org
 DOMAIN, vesta.informatik.rwth-aachen.de
