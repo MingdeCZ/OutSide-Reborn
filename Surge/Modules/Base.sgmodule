@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.2
-#!date = 26.2.14
+#!version = 1.0.3
+#!date = 26.2.19
 #!category = N合1
 
 [Host]
@@ -13,6 +13,9 @@
 *.local = server:null
 127.0.0.1.sslip.io = 127.0.0.1
 127.atlas.skk.moe = 127.0.0.1
+dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1
+doh.360.cn = server:101.198.198.198
+doh.pub = server:119.29.29.29
 RULE-SET:https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/DNS360.list = server:https://doh.360.cn/dns-query
 RULE-SET:https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/DNSystem.list= server:system
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/alibaba.conf = server:h3://dns.alidns.com/dns-query
@@ -20,10 +23,7 @@ RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/baidu.con
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bytedance.conf = server:180.184.2.2
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/tencent.conf = server:https://doh.pub/dns-query
 cdn.jsdelivr.net = cdn.jsdelivr.net.cdn.cloudflare.net
-dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1
 dns.pub = server:119.29.29.29
-doh.360.cn = server:101.198.198.198
-doh.pub = server:119.29.29.29
 dot.pub = server:119.29.29.29
 
 [General]
@@ -50,7 +50,7 @@ hijack-dns = 8.8.8.8:53, 8.8.4.4:53
 skip-proxy = %APPEND% *.local
 
 [MITM]
-hostname = %APPEND% 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro, sub.store, security.wechat.com, weixin110.qq.com, www.google.cn, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, web.meituan.com, api.szbgcx.cn, ccmsupport-sz.tenpay.com, redirector.googlevideo.com, mp.weixin.qq.com, cbd-gateway-service-applets.hualala.com, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, capi.lkcoffee.com, ucmp.sf-express.com, newton.gumingnc.com, miniapp.sexytea2013.com, m.dianping.com, mapi.dianping.com, mapi.ghsmpwalmart.com, wx.17u.cn, npay.meituan.com, apimobile.meituan.com, api.m.jd.com, rms.meituan.com, img0*.luckincoffeecdn.com, tm-api.pin-dao.cn, cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com, szextshort.weixin.qq.com
+hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google.cn, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, web.meituan.com, api.szbgcx.cn, ccmsupport-sz.tenpay.com, mp.weixin.qq.com, cbd-gateway-service-applets.hualala.com, orders.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, capi.lkcoffee.com, newton.gumingnc.com, miniapp.sexytea2013.com, m.dianping.com, mapi.dianping.com, mapi.ghsmpwalmart.com, wx.17u.cn, npay.meituan.com, apimobile.meituan.com, api.m.jd.com, rms.meituan.com, img0*.luckincoffeecdn.com, tm-api.pin-dao.cn, cappapi.alittle-tea.com, szextshort.weixin.qq.com
 
 [URL Rewrite]
 # 🍟 整点薯条：🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
@@ -139,7 +139,7 @@ hostname = %APPEND% 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.al
 # 去广告 mp.weixin.qq.com
 ^https://mp\.weixin\.qq\.com/mp/(advertisement_report|ad_complaint|ad_video|cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle|relatedsearchword|report) - reject
 ^https?://szextshort\.weixin\.qq\.com/cgi-bin/mmoc-bin/ad - reject
-# 小程序净化 xyst.yuanfudao.com, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, web.meituan.com, api.szbgcx.cn, ccmsupport-sz.tenpay.com, redirector.googlevideo.com, www.youtube.com, mp.weixin.qq.com, cbd-gateway-service-applets.hualala.com, as.xiaojukeji.com, daijia.kuaidadi.com, orders.kfc.com.cn, dynamicad.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, mxsa.mxbc.net, ad.maoyan.com, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, capi.lkcoffee.com, ucmp.sf-express.com, newton.gumingnc.com, miniapp.sexytea2013.com, m.dianping.com, mapi.dianping.com, mapi.ghsmpwalmart.com, wx.17u.cn, npay.meituan.com, apimobile.meituan.com, api.m.jd.com, rms.meituan.com, img0*.luckincoffeecdn.com, tm-api.pin-dao.cn, cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com
+# 小程序净化 xyst.yuanfudao.com, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, web.meituan.com, api.szbgcx.cn, ccmsupport-sz.tenpay.com, mp.weixin.qq.com, cbd-gateway-service-applets.hualala.com, daijia.kuaidadi.com, orders.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, capi.lkcoffee.com, newton.gumingnc.com, miniapp.sexytea2013.com, m.dianping.com, mapi.dianping.com, mapi.ghsmpwalmart.com, wx.17u.cn, npay.meituan.com, apimobile.meituan.com, api.m.jd.com, rms.meituan.com, img0*.luckincoffeecdn.com, tm-api.pin-dao.cn, cappapi.alittle-tea.com
 # 收钱吧 @可莉🅥
 ^https:\/\/api\.szbgcx\.cn\/account\/adv\/ - reject
 # 腾讯乘车码

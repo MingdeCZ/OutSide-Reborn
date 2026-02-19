@@ -1,4 +1,5 @@
 # 补充/优化
+DOMAIN, ad.flipboard.cn
 DOMAIN, fog.22112211.xyz
 DOMAIN, o33249.ingest.us.sentry.io
 DOMAIN-SUFFIX, 2mdn-cn.net
@@ -1290,6 +1291,7 @@ DOMAIN-SUFFIX, adsymptotic.com
 DOMAIN-SUFFIX, adtago.s3.amazonaws.com
 DOMAIN-SUFFIX, adtech.yahooinc.com
 DOMAIN-SUFFIX, adtrack.quark.cn
+DOMAIN-SUFFIX, adtrack.xiaojukeji.com
 DOMAIN-SUFFIX, advertisement.tanx.com
 DOMAIN-SUFFIX, advertisercommunity.com
 DOMAIN-SUFFIX, advertiserscommunity.com
@@ -1853,6 +1855,7 @@ DOMAIN-SUFFIX, union.sogou.com
 DOMAIN-SUFFIX, union.youdao.com
 DOMAIN-SUFFIX, unionimage.baidu.com
 DOMAIN-SUFFIX, unityads.unity3d.com
+DOMAIN-SUFFIX, up-hl.3g.qq.com
 DOMAIN-SUFFIX, update.360safe.com
 DOMAIN-SUFFIX, uranus.jd.com
 DOMAIN-SUFFIX, uranus.sogou.com
@@ -1895,6 +1898,7 @@ DOMAIN-SUFFIX, yun-hl.3g.qq.com
 DOMAIN-SUFFIX, zhanzhang.net
 DOMAIN-SUFFIX, zhaozecheng.cn
 DOMAIN-SUFFIX, zhenxinet.com
+DOMAIN-SUFFIX, zhugeio.com
 DOMAIN-SUFFIX, ztd.dds.microsoft.com
 DOMAIN-SUFFIX, zztfly.com
 DOMAIN-WILDCARD, *-pcdn-*.biliapi.net
