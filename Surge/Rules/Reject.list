@@ -32,7 +32,7 @@ IP-CIDR, 5.28.192.0/21
 # DOMAIN-SUFFIX, admobile.vip
 AND, ((DOMAIN-KEYWORD, -ad-), (DOMAIN-SUFFIX, byteimg.com))
 AND, ((DOMAIN-KEYWORD, adash), (DOMAIN-SUFFIX, ut.taobao.com))
-AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, -normal.zijieapi.com))
+# AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, -normal.zijieapi.com))
 DOMAIN, ad-evods.tianya.tv
 DOMAIN, ad.aggrxinc.com
 DOMAIN, ad.maoyan.com
@@ -839,6 +839,7 @@ DOMAIN, msgv6.qy.net
 DOMAIN, msite.baidu.com
 DOMAIN, msmetrics-test.ws.sonos.com
 DOMAIN, msmetrics.ws.sonos.com
+DOMAIN, mssdk.zijieapi.com
 DOMAIN, mssp.baidu.com
 DOMAIN, mtrace.amap.com
 DOMAIN, mtrace.play.cp81.ott.cibntv.net
@@ -1391,6 +1392,7 @@ DOMAIN-SUFFIX, cdp.postman.com
 DOMAIN-SUFFIX, cert-test.sandbox.google.com
 DOMAIN-SUFFIX, chat1.jd.com
 DOMAIN-SUFFIX, cj.qidian.com
+DOMAIN-SUFFIX, clarity.ms
 DOMAIN-SUFFIX, classify-client.services.mozilla.com
 DOMAIN-SUFFIX, click.alimama.com
 DOMAIN-SUFFIX, click.dji.com
@@ -1472,6 +1474,7 @@ DOMAIN-SUFFIX, eiv.baidu.com
 DOMAIN-SUFFIX, em.baidu.com
 DOMAIN-SUFFIX, entry.baidu.com
 DOMAIN-SUFFIX, epro.sogou.com
+DOMAIN-SUFFIX, error-tracking.reddit.com
 DOMAIN-SUFFIX, ers.baidu.com
 DOMAIN-SUFFIX, events.data.trafficmanager.net
 DOMAIN-SUFFIX, events.mapbox.com
@@ -1515,7 +1518,9 @@ DOMAIN-SUFFIX, getui.cn
 DOMAIN-SUFFIX, getui.net
 DOMAIN-SUFFIX, gimg.baidu.com
 DOMAIN-SUFFIX, githubhelp.com
+DOMAIN-SUFFIX, gj.mmstat.com
 DOMAIN-SUFFIX, gld.samsungosp.com
+DOMAIN-SUFFIX, gm.mmstat.com
 DOMAIN-SUFFIX, go-mpulse.net
 DOMAIN-SUFFIX, go.sohu.com
 DOMAIN-SUFFIX, golden1.sogou.com
@@ -1601,6 +1606,7 @@ DOMAIN-SUFFIX, log.aliyuncs.com
 DOMAIN-SUFFIX, log.fc.yahoo.com
 DOMAIN-SUFFIX, log.hunantv.com
 DOMAIN-SUFFIX, log.mgtv.com
+DOMAIN-SUFFIX, log.snssdk.com
 DOMAIN-SUFFIX, logbak.hicloud.com
 DOMAIN-SUFFIX, loggw-ex.alipay.com
 DOMAIN-SUFFIX, logs.amap.com
@@ -1669,6 +1675,7 @@ DOMAIN-SUFFIX, offerwall.yandex.net
 DOMAIN-SUFFIX, ogads-pa.clients6.google.com
 DOMAIN-SUFFIX, ok365.com
 DOMAIN-SUFFIX, omtrdc.net
+DOMAIN-SUFFIX, oneid.mmstat.com
 DOMAIN-SUFFIX, onesignal.com
 DOMAIN-SUFFIX, op.dbankcloud.cn
 DOMAIN-SUFFIX, op.dbankcloud.com
@@ -1759,6 +1766,7 @@ DOMAIN-SUFFIX, sensorsdata.cn
 DOMAIN-SUFFIX, servicesupport.hicloud.com
 DOMAIN-SUFFIX, serving-sys.com
 DOMAIN-SUFFIX, sestat.baidu.com
+DOMAIN-SUFFIX, sfp.safe.baidu.com
 DOMAIN-SUFFIX, sg536.cn
 DOMAIN-SUFFIX, shadu.baidu.com
 DOMAIN-SUFFIX, share.baidu.com
@@ -1803,6 +1811,7 @@ DOMAIN-SUFFIX, strongmetrics.io
 DOMAIN-SUFFIX, supersonic.com
 DOMAIN-SUFFIX, syncplusconfig.s3.amazonaws.com
 DOMAIN-SUFFIX, t-dsp.pinduoduo.com
+DOMAIN-SUFFIX, ta.pinduoduo.com
 DOMAIN-SUFFIX, tagtic.cn
 DOMAIN-SUFFIX, tajs.qq.com
 DOMAIN-SUFFIX, talkingdata.com
@@ -1825,6 +1834,7 @@ DOMAIN-SUFFIX, telemetrydeck.com
 DOMAIN-SUFFIX, test.activity.windows.com
 DOMAIN-SUFFIX, testin.cn
 DOMAIN-SUFFIX, testplus.cn
+DOMAIN-SUFFIX, th.pinduoduo.com
 DOMAIN-SUFFIX, tiqcdn.cn
 DOMAIN-SUFFIX, tiqcdn.com
 DOMAIN-SUFFIX, tjqonline.cn
@@ -1869,6 +1879,7 @@ DOMAIN-SUFFIX, viglink.com
 DOMAIN-SUFFIX, vlion.cn
 DOMAIN-SUFFIX, voiceads.cn
 DOMAIN-SUFFIX, vungle.com
+DOMAIN-SUFFIX, w3-reporting.reddit.com
 DOMAIN-SUFFIX, wan.360.cn
 DOMAIN-SUFFIX, wan.sogou.com
 DOMAIN-SUFFIX, wangmeng.baidu.com

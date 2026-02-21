@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.3
-#!date = 26.2.19
+#!version = 1.0.4
+#!date = 26.2.22
 #!category = N合1
 #!system = ios
 
@@ -12,7 +12,7 @@
 skip-proxy = *.ccb.com, *.abcchina.com, *.abcchina.com.cn
 
 [MITM]
-hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.missevan.com, data.missevan.com, fm.missevan.com, as.xiaojukeji.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, acs.m.goofish.com, g-acs.m.goofish.com, zone.guiderank-app.com, api.m.jd.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com, api.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, *.googlevideo.com, youtubei.googleapis.com, image1.ccb.com, imageadv.ccb.com, app.dewu.com, learn.chaoxing.com, ktx.cn, cy.cloud.ccb.com, 113.46.225.4, 113.46.225.5, mobile.api.sisyphe.cn, htwkop.xiaojukeji.com, xyst.yuanfudao.com,  daijia.kuaidadi.com, b?dsp-x.jd.com, ms.jr.jd.com, api.chelaile.net.cn, pic1.chelaile.net.cn, 3gimg.qq.com, newsso.map.qq.com, www.shihuo.cn, 113.46.225.2, 113.46.225.3, 116.85.2.4, 116.85.2.5, 116.85.2.21, 116.85.2.22, api.pinterest.com, 114.115.217.129, home.umetrip.com
+hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.missevan.com, data.missevan.com, fm.missevan.com, as.xiaojukeji.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, acs.m.goofish.com, g-acs.m.goofish.com, zone.guiderank-app.com, api.m.jd.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com, api.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, *.googlevideo.com, youtubei.googleapis.com, image1.ccb.com, imageadv.ccb.com, app.dewu.com, learn.chaoxing.com, ktx.cn, cy.cloud.ccb.com, 113.46.225.4, 113.46.225.5, mobile.api.sisyphe.cn, htwkop.xiaojukeji.com, xyst.yuanfudao.com,  daijia.kuaidadi.com, b?dsp-x.jd.com, ms.jr.jd.com, api.chelaile.net.cn, pic1.chelaile.net.cn, 3gimg.qq.com, newsso.map.qq.com, www.shihuo.cn, 113.46.225.2, 113.46.225.3, 116.85.2.4, 116.85.2.5, 116.85.2.21, 116.85.2.22, api.pinterest.com
 
 [URL Rewrite]
 # 广告平台拦截器 video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
@@ -300,7 +300,7 @@ AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 DOMAIN, gwp.xiaojukeji.com, REJECT, extended-matching
 
 # 闲鱼净化
-AND, ((URL-REGEX, "^http://.+/amdc/mobileDispatch", extended-matching), (USER-AGENT, "%E9%97%B2%E9%B1%BC*")), REJECT
+# AND, ((URL-REGEX, "^http://.+/amdc/mobileDispatch", extended-matching), (USER-AGENT, "%E9%97%B2%E9%B1%BC*")), REJECT
 
 # 京东去广告
 URL-REGEX, "^http://\w{32}\.jddebug\.com/diagnose\?", REJECT, extended-matching
@@ -327,11 +327,8 @@ DOMAIN, xg.pinduoduo.com, REJECT, extended-matching
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com, extended-matching)), REJECT
 
 # 淘宝去广告
-AND, ((URL-REGEX, "^http://.+/amdc/mobileDispatch", extended-matching), (USER-AGENT, "%E6%B7%98%E5%AE%9D*")), REJECT
+# AND, ((URL-REGEX, "^http://.+/amdc/mobileDispatch", extended-matching), (USER-AGENT, "%E6%B7%98%E5%AE%9D*")), REJECT
 DOMAIN, ut.taobao.com, REJECT, extended-matching
-
-# 航旅纵横去广告
-URL-REGEX, "^https://(discardrp|startup)\.umetrip\.com/gateway/api/umetrip/native", REJECT, extended-matching
 
 # YouTube 优化
 # AND, ((DOMAIN-SUFFIX, googlevideo.com, extended-matching), (PROTOCOL, QUIC)), REJECT
@@ -368,9 +365,6 @@ bili.protobuf = type=http-response, pattern=^https://(grpc\.biliapi\.net|app\.bi
 # 淘宝去广告 acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
 移除淘宝开屏广告 = type=http-response, pattern=^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true
 移除淘宝开屏广告 = type=http-response, pattern=^https://poplayer\.template\.alibaba\.com/\w+\.json, script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true
-
-# 航旅纵横去广告 114.115.217.129, home.umetrip.com
-移除航旅纵横首页广告 = type=http-response, pattern=^https://(114\.115\.217\.129)|(home\.umetrip\.com)/gateway/api/umetrip/native$, script-path = https://kelee.one/Resource/JavaScript/Umetrip/Umetrip_remove_ads.js, requires-body = true
 
 # YouTube 优化（移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及字幕翻译功能。移除 Music 底部的上传、选段和升级按钮，增加歌词翻译，支持二者的后台播放。需要启用 MitM over HTTP/2 和 QUIC 回退保护。支持 Premium 订阅用户使用）*.googlevideo.com, youtubei.googleapis.com
 response = type=http-response, pattern=^https://youtubei\.googleapis\.com/(youtubei/v1/(browse|next|player|search|reel/reel_watch_sequence|guide|account/get_setting|get_watch))(\?(.*))?$, requires-body = 1, max-size = -1, binary-body-mode = 1, script-path = https://github.com/Maasea/sgmodule/raw/master/Script/Youtube/youtube.response.js, argument = "{ "captionLang": "zh-Hans", "blockUpload": true, "blockShorts": true }"
