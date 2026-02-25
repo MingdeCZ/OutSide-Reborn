@@ -39,14 +39,12 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https://ktx\.cn/v\d/api/user/application_score\? - reject
 
 # 哔哩哔哩
+^https://api\.bilibili\.com/pgc/season/(rank/cn|app/related/recommend) - reject
 ^https://api\.bilibili\.com/x/push/report - reject
-^https://api\.bilibili\.com/x/report/click/ios - reject
-^https://api\.bilibili\.com/x/report/heartbeat/mobile - reject
-
-^https?://app\.bilibili\.com/x/v\d/(param|dm/ad|dataflow/report) - reject
-^https?://app\.bilibili\.com/x/resource/abtest - reject
-^https?://api\.bilibili\.com/pgc/season/(rank/cn|app/related/recommend) - reject
-^https?://app\.bilibili\.com/x/v\d/rank.*rid=(168|5) - reject
+^https://api\.bilibili\.com/x/report/(click/ios|heartbeat/mobile) - reject
+^https://app\.bilibili\.com/x/resource/(abtest|fingerprint|pop/up) - reject
+^https://app\.bilibili\.com/x/v\d/(param|dm/ad|dataflow/report|rank.*rid=(168|5)) - reject
+^https://grpc\.biliapi\.net/bilibili\.app\.click\.v1\.Click/HeartBeat - reject
 # 京东
 ^https?://b?dsp-x\.jd\.com/adx - reject
 ^https?://api\.m\.jd\.com/client\.action\?functionId=start - reject
@@ -54,7 +52,6 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 # 车来了
 ^https?://(api|atrace)\.chelaile\.net\.cn/adpub - reject
 ^https?://api\.chelaile\.net\.cn/goocity/advert - reject
-#^https?://atrace\.chelaile\.net\.cn/exhibit\?&adv_image - reject
 ^https?://pic1\.chelaile\.net\.cn/adv - reject
 # 肯德基
 ^https?://res\.kfc\.com\.cn/advertisement - reject
@@ -74,10 +71,13 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 # 屏蔽 IP 和地理位置请求
 ^https://app\.bilibili\.com/x/resource/ip data-type=text data="{}" status-code=200
 ^https://api\.bilibili\.com/x/web-interface/zone\?jsonp data-type=text data="{}" status-code=200
-# 屏蔽默认搜索框关键词
-^https://grpc\.biliapi\.net/bilibili\.app\.interface\.v1\.Search/DefaultWords$ header="content-type: application/grpc|grpc-status: 0" data-type=base64 data="AAAAACEaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7KAE="
+# 屏蔽搜索框默认内容
+^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.app\.interface\.v1\.Search/DefaultWords$ header="content-type: application/grpc|grpc-status: 0" data-type=base64 data="AAAAACEaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7KAE="
 ^https://grpc\.biliapi\.net/bilibili\.app\.(view\.v1\.View/TFInfo|viewunite\.v1\.View/ViewEndPage)$ header="content-type: application/grpc|grpc-status: 0" data-type=base64 data="AAAAAAA="
-
+# 屏蔽搜索推荐
+^https://app\.bilibili\.com/x/v2/search/recommend\? data-type=text data="{}" status-code=200
+# 
+^https://api\.bilibili\.com/x/push/popup/config\? data-type=text data="{}" status-code=200
 # 猫耳 FM 净化
 ^https:\/\/data\.missevan\.com\/site\/ad-track$ data-type=text data="{}" status-code=200
 ^https:\/\/app\.missevan\.com\/x\/recommend\/get-popup$ data-type=text data="{}" status-code=200
@@ -211,6 +211,8 @@ http-response-jq ^https://app\.bilibili\.com/x/resource/show/tab/v2\? '.data |= 
 http-response-jq ^https://app\.bilibili\.com/x/v2/account/mine\? '.data |= ( .official_verify.type = 1 | .vip |= ( if . != null and .status == 0 then . + { type: 2, status: 1, label: ( .label + { text: "十年大会员", image: "https://i0.hdslb.com/bfs/vip/802418ff03911645648b63aa193ba67997b5a0bc.png" } ) } else . end | .avatar_subscript = 1 ) | del(.mall_home) | .sections_v2.[1] |= ( del(.title) | .items |= map(select(.title == "联系客服" or .title == "设置")) | .style = 1 ) )'
 # 开启本地 VIP
 http-response-jq ^https://app\.bilibili\.com/x/v2/account/myinfo\? '.data.vip |= if . != null and .status == 0 then . + { status: 1, type: 2, due_date: 9005270400000, role: 15 } else . end'
+# 
+http-response-jq ^https://api\.bilibili\.com/x/article/sentinel/config\? '.data.sentinel = { enableSentinel: 0 }'
 
 # 猫耳 FM 净化（移除开屏广告、青少年模式弹窗、首页顶部入口，替换底栏的直播入口为发现入口）app.missevan.com, data.missevan.com, fm.missevan.com
 http-response-jq ^https://app\.missevan\.com/site/launch\? '.info |= del(.splash, .splash_ready)'
