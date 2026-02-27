@@ -12,23 +12,20 @@
 skip-proxy = *.ccb.com, *.abcchina.com, *.abcchina.com.cn
 
 [MITM]
-hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.missevan.com, data.missevan.com, fm.missevan.com, as.xiaojukeji.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, acs.m.goofish.com, g-acs.m.goofish.com, zone.guiderank-app.com, api.m.jd.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com, api.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, *.googlevideo.com, youtubei.googleapis.com, image1.ccb.com, imageadv.ccb.com, app.dewu.com, learn.chaoxing.com, ktx.cn, cy.cloud.ccb.com, 113.46.225.4, 113.46.225.5, mobile.api.sisyphe.cn, htwkop.xiaojukeji.com, xyst.yuanfudao.com,  daijia.kuaidadi.com, b?dsp-x.jd.com, ms.jr.jd.com, api.chelaile.net.cn, pic1.chelaile.net.cn, 3gimg.qq.com, newsso.map.qq.com, www.shihuo.cn, 113.46.225.2, 113.46.225.3, 116.85.2.4, 116.85.2.5, 116.85.2.21, 116.85.2.22, api.pinterest.com
+hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.missevan.com, data.missevan.com, fm.missevan.com, as.xiaojukeji.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, acs.m.goofish.com, g-acs.m.goofish.com, zone.guiderank-app.com, api.m.jd.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com, api.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, *.googlevideo.com, youtubei.googleapis.com, image1.ccb.com, imageadv.ccb.com, app.dewu.com, learn.chaoxing.com, ktx.cn, cy.cloud.ccb.com, 113.46.225.4, 113.46.225.5, mobile.api.sisyphe.cn, htwkop.xiaojukeji.com, xyst.yuanfudao.com,  daijia.kuaidadi.com, b?dsp-x.jd.com, ms.jr.jd.com, 3gimg.qq.com, newsso.map.qq.com, 113.46.225.2, 113.46.225.3, 116.85.2.4, 116.85.2.5, 116.85.2.21, 116.85.2.22, api.pinterest.com
 
 [URL Rewrite]
-# 广告平台拦截器 video-dsp.pddpic.com, t-dsp.pinduoduo.com, images.pinduoduo.com
-# ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ - reject
-# ^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_ - reject
-^https://images\.pinduoduo\.com/marketing_api/ - reject
-^https://images\.pinduoduo\.com/mrk/ - reject
+# 哔哩哔哩优化
+^https://api\.bilibili\.com/pgc/season/(rank/cn|app/related/recommend) - reject
+^https://api\.bilibili\.com/x/push/report - reject
+^https://api\.bilibili\.com/x/report/(click/ios|heartbeat/mobile) - reject
+^https://app\.bilibili\.com/x/resource/(abtest|fingerprint|pop/up) - reject
+^https://app\.bilibili\.com/x/v\d/(param|dm/ad|dataflow/report|rank.*rid=(168|5)) - reject
+^https://grpc\.biliapi\.net/bilibili\.app\.click\.v1\.Click/HeartBeat - reject
 
 # 建设银行 image1.ccb.com, imageadv.ccb.com
 ^https?:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(?:nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png - reject
 ^https?:\/\/imageadv\.ccb\.com\/adpic\/(nctm\/ad|sszserver\/upload\/activity)\/\d{8}\/\w+\.(?>gif|png|jpg)$ - reject
-# 得物 app.dewu.com
-^https?:\/\/app\.dewu\.com\/api\/v1\/app\/advertisement - reject
-
-# 超星学习通 learn.chaoxing.com
-^https?:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig\? - reject
 
 # 看天下
 ^https://ktx\.cn/v\d/api/index/loading_ad - reject
@@ -38,28 +35,29 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 # 去评分提示
 ^https://ktx\.cn/v\d/api/user/application_score\? - reject
 
-# 哔哩哔哩
-^https://api\.bilibili\.com/pgc/season/(rank/cn|app/related/recommend) - reject
-^https://api\.bilibili\.com/x/push/report - reject
-^https://api\.bilibili\.com/x/report/(click/ios|heartbeat/mobile) - reject
-^https://app\.bilibili\.com/x/resource/(abtest|fingerprint|pop/up) - reject
-^https://app\.bilibili\.com/x/v\d/(param|dm/ad|dataflow/report|rank.*rid=(168|5)) - reject
-^https://grpc\.biliapi\.net/bilibili\.app\.click\.v1\.Click/HeartBeat - reject
+# 得物 app.dewu.com
+^https://app\.dewu\.com/api/v1/app/advertisement - reject
+
+# 广告平台拦截器 images.pinduoduo.com
+# ^https:\/\/video-dsp\.pddpic\.com\/market-dsp-video\/ - reject
+# ^https:\/\/t-dsp\.pinduoduo\.com\/dspcb\/i\/mrk_ - reject
+^https://images\.pinduoduo\.com/marketing_api/ - reject
+^https://images\.pinduoduo\.com/mrk/ - reject
+
 # 京东
 ^https?://b?dsp-x\.jd\.com/adx - reject
 ^https?://api\.m\.jd\.com/client\.action\?functionId=start - reject
 ^https?://ms\.jr\.jd\.com/gw/generic/base/na/m/adInfo - reject
-# 车来了
-^https?://(api|atrace)\.chelaile\.net\.cn/adpub - reject
-^https?://api\.chelaile\.net\.cn/goocity/advert - reject
-^https?://pic1\.chelaile\.net\.cn/adv - reject
-# 肯德基
-^https?://res\.kfc\.com\.cn/advertisement - reject
+
 # 腾讯地图
 ^https?://3gimg\.qq\.com/tencentMapTouch/app/activity - reject
 ^https?://newsso\.map\.qq\.com/\?&attime= - reject
-# 识货
-^https?://www\.shihuo\.cn/app3/saveAppInfo - reject
+
+# 肯德基
+^https?://res\.kfc\.com\.cn/advertisement - reject
+
+# 超星学习通 learn.chaoxing.com
+^https?:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig\? - reject
 
 [Map Local]
 # 西西弗去开屏广告
@@ -78,6 +76,7 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https://app\.bilibili\.com/x/v2/search/recommend\? data-type=text data="{}" status-code=200
 # 
 ^https://api\.bilibili\.com/x/push/popup/config\? data-type=text data="{}" status-code=200
+
 # 猫耳 FM 净化
 ^https:\/\/data\.missevan\.com\/site\/ad-track$ data-type=text data="{}" status-code=200
 ^https:\/\/app\.missevan\.com\/x\/recommend\/get-popup$ data-type=text data="{}" status-code=200

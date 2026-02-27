@@ -1055,6 +1055,7 @@ DOMAIN, track.tiara.kakao.com
 DOMAIN, track.uc.cn
 DOMAIN, tracker.didiglobal.com
 DOMAIN, tracking.v.tf.360.cn
+DOMAIN, trackingprd.hwwt8.com
 DOMAIN, tracklog.58.com
 DOMAIN, trends.mobile.sina.cn
 DOMAIN, ttnet-dig.feishu.cn
@@ -1331,6 +1332,7 @@ DOMAIN-SUFFIX, analytics.126.net
 DOMAIN-SUFFIX, analytics.archive.org
 DOMAIN-SUFFIX, analytics.inkdata.net
 DOMAIN-SUFFIX, analytics.live.com
+DOMAIN-SUFFIX, analytics.meituan.net
 DOMAIN-SUFFIX, analytics.s3.amazonaws.com
 DOMAIN-SUFFIX, analytics.unity3d.com
 DOMAIN-SUFFIX, analytics.usa.gov
@@ -1470,6 +1472,7 @@ DOMAIN-SUFFIX, duxiaoman.com
 DOMAIN-SUFFIX, dxp.baidu.com
 DOMAIN-SUFFIX, e.baidu.com
 DOMAIN-SUFFIX, e.qq.com
+DOMAIN-SUFFIX, edge.adobedc.net
 DOMAIN-SUFFIX, edm.globalsources.com
 DOMAIN-SUFFIX, effirst.com
 DOMAIN-SUFFIX, eiv.baidu.com
@@ -1659,6 +1662,7 @@ DOMAIN-SUFFIX, msedge.net
 DOMAIN-SUFFIX, mtj.baidu.com
 DOMAIN-SUFFIX, mucfc.com
 DOMAIN-SUFFIX, mum.alibabachengdun.com
+DOMAIN-SUFFIX, munchkin.marketo.net
 DOMAIN-SUFFIX, musicid.samsungcloudsolution.com
 DOMAIN-SUFFIX, mvconf.cloud.360safe.com
 DOMAIN-SUFFIX, my.chinaz.com
@@ -1750,6 +1754,7 @@ DOMAIN-SUFFIX, retcode.taobao.com
 DOMAIN-SUFFIX, rptsys.com
 DOMAIN-SUFFIX, rqd.qq.com
 DOMAIN-SUFFIX, rs.mail.ru
+DOMAIN-SUFFIX, rumt-zh.com
 DOMAIN-SUFFIX, ry51w.cn
 DOMAIN-SUFFIX, s.360.cn
 DOMAIN-SUFFIX, s.baidu.com
@@ -1771,6 +1776,7 @@ DOMAIN-SUFFIX, search5-search-hl.ixigua.com
 DOMAIN-SUFFIX, search5-search.ixigua.com
 DOMAIN-SUFFIX, segment.io
 DOMAIN-SUFFIX, sensors-log.dongqiudi.com
+DOMAIN-SUFFIX, sensors.ibreader.com
 DOMAIN-SUFFIX, sensorsdata.cn
 DOMAIN-SUFFIX, servicesupport.hicloud.com
 DOMAIN-SUFFIX, serving-sys.com
@@ -1797,6 +1803,7 @@ DOMAIN-SUFFIX, skullmagnets.com
 DOMAIN-SUFFIX, smartadserver.com
 DOMAIN-SUFFIX, smartshare.lgtvsdp.com
 DOMAIN-SUFFIX, snapads.com
+DOMAIN-SUFFIX, sofire.bdstatic.com
 DOMAIN-SUFFIX, spamscanner.net
 DOMAIN-SUFFIX, spider-tracker.xiaohongshu.com
 DOMAIN-SUFFIX, sponsors.vuejs.org
@@ -1865,6 +1872,8 @@ DOMAIN-SUFFIX, tx-kmpaudio.pull.yximgs.com
 DOMAIN-SUFFIX, ubacollect-drcn.cloud.dbankcloud.cn
 DOMAIN-SUFFIX, udc.yahoo.com
 DOMAIN-SUFFIX, udcm.yahoo.com
+DOMAIN-SUFFIX, udiab1.jianshu.com
+DOMAIN-SUFFIX, udrig.com
 DOMAIN-SUFFIX, uedas.qidian.com
 DOMAIN-SUFFIX, umeng.cn
 DOMAIN-SUFFIX, union.360.cn
