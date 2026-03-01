@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.4
-#!date = 26.2.22
+#!version = 1.0.5
+#!date = 26.3.1
 #!category = N合1
 #!system = ios
 
@@ -21,7 +21,7 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https://api\.bilibili\.com/x/report/(click/ios|heartbeat/mobile) - reject
 ^https://app\.bilibili\.com/x/resource/(abtest|fingerprint|pop/up) - reject
 ^https://app\.bilibili\.com/x/v\d/(param|dm/ad|dataflow/report|rank.*rid=(168|5)) - reject
-^https://grpc\.biliapi\.net/bilibili\.app\.click\.v1\.Click/HeartBeat - reject
+^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.app\.click\.v1\.Click/HeartBeat - reject
 
 # 建设银行 image1.ccb.com, imageadv.ccb.com
 ^https?:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(?:nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png - reject

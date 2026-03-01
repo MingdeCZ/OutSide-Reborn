@@ -1,6 +1,5 @@
 # 补充/优化
 DOMAIN, ad.flipboard.cn
-DOMAIN, fog.22112211.xyz
 DOMAIN, o33249.ingest.us.sentry.io
 DOMAIN-SUFFIX, 2mdn-cn.net
 DOMAIN-SUFFIX, app-measurement-cn.com
@@ -16,23 +15,10 @@ DOMAIN-SUFFIX, googletraveladservices-cn.com
 DOMAIN-SUFFIX, googlevads-cn.com
 DOMAIN-SUFFIX, honeycomb.io
 DOMAIN-SUFFIX, posthog.com
-IP-CIDR, 5.28.192.0/21
 #
 // break fairplay.l.qq.com, vi.l.qq.com
-# DOMAIN, al-log.d.meituan.net
-# DOMAIN, babel-statistics-android.d.meituan.net
-# DOMAIN, maplocatesdksnapshot.d.meituan.net
-# DOMAIN, metrics-picture.d.meituan.net
-# DOMAIN, route-stats.d.meituan.net
-# DOMAIN-KEYWORD, -ad-sign.byteimg.com
-# DOMAIN-SUFFIX, 17admob.com
-# DOMAIN-SUFFIX, admobile.mobi
-# DOMAIN-SUFFIX, admobile.net.cn
-# DOMAIN-SUFFIX, admobile.top
-# DOMAIN-SUFFIX, admobile.vip
 AND, ((DOMAIN-KEYWORD, -ad-), (DOMAIN-SUFFIX, byteimg.com))
 AND, ((DOMAIN-KEYWORD, adash), (DOMAIN-SUFFIX, ut.taobao.com))
-# AND, ((DOMAIN-KEYWORD, ads), (DOMAIN-KEYWORD, -normal.zijieapi.com))
 DOMAIN, ad-evods.tianya.tv
 DOMAIN, ad.aggrxinc.com
 DOMAIN, ad.maoyan.com
@@ -48,11 +34,9 @@ DOMAIN, api.mixpanel.com
 DOMAIN, api.sm.cn
 DOMAIN, atoken.m.taobao.com
 DOMAIN, beacon-api.aliyuncs.com
-DOMAIN, browser-intake-datadoghq.com
 DOMAIN, c.sm.cn
 DOMAIN, click-bes.baidu.com
 DOMAIN, content-understand-strategy.sm.cn
-DOMAIN, dataflow.biliapi.com
 DOMAIN, df.tanx.com
 DOMAIN, dig.bdurl.net
 DOMAIN, dns.jd.com
@@ -116,7 +100,6 @@ DOMAIN, pgdt.gtimg.cn
 DOMAIN, qzs.gdtimg.com
 DOMAIN, redirect.shunchangzhixing.com
 DOMAIN, resolvers-cn.httpdns.aliyuncs.com
-DOMAIN, rmonitor.qq.com
 DOMAIN, sdk-log.partner.sm.cn
 DOMAIN, sdk.zhangyuyidong.cn
 DOMAIN, sdkconfig.video.qq.com
@@ -183,7 +166,6 @@ DOMAIN-SUFFIX, ctobsnssdk.com
 DOMAIN-SUFFIX, deepinstall.com
 DOMAIN-SUFFIX, domob.cn
 DOMAIN-SUFFIX, doubleclick-cn.net
-DOMAIN-SUFFIX, doubleclick.net
 DOMAIN-SUFFIX, dratio.com
 DOMAIN-SUFFIX, dutils.com
 DOMAIN-SUFFIX, eshiqi.com
@@ -335,11 +317,7 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6/128
 IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128
 IP-CIDR6, 2402:db40:5100:1011::5/128
 IP-CIDR6, 240e:928:1400:10::25/128
-URL-REGEX, "^http://.+/amdc/mobileDispatch"
 # 其它补充（最后更新：26-2-14）
-# DOMAIN, securemetrics.apple.com
-# DOMAIN-SUFFIX, admob.com
-# DOMAIN-SUFFIX, data-sdk-uuid-log.d.meituan.net
 DOMAIN, 1oavsblobprodcus350.blob.core.windows.net
 DOMAIN, 2016.sina.cn
 DOMAIN, 37bvsblobprodcus311.blob.core.windows.net
@@ -460,7 +438,6 @@ DOMAIN, agoodm.m.taobao.com
 DOMAIN, ajs.ipip.net
 DOMAIN, alimelog.taobao.com
 DOMAIN, amap-aos-info-nogw.amap.com
-DOMAIN, amdc-sibling.alipay.com.cn
 DOMAIN, amdcopen.m.taobao.com
 DOMAIN, amos.alicdn.com
 DOMAIN, amp.thehackernews.com
@@ -569,7 +546,6 @@ DOMAIN, clkservice2.dict.youdao.com
 DOMAIN, cloan.amap.com
 DOMAIN, clog.miguvideo.com
 DOMAIN, cm.baidu.com
-DOMAIN, cm.bilibili.com
 DOMAIN, cm.dmp.sina.cn
 DOMAIN, cm.ipinyou.com
 DOMAIN, cmshow.gtimg.cn
@@ -750,7 +726,6 @@ DOMAIN, idm.bce.baidu.com
 DOMAIN, iflow.uczzd.cn
 DOMAIN, iflow.uczzd.com
 DOMAIN, iflow.uczzd.net
-DOMAIN, ifs.tanx.com
 DOMAIN, img-x.jd.com
 DOMAIN, imgad0.pcauto.com.cn
 DOMAIN, imgad0.pconline.com.cn
@@ -906,7 +881,6 @@ DOMAIN, pv.hd.sohu.com
 DOMAIN, pv.sohu.com
 DOMAIN, pv.zol.com.cn
 DOMAIN, pvnapp.zol.com.cn
-DOMAIN, px.ucweb.com
 DOMAIN, qapm.baidu.com
 DOMAIN, qappcenterv6.3g.qq.com
 DOMAIN, qgnu18wo.sina.cn
@@ -1184,6 +1158,7 @@ DOMAIN-KEYWORD, insights-collector.
 DOMAIN-KEYWORD, load.tracking.
 DOMAIN-KEYWORD, mon.zijieapi.com
 DOMAIN-KEYWORD, pangolin-sdk-toutiao
+DOMAIN-KEYWORD, sanalytics.
 DOMAIN-KEYWORD, securemetrics.
 DOMAIN-KEYWORD, telemetry.officeapps.live.com
 DOMAIN-KEYWORD, track.opentable.
@@ -1211,7 +1186,6 @@ DOMAIN-SUFFIX, 24.eu
 DOMAIN-SUFFIX, 2mdn.net
 DOMAIN-SUFFIX, 365key.com
 DOMAIN-SUFFIX, 3721zh.com
-DOMAIN-SUFFIX, 3lift.com
 DOMAIN-SUFFIX, 4players.de
 DOMAIN-SUFFIX, 51.la
 DOMAIN-SUFFIX, 58mingri.cn
@@ -1262,7 +1236,6 @@ DOMAIN-SUFFIX, admarket.mobi
 DOMAIN-SUFFIX, admaster.com.cn
 DOMAIN-SUFFIX, adnet.qq.com
 DOMAIN-SUFFIX, adnexus.net
-DOMAIN-SUFFIX, adnxs.com
 DOMAIN-SUFFIX, adobe.io
 DOMAIN-SUFFIX, adobestats.io
 DOMAIN-SUFFIX, adpro.cn
@@ -1321,8 +1294,6 @@ DOMAIN-SUFFIX, allyes.com.cn
 DOMAIN-SUFFIX, amauthprd.samsungcloudsolution.com
 DOMAIN-SUFFIX, amazon-adsystem.amazon.com
 DOMAIN-SUFFIX, amazon-adsystem.com
-DOMAIN-SUFFIX, amdc-thirdparty.alipay.com
-DOMAIN-SUFFIX, amdc.alipay.com
 DOMAIN-SUFFIX, amdc.m.taobao.com
 DOMAIN-SUFFIX, amplitude.com
 DOMAIN-SUFFIX, analysys.cn
@@ -1334,6 +1305,7 @@ DOMAIN-SUFFIX, analytics.inkdata.net
 DOMAIN-SUFFIX, analytics.live.com
 DOMAIN-SUFFIX, analytics.meituan.net
 DOMAIN-SUFFIX, analytics.s3.amazonaws.com
+DOMAIN-SUFFIX, analytics.tiktok.com
 DOMAIN-SUFFIX, analytics.unity3d.com
 DOMAIN-SUFFIX, analytics.usa.gov
 DOMAIN-SUFFIX, analyticsengine.s3.amazonaws.com
@@ -1344,7 +1316,6 @@ DOMAIN-SUFFIX, api.distribution.hulu.com
 DOMAIN-SUFFIX, api.edgeoffer.microsoft.com
 DOMAIN-SUFFIX, apkevery.com
 DOMAIN-SUFFIX, apm-fe.xiaohongshu.com
-DOMAIN-SUFFIX, apm-native.xiaohongshu.com
 DOMAIN-SUFFIX, apoll.m.taobao.com
 DOMAIN-SUFFIX, app-ads-services.com
 DOMAIN-SUFFIX, app-measurement.com
@@ -1353,7 +1324,6 @@ DOMAIN-SUFFIX, applog.lc.quark.cn
 DOMAIN-SUFFIX, applog.uc.cn
 DOMAIN-SUFFIX, applvn.com
 DOMAIN-SUFFIX, appmetrica.yandex.net
-DOMAIN-SUFFIX, appsec-mobile.meituan.com
 DOMAIN-SUFFIX, atlas-emui-drcn.hicloud.com
 DOMAIN-SUFFIX, atplay.cn
 DOMAIN-SUFFIX, aty.sohu.com
@@ -1395,7 +1365,6 @@ DOMAIN-SUFFIX, cdp.postman.com
 DOMAIN-SUFFIX, cert-test.sandbox.google.com
 DOMAIN-SUFFIX, chat1.jd.com
 DOMAIN-SUFFIX, cj.qidian.com
-DOMAIN-SUFFIX, clarity.ms
 DOMAIN-SUFFIX, classify-client.services.mozilla.com
 DOMAIN-SUFFIX, click.alimama.com
 DOMAIN-SUFFIX, click.dji.com
@@ -1406,10 +1375,8 @@ DOMAIN-SUFFIX, cloudflareinsights.com
 DOMAIN-SUFFIX, cloudmobi.net
 DOMAIN-SUFFIX, cnzz.com
 DOMAIN-SUFFIX, cnzz.mmstat.com
-DOMAIN-SUFFIX, collect.alipay.com
 DOMAIN-SUFFIX, collect.yinyuetai.com
 DOMAIN-SUFFIX, collector.azure.cn
-DOMAIN-SUFFIX, collector.github.com
 DOMAIN-SUFFIX, configserver-dra.platform.hicloud.com
 DOMAIN-SUFFIX, convertexperiments.com
 DOMAIN-SUFFIX, coordinator-production-28516768.us-east-1.elb.amazonaws.com
@@ -1420,26 +1387,23 @@ DOMAIN-SUFFIX, cpro.baidu.com
 DOMAIN-SUFFIX, cpu.baidu.com
 DOMAIN-SUFFIX, criteo.com
 DOMAIN-SUFFIX, cs1.wpc.v0cdn.net
+DOMAIN-SUFFIX, csp.godaddy.com
 DOMAIN-SUFFIX, cszlks.com
 DOMAIN-SUFFIX, cudaojia.com
 DOMAIN-SUFFIX, cupid.iqiyi.com
 DOMAIN-SUFFIX, customerevents.netflix.com
-DOMAIN-SUFFIX, d.meituan.net
 DOMAIN-SUFFIX, da.hunantv.com
 DOMAIN-SUFFIX, da.mgtv.com
 DOMAIN-SUFFIX, dafapromo.com
 DOMAIN-SUFFIX, darkvisitors.com
 DOMAIN-SUFFIX, data.360safe.com
-DOMAIN-SUFFIX, data.bilibili.com
 DOMAIN-SUFFIX, data.dbankcloud.cn
 DOMAIN-SUFFIX, data.glbdns2.microsoft.com
 DOMAIN-SUFFIX, data.grammarly.com
 DOMAIN-SUFFIX, data.hicloud.com
 DOMAIN-SUFFIX, data.mgtv.com
-DOMAIN-SUFFIX, data.microsoft.com
 DOMAIN-SUFFIX, data.msn.com
 DOMAIN-SUFFIX, datacollection.uve.weibo.com
-DOMAIN-SUFFIX, dataflow.bilibili.com
 DOMAIN-SUFFIX, dbm-metrics-intake.datadoghq.com
 DOMAIN-SUFFIX, dbquery-intake.datadoghq.com
 DOMAIN-SUFFIX, demdex.net
@@ -1457,7 +1421,6 @@ DOMAIN-SUFFIX, dopa.com.cn
 DOMAIN-SUFFIX, doubleclick.com
 DOMAIN-SUFFIX, down.360.cn
 DOMAIN-SUFFIX, dragonparking.com
-DOMAIN-SUFFIX, dreport.meituan.net
 DOMAIN-SUFFIX, dsp.fcbox.com
 DOMAIN-SUFFIX, dt.dbankcloud.cn
 DOMAIN-SUFFIX, dt.dbankcloud.com
@@ -1474,7 +1437,6 @@ DOMAIN-SUFFIX, e.baidu.com
 DOMAIN-SUFFIX, e.qq.com
 DOMAIN-SUFFIX, edge.adobedc.net
 DOMAIN-SUFFIX, edm.globalsources.com
-DOMAIN-SUFFIX, effirst.com
 DOMAIN-SUFFIX, eiv.baidu.com
 DOMAIN-SUFFIX, em.baidu.com
 DOMAIN-SUFFIX, entry.baidu.com
@@ -1482,6 +1444,7 @@ DOMAIN-SUFFIX, epro.sogou.com
 DOMAIN-SUFFIX, error-tracking.reddit.com
 DOMAIN-SUFFIX, ers.baidu.com
 DOMAIN-SUFFIX, events.data.trafficmanager.net
+DOMAIN-SUFFIX, events.getsitectrl.com
 DOMAIN-SUFFIX, events.mapbox.com
 DOMAIN-SUFFIX, events.mz.unity3d.com
 DOMAIN-SUFFIX, events.reddit.com
@@ -1534,12 +1497,10 @@ DOMAIN-SUFFIX, golden1.sogou.com
 DOMAIN-SUFFIX, google-analytics.com
 DOMAIN-SUFFIX, googleadapis.com
 DOMAIN-SUFFIX, googleads.com
-DOMAIN-SUFFIX, googleadservices.com
 DOMAIN-SUFFIX, googleadsserving.cn
 DOMAIN-SUFFIX, googleanalytics.com
 DOMAIN-SUFFIX, googleoptimize.com
 DOMAIN-SUFFIX, googlesyndication.com
-DOMAIN-SUFFIX, googletagmanager.com
 DOMAIN-SUFFIX, googletagservices.com
 DOMAIN-SUFFIX, googletraveladservices.com
 DOMAIN-SUFFIX, goufanli100.com
@@ -1560,7 +1521,6 @@ DOMAIN-SUFFIX, hao.360.cn
 DOMAIN-SUFFIX, haoshengtoys.com
 DOMAIN-SUFFIX, hc.baidu.com
 DOMAIN-SUFFIX, hg-statsd.setapp.com
-DOMAIN-SUFFIX, hm.baidu.com
 DOMAIN-SUFFIX, hmma.baidu.com
 DOMAIN-SUFFIX, hpd.baidu.com
 DOMAIN-SUFFIX, httpdns.c.163.com
@@ -1580,6 +1540,7 @@ DOMAIN-SUFFIX, ibis.lgappstv.com
 DOMAIN-SUFFIX, ibs.lgappstv.com
 DOMAIN-SUFFIX, icast.cn
 DOMAIN-SUFFIX, ichaosheng.com
+DOMAIN-SUFFIX, ichnaea-web.netflix.com
 DOMAIN-SUFFIX, ichnaea.netflix.com
 DOMAIN-SUFFIX, ijinshan.com
 DOMAIN-SUFFIX, imtmp.net
@@ -1609,7 +1570,6 @@ DOMAIN-SUFFIX, linkhaitao.com
 DOMAIN-SUFFIX, linktech.cn
 DOMAIN-SUFFIX, live.126.net
 DOMAIN-SUFFIX, log-report.com
-DOMAIN-SUFFIX, log.aliyuncs.com
 DOMAIN-SUFFIX, log.fc.yahoo.com
 DOMAIN-SUFFIX, log.hunantv.com
 DOMAIN-SUFFIX, log.mgtv.com
@@ -1617,7 +1577,6 @@ DOMAIN-SUFFIX, log.snssdk.com
 DOMAIN-SUFFIX, logbak.hicloud.com
 DOMAIN-SUFFIX, loggw-ex.alipay.com
 DOMAIN-SUFFIX, logs.amap.com
-DOMAIN-SUFFIX, logs.netflix.com
 DOMAIN-SUFFIX, logservice-dra.platform.hicloud.com
 DOMAIN-SUFFIX, logservice-dre.platform.dbankcloud.cn
 DOMAIN-SUFFIX, logservice-dre.platform.hicloud.com
@@ -1634,7 +1593,6 @@ DOMAIN-SUFFIX, magsrv.com
 DOMAIN-SUFFIX, mapi.m.jd.com
 DOMAIN-SUFFIX, mazu.m.qq.com
 DOMAIN-SUFFIX, mcs.zijieapi.com
-DOMAIN-SUFFIX, mdt.qq.com
 DOMAIN-SUFFIX, measure.office.com
 DOMAIN-SUFFIX, media.net
 DOMAIN-SUFFIX, meitustat.com
@@ -1651,7 +1609,6 @@ DOMAIN-SUFFIX, mobileapptracking.com
 DOMAIN-SUFFIX, mobilem.360.cn
 DOMAIN-SUFFIX, mobileservice.cn
 DOMAIN-SUFFIX, mobisage.com
-DOMAIN-SUFFIX, monitor.azure.com
 DOMAIN-SUFFIX, monorail-edge.shopifysvc.com
 DOMAIN-SUFFIX, mopub.com
 DOMAIN-SUFFIX, mozillafoundation.org
@@ -1706,7 +1663,7 @@ DOMAIN-SUFFIX, pdfxd.com
 DOMAIN-SUFFIX, personaly.click
 DOMAIN-SUFFIX, phpwind.com
 DOMAIN-SUFFIX, pingtcss.qq.com
-DOMAIN-SUFFIX, pipe.aria.microsoft.com
+DOMAIN-SUFFIX, pixel.byspotify.com
 DOMAIN-SUFFIX, pixel.ipinfo.io
 DOMAIN-SUFFIX, plus.com
 DOMAIN-SUFFIX, pluto.sogou.com
@@ -1805,7 +1762,6 @@ DOMAIN-SUFFIX, smartshare.lgtvsdp.com
 DOMAIN-SUFFIX, snapads.com
 DOMAIN-SUFFIX, sofire.bdstatic.com
 DOMAIN-SUFFIX, spamscanner.net
-DOMAIN-SUFFIX, spider-tracker.xiaohongshu.com
 DOMAIN-SUFFIX, sponsors.vuejs.org
 DOMAIN-SUFFIX, ssacdn.com
 DOMAIN-SUFFIX, ssl2.duapps.com
@@ -1864,7 +1820,6 @@ DOMAIN-SUFFIX, tracker.baidu.com
 DOMAIN-SUFFIX, trackjs.com
 DOMAIN-SUFFIX, tradeshow.globalsources.com
 DOMAIN-SUFFIX, trafficjam.cn
-DOMAIN-SUFFIX, trk.pinterest.com
 DOMAIN-SUFFIX, tuijian.baidu.com
 DOMAIN-SUFFIX, tuisong.baidu.com
 DOMAIN-SUFFIX, tuitiger.com
