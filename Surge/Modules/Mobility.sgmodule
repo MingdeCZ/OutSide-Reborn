@@ -12,7 +12,7 @@
 skip-proxy = *.ccb.com, *.abcchina.com, *.abcchina.com.cn
 
 [MITM]
-hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.missevan.com, data.missevan.com, fm.missevan.com, as.xiaojukeji.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, acs.m.goofish.com, g-acs.m.goofish.com, zone.guiderank-app.com, api.m.jd.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com, api.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, *.googlevideo.com, youtubei.googleapis.com, image1.ccb.com, imageadv.ccb.com, app.dewu.com, learn.chaoxing.com, ktx.cn, cy.cloud.ccb.com, 113.46.225.4, 113.46.225.5, mobile.api.sisyphe.cn, htwkop.xiaojukeji.com, xyst.yuanfudao.com,  daijia.kuaidadi.com, b?dsp-x.jd.com, ms.jr.jd.com, 3gimg.qq.com, newsso.map.qq.com, 113.46.225.2, 113.46.225.3, 116.85.2.4, 116.85.2.5, 116.85.2.21, 116.85.2.22, api.pinterest.com
+hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.missevan.com, data.missevan.com, fm.missevan.com, as.xiaojukeji.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, acs.m.goofish.com, g-acs.m.goofish.com, zone.guiderank-app.com, api.m.jd.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com, api.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, *.googlevideo.com, youtubei.googleapis.com, image1.ccb.com, imageadv.ccb.com, app.dewu.com, learn.chaoxing.com, ktx.cn, cy.cloud.ccb.com, 113.46.225.4, 113.46.225.5, mobile.api.sisyphe.cn, htwkop.xiaojukeji.com, xyst.yuanfudao.com,  daijia.kuaidadi.com, b?dsp-x.jd.com, ms.jr.jd.com, 3gimg.qq.com, newsso.map.qq.com, 113.46.225.2, 113.46.225.3, 116.85.2.4, 116.85.2.5, 116.85.2.21, 116.85.2.22, api.pinterest.com, apiz.trakt.tv, apm.xiaojukeji.com
 
 [URL Rewrite]
 # 哔哩哔哩优化
@@ -22,6 +22,12 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https://app\.bilibili\.com/x/resource/(abtest|fingerprint|pop/up) - reject
 ^https://app\.bilibili\.com/x/v\d/(param|dm/ad|dataflow/report|rank.*rid=(168|5)) - reject
 ^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.app\.click\.v1\.Click/HeartBeat - reject
+
+# 滴滴去更新
+^https://apm\.xiaojukeji\.com/muse/update/v\d\? - reject
+
+# 西西弗去开屏广告
+^https://mobile\.api\.sisyphe\.cn/app-application-content-api-v2/anonymous/anniversary/findSpreadItsTail$ - reject
 
 # 建设银行 image1.ccb.com, imageadv.ccb.com
 ^https?:\/\/image1\.ccb\.com\/newsinfo\/eBranch\/check\/(?:nf\/newfin\/activity|po\/poortheme\/activity)\/\w+\.png - reject
@@ -60,9 +66,6 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https?:\/\/learn\.chaoxing\.com\/apis\/service\/appConfig\? - reject
 
 [Map Local]
-# 西西弗去开屏广告
-^https://mobile\.api\.sisyphe\.cn/app-application-content-api-v2/anonymous/anniversary/findSpreadItsTail$ data-type=text data="{}" status-code=200
-
 # 哔哩哔哩净化
 # 满意度调研
 ^https://api\.bilibili\.com/x/v2/dm/qoe/show\? data-type=text data="{}" status-code=200
@@ -200,6 +203,10 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https?:\/\/cy\.cloud\.ccb\.com\/\/gateway\/user-server\/user\/qyCenter\/getCustomizedAdv data-type=text data="{}" status-code=200
 
 [Body Rewrite]
+# Trakt 解锁本地 VIP
+http-response-jq ^https://apiz\.trakt\.tv/users/settings '.user.vip = true'
+http-response-jq ^https://apiz\.trakt\.tv/users/(?!me(?:\?|$)|settings(?:\?|$)|requests(?:\?|$)|hidden(?:\?|$)|likes(?:\?|$)|saved_filters(?:\?|$)|reactions(?:\?|$))[^/\?]+(?:\?extended=full%2Cvip)$ '.vip = true'
+
 # Pinterest 首页、贴子详情下方信息流去广告
 http-response-jq ^https://api\.pinterest\.com/v3/(feeds/home|pins/\d+/related/modules)/\? '.data |= map(select(has("ad_data") | not))'
 
@@ -230,13 +237,14 @@ http-response-jq ^https://common\.diditaxi\.com\.cn(?:/common/v5)?/usercenter/la
 # 首页更多服务净化
 http-response-jq ^https://conf\.diditaxi\.com\.cn/homepage/v1/nav/more\? '.data.category_list |= map( select(.category_name != "公益") | if .category_name == "车主服务" then .nav_list |= map(select(.nav_id != "carsharing" and .nav_id != "yanxuanchepin" and .nav_id != "chepinshangcheng" and .nav_id != "haocheshijia")) elif .category_name == "便民生活" then .nav_list |= map(select(.nav_id == "freight" or .nav_id == "kuaisong" or .nav_id == "banjia")) elif .category_name == "优惠权益" then .nav_list |= map(select(.nav_id != "didizhifu" and .nav_id != "xianjinduoduo" and .nav_id != "xiaodian")) else . end )'
 # 打车页面净化
-http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/dache_homepage_layout\? '.data.instances |= ( del(.dache_main_member, .dache_main_xp, ."xp-card-01") | .dache_main_core_icon.data[0].data |= map(select( .content_data.nav_id as $id | ["yuyue","dairenjiaoche","jiesongji","haoyoutongxing"] | index($id) )) )'
+http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/dache_homepage_layout\? '.data.instances |= ( del(.dache_main_member, .dache_main_xp, ."xp-card-01", .car_icon_01.data.icon_info_new_agreement) | .dache_main_core_icon.data[0].data |= map(select( .content_data.nav_id as $id | ["yuyue","dairenjiaoche","jiesongji","haoyoutongxing"] | index($id) )) )'
 # 特价拼车页面优化
 http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/bronze/pinchengle_homepage_layout$ '.data.instances |= del(."swiper-banner-1", ."communicate-card-1", ."nav-banner-1")'
 # 行程中页面净化
-http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/other/pInTripLayout\? '.data.order_components |= map(select(.name | contains("passenger_common_casper") | not))'
-http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/dache_homepage_layout\? 'del(.data.instances.car_icon_01.data.icon_info_new_agreement)'
+http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pInTripLayout$ '.data.instances |= del(."xp-card-supper-banner-in-trip", ."xp-card-swiper-banner-in-trip")'
 http-response-jq ^https://as\.xiaojukeji\.com/ep/as/toggles\? '.data |= map(if .name|IN("daijia_journey_new_tcp_switch","daijia_tcp_init","daijia_tcp_msg_encrypt","daijia_tcp_site_info","daijia_tcp_site_report")then.allow=false else. end)'
+# 订单结束页面净化
+http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pEndTripPaidLayout$ 'del(.data.instances."xp-card-swiper-banner_finish_1")'
 
 # 闲鱼净化（移除开屏广告、商品信息流广告、搜索栏填充词、首页签到入口、悬浮广告，精简我的页面）acs.m.goofish.com, g-acs.m.goofish.com
 # 首页净化

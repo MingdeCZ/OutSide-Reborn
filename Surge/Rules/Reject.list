@@ -1370,6 +1370,7 @@ DOMAIN-SUFFIX, buzzcity.net
 DOMAIN-SUFFIX, buzzfeed.at
 DOMAIN-SUFFIX, buzzfeed.de
 DOMAIN-SUFFIX, c-adash.m.taobao.com
+DOMAIN-SUFFIX, c.live.com
 DOMAIN-SUFFIX, call.me.sel.sony.com
 DOMAIN-SUFFIX, capterra.com
 DOMAIN-SUFFIX, carpe.pages.dev
@@ -1390,6 +1391,7 @@ DOMAIN-SUFFIX, clicktale.net
 DOMAIN-SUFFIX, clkservice.youdao.com
 DOMAIN-SUFFIX, cloudflareinsights.com
 DOMAIN-SUFFIX, cloudmobi.net
+DOMAIN-SUFFIX, cmp.dreamlab.pl
 DOMAIN-SUFFIX, cnzz.com
 DOMAIN-SUFFIX, cnzz.mmstat.com
 DOMAIN-SUFFIX, collect.alipay.com
@@ -1407,6 +1409,7 @@ DOMAIN-SUFFIX, cpu.baidu.com
 DOMAIN-SUFFIX, criteo.com
 DOMAIN-SUFFIX, cs1.wpc.v0cdn.net
 DOMAIN-SUFFIX, csp.godaddy.com
+DOMAIN-SUFFIX, csr.onet.pl
 DOMAIN-SUFFIX, cszlks.com
 DOMAIN-SUFFIX, cudaojia.com
 DOMAIN-SUFFIX, cupid.iqiyi.com
@@ -1473,6 +1476,7 @@ DOMAIN-SUFFIX, events.data.trafficmanager.net
 DOMAIN-SUFFIX, events.getsitectrl.com
 DOMAIN-SUFFIX, events.mapbox.com
 DOMAIN-SUFFIX, events.mz.unity3d.com
+DOMAIN-SUFFIX, events.ocdn.eu
 DOMAIN-SUFFIX, events.reddit.com
 DOMAIN-SUFFIX, events.redditmedia.com
 DOMAIN-SUFFIX, evt.mxplay.com
@@ -1550,6 +1554,7 @@ DOMAIN-SUFFIX, hao.360.cn
 DOMAIN-SUFFIX, haoshengtoys.com
 DOMAIN-SUFFIX, hc.baidu.com
 DOMAIN-SUFFIX, hg-statsd.setapp.com
+DOMAIN-SUFFIX, histats.com
 DOMAIN-SUFFIX, hm.baidu.com
 DOMAIN-SUFFIX, hmma.baidu.com
 DOMAIN-SUFFIX, hpd.baidu.com
@@ -1607,6 +1612,8 @@ DOMAIN-SUFFIX, log.mgtv.com
 DOMAIN-SUFFIX, log.snssdk.com
 DOMAIN-SUFFIX, logbak.hicloud.com
 DOMAIN-SUFFIX, loggw-ex.alipay.com
+DOMAIN-SUFFIX, loggw-exsdk.alipay.com
+DOMAIN-SUFFIX, logr-ingest.com
 DOMAIN-SUFFIX, logs.amap.com
 DOMAIN-SUFFIX, logs.netflix.com
 DOMAIN-SUFFIX, logservice-dra.platform.hicloud.com
@@ -1746,6 +1753,7 @@ DOMAIN-SUFFIX, retcode.taobao.com
 DOMAIN-SUFFIX, rptsys.com
 DOMAIN-SUFFIX, rqd.qq.com
 DOMAIN-SUFFIX, rs.mail.ru
+DOMAIN-SUFFIX, rubiconproject.com
 DOMAIN-SUFFIX, rumt-zh.com
 DOMAIN-SUFFIX, ry51w.cn
 DOMAIN-SUFFIX, s.360.cn
@@ -1824,6 +1832,7 @@ DOMAIN-SUFFIX, tagtic.cn
 DOMAIN-SUFFIX, tajs.qq.com
 DOMAIN-SUFFIX, talkingdata.com
 DOMAIN-SUFFIX, taptica.com
+DOMAIN-SUFFIX, tattle.api.osano.com
 DOMAIN-SUFFIX, tce.alicdn.com
 DOMAIN-SUFFIX, tcss.qq.com
 DOMAIN-SUFFIX, tcxshop.com

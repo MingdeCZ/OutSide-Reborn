@@ -11,6 +11,7 @@ DOMAIN, uzu.ma
 DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, adguard-dns.com
 DOMAIN-SUFFIX, apache.org
+DOMAIN-SUFFIX, api.translate.zvo.cn
 DOMAIN-SUFFIX, apple
 DOMAIN-SUFFIX, byteintl.com
 DOMAIN-SUFFIX, byteintlapi.com
@@ -52,10 +53,12 @@ DOMAIN-SUFFIX, perfops.io
 DOMAIN-SUFFIX, pockyt.io
 DOMAIN-SUFFIX, quantumult.app
 DOMAIN-SUFFIX, rapidssl.com
+DOMAIN-SUFFIX, revenuecat.com
 DOMAIN-SUFFIX, scriptable.app
 DOMAIN-SUFFIX, sectigo.com
 DOMAIN-SUFFIX, sparxsystems.com
 DOMAIN-SUFFIX, sqlite.org
+DOMAIN-SUFFIX, ssl.com
 DOMAIN-SUFFIX, steampowered.com
 DOMAIN-SUFFIX, swiftgram.app
 DOMAIN-SUFFIX, tampermonkey.net

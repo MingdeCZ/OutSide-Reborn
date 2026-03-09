@@ -83,6 +83,9 @@ DOMAIN-SUFFIX, meta.ai
 # Groq
 DOMAIN-SUFFIX, groq.com
 
+# Supermaven
+DOMAIN-SUFFIX, supermaven.com
+
 # Finance
 DOMAIN-SUFFIX, paypal.com
 DOMAIN-SUFFIX, stripe.com
