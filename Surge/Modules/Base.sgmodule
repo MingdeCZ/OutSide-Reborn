@@ -49,6 +49,11 @@ hijack-dns = 8.8.8.8:53, 8.8.4.4:53
 # skip-proxy = %INSERT% localhost, *.local, captive.apple.com, e.crashlytics.com, sequoia.apple.com, seed-sequoia.siri.apple.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.1/32, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, 224.0.0.0/4, 240.0.0.0/4, 255.255.255.255/32, ::1/128, fc00::/7, fd00::/8, fe80::/10, ff00::/8, 2001::/32, 2001:db8::/32, 2002::/16, ::ffff:0:0:0:0/1, ::ffff:128:0:0:0/1
 skip-proxy = %APPEND% *.local
 
+[Testing]
+# 替换为苹果的测速链接
+download-url = https://mensura.cdn-apple.com/api/v1/gm/large
+upload-url = https://mensura.cdn-apple.com/api/v1/gm/slurp
+
 [MITM]
 hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google.cn, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, web.meituan.com, api.szbgcx.cn, ccmsupport-sz.tenpay.com, mp.weixin.qq.com, cbd-gateway-service-applets.hualala.com, orders.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, capi.lkcoffee.com, newton.gumingnc.com, miniapp.sexytea2013.com, m.dianping.com, mapi.dianping.com, mapi.ghsmpwalmart.com, wx.17u.cn, npay.meituan.com, apimobile.meituan.com, api.m.jd.com, rms.meituan.com, img0*.luckincoffeecdn.com, tm-api.pin-dao.cn, cappapi.alittle-tea.com, szextshort.weixin.qq.com
 
