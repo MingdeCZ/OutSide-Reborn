@@ -303,8 +303,9 @@ DOMAIN-SUFFIX, wscont1.apps.microsoft.com
 DOMAIN-SUFFIX, wscont2.apps.microsoft.com
 URL-REGEX, "^http://www\.microsoft\.com/pki/"
 URL-REGEX, "^http://www\.microsoft\.com/pkiops/"
-# 国内常见互联网公司和服务域名（最后更新：26-2-14）
+# 国内常见互联网公司和服务域名（最后更新：26-3-13）
 # DOMAIN-SUFFIX, elseviercdn.cn
+# DOMAIN-SUFFIX, lcdn-locator.apple.com
 DOMAIN, assets1.xboxlive.cn
 DOMAIN, assets2.xboxlive.cn
 DOMAIN, c.weixin.com
@@ -321,6 +322,7 @@ DOMAIN, media.cdn.queniuqe.com
 DOMAIN, ocsp.digicert.cn
 DOMAIN, ocsp.globalsign.com
 DOMAIN, ocsp2.globalsign.com
+DOMAIN, public.localsend.org
 DOMAIN, shortcloud.weixin.com
 DOMAIN, szilinklong.weixin.com
 DOMAIN, szilinkshort.weixin.com
@@ -924,7 +926,7 @@ DOMAIN-SUFFIX, zuimeitianqi.com
 USER-AGENT, "%E4%BC%98%E9%85%B7*"
 USER-AGENT, "%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*"
 USER-AGENT, "TeslaMap"
-# 软件更新、操作系统等大文件下载（最后更新：26-2-14）
+# 软件更新、操作系统等大文件下载（最后更新：26-3-13）
 # DOMAIN, archive.mirror.rafal.ca
 # DOMAIN, dl.nssurge.com
 # DOMAIN, ftp.at.debian.org
@@ -1281,6 +1283,7 @@ DOMAIN, download.sketch.com
 DOMAIN, download.snipaste.com
 DOMAIN, download.todesktop.com
 DOMAIN, download.typora.io
+DOMAIN, download.umbrel.com
 DOMAIN, download.xbox.com
 DOMAIN, download2.epicgames.com
 DOMAIN, download3.epicgames.com
@@ -1504,6 +1507,7 @@ DOMAIN, invent.kde.org
 DOMAIN, ir.ubuntu.sindad.cloud
 DOMAIN, iterm2.com
 DOMAIN, jing.rocks
+DOMAIN, kali.cs.nycu.edu.tw
 DOMAIN, kambing.uu.sg
 DOMAIN, kartolo.sby.datautama.net.id
 DOMAIN, kde.c3sl.ufpr.br
@@ -2043,6 +2047,7 @@ DOMAIN, mirrors.yuntu.com.tw
 DOMAIN, mr.heru.id
 DOMAIN, msdl.microsoft.com
 DOMAIN, muug.ca
+DOMAIN, mx-app-blob-prod.maxon.net
 DOMAIN, nobara-images.nobaraproject.org
 DOMAIN, npm.im
 DOMAIN, npm.jsr.io
@@ -2051,6 +2056,7 @@ DOMAIN, officecdnmac.microsoft.com
 DOMAIN, onepluscommunityserver.com
 DOMAIN, opensource.nchc.org.tw
 DOMAIN, opensource.xtdv.net
+DOMAIN, openvsx.eclipsecontent.org
 DOMAIN, opfiles.b-cdn.net
 DOMAIN, os-cdn.virtfusion.net
 DOMAIN, osl.ugr.es

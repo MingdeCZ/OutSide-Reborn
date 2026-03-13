@@ -27,6 +27,7 @@ DOMAIN, ad.maoyan.com
 DOMAIN, ad.shunchangzhixing.com
 DOMAIN, adapi.izuiyou.com
 DOMAIN, ads-shopping.shouqianba.com
+DOMAIN, ads.cup.com.cn
 DOMAIN, adsmind.gdtimg.com
 DOMAIN, adtrack.e.kuaishou.com
 DOMAIN, afd.baidu.com
@@ -55,7 +56,6 @@ DOMAIN, extlog.snssdk.com
 DOMAIN, feed-image.baidu.com
 DOMAIN, firebaseinappmessaging.googleapis.com
 DOMAIN, firebaselogging-pa.googleapis.com
-DOMAIN, firebaseremoteconfig.googleapis.com
 DOMAIN, fundingchoicesmessages.google.com
 DOMAIN, gorgon.youdao.com
 DOMAIN, httpdns-api.aliyuncs.com
@@ -116,6 +116,7 @@ DOMAIN, tpstelemetry.tencent.com
 DOMAIN, wxsmsdy.video.qq.com
 DOMAIN-KEYWORD, -ad.byteoversea.com
 DOMAIN-KEYWORD, ad.hunyuan.tencent.com
+DOMAIN-KEYWORD, adstrategy
 DOMAIN-KEYWORD, asiad.byteactivity
 DOMAIN-KEYWORD, bjimp.voiceads.cn
 DOMAIN-KEYWORD, iflyad.bj.openstorage.cn
@@ -320,7 +321,8 @@ IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128
 IP-CIDR6, 2402:db40:5100:1011::5/128
 IP-CIDR6, 240e:928:1400:10::25/128
 URL-REGEX, ^http://.+/amdc/mobileDispatch
-# 其它补充（最后更新：26-2-14）
+# 其它补充（最后更新：26-3-13）
+# DOMAIN, adstrategy.biz.weibo.com
 DOMAIN, 1oavsblobprodcus350.blob.core.windows.net
 DOMAIN, 2016.sina.cn
 DOMAIN, 37bvsblobprodcus311.blob.core.windows.net
@@ -409,7 +411,6 @@ DOMAIN, adstats.tencentmusic.com
 DOMAIN, adstextview.qq.com
 DOMAIN, adstore-1252524079.file.myqcloud.com
 DOMAIN, adstore-index-1252524079.file.myqcloud.com
-DOMAIN, adstrategy.biz.weibo.com
 DOMAIN, adsview.qq.com
 DOMAIN, adsview2.qq.com
 DOMAIN, adsystem.wasu.tv
@@ -1046,7 +1047,9 @@ DOMAIN, trackingprd.hwwt8.com
 DOMAIN, tracklog.58.com
 DOMAIN, trends.mobile.sina.cn
 DOMAIN, ttnet-dig.feishu.cn
+DOMAIN, ttnet-dig.larksuite.com
 DOMAIN, ttnet-doh.feishu.cn
+DOMAIN, ttnet-doh.larksuite.com
 DOMAIN, tui.taobao.com
 DOMAIN, tunion-api.m.taobao.com
 DOMAIN, tvupgrade.yunos.com
@@ -1170,6 +1173,7 @@ DOMAIN-KEYWORD, httpdns.gslb.yy.com
 DOMAIN-KEYWORD, insights-collector.
 DOMAIN-KEYWORD, load.tracking.
 DOMAIN-KEYWORD, mon.zijieapi.com
+DOMAIN-KEYWORD, packetsdk
 DOMAIN-KEYWORD, pangolin-sdk-toutiao
 DOMAIN-KEYWORD, sanalytics.
 DOMAIN-KEYWORD, securemetrics.
@@ -1315,6 +1319,7 @@ DOMAIN-SUFFIX, analysys.cn
 DOMAIN-SUFFIX, analytics-data.io
 DOMAIN-SUFFIX, analytics-events.apple.com
 DOMAIN-SUFFIX, analytics.126.net
+DOMAIN-SUFFIX, analytics.ahrefs.com
 DOMAIN-SUFFIX, analytics.archive.org
 DOMAIN-SUFFIX, analytics.inkdata.net
 DOMAIN-SUFFIX, analytics.live.com
@@ -1341,6 +1346,7 @@ DOMAIN-SUFFIX, applog.uc.cn
 DOMAIN-SUFFIX, applvn.com
 DOMAIN-SUFFIX, appmetrica.yandex.net
 DOMAIN-SUFFIX, appsec-mobile.meituan.com
+DOMAIN-SUFFIX, asdk2​.com
 DOMAIN-SUFFIX, atlas-emui-drcn.hicloud.com
 DOMAIN-SUFFIX, atplay.cn
 DOMAIN-SUFFIX, aty.sohu.com
@@ -1375,6 +1381,7 @@ DOMAIN-SUFFIX, c.live.com
 DOMAIN-SUFFIX, call.me.sel.sony.com
 DOMAIN-SUFFIX, capterra.com
 DOMAIN-SUFFIX, carpe.pages.dev
+DOMAIN-SUFFIX, castarsdk.com
 DOMAIN-SUFFIX, catalog.video.msn.com
 DOMAIN-SUFFIX, ccc-x.jd.com
 DOMAIN-SUFFIX, cdn.pgvt.io
@@ -1424,7 +1431,6 @@ DOMAIN-SUFFIX, data.360safe.com
 DOMAIN-SUFFIX, data.bilibili.com
 DOMAIN-SUFFIX, data.dbankcloud.cn
 DOMAIN-SUFFIX, data.glbdns2.microsoft.com
-DOMAIN-SUFFIX, data.grammarly.com
 DOMAIN-SUFFIX, data.hicloud.com
 DOMAIN-SUFFIX, data.mgtv.com
 DOMAIN-SUFFIX, data.microsoft.com
@@ -1464,6 +1470,7 @@ DOMAIN-SUFFIX, duxiaoman.com
 DOMAIN-SUFFIX, dxp.baidu.com
 DOMAIN-SUFFIX, e.baidu.com
 DOMAIN-SUFFIX, e.qq.com
+DOMAIN-SUFFIX, earnsdk.io
 DOMAIN-SUFFIX, easytomessage.com
 DOMAIN-SUFFIX, edge.adobedc.net
 DOMAIN-SUFFIX, edm.globalsources.com
@@ -1490,7 +1497,6 @@ DOMAIN-SUFFIX, featureassets.org
 DOMAIN-SUFFIX, feed.baidu.com
 DOMAIN-SUFFIX, feedback-dre.platform.hicloud.com
 DOMAIN-SUFFIX, feih.com.cn
-DOMAIN-SUFFIX, femetrics.grammarly.io
 DOMAIN-SUFFIX, fengkongcloud.com
 DOMAIN-SUFFIX, finclip.com
 DOMAIN-SUFFIX, firebaselogging.googleapis.com
@@ -1555,10 +1561,12 @@ DOMAIN-SUFFIX, h2.msn.com
 DOMAIN-SUFFIX, hao.360.cn
 DOMAIN-SUFFIX, haoshengtoys.com
 DOMAIN-SUFFIX, hc.baidu.com
+DOMAIN-SUFFIX, hexsdk.com
 DOMAIN-SUFFIX, hg-statsd.setapp.com
 DOMAIN-SUFFIX, histats.com
 DOMAIN-SUFFIX, hm.baidu.com
 DOMAIN-SUFFIX, hmma.baidu.com
+DOMAIN-SUFFIX, holadns.com
 DOMAIN-SUFFIX, hpd.baidu.com
 DOMAIN-SUFFIX, httpdns.c.163.com
 DOMAIN-SUFFIX, httpdns.qcloud.com
@@ -1622,6 +1630,7 @@ DOMAIN-SUFFIX, logservice-dra.platform.hicloud.com
 DOMAIN-SUFFIX, logservice-dre.platform.dbankcloud.cn
 DOMAIN-SUFFIX, logservice-dre.platform.hicloud.com
 DOMAIN-SUFFIX, logtransform.hicloud.com
+DOMAIN-SUFFIX, lptag.liveperson.net
 DOMAIN-SUFFIX, ltheanine.cn
 DOMAIN-SUFFIX, lu.sogou.com
 DOMAIN-SUFFIX, lu.sogoucdn.com
@@ -1632,6 +1641,7 @@ DOMAIN-SUFFIX, mackeeper.com
 DOMAIN-SUFFIX, mads-eu.amazon.com
 DOMAIN-SUFFIX, magsrv.com
 DOMAIN-SUFFIX, mapi.m.jd.com
+DOMAIN-SUFFIX, martianinc.co
 DOMAIN-SUFFIX, mazu.m.qq.com
 DOMAIN-SUFFIX, mcs.zijieapi.com
 DOMAIN-SUFFIX, mdt.qq.com
@@ -1666,6 +1676,7 @@ DOMAIN-SUFFIX, munchkin.marketo.net
 DOMAIN-SUFFIX, musicid.samsungcloudsolution.com
 DOMAIN-SUFFIX, mvconf.cloud.360safe.com
 DOMAIN-SUFFIX, my.chinaz.com
+DOMAIN-SUFFIX, nanostatistics.net
 DOMAIN-SUFFIX, nbsdk-baichuan.alicdn.com
 DOMAIN-SUFFIX, nbsdk-baichuan.m.taobao.com
 DOMAIN-SUFFIX, nbsdk-baichuan.taobao.com
@@ -1683,6 +1694,7 @@ DOMAIN-SUFFIX, offerstrack.net
 DOMAIN-SUFFIX, offerwall.yandex.net
 DOMAIN-SUFFIX, ogads-pa.clients6.google.com
 DOMAIN-SUFFIX, ok365.com
+DOMAIN-SUFFIX, okamiboss.com
 DOMAIN-SUFFIX, omtrdc.net
 DOMAIN-SUFFIX, oneid.mmstat.com
 DOMAIN-SUFFIX, onesignal.com
@@ -1873,6 +1885,8 @@ DOMAIN-SUFFIX, tuisong.baidu.com
 DOMAIN-SUFFIX, tuitiger.com
 DOMAIN-SUFFIX, tx-kmpaudio.pull.yximgs.com
 DOMAIN-SUFFIX, ubacollect-drcn.cloud.dbankcloud.cn
+DOMAIN-SUFFIX, ublockdns.com
+DOMAIN-SUFFIX, ublockorigin.com
 DOMAIN-SUFFIX, udc.yahoo.com
 DOMAIN-SUFFIX, udcm.yahoo.com
 DOMAIN-SUFFIX, udiab1.jianshu.com
@@ -1939,7 +1953,6 @@ DOMAIN-WILDCARD, *.ad.*.prod.hosts.ooklaserver.net
 DOMAIN-WILDCARD, ads-*.tiktok.com
 DOMAIN-WILDCARD, ads-*.xhscdn.com
 DOMAIN-WILDCARD, adv0*.msa.cdn.mediaset.net
-DOMAIN-WILDCARD, f-log*.grammarly.io
 DOMAIN-WILDCARD, info.*.aleragroup.com
 DOMAIN-WILDCARD, mon-*.byteoversea.com
 DOMAIN-WILDCARD, v*.thenewstack.io

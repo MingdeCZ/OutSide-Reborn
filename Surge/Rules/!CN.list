@@ -212,7 +212,7 @@ DOMAIN-SUFFIX, yammer.com
 # DOMAIN-SUFFIX, perplexity.ai
 DOMAIN-SUFFIX, clipdrop.co
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：26-2-14）
+# 其它常见海外服务（最后更新：26-3-13）
 # DOMAIN-SUFFIX, dcd.gg
 # DOMAIN-SUFFIX, deepmind.com
 # DOMAIN-SUFFIX, pomf.se
@@ -1162,7 +1162,6 @@ DOMAIN-SUFFIX, tube8.com
 DOMAIN-SUFFIX, tumblr.com
 DOMAIN-SUFFIX, tunein.com
 DOMAIN-SUFFIX, turbobit.net
-DOMAIN-SUFFIX, tv
 DOMAIN-SUFFIX, tw
 DOMAIN-SUFFIX, tweetdeck.com
 DOMAIN-SUFFIX, twimg.co

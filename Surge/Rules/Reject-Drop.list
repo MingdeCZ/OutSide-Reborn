@@ -1,11 +1,15 @@
-# 其它（最后更新：26-2-14）
+# 其它（最后更新：26-3-13）
 DOMAIN, nom.telemetrydeck.com
 DOMAIN, stats.grafana.org
+DOMAIN-SUFFIX, data.grammarly.com
+DOMAIN-SUFFIX, femetrics.grammarly.io
+DOMAIN-SUFFIX, femetrics.qagr.io
 DOMAIN-SUFFIX, in.applicationinsights.azure.com
 DOMAIN-SUFFIX, null
 DOMAIN-SUFFIX, slackb.com
 DOMAIN-SUFFIX, telemetry.mozilla.org
 DOMAIN-SUFFIX, undefined
+DOMAIN-WILDCARD, f-log*.grammarly.io
 # 运营商拦截页面
 IP-ASN, 1012
 IP-ASN, 14651
