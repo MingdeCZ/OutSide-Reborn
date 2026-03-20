@@ -1,6 +1,7 @@
 # 补充/优化
 DOMAIN, ad.flipboard.cn
 DOMAIN, fog.22112211.xyz
+DOMAIN, h-adashx.dingtalkapps.com
 DOMAIN, o33249.ingest.us.sentry.io
 DOMAIN-SUFFIX, 2mdn-cn.net
 DOMAIN-SUFFIX, app-measurement-cn.com
@@ -1204,6 +1205,8 @@ DOMAIN-SUFFIX, 2mdn.net
 DOMAIN-SUFFIX, 365key.com
 DOMAIN-SUFFIX, 3721zh.com
 DOMAIN-SUFFIX, 3lift.com
+DOMAIN-SUFFIX, 4dex.io
+DOMAIN-SUFFIX, 4dex.tech
 DOMAIN-SUFFIX, 4players.de
 DOMAIN-SUFFIX, 51.la
 DOMAIN-SUFFIX, 58mingri.cn
@@ -1352,6 +1355,7 @@ DOMAIN-SUFFIX, atplay.cn
 DOMAIN-SUFFIX, aty.sohu.com
 DOMAIN-SUFFIX, au.ff.avast.com
 DOMAIN-SUFFIX, auction-ads.wpscdn.cn
+DOMAIN-SUFFIX, ay.delivery
 DOMAIN-SUFFIX, baichuan-sdk.taobao.com
 DOMAIN-SUFFIX, baidustatic.com
 DOMAIN-SUFFIX, bayimob.com
@@ -1381,10 +1385,12 @@ DOMAIN-SUFFIX, c.live.com
 DOMAIN-SUFFIX, call.me.sel.sony.com
 DOMAIN-SUFFIX, capterra.com
 DOMAIN-SUFFIX, carpe.pages.dev
+DOMAIN-SUFFIX, casalemedia.com
 DOMAIN-SUFFIX, castarsdk.com
 DOMAIN-SUFFIX, catalog.video.msn.com
 DOMAIN-SUFFIX, ccc-x.jd.com
 DOMAIN-SUFFIX, cdn.pgvt.io
+DOMAIN-SUFFIX, cdn.polarbyte.com
 DOMAIN-SUFFIX, cdn.samsungcloudsolution.net
 DOMAIN-SUFFIX, cdp.postman.com
 DOMAIN-SUFFIX, cert-test.sandbox.google.com
@@ -1738,7 +1744,9 @@ DOMAIN-SUFFIX, promotion-partner.kuaishou.com
 DOMAIN-SUFFIX, prov.samsungcloudsolution.com
 DOMAIN-SUFFIX, pub.network
 DOMAIN-SUFFIX, public.profitwell.com
+DOMAIN-SUFFIX, pubmatic.com
 DOMAIN-SUFFIX, pubnative.net
+DOMAIN-SUFFIX, pulse.perfmetrics.netflix.com
 DOMAIN-SUFFIX, push.mcp.weibo.cn
 DOMAIN-SUFFIX, push.qq.com
 DOMAIN-SUFFIX, pv.com.cn
@@ -1749,6 +1757,7 @@ DOMAIN-SUFFIX, qchannel03.cn
 DOMAIN-SUFFIX, qichexin.com
 DOMAIN-SUFFIX, qinchugudao.com
 DOMAIN-SUFFIX, quanliyouxi.cn
+DOMAIN-SUFFIX, quantserve.com
 DOMAIN-SUFFIX, qutaobi.com
 DOMAIN-SUFFIX, qvb.qcloud.com
 DOMAIN-SUFFIX, qwapi.com
@@ -1764,6 +1773,7 @@ DOMAIN-SUFFIX, report.meituan.com
 DOMAIN-SUFFIX, report.url.cn
 DOMAIN-SUFFIX, retcode.alicdn.com
 DOMAIN-SUFFIX, retcode.taobao.com
+DOMAIN-SUFFIX, rlogs.youdao.com
 DOMAIN-SUFFIX, rptsys.com
 DOMAIN-SUFFIX, rqd.qq.com
 DOMAIN-SUFFIX, rs.mail.ru
@@ -1851,9 +1861,11 @@ DOMAIN-SUFFIX, tce.alicdn.com
 DOMAIN-SUFFIX, tcss.qq.com
 DOMAIN-SUFFIX, tcxshop.com
 DOMAIN-SUFFIX, tdum.alibaba.com
+DOMAIN-SUFFIX, teads.tv
 DOMAIN-SUFFIX, telemetry-coverage.mozilla.org
 DOMAIN-SUFFIX, telemetry.appex.bing.com
 DOMAIN-SUFFIX, telemetry.appex.bing.net
+DOMAIN-SUFFIX, telemetry.canva.com
 DOMAIN-SUFFIX, telemetry.console.api.aws
 DOMAIN-SUFFIX, telemetry.insights.video.a2z.com
 DOMAIN-SUFFIX, telemetry.microsoft.com
