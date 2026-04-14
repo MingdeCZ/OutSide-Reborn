@@ -141,6 +141,7 @@ DOMAIN-SUFFIX, adsappier.com
 DOMAIN-SUFFIX, adscope.cn
 DOMAIN-SUFFIX, adscope.com.cn
 DOMAIN-SUFFIX, adscope.xyz
+DOMAIN-SUFFIX, adshenshi.com
 DOMAIN-SUFFIX, adsmoloco.com
 DOMAIN-SUFFIX, adsrvr.cn
 DOMAIN-SUFFIX, adsrvr.org
@@ -196,6 +197,7 @@ DOMAIN-SUFFIX, installtongji.top
 DOMAIN-SUFFIX, jiguang.cn
 DOMAIN-SUFFIX, jpush.cn
 DOMAIN-SUFFIX, jpush.io
+DOMAIN-SUFFIX, kuaichuanad.com
 DOMAIN-SUFFIX, kuaiyiad.com
 DOMAIN-SUFFIX, l.qq.com
 DOMAIN-SUFFIX, letway.cn
@@ -230,6 +232,7 @@ DOMAIN-SUFFIX, pangle.io
 DOMAIN-SUFFIX, partner.gifshow.com
 DOMAIN-SUFFIX, popadshop.com
 DOMAIN-SUFFIX, puata.info
+DOMAIN-SUFFIX, qidianad.com
 DOMAIN-SUFFIX, ranfenghd.com
 DOMAIN-SUFFIX, rayjump.com
 DOMAIN-SUFFIX, readgps.com
@@ -322,7 +325,7 @@ IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128
 IP-CIDR6, 2402:db40:5100:1011::5/128
 IP-CIDR6, 240e:928:1400:10::25/128
 URL-REGEX, ^http://.+/amdc/mobileDispatch
-# 其它补充（最后更新：26-3-13）
+# 其它补充（最后更新：26-4-14）
 # DOMAIN, adstrategy.biz.weibo.com
 DOMAIN, 1oavsblobprodcus350.blob.core.windows.net
 DOMAIN, 2016.sina.cn
@@ -904,6 +907,7 @@ DOMAIN, quickaplus-server-api-cn-zhangjiakou.aliyuncs.com
 DOMAIN, r.dmp.sina.cn
 DOMAIN, r.dmp.sina.com.cn
 DOMAIN, rc-topic-api.bz.mgtv.com
+DOMAIN, rdstat.tanx.com
 DOMAIN, re.m.taobao.com
 DOMAIN, re.taobao.com
 DOMAIN, recommend-drcn.hms.dbankcloud.cn
@@ -1063,6 +1067,7 @@ DOMAIN, ulog-sdk.gifshow.com
 DOMAIN, ulog.imap.baidu.com
 DOMAIN, ulogjs.gifshow.com
 DOMAIN, umami.diygod.dev
+DOMAIN, umami.intervals.icu
 DOMAIN, umdc.aliapp.org
 DOMAIN, umengacs.m.taobao.com
 DOMAIN, umengjmacs.m.taobao.com
@@ -1214,6 +1219,7 @@ DOMAIN-SUFFIX, 58mingtian.cn
 DOMAIN-SUFFIX, 6d63d3.com
 DOMAIN-SUFFIX, 91veg.com
 DOMAIN-SUFFIX, a.baidu.com
+DOMAIN-SUFFIX, a.ipinfo.io
 DOMAIN-SUFFIX, abtauthprd.samsungcloudsolution.com
 DOMAIN-SUFFIX, acs4baichuan.m.taobao.com
 DOMAIN-SUFFIX, ad-delivery.net
@@ -1263,6 +1269,7 @@ DOMAIN-SUFFIX, adobestats.io
 DOMAIN-SUFFIX, adpro.cn
 DOMAIN-SUFFIX, adpush.cn
 DOMAIN-SUFFIX, adroll.com
+DOMAIN-SUFFIX, ads-api.x.com
 DOMAIN-SUFFIX, ads-pixiv.net
 DOMAIN-SUFFIX, ads-twitter.com
 DOMAIN-SUFFIX, ads.csdn.net
@@ -1309,6 +1316,7 @@ DOMAIN-SUFFIX, aiclean.us.cloud.360safe.com
 DOMAIN-SUFFIX, aiclk.com
 DOMAIN-SUFFIX, airpush.com
 DOMAIN-SUFFIX, akuai.top
+DOMAIN-SUFFIX, alb.reddit.com
 DOMAIN-SUFFIX, alipaylog.com
 DOMAIN-SUFFIX, alitui.weibo.com
 DOMAIN-SUFFIX, allyes.com
@@ -1350,6 +1358,7 @@ DOMAIN-SUFFIX, applvn.com
 DOMAIN-SUFFIX, appmetrica.yandex.net
 DOMAIN-SUFFIX, appsec-mobile.meituan.com
 DOMAIN-SUFFIX, asdk2​.com
+DOMAIN-SUFFIX, assemblyexchange.com
 DOMAIN-SUFFIX, atlas-emui-drcn.hicloud.com
 DOMAIN-SUFFIX, atplay.cn
 DOMAIN-SUFFIX, aty.sohu.com
@@ -1374,6 +1383,7 @@ DOMAIN-SUFFIX, bootcdn.net
 DOMAIN-SUFFIX, bootcss.com
 DOMAIN-SUFFIX, brand.sogou.com
 DOMAIN-SUFFIX, bryonypie.com
+DOMAIN-SUFFIX, btloader.com
 DOMAIN-SUFFIX, bugly.qq.com
 DOMAIN-SUFFIX, bugsnag.com
 DOMAIN-SUFFIX, buysellads.net
@@ -1393,6 +1403,7 @@ DOMAIN-SUFFIX, cdn.pgvt.io
 DOMAIN-SUFFIX, cdn.polarbyte.com
 DOMAIN-SUFFIX, cdn.samsungcloudsolution.net
 DOMAIN-SUFFIX, cdp.postman.com
+DOMAIN-SUFFIX, ced-ns.sascdn.com
 DOMAIN-SUFFIX, cert-test.sandbox.google.com
 DOMAIN-SUFFIX, chat1.jd.com
 DOMAIN-SUFFIX, cj.qidian.com
@@ -1430,6 +1441,7 @@ DOMAIN-SUFFIX, cudaojia.com
 DOMAIN-SUFFIX, cupid.iqiyi.com
 DOMAIN-SUFFIX, customerevents.netflix.com
 DOMAIN-SUFFIX, d.meituan.net
+DOMAIN-SUFFIX, d3c8j8snkzfr1n.cloudfront.net
 DOMAIN-SUFFIX, da.hunantv.com
 DOMAIN-SUFFIX, da.mgtv.com
 DOMAIN-SUFFIX, dafapromo.com
@@ -1479,6 +1491,7 @@ DOMAIN-SUFFIX, e.baidu.com
 DOMAIN-SUFFIX, e.qq.com
 DOMAIN-SUFFIX, earnsdk.io
 DOMAIN-SUFFIX, easytomessage.com
+DOMAIN-SUFFIX, econventa.com
 DOMAIN-SUFFIX, edge.adobedc.net
 DOMAIN-SUFFIX, edm.globalsources.com
 DOMAIN-SUFFIX, effirst.com
@@ -1552,6 +1565,7 @@ DOMAIN-SUFFIX, googlesyndication.com
 DOMAIN-SUFFIX, googletagmanager.com
 DOMAIN-SUFFIX, googletagservices.com
 DOMAIN-SUFFIX, googletraveladservices.com
+DOMAIN-SUFFIX, gop.com
 DOMAIN-SUFFIX, goufanli100.com
 DOMAIN-SUFFIX, gouwubang.com
 DOMAIN-SUFFIX, gozendata.com
@@ -1599,6 +1613,7 @@ DOMAIN-SUFFIX, ijinshan.com
 DOMAIN-SUFFIX, imtmp.net
 DOMAIN-SUFFIX, imtt.qq.com
 DOMAIN-SUFFIX, incoming-telemetry.thunderbird.net
+DOMAIN-SUFFIX, indexww.com
 DOMAIN-SUFFIX, inmobi.com
 DOMAIN-SUFFIX, inte.sogou.com
 DOMAIN-SUFFIX, inte.sogoucdn.com
@@ -1622,6 +1637,7 @@ DOMAIN-SUFFIX, lgtvcommon.com
 DOMAIN-SUFFIX, lianmeng.360.cn
 DOMAIN-SUFFIX, linkhaitao.com
 DOMAIN-SUFFIX, linktech.cn
+DOMAIN-SUFFIX, litix.io
 DOMAIN-SUFFIX, live.126.net
 DOMAIN-SUFFIX, log-report.com
 DOMAIN-SUFFIX, log.aliyuncs.com
@@ -1675,6 +1691,7 @@ DOMAIN-SUFFIX, monitor.azure.com
 DOMAIN-SUFFIX, monorail-edge.shopifysvc.com
 DOMAIN-SUFFIX, mopub.com
 DOMAIN-SUFFIX, mozillafoundation.org
+DOMAIN-SUFFIX, mp.imgur.com
 DOMAIN-SUFFIX, mpro.baidu.com
 DOMAIN-SUFFIX, mpush.qq.com
 DOMAIN-SUFFIX, msads.net
@@ -1756,6 +1773,7 @@ DOMAIN-SUFFIX, push.qq.com
 DOMAIN-SUFFIX, pv.com.cn
 DOMAIN-SUFFIX, px.mountain.com
 DOMAIN-SUFFIX, px.wpk.quark.cn
+DOMAIN-SUFFIX, pxf.io
 DOMAIN-SUFFIX, qchannel01.cn
 DOMAIN-SUFFIX, qchannel02.cn
 DOMAIN-SUFFIX, qchannel03.cn
@@ -1763,6 +1781,7 @@ DOMAIN-SUFFIX, qichexin.com
 DOMAIN-SUFFIX, qinchugudao.com
 DOMAIN-SUFFIX, quanliyouxi.cn
 DOMAIN-SUFFIX, quantserve.com
+DOMAIN-SUFFIX, quicklyedit.com
 DOMAIN-SUFFIX, qutaobi.com
 DOMAIN-SUFFIX, qvb.qcloud.com
 DOMAIN-SUFFIX, qwapi.com
@@ -1780,6 +1799,7 @@ DOMAIN-SUFFIX, retcode.alicdn.com
 DOMAIN-SUFFIX, retcode.taobao.com
 DOMAIN-SUFFIX, rlcdn.com
 DOMAIN-SUFFIX, rlogs.youdao.com
+DOMAIN-SUFFIX, rp.hpplay.cn
 DOMAIN-SUFFIX, rptsys.com
 DOMAIN-SUFFIX, rqd.qq.com
 DOMAIN-SUFFIX, rs.mail.ru
@@ -1794,6 +1814,7 @@ DOMAIN-SUFFIX, samsungads.com
 DOMAIN-SUFFIX, samsungelectronics.com
 DOMAIN-SUFFIX, samsungtvads.com
 DOMAIN-SUFFIX, sas.samsungcloudsolution.com
+DOMAIN-SUFFIX, sc-static.net
 DOMAIN-SUFFIX, sca.samsung.com
 DOMAIN-SUFFIX, scorecardresearch.com
 DOMAIN-SUFFIX, sdk.look.360.cn
@@ -1808,6 +1829,7 @@ DOMAIN-SUFFIX, segment.io
 DOMAIN-SUFFIX, sensors-log.dongqiudi.com
 DOMAIN-SUFFIX, sensors.ibreader.com
 DOMAIN-SUFFIX, sensorsdata.cn
+DOMAIN-SUFFIX, sephora.com
 DOMAIN-SUFFIX, servicesupport.hicloud.com
 DOMAIN-SUFFIX, serving-sys.com
 DOMAIN-SUFFIX, sestat.baidu.com
@@ -1830,6 +1852,7 @@ DOMAIN-SUFFIX, siteintercept.qualtrics.com
 DOMAIN-SUFFIX, sitemaji.com
 DOMAIN-SUFFIX, skdisplay.jd.com
 DOMAIN-SUFFIX, skullmagnets.com
+DOMAIN-SUFFIX, smallstep.org
 DOMAIN-SUFFIX, smartadserver.com
 DOMAIN-SUFFIX, smartshare.lgtvsdp.com
 DOMAIN-SUFFIX, snapads.com
@@ -1854,6 +1877,7 @@ DOMAIN-SUFFIX, stats.paypal.com
 DOMAIN-SUFFIX, stats.yinyuetai.com
 DOMAIN-SUFFIX, streamback.ff.avast.com
 DOMAIN-SUFFIX, strongmetrics.io
+DOMAIN-SUFFIX, substack.com
 DOMAIN-SUFFIX, supersonic.com
 DOMAIN-SUFFIX, syncplusconfig.s3.amazonaws.com
 DOMAIN-SUFFIX, t-dsp.pinduoduo.com
@@ -1886,6 +1910,7 @@ DOMAIN-SUFFIX, testplus.cn
 DOMAIN-SUFFIX, th.pinduoduo.com
 DOMAIN-SUFFIX, tiqcdn.cn
 DOMAIN-SUFFIX, tiqcdn.com
+DOMAIN-SUFFIX, tiscali.it
 DOMAIN-SUFFIX, tjqonline.cn
 DOMAIN-SUFFIX, tongji.baidu.com
 DOMAIN-SUFFIX, toolbar.baidu.co
@@ -1923,6 +1948,7 @@ DOMAIN-SUFFIX, update.360safe.com
 DOMAIN-SUFFIX, uranus.jd.com
 DOMAIN-SUFFIX, uranus.sogou.com
 DOMAIN-SUFFIX, utk.baidu.com
+DOMAIN-SUFFIX, v.ipinfo.io
 DOMAIN-SUFFIX, vd.contents.prod.eu.s3.amazonaws.com
 DOMAIN-SUFFIX, vd.emp.prd.s3.amazonaws.com
 DOMAIN-SUFFIX, vdterms.samsungcloudsolution.com

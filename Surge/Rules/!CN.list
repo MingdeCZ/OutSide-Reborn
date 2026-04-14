@@ -73,28 +73,48 @@ DOMAIN-SUFFIX, wins.cool
 DOMAIN-SUFFIX, zenlayer.net
 # 待分配 IP 查询
 # DOMAIN-SUFFIX, ip.sb
+# DOMAIN-SUFFIX, ip234.in
+# DOMAIN-SUFFIX, ipapi.is
 # DOMAIN-SUFFIX, ipwho.is
+DOMAIN-SUFFIX, abuseipdb.com
 DOMAIN-SUFFIX, db-ip.com
+DOMAIN-SUFFIX, freeipapi.com
 DOMAIN-SUFFIX, ip-api.com
 DOMAIN-SUFFIX, ip-score.com
 DOMAIN-SUFFIX, ip.im
+DOMAIN-SUFFIX, ip.sy
+DOMAIN-SUFFIX, ip.zerosla.net
 DOMAIN-SUFFIX, ip125.com
 DOMAIN-SUFFIX, ip233.cn
 DOMAIN-SUFFIX, ip2location.com
 DOMAIN-SUFFIX, ipaddress.com
+DOMAIN-SUFFIX, ipapi.co
+DOMAIN-SUFFIX, ipbase.com
+DOMAIN-SUFFIX, ipcheck.ing
 DOMAIN-SUFFIX, ipdata.co
 DOMAIN-SUFFIX, ipgeolocation.io
 DOMAIN-SUFFIX, ipify.org
+DOMAIN-SUFFIX, ipinfo.cv
 DOMAIN-SUFFIX, ipinfo.io
+DOMAIN-SUFFIX, ipip.la
+DOMAIN-SUFFIX, ipipseek.com
 DOMAIN-SUFFIX, ipjiance.com
 DOMAIN-SUFFIX, iplark.com
+DOMAIN-SUFFIX, iplocate.io
 DOMAIN-SUFFIX, iplocation.net
+DOMAIN-SUFFIX, ipmap.io
 DOMAIN-SUFFIX, ippure.com
+DOMAIN-SUFFIX, ipqualityscore.com
+DOMAIN-SUFFIX, ipquery.io
 DOMAIN-SUFFIX, ipregistry.co
 DOMAIN-SUFFIX, ipstack.com
 DOMAIN-SUFFIX, ipyard.com
 DOMAIN-SUFFIX, ping0.cc
+DOMAIN-SUFFIX, ping0.co
+DOMAIN-SUFFIX, pingip.cn
+DOMAIN-SUFFIX, pubipa.com
 DOMAIN-SUFFIX, scamalytics.com
+DOMAIN-SUFFIX, xmsl.dev
 # 苹果
 # DOMAIN-SUFFIX, appsto.re
 DOMAIN-SUFFIX, aaplimg.com
@@ -213,7 +233,7 @@ DOMAIN-SUFFIX, yammer.com
 # DOMAIN-SUFFIX, perplexity.ai
 DOMAIN-SUFFIX, clipdrop.co
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：26-3-13）
+# 其它常见海外服务（最后更新：26-4-14）
 # DOMAIN-SUFFIX, dcd.gg
 # DOMAIN-SUFFIX, deepmind.com
 # DOMAIN-SUFFIX, pomf.se
@@ -569,6 +589,7 @@ DOMAIN-SUFFIX, g.co
 DOMAIN-SUFFIX, g2.com
 DOMAIN-SUFFIX, gameflare.com
 DOMAIN-SUFFIX, gameloft.com
+DOMAIN-SUFFIX, garmin.com
 DOMAIN-SUFFIX, gartner.com
 DOMAIN-SUFFIX, gate.io
 DOMAIN-SUFFIX, gcld-line.com
@@ -705,6 +726,7 @@ DOMAIN-SUFFIX, instatus.com
 DOMAIN-SUFFIX, intel.com
 DOMAIN-SUFFIX, intercom.io
 DOMAIN-SUFFIX, internet.org
+DOMAIN-SUFFIX, intervals.icu
 DOMAIN-SUFFIX, intodns.com
 DOMAIN-SUFFIX, ip-scan.adspower.net
 DOMAIN-SUFFIX, ipleak.net
@@ -787,6 +809,7 @@ DOMAIN-SUFFIX, macaddress.io
 DOMAIN-SUFFIX, macpaw.com
 DOMAIN-SUFFIX, macupdate.com
 DOMAIN-SUFFIX, madewithcode.com
+DOMAIN-SUFFIX, magic.link
 DOMAIN-SUFFIX, mailchimp.com
 DOMAIN-SUFFIX, majsoul.union-game.com
 DOMAIN-SUFFIX, makerworld.com

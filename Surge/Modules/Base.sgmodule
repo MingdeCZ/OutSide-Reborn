@@ -3,16 +3,14 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.3
-#!date = 26.2.19
+#!version = 1.0.4
+#!date = 26.4.14
 #!category = N合1
 
 [Host]
 # RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bilibili.conf = server:https://doh.pub/dns-query
 # RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/xiaomi.conf = server:https://doh.pub/dns-query
 *.local = server:null
-127.0.0.1.sslip.io = 127.0.0.1
-127.atlas.skk.moe = 127.0.0.1
 dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1
 doh.360.cn = server:101.198.198.198
 doh.pub = server:119.29.29.29
@@ -55,7 +53,7 @@ download-url = https://mensura.cdn-apple.com/api/v1/gm/large
 upload-url = https://mensura.cdn-apple.com/api/v1/gm/slurp
 
 [MITM]
-hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google.cn, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, web.meituan.com, api.szbgcx.cn, ccmsupport-sz.tenpay.com, mp.weixin.qq.com, cbd-gateway-service-applets.hualala.com, orders.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, capi.lkcoffee.com, newton.gumingnc.com, miniapp.sexytea2013.com, m.dianping.com, mapi.dianping.com, mapi.ghsmpwalmart.com, wx.17u.cn, npay.meituan.com, apimobile.meituan.com, api.m.jd.com, rms.meituan.com, img0*.luckincoffeecdn.com, tm-api.pin-dao.cn, cappapi.alittle-tea.com, szextshort.weixin.qq.com
+hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google.cn, mp.weixin.qq.com, szextshort.weixin.qq.com, www.google.com
 
 [URL Rewrite]
 # 🍟 整点薯条：🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
@@ -140,134 +138,9 @@ hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google
 # 谷歌送中重定向（将谷歌搜索中国重定向至 .com 域名）www.google.cn
 ^https?://(www.)?(g|google)\.cn https://www.google.com 307
 
-# 微信
-# 去广告 mp.weixin.qq.com
+# 微信去广告 mp.weixin.qq.com, szextshort.weixin.qq.com
 ^https://mp\.weixin\.qq\.com/mp/(advertisement_report|ad_complaint|ad_video|cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle|relatedsearchword|report) - reject
 ^https?://szextshort\.weixin\.qq\.com/cgi-bin/mmoc-bin/ad - reject
-# 小程序净化 xyst.yuanfudao.com, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, web.meituan.com, api.szbgcx.cn, ccmsupport-sz.tenpay.com, mp.weixin.qq.com, cbd-gateway-service-applets.hualala.com, daijia.kuaidadi.com, orders.kfc.com.cn, res.kfc.com.cn, api.mcd.cn, wx.maoyan.com, vod-movie.maoyan.com, api.maoyan.com, capi.lkcoffee.com, newton.gumingnc.com, miniapp.sexytea2013.com, m.dianping.com, mapi.dianping.com, mapi.ghsmpwalmart.com, wx.17u.cn, npay.meituan.com, apimobile.meituan.com, api.m.jd.com, rms.meituan.com, img0*.luckincoffeecdn.com, tm-api.pin-dao.cn, cappapi.alittle-tea.com
-# 收钱吧 @可莉🅥
-^https:\/\/api\.szbgcx\.cn\/account\/adv\/ - reject
-# 腾讯乘车码
-^https?:\/\/ccmsupport-sz\.tenpay\.com\/cgi-bin\/common\/ccm_page_element.cgi - reject
-# 霸王茶姬
-^https?://(?>webapi|miniapp)\.qmai\.cn/web/cmk-center/marketing/canvas/advert - reject
-
-[Map Local]
-# 微信小程序净化
-# 茶百道
-^https?:\/\/cbd-gateway-service-applets\.hualala\.com\/arch\/api\/banner\/QueryBannerImgList data-type=text data="{}" status-code=200
-# 肯德基
-^https://orders\.kfc\.com\.cn/preorder-portal/api/v2/(coupon|activity) data-type=text data="{}" status-code=200
-#^https?://dynamicad\.kfc\.com\.cn/api data-type=text data="{}" status-code=200
-^https?://res\.kfc\.com\.cn/CRM/kfcad/custom_v\d/wxapp data-type=text data="{}" status-code=200
-# 麦当劳
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/home\/hotActivity data-type=text data="{}" status-code=200
-^https?:\/\/api\.mcd\.cn\/bff\/portal\/richpop data-type=text data="{}" status-code=200
-# 蜜雪冰城
-#^https?:\/\/mxsa\.mxbc\.net\/api\/v\d\/adinfo\/adplace\/query data-type=text data="{}" status-code=200
-# 猫眼
-# 弹窗 + 横幅广告
-#^https:\/\/ad\.maoyan\.com\/api\/position\/detail data-type=text data="{}" status-code=200
-# 电竞 + 热门赛事
-^https?:\/\/wx\.maoyan\.com\/maoyansh\/api\/mobile\/(hotMatchList|eSportsIps) data-type=text data="{}" status-code=200
-# 放映厅
-^https?:\/\/vod-movie\.maoyan\.com\/vod\/video\/onlineMovies\.json data-type=text data="{}" status-code=200
-# 精彩演出
-^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/movie\/wonderShow data-type=text data="{}" status-code=200
-# 七日精选
-^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/calendar\/0 data-type=text data="{}" status-code=200
-# 今日必抢
-^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/performances\/rob\/main data-type=text data="{}" status-code=200
-# 大咖新动态
-^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/celebrityBasicList\/query data-type=text data="{}" status-code=200
-# 为你推荐
-^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/recommend\/performances data-type=text data="{}" status-code=200
-# 首页底部推荐
-^https?:\/\/api\.maoyan\.com\/sns\/common\/feed\/channel\/v\d\/list\.json data-type=text data="{}" status-code=200
-# 演出页面全部拦截
-^https?:\/\/wx\.maoyan\.com\/maoyansh\/myshow\/ajax\/ad\/detail data-type=text data="{}" status-code=200
-# 瑞幸咖啡
-^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/order\/orderBanner data-type=text data="{}" status-code=200
-^https?:\/\/capi\.lkcoffee\.com\/resource\/market\/receiveCoupon\/receiveCouponPop data-type=text data="{}" status-code=200
-# 顺丰速运+
-^https?:\/\/ucmp\.sf-express\.com\/proxy\/operation-platform\/info-flow-adver\/query data-type=text data="{}" status-code=200
-^https:\/\/ucmp\.sf-express\.com\/proxy\/esgcempcore\/memberGoods\/pointMallService\/goodsList$ data-type=text data="{}" status-code=200
-# 古茗茶饮点单 newton.gumingnc.com
-^https?:\/\/newton\.gumingnc\.com\/newton-buyer\/newton\/buyer\/(ump|touch|external\/front) data-type=text data="{}" status-code=200
-# 通用规则
-^https?:\/\/mp\.weixin\.qq\.com\/wapad\/getaddata\?action=getad data-type=text data="" status-code=200
-^https?:\/\/mp\.weixin\.qq\.com\/wapad\/reportaddata\?action=exposure_report data-type=text data="" status-code=200
-# 茶颜悦色 miniapp.sexytea2013.com
-^https?:\/\/miniapp\.sexytea2013\.com\/cms\/slot\/byCode\?code=MALL_INDEX_SLOT data-type=text data="{}" status-code=200
-# 大众点评 m.dianping.com, mapi.dianping.com
-^https?:\/\/m\.dianping\.com\/an\/gear\/dpmapp\/api\/readLionConfig\/config data-type=text data="{}" status-code=200
-^https?:\/\/m\.dianping\.com\/mapi\/mgw\/growth\/queryhaima data-type=text data="{}" status-code=200
-^https?:\/\/m\.dianping\.com\/wxmapi\/shop\/friendslike data-type=text data="{}" status-code=200
-^https?:\/\/mapi\.dianping\.com\/mapi\/mgw\/growth\/clipboardquery data-type=text data="{}" status-code=200
-# 沃尔玛 mapi.ghsmpwalmart.com
-# 首页角标
-^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/navigation\/page\/getPageActivityTab data-type=text data="{}" status-code=200
-# 首页弹窗
-^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/navigation\/spread\/querySpreadList data-type=text data="{}" status-code=200
-# 我的页横幅
-^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/navigation\/user\/getAdvertisementPlayModuleInfo data-type=text data="{}" status-code=200
-# 我的页省钱卡
-^https?:\/\/mapi\.ghsmpwalmart\.com\/api\d\/ec\/user\/couponPackage\/couponPackageAccess data-type=text data="{}" status-code=200
-# 瑞幸咖啡
-^https?:\/\/img0[1-9]{1}\.luckincoffeecdn\.com\/group\d/M00/[A-Z0-9]{2}/[A-Z0-9]{2}/[a-zA-Z0-9]{29}\.(jpg|jpeg)_\.webp data-type=text data="" status-code=200
-# 奈雪 tm-api.pin-dao.cn
-^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/index\/activeConfig\/v2 data-type=text data="{}" status-code=200
-^https:\/\/tm-api\.pin-dao\.cn\/home\/api\/resource\/config\/homeBannerNodes data-type=text data="{}" status-code=200
-# 一点点 cappapi.alittle-tea.com, alittle-tea.oss-cn-shanghai.aliyuncs.com
-#^https:\/\/alittle-tea\.oss-cn-shanghai\.aliyuncs\.com\/images\/platform\/alittle data-type=text data="{}" status-code=200
-
-# 同程旅行
-^https:\/\/wx\.17u\.cn\/xcxhomeapi\/aggregator\/index data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/blankflight data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/membermessageuserapi\/message\/list data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/messageBox data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/membermessageuserapi\/category\/getCategory data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/homemarketapi\/search\/recommend data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/mytourapi\/blankpage\/recommendList data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator\/index data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/wxocbdapi\/adService\/getAd data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/homemarketapi\/aggregator\/index data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/orderRemind data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/icons data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberShow data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/xcxhomeapi\/home\/converge data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/platformpubapi\/customer\/lead\/getInfo data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/mytourapi\/mytrip\/toptips data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/vacation\/webapp\/tailor\/miniHomeConfig data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/mytourapi\/recommendation\/arriveCity data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/wechatmypubapi\/myInfo\/memberInfo data-type=text data="{}" status-code=200
-^https:\/\/wx\.17u\.cn\/wireless\/monitor\/wx\/common\/compressevent data-type=text data="{}" status-code=200
-^https:\/\/a1d5b283e-wx621112590b635086\.sh\.wxgateway\.com\/xcxhomeapi\/home\/screen data-type=text data="{}" status-code=200
-# 美团
-^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/novelZone data-type=text data="{}" status-code=200
-^https:\/\/web\.meituan\.com\/api\/miniprogram\/my\/resources data-type=text data="{}" status-code=200
-^https:\/\/npay\.meituan\.com\/conch\/flow\/mypage-wallet-info data-type=text data="{}" status-code=200
-^https:\/\/web\.meituan\.com\/newUser\/returnMoney\/popWindow data-type=text data="{}" status-code=200
-^https:\/\/npay\.meituan\.com\/conch\/walletv3\/wechat-pop-window data-type=text data="{}" status-code=200
-^https:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword data-type=text data="{}" status-code=200
-# 京东
-^https:\/\/api\.m\.jd\.com\/\?loginType=11 data-type=text data="{}" status-code=200
-
-[Body Rewrite]
-# 微信小程序净化
-# 瑞幸咖啡
-http-response ^https?:\/\/capi\.lkcoffee\.com\/resource\/m\/(sys\/app\/adposNew|eorder\/product\/popAppTagProductList) \{.+\} '{ "status": "SUCCESS" }'
-# 美团
-http-response-jq ^https://web\.meituan\.com/api/miniprogram/(tabbar/all/query|index/aggregate) '. as $in | if ($in.data | type) == "array" then .data |= map(select(.name? | IN("首页","神券","我的"))) elif ($in.data | type) == "object" then .data |= del(.oneCentBuy) else . end'
-# 美团点餐
-http-response-jq ^https:\/\/rms\.meituan\.com\/api\/v1\/rmsmina\/c\/queryShopPortalInfo\? 'del(.data.popUpWindows)'
-# 霸王茶姬
-http-response-jq ^https?://(?>webapi|miniapp)\.qmai\.cn/web/catering([0-9]-apiserver)?/advertising/ad/advertiseInfo 'if (.data | type) == "array" and (.data | length > 0) then .data |= map( .detailInfo.popDayLimit = 0 | .detailInfo.adType = 4 | .detailInfo.closeButtonLocation = 0 | .detailInfo.skipButtonLocation = 0 | .detailInfo.adLandingInfoList = [{ id: "", imgSource: null, landingPageModel: "", landingPageLink: null, landingPageType: null, landingGroup: null, styleType: null, orderIndex: 1, landingPageText: null, landingPageImg: "", landingPageName: "", messageModel: null }] ) else . end'
-# 茶颜悦色
-http-response-jq ^https?://miniapp\.sexytea2013\.com/cms/slot/queryByCodes\?codes=INDEX_TOP_BANNER 'del(.data.INDEX_SLOT_01, .data.INDEX_SLOT_02) | .data.INDEX_TOP_BANNER.contents |= map(del(.bubble, .figure))'
-
-# 一点点
-http-response-jq ^https:\/\/cappapi\.alittle-tea\.com\/open\?method=catering\.set\.ad 'del(.data)'
 
 [Rule]
 # 规则修正

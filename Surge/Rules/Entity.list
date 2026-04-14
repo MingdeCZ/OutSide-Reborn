@@ -1,4 +1,4 @@
-# 最后更新：26-1-18
+# 最后更新：26-4-14
 # OpenAI
 # DOMAIN-SUFFIX, oaistatic.com
 # DOMAIN-SUFFIX, oaiusercontent.com
@@ -31,7 +31,6 @@ DOMAIN, daily-cloudcode-pa.googleapis.com
 DOMAIN, jules.google.com
 DOMAIN, robinfrontend-pa.googleapis.com
 DOMAIN, waa-pa.clients6.google.com
-DOMAIN, www.google.com
 DOMAIN-SUFFIX, aistudio.google.com
 DOMAIN-SUFFIX, apis.google.com
 DOMAIN-SUFFIX, bard.google.com
@@ -48,6 +47,7 @@ DOMAIN-SUFFIX, makersuite.google.com
 DOMAIN-SUFFIX, notebooklm.google
 DOMAIN-SUFFIX, notebooklm.google.com
 DOMAIN-SUFFIX, proactivebackend-pa.googleapis.com
+URL-REGEX, https://www\.google\.com/.*continue=https://gemini\.google\.com.+
 
 # 苹果
 # 智能

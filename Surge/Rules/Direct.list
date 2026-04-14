@@ -926,7 +926,7 @@ DOMAIN-SUFFIX, zuimeitianqi.com
 USER-AGENT, "%E4%BC%98%E9%85%B7*"
 USER-AGENT, "%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*"
 USER-AGENT, "TeslaMap"
-# 软件更新、操作系统等大文件下载（最后更新：26-3-13）
+# 软件更新、操作系统等大文件下载（最后更新：26-4-14）
 # DOMAIN, archive.mirror.rafal.ca
 # DOMAIN, dl.nssurge.com
 # DOMAIN, ftp.at.debian.org
@@ -1296,6 +1296,7 @@ DOMAIN, downloads.cursor.com
 DOMAIN, downloads.lemonsqueezy.com
 DOMAIN, downloads.majestic.com
 DOMAIN, downloads.openwrt.org
+DOMAIN, downloads.portainer.io
 DOMAIN, downloads.raspberrypi.com
 DOMAIN, downloads.slack-edge.com
 DOMAIN, downloads.sourceforge.net
@@ -2053,10 +2054,10 @@ DOMAIN, npm.im
 DOMAIN, npm.jsr.io
 DOMAIN, officecdn-microsoft-com.akamaized.net
 DOMAIN, officecdnmac.microsoft.com
+DOMAIN, omtmapupdate.garmin.com
 DOMAIN, onepluscommunityserver.com
 DOMAIN, opensource.nchc.org.tw
 DOMAIN, opensource.xtdv.net
-DOMAIN, openvsx.eclipsecontent.org
 DOMAIN, opfiles.b-cdn.net
 DOMAIN, os-cdn.virtfusion.net
 DOMAIN, osl.ugr.es
@@ -2258,6 +2259,7 @@ DOMAIN, vesta.informatik.rwth-aachen.de
 DOMAIN, vfat.classicreload.com
 DOMAIN, vn-mirrors.techhost.vn
 DOMAIN, vn-mirrors.vhost.vn
+DOMAIN, worldwide.omtmapupdate.garmin.com
 DOMAIN, www-ftp.lip6.fr
 DOMAIN, www.artfiles.org
 DOMAIN, www.club.cc.cmu.edu

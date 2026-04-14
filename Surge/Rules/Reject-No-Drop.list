@@ -1,7 +1,7 @@
 # 防止 TG 加载转圈
 IP-CIDR, 95.161.76.100/31
 
-# 阻止 YouTube 和 Bilibili 的视频 CDN 的 QUIC（最后更新：26-2-14）
+# 阻止 YouTube 和 Bilibili 的视频 CDN 的 QUIC（最后更新：26-4-14）
 AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, googlevideo.com))
 DOMAIN, livewebbs2pcdn.msstatic.com
 DOMAIN, qn-cdnfile1pcdn.msstatic.com
@@ -15,6 +15,7 @@ DOMAIN-SUFFIX, gjfzpt.cn
 DOMAIN-SUFFIX, ietheivaicai.com
 DOMAIN-SUFFIX, kuiniuca.com
 DOMAIN-SUFFIX, mcdn.bilivideo.cn
+DOMAIN-SUFFIX, mountaintoys.cn
 DOMAIN-SUFFIX, nexusedgeio.com
 DOMAIN-SUFFIX, onethingpcs.com
 DOMAIN-SUFFIX, p2cdn.com
