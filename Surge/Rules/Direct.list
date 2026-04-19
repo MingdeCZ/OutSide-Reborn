@@ -2454,7 +2454,6 @@ DOMAIN-SUFFIX, ports.ubuntu.com
 DOMAIN-SUFFIX, public.blob.vercel-storage.com
 DOMAIN-SUFFIX, public.ecr.aws
 DOMAIN-SUFFIX, pypi.org
-DOMAIN-SUFFIX, pythonhosted.org
 DOMAIN-SUFFIX, r2.dev
 DOMAIN-SUFFIX, releases.hashicorp.com
 DOMAIN-SUFFIX, repo.anaconda.com
