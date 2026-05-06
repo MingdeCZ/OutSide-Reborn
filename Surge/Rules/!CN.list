@@ -26,10 +26,12 @@ DOMAIN-SUFFIX, duo.com
 DOMAIN-SUFFIX, fast.com
 DOMAIN-SUFFIX, findcheapsubs.com
 DOMAIN-SUFFIX, foobar2000.org
+DOMAIN-SUFFIX, forter.com
 DOMAIN-SUFFIX, gcorelabs.com
 DOMAIN-SUFFIX, geekuninstaller.com
 DOMAIN-SUFFIX, geotrust.com
 DOMAIN-SUFFIX, getnoir.app
+DOMAIN-SUFFIX, ghost.io
 DOMAIN-SUFFIX, gitfox.app
 DOMAIN-SUFFIX, gradle.org
 DOMAIN-SUFFIX, hcaptcha.com
@@ -40,6 +42,7 @@ DOMAIN-SUFFIX, lencr.org
 DOMAIN-SUFFIX, link.com
 DOMAIN-SUFFIX, linode.com
 DOMAIN-SUFFIX, marscode.com
+DOMAIN-SUFFIX, maxmind.com
 DOMAIN-SUFFIX, mesl.cloud
 DOMAIN-SUFFIX, mhyidc.com
 DOMAIN-SUFFIX, nodejs.org
@@ -49,6 +52,7 @@ DOMAIN-SUFFIX, officetoolplus.net
 DOMAIN-SUFFIX, omdbapi.com
 DOMAIN-SUFFIX, onetrust.com
 DOMAIN-SUFFIX, onetrust.io
+DOMAIN-SUFFIX, oyunfor.com
 DOMAIN-SUFFIX, paddle.com
 DOMAIN-SUFFIX, parallels.com
 DOMAIN-SUFFIX, perfops.io
@@ -64,16 +68,20 @@ DOMAIN-SUFFIX, ssl.com
 DOMAIN-SUFFIX, steampowered.com
 DOMAIN-SUFFIX, swiftgram.app
 DOMAIN-SUFFIX, tampermonkey.net
+DOMAIN-SUFFIX, turdigital.com
+DOMAIN-SUFFIX, turgame.com
 DOMAIN-SUFFIX, vcc.agency
 DOMAIN-SUFFIX, vmiss.com
 DOMAIN-SUFFIX, wedata.net
 DOMAIN-SUFFIX, wikimedia.org
 DOMAIN-SUFFIX, wikipedia.org
 DOMAIN-SUFFIX, wins.cool
+DOMAIN-SUFFIX, yummy.best
 DOMAIN-SUFFIX, zenlayer.net
 # 待分配 IP 查询
 # DOMAIN-SUFFIX, ip.sb
 # DOMAIN-SUFFIX, ip234.in
+# DOMAIN-SUFFIX, ipaddress.my
 # DOMAIN-SUFFIX, ipapi.is
 # DOMAIN-SUFFIX, ipwho.is
 DOMAIN-SUFFIX, abuseipdb.com
@@ -82,6 +90,7 @@ DOMAIN-SUFFIX, freeipapi.com
 DOMAIN-SUFFIX, ip-api.com
 DOMAIN-SUFFIX, ip-score.com
 DOMAIN-SUFFIX, ip.im
+DOMAIN-SUFFIX, ip.me
 DOMAIN-SUFFIX, ip.sy
 DOMAIN-SUFFIX, ip.zerosla.net
 DOMAIN-SUFFIX, ip125.com

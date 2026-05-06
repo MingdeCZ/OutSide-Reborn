@@ -4,10 +4,13 @@
 DOMAIN, addins.deepl.com
 DOMAIN, appdownload.deepl.com
 DOMAIN, archive.raspberrypi.com
+DOMAIN, assets.oyunfor.com
 DOMAIN, boot.arcboxcdn.com
 DOMAIN, cdimage.ubuntu.com
+DOMAIN, cdn-eu.oyunfor.com
 DOMAIN, cdn.electronic.us
 DOMAIN, cdn.evolution-x.org
+DOMAIN, cdn.oyunfor.com
 DOMAIN, cloudflare.f-droid.org
 DOMAIN, codeload.github.com
 DOMAIN, cr.yandex
@@ -95,6 +98,7 @@ DOMAIN-SUFFIX, unpkg.com
 DOMAIN-SUFFIX, webtype.com
 DOMAIN-SUFFIX, xxblapingpong.cc
 DOMAIN-SUFFIX, youxiaohou.com
+DOMAIN-WILDCARD, cdn*.forter.com
 IP-CIDR, 162.208.16.0/24
 IP-CIDR, 185.206.24.0/22
 IP-CIDR, 66.203.126.0/23
