@@ -74,6 +74,7 @@ DOMAIN, httpdns.music.163.com
 DOMAIN, httpdns.n.netease.com
 DOMAIN, httpdns.volcengineapi.com
 DOMAIN, httpdns.yunxindns.com
+DOMAIN, httpdns.yunxinfw.com
 DOMAIN, httpdnsvip.meituan.com
 DOMAIN, httpsdns.baidu.com
 DOMAIN, huatuocode.huatuo.qq.com
@@ -326,7 +327,7 @@ IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a/128
 IP-CIDR6, 2402:db40:5100:1011::5/128
 IP-CIDR6, 240e:928:1400:10::25/128
 URL-REGEX, ^http://.+/amdc/mobileDispatch
-# 其它补充（最后更新：26-4-14）
+# 其它补充（最后更新：26-5-13）
 # DOMAIN, adstrategy.biz.weibo.com
 DOMAIN, 1oavsblobprodcus350.blob.core.windows.net
 DOMAIN, 2016.sina.cn
@@ -334,7 +335,6 @@ DOMAIN, 37bvsblobprodcus311.blob.core.windows.net
 DOMAIN, 9ibbcq2d.sina.cn
 DOMAIN, a.alimama.cn
 DOMAIN, a.imput.net
-DOMAIN, a.macked.app
 DOMAIN, a.youdao.com
 DOMAIN, abtest.alibaba.com
 DOMAIN, ac.dun.163.com
@@ -601,7 +601,6 @@ DOMAIN, d7.sinaimg.cn
 DOMAIN, d8.sina.com.cn
 DOMAIN, d8.sinaimg.cn
 DOMAIN, d9.sina.com.cn
-DOMAIN, dataflow.biliapi.com
 DOMAIN, datain.longfor.com
 DOMAIN, datareport.fkw.com
 DOMAIN, datum.jsdelivr.com
@@ -646,7 +645,6 @@ DOMAIN, ecmc.bdimg.com
 DOMAIN, eco.taobao.com
 DOMAIN, edgecast-vod.yahoo.net
 DOMAIN, ef-dongfeng.tanx.com
-DOMAIN, ems.cp12.wasu.tv
 DOMAIN, encounter.bz.mgtv.com
 DOMAIN, err.taobao.com
 DOMAIN, event.syftdata.com
@@ -662,7 +660,6 @@ DOMAIN, feedback.windows.com
 DOMAIN, feedbackws.icloud.com
 DOMAIN, file.daihuo.qq.com
 DOMAIN, floor.bz.mgtv.com
-DOMAIN, fm.p0y.cn
 DOMAIN, fms.ipinyou.com
 DOMAIN, foundation.mozilla.org
 DOMAIN, fourier.taobao.com
@@ -754,7 +751,6 @@ DOMAIN, inst.360safe.com
 DOMAIN, interest.mix.sina.com.cn
 DOMAIN, ipmatm.cp12.wasu.tv
 DOMAIN, ivy.pchouse.com.cn
-DOMAIN, iyes.youku.com
 DOMAIN, jpush.html5.qq.com
 DOMAIN, jqmt.qq.com
 DOMAIN, jrad.jd.com
@@ -1076,6 +1072,7 @@ DOMAIN, umengacs.m.taobao.com
 DOMAIN, umengjmacs.m.taobao.com
 DOMAIN, unidesk.alicdn.com
 DOMAIN, union.gdtimg.com
+DOMAIN, up.zpic.biz
 DOMAIN, user.ground.news
 DOMAIN, userimg.qunar.com
 DOMAIN, userlocation.googleapis.com
@@ -1413,6 +1410,7 @@ DOMAIN-SUFFIX, cdp.postman.com
 DOMAIN-SUFFIX, ced-ns.sascdn.com
 DOMAIN-SUFFIX, cert-test.sandbox.google.com
 DOMAIN-SUFFIX, chat1.jd.com
+DOMAIN-SUFFIX, checkmarx.cx
 DOMAIN-SUFFIX, cj.qidian.com
 DOMAIN-SUFFIX, clarity.ms
 DOMAIN-SUFFIX, classify-client.services.mozilla.com
@@ -1449,6 +1447,7 @@ DOMAIN-SUFFIX, cudaojia.com
 DOMAIN-SUFFIX, cupid.iqiyi.com
 DOMAIN-SUFFIX, customerevents.netflix.com
 DOMAIN-SUFFIX, d.meituan.net
+DOMAIN-SUFFIX, d2wy8f7a9ursnm.cloudfront.net
 DOMAIN-SUFFIX, d3c8j8snkzfr1n.cloudfront.net
 DOMAIN-SUFFIX, da.hunantv.com
 DOMAIN-SUFFIX, da.mgtv.com
@@ -1473,6 +1472,7 @@ DOMAIN-SUFFIX, devicemessaging.us-east-1.amazon.com
 DOMAIN-SUFFIX, dftoutiao.com
 DOMAIN-SUFFIX, dingwei.netease.com
 DOMAIN-SUFFIX, disqusads.com
+DOMAIN-SUFFIX, distillery.wistia.com
 DOMAIN-SUFFIX, dnkeeper.dbankcloud.com
 DOMAIN-SUFFIX, dnkeeper.hicloud.com
 DOMAIN-SUFFIX, dnkeeper.platform.dbankcloud.cn
@@ -1583,6 +1583,7 @@ DOMAIN-SUFFIX, greedland.net
 DOMAIN-SUFFIX, groc.press
 DOMAIN-SUFFIX, growingio.com
 DOMAIN-SUFFIX, grs.platform.dbankcloud.ru
+DOMAIN-SUFFIX, gtsmobi.com
 DOMAIN-SUFFIX, guanjia.baidu.com
 DOMAIN-SUFFIX, gz-data.com
 DOMAIN-SUFFIX, gzads.com
@@ -1603,6 +1604,7 @@ DOMAIN-SUFFIX, hpd.baidu.com
 DOMAIN-SUFFIX, httpdns.c.163.com
 DOMAIN-SUFFIX, httpdns.qcloud.com
 DOMAIN-SUFFIX, hugelog.fcbox.com
+DOMAIN-SUFFIX, huntmad.com
 DOMAIN-SUFFIX, husky.sogou.com
 DOMAIN-SUFFIX, hybrid.miniapp.taobao.com
 DOMAIN-SUFFIX, hye.comp.360os.com
@@ -1644,6 +1646,7 @@ DOMAIN-SUFFIX, ks.pull.yximgs.com
 DOMAIN-SUFFIX, kuaizip.com
 DOMAIN-SUFFIX, kumihua.com
 DOMAIN-SUFFIX, lapin365.com
+DOMAIN-SUFFIX, leadboltapps.com
 DOMAIN-SUFFIX, lenovogame.com
 DOMAIN-SUFFIX, lgsmartad.com
 DOMAIN-SUFFIX, lgtvcommon.com
@@ -1689,6 +1692,7 @@ DOMAIN-SUFFIX, mdt.qq.com
 DOMAIN-SUFFIX, measure.office.com
 DOMAIN-SUFFIX, mechanicallydrug.com
 DOMAIN-SUFFIX, media.net
+DOMAIN-SUFFIX, mediaarmor.com
 DOMAIN-SUFFIX, meitustat.com
 DOMAIN-SUFFIX, metrics.apple.com
 DOMAIN-SUFFIX, metrika.yandex.ru
@@ -1696,12 +1700,14 @@ DOMAIN-SUFFIX, minisplat.cn
 DOMAIN-SUFFIX, mllog.jd.com
 DOMAIN-SUFFIX, mlnbike.com
 DOMAIN-SUFFIX, mlt01.com
+DOMAIN-SUFFIX, mobfox.com
 DOMAIN-SUFFIX, mobileads.msn.com
 DOMAIN-SUFFIX, mobileadtrading.com
 DOMAIN-SUFFIX, mobileanalytics.us-east-1.amazonaws.com
 DOMAIN-SUFFIX, mobileapptracking.com
 DOMAIN-SUFFIX, mobilem.360.cn
 DOMAIN-SUFFIX, mobileservice.cn
+DOMAIN-SUFFIX, mobilityware.com
 DOMAIN-SUFFIX, mobisage.com
 DOMAIN-SUFFIX, monitor.azure.com
 DOMAIN-SUFFIX, monorail-edge.shopifysvc.com
@@ -1763,6 +1769,7 @@ DOMAIN-SUFFIX, personaly.click
 DOMAIN-SUFFIX, phpwind.com
 DOMAIN-SUFFIX, pingtcss.qq.com
 DOMAIN-SUFFIX, pipe.aria.microsoft.com
+DOMAIN-SUFFIX, pipedream.wistia.com
 DOMAIN-SUFFIX, pixel.byspotify.com
 DOMAIN-SUFFIX, pixel.ipinfo.io
 DOMAIN-SUFFIX, plus.com
@@ -1832,6 +1839,7 @@ DOMAIN-SUFFIX, samsungads.com
 DOMAIN-SUFFIX, samsungelectronics.com
 DOMAIN-SUFFIX, samsungtvads.com
 DOMAIN-SUFFIX, sas.samsungcloudsolution.com
+DOMAIN-SUFFIX, saymedia.com
 DOMAIN-SUFFIX, sc-static.net
 DOMAIN-SUFFIX, sca.samsung.com
 DOMAIN-SUFFIX, scorecardresearch.com
@@ -1948,6 +1956,7 @@ DOMAIN-SUFFIX, trk.pinterest.com
 DOMAIN-SUFFIX, tuijian.baidu.com
 DOMAIN-SUFFIX, tuisong.baidu.com
 DOMAIN-SUFFIX, tuitiger.com
+DOMAIN-SUFFIX, twistbox.com
 DOMAIN-SUFFIX, tx-kmpaudio.pull.yximgs.com
 DOMAIN-SUFFIX, ubacollect-drcn.cloud.dbankcloud.cn
 DOMAIN-SUFFIX, ublockdns.com
@@ -2004,6 +2013,7 @@ DOMAIN-SUFFIX, xlog.jd.com
 DOMAIN-SUFFIX, xtube.com
 DOMAIN-SUFFIX, yandexmetrica.com
 DOMAIN-SUFFIX, yfanads.com
+DOMAIN-SUFFIX, yingt.fun
 DOMAIN-SUFFIX, yiqifa.com
 DOMAIN-SUFFIX, ynuf.aliapp.org
 DOMAIN-SUFFIX, youshiad.cn

@@ -926,7 +926,7 @@ DOMAIN-SUFFIX, zuimeitianqi.com
 USER-AGENT, "%E4%BC%98%E9%85%B7*"
 USER-AGENT, "%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*"
 USER-AGENT, "TeslaMap"
-# 软件更新、操作系统等大文件下载（最后更新：26-4-14）
+# 软件更新、操作系统等大文件下载（最后更新：26-5-13）
 # DOMAIN, archive.mirror.rafal.ca
 # DOMAIN, dl.nssurge.com
 # DOMAIN, ftp.at.debian.org
@@ -1010,7 +1010,6 @@ DOMAIN, apache.redkiwi.nl
 DOMAIN, apache.saix.net
 DOMAIN, apache.spd.co.il
 DOMAIN, apache.stu.edu.tw
-DOMAIN, apache.tt.co.kr
 DOMAIN, apache.uib.no
 DOMAIN, apache.uniminuto.edu
 DOMAIN, apache.uvigo.es
@@ -1019,6 +1018,7 @@ DOMAIN, api-updates.orbstack.dev
 DOMAIN, app-updates.agilebits.com
 DOMAIN, apt.tetaneutral.net
 DOMAIN, apt.xpipe.io
+DOMAIN, archive-4.kali.org
 DOMAIN, archive.cs.uu.nl
 DOMAIN, archive.g4t1.pro
 DOMAIN, archive.kali.org
@@ -1076,7 +1076,6 @@ DOMAIN, chnroutes2.cdn.skk.moe
 DOMAIN, cisco.yuntu.com.tw
 DOMAIN, ciscobinary.openh264.org
 DOMAIN, clarkson.edu
-DOMAIN, client.hikarifield.co.jp
 DOMAIN, cloud.daporkchop.net
 DOMAIN, cloudfront.debian.net
 DOMAIN, componentupdater.brave.com
@@ -1100,7 +1099,6 @@ DOMAIN, cpan.pesat.net.id
 DOMAIN, cpan.rinet.ru
 DOMAIN, cpan.saix.net
 DOMAIN, cpan.stu.edu.tw
-DOMAIN, cpan.tetaneutral.net
 DOMAIN, cpan.uib.no
 DOMAIN, cpan.ulak.net.tr
 DOMAIN, cpan.uni-altai.ru
@@ -1159,7 +1157,6 @@ DOMAIN, debian.interhost.co.il
 DOMAIN, debian.ipacct.com
 DOMAIN, debian.ipsys.bf
 DOMAIN, debian.iskon.hr
-DOMAIN, debian.koyanet.lv
 DOMAIN, debian.lagis.at
 DOMAIN, debian.linux.n0c.ca
 DOMAIN, debian.lth.se
@@ -1244,6 +1241,7 @@ DOMAIN, download-installer.cdn.mozilla.net
 DOMAIN, download.ameliorated.io
 DOMAIN, download.anydesk.com
 DOMAIN, download.bazzite.gg
+DOMAIN, download.bbbike.org
 DOMAIN, download.beeper.com
 DOMAIN, download.clashverge.dev
 DOMAIN, download.cnet.com
@@ -1256,6 +1254,7 @@ DOMAIN, download.eassos.com
 DOMAIN, download.edovia.com
 DOMAIN, download.fosshub.com
 DOMAIN, download.fydeos.io
+DOMAIN, download.geofabrik.de
 DOMAIN, download.gigabyte.com
 DOMAIN, download.gimp.org
 DOMAIN, download.hikarifield.co.jp
@@ -1305,7 +1304,6 @@ DOMAIN, downloads.x-wrt.com
 DOMAIN, downloads.xiph.org
 DOMAIN, downloads.xrite.com
 DOMAIN, downloads2.broadcom.com
-DOMAIN, drive.massgrave.dev
 DOMAIN, drmirror.physi.uni-heidelberg.de
 DOMAIN, dw.uptodown.net
 DOMAIN, eclats.crans.org
@@ -1367,6 +1365,7 @@ DOMAIN, ftp.eutelia.it
 DOMAIN, ftp.fau.de
 DOMAIN, ftp.fi.muni.cz
 DOMAIN, ftp.forthnet.gr
+DOMAIN, ftp.free.fr
 DOMAIN, ftp.fu-berlin.de
 DOMAIN, ftp.funet.fi
 DOMAIN, ftp.gnome.org
@@ -1478,6 +1477,7 @@ DOMAIN, ftpmirror.gnu.org
 DOMAIN, ftpmirror.your.org
 DOMAIN, ftpmirror1.infania.net
 DOMAIN, ftpserv.tudelft.nl
+DOMAIN, fw.gl-inet.com
 DOMAIN, gamedownloads-rockstargames-com.akamaized.net
 DOMAIN, get.pixelexperience.org
 DOMAIN, ghfast.top
@@ -1566,7 +1566,6 @@ DOMAIN, mirror.alwyzon.net
 DOMAIN, mirror.amberit.com.bd
 DOMAIN, mirror.ams.macarne.com
 DOMAIN, mirror.amscloud.co.id
-DOMAIN, mirror.anigil.com
 DOMAIN, mirror.apache-kr.org
 DOMAIN, mirror.apad.pro
 DOMAIN, mirror.applebred.net
@@ -1666,10 +1665,8 @@ DOMAIN, mirror.fjordos.com
 DOMAIN, mirror.flo.c-f.ro
 DOMAIN, mirror.freedif.org
 DOMAIN, mirror.freethought-internet.co.uk
-DOMAIN, mirror.fsmg.org.nz
 DOMAIN, mirror.fst.kz
 DOMAIN, mirror.funkfreundelandshut.de
-DOMAIN, mirror.ghproxy.com
 DOMAIN, mirror.gi.co.id
 DOMAIN, mirror.gofoss.xyz
 DOMAIN, mirror.gotmyhost.com
@@ -1790,13 +1787,10 @@ DOMAIN, mirror.nishi.network
 DOMAIN, mirror.nitc.ac.in
 DOMAIN, mirror.nl.altushost.com
 DOMAIN, mirror.nl.as215296.net
-DOMAIN, mirror.nl.cdn-perfprod.com
-DOMAIN, mirror.nl.datapacket.com
 DOMAIN, mirror.nl.leaseweb.net
 DOMAIN, mirror.nodesdirect.com
 DOMAIN, mirror.nohup.it
 DOMAIN, mirror.novg.net
-DOMAIN, mirror.nus.edu.sg
 DOMAIN, mirror.nyi.net
 DOMAIN, mirror.olnevhost.net
 DOMAIN, mirror.one.com
@@ -1816,6 +1810,7 @@ DOMAIN, mirror.positive-internet.com
 DOMAIN, mirror.pregi.net
 DOMAIN, mirror.previder.nl
 DOMAIN, mirror.ps.kz
+DOMAIN, mirror.pyratelan.org
 DOMAIN, mirror.raiolanetworks.com
 DOMAIN, mirror.rcg.sfu.ca
 DOMAIN, mirror.realcompute.io
@@ -1858,7 +1853,6 @@ DOMAIN, mirror.techlabs.co.kr
 DOMAIN, mirror.telepoint.bg
 DOMAIN, mirror.thunderhosting.cloud
 DOMAIN, mirror.timeweb.ru
-DOMAIN, mirror.timkevin.us
 DOMAIN, mirror.tngnet.com
 DOMAIN, mirror.tochlab.net
 DOMAIN, mirror.transip.net
@@ -1934,6 +1928,7 @@ DOMAIN, mirror1.sox.rs
 DOMAIN, mirror1.totbb.net
 DOMAIN, mirror2.evolution-host.com
 DOMAIN, mirror2.infomaniak.com
+DOMAIN, mirror2.krfoss.org
 DOMAIN, mirror2.tuxinator.org
 DOMAIN, mirrors-ubuntu.behostings.com
 DOMAIN, mirrors.accretive-networks.net
@@ -1960,7 +1955,6 @@ DOMAIN, mirrors.concertpass.com
 DOMAIN, mirrors.coreix.net
 DOMAIN, mirrors.datapark.ro
 DOMAIN, mirrors.de.sahilister.net
-DOMAIN, mirrors.edge.kernel.org
 DOMAIN, mirrors.egr.msu.edu
 DOMAIN, mirrors.esto.network
 DOMAIN, mirrors.evoluso.com
@@ -1983,7 +1977,6 @@ DOMAIN, mirrors.iitd.ac.in
 DOMAIN, mirrors.ipserverone.com
 DOMAIN, mirrors.ircam.fr
 DOMAIN, mirrors.iu13.net
-DOMAIN, mirrors.kernel.org
 DOMAIN, mirrors.layeronline.com
 DOMAIN, mirrors.linux-bulgaria.org
 DOMAIN, mirrors.liquidweb.com
@@ -2000,7 +1993,6 @@ DOMAIN, mirrors.nepalicloud.com
 DOMAIN, mirrors.neterra.net
 DOMAIN, mirrors.netix.net
 DOMAIN, mirrors.nhanhoa.com
-DOMAIN, mirrors.nic.cz
 DOMAIN, mirrors.nxtgen.com
 DOMAIN, mirrors.nxthost.com
 DOMAIN, mirrors.ocf.berkeley.edu
@@ -2155,6 +2147,7 @@ DOMAIN, sotirov-bg.net
 DOMAIN, speedtest-net-servers.cdn.skk.moe
 DOMAIN, static.adguard.com
 DOMAIN, static.adtidy.org
+DOMAIN, static.hikarifield.co.jp
 DOMAIN, static.redox-os.org
 DOMAIN, static.rust-lang.org
 DOMAIN, stats.snipaste.com
@@ -2203,7 +2196,6 @@ DOMAIN, ubuntu.hi.no
 DOMAIN, ubuntu.hysing.is
 DOMAIN, ubuntu.ip-connect.vn.ua
 DOMAIN, ubuntu.ipacct.com
-DOMAIN, ubuntu.koyanet.lv
 DOMAIN, ubuntu.lafibre.info
 DOMAIN, ubuntu.lagis.at
 DOMAIN, ubuntu.lagoon.nc
@@ -2847,6 +2839,7 @@ IP-CIDR6, fc00::/7
 IP-CIDR6, fe80::/10
 # 特定需求
 # PROCESS-NAME, parsecd
+DOMAIN, 127.skk.moe
 DOMAIN, captive.apple.com
 DOMAIN, hotspot.cslwifi.com
 DOMAIN, injections.adguard.org
@@ -2862,7 +2855,6 @@ DOMAIN-KEYWORD, sciencedirect
 DOMAIN-KEYWORD, wanfangdata
 DOMAIN-KEYWORD, westlawchina
 DOMAIN-SUFFIX,  open.cd
-DOMAIN-SUFFIX, 127.atlas.skk.moe
 DOMAIN-SUFFIX, 52pt.site
 DOMAIN-SUFFIX, acm.org
 DOMAIN-SUFFIX, aidoru-online.me

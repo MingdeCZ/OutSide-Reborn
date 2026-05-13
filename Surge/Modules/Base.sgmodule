@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.4
-#!date = 26.4.14
+#!version = 1.0.5
+#!date = 26.5.13
 #!category = N合1
 
 [Host]
@@ -20,7 +20,7 @@ RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/alibaba.c
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/baidu.conf = server:180.76.76.76
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bytedance.conf = server:180.184.2.2
 RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/tencent.conf = server:https://doh.pub/dns-query
-cdn.jsdelivr.net = cdn.jsdelivr.net.cdn.cloudflare.net
+cdn.jsdelivr.net = testingcf.jsdelivr.net
 dns.pub = server:119.29.29.29
 dot.pub = server:119.29.29.29
 
@@ -58,8 +58,6 @@ hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google
 [URL Rewrite]
 # 🍟 整点薯条：🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
 # 支付宝
-# ^https?:\/\/amdc\.alipay\.com\/s?query - reject
-# ^https?:\/\/amdc-sibling\.alipay\.com\.cn\/s?query - reject
 ^https?://110\.76\.8\.150/squery - reject
 ^https?://203\.209\.230\.39/squery - reject
 ^https?://203\.209\.245\.102/squery - reject
@@ -73,8 +71,7 @@ hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google
 ^https?://2400:B200:1005:3000::1D3/squery - reject
 ^https?://2400:B200:5000:B000::C8/squery - reject
 # 百度
-^http://180\.76\.76\.112/v4/resolve - reject
-^http://180\.76\.76\.220/v4/resolve - reject
+^http://180\.76\.76\.(?:112|220)/v4/resolve - reject
 # 哔哩哔哩
 # KEY_EXT_P2P_HTTPDNS_BILI_IP
 # ^http:\/\/47\.101\.175\.206\/resolve - reject
@@ -119,14 +116,11 @@ hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google
 ^http://182\.256\.116\.116/d - reject
 # 微博
 # 参考：https://github.com/CNSRE/HTTPDNSLib-for-iOS
-^http://api\.weibo\.cn/2/httpdns/config - reject
-^http://api\.weibo\.cn/httpdns/config - reject
+^http://api\.weibo\.cn/(?:2/)?httpdns/config - reject
 # 微信
 # 注意：以下域名 HTTPS 无法 MitM，如通过此链接查询，无法处理
-# ^https?:\/\/dns\.weixin\.qq\.com\/cgi-bin\/micromsg-bin\/newgetdns - reject
-# ^https?:\/\/dns\.weixin\.qq\.com\.cn\/cgi-bin\/micromsg-bin\/newgetdns - reject
-^https?://hkextshort\.weixin\.qq\.com/cgi-bin/micromsg-bin/getcdndns - reject
-^https?://short\.weixin\.qq\.com/cgi-bin/micromsg-bin/getcdndns - reject
+# ^https?://dns\.weixin\.qq\.com(?:\.cn)?/cgi-bin/micromsg-bin/newgetdns - reject
+^https?://(?:hkext)?short\.weixin\.qq\.com/cgi-bin/micromsg-bin/getcdndns - reject
 # Wework
 # 参考：https://res.mail.qq.com/zh_CN/wework_ip/latest.html
 # ^http:\/\/182\.254\.116\.117\/d - reject
@@ -136,11 +130,16 @@ hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google
 ^http://103\.41\.167\.237/v2/resolv - reject
 
 # 谷歌送中重定向（将谷歌搜索中国重定向至 .com 域名）www.google.cn
-^https?://(www.)?(g|google)\.cn https://www.google.com 307
+^https?://(?:www.)?(?:g|google)\.cn https://www.google.com 307
 
 # 微信去广告 mp.weixin.qq.com, szextshort.weixin.qq.com
-^https://mp\.weixin\.qq\.com/mp/(advertisement_report|ad_complaint|ad_video|cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle|relatedsearchword|report) - reject
+^https://mp\.weixin\.qq\.com/mp/(?:advertisement_report|ad_complaint|ad_video|cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle|relatedsearchword|report) - reject
 ^https?://szextshort\.weixin\.qq\.com/cgi-bin/mmoc-bin/ad - reject
+
+[Map Local]
+# 🍟 整点薯条：🚫 阻止常见的 HTTPDNS 服务器
+# 支付宝
+# ^https?://amdc(?:-sibling)?\.alipay\.com/s?query data-type=text data='{}' status-code=200 header="Content-Type:text/json"
 
 [Rule]
 # 规则修正
@@ -150,9 +149,9 @@ DOMAIN, ca.iadsdk.apple.com, DIRECT, extended-matching
 [Script]
 # @Sub-Store（高级订阅管理工具，无 ability 参数版本，不会爆内存， 如果需要使用指定节点功能 例如[加旗帜脚本或者cname脚本] 可以用带 ability 参数）（需开启 脚本、复写和 MitM 等功能，并指定代理策略，后访问 https://sub.store）（更多脚本信息请自行在 https://github.com/sub-store-org/Sub-Store 中查找）sub.store
 # 主程序 已经去掉 Sub-Store Core 的参数 [, ability = http-client-policy] 不会爆内存，这个参数在 Surge 非常占用内存；如果不需要使用指定节点功能 例如[加旗帜脚本或者 cname 脚本] 则可以使用此脚本
-Sub-Store Core = type=http-request, pattern=^https?://sub\.store/((download)|api/(preview|sync|(utils/node-info))), script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body = true, timeout = 120
+Sub-Store Core = type=http-request, pattern=^https?://sub\.store/(?:download|api/(?:preview|sync|(?:utils/node-info))), script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body = true, timeout = 120
 Sub-Store Simple = type=http-request, pattern=^https?://sub\.store, script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body = true, timeout = 120
 
 # @zZPiglet（更多脚本信息请自行在 https://github.com/zZPiglet/Task/tree/master 中查找）
 # 跳过中间界面，支付宝链接和被封禁淘宝链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选）（iOS/macOS、微信/WeChat 、群聊/扫码均可使用）security.wechat.com, weixin110.qq.com
-解除微信链接限制 = type=http-response, pattern=^https://(weixin110\.qq|security.wechat)\.com/cgi-bin/mmspamsupport-bin/newredirectconfirmcgi\?, requires-body = 1, max-size = 0, script-path = https://github.com/zZPiglet/Task/raw/master/asset/UnblockURLinWeChat.js
+解除微信链接限制 = type=http-response, pattern=^https://(?:weixin110\.qq|security.wechat)\.com/cgi-bin/mmspamsupport-bin/newredirectconfirmcgi\?, requires-body = 1, max-size = 0, script-path = https://github.com/zZPiglet/Task/raw/master/asset/UnblockURLinWeChat.js

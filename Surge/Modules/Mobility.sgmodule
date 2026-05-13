@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.9
-#!date = 26.4.14
+#!version = 1.1.0
+#!date = 26.5.13
 #!category = N合1
 #!system = ios
 
@@ -12,16 +12,22 @@
 skip-proxy = %APPEND% *.ccb.com, *.abcchina.com, *.abcchina.com.cn
 
 [MITM]
-hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.missevan.com, data.missevan.com, fm.missevan.com, as.xiaojukeji.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, acs.m.goofish.com, g-acs.m.goofish.com, zone.guiderank-app.com, api.m.jd.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com, api.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com, www.xiaohongshu.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, *.googlevideo.com, youtubei.googleapis.com, app.dewu.com, learn.chaoxing.com, ktx.cn, 113.46.225.4, 113.46.225.5, mobile.api.sisyphe.cn, htwkop.xiaojukeji.com, xyst.yuanfudao.com,  daijia.kuaidadi.com, b?dsp-x.jd.com, ms.jr.jd.com, 3gimg.qq.com, newsso.map.qq.com, 113.46.225.2, 113.46.225.3, 116.85.2.4, 116.85.2.5, 116.85.2.21, 116.85.2.22, api.pinterest.com, apiz.trakt.tv, apm.xiaojukeji.com, omgup*.xiaojukeji.com, www.youtube.com, s.youtube.com, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, newton.gumingnc.com, mapi.ghsmpwalmart.com, tm-api.pin-dao.cn
+hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, api.bilibili.com, app.missevan.com, data.missevan.com, fm.missevan.com, as.xiaojukeji.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, lion.didialift.com, api.udache.com, ct.xiaojukeji.com, res.xiaojukeji.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, acs.m.goofish.com, g-acs.m.goofish.com, zone.guiderank-app.com, api.m.jd.com, in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com, api.pinduoduo.com, ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com, www.xiaohongshu.com, acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com, *.googlevideo.com, youtubei.googleapis.com, app.dewu.com, learn.chaoxing.com, ktx.cn, 113.46.225.4, 113.46.225.5, mobile.api.sisyphe.cn, htwkop.xiaojukeji.com, xyst.yuanfudao.com,  daijia.kuaidadi.com, b?dsp-x.jd.com, ms.jr.jd.com, 3gimg.qq.com, newsso.map.qq.com, 113.46.225.2, 113.46.225.3, 116.85.2.4, 116.85.2.5, 116.85.2.21, 116.85.2.22, api.pinterest.com, apiz.trakt.tv, apm.xiaojukeji.com, omgup*.xiaojukeji.com, www.youtube.com, s.youtube.com, miniapp.sexytea2013.com, webapi.qmai.cn, miniapp.qmai.cn, newton.gumingnc.com, mapi.ghsmpwalmart.com, tm-api.pin-dao.cn, hw-edge.solseed.cn
 
 [URL Rewrite]
 # 哔哩哔哩优化
-^https://api\.bilibili\.com/pgc/season/(rank/cn|app/related/recommend) - reject
-^https://api\.bilibili\.com/x/push/report - reject
-^https://api\.bilibili\.com/x/report/(click/ios|heartbeat/mobile) - reject
-^https://app\.bilibili\.com/x/resource/(abtest|fingerprint|pop/up) - reject
-^https://app\.bilibili\.com/x/v\d/(param|dm/ad|dataflow/report|rank.*rid=(168|5)) - reject
 ^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.app\.click\.v1\.Click/HeartBeat - reject
+^https://api\.bilibili\.com/open/monitor/(?:apm/)?report - reject
+^https://api\.bilibili\.com/pgc/season/(?:rank/cn|app/related/recommend) - reject
+^https://api\.bilibili\.com/x/pd-proxy/tracker\? - reject
+^https://api\.bilibili\.com/x/push/(?:report|popup/config) - reject
+^https://api\.bilibili\.com/x/report/(?:click/(?:ios|now)|heartbeat/mobile) - reject
+^https://api\.bilibili\.com/x/vip/ads/material/report\? - reject
+^https://api\.bilibili\.com/x/vip/web/vip_center/v2/(?:sub)?weather\? - reject
+^https://api\.bilibili\.com/x/web-interface/zone\?jsonp - reject
+^https://app\.bilibili\.com/x/resource/(?:ip|abtest|fingerprint|pop/up) - reject
+^https://app\.bilibili\.com/x/v\d/(?:param|dm/ad|dataflow/report|rank.*rid=(168|5)) - reject
+^https://hw-edge\.solseed\.cn/bilibili\.p2p\.b3\.tracker\.v1\.Register - reject
 
 # 滴滴优化
 # 去更新
@@ -40,16 +46,18 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 # 去评分提示
 ^https://ktx\.cn/v\d/api/user/application_score\? - reject
 
-# 得物 app.dewu.com
-^https://app\.dewu\.com/api/v1/app/advertisement - reject
+# 得物净化
+^https://app\.dewu\.com/api/v1/app/(?:advertisement|search/lexicon/v(?:1/rank|3/background)_words\?) - reject
+^https://app\.dewu\.com/hacking-newbie/v1/app/coupon/module\? - reject
+^https://app\.dewu\.com/sns-rec/v1/(?:attention/feed|search/(?:word-skip/new-list|hotword-list))\? - reject
 
 # 广告平台拦截器 images.pinduoduo.com
 ^https://images\.pinduoduo\.com/marketing_api/ - reject
 ^https://images\.pinduoduo\.com/mrk/ - reject
 
 # 京东
-^https://b?dsp-x\.jd\.com/adx - reject
 ^https://api\.m\.jd\.com/client\.action\?functionId=start - reject
+^https://b?dsp-x\.jd\.com/adx - reject
 ^https://ms\.jr\.jd\.com/gw/generic/base/na/m/adInfo - reject
 
 # YouTube 优化
@@ -65,7 +73,7 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 [Map Local]
 # 小程序净化
 # 古茗 newton.gumingnc.com
-^https://newton\.gumingnc\.com/newton-buyer/newton/buyer/(ump|touch|external/front) data-type=text data="{}" status-code=200
+^https://newton\.gumingnc\.com/newton-buyer/newton/buyer/(?:ump|touch|external/front) data-type=text data="{}" status-code=200
 # 奈雪 tm-api.pin-dao.cn
 ^https://tm-api\.pin-dao\.cn/home/api/index/activeConfig/v2 data-type=text data="{}" status-code=200
 ^https://tm-api\.pin-dao\.cn/home/api/resource/config/homeBannerNodes data-type=text data="{}" status-code=200
@@ -89,16 +97,9 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 # 哔哩哔哩净化
 # 满意度调研
 ^https://api\.bilibili\.com/x/v2/dm/qoe/show\? data-type=text data="{}" status-code=200
-# 屏蔽 IP 和地理位置请求
-^https://app\.bilibili\.com/x/resource/ip data-type=text data="{}" status-code=200
-^https://api\.bilibili\.com/x/web-interface/zone\?jsonp data-type=text data="{}" status-code=200
 # 屏蔽搜索框默认内容
 ^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.app\.interface\.v1\.Search/DefaultWords$ header="content-type: application/grpc|grpc-status: 0" data-type=base64 data="AAAAACEaHeaQnOe0ouinhumikeOAgeeVquWJp+aIlnVw5Li7KAE="
-^https://grpc\.biliapi\.net/bilibili\.app\.(?:view\.v1\.View/TFInfo|viewunite\.v1\.View/ViewEndPage)$ header="content-type: application/grpc|grpc-status: 0" data-type=base64 data="AAAAAAA="
-# 屏蔽搜索推荐
-^https://app\.bilibili\.com/x/v2/search/recommend\? data-type=text data="{}" status-code=200
-# 
-^https://api\.bilibili\.com/x/push/popup/config\? data-type=text data="{}" status-code=200
+^https://grpc\.biliapi\.net/bilibili\.app\.(?:view\.v1\.View/TFInfo|viewunite\.v1\.View/(?:PlayPause|ViewEndPage))$ header="content-type: application/grpc|grpc-status: 0" data-type=base64 data="AAAAAAA="
 
 # 猫耳 FM 净化
 ^https://data\.missevan\.com/site/ad-track$ data-type=text data="{}" status-code=200
@@ -151,7 +152,7 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https://zone\.guiderank-app\.com/guiderank-web/app/personal/getPersonPageInfo\.do data-type=text data="{}" status-code=200
 
 # 京东去广告
-^https://api\.m\.jd\.com/client\.action\?functionId=(searchBoxWord|stationPullService|uniformRecommend[06]) data-type=text data="{}" status-code=200
+^https://api\.m\.jd\.com/client\.action\?functionId=(?:searchBoxWord|stationPullService|uniformRecommend[06]) data-type=text data="{}" status-code=200
 
 # 拼多多净化
 # 去除个人中心-省钱月卡下方推荐商品流
@@ -198,7 +199,7 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 
 # 淘宝去广告
 # 阿里巴巴
-^https://acs\.m\.taobao\.com/gw/mtop\.fliggy\.crm\.screen\.(allresource|predict) data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.alimama\.etao\.config\.query/.+?etao_advertise data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
@@ -207,15 +208,15 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https://acs\.m\.taobao\.com/gw/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
-^https://heic\.alicdn\.com/imgextra/i\d/\d*/?[\w!]+-\d-(octopus|tps-1125-1602|tps-1080-1920)\.(jp|pn)g_(1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
-^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
+^https://heic\.alicdn\.com/imgextra/I\d/\d*/?[\w!]+-\d-(?:octopus|tps-1125-1602|tps-1080-1920)\.(?:jp|pn)g_(?:1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
+^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(?:volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
 
 # YouTube 优化
 # ^https?://[\w-]+\.googlevideo\.com/initplayback.+&oad data-type=text data="" status-code=200
 ^https?://[\w-]+\.googlevideo\.com/(?!(dclk_video_ads|videoplayback\?)).+&oad data-type=text data=" " status-code=200
 # 通用广告请求
-^https://(www|s)\.youtube\.com/api/stats/ads data-type=text data=" " status-code=200
-^https://(www|s)\.youtube\.com/(pagead|ptracking) data-type=text data=" " status-code=200
+^https://(?:www|s)\.youtube\.com/api/stats/ads data-type=text data=" " status-code=200
+^https://(?:www|s)\.youtube\.com/(?:pagead|ptracking) data-type=text data=" " status-code=200
 ^https://s\.youtube\.com/api/stats/qoe\?adcontext data-type=text data=" " status-code=200
 
 [Body Rewrite]
@@ -230,17 +231,15 @@ http-response-jq ^https://apiz\.trakt\.tv/users/settings '.user.vip = true'
 http-response-jq ^https://apiz\.trakt\.tv/users/(?!me(?:\?|$)|settings(?:\?|$)|requests(?:\?|$)|hidden(?:\?|$)|likes(?:\?|$)|saved_filters(?:\?|$)|reactions(?:\?|$))[^/\?]+(?:\?extended=full%2Cvip)$ '.vip = true'
 
 # Pinterest 首页、贴子详情下方信息流去广告
-http-response-jq ^https://api\.pinterest\.com/v3/(feeds/home|pins/\d+/related/modules)/\? '.data |= map(select(has("ad_data") | not))'
+http-response-jq ^https://api\.pinterest\.com/v3/(?:feeds/home|pins/\d+/related/modules)/\? '.data |= map(select(has("ad_data") | not))'
 
 # 哔哩哔哩净化
 # 首页净化
 http-response-jq ^https://app\.bilibili\.com/x/resource/show/tab/v2\? '.data |= ( .bottom |= (map(select(.name == "首页" or .name == "我的"))) | .tab |= (map(select(.name == "推荐" or .name == "热门"))) )'
 # 我的页面净化
-http-response-jq ^https://app\.bilibili\.com/x/v2/account/mine\? '.data |= ( .official_verify.type = 1 | .vip |= ( if . != null and .status == 0 then . + { type: 2, status: 1, label: ( .label + { text: "十年大会员", image: "https://i0.hdslb.com/bfs/vip/802418ff03911645648b63aa193ba67997b5a0bc.png" } ) } else . end | .avatar_subscript = 1 ) | del(.mall_home) | .sections_v2.[1] |= ( del(.title) | .items |= map(select(.title == "联系客服" or .title == "设置")) | .style = 1 ) )'
+http-response-jq ^https://app\.bilibili\.com/x/v2/account/mine\? '.data |= ( .official_verify.type = 1 | .vip |= ( . + { type: 2, status: 1, label: { text: "百年大会员", image: "https://i0.hdslb.com/bfs/vip/52f60c8bdae8d4440edbb96dad72916022adf126.png" } } ) | del(.mall_home) | .sections_v2 |= ( if length <= 1 then . else [ .[0], ( .[-1] | del(.title) | .items |= map(select(.title == "联系客服" or .title == "设置")) | .style = 1 ) ] end ) )'
 # 开启本地 VIP
-http-response-jq ^https://app\.bilibili\.com/x/v2/account/myinfo\? '.data.vip |= if . != null and .status == 0 then . + { status: 1, type: 2, due_date: 9005270400000, role: 15 } else . end'
-# 
-http-response-jq ^https://api\.bilibili\.com/x/article/sentinel/config\? '.data.sentinel = { enableSentinel: 0 }'
+http-response-jq ^https://app\.bilibili\.com/x/v2/account/myinfo\? '.data.vip |= . + { type: 2, status: 1 }'
 
 # 猫耳 FM 净化（移除开屏广告、青少年模式弹窗、首页顶部入口，替换底栏的直播入口为发现入口）app.missevan.com, data.missevan.com, fm.missevan.com
 http-response-jq ^https://app\.missevan\.com/site/launch\? '.info |= del(.splash, .splash_ready)'
@@ -267,6 +266,11 @@ http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze
 http-response-jq ^https://as\.xiaojukeji\.com/ep/as/toggles\? '.data |= map(if .name|IN("daijia_journey_new_tcp_switch","daijia_tcp_init","daijia_tcp_msg_encrypt","daijia_tcp_site_info","daijia_tcp_site_report")then.allow=false else. end)'
 # 订单结束页面净化
 http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pEndTripPaidLayout$ 'del(.data.instances."xp-card-swiper-banner_finish_1")'
+
+# 得物净化（移除开屏广告、弹窗、搜索词填充、热搜榜、猜你想搜、推荐关注、推荐信息流，精简消息中心和我的页面）app.dewu.com
+http-response-jq ^https://app\.dewu\.com/api/v1/app/biz-aggregate/me/user-index\? '.data.modules |= map(if .key == "wallet" then .data.menus |= map(select(.key == "coupon" or .key == "allowance" or .key == "gift" or .key == "balance")) else . end) | .data.modules |= map(select(.key != "merchant" and .key != "discountCoupon"))'
+http-response-jq ^https://app\.dewu\.com/api/v1/app/account/wallet/page/entrance\? '.data.groupInfoDTOS |= map(.moduleInfoDTO = {assetModule: .moduleInfoDTO.assetModule}) | .data.moduleNames = [.data.moduleNames[] | select(. == "assetModule")] | . as $full | $full | .data.groupNames |= (map(select(. == "MAIN" or . == "ASYNC_COMMON" or . == "ASYNC_GOODS_FEEDS")))'
+http-response-jq ^https://app\.dewu\.com/identify-discovery/v1/discovery/index\? '.data.groups |= map(.items |= map(select(.title == "消息中心")))'
 
 # 闲鱼净化（移除开屏广告、商品信息流广告、搜索栏填充词、首页签到入口、悬浮广告，精简我的页面）acs.m.goofish.com, g-acs.m.goofish.com
 # 首页净化
@@ -313,7 +317,7 @@ http-response-jq ^https://edith\.xiaohongshu\.com/api/sns/v4/search/trending\? '
 
 # 微信小程序优化
 # 小猿搜题开启 VIP
-http-response-jq ^https://xyst\.yuanfudao\.com/solar-vip/(api|iphone)/users/* '. + { renewTexts: { ME: "已开通", VIP_CARD: "已开通" }, payUserStatus: 0, expireTime: 4092599349000, vip: true, autoRenew: true, payUser: true }'
+http-response-jq ^https://xyst\.yuanfudao\.com/solar-vip/(?:api|iphone)/users/* '. + { renewTexts: { ME: "已开通", VIP_CARD: "已开通" }, payUserStatus: 0, expireTime: 4092599349000, vip: true, autoRenew: true, payUser: true }'
 
 [Rule]
 # 哔哩哔哩净化
@@ -373,13 +377,13 @@ AND, ((DOMAIN-SUFFIX, youtubei.googleapis.com, extended-matching), (PROTOCOL, QU
 bili.protobuf = type=http-response, pattern=^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.(?:app\.(?:show\.v1\.Popular/Index|dynamic\.v2\.Dynamic/DynAll|view(?:unite)?\.v1\.View/(?:View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL/PlayView|playerunite\.v1\.Player/PlayViewUnite)|polymer\.app\.search\.v1\.Search/SearchAll|community\.service\.dm\.v1\.DM/DmView|main\.community\.reply\.v1\.Reply/MainList|pgc\.gateway\.player\.v2\.PlayURL/PlayView)$, argument = "{ "displayUpList": "auto", "purifyComment": 1, "sponsorBlock": "bilibili.airborne", "logLevel": "5" }", requires-body = 1, binary-body-mode = 1, max-size = -1, engine = webview, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.response.js
 
 # 京东去广告 api.m.jd.com
-移除京东广告 = type=http-response, pattern=^https://api\.m\.jd\.com/client\.action\?functionId=(deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path = https://kelee.one/Resource/JavaScript/JD/JD_remove_ads.js, requires-body = true
+移除京东广告 = type=http-response, pattern=^https://api\.m\.jd\.com/client\.action\?functionId=(?:deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path = https://kelee.one/Resource/JavaScript/JD/JD_remove_ads.js, requires-body = true
 
 # 京东比价 in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com
 #慢慢买捕获令牌 = type=http-request, pattern=^https://apapia-sqk-weblogic\.manmanbuy\.com/baoliao/center/menu$, script-path = https://kelee.one/Resource/JavaScript/JD/JD_Price.js, requires-body = true, timeout = 10
 京东比价 = type=http-response, pattern=^https://in\.m\.jd\.com/product/graphext/\d+\.html, script-path = https://kelee.one/Resource/JavaScript/JD/JD_Price.js, requires-body = true, timeout = 10
 
-# 小红书净化 ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, www.xiaohongshu.com
+# 小红书净化 ci.xiaohongshu.com, edith.xiaohongshu.com, rec.xiaohongshu.com, so.xiaohongshu.com, www.xiaohongshu.com
 小红书移除图片和实况照片水印 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v1/note/(?:imagefeed|live_photo/save), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
 小红书移除整体配置 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v1/system/service/ui/config\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
 小红书移除开屏广告 = type=http-response, pattern=^https://edith\.xiaohongshu\.com/api/sns/v1/system_service/config\?, script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
@@ -394,11 +398,11 @@ bili.protobuf = type=http-response, pattern=^https://(?:grpc\.biliapi\.net|app\.
 小红书移除视频水印 = type=http-response, pattern=^https://(?:edith|rec|www)\.xiaohongshu\.com/api/sns/(?:v4/note/videofeed|v10/note/video/save), script-path = https://kelee.one/Resource/JavaScript/RedPaper/RedPaper_remove_ads.js, requires-body = true
 
 # 淘宝去广告 acs.m.taobao.com, heic.alicdn.com, guide-acs.m.taobao.com, poplayer.template.alibaba.com
-移除淘宝开屏广告 = type=http-response, pattern=^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true
+移除淘宝开屏广告 = type=http-response, pattern=^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(?:cloudvideo\.video\.query|wireless\.home\.splash\.awesome\.get), script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true
 移除淘宝开屏广告 = type=http-response, pattern=^https://poplayer\.template\.alibaba\.com/\w+\.json, script-path = https://kelee.one/Resource/JavaScript/Taobao/Taobao_remove_ads.js, requires-body = true
 
 # YouTube 优化（基于稳定版，移除视频、瀑布流、搜索和 Shorts 中的广告，移除底部的上传按钮，增加画中画及字幕翻译功能。移除 Music 底部的上传、选段和升级按钮，增加歌词翻译，支持二者的后台播放。需要启用 MitM over HTTP/2 和 QUIC 回退保护。支持 Premium 订阅用户使用。尝试隐藏 Shorts 相关 UI）*.googlevideo.com, www.youtube.com, s.youtube.com, youtubei.googleapis.com
-YouTube.Response = type=http-response, pattern=^https://youtubei\.googleapis\.com/youtubei/v1/(browse|next|player|search|reel/reel_watch_sequence|guide|account/get_setting|get_watch), script-path = https://github.com/Aioneas/Surge/raw/main/Script/youtube.response.js, argument = "{ "lyricLang": "off", "captionLang": "zh-Hans", "blockUpload": true, "blockImmersive": false, "blockShorts": true, "debug": false }", requires-body = true, binary-body-mode = true, max-size = -1, timeout = 60
+YouTube.Response = type=http-response, pattern=^https://youtubei\.googleapis\.com/youtubei/v1/(?:browse|next|player|search|reel/reel_watch_sequence|guide|account/get_setting|get_watch), script-path = https://github.com/Aioneas/Surge/raw/main/Script/youtube.response.js, argument = "{ "lyricLang": "off", "captionLang": "zh-Hans", "blockUpload": true, "blockImmersive": false, "blockShorts": true, "debug": false }", requires-body = true, binary-body-mode = true, max-size = -1, timeout = 60
 
 # @Beta
 # 看天下解锁 VIP ktx.cn
