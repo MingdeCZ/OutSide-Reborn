@@ -17,6 +17,7 @@ DOMAIN-SUFFIX, googletraveladservices-cn.com
 DOMAIN-SUFFIX, googlevads-cn.com
 DOMAIN-SUFFIX, honeycomb.io
 DOMAIN-SUFFIX, posthog.com
+DOMAIN-SUFFIX, s-gm.mmstat.com
 DOMAIN-SUFFIX, statsigapi.net
 IP-CIDR, 5.28.192.0/21
 #
@@ -183,7 +184,6 @@ DOMAIN-SUFFIX, fanglinad.com
 DOMAIN-SUFFIX, fireluck.cn
 DOMAIN-SUFFIX, fwosapp.com
 DOMAIN-SUFFIX, gdt.qq.com
-DOMAIN-SUFFIX, getui.com
 DOMAIN-SUFFIX, googlesyndication-cn.com
 DOMAIN-SUFFIX, halomobi.com
 DOMAIN-SUFFIX, httpdns.pro
@@ -197,8 +197,6 @@ DOMAIN-SUFFIX, inmobicdn.net
 DOMAIN-SUFFIX, installtongji.online
 DOMAIN-SUFFIX, installtongji.top
 DOMAIN-SUFFIX, jiguang.cn
-DOMAIN-SUFFIX, jpush.cn
-DOMAIN-SUFFIX, jpush.io
 DOMAIN-SUFFIX, kuaichuanad.com
 DOMAIN-SUFFIX, kuaiyiad.com
 DOMAIN-SUFFIX, l.qq.com
@@ -1317,6 +1315,7 @@ DOMAIN-SUFFIX, aic-ngfts.lge.com
 DOMAIN-SUFFIX, aiclean.us.cloud.360safe.com
 DOMAIN-SUFFIX, aiclk.com
 DOMAIN-SUFFIX, airpush.com
+DOMAIN-SUFFIX, aizhantj.com
 DOMAIN-SUFFIX, akuai.top
 DOMAIN-SUFFIX, alb.reddit.com
 DOMAIN-SUFFIX, alipaylog.com
@@ -1373,7 +1372,6 @@ DOMAIN-SUFFIX, baichuan-sdk.taobao.com
 DOMAIN-SUFFIX, baidustatic.com
 DOMAIN-SUFFIX, bayimob.com
 DOMAIN-SUFFIX, bdad.123pan.cn
-DOMAIN-SUFFIX, beacon.qq.com
 DOMAIN-SUFFIX, beacon.sina.com.cn
 DOMAIN-SUFFIX, beamanalytics.b-cdn.net
 DOMAIN-SUFFIX, beerto.cn
@@ -1498,7 +1496,6 @@ DOMAIN-SUFFIX, dxp.baidu.com
 DOMAIN-SUFFIX, e.baidu.com
 DOMAIN-SUFFIX, e.qq.com
 DOMAIN-SUFFIX, earnsdk.io
-DOMAIN-SUFFIX, easytomessage.com
 DOMAIN-SUFFIX, econventa.com
 DOMAIN-SUFFIX, edge.adobedc.net
 DOMAIN-SUFFIX, edm.globalsources.com
@@ -1552,10 +1549,7 @@ DOMAIN-SUFFIX, gclick.cn
 DOMAIN-SUFFIX, gdfp.gifshow.com
 DOMAIN-SUFFIX, gdzskj.tech
 DOMAIN-SUFFIX, geo.yahoo.com
-DOMAIN-SUFFIX, geo2.adobe.com
-DOMAIN-SUFFIX, gepush.com
 DOMAIN-SUFFIX, getui.cn
-DOMAIN-SUFFIX, getui.net
 DOMAIN-SUFFIX, gimg.baidu.com
 DOMAIN-SUFFIX, githubhelp.com
 DOMAIN-SUFFIX, gj.mmstat.com
@@ -2031,8 +2025,11 @@ DOMAIN-WILDCARD, *.ad.*.prod.hosts.ooklaserver.net
 DOMAIN-WILDCARD, ads-*.tiktok.com
 DOMAIN-WILDCARD, ads-*.xhscdn.com
 DOMAIN-WILDCARD, adv0*.msa.cdn.mediaset.net
+DOMAIN-WILDCARD, analytics-*.aasaam.com
 DOMAIN-WILDCARD, info.*.aleragroup.com
+DOMAIN-WILDCARD, log*-normal-*.tiktokv.com
 DOMAIN-WILDCARD, mon-*.byteoversea.com
+DOMAIN-WILDCARD, pixel*.adswizz.com
 DOMAIN-WILDCARD, v*.thenewstack.io
 IP-CIDR, 101.35.204.35/32
 IP-CIDR, 103.37.152.97/32

@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.1.0
-#!date = 26.5.13
+#!version = 1.1.1
+#!date = 26.5.14
 #!category = N合1
 #!system = ios
 
@@ -60,11 +60,18 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https://b?dsp-x\.jd\.com/adx - reject
 ^https://ms\.jr\.jd\.com/gw/generic/base/na/m/adInfo - reject
 
+# 淘宝净化
+^https://acs\.m\.taobao\.com/gw/mtop\.alimusic\.common\.mobileservice\.startinit/ - reject
+^https://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.queryadvertise/ - reject
+^https://acs\.m\.taobao\.com/gw/mtop\.o2o\.ad\.gateway\.get/ - reject
+^https://acs\.m\.taobao\.com/gw/mtop\.taobao\.idle\.home\.welcome/ - reject
+^https://acs\.m\.taobao\.com/gw/mtop\.trip\.activity\.querytmsresources/ - reject
+
 # YouTube 优化
 (^https://[\w-]+\.googlevideo\.com/(?!dclk_video_ads).+?)&ctier=L(&.+?),ctier,(.+) $1$2$3 302
 
 # 腾讯地图
-^https://3gimg\.qq\.com/tencentMapTouch/app/activity - reject
+^https://3gimg\.qq\.com/tencentMapTouch/app/activity/ - reject
 ^https://newsso\.map\.qq\.com/\?&attime= - reject
 
 # 超星学习通 learn.chaoxing.com
@@ -102,19 +109,19 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 ^https://grpc\.biliapi\.net/bilibili\.app\.(?:view\.v1\.View/TFInfo|viewunite\.v1\.View/(?:PlayPause|ViewEndPage))$ header="content-type: application/grpc|grpc-status: 0" data-type=base64 data="AAAAAAA="
 
 # 猫耳 FM 净化
-^https://data\.missevan\.com/site/ad-track$ data-type=text data="{}" status-code=200
 ^https://app\.missevan\.com/x/recommend/get-popup$ data-type=text data="{}" status-code=200
+^https://data\.missevan\.com/site/ad-track$ data-type=text data="{}" status-code=200
+^https://fm\.missevan\.com/api/v2/chatroom/sound/recommend\? data-type=text data="{}" status-code=200
 ^https://fm\.missevan\.com/api/v2/meta/banner$ data-type=text data="{}" status-code=200
 ^https://fm\.missevan\.com/api/v2/recommended/top\? data-type=text data="{}" status-code=200
-^https://fm\.missevan\.com/api/v2/chatroom/sound/recommend\? data-type=text data="{}" status-code=200
 
 # 滴滴出行去广告
-^https://res\.xiaojukeji\.com/resapi/activity/getMulti\? data-type=text data="{}" status-code=200
-^https://res\.xiaojukeji\.com/resapi/activity/mget data-type=text data="{}" status-code=200
-^https://lion\.didialift\.com/broker/\? data-type=text data="{}" status-code=200
+^https://conf\.diditaxi\.com\.cn/dynamic/conf data-type=text data="{}" status-code=200
 ^https://conf\.diditaxi\.com\.cn/homepage/v1/other/slow\? data-type=text data="{}" status-code=200
 ^https://ct\.xiaojukeji\.com/agent/v3/feeds\? data-type=text data="{}" status-code=200
-^https://conf\.diditaxi\.com\.cn/dynamic/conf data-type=text data="{}" status-code=200
+^https://lion\.didialift\.com/broker/\? data-type=text data="{}" status-code=200
+^https://res\.xiaojukeji\.com/resapi/activity/getMulti\? data-type=text data="{}" status-code=200
+^https://res\.xiaojukeji\.com/resapi/activity/mget data-type=text data="{}" status-code=200
 # 青桔页面净化
 ^https://htwkop\.xiaojukeji\.com/gateway\?api=medel\.marketing\.spot\.delivery\.login& data-type=text data="{}" status-code=200
 # 代价页面净化
@@ -124,14 +131,14 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 
 # 闲鱼净化（没效果需要卸载重装，并保证首次启动 APP 前已经正确设置、启用相关功能）
 # 搜索页面去除行情热点及其它
-^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.search\.discover/ data-type=text data="{}" status-code=200
-^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlecommerce\.splash\.ads/ data-type=text data="{}" status-code=200
-^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.user\.strategy\.list/ data-type=text data="{}" status-code=200
+^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.item\.buy\.feeds/ data-type=text data="{}" status-code=200
 ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.item\.recommend\.list/ data-type=text data="{}" status-code=200
 ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.local\.near\.by\.corner\.info/ data-type=text data="{}" status-code=200
-^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.item\.buy\.feeds/ data-type=text data="{}" status-code=200
-^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.search\.shade/ data-type=text data="{}" status-code=200
 ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.playboy\.recommend/ data-type=text data="{}" status-code=200
+^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.user\.strategy\.list/ data-type=text data="{}" status-code=200
+^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlecommerce\.splash\.ads/ data-type=text data="{}" status-code=200
+^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.search\.discover/ data-type=text data="{}" status-code=200
+^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.search\.shade/ data-type=text data="{}" status-code=200
 
 # 盖得排行净化
 # 首页 AI 推广 - 恐一回龙
@@ -160,17 +167,17 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 # 去除个人中心-店铺关注下方推荐店铺流
 ^https://api\.pinduoduo\.com/api/light/feeds/integration/render\? data-type=text data="{}" status-code=200
 # 去除个人中心-历史浏览下方推荐商品、视频、店铺、直播流
-^https://api\.pinduoduo\.com/api/tyrion/arec_list\? data-type=text data="{}" status-code=200
-^https://api\.pinduoduo\.com/api/hub/zb_promotions_scene/weak/list/get\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/caterham/v3/query/footprint\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/caterham/v3/query/promotion\? data-type=text data="{}" status-code=200
+^https://api\.pinduoduo\.com/api/hub/zb_promotions_scene/weak/list/get\? data-type=text data="{}" status-code=200
+^https://api\.pinduoduo\.com/api/tyrion/arec_list\? data-type=text data="{}" status-code=200
 # 去除个人中心-优惠券下方推荐优惠券流
-^https://api\.pinduoduo\.com/api/liverpool/coupon_center/user_coupon_page/query_goods_batch_list\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/alexa/goods/back_up\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/aquarius/hungary/global/homepage\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/aristotle/query_order_list_tabs_element\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/aristotle/unrated_order_for_unreceived_tab\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/brand-olay/goods_detail/bybt_guide\? data-type=text data="{}" status-code=200
+^https://api\.pinduoduo\.com/api/liverpool/coupon_center/user_coupon_page/query_goods_batch_list\? data-type=text data="{}" status-code=200
 # 去除个人中心-多多钱包下方推荐商品流
 ^https://api\.pinduoduo\.com/api/buffon/nasus/recommend\? data-type=text data="{}" status-code=200
 ^https://api\.pinduoduo\.com/api/caterham/v3/query/likes\? data-type=text data="{}" status-code=200
@@ -199,24 +206,24 @@ hostname = %APPEND% images.pinduoduo.com, grpc.biliapi.net, app.bilibili.com, ap
 
 # 淘宝去广告
 # 阿里巴巴
-^https://acs\.m\.taobao\.com/gw/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) data-type=text data="{}" status-code=200
+# ^https://acs\.m\.taobao\.com/gw/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
+# ^https://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
+# ^https://acs\.m\.taobao\.com/gw/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
+# ^https://acs\.m\.taobao\.com/gw/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
+# ^https://acs\.m\.taobao\.com/gw/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.alimama\.etao\.config\.query/.+?etao_advertise data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.etao\.noah\.query/.+tao_splash data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
-^https://heic\.alicdn\.com/imgextra/I\d/\d*/?[\w!]+-\d-(?:octopus|tps-1125-1602|tps-1080-1920)\.(?:jp|pn)g_(?:1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
+^https://acs\.m\.taobao\.com/gw/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) data-type=text data="{}" status-code=200
 ^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(?:volvo\.secondfloor\.getconfig|wireless\.home\.newface\.awesome\.get) data-type=text data="{}" status-code=200
+^https://heic\.alicdn\.com/imgextra/i\d/\d*/?[\w!]+-\d-(?:octopus|tps-1125-1602|tps-1080-1920)\.(?:jp|pn)g_(?:1\d{3}|9\d{2})x(1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
 
 # YouTube 优化
 # ^https?://[\w-]+\.googlevideo\.com/initplayback.+&oad data-type=text data="" status-code=200
 ^https?://[\w-]+\.googlevideo\.com/(?!(dclk_video_ads|videoplayback\?)).+&oad data-type=text data=" " status-code=200
 # 通用广告请求
-^https://(?:www|s)\.youtube\.com/api/stats/ads data-type=text data=" " status-code=200
 ^https://(?:www|s)\.youtube\.com/(?:pagead|ptracking) data-type=text data=" " status-code=200
+^https://(?:www|s)\.youtube\.com/api/stats/ads data-type=text data=" " status-code=200
 ^https://s\.youtube\.com/api/stats/qoe\?adcontext data-type=text data=" " status-code=200
 
 [Body Rewrite]
@@ -227,8 +234,8 @@ http-response-jq ^https://(?>webapi|miniapp)\.qmai\.cn/web/catering([0-9]-apiser
 http-response-jq ^https://miniapp\.sexytea2013\.com/cms/slot/queryByCodes\?codes=INDEX_TOP_BANNER 'del(.data.INDEX_SLOT_01, .data.INDEX_SLOT_02) | .data.INDEX_TOP_BANNER.contents |= map(del(.bubble, .figure))'
 
 # Trakt 解锁本地 VIP
-http-response-jq ^https://apiz\.trakt\.tv/users/settings '.user.vip = true'
 http-response-jq ^https://apiz\.trakt\.tv/users/(?!me(?:\?|$)|settings(?:\?|$)|requests(?:\?|$)|hidden(?:\?|$)|likes(?:\?|$)|saved_filters(?:\?|$)|reactions(?:\?|$))[^/\?]+(?:\?extended=full%2Cvip)$ '.vip = true'
+http-response-jq ^https://apiz\.trakt\.tv/users/settings '.user.vip = true'
 
 # Pinterest 首页、贴子详情下方信息流去广告
 http-response-jq ^https://api\.pinterest\.com/v3/(?:feeds/home|pins/\d+/related/modules)/\? '.data |= map(select(has("ad_data") | not))'
@@ -242,12 +249,12 @@ http-response-jq ^https://app\.bilibili\.com/x/v2/account/mine\? '.data |= ( .of
 http-response-jq ^https://app\.bilibili\.com/x/v2/account/myinfo\? '.data.vip |= . + { type: 2, status: 1 }'
 
 # 猫耳 FM 净化（移除开屏广告、青少年模式弹窗、首页顶部入口，替换底栏的直播入口为发现入口）app.missevan.com, data.missevan.com, fm.missevan.com
-http-response-jq ^https://app\.missevan\.com/site/launch\? '.info |= del(.splash, .splash_ready)'
-http-response-jq ^https://app\.missevan\.com/site/config$ '.info |= ( .cronet |= (fromjson | .quic = false | tojson) | . + { tab_bar_live: 0, enable_tab_bar_live_notice: false, teenager_popup_mode: 0 } | del(.httpdns, .homepage_top_task_button) )'
-http-response-jq ^https://app\.missevan\.com/site/tabs\? '.info.tabs |= map(select(.title as $t | ["直播", "发现", "广播剧", "听书", "分类"] | index($t) != null))'
-http-response-jq ^https://app\.missevan\.com/site/icons\? '.info.icons |= map(select(.title as $t | $t == "直播" or $t == "必听剧" or $t == "免费榜" or $t == "夜猫子" or $t == "启动音"))'
 http-response-jq ^https://app\.missevan\.com/discovery/list$ '.info |= map(map(select(.title != "免流服务")))'
+http-response-jq ^https://app\.missevan\.com/site/config$ '.info |= ( .cronet |= (fromjson | .quic = false | tojson) | . + { tab_bar_live: 0, enable_tab_bar_live_notice: false, teenager_popup_mode: 0 } | del(.httpdns, .homepage_top_task_button) )'
 http-response-jq ^https://app\.missevan\.com/site/get-top$ 'del(.info.search_words)'
+http-response-jq ^https://app\.missevan\.com/site/icons\? '.info.icons |= map(select(.title as $t | $t == "直播" or $t == "必听剧" or $t == "免费榜" or $t == "夜猫子" or $t == "启动音"))'
+http-response-jq ^https://app\.missevan\.com/site/launch\? '.info |= del(.splash, .splash_ready)'
+http-response-jq ^https://app\.missevan\.com/site/tabs\? '.info.tabs |= map(select(.title as $t | ["直播", "发现", "广播剧", "听书", "分类"] | index($t) != null))'
 
 # 滴滴出行优化（移除开屏广告、精简首页、底栏和我的页面）res.xiaojukeji.com, lion.didialift.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, ct.xiaojukeji.com, api.udache.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, 2402:4e00:4040::15, 2402:4e00:4040::16, 2402:4e00:4040::5, 2402:4e00:4040::b, 2402:4e00:4040::c, 2402:4e00:4040::f, 2402:840:d001::3, 2402:840:d001::4, 113.46.225.4, 113.46.225.5
 # 首页净化
@@ -268,8 +275,8 @@ http-response-jq ^https://as\.xiaojukeji\.com/ep/as/toggles\? '.data |= map(if .
 http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pEndTripPaidLayout$ 'del(.data.instances."xp-card-swiper-banner_finish_1")'
 
 # 得物净化（移除开屏广告、弹窗、搜索词填充、热搜榜、猜你想搜、推荐关注、推荐信息流，精简消息中心和我的页面）app.dewu.com
-http-response-jq ^https://app\.dewu\.com/api/v1/app/biz-aggregate/me/user-index\? '.data.modules |= map(if .key == "wallet" then .data.menus |= map(select(.key == "coupon" or .key == "allowance" or .key == "gift" or .key == "balance")) else . end) | .data.modules |= map(select(.key != "merchant" and .key != "discountCoupon"))'
 http-response-jq ^https://app\.dewu\.com/api/v1/app/account/wallet/page/entrance\? '.data.groupInfoDTOS |= map(.moduleInfoDTO = {assetModule: .moduleInfoDTO.assetModule}) | .data.moduleNames = [.data.moduleNames[] | select(. == "assetModule")] | . as $full | $full | .data.groupNames |= (map(select(. == "MAIN" or . == "ASYNC_COMMON" or . == "ASYNC_GOODS_FEEDS")))'
+http-response-jq ^https://app\.dewu\.com/api/v1/app/biz-aggregate/me/user-index\? '.data.modules |= map(if .key == "wallet" then .data.menus |= map(select(.key == "coupon" or .key == "allowance" or .key == "gift" or .key == "balance")) else . end) | .data.modules |= map(select(.key != "merchant" and .key != "discountCoupon"))'
 http-response-jq ^https://app\.dewu\.com/identify-discovery/v1/discovery/index\? '.data.groups |= map(.items |= map(select(.title == "消息中心")))'
 
 # 闲鱼净化（移除开屏广告、商品信息流广告、搜索栏填充词、首页签到入口、悬浮广告，精简我的页面）acs.m.goofish.com, g-acs.m.goofish.com
@@ -277,18 +284,18 @@ http-response-jq ^https://app\.dewu\.com/identify-discovery/v1/discovery/index\?
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.home\.nextfresh/ '.data |= ( del(.homeTopList, .widgetReturnDO) | .sections |= map(select((.template.name == "idlefish_home_new_commodity_card" or (.template.name | contains("fish_home_tags_item_card"))))) )'
 # 我的页面净化
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.idle\.user\.page\.my\.adapter/ '.data.container.sections |= map( select(.template.name as $name | ["my_fy25_header", "my_fy25_user_info", "my_fy25_trade"] | index($name)) | if .template.name == "my_fy25_user_info" then del(.item.level) else . end | if .template.name == "my_fy25_trade" then del(.item.rate) else . end )'
-http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.widget\.refresh\.get/ '.data.homeTopList |= map(select(.sectionType == "kingkongDo"))'
-http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.home\.whale\.modulet/ '.data.container.sections |= map(select(.template.name == "fish_home_miniapp"))'
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.fun\.follow\.feed\.list/ '.data.sections|=map(select(.cardType==2001))'
-http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.home\.community/ '.data.feedsList |= map(select(.template.name == "idlefish_home_new_commodity_card" or .template.name == "idlefish_home_new_content_card"))'
-http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.home\.newitem\.page/ '.data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct != "banner" and $ct != "mamaAD"))'
+http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.home\.whale\.modulet/ '.data.container.sections |= map(select(.template.name == "fish_home_miniapp"))'
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.local\.flow\.plat\.section/ '.data.data.components |= map(select(.data and (.data|type=="object") and .data.template and (.data.template|type=="object") and .data.template.name and (.data.template.name|type=="string") and (.data.template.name|contains("fish_city_kingkong"))))'
-http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.local\.home\.top/ '.data.data.components |= map(select(.key == "fish_home_second_stage_top_cardV3"))'
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.local\.home/ '.data.sections |= map(select((.template.cardEnum != "ads") and (.cardType == "common")))'
-http-response-jq ^https://g-acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.search/ '.data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType == "ad" then empty else . end) | del(.data.resultPrefixBar)'
-http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.item\.search\.activate/ '.data.cardList |= map(if has("cardData") and (.cardData | has("hotwords")) then .cardData |= del(.hotwords) else . end)'
+http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.local\.home\.top/ '.data.data.components |= map(select(.key == "fish_home_second_stage_top_cardV3"))'
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idle\.trade\.full\.info/ '.data.components |= map(select(.render | . == "orderStatusVO" or . == "addressInfoVO" or . == "orderInfoVO"))'
 http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.home\.circle\.list/ '.data.circleList[].showInfo.titleImage |= (.lightUrl="" | .url="" | del(.width, .height))'
+http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.home\.community/ '.data.feedsList |= map(select(.template.name == "idlefish_home_new_commodity_card" or .template.name == "idlefish_home_new_content_card"))'
+http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.home\.newitem\.page/ '.data.sections |= map(select(.data.clickParam.args.cardType as $ct | $ct != "banner" and $ct != "mamaAD"))'
+http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlehome\.widget\.refresh\.get/ '.data.homeTopList |= map(select(.sectionType == "kingkongDo"))'
+http-response-jq ^https://acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.item\.search\.activate/ '.data.cardList |= map(if has("cardData") and (.cardData | has("hotwords")) then .cardData |= del(.hotwords) else . end)'
+http-response-jq ^https://g-acs\.m\.goofish\.com/gw/mtop\.taobao\.idlemtopsearch\.search/ '.data.resultList |= map(if .data.item.main.exContent.dislikeFeedback.clickParam.args.bizType == "ad" then empty else . end) | del(.data.resultPrefixBar)'
 
 # 盖得排行净化（精简首页、移除分类横幅推广、单单返猜你喜欢和编辑精选，移除我的页面推广）zone.guiderank-app.com
 # 首页精简
@@ -377,7 +384,7 @@ AND, ((DOMAIN-SUFFIX, youtubei.googleapis.com, extended-matching), (PROTOCOL, QU
 bili.protobuf = type=http-response, pattern=^https://(?:grpc\.biliapi\.net|app\.bilibili\.com)/bilibili\.(?:app\.(?:show\.v1\.Popular/Index|dynamic\.v2\.Dynamic/DynAll|view(?:unite)?\.v1\.View/(?:View|ViewProgress|RelatesFeed)|playurl\.v1\.PlayURL/PlayView|playerunite\.v1\.Player/PlayViewUnite)|polymer\.app\.search\.v1\.Search/SearchAll|community\.service\.dm\.v1\.DM/DmView|main\.community\.reply\.v1\.Reply/MainList|pgc\.gateway\.player\.v2\.PlayURL/PlayView)$, argument = "{ "displayUpList": "auto", "purifyComment": 1, "sponsorBlock": "bilibili.airborne", "logLevel": "5" }", requires-body = 1, binary-body-mode = 1, max-size = -1, engine = webview, script-path = https://github.com/kokoryh/Sparkle/raw/master/dist/bilibili.protobuf.response.js
 
 # 京东去广告 api.m.jd.com
-移除京东广告 = type=http-response, pattern=^https://api\.m\.jd\.com/client\.action\?functionId=(?:deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|start|welcomeHome), script-path = https://kelee.one/Resource/JavaScript/JD/JD_remove_ads.js, requires-body = true
+移除京东广告 = type=http-response, pattern=^https://api\.m\.jd\.com/client\.action\?functionId=(?:deliverLayer|getTabHomeInfo|myOrderInfo|orderTrackBusiness|personinfoBusiness|welcomeHome), script-path = https://kelee.one/Resource/JavaScript/JD/JD_remove_ads.js, requires-body = true
 
 # 京东比价 in.m.jd.com, apapia-sqk-weblogic.manmanbuy.com
 #慢慢买捕获令牌 = type=http-request, pattern=^https://apapia-sqk-weblogic\.manmanbuy\.com/baoliao/center/menu$, script-path = https://kelee.one/Resource/JavaScript/JD/JD_Price.js, requires-body = true, timeout = 10

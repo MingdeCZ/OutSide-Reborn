@@ -76,8 +76,6 @@ DOMAIN-SUFFIX, turgame.com
 DOMAIN-SUFFIX, vcc.agency
 DOMAIN-SUFFIX, vmiss.com
 DOMAIN-SUFFIX, wedata.net
-DOMAIN-SUFFIX, wikimedia.org
-DOMAIN-SUFFIX, wikipedia.org
 DOMAIN-SUFFIX, wins.cool
 DOMAIN-SUFFIX, yummy.best
 DOMAIN-SUFFIX, zenlayer.net
@@ -237,11 +235,14 @@ DOMAIN-SUFFIX, xboxlive.com
 DOMAIN-SUFFIX, xboxservices.com
 DOMAIN-SUFFIX, yammer.com
 # 待分配 AI
+# DOMAIN, api.github.com
 # DOMAIN, api.jetbrains.ai
+# DOMAIN, gateway.ai.cloudflare.com
 # DOMAIN-SUFFIX, dify.ai
 # DOMAIN-SUFFIX, jasper.ai
 # DOMAIN-SUFFIX, openart.ai
 # DOMAIN-SUFFIX, perplexity.ai
+DOMAIN-SUFFIX, ai.com
 DOMAIN-SUFFIX, clipdrop.co
 DOMAIN-SUFFIX, poe.com
 # 其它常见海外服务（最后更新：26-5-13）
@@ -255,6 +256,7 @@ DOMAIN, help.ubnt.com
 DOMAIN, news.ycombinator.com
 DOMAIN, store.ui.com.cn
 DOMAIN, wego.here.com
+DOMAIN, writer-api.mintlify.com
 DOMAIN, www.yymanhua.com
 DOMAIN, yymanhua.com
 DOMAIN-KEYWORD, blogspot
@@ -307,11 +309,14 @@ DOMAIN-SUFFIX, aicoin.com
 DOMAIN-SUFFIX, aimoon.com
 DOMAIN-SUFFIX, airtable.com
 DOMAIN-SUFFIX, ajay.app
+DOMAIN-SUFFIX, akamai-content-networks.com
 DOMAIN-SUFFIX, akamai.net
 DOMAIN-SUFFIX, akamaihd.net
+DOMAIN-SUFFIX, akamaized.net
 DOMAIN-SUFFIX, amazon.com
 DOMAIN-SUFFIX, amazonaws.com
 DOMAIN-SUFFIX, amplience.com
+DOMAIN-SUFFIX, ampproject.org
 DOMAIN-SUFFIX, android.com
 DOMAIN-SUFFIX, androidify.com
 DOMAIN-SUFFIX, androidpolice.com
@@ -358,6 +363,7 @@ DOMAIN-SUFFIX, awscloud.com
 DOMAIN-SUFFIX, axios.com
 DOMAIN-SUFFIX, azure-mobile.net
 DOMAIN-SUFFIX, azurecontainer.io
+DOMAIN-SUFFIX, azurefd.net
 DOMAIN-SUFFIX, azurewebsites.net
 DOMAIN-SUFFIX, bad.news
 DOMAIN-SUFFIX, badoo.com
@@ -389,6 +395,7 @@ DOMAIN-SUFFIX, bitly.com
 DOMAIN-SUFFIX, bitmex.com
 DOMAIN-SUFFIX, bleepingcomputer.com
 DOMAIN-SUFFIX, blizzard.com
+DOMAIN-SUFFIX, blogblog.com
 DOMAIN-SUFFIX, blogger.com
 DOMAIN-SUFFIX, bloomberg.com
 DOMAIN-SUFFIX, bloomberg.net
@@ -418,6 +425,7 @@ DOMAIN-SUFFIX, cbsnews.com
 DOMAIN-SUFFIX, cdnjs.com
 DOMAIN-SUFFIX, cdpn.io
 DOMAIN-SUFFIX, certificate-transparency.org
+DOMAIN-SUFFIX, cf-ipfs.com
 DOMAIN-SUFFIX, cfr.org
 DOMAIN-SUFFIX, ch
 DOMAIN-SUFFIX, change.org
@@ -432,11 +440,17 @@ DOMAIN-SUFFIX, cisco.com
 DOMAIN-SUFFIX, cla-assistant.io
 DOMAIN-SUFFIX, clips4sale.com
 DOMAIN-SUFFIX, cloudflare-dns.com
+DOMAIN-SUFFIX, cloudflare-ipfs.com
 DOMAIN-SUFFIX, cloudflare.com
 DOMAIN-SUFFIX, cloudflare.dev
+DOMAIN-SUFFIX, cloudflare.tv
 DOMAIN-SUFFIX, cloudflareaccess.com
+DOMAIN-SUFFIX, cloudflareapps.com
+DOMAIN-SUFFIX, cloudflarepreview.com
 DOMAIN-SUFFIX, cloudflareresolve.com
 DOMAIN-SUFFIX, cloudflarestatus.com
+DOMAIN-SUFFIX, cloudflarestorage.com
+DOMAIN-SUFFIX, cloudflaretunnel.com
 DOMAIN-SUFFIX, cloudfunctions.net
 DOMAIN-SUFFIX, clubhouse.com
 DOMAIN-SUFFIX, clubhouseapi.com
@@ -487,7 +501,6 @@ DOMAIN-SUFFIX, debian.org
 DOMAIN-SUFFIX, debug.com
 DOMAIN-SUFFIX, debuggex.com
 DOMAIN-SUFFIX, deepl.com
-DOMAIN-SUFFIX, deezer.com
 DOMAIN-SUFFIX, deno.com
 DOMAIN-SUFFIX, desmos.com
 DOMAIN-SUFFIX, detnews.com
@@ -572,6 +585,7 @@ DOMAIN-SUFFIX, findagrave.com
 DOMAIN-SUFFIX, firebase.com
 DOMAIN-SUFFIX, firebaseio.com
 DOMAIN-SUFFIX, firefox.com
+DOMAIN-SUFFIX, fish.audio
 DOMAIN-SUFFIX, fixupx.com
 DOMAIN-SUFFIX, fixvx.com
 DOMAIN-SUFFIX, flickr.com
@@ -606,6 +620,7 @@ DOMAIN-SUFFIX, garmin.com
 DOMAIN-SUFFIX, gartner.com
 DOMAIN-SUFFIX, gate.io
 DOMAIN-SUFFIX, gcld-line.com
+DOMAIN-SUFFIX, gcr.io
 DOMAIN-SUFFIX, gd
 DOMAIN-SUFFIX, geekbench.com
 DOMAIN-SUFFIX, gelbooru.com
@@ -616,6 +631,7 @@ DOMAIN-SUFFIX, getmdl.io
 DOMAIN-SUFFIX, getoutline.org
 DOMAIN-SUFFIX, gettyimages.com
 DOMAIN-SUFFIX, gg
+DOMAIN-SUFFIX, ggpht.com
 DOMAIN-SUFFIX, gh.io
 DOMAIN-SUFFIX, ghostery.com
 DOMAIN-SUFFIX, girlsgogames.com
@@ -695,6 +711,7 @@ DOMAIN-SUFFIX, hostloc.com
 DOMAIN-SUFFIX, hsex.men
 DOMAIN-SUFFIX, hsforms.com
 DOMAIN-SUFFIX, hsforms.net
+DOMAIN-SUFFIX, html5rocks.com
 DOMAIN-SUFFIX, hubspotlinksstarter.com
 DOMAIN-SUFFIX, hubspotstarter.net
 DOMAIN-SUFFIX, huffpost.com
@@ -787,6 +804,7 @@ DOMAIN-SUFFIX, kr
 DOMAIN-SUFFIX, kraken.com
 DOMAIN-SUFFIX, kucoin.com
 DOMAIN-SUFFIX, kwai.com
+DOMAIN-SUFFIX, kxcdn.com
 DOMAIN-SUFFIX, laby.net
 DOMAIN-SUFFIX, launchdarkly.com
 DOMAIN-SUFFIX, ledger.com
@@ -840,6 +858,7 @@ DOMAIN-SUFFIX, mayoclinic.org
 DOMAIN-SUFFIX, md
 DOMAIN-SUFFIX, medallia.com
 DOMAIN-SUFFIX, mediafire.com
+DOMAIN-SUFFIX, mediawiki.org
 DOMAIN-SUFFIX, medium.com
 DOMAIN-SUFFIX, meetup.com
 DOMAIN-SUFFIX, messenger.com
@@ -963,6 +982,7 @@ DOMAIN-SUFFIX, overdrive.com
 DOMAIN-SUFFIX, ovpnleaktest.com
 DOMAIN-SUFFIX, packagephobia.com
 DOMAIN-SUFFIX, page.link
+DOMAIN-SUFFIX, pages.dev
 DOMAIN-SUFFIX, pagesix.com
 DOMAIN-SUFFIX, party
 DOMAIN-SUFFIX, patreon.com
@@ -1104,7 +1124,7 @@ DOMAIN-SUFFIX, softonic.cn
 DOMAIN-SUFFIX, softonic.com
 DOMAIN-SUFFIX, sony.net
 DOMAIN-SUFFIX, sophos.com
-DOMAIN-SUFFIX, soundcloud.com
+DOMAIN-SUFFIX, sososo.io
 DOMAIN-SUFFIX, sourceforge.net
 DOMAIN-SUFFIX, south-plus.net
 DOMAIN-SUFFIX, south-plus.org
@@ -1195,6 +1215,7 @@ DOMAIN-SUFFIX, tronscan.org
 DOMAIN-SUFFIX, trustpilot.com
 DOMAIN-SUFFIX, trustpilot.net
 DOMAIN-SUFFIX, truthsocial.com
+DOMAIN-SUFFIX, trycloudflare.com
 DOMAIN-SUFFIX, tt
 DOMAIN-SUFFIX, tube8.com
 DOMAIN-SUFFIX, tumblr.com
@@ -1235,6 +1256,7 @@ DOMAIN-SUFFIX, vesselfinder.net
 DOMAIN-SUFFIX, viber.com
 DOMAIN-SUFFIX, vice.com
 DOMAIN-SUFFIX, victoriassecret.com
+DOMAIN-SUFFIX, videodelivery.net
 DOMAIN-SUFFIX, vikacg.com
 DOMAIN-SUFFIX, vimeo.com
 DOMAIN-SUFFIX, vine.co
@@ -1248,6 +1270,7 @@ DOMAIN-SUFFIX, vpnunlimited.com
 DOMAIN-SUFFIX, vrchat.com
 DOMAIN-SUFFIX, vxtwitter.com
 DOMAIN-SUFFIX, vzw.com
+DOMAIN-SUFFIX, w.wiki
 DOMAIN-SUFFIX, w3schools.com
 DOMAIN-SUFFIX, wa.me
 DOMAIN-SUFFIX, waifu2x.net
@@ -1262,6 +1285,7 @@ DOMAIN-SUFFIX, weather.com
 DOMAIN-SUFFIX, web.dev
 DOMAIN-SUFFIX, webflow.com
 DOMAIN-SUFFIX, webmproject.org
+DOMAIN-SUFFIX, webpkgcache.com
 DOMAIN-SUFFIX, webrtc.org
 DOMAIN-SUFFIX, weebly.com
 DOMAIN-SUFFIX, whatbrowser.org
@@ -1272,15 +1296,30 @@ DOMAIN-SUFFIX, whoer.net
 DOMAIN-SUFFIX, widevine.com
 DOMAIN-SUFFIX, wikawika.xyz
 DOMAIN-SUFFIX, wiki2.org
+DOMAIN-SUFFIX, wikibooks.org
+DOMAIN-SUFFIX, wikidata.org
 DOMAIN-SUFFIX, wikidot.com
+DOMAIN-SUFFIX, wikifunctions.org
 DOMAIN-SUFFIX, wikihow.com
 DOMAIN-SUFFIX, wikileaks.org
+DOMAIN-SUFFIX, wikimedia.org
+DOMAIN-SUFFIX, wikimediafoundation.org
+DOMAIN-SUFFIX, wikinews.org
+DOMAIN-SUFFIX, wikipedia.com
+DOMAIN-SUFFIX, wikipedia.org
+DOMAIN-SUFFIX, wikiquote.org
+DOMAIN-SUFFIX, wikisource.org
 DOMAIN-SUFFIX, wikissl.com
+DOMAIN-SUFFIX, wikiversity.org
+DOMAIN-SUFFIX, wikivoyage.org
 DOMAIN-SUFFIX, wikiwand.com
+DOMAIN-SUFFIX, wiktionary.org
 DOMAIN-SUFFIX, windy.com
 DOMAIN-SUFFIX, wireguard.com
 DOMAIN-SUFFIX, wireshark.org
 DOMAIN-SUFFIX, wix.com
+DOMAIN-SUFFIX, wmflabs.org
+DOMAIN-SUFFIX, wmfusercontent.org
 DOMAIN-SUFFIX, wnacg.com
 DOMAIN-SUFFIX, wordpress.com
 DOMAIN-SUFFIX, wordpress.org
@@ -1315,7 +1354,7 @@ DOMAIN-SUFFIX, yandex.com
 DOMAIN-SUFFIX, yandex.net
 DOMAIN-SUFFIX, you.com
 DOMAIN-SUFFIX, youjizz.com
-DOMAIN-SUFFIX, youtube.com
+DOMAIN-SUFFIX, ytimg.com
 DOMAIN-SUFFIX, z.com
 DOMAIN-SUFFIX, za
 DOMAIN-SUFFIX, zdnet.com
@@ -1342,6 +1381,7 @@ DOMAIN, 4gtvfreepcvod-cds.cdn.hinet.net
 DOMAIN, akmcdnoversea-tw.inter.ptqy.gitv.tv
 DOMAIN, ana.video.friday.tw
 DOMAIN, apm-misaka.biliapi.net
+DOMAIN, athome.fandango.com
 DOMAIN, bbc.mp-pxcdn.com
 DOMAIN, bcbolt446c5271-a.akamaihd.net
 DOMAIN, cache.video.iqiyi.com
@@ -1374,11 +1414,17 @@ DOMAIN, hbolb.onwardsmg.com
 DOMAIN, hbounify-prod.evergent.com
 DOMAIN, itvpnpmobile-a.akamaihd.net
 DOMAIN, manifest.prod.boltdns.net
+DOMAIN, players.brightcove.net
 DOMAIN, prod-api.crackle.com
 DOMAIN, staticasiafox.akamaized.net
+DOMAIN, tubi.tv
+DOMAIN, tubitv.com
 DOMAIN, upos-bstar-mirrorakam.akamaized.net
 DOMAIN, upos-bstar1-mirrorakam.akamaized.net
 DOMAIN, video.friday.tw
+DOMAIN, vudu.com
+DOMAIN, www.tubi.tv
+DOMAIN, www.tubitv.com
 DOMAIN-KEYWORD, -spotify-com
 DOMAIN-KEYWORD, avoddashs
 DOMAIN-KEYWORD, bbcfmt
@@ -1405,6 +1451,7 @@ DOMAIN-SUFFIX, amebaownd.com
 DOMAIN-SUFFIX, amebaowndme.com
 DOMAIN-SUFFIX, ameblo.jp
 DOMAIN-SUFFIX, ani.gamer.com.tw
+DOMAIN-SUFFIX, api.gamer.com.tw
 DOMAIN-SUFFIX, applemusic.com
 DOMAIN-SUFFIX, atv-ps.amazon.com
 DOMAIN-SUFFIX, avodmp4s3ww-a.akamaihd.net
@@ -1427,6 +1474,7 @@ DOMAIN-SUFFIX, dazndn.com
 DOMAIN-SUFFIX, dca-ll-livedazn-dznlivejp.s.llnwi.net
 DOMAIN-SUFFIX, dcalivedazn.akamaized.net
 DOMAIN-SUFFIX, dcblivedazn.akamaized.net
+DOMAIN-SUFFIX, deezer.com
 DOMAIN-SUFFIX, disco-api.com
 DOMAIN-SUFFIX, discomax.com
 DOMAIN-SUFFIX, discoveryplus.co.uk
@@ -1441,6 +1489,7 @@ DOMAIN-SUFFIX, dokusho-ojikan.jp
 DOMAIN-SUFFIX, dzcdn.net
 DOMAIN-SUFFIX, encoretvb.com
 DOMAIN-SUFFIX, ext-twitch.tv
+DOMAIN-SUFFIX, fanfox.net
 DOMAIN-SUFFIX, fls-na.amazon.com
 DOMAIN-SUFFIX, fox.com
 DOMAIN-SUFFIX, foxdcg.com
@@ -1466,6 +1515,7 @@ DOMAIN-SUFFIX, hulu.tv
 DOMAIN-SUFFIX, hulu.us
 DOMAIN-SUFFIX, huluim.com
 DOMAIN-SUFFIX, hulustream.com
+DOMAIN-SUFFIX, ibytedtos.com
 DOMAIN-SUFFIX, indazn.com
 DOMAIN-SUFFIX, indaznlab.com
 DOMAIN-SUFFIX, intl-rcd.iqiyi.com
@@ -1486,6 +1536,7 @@ DOMAIN-SUFFIX, kktv.me
 DOMAIN-SUFFIX, linetv.tw
 DOMAIN-SUFFIX, location-plus.nhk.jp
 DOMAIN-SUFFIX, max.com
+DOMAIN-SUFFIX, media-amazon.com
 DOMAIN-SUFFIX, my5.tv
 DOMAIN-SUFFIX, mytvsuper.com
 DOMAIN-SUFFIX, netflix.ca
@@ -1505,6 +1556,7 @@ DOMAIN-SUFFIX, primevideo.com
 DOMAIN-SUFFIX, primevideo.info
 DOMAIN-SUFFIX, primevideo.org
 DOMAIN-SUFFIX, primevideo.tv
+DOMAIN-SUFFIX, production-public.tubi.io
 DOMAIN-SUFFIX, pscdn.co
 DOMAIN-SUFFIX, psg.cdn.hgc.com.hk
 DOMAIN-SUFFIX, scdn.co
@@ -1513,6 +1565,7 @@ DOMAIN-SUFFIX, showtime.com
 DOMAIN-SUFFIX, skyking.com.tw
 DOMAIN-SUFFIX, smartmediarep.com
 DOMAIN-SUFFIX, socdm.com
+DOMAIN-SUFFIX, soundcloud.com
 DOMAIN-SUFFIX, spoti.fi
 DOMAIN-SUFFIX, spotify-com.akamaized.net
 DOMAIN-SUFFIX, spotify-everywhere.com
@@ -1543,15 +1596,16 @@ DOMAIN-SUFFIX, viblast.com
 DOMAIN-SUFFIX, viu.com
 DOMAIN-SUFFIX, viu.now.com
 DOMAIN-SUFFIX, viu.tv
-DOMAIN-SUFFIX, vudu.com
 DOMAIN-SUFFIX, wetv.vip
 DOMAIN-SUFFIX, wetvinfo.com
 DOMAIN-SUFFIX, winticket.jp
 DOMAIN-SUFFIX, withyoutube.com
 DOMAIN-SUFFIX, youtube-nocookie.com
+DOMAIN-SUFFIX, youtube.com
 DOMAIN-SUFFIX, youtubeeducation.com
 DOMAIN-SUFFIX, youtubegaming.com
 DOMAIN-SUFFIX, youtubekids.com
+IP-CIDR, 150.109.28.51/32
 PROCESS-NAME, com.amazon.avod.thirdpartyclient
 PROCESS-NAME, com.bstar.intl
 PROCESS-NAME, com.hktve.viutv
