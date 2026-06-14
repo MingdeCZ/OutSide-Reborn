@@ -1,5 +1,6 @@
 # 优化/补充
 DOMAIN, b23.tv
+DOMAIN, f.c2r.ts.cdn.office.net
 DOMAIN, localhost.pan.baidu.com
 DOMAIN, localhost.weixin.qq.com
 DOMAIN, tv.apple.com
@@ -951,7 +952,7 @@ DOMAIN-SUFFIX, zuimeitianqi.com
 USER-AGENT, "%E4%BC%98%E9%85%B7*"
 USER-AGENT, "%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*"
 USER-AGENT, "TeslaMap"
-# 软件更新、操作系统等大文件下载（最后更新：26-5-13）
+# 软件更新、操作系统等大文件下载（最后更新：26-6-14）
 # DOMAIN, archive.mirror.rafal.ca
 # DOMAIN, dl.nssurge.com
 # DOMAIN, ftp.at.debian.org
@@ -1051,6 +1052,7 @@ DOMAIN, archive.linux.duke.edu
 DOMAIN, artfiles.org
 DOMAIN, artifacts.electronjs.org
 DOMAIN, assets-production.packagecloud.io
+DOMAIN, assets.dataflare.app
 DOMAIN, assets1.xboxlive.com
 DOMAIN, assets2.xboxlive.com
 DOMAIN, aus5.mozilla.org
@@ -1097,7 +1099,6 @@ DOMAIN, centos.anexia.at
 DOMAIN, centos.is
 DOMAIN, cesium.di.uminho.pt
 DOMAIN, charts.verdaccio.org
-DOMAIN, chnroutes2.cdn.skk.moe
 DOMAIN, cisco.yuntu.com.tw
 DOMAIN, ciscobinary.openh264.org
 DOMAIN, clarkson.edu
@@ -1345,7 +1346,6 @@ DOMAIN, fdroid.tetaneutral.net
 DOMAIN, fedorapeople.org
 DOMAIN, file.chobit.cc
 DOMAIN, files2.freedownloadmanager.org
-DOMAIN, filters.cdn.skk.moe
 DOMAIN, fosszone.csd.auth.gr
 DOMAIN, fr2.rpmfind.net
 DOMAIN, free.hands.com
@@ -2155,7 +2155,6 @@ DOMAIN, rsync.icm.edu.pl
 DOMAIN, rsync.udc.es
 DOMAIN, rsync.uni-bayreuth.de
 DOMAIN, rsync.yuki.net.uk
-DOMAIN, ruleset.skk.moe
 DOMAIN, s3.teckids.org
 DOMAIN, searchcpan.org
 DOMAIN, security.debian.org
@@ -2169,7 +2168,6 @@ DOMAIN, snt.utwente.nl
 DOMAIN, softlibre.unizar.es
 DOMAIN, softwareupdate.pilotmoon.com
 DOMAIN, sotirov-bg.net
-DOMAIN, speedtest-net-servers.cdn.skk.moe
 DOMAIN, static.adguard.com
 DOMAIN, static.adtidy.org
 DOMAIN, static.hikarifield.co.jp

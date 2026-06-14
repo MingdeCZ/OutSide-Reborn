@@ -10,6 +10,8 @@ DOMAIN, unogs.com
 DOMAIN, uzu.ma
 DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, adguard-dns.com
+DOMAIN-SUFFIX, akari.fail
+DOMAIN-SUFFIX, alpinelinux.org
 DOMAIN-SUFFIX, apache.org
 DOMAIN-SUFFIX, api.translate.zvo.cn
 DOMAIN-SUFFIX, apple
@@ -18,13 +20,19 @@ DOMAIN-SUFFIX, byteintlapi.com
 DOMAIN-SUFFIX, canva.com
 DOMAIN-SUFFIX, capcut.com
 DOMAIN-SUFFIX, capcutapi.com
+DOMAIN-SUFFIX, ccswitch.io
+DOMAIN-SUFFIX, cdn77.org
 DOMAIN-SUFFIX, check.place
+DOMAIN-SUFFIX, churros.cloud
 DOMAIN-SUFFIX, coolhub.top
 DOMAIN-SUFFIX, crisp.chat
 DOMAIN-SUFFIX, database-client.com
+DOMAIN-SUFFIX, digicert.com
 DOMAIN-SUFFIX, dpdns.org
 DOMAIN-SUFFIX, duo.com
 DOMAIN-SUFFIX, fast.com
+DOMAIN-SUFFIX, feather-ios.com
+DOMAIN-SUFFIX, feather.claration.dev
 DOMAIN-SUFFIX, findcheapsubs.com
 DOMAIN-SUFFIX, foobar2000.org
 DOMAIN-SUFFIX, forter.com
@@ -37,6 +45,8 @@ DOMAIN-SUFFIX, gitfox.app
 DOMAIN-SUFFIX, gradle.org
 DOMAIN-SUFFIX, hazeover.com
 DOMAIN-SUFFIX, hcaptcha.com
+DOMAIN-SUFFIX, hex-rays.com
+DOMAIN-SUFFIX, hubspot.com
 DOMAIN-SUFFIX, ibyteimg.com
 DOMAIN-SUFFIX, inputsource.pro
 DOMAIN-SUFFIX, kaylees.site
@@ -71,6 +81,8 @@ DOMAIN-SUFFIX, ssl.com
 DOMAIN-SUFFIX, steampowered.com
 DOMAIN-SUFFIX, swiftgram.app
 DOMAIN-SUFFIX, tampermonkey.net
+DOMAIN-SUFFIX, thawte.com
+DOMAIN-SUFFIX, theos.dev
 DOMAIN-SUFFIX, turdigital.com
 DOMAIN-SUFFIX, turgame.com
 DOMAIN-SUFFIX, vcc.agency
@@ -84,6 +96,7 @@ DOMAIN-SUFFIX, zenlayer.net
 # DOMAIN-SUFFIX, ip234.in
 # DOMAIN-SUFFIX, ipaddress.my
 # DOMAIN-SUFFIX, ipapi.is
+# DOMAIN-SUFFIX, ipinfo.es
 # DOMAIN-SUFFIX, ipwho.is
 DOMAIN-SUFFIX, abuseipdb.com
 DOMAIN-SUFFIX, db-ip.com
@@ -245,7 +258,7 @@ DOMAIN-SUFFIX, yammer.com
 DOMAIN-SUFFIX, ai.com
 DOMAIN-SUFFIX, clipdrop.co
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：26-5-13）
+# 其它常见海外服务（最后更新：26-6-14）
 # DOMAIN-SUFFIX, dcd.gg
 # DOMAIN-SUFFIX, deepmind.com
 # DOMAIN-SUFFIX, pomf.se
@@ -588,6 +601,7 @@ DOMAIN-SUFFIX, firefox.com
 DOMAIN-SUFFIX, fish.audio
 DOMAIN-SUFFIX, fixupx.com
 DOMAIN-SUFFIX, fixvx.com
+DOMAIN-SUFFIX, flathub.org
 DOMAIN-SUFFIX, flickr.com
 DOMAIN-SUFFIX, flightradar24.com
 DOMAIN-SUFFIX, flipboard.com
@@ -1011,6 +1025,7 @@ DOMAIN-SUFFIX, poeditor.com
 DOMAIN-SUFFIX, polymer-project.org
 DOMAIN-SUFFIX, pomf.cat
 DOMAIN-SUFFIX, pornhub.com
+DOMAIN-SUFFIX, posthog.com
 DOMAIN-SUFFIX, postmarkapp.com
 DOMAIN-SUFFIX, precisionhydration.com
 DOMAIN-SUFFIX, prisma.io
@@ -1209,6 +1224,7 @@ DOMAIN-SUFFIX, tokyonline.com
 DOMAIN-SUFFIX, toolforge.org
 DOMAIN-SUFFIX, tr
 DOMAIN-SUFFIX, tradingview.com
+DOMAIN-SUFFIX, trakt.tv
 DOMAIN-SUFFIX, travis-ci.com
 DOMAIN-SUFFIX, travis-ci.org
 DOMAIN-SUFFIX, tronscan.org
