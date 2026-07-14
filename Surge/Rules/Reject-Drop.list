@@ -1,11 +1,14 @@
 # 补充/优化
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com, extended-matching))
 DOMAIN, adashx.m.taobao.com
+DOMAIN, aegis.qq.com
 DOMAIN, apm-a.pinduoduo.com
 DOMAIN, apm.pinduoduo.com
 DOMAIN, app-monitor.ele.me
 DOMAIN, arms-retcode.aliyuncs.com
+DOMAIN, beacon.cdn.qq.com
 DOMAIN, browser-intake-datadoghq.com
+DOMAIN, galileotelemetry.tencent.com
 DOMAIN, h-adashx.dingtalkapps.com
 DOMAIN, ifs.tanx.com
 DOMAIN, im-x.jd.com
@@ -18,6 +21,7 @@ DOMAIN, snowflake.qq.com
 DOMAIN, titan.pinduoduo.com
 DOMAIN, trackingprd.hwwt8.com
 DOMAIN, zhihu-web-analytics.zhihu.com
+DOMAIN-SUFFIX, a.ipinfo.io
 DOMAIN-SUFFIX, adkwai.com
 DOMAIN-SUFFIX, adnxs.com
 DOMAIN-SUFFIX, apm-fe.xiaohongshu.com
@@ -42,6 +46,7 @@ DOMAIN-SUFFIX, mairuan.com
 DOMAIN-SUFFIX, monitor.azure.com
 DOMAIN-SUFFIX, mum.alibabachengdun.com
 DOMAIN-SUFFIX, openmonitor.alipay-eco.com
+DOMAIN-SUFFIX, plw6buurmlxhrlkm6wy3uk7cia0mprkq.lambda-url.ap-south-1.on.aws
 DOMAIN-SUFFIX, report.meituan.com
 DOMAIN-SUFFIX, s-gm.mmstat.com
 DOMAIN-SUFFIX, spider-tracker.xiaohongshu.com
@@ -51,6 +56,7 @@ DOMAIN-SUFFIX, th.pinduoduo.com
 DOMAIN-SUFFIX, umeng.com
 DOMAIN-SUFFIX, umini.shujupie.com
 DOMAIN-SUFFIX, uranus.jd.com
+DOMAIN-SUFFIX, v.ipinfo.io
 DOMAIN-SUFFIX, zztfly.com
 DOMAIN-WILDCARD, ads-*.xhscdn.com
 IP-CIDR, 101.35.204.35/32

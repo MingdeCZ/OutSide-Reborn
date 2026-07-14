@@ -1,4 +1,5 @@
 # 360
+# DOMAIN-SUFFIX, qhimgs.com
 DOMAIN-SUFFIX, 360.cn
 DOMAIN-SUFFIX, 360.com
 DOMAIN-SUFFIX, 360.net
@@ -12,8 +13,6 @@ DOMAIN-SUFFIX, baomitu.com
 DOMAIN-SUFFIX, haosou.com
 DOMAIN-SUFFIX, qh-cdn.com
 DOMAIN-SUFFIX, qhimg.com
-DOMAIN-SUFFIX, qhimgs
-DOMAIN-SUFFIX, qhimgs.com
 DOMAIN-SUFFIX, qhmsg.com
 DOMAIN-SUFFIX, qhres.com
 DOMAIN-SUFFIX, qhres2.com
@@ -25,7 +24,7 @@ DOMAIN-SUFFIX, so.com
 DOMAIN-SUFFIX, yunpan.cn
 DOMAIN-SUFFIX, yunpan.com
 DOMAIN-SUFFIX, yunpan.com.cn
-
+DOMAIN-WILDCARD, *.qhimgs?.com
 # 谷歌中国
 DOMAIN-SUFFIX, 265.com
 DOMAIN-SUFFIX, adservice.google.com

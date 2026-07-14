@@ -16,7 +16,6 @@ DOMAIN-SUFFIX, gspe12-cn-ssl.ls.apple.com
 DOMAIN-SUFFIX, gspe85-cn-ssl.ls.apple.com
 DOMAIN-SUFFIX, init.gc.apple.com
 DOMAIN-SUFFIX, kepler.cafe
-DOMAIN-SUFFIX, mensura.cdn-apple.com
 DOMAIN-SUFFIX, pilotmoon.com
 DOMAIN-SUFFIX, popclip.app
 DOMAIN-SUFFIX, sfss.cdn-apple.com
@@ -140,6 +139,7 @@ DOMAIN-SUFFIX, is5.mzstatic.com
 DOMAIN-SUFFIX, itunes-apple.com.akadns.net
 DOMAIN-SUFFIX, itunes.apple.com
 DOMAIN-SUFFIX, itunesconnect.apple.com
+DOMAIN-SUFFIX, mensura.cdn-apple.com
 DOMAIN-SUFFIX, mesu-cdn.apple.com.akadns.net
 DOMAIN-SUFFIX, mesu-china.apple.com.akadns.net
 DOMAIN-SUFFIX, mesu.apple.com
@@ -329,9 +329,10 @@ DOMAIN-SUFFIX, wear.googleapis.com
 DOMAIN-SUFFIX, www-google-analytics.l.google.com
 DOMAIN-SUFFIX, www-googletagmanager.l.google.com
 DOMAIN-SUFFIX, www.gstatic.com
-# 国内常见互联网公司和服务域名（最后更新：26-3-13）
+# 国内常见互联网公司和服务域名（最后更新：26-7-14）
 # DOMAIN-SUFFIX, elseviercdn.cn
 # DOMAIN-SUFFIX, lcdn-locator.apple.com
+DOMAIN, app.viayoo.com
 DOMAIN, assets1.xboxlive.cn
 DOMAIN, assets2.xboxlive.cn
 DOMAIN, c.weixin.com
@@ -349,12 +350,15 @@ DOMAIN, ocsp.digicert.cn
 DOMAIN, ocsp.globalsign.com
 DOMAIN, ocsp2.globalsign.com
 DOMAIN, public.localsend.org
+DOMAIN, res.viayoo.com
 DOMAIN, shortcloud.weixin.com
 DOMAIN, szilinklong.weixin.com
 DOMAIN, szilinkshort.weixin.com
+DOMAIN, viayoo.com
 DOMAIN, weixin.com
 DOMAIN, www.intel.cn
 DOMAIN, www.layuicdn.com
+DOMAIN, www.viayoo.com
 DOMAIN, www.weixin.com
 DOMAIN-SUFFIX, 10010.com
 DOMAIN-SUFFIX, 10086.cn
@@ -423,6 +427,7 @@ DOMAIN-SUFFIX, 9game.cn
 DOMAIN-SUFFIX, 9xiu.com
 DOMAIN-SUFFIX, abchina.com
 DOMAIN-SUFFIX, abchina.com.cn
+DOMAIN-SUFFIX, ac.cn
 DOMAIN-SUFFIX, acfun.cn
 DOMAIN-SUFFIX, addlink.cn
 DOMAIN-SUFFIX, aicdn.com
@@ -703,6 +708,7 @@ DOMAIN-SUFFIX, livechina.cn
 DOMAIN-SUFFIX, livechina.com
 DOMAIN-SUFFIX, ljcdn.com
 DOMAIN-SUFFIX, lkcoffee.com
+DOMAIN-SUFFIX, lltskb.com
 DOMAIN-SUFFIX, lofter.com
 DOMAIN-SUFFIX, luckincoffeecdn.com
 DOMAIN-SUFFIX, luojilab.com
