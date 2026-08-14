@@ -3,7 +3,7 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.1.5
+#!version = 1.1.6
 #!date = 26.8.14
 #!category = N合1
 #!system = ios
@@ -12,7 +12,7 @@
 skip-proxy = %APPEND% *.abcchina.com, *.abcchina.com.cn
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4, 113.46.225.5, 116.85.2.14, 116.85.2.15, 116.85.2.21, 116.85.2.22, 116.85.2.4, 116.85.2.5, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 3gimg.qq.com, acs.m.goofish.com, acs.m.taobao.com, apapia-sqk-weblogic.manmanbuy.com, api.bilibili.com, api.m.jd.com, api.pinduoduo.com, api.pinterest.com, api.udache.com, apiz.trakt.tv, apm.xiaojukeji.com, app.bilibili.com, app.dewu.com, app.missevan.com, as.xiaojukeji.com, b?dsp-x.jd.com, ci.xiaohongshu.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, data.missevan.com, edith.xiaohongshu.com, fm.missevan.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, heic.alicdn.com, htwkop.xiaojukeji.com, hw-edge.solseed.cn, images.pinduoduo.com, in.m.jd.com, ktx.cn, learn.chaoxing.com, lion.didialift.com, mapi.ghsmpwalmart.com, miniapp.qmai.cn, miniapp.sexytea2013.com, mobile.api.sisyphe.cn, ms.jr.jd.com, newsso.map.qq.com, newton.gumingnc.com, poi.map.xiaojukeji.com, poplayer.template.alibaba.com, rec.xiaohongshu.com, res.xiaojukeji.com, so.xiaohongshu.com, tm-api.pin-dao.cn, webapi.qmai.cn, www.xiaohongshu.com, xyst.yuanfudao.com, youtubei.googleapis.com, zone.guiderank-app.com, p0.pipi.cn
+hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4, 113.46.225.5, 116.85.2.14, 116.85.2.15, 116.85.2.21, 116.85.2.22, 116.85.2.4, 116.85.2.5, 117.51.168.12, 117.51.168.13, 117.51.168.17, 117.51.168.18, 117.51.168.5, 117.51.168.6, 117.51.169.11, 117.51.169.2, 117.51.169.4, 117.51.169.6, 120.241.142.11, 120.241.142.13, 120.241.142.18, 120.241.142.19, 120.241.142.4, 120.241.143.8, 120.241.143.4, 120.241.143.5, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.176, 123.207.209.177, 123.207.209.28, 123.207.209.29, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.64, 123.207.209.65, 157.122.212.11, 157.122.212.12, 157.122.212.2, 157.122.212.5, 157.255.76.12, 157.255.76.15, 157.255.76.17, 157.255.76.19, 157.255.76.5, 157.255.76.11, 3gimg.qq.com, acs.m.goofish.com, acs.m.taobao.com, apapia-sqk-weblogic.manmanbuy.com, api.bilibili.com, api.m.jd.com, api.pinduoduo.com, api.pinterest.com, api.udache.com, apiz.trakt.tv, apm.xiaojukeji.com, app.bilibili.com, app.dewu.com, app.missevan.com, as.xiaojukeji.com, b?dsp-x.jd.com, ci.xiaohongshu.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, data.missevan.com, edith.xiaohongshu.com, fm.missevan.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw.alicdn.com, heic.alicdn.com, htwkop.xiaojukeji.com, hw-edge.solseed.cn, images.pinduoduo.com, in.m.jd.com, ktx.cn, learn.chaoxing.com, lion.didialift.com, mapi.ghsmpwalmart.com, miniapp.qmai.cn, miniapp.sexytea2013.com, mobile.api.sisyphe.cn, ms.jr.jd.com, newsso.map.qq.com, newton.gumingnc.com, poi.map.xiaojukeji.com, poplayer.template.alibaba.com, rec.xiaohongshu.com, res.xiaojukeji.com, so.xiaohongshu.com, tm-api.pin-dao.cn, webapi.qmai.cn, www.xiaohongshu.com, xyst.yuanfudao.com, youtubei.googleapis.com, zone.guiderank-app.com, p0.pipi.cn, acs-m.freshippo.com
 
 [URL Rewrite]
 # 哔哩哔哩优化
@@ -127,8 +127,6 @@ hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4,
 ^https://daijia\.kuaidadi\.com/gateway\?api=prado\.cms\.delivery\.batch& data-type=text data="{}" status-code=200
 # 
 ^https://poi\.map\.xiaojukeji\.com/mapapi/recommend\? data-type=text data="{}" status-code=200
-# 屏蔽身份参数
-^https://omgup\d*\.xiaojukeji\.com/api(?:/realtime)?/stat/ios$ data-type=text data="{}" status-code=200
 
 # 闲鱼净化（没效果需要卸载重装，并保证首次启动 APP 前已经正确设置、启用相关功能）
 # 搜索页面去除行情热点及其它
@@ -210,17 +208,17 @@ hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4,
 
 # 淘宝去广告
 # 阿里巴巴
+# ^https://acs\.m\.taobao\.com/gw/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
+# ^https://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
+# ^https://acs\.m\.taobao\.com/gw/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
+# ^https://acs\.m\.taobao\.com/gw/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
+# ^https://acs\.m\.taobao\.com/gw/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
 ^https://(?:gw|heic)\.alicdn\.com/imgextra/i\d/\d*/?[\w!]+-\d-(?:octopus|tps)-(?:1080|1125)-\d{4}\.(?:jpg|png)_(?:1\d{3}|9\d{2})x(?:\d|1\d{3}|9\d{2})q[59]0 data-type=text data="{}" status-code=200
 ^https://acs-m\.freshippo\.com/gw/mtop\.wdk\.render\.querysinglepage/ data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.alibaba\.advertisementservice\.getadv data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.alimama\.etao\.config\.query/.+?etao_advertise data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.alimusic\.common\.mobileservice\.startinit data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.etao\.noah\.query/.+tao_splash data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.film\.mtopadvertiseapi\.queryadvertise data-type=text data="{}" status-code=200
 ^https://acs\.m\.taobao\.com/gw/mtop\.fliggy\.crm\.screen\.(?:allresource|predict) data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.o2o\.ad\.gateway\.get data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.taobao\.idle\.home\.welcome data-type=text data="{}" status-code=200
-^https://acs\.m\.taobao\.com/gw/mtop\.trip\.activity\.querytmsresources data-type=text data="{}" status-code=200
 ^https://guide-acs\.m\.taobao\.com/gw/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200
 ^https://guide-acs\.m\.taobao\.com/gw/mtop\.relationrecommend\.pailitaorecommend\.recommend data-type=text data="{}" status-code=200
 ^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(?:volvo\.secondfloor\.getconfig|shot\.resources\.load|wireless\.home\.(?:newface|splash)\.awesome\.get) data-type=text data="{}" status-code=200
@@ -255,7 +253,7 @@ http-response-jq ^https://app\.missevan\.com/site/icons\? '.info.icons |= map(se
 http-response-jq ^https://app\.missevan\.com/site/launch\? '.info |= del(.splash, .splash_ready)'
 http-response-jq ^https://app\.missevan\.com/site/tabs\? '.info.tabs |= map(select(.title as $t | ["直播", "发现", "广播剧", "听书", "分类"] | index($t) != null))'
 
-# 滴滴出行优化（移除开屏广告、精简首页、底栏和我的页面）res.xiaojukeji.com, lion.didialift.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, ct.xiaojukeji.com, api.udache.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, 2402:4e00:4040::15, 2402:4e00:4040::16, 2402:4e00:4040::5, 2402:4e00:4040::b, 2402:4e00:4040::c, 2402:4e00:4040::f, 2402:840:d001::3, 2402:840:d001::4, 113.46.225.4, 113.46.225.5
+# 滴滴出行优化（移除开屏广告、精简首页、底栏和我的页面）res.xiaojukeji.com, lion.didialift.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, ct.xiaojukeji.com, api.udache.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, 113.46.225.4, 113.46.225.5
 # 首页净化
 http-response-jq ^https://conf\.diditaxi\.com\.cn/homepage/v1/core\? '.data.disorder_cards.bottom_nav_list.data |= map(select(.id == "home_page" or .id == "user_center" or .id == "sidebar")) | .data.order_cards.nav_list_card.data |= map(select(.nav_id == "nav_more_v2" or .nav_id == "nav_more_v3"))'
 http-response-jq ^https://conf\.diditaxi\.com\.cn/homepage/v1/other/fast\? '.data |= ( .disorder_cards |= del(.communicate_card, .scene_list_card, .not_login_bottom_bar, .riding_code_card, .car_icon.data.icon_info_new_agreement) | .order_cards |= del(.call_car_card_80, .car_owner_widget_card, .marketing_card, .super_banner_card) )'
