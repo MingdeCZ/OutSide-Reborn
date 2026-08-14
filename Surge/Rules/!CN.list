@@ -9,16 +9,26 @@ DOMAIN, unogs.com
 DOMAIN, uzu.ma
 DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, adguard-dns.com
+DOMAIN-SUFFIX, adobe.com
 DOMAIN-SUFFIX, akari.fail
+DOMAIN-SUFFIX, algolia.net
+DOMAIN-SUFFIX, alipayplus.com
 DOMAIN-SUFFIX, alpinelinux.org
+DOMAIN-SUFFIX, amazonwebservices.com
+DOMAIN-SUFFIX, americanexpress.com
 DOMAIN-SUFFIX, amzxyz.github.io
+DOMAIN-SUFFIX, antspace.dev
 DOMAIN-SUFFIX, aorta.net
 DOMAIN-SUFFIX, apache.org
 DOMAIN-SUFFIX, api.translate.zvo.cn
 DOMAIN-SUFFIX, apple
 DOMAIN-SUFFIX, arelion.com
+DOMAIN-SUFFIX, arkoselabs.com
 DOMAIN-SUFFIX, as3257.net
 DOMAIN-SUFFIX, as6453.net
+DOMAIN-SUFFIX, awsapps.com
+DOMAIN-SUFFIX, awswaf.com
+DOMAIN-SUFFIX, bundlehunt.com
 DOMAIN-SUFFIX, byteintl.com
 DOMAIN-SUFFIX, byteintlapi.com
 DOMAIN-SUFFIX, canva.com
@@ -30,61 +40,93 @@ DOMAIN-SUFFIX, centurylink.com
 DOMAIN-SUFFIX, chaport.com
 DOMAIN-SUFFIX, check.place
 DOMAIN-SUFFIX, churros.cloud
+DOMAIN-SUFFIX, circumlunar.space
+DOMAIN-SUFFIX, cloudflareclient.com
+DOMAIN-SUFFIX, cloudinary.com
 DOMAIN-SUFFIX, cogentco.com
+DOMAIN-SUFFIX, compute-pipe.com
+DOMAIN-SUFFIX, comscoreresearch.com
 DOMAIN-SUFFIX, consoleconnect.com
 DOMAIN-SUFFIX, coolhub.top
 DOMAIN-SUFFIX, cotypist.app
 DOMAIN-SUFFIX, crisp.chat
+DOMAIN-SUFFIX, crixet.com
 DOMAIN-SUFFIX, ctcsci.com
 DOMAIN-SUFFIX, database-client.com
+DOMAIN-SUFFIX, diabrowser.com
 DOMAIN-SUFFIX, digicert.com
 DOMAIN-SUFFIX, dpdns.org
 DOMAIN-SUFFIX, duo.com
 DOMAIN-SUFFIX, equinix.com
 DOMAIN-SUFFIX, etrecheck.com
+DOMAIN-SUFFIX, f7tk.com
 DOMAIN-SUFFIX, fast.com
 DOMAIN-SUFFIX, feather-ios.com
 DOMAIN-SUFFIX, feather.claration.dev
+DOMAIN-SUFFIX, featuregates.org
 DOMAIN-SUFFIX, findcheapsubs.com
 DOMAIN-SUFFIX, foobar2000.org
 DOMAIN-SUFFIX, forter.com
 DOMAIN-SUFFIX, gcore.com
 DOMAIN-SUFFIX, gcore.lu
 DOMAIN-SUFFIX, gcorelabs.com
+DOMAIN-SUFFIX, gcping.com
 DOMAIN-SUFFIX, geekuninstaller.com
 DOMAIN-SUFFIX, geotrust.com
 DOMAIN-SUFFIX, getnoir.app
 DOMAIN-SUFFIX, ghost.io
 DOMAIN-SUFFIX, gitfox.app
+DOMAIN-SUFFIX, githubnext.com
 DOMAIN-SUFFIX, globalsecurelayer.com
 DOMAIN-SUFFIX, gradle.org
+DOMAIN-SUFFIX, graphite.com
+DOMAIN-SUFFIX, grokipedia.com
+DOMAIN-SUFFIX, growthbook.io
 DOMAIN-SUFFIX, gsl.tools
+DOMAIN-SUFFIX, gslnetworks.com
 DOMAIN-SUFFIX, hazeover.com
 DOMAIN-SUFFIX, hcaptcha.com
 DOMAIN-SUFFIX, hex-rays.com
+DOMAIN-SUFFIX, hf.co
+DOMAIN-SUFFIX, hitokoto.cn
 DOMAIN-SUFFIX, hkix.net
 DOMAIN-SUFFIX, hubspot.com
 DOMAIN-SUFFIX, ibyteimg.com
+DOMAIN-SUFFIX, identrust.com
 DOMAIN-SUFFIX, imgix.net
 DOMAIN-SUFFIX, inputsource.pro
+DOMAIN-SUFFIX, intellij.net
 DOMAIN-SUFFIX, jdx.dev
 DOMAIN-SUFFIX, kaylees.site
+DOMAIN-SUFFIX, lemonsqueezy.com
 DOMAIN-SUFFIX, lencr.org
 DOMAIN-SUFFIX, lifedever.com
 DOMAIN-SUFFIX, link.com
 DOMAIN-SUFFIX, linode.com
+DOMAIN-SUFFIX, livekit.cloud
+DOMAIN-SUFFIX, livekit.com
+DOMAIN-SUFFIX, livekit.io
 DOMAIN-SUFFIX, marscode.com
+DOMAIN-SUFFIX, mastercard.com
 DOMAIN-SUFFIX, maxmind.com
 DOMAIN-SUFFIX, mesl.cloud
+DOMAIN-SUFFIX, metademolab.com
+DOMAIN-SUFFIX, modelcontextprotocol.com
+DOMAIN-SUFFIX, modelcontextprotocol.io
+DOMAIN-SUFFIX, modelcontextprotocol.net
+DOMAIN-SUFFIX, modelcontextprotocol.org
+DOMAIN-SUFFIX, multimodalsolutions.gr
 DOMAIN-SUFFIX, newrelic.com
 DOMAIN-SUFFIX, nodejs.org
 DOMAIN-SUFFIX, ntt.net
 DOMAIN-SUFFIX, nxtrace.org
+DOMAIN-SUFFIX, observeit.net
 DOMAIN-SUFFIX, ocsp-certum.com
 DOMAIN-SUFFIX, officetoolplus.net
 DOMAIN-SUFFIX, omdbapi.com
 DOMAIN-SUFFIX, onetrust.com
 DOMAIN-SUFFIX, onetrust.io
+DOMAIN-SUFFIX, ooklaserver.net
 DOMAIN-SUFFIX, opentransit.net
 DOMAIN-SUFFIX, orange.com
 DOMAIN-SUFFIX, oyunfor.com
@@ -93,17 +135,23 @@ DOMAIN-SUFFIX, parcse.com
 DOMAIN-SUFFIX, pardot.com
 DOMAIN-SUFFIX, perfops.io
 DOMAIN-SUFFIX, pockyt.io
+DOMAIN-SUFFIX, prodregistryv2.org
 DOMAIN-SUFFIX, quantumult.app
 DOMAIN-SUFFIX, rapidssl.com
+DOMAIN-SUFFIX, rc-backup.com
 DOMAIN-SUFFIX, retn.net
 DOMAIN-SUFFIX, revenuecat.com
 DOMAIN-SUFFIX, rime.im
 DOMAIN-SUFFIX, rsms.me
 DOMAIN-SUFFIX, scriptable.app
 DOMAIN-SUFFIX, sectigo.com
+DOMAIN-SUFFIX, sgupd.com
+DOMAIN-SUFFIX, signalr.net
 DOMAIN-SUFFIX, sqlite.org
 DOMAIN-SUFFIX, ssl.com
+DOMAIN-SUFFIX, statsig.com
 DOMAIN-SUFFIX, steampowered.com
+DOMAIN-SUFFIX, svgrepo.com
 DOMAIN-SUFFIX, swift.org
 DOMAIN-SUFFIX, swiftgram.app
 DOMAIN-SUFFIX, tampermonkey.net
@@ -122,15 +170,23 @@ DOMAIN-SUFFIX, turdigital.com
 DOMAIN-SUFFIX, turgame.com
 DOMAIN-SUFFIX, twelve99.net
 DOMAIN-SUFFIX, twt.com
+DOMAIN-SUFFIX, usefathom.com
 DOMAIN-SUFFIX, vcc.agency
+DOMAIN-SUFFIX, visa.com
 DOMAIN-SUFFIX, vmiss.com
 DOMAIN-SUFFIX, vodafone.com
 DOMAIN-SUFFIX, wedata.net
 DOMAIN-SUFFIX, wins.cool
 DOMAIN-SUFFIX, woopic.com
+DOMAIN-SUFFIX, workos.com
 DOMAIN-SUFFIX, yummy.best
 DOMAIN-SUFFIX, zayo.com
+DOMAIN-SUFFIX, zed.dev
 DOMAIN-SUFFIX, zenlayer.net
+IP-CIDR, 1.0.0.1/32
+IP-CIDR, 1.1.1.1/32
+IP-CIDR, 8.8.4.4/32
+IP-CIDR, 8.8.8.8/32
 # 待分配 IP 查询
 # DOMAIN-SUFFIX, ip.sb
 # DOMAIN-SUFFIX, ip234.in
@@ -266,6 +322,7 @@ DOMAIN-SUFFIX, onenote.net
 DOMAIN-SUFFIX, outlook.com
 DOMAIN-SUFFIX, outlookmobile.com
 DOMAIN-SUFFIX, phonefactor.net
+DOMAIN-SUFFIX, powershellgallery.com
 DOMAIN-SUFFIX, public-trust.com
 DOMAIN-SUFFIX, sharepoint.com
 DOMAIN-SUFFIX, sharepointonline.com
@@ -291,14 +348,100 @@ DOMAIN-SUFFIX, yammer.com
 # DOMAIN, api.github.com
 # DOMAIN, api.jetbrains.ai
 # DOMAIN, gateway.ai.cloudflare.com
+# DOMAIN-SUFFIX, arena.ai
+# DOMAIN-SUFFIX, bfl.ai
+# DOMAIN-SUFFIX, bolt.new
+# DOMAIN-SUFFIX, cerebras.ai
+# DOMAIN-SUFFIX, character.ai
+# DOMAIN-SUFFIX, chorus.sh
+# DOMAIN-SUFFIX, chutes.ai
+# DOMAIN-SUFFIX, coderabbit.ai
+# DOMAIN-SUFFIX, cohere.ai
+# DOMAIN-SUFFIX, cursor.sh
 # DOMAIN-SUFFIX, dify.ai
+# DOMAIN-SUFFIX, duck.ai
+# DOMAIN-SUFFIX, eigent.ai
+# DOMAIN-SUFFIX, factory.ai
+# DOMAIN-SUFFIX, fireworks.ai
+# DOMAIN-SUFFIX, genspark.ai
+# DOMAIN-SUFFIX, grazie.ai
+# DOMAIN-SUFFIX, h2o.ai
+# DOMAIN-SUFFIX, hyperbolic.ai
+# DOMAIN-SUFFIX, ideogram.ai
+# DOMAIN-SUFFIX, inflection.ai
 # DOMAIN-SUFFIX, jasper.ai
+# DOMAIN-SUFFIX, jina.ai
+# DOMAIN-SUFFIX, leonardo.ai
+# DOMAIN-SUFFIX, lmarena.ai
+# DOMAIN-SUFFIX, lmstudio.ai
+# DOMAIN-SUFFIX, lovart.ai
+# DOMAIN-SUFFIX, lumalabs.ai
+# DOMAIN-SUFFIX, mchost.guru
+# DOMAIN-SUFFIX, mistral.ai
 # DOMAIN-SUFFIX, openart.ai
+# DOMAIN-SUFFIX, openclaw.ai
+# DOMAIN-SUFFIX, otter.ai
 # DOMAIN-SUFFIX, perplexity.ai
+# DOMAIN-SUFFIX, pi.ai
+# DOMAIN-SUFFIX, pplx.ai
+# DOMAIN-SUFFIX, recraft.ai
+# DOMAIN-SUFFIX, repl.it
+# DOMAIN-SUFFIX, skywork.ai
+# DOMAIN-SUFFIX, stability.ai
+# DOMAIN-SUFFIX, suno.ai
+# DOMAIN-SUFFIX, together.ai
+# DOMAIN-SUFFIX, tokenflux.ai
+# DOMAIN-SUFFIX, trae.ai
+# DOMAIN-SUFFIX, youmind.ai
+# DOMAIN-SUFFIX, z.ai
+DOMAIN, v0.dev
 DOMAIN-SUFFIX, ai.com
+DOMAIN-SUFFIX, ampcode.com
+DOMAIN-SUFFIX, cici.com
+DOMAIN-SUFFIX, ciciai.com
+DOMAIN-SUFFIX, civitai.com
 DOMAIN-SUFFIX, clipdrop.co
+DOMAIN-SUFFIX, cody.dev
+DOMAIN-SUFFIX, cohere.com
+DOMAIN-SUFFIX, comfy.org
+DOMAIN-SUFFIX, continue.dev
+DOMAIN-SUFFIX, coze.com
+DOMAIN-SUFFIX, crewai.com
+DOMAIN-SUFFIX, cursor.com
+DOMAIN-SUFFIX, deepinfra.com
+DOMAIN-SUFFIX, descript.com
+DOMAIN-SUFFIX, dola.com
+DOMAIN-SUFFIX, elevenlabs.io
+DOMAIN-SUFFIX, gamma.app
+DOMAIN-SUFFIX, hermes-agent.nousresearch.com
+DOMAIN-SUFFIX, heygen.com
+DOMAIN-SUFFIX, hf.space
+DOMAIN-SUFFIX, kiro.dev
+DOMAIN-SUFFIX, langchain.com
+DOMAIN-SUFFIX, llama.com
+DOMAIN-SUFFIX, lovable.dev
+DOMAIN-SUFFIX, manus.im
+DOMAIN-SUFFIX, midjourney.com
+DOMAIN-SUFFIX, minimax.io
+DOMAIN-SUFFIX, ollama.com
+DOMAIN-SUFFIX, perplexity.com
+DOMAIN-SUFFIX, pika.art
 DOMAIN-SUFFIX, poe.com
-# 其它常见海外服务（最后更新：26-7-14）
+DOMAIN-SUFFIX, repl.co
+DOMAIN-SUFFIX, replicate.com
+DOMAIN-SUFFIX, replit.dev
+DOMAIN-SUFFIX, runway.com
+DOMAIN-SUFFIX, runwayml.com
+DOMAIN-SUFFIX, sourcegraph.com
+DOMAIN-SUFFIX, suno.com
+DOMAIN-SUFFIX, synthesia.io
+DOMAIN-SUFFIX, tabnine.com
+DOMAIN-SUFFIX, together.xyz
+DOMAIN-SUFFIX, udio.com
+DOMAIN-SUFFIX, v0.app
+DOMAIN-SUFFIX, voyageai.com
+DOMAIN-SUFFIX, youmind.com
+# 其它常见海外服务（最后更新：26-8-14）
 # DOMAIN-SUFFIX, dcd.gg
 # DOMAIN-SUFFIX, deepmind.com
 # DOMAIN-SUFFIX, pomf.se
@@ -309,7 +452,6 @@ DOMAIN, help.ubnt.com
 DOMAIN, news.ycombinator.com
 DOMAIN, store.ui.com.cn
 DOMAIN, wego.here.com
-DOMAIN, writer-api.mintlify.com
 DOMAIN, www.yymanhua.com
 DOMAIN, yymanhua.com
 DOMAIN-KEYWORD, blogspot
@@ -403,6 +545,7 @@ DOMAIN-SUFFIX, astrill.org
 DOMAIN-SUFFIX, at
 DOMAIN-SUFFIX, atlassian.com
 DOMAIN-SUFFIX, atlassian.net
+DOMAIN-SUFFIX, atmeta.com
 DOMAIN-SUFFIX, atom.com
 DOMAIN-SUFFIX, au
 DOMAIN-SUFFIX, auth0.com
@@ -424,6 +567,7 @@ DOMAIN-SUFFIX, bandcamp.com
 DOMAIN-SUFFIX, bandwagonhost.com
 DOMAIN-SUFFIX, bang.com
 DOMAIN-SUFFIX, bangumi.moe
+DOMAIN-SUFFIX, bangumi.tv
 DOMAIN-SUFFIX, bbc.com
 DOMAIN-SUFFIX, bblmw.com
 DOMAIN-SUFFIX, be
@@ -830,7 +974,6 @@ DOMAIN-SUFFIX, ixxx.com
 DOMAIN-SUFFIX, j.mp
 DOMAIN-SUFFIX, jiji.com
 DOMAIN-SUFFIX, jirachecklist.com
-DOMAIN-SUFFIX, jkforum.net
 DOMAIN-SUFFIX, jotform.com
 DOMAIN-SUFFIX, jp
 DOMAIN-SUFFIX, jsbin.com
@@ -1259,6 +1402,7 @@ DOMAIN-SUFFIX, tinypng.com
 DOMAIN-SUFFIX, tinyurl.com
 DOMAIN-SUFFIX, tktube.com
 DOMAIN-SUFFIX, tmagazine.com
+DOMAIN-SUFFIX, tmdb.org
 DOMAIN-SUFFIX, tnaflix.com
 DOMAIN-SUFFIX, to
 DOMAIN-SUFFIX, tokto-motion.net
@@ -1267,6 +1411,7 @@ DOMAIN-SUFFIX, tokyonline.com
 DOMAIN-SUFFIX, toolforge.org
 DOMAIN-SUFFIX, tr
 DOMAIN-SUFFIX, tradingview.com
+DOMAIN-SUFFIX, trainingpeaks.com
 DOMAIN-SUFFIX, trakt.tv
 DOMAIN-SUFFIX, travis-ci.com
 DOMAIN-SUFFIX, travis-ci.org

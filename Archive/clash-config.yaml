@@ -1,10 +1,8 @@
 mixed-port: 7890
 log-level: warning
 hosts:
-  "127.0.0.1.sslip.io": 127.0.0.1
-  "127.atlas.skk.moe": 127.0.0.1
-  "cdn.jsdelivr.net": cdn.jsdelivr.net.cdn.cloudflare.net
-  "dns.alidns.com": [223.5.5.5, 223.6.6.6, "2400:3200:baba::1", "2400:3200::1"]
+  "cdn.jsdelivr.net": testingcf.jsdelivr.net
+  "dns.alidns.com": [223.5.5.5, 223.6.6.6, "2400:3200::1", "2400:3200:baba::1"]
 ipv6: false
 dns:
   enable: true
@@ -16,6 +14,7 @@ dns:
     "dns.pub": 119.29.29.29
     "doh.360.cn": 101.198.198.198
     "doh.pub": 119.29.29.29
+    "dot.pub": 119.29.29.29
     "rule-set:dnSystem": system
     "rule-set:dns360": https://doh.360.cn/dns-query
     "rule-set:dnsAli": https://dns.alidns.com/dns-query#h3=true
@@ -25,6 +24,7 @@ dns:
   fake-ip-filter:
     - "*.10099.com.cn"
     - "*.126.net"
+    - "*.backloop.dev"
     - "*.blzstatic.cn"
     - "*.cmbchina.com"
     - "*.cmpassport.com"
@@ -41,12 +41,10 @@ dns:
     - "*.msftncsi.com"
     - "*.music.163.com"
     - "*.music.migu.cn"
-    - "*.nip.io"
     - "*.ntp.org.cn"
     - "*.pingan.com.cn"
     - "*.pool.ntp.org"
     - "*.srv.nintendo.net"
-    - "*.sslip.io"
     - "*.stun.playstation.net"
     - "*.stun.twilio.com"
     - "*.turn.twilio.com"
@@ -65,7 +63,6 @@ dns:
     - "cable.auth.com"
     - "detectportal.firefox.com"
     - "dl.stream.qqmusic.qq.com"
-    - "dns.msftncsi.com"
     - "enrichgw.10010.com"
     - "hmrz.wo.cn"
     - "id.mail.wo.cn"
@@ -73,6 +70,7 @@ dns:
     - "injections.adguard.org"
     - "isure.stream.qqmusic.qq.com"
     - "joox.com"
+    - "lancache.steamcontent.com"
     - "local.adguard.org"
     - "localhost.*.qq.com"
     - "localhost.*.weixin.qq.com"
@@ -94,7 +92,6 @@ dns:
     - "songsearch.kugou.com"
     - "streamoc.music.tc.qq.com"
     - "stun.*"
-    - "stun.syncthing.net"
     - "time.*.com"
     - "time.*.edu.cn"
     - "time.*.gov"
@@ -102,9 +99,6 @@ dns:
     - "trackercdn.kugou.com"
     - "xbox.*.microsoft.com"
     - "y.qq.com"
-geox-url:
-  mmdb: "https://v6.gh-proxy.org/https://github.com/Masaiki/GeoIP2-CN/raw/release/Country.mmdb"
-geo-auto-update: true
 rule-providers:
   dnSystem:
     type: http
@@ -147,6 +141,13 @@ rule-providers:
     behavior: classical
     url: "https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/tencent.conf"
     path: ./dnsTencent.text
+    interval: 604800
+  Reject-Drop:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Reject-Drop.list"
+    path: ./Reject-Drop.text
     interval: 604800
   Reject:
     type: http
@@ -225,57 +226,60 @@ rule-providers:
     url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/!CN.list"
     path: ./!CN.text
     interval: 604800
-  Reject-Drop:
+  Deh∕jack:
     type: http
     format: text
     behavior: classical
-    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Reject-Drop.list"
-    path: ./Reject-Drop.text
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Deh%E2%88%95jack.list"
+    path: ./Deh∕jack.text
     interval: 604800
 rules:
+  - RULE-SET, Reject-Drop, REJECT-DROP, no-resolve
   - RULE-SET, Reject, REJECT, no-resolve
   - RULE-SET, Reject-No-Drop, REJECT, no-resolve
-  - RULE-SET, TG-SG, 丝滑入, no-resolve
+  - RULE-SET, TG-SG, 全球通, no-resolve
   - RULE-SET, TG-US, 绿卡, no-resolve
-  - RULE-SET, Cheat, 丝滑入, no-resolve
+  - RULE-SET, Cheat, 俯仰之间, no-resolve
   - RULE-SET, Direct, DIRECT, no-resolve
-  - RULE-SET, Triviality, 丝滑入, no-resolve
-  - RULE-SET, TG-EU, 电报（NL）, no-resolve
+  - RULE-SET, Triviality, 俯仰之间, no-resolve
+  - RULE-SET, TG-EU, 壳, no-resolve
   - RULE-SET, Entity, 绿卡, no-resolve
-  - RULE-SET, Streamberry, 流莓体, no-resolve
-  - RULE-SET, Non-CN, 丝滑入, no-resolve
-  - RULE-SET, Reject-Drop, REJECT-DROP
+  - RULE-SET, Streamberry, 全球通, no-resolve
+  - RULE-SET, Non-CN, 俯仰之间, no-resolve
+  - RULE-SET, Deh∕jack, REJECT-DROP
   - GEOIP, CN, DIRECT
-  - MATCH, 丝滑入
+  - MATCH, 俯仰之间
 unified-delay: true
 find-process-mode: always
 proxies:
 
 proxy-groups:
-  - name: "丝滑入"
+  - name: "俯仰之间"
     icon: https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Visa.png
     type: select
     proxies:
-      
-  - name: "绿卡"
-    icon: https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/GTA6.png
+
+  - name: "全球通"
+    icon: https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Merlion.png
     type: url-test
     proxies:
-      
+
     url: "http://i.ytimg.com/generate_204"
     interval: 600
     tolerance: 100
-  - name: "电报（NL）"
+
+  - name: "绿卡"
+    icon: https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/GTA6.png
+    type: fallback
+    proxies:
+
+    url: "http://i.ytimg.com/generate_204"
+    interval: 600
+
+  - name: "壳"
     icon: https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/KLM.png
     type: load-balance
     proxies:
-      
-    url: "http://i.ytimg.com/generate_204"
-    interval: 600
-  - name: "流莓体"
-    icon: https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Icons/Netflix.png
-    type: fallback
-    proxies:
-      
+
     url: "http://i.ytimg.com/generate_204"
     interval: 600

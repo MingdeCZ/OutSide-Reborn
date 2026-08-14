@@ -1,4 +1,13 @@
-# 最后更新：26-4-14
+# 最后更新：26-8-14
+# 补充
+DOMAIN-SUFFIX, clau.de
+DOMAIN-SUFFIX, claude.app
+DOMAIN-SUFFIX, claude.new
+DOMAIN-SUFFIX, claude.site
+DOMAIN-SUFFIX, claudestudio.com
+DOMAIN-SUFFIX, labs.google
+DOMAIN-SUFFIX, sillylittleguy.org
+
 # OpenAI
 # DOMAIN, chat.openai.com.cdn.cloudflare.net
 # DOMAIN, openaiapi-site.azureedge.net
@@ -12,6 +21,7 @@ DOMAIN, sfo3.turn.livekit.cloud
 DOMAIN-KEYWORD, openai
 DOMAIN-SUFFIX, chat.com
 DOMAIN-SUFFIX, chatgpt.com
+DOMAIN-SUFFIX, chatgpt.site
 DOMAIN-SUFFIX, sora.com
 
 # Claude
@@ -58,7 +68,7 @@ DOMAIN, apple-relay.fastly-edge.com
 DOMAIN, cp4.cloudflare.com
 DOMAIN, gspe1-ssl.ls.apple.com
 # 新闻
-DOMAIN, apple.comscoreresearch.com
+# DOMAIN, apple.comscoreresearch.com
 DOMAIN, news-edge.apple.com
 DOMAIN, news-events.apple.com
 # 音频
@@ -70,6 +80,9 @@ DOMAIN-SUFFIX, x.ai
 
 # WindSurf
 DOMAIN-SUFFIX, codeium.com
+DOMAIN-SUFFIX, devin.ai
+DOMAIN-SUFFIX, windsurf.ai
+DOMAIN-SUFFIX, windsurf.build
 DOMAIN-SUFFIX, windsurf.com
 
 # Augment
@@ -88,3 +101,4 @@ DOMAIN-SUFFIX, groq.com
 # Finance
 DOMAIN-SUFFIX, paypal.com
 DOMAIN-SUFFIX, stripe.com
+DOMAIN-SUFFIX, stripe.network

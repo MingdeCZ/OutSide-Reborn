@@ -2,6 +2,7 @@
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com, extended-matching))
 DOMAIN, adashx.m.taobao.com
 DOMAIN, aegis.qq.com
+DOMAIN, als.baidu.com
 DOMAIN, apm-a.pinduoduo.com
 DOMAIN, apm.pinduoduo.com
 DOMAIN, app-monitor.ele.me
@@ -29,7 +30,6 @@ DOMAIN-SUFFIX, apm-native.xiaohongshu.com
 DOMAIN-SUFFIX, collector.github.com
 DOMAIN-SUFFIX, d.meituan.net
 DOMAIN-SUFFIX, data.bilibili.com
-DOMAIN-SUFFIX, data.microsoft.com
 DOMAIN-SUFFIX, doubleclick.net
 DOMAIN-SUFFIX, dreport.meituan.net
 DOMAIN-SUFFIX, dutils.com
@@ -37,6 +37,7 @@ DOMAIN-SUFFIX, erebor.douban.com
 DOMAIN-SUFFIX, fengkongcloud.com
 DOMAIN-SUFFIX, fourier.alibaba.com
 DOMAIN-SUFFIX, gm.mmstat.com
+DOMAIN-SUFFIX, h2tcbox.baidu.com
 DOMAIN-SUFFIX, lng.xiaohongshu.com
 DOMAIN-SUFFIX, log.aliyuncs.com
 DOMAIN-SUFFIX, logcollection.ronghub.com
@@ -47,6 +48,7 @@ DOMAIN-SUFFIX, monitor.azure.com
 DOMAIN-SUFFIX, mum.alibabachengdun.com
 DOMAIN-SUFFIX, openmonitor.alipay-eco.com
 DOMAIN-SUFFIX, plw6buurmlxhrlkm6wy3uk7cia0mprkq.lambda-url.ap-south-1.on.aws
+DOMAIN-SUFFIX, pulse.perfmetrics.netflix.com
 DOMAIN-SUFFIX, report.meituan.com
 DOMAIN-SUFFIX, s-gm.mmstat.com
 DOMAIN-SUFFIX, spider-tracker.xiaohongshu.com
@@ -61,12 +63,13 @@ DOMAIN-SUFFIX, zztfly.com
 DOMAIN-WILDCARD, ads-*.xhscdn.com
 IP-CIDR, 101.35.204.35/32
 URL-REGEX, ^http://.+/amdc/mobileDispatch
-# 其它（最后更新：26-5-14）
+# 其它（最后更新：26-8-14）
 DOMAIN, dataflow.biliapi.com
 DOMAIN, nom.telemetrydeck.com
 DOMAIN, stats.grafana.org
 DOMAIN-SUFFIX, beacon.qq.com
 DOMAIN-SUFFIX, data.grammarly.com
+DOMAIN-SUFFIX, data.microsoft.com
 DOMAIN-SUFFIX, easytomessage.com
 DOMAIN-SUFFIX, femetrics.grammarly.io
 DOMAIN-SUFFIX, femetrics.qagr.io

@@ -1,4 +1,6 @@
 # AS59930 - 迈阿密
+DOMAIN-SUFFIX, aurora.web.telegram.org
+DOMAIN-SUFFIX, pluto.web.telegram.org
 IP-CIDR, 149.154.172.0/22
 IP-CIDR, 91.108.12.0/22
 IP-CIDR6, 2001:b28:f23d::/48

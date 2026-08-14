@@ -1,4 +1,6 @@
 # AS62041 - 阿姆斯特丹
+# DOMAIN-SUFFIX, venus.web.telegram.org
+# DOMAIN-SUFFIX, vesta.web.telegram.org
 DOMAIN-SUFFIX, comments.app
 DOMAIN-SUFFIX, contest.com
 DOMAIN-SUFFIX, graph.org

@@ -1,5 +1,6 @@
 # 防止 TG 加载转圈
 IP-CIDR, 95.161.76.100/31
+IP-CIDR, 194.221.250.50/32
 
 # 阻止 YouTube 和 Bilibili 的视频 CDN 的 QUIC（最后更新：26-7-14）
 AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, googlevideo.com))

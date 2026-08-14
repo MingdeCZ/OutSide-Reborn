@@ -3,60 +3,28 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.6
-#!date = 26.6.14
+#!version = 1.0.7
+#!date = 26.8.14
 #!category = N合1
-
-[Host]
-# RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bilibili.conf = server:https://doh.pub/dns-query
-# RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/xiaomi.conf = server:https://doh.pub/dns-query
-*.local = server:null
-dns.alidns.com = 223.5.5.5, 223.6.6.6, 2400:3200:baba::1, 2400:3200::1
-doh.360.cn = server:101.198.198.198
-doh.pub = server:119.29.29.29
-RULE-SET:https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/DNS360.list = server:https://doh.360.cn/dns-query
-RULE-SET:https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/DNSystem.list= server:system
-RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/alibaba.conf = server:h3://dns.alidns.com/dns-query
-RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/baidu.conf = server:180.76.76.76
-RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/bytedance.conf = server:180.184.2.2
-RULE-SET:https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/tencent.conf = server:https://doh.pub/dns-query
-cdn.jsdelivr.net = testingcf.jsdelivr.net
-dns.pub = server:119.29.29.29
-dot.pub = server:119.29.29.29
 
 [General]
 # @VirgilClyne
 # 🍟 整点薯条（更多脚本信息、用法和教程请自行在 https://github.com/VirgilClyne/GetSomeFries 中查找）
 # 🌐 通用设置增强
-# Always Raw TCP Hosts
 # 注：always-raw-tcp-hosts 参数的优先级高于 force-http-engine-hosts 参数与 MITM 配置。
-always-raw-tcp-hosts = www.google.com, 91.108.*, 5.28.195.*, 149.154.1*, 185.76.151.*, 91.105.1*
-# Always Real IP Hosts
-# 当 Surge VIF 处理 DNS 问题时，此选项要求 Surge 返回一个真正的 IP 地址，而不是一个假 IP 地址。
-# DNS 数据包将被转发到上游 DNS 服务器。
-always-real-ip = %APPEND% *.lan, *.direct, cable.auth.com, *.msftconnecttest.com, *.msftncsi.com, network-test.debian.org, detectportal.firefox.com, resolver1.opendns.com, *.srv.nintendo.net, *.stun.playstation.net, xbox.*.microsoft.com, *.xboxlive.com, stun.*, app.yinxiang.com, injections.adguard.org, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, *.logon.battlenet.com.cn, *.logon.battle.net, *.blzstatic.cn, music.163.com, *.music.163.com, *.126.net, musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, *.kuwo.cn, api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, *.y.qq.com, streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, *.xiami.com, *.music.migu.cn, music.migu.cn, proxy.golang.org, *.mcdn.bilivideo.cn, *.cmpassport.com, id6.me, open.e.189.cn, opencloud.wostore.cn, id.mail.wo.cn, mdn.open.wo.cn, hmrz.wo.cn, nishub1.10010.com, enrichgw.10010.com, *.wosms.cn, *.jegotrip.com.cn, *.icitymobile.mobi, *.pingan.com.cn, *.cmbchina.com, *.10099.com.cn, *.microdone.cn, pool.ntp.org, *.pool.ntp.org, ntp.*.com, time.*.com, ntp?.*.com, time?.*.com, time.*.gov, time.*.edu.cn, *.ntp.org.cn, PDC._msDCS.*.*, DC._msDCS.*.*, GC._msDCS.*.*, *.turn.twilio.com, *.stun.twilio.com, stun.syncthing.net, lancache.steamcontent.com, *.backloop.dev
+always-raw-tcp-hosts = www.google.com, 91.108.*, 149.154.1*, 91.105.1*
+always-real-ip = %APPEND% *.10099.com.cn, *.126.net, *.backloop.dev, *.blzstatic.cn, *.cmbchina.com, *.cmpassport.com, *.direct, *.icitymobile.mobi, *.jegotrip.com.cn, *.kuwo.cn, *.lan, *.logon.battle.net, *.logon.battlenet.com.cn, *.mcdn.bilivideo.cn, *.microdone.cn, *.msftconnecttest.com, *.msftncsi.com, *.music.163.com, *.music.migu.cn, *.ntp.org.cn, *.pingan.com.cn, *.pool.ntp.org, *.srv.nintendo.net, *.stun.playstation.net, *.stun.twilio.com, *.turn.twilio.com, *.wosms.cn, *.xboxlive.com, *.xiami.com, *.y.qq.com, DC._msDCS.*.*, GC._msDCS.*.*, PDC._msDCS.*.*, amobile.music.tc.qq.com, api-jooxtt.sanook.com, api.joox.com, app.yinxiang.com, aqqmusic.tc.qq.com, cable.auth.com, detectportal.firefox.com, dl.stream.qqmusic.qq.com, enrichgw.10010.com, hmrz.wo.cn, id.mail.wo.cn, id6.me, injections.adguard.org, isure.stream.qqmusic.qq.com, joox.com, lancache.steamcontent.com, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, mdn.open.wo.cn, mobileoc.music.tc.qq.com, music.163.com, music.migu.cn, music.taihe.com, musicapi.taihe.com, network-test.debian.org, nishub1.10010.com, ntp.*.com, ntp?.*.com, open.e.189.cn, opencloud.wostore.cn, pool.ntp.org, proxy.golang.org, resolver1.opendns.com, songsearch.kugou.com, streamoc.music.tc.qq.com, stun.*, time.*.com, time.*.edu.cn, time.*.gov, time?.*.com, trackercdn.kugou.com, xbox.*.microsoft.com, y.qq.com, *.local
 
 # 🚫 阻止常见的 HTTPDNS 服务器
 force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443
-
-hijack-dns = 8.8.8.8:53, 8.8.4.4:53
-
-# 跳过代理
-# 跳过某个域名或者 IP 段，这些目标主机将不会由 Surge Proxy 处理。
-# macOS 版本中，如果启用了 设置为系统代理， 这些值会被写入到系统网络代理设置
-# skip-proxy = %INSERT% localhost, *.local, captive.apple.com, e.crashlytics.com, sequoia.apple.com, seed-sequoia.siri.apple.com, www.baidu.com, passenger.t3go.cn, yunbusiness.ccb.com, wxh.wo.cn, gate.lagou.com, www.abchina.com.cn, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.1/32, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16, 192.168.122.1/32, 193.168.0.1/32, 224.0.0.0/4, 240.0.0.0/4, 255.255.255.255/32, ::1/128, fc00::/7, fd00::/8, fe80::/10, ff00::/8, 2001::/32, 2001:db8::/32, 2002::/16, ::ffff:0:0:0:0/1, ::ffff:128:0:0:0/1
-skip-proxy = %APPEND% *.local
-
-[Testing]
-# 替换为苹果的测速链接
-download-url = https://mensura.cdn-apple.com/api/v1/gm/large
-upload-url = https://mensura.cdn-apple.com/api/v1/gm/slurp
+# skip-proxy = %INSERT% *.local, 0.0.0.0/32, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.168.0.0/16, 198.18.0.0/15, 2001::/32, 2001:db8::/32, 2002::/16, 224.0.0.0/3, ::1/128, ::ffff:0:0:0:0/1, ::ffff:128:0:0:0/1, captive.apple.com, e.crashlytics.com, fc00::/7, fd00::/8, fe80::/10, ff00::/8, gate.lagou.com, localhost, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, passenger.t3go.cn, seed-sequoia.siri.apple.com, sequoia.apple.com, www.abchina.com.cn, www.baidu.com, wxh.wo.cn, yunbusiness.ccb.com
+# skip-proxy = %APPEND% *.local
 
 [MITM]
-hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google.cn, mp.weixin.qq.com, szextshort.weixin.qq.com, www.google.com
+hostname = %APPEND% mp.weixin.qq.com, security.wechat.com, sub.store, szextshort.weixin.qq.com, weixin110.qq.com, www.google.cn
 
 [URL Rewrite]
-# 🍟 整点薯条：🚫 阻止常见的 HTTPDNS 服务器 119.29.29.98, 119.29.29.99, amdc.alipay.com, amdc-sibling.alipay.com.cn, dns.jd.com, *.httpdns.pro
+# 🍟 整点薯条：🚫 阻止常见的 HTTPDNS 服务器 *.httpdns.pro, 119.29.29.98, 119.29.29.99, amdc-sibling.alipay.com.cn, amdc.alipay.com, dns.jd.com
 # 支付宝
 ^https?://110\.76\.8\.150/squery - reject
 ^https?://203\.209\.230\.39/squery - reject
@@ -135,11 +103,6 @@ hostname = %APPEND% sub.store, security.wechat.com, weixin110.qq.com, www.google
 # 微信去广告 mp.weixin.qq.com, szextshort.weixin.qq.com
 ^https://mp\.weixin\.qq\.com/mp/(?:advertisement_report|ad_complaint|ad_video|cps_product_info|getappmsgad|jsmonitor|masonryfeed|relatedarticle|relatedsearchword|report) - reject
 ^https?://szextshort\.weixin\.qq\.com/cgi-bin/mmoc-bin/ad - reject
-
-[Map Local]
-# 🍟 整点薯条：🚫 阻止常见的 HTTPDNS 服务器
-# 支付宝
-# ^https?://amdc(?:-sibling)?\.alipay\.com/s?query data-type=text data='{}' status-code=200 header="Content-Type:text/json"
 
 [Rule]
 # 规则修正

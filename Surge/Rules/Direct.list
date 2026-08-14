@@ -1,5 +1,6 @@
 # 优化/补充
 DOMAIN, b23.tv
+DOMAIN, books.apple.com
 DOMAIN, f.c2r.ts.cdn.office.net
 DOMAIN, localhost.pan.baidu.com
 DOMAIN, localhost.weixin.qq.com
@@ -16,8 +17,6 @@ DOMAIN-SUFFIX, gspe12-cn-ssl.ls.apple.com
 DOMAIN-SUFFIX, gspe85-cn-ssl.ls.apple.com
 DOMAIN-SUFFIX, init.gc.apple.com
 DOMAIN-SUFFIX, kepler.cafe
-DOMAIN-SUFFIX, pilotmoon.com
-DOMAIN-SUFFIX, popclip.app
 DOMAIN-SUFFIX, sfss.cdn-apple.com
 DOMAIN-SUFFIX, shortcat.app
 DOMAIN-SUFFIX, store.storevideos.cdn-apple.com
@@ -329,7 +328,7 @@ DOMAIN-SUFFIX, wear.googleapis.com
 DOMAIN-SUFFIX, www-google-analytics.l.google.com
 DOMAIN-SUFFIX, www-googletagmanager.l.google.com
 DOMAIN-SUFFIX, www.gstatic.com
-# 国内常见互联网公司和服务域名（最后更新：26-7-14）
+# 国内常见互联网公司和服务域名（最后更新：26-8-14）
 # DOMAIN-SUFFIX, elseviercdn.cn
 # DOMAIN-SUFFIX, lcdn-locator.apple.com
 DOMAIN, app.viayoo.com
@@ -436,6 +435,7 @@ DOMAIN-SUFFIX, air-matters.com
 DOMAIN-SUFFIX, air-matters.io
 DOMAIN-SUFFIX, aixifan.com
 DOMAIN-SUFFIX, ali213.net
+DOMAIN-SUFFIX, amap.com
 DOMAIN-SUFFIX, amazonaws.com.cn
 DOMAIN-SUFFIX, anjuke.com
 DOMAIN-SUFFIX, appsimg.com
@@ -462,6 +462,7 @@ DOMAIN-SUFFIX, c-ctrip.com
 DOMAIN-SUFFIX, c-t.work
 DOMAIN-SUFFIX, cailianpress.com
 DOMAIN-SUFFIX, caiyunapp.com
+DOMAIN-SUFFIX, caiyuncdn.com
 DOMAIN-SUFFIX, camera360.com
 DOMAIN-SUFFIX, camscanner.com
 DOMAIN-SUFFIX, ccb.com
@@ -958,7 +959,7 @@ DOMAIN-SUFFIX, zuimeitianqi.com
 USER-AGENT, "%E4%BC%98%E9%85%B7*"
 USER-AGENT, "%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*"
 USER-AGENT, "TeslaMap"
-# 软件更新、操作系统等大文件下载（最后更新：26-6-14）
+# 软件更新、操作系统等大文件下载（最后更新：26-8-14）
 # DOMAIN, archive.mirror.rafal.ca
 # DOMAIN, dl.nssurge.com
 # DOMAIN, ftp.at.debian.org
@@ -1284,7 +1285,7 @@ DOMAIN, download.dlsite.com
 DOMAIN, download.docker.com
 DOMAIN, download.eassos.com
 DOMAIN, download.edovia.com
-DOMAIN, download.fosshub.com
+DOMAIN, download.fcitx-im.org
 DOMAIN, download.fydeos.io
 DOMAIN, download.geofabrik.de
 DOMAIN, download.gigabyte.com
@@ -1300,7 +1301,6 @@ DOMAIN, download.mozilla.org
 DOMAIN, download.mxfast.com
 DOMAIN, download.nektony.com
 DOMAIN, download.nodecdn.net
-DOMAIN, download.nus.edu.sg
 DOMAIN, download.nust.na
 DOMAIN, download.onlyoffice.com
 DOMAIN, download.opensuse.org
@@ -1429,7 +1429,6 @@ DOMAIN, ftp.linux.org.tr
 DOMAIN, ftp.linux.ro
 DOMAIN, ftp.lip6.fr
 DOMAIN, ftp.litnet.lt
-DOMAIN, ftp.ludd.ltu.se
 DOMAIN, ftp.lug.ro
 DOMAIN, ftp.lysator.liu.se
 DOMAIN, ftp.man.poznan.pl
@@ -1563,7 +1562,6 @@ DOMAIN, linux.purple-cat.net
 DOMAIN, linux.yz.yamagata-u.ac.jp
 DOMAIN, linuxsoft.cern.ch
 DOMAIN, lip6.fr
-DOMAIN, lug.mines.edu
 DOMAIN, lysator.liu.se
 DOMAIN, lzip.nongnu.org
 DOMAIN, marwan.ma
@@ -1612,7 +1610,6 @@ DOMAIN, mirror.aut.ac.nz
 DOMAIN, mirror.azvps.vn
 DOMAIN, mirror.bacloud.com
 DOMAIN, mirror.bahnhof.net
-DOMAIN, mirror.battern.eu
 DOMAIN, mirror.bg.host.ag
 DOMAIN, mirror.bgp.rodeo
 DOMAIN, mirror.bharatdatacenter.com
@@ -1717,7 +1714,6 @@ DOMAIN, mirror.hostiko.network
 DOMAIN, mirror.hosting90.cz
 DOMAIN, mirror.hostnet.nl
 DOMAIN, mirror.hs-esslingen.de
-DOMAIN, mirror.hyperdedic.ru
 DOMAIN, mirror.i3d.net
 DOMAIN, mirror.ibcp.fr
 DOMAIN, mirror.ietlucknow.ac.in
@@ -1746,7 +1742,6 @@ DOMAIN, mirror.isoc.org.il
 DOMAIN, mirror.it.ubc.ca
 DOMAIN, mirror.it4i.cz
 DOMAIN, mirror.its-tps.fr
-DOMAIN, mirror.its.dal.ca
 DOMAIN, mirror.its.umich.edu
 DOMAIN, mirror.iway.ch
 DOMAIN, mirror.ixirhost.com
@@ -1759,7 +1754,6 @@ DOMAIN, mirror.kapteyan.com.tr
 DOMAIN, mirror.karneval.cz
 DOMAIN, mirror.katapult.io
 DOMAIN, mirror.keiminem.com
-DOMAIN, mirror.kernel.ir
 DOMAIN, mirror.keystealth.org
 DOMAIN, mirror.kkg.berlin
 DOMAIN, mirror.kku.ac.th
@@ -1952,7 +1946,6 @@ DOMAIN, mirror.yer.az
 DOMAIN, mirror.yuki.net.uk
 DOMAIN, mirror.za.abantu.cloud
 DOMAIN, mirror.za.web4africa.net
-DOMAIN, mirror1.hs-esslingen.de
 DOMAIN, mirror1.infomaniak.com
 DOMAIN, mirror1.ku.ac.th
 DOMAIN, mirror1.sox.rs
@@ -2053,7 +2046,6 @@ DOMAIN, mirrors.usinternet.com
 DOMAIN, mirrors.vcea.wsu.edu
 DOMAIN, mirrors.webhs.pt
 DOMAIN, mirrors.whoishostingthis.com
-DOMAIN, mirrors.wikimedia.org
 DOMAIN, mirrors.xmission.com
 DOMAIN, mirrors.xmissions.com
 DOMAIN, mirrors.xservers.ro
@@ -2245,7 +2237,6 @@ DOMAIN, ubuntu.repo.cure.edu.uy
 DOMAIN, ubuntu.rootlicense.com
 DOMAIN, ubuntu.securedservers.com
 DOMAIN, ubuntu.servering.info
-DOMAIN, ubuntu.syxpi.fr
 DOMAIN, ubuntu.task.gda.pl
 DOMAIN, ubuntu.tuxuri.com
 DOMAIN, ubuntu.ucr.ac.cr
