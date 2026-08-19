@@ -12,7 +12,7 @@
 skip-proxy = %APPEND% *.abcchina.com, *.abcchina.com.cn
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4, 113.46.225.5, 116.85.2.14, 116.85.2.15, 116.85.2.21, 116.85.2.22, 116.85.2.4, 116.85.2.5, 117.51.168.12, 117.51.168.13, 117.51.168.17, 117.51.168.18, 117.51.168.5, 117.51.168.6, 117.51.169.11, 117.51.169.2, 117.51.169.4, 117.51.169.6, 120.241.142.11, 120.241.142.13, 120.241.142.18, 120.241.142.19, 120.241.142.4, 120.241.143.8, 120.241.143.4, 120.241.143.5, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.176, 123.207.209.177, 123.207.209.28, 123.207.209.29, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.64, 123.207.209.65, 157.122.212.11, 157.122.212.12, 157.122.212.2, 157.122.212.5, 157.255.76.12, 157.255.76.15, 157.255.76.17, 157.255.76.19, 157.255.76.5, 157.255.76.11, 3gimg.qq.com, acs.m.goofish.com, acs.m.taobao.com, apapia-sqk-weblogic.manmanbuy.com, api.bilibili.com, api.m.jd.com, api.pinduoduo.com, api.pinterest.com, api.udache.com, apiz.trakt.tv, apm.xiaojukeji.com, app.bilibili.com, app.dewu.com, app.missevan.com, as.xiaojukeji.com, b?dsp-x.jd.com, ci.xiaohongshu.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, data.missevan.com, edith.xiaohongshu.com, fm.missevan.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw.alicdn.com, heic.alicdn.com, htwkop.xiaojukeji.com, hw-edge.solseed.cn, images.pinduoduo.com, in.m.jd.com, ktx.cn, learn.chaoxing.com, lion.didialift.com, mapi.ghsmpwalmart.com, miniapp.qmai.cn, miniapp.sexytea2013.com, mobile.api.sisyphe.cn, ms.jr.jd.com, newsso.map.qq.com, newton.gumingnc.com, poplayer.template.alibaba.com, rec.xiaohongshu.com, res.xiaojukeji.com, so.xiaohongshu.com, tm-api.pin-dao.cn, webapi.qmai.cn, www.xiaohongshu.com, xyst.yuanfudao.com, youtubei.googleapis.com, zone.guiderank-app.com, p0.pipi.cn, acs-m.freshippo.com
+hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4, 113.46.225.5, 116.85.2.14, 116.85.2.15, 116.85.2.21, 116.85.2.22, 116.85.2.4, 116.85.2.5, 117.51.168.12, 117.51.168.13, 117.51.168.17, 117.51.168.18, 117.51.168.5, 117.51.168.6, 117.51.169.11, 117.51.169.2, 117.51.169.4, 117.51.169.6, 120.241.142.11, 120.241.142.13, 120.241.142.18, 120.241.142.19, 120.241.142.4, 120.241.143.8, 120.241.143.4, 120.241.143.5, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.176, 123.207.209.177, 123.207.209.28, 123.207.209.29, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.64, 123.207.209.65, 157.122.212.11, 157.122.212.12, 157.122.212.2, 157.122.212.5, 157.255.76.12, 157.255.76.15, 157.255.76.17, 157.255.76.19, 157.255.76.5, 157.255.76.11, 3gimg.qq.com, acs.m.goofish.com, acs.m.taobao.com, apapia-sqk-weblogic.manmanbuy.com, api.bilibili.com, api.m.jd.com, api.pinduoduo.com, api.pinterest.com, api.udache.com, apiz.trakt.tv, apm.xiaojukeji.com, app.bilibili.com, app.dewu.com, app.missevan.com, as.xiaojukeji.com, b?dsp-x.jd.com, ci.xiaohongshu.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, data.missevan.com, edith.xiaohongshu.com, fm.missevan.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw.alicdn.com, heic.alicdn.com, htwkop.xiaojukeji.com, hw-edge.solseed.cn, images.pinduoduo.com, in.m.jd.com, ktx.cn, learn.chaoxing.com, lion.didialift.com, mapi.ghsmpwalmart.com, miniapp.qmai.cn, miniapp.sexytea2013.com, mobile.api.sisyphe.cn, ms.jr.jd.com, newsso.map.qq.com, newton.gumingnc.com, poplayer.template.alibaba.com, rec.xiaohongshu.com, res.xiaojukeji.com, so.xiaohongshu.com, tm-api.pin-dao.cn, webapi.qmai.cn, www.xiaohongshu.com, xyst.yuanfudao.com, youtubei.googleapis.com, zone.guiderank-app.com, p0.pipi.cn, acs-m.freshippo.com, htwkop-st.xiaojukeji.com
 
 [URL Rewrite]
 # 哔哩哔哩优化
@@ -121,6 +121,9 @@ hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4,
 ^https://res\.xiaojukeji\.com/resapi/activity/mget data-type=text data="{}" status-code=200
 # 青桔页面净化
 ^https://htwkop\.xiaojukeji\.com/gateway\?api=medel\.marketing\.spot\.delivery\.login& data-type=text data="{}" status-code=200
+^https://htwkop-st\.xiaojukeji\.com/gateway\?api=cms\.htw\.delivery\.batch& data-type=text data="{}" status-code=200
+^https://htwkop\.xiaojukeji\.com/gateway\?api=hm\.fa\.queryWelfareCenter& data-type=text data="{}" status-code=200
+^https://htwkop\.xiaojukeji\.com/gateway\?api=hm\.fa\.querySellCardSummary& data-type=text data="{}" status-code=200
 # 代价页面净化
 ^https://daijia\.kuaidadi\.com/gateway\?api=lj\.c\.p\.queryLevelAndRightsStatus& data-type=text data="{}" status-code=200
 # 去弹窗
@@ -260,12 +263,12 @@ http-response-jq ^https://common\.diditaxi\.com\.cn(?:/common/v5)?/usercenter/la
 # 首页更多服务净化
 http-response-jq ^https://conf\.diditaxi\.com\.cn/homepage/v1/nav/more\? '.data.category_list |= map(select(.category_name | IN( "公益", "便民生活", "车主服务", "送货" ) | not) | if .category_name == "日常出行" then .nav_list |= map(select(.nav_id | IN( "carmate", "gongjiao", "dache_company", "driving" ) | not) ) elif .category_name == "旅行" then .nav_list |= map(select(.nav_id != "lvyou")) elif .category_name == "优惠权益" then .nav_list |= map(select(.nav_id | IN( "didizhifu", "xianjinduoduo", "xiaodian" ) | not) ) else . end )'
 # 打车页面净化
-http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/dache_homepage_layout\? '.data.instances |= ( del(.dache_main_member, .dache_main_xp, ."xp-card-01", .car_icon_01.data.icon_info_new_agreement) | .dache_main_core_icon.data[0].data |= map(select( .content_data.nav_id as $id | ["yuyue","dairenjiaoche","jiesongji","haoyoutongxing"] | index($id) )) )'
+http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/dache_homepage_layout$ '.data.instances |= ( del( .dache_main_head, .dache_main_member, ."xp-card-01" ) | .dache_main_core_icon.data[0].data |= map(select( .content_data.nav_id | IN( "shunfengche", "jingwaichuxing", "biyesheng" ) | not )) )'
 # 特价拼车页面优化
 http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/bronze/pinchengle_homepage_layout$ '.data.instances |= del(."swiper-banner-1", ."communicate-card-1", ."nav-banner-1")'
 # 行程中页面净化
-http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pInTripLayout$ '.data.instances |= del(."xp-card-supper-banner-in-trip", ."xp-card-swiper-banner-in-trip", ."xp-card-supper-banner-wait-trip", ."xp-card-swiper-banner-wait-trip")'
-http-response-jq ^https://as\.xiaojukeji\.com/ep/as/toggles\? '.data |= map(if .name|IN("daijia_journey_new_tcp_switch", "daijia_tcp_init", "daijia_tcp_msg_encrypt", "daijia_tcp_site_info", "daijia_tcp_site_report") then .allow = false else . end)'
+http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pInTripLayout$ '.data.instances |= del(."complete-order-task-marketing_in-trip", ."evaluate-card-intrip-in-trip", ."skin-change-evaluation-card-in-trip", ."xp-card-supper-banner-in-trip", ."xp-card-swiper-banner-in-trip", ."xp-card-supper-banner-wait-trip", ."xp-card-swiper-banner-wait-trip", ."xp-vip-level-in-trip")'
+http-response-jq ^https://as\.xiaojukeji\.com/ep/as/toggles\? '.data |= map(if .name | IN("daijia_journey_new_tcp_switch", "daijia_tcp_init", "daijia_tcp_msg_encrypt", "daijia_tcp_site_info", "daijia_tcp_site_report") then .allow = false else . end)'
 # 订单结束页面净化
 http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pEndTripPaidLayout$ 'del(.data.instances."xp-card-swiper-banner_finish_1")'
 # 
@@ -275,7 +278,8 @@ http-response-jq ^https://daijia\.kuaidadi\.com:443/gateway\? 'data |= ( del(.va
 # 
 http-response-jq ^https://api\.udache\.com/intercity/ticket/api/v1/core/getFullPageInfoLayout\? '.data.disorder_components |= (map(select(.name == "history_order_card" or .name == "inprogress_order_card" or .name == "station_calendar" or .name == "main_card_v2" or .name == "user_history_order")))'
 # 
-http-response-jq ^https://htwkop\.xiaojukeji\.com:443/gateway\? 'data |= del(.didi-bike-homepage-popup, .variantInfo)'
+http-response-jq ^https://htwkop\.xiaojukeji\.com/gateway\? 'data |= del(.didi-bike-homepage-popup, .variantInfo)'
+http-response-jq ^https://htwkop\.xiaojukeji\.com/gateway\?api=hm\.fa\.homeConfig& '.data |= del(.homeContent.homepageCardInfos, .bannerInfoConfig)'
 
 # 得物净化（移除开屏广告、弹窗、搜索词填充、热搜榜、猜你想搜、推荐关注、推荐信息流，精简消息中心和我的页面）app.dewu.com
 http-response-jq ^https://app\.dewu\.com/api/v1/app/account/wallet/page/entrance\? '.data.groupInfoDTOS |= map(.moduleInfoDTO = {assetModule: .moduleInfoDTO.assetModule}) | .data.moduleNames = [.data.moduleNames[] | select(. == "assetModule")] | . as $full | $full | .data.groupNames |= (map(select(. == "MAIN" or . == "ASYNC_COMMON" or . == "ASYNC_GOODS_FEEDS")))'
