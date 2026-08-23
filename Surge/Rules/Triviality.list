@@ -93,6 +93,7 @@ DOMAIN, repo.maven.apache.org
 DOMAIN, ruleset.skk.moe
 DOMAIN, s1.animeko.openani.org
 DOMAIN, s2.animeko.openani.org
+DOMAIN, stat.sa.net
 DOMAIN, steamdeck-images.steamos.cloud
 DOMAIN, steamdeck-packages.steamos.cloud
 DOMAIN, store.nethunter.com
@@ -169,6 +170,7 @@ DOMAIN-SUFFIX, popclip.app
 DOMAIN-SUFFIX, pythonhosted.org
 DOMAIN-SUFFIX, s3-website.cloud.ru
 DOMAIN-SUFFIX, s3.yandex.net
+DOMAIN-SUFFIX, seecdn.net
 DOMAIN-SUFFIX, snapkit.com
 DOMAIN-SUFFIX, stash.ws
 DOMAIN-SUFFIX, swiftycdn.net

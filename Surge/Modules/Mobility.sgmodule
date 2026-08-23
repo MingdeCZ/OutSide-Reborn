@@ -12,7 +12,7 @@
 skip-proxy = %APPEND% *.abcchina.com, *.abcchina.com.cn
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4, 113.46.225.5, 116.85.2.14, 116.85.2.15, 116.85.2.21, 116.85.2.22, 116.85.2.4, 116.85.2.5, 117.51.168.12, 117.51.168.13, 117.51.168.17, 117.51.168.18, 117.51.168.5, 117.51.168.6, 117.51.169.11, 117.51.169.2, 117.51.169.4, 117.51.169.6, 120.241.142.11, 120.241.142.13, 120.241.142.18, 120.241.142.19, 120.241.142.4, 120.241.143.8, 120.241.143.4, 120.241.143.5, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.176, 123.207.209.177, 123.207.209.28, 123.207.209.29, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.64, 123.207.209.65, 157.122.212.11, 157.122.212.12, 157.122.212.2, 157.122.212.5, 157.255.76.12, 157.255.76.15, 157.255.76.17, 157.255.76.19, 157.255.76.5, 157.255.76.11, 3gimg.qq.com, acs.m.goofish.com, acs.m.taobao.com, apapia-sqk-weblogic.manmanbuy.com, api.bilibili.com, api.m.jd.com, api.pinduoduo.com, api.pinterest.com, api.udache.com, apiz.trakt.tv, apm.xiaojukeji.com, app.bilibili.com, app.dewu.com, app.missevan.com, as.xiaojukeji.com, b?dsp-x.jd.com, ci.xiaohongshu.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, data.missevan.com, edith.xiaohongshu.com, fm.missevan.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw.alicdn.com, heic.alicdn.com, htwkop.xiaojukeji.com, htwkop-st.xiaojukeji.com, hw-edge.solseed.cn, images.pinduoduo.com, in.m.jd.com, ktx.cn, learn.chaoxing.com, lion.didialift.com, mapi.ghsmpwalmart.com, miniapp.qmai.cn, miniapp.sexytea2013.com, mobile.api.sisyphe.cn, ms.jr.jd.com, newsso.map.qq.com, newton.gumingnc.com, poplayer.template.alibaba.com, prod.didi.cn, rec.xiaohongshu.com, res.xiaojukeji.com, so.xiaohongshu.com, tm-api.pin-dao.cn, webapi.qmai.cn, www.xiaohongshu.com, xyst.yuanfudao.com, youtubei.googleapis.com, zone.guiderank-app.com, p0.pipi.cn, acs-m.freshippo.com
+hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4, 113.46.225.5, 116.85.2.14, 116.85.2.15, 116.85.2.21, 116.85.2.22, 116.85.2.4, 116.85.2.5, 117.51.168.12, 117.51.168.13, 117.51.168.17, 117.51.168.18, 117.51.168.5, 117.51.168.6, 117.51.169.11, 117.51.169.2, 117.51.169.4, 117.51.169.6, 120.241.142.11, 120.241.142.13, 120.241.142.18, 120.241.142.19, 120.241.142.4, 120.241.143.8, 120.241.143.4, 120.241.143.5, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.176, 123.207.209.177, 123.207.209.28, 123.207.209.29, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.64, 123.207.209.65, 157.122.212.11, 157.122.212.12, 157.122.212.2, 157.122.212.5, 157.255.76.12, 157.255.76.15, 157.255.76.17, 157.255.76.19, 157.255.76.5, 157.255.76.11, 3gimg.qq.com, acs.m.goofish.com, acs.m.taobao.com, apapia-sqk-weblogic.manmanbuy.com, api.bilibili.com, api.m.jd.com, api.pinduoduo.com, api.pinterest.com, api.udache.com, apiz.trakt.tv, apm.xiaojukeji.com, app.bilibili.com, app.dewu.com, app.missevan.com, as.xiaojukeji.com, b?dsp-x.jd.com, ci.xiaohongshu.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, ct.xiaojukeji.com, daijia.kuaidadi.com, data.missevan.com, edith.xiaohongshu.com, fm.missevan.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw.alicdn.com, heic.alicdn.com, htwkop.xiaojukeji.com, htwkop-st.xiaojukeji.com, hw-edge.solseed.cn, images.pinduoduo.com, in.m.jd.com, ktx.cn, learn.chaoxing.com, mapi.ghsmpwalmart.com, miniapp.qmai.cn, miniapp.sexytea2013.com, mobile.api.sisyphe.cn, ms.jr.jd.com, newsso.map.qq.com, newton.gumingnc.com, poplayer.template.alibaba.com, prod.didi.cn, rec.xiaohongshu.com, res.xiaojukeji.com, so.xiaohongshu.com, tm-api.pin-dao.cn, webapi.qmai.cn, www.xiaohongshu.com, xyst.yuanfudao.com, youtubei.googleapis.com, zone.guiderank-app.com, acs-m.freshippo.com
 
 [URL Rewrite]
 # 哔哩哔哩优化
@@ -31,7 +31,8 @@ hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4,
 
 # 滴滴优化
 # 去更新
-^https://apm\.xiaojukeji\.com/muse/update/v\d\? - reject
+^https://apm\.xiaojukeji\.com/muse/update/(?:v\d|switch)\? - reject
+^https://conf\.diditaxi\.com\.cn/api/dynamicmodule/update\? - reject
 
 # 西西弗去开屏广告
 ^https://mobile\.api\.sisyphe\.cn/app-application-content-api-v2/anonymous/anniversary/findSpreadItsTail$ - reject
@@ -113,10 +114,10 @@ hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4,
 ^https://fm\.missevan\.com/api/v2/recommended/top\? data-type=text data="{}" status-code=200
 
 # 滴滴出行去广告
+# ^https://lion\.didialift\.com/(?:im/)?broker data-type=text data="{}" status-code=200
 ^https://conf\.diditaxi\.com\.cn/dynamic/conf data-type=text data="{}" status-code=200
 ^https://conf\.diditaxi\.com\.cn/homepage/v1/other/slow\? data-type=text data="{}" status-code=200
 ^https://ct\.xiaojukeji\.com/agent/v3/feeds\? data-type=text data="{}" status-code=200
-^https://lion\.didialift\.com/broker/\? data-type=text data="{}" status-code=200
 ^https://res\.xiaojukeji\.com/resapi/activity/getMulti\? data-type=text data="{}" status-code=200
 ^https://res\.xiaojukeji\.com/resapi/activity/mget data-type=text data="{}" status-code=200
 # 青桔页面净化
@@ -162,9 +163,6 @@ hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4,
 
 # 京东去广告
 ^https://api\.m\.jd\.com/client\.action\?functionId=(?:cartCouponRecommendGoods|intelligentRecommendSku|obtainGrowingInfo|recommendShop|searchBoxWord|stationPullService|uniformRecommend) data-type=text data="{}" status-code=200
-
-# 猫眼去广告 p0.pipi.cn
-^https://p0\.pipi\.cn/(?:adAdmin|mediaplus/maoyantong_ads_fe)/\w+\.(?:jpe?g|png)\?imageMogr2/(?:quality/|thumbnail/(?:860x0|880x0|!165x165|!1049x1169)) data-type=text data="{}" status-code=200
 
 # 拼多多净化
 # 去除个人中心-省钱月卡下方推荐商品流
@@ -256,7 +254,7 @@ http-response-jq ^https://app\.missevan\.com/site/icons\? '.info.icons |= map(se
 http-response-jq ^https://app\.missevan\.com/site/launch\? '.info |= del(.splash, .splash_ready)'
 http-response-jq ^https://app\.missevan\.com/site/tabs\? '.info.tabs |= map(select(.title as $t | ["直播", "发现", "广播剧", "听书", "分类"] | index($t) != null))'
 
-# 滴滴出行优化（移除开屏广告、精简首页、底栏和我的页面）res.xiaojukeji.com, lion.didialift.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, ct.xiaojukeji.com, api.udache.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, 113.46.225.4, 113.46.225.5
+# 滴滴出行优化（移除开屏广告、精简首页、底栏和我的页面）res.xiaojukeji.com, conf.diditaxi.com.cn, common.diditaxi.com.cn, ct.xiaojukeji.com, api.udache.com, 116.85.2.14, 116.85.2.15, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.177, 113.46.225.4, 113.46.225.5
 # 首页净化
 http-response-jq ^https://conf\.diditaxi\.com\.cn/homepage/v1/core\? '.data |= ( .disorder_cards |= ( .top_nav_list.data.top_nav_info |= map(select( .nav_id | IN( "freight_cargo", "car_owner" ) | not )) | .bottom_nav_list.data |= map(select( .id | IN( "home_page", "user_center", "sidebar" ) )) ) | .order_cards.nav_list_card.data |= map(select( .nav_id | IN( "nav_more_v2", "nav_more_v3" ) )) )'
 http-response-jq ^https://conf\.diditaxi\.com\.cn/homepage/v1/other/fast\? '.data |= ( .disorder_cards |= del(.communicate_card, .scene_list_card, .not_login_bottom_bar, .riding_code_card, .car_icon.data.icon_info_new_agreement) | .order_cards |= del(.call_car_card_80, .car_owner_widget_card, .marketing_card, .super_banner_card, .widget_card) )'
@@ -277,7 +275,7 @@ http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/bronze/pincheng
 # 专车页面优化
 http-response-jq ^https://res\.xiaojukeji\.com/resapi/activity/getInsActivityV2\? '.data."xp-card-07".data |= map(select( (.xtpl | IN( "xp-card-swiper-banner", "scene-recharge" )) | not ) | if .xtpl == "scene-home-core" then .list |= map(select( (.tplData.title | IN( "企业用车" )) | not ) ) else . end )'
 # 行程中页面净化
-http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pInTripLayout$ '.data.instances |= del(."complete-order-task-marketing_in-trip", ."evaluate-card-intrip-in-trip", ."skin-change-evaluation-card-in-trip", ."xp-card-supper-banner-in-trip", ."xp-card-swiper-banner-in-trip", ."xp-card-supper-banner-wait-trip", ."xp-card-swiper-banner-wait-trip", ."xp-vip-level-in-trip")'
+http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pInTripLayout$ '.data.instances |= del(."complete-order-task-marketing_in-trip", ."complete-order-task-marketing_wait-trip", ."evaluate-card-intrip-in-trip", ."skin-change-evaluation-card-in-trip", ."xp-card-supper-banner-in-trip", ."xp-card-swiper-banner-in-trip", ."xp-card-supper-banner-wait-trip", ."xp-card-swiper-banner-wait-trip", ."xp-vip-level-in-trip", ."xp-vip-level-wait-trip")'
 # 订单结束页面净化
 http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pEndTripPaidLayout$ '.data.instances |= del(."finish-header-01", ."zhunxing__p_zhunxing_end-trip__passenger_xpanel_general_card_finish", ."zhunxing__p_zhunxing_end-trip__passenger_xpanel_member_mileage")'
 # 
@@ -351,7 +349,13 @@ DOMAIN, app.biliapi.net, REJECT, extended-matching
 AND, ((IP-ASN, 45090, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 AND, ((IP-ASN, 55990, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
 AND, ((IP-ASN, 63646, no-resolve), (DEST-PORT, 25641), (PROTOCOL, TCP)), REJECT
+DOMAIN, gungnir.xiaojukeji.com, REJECT, extended-matching
 DOMAIN, gwp.xiaojukeji.com, REJECT, extended-matching
+DOMAIN, lion.didialift.com, REJECT, extended-matching
+DOMAIN, msggate.xiaojukeji.com, REJECT, extended-matching
+DOMAIN, raven.xiaojukeji.com, REJECT, extended-matching
+DOMAIN, thanos.xiaojukeji.com, REJECT,extended-matching
+DOMAIN, tracker.didistatic.com, REJECT, extended-matching
 
 # 闲鱼净化
 # AND, ((URL-REGEX, "^http://.+/amdc/mobileDispatch", extended-matching), (USER-AGENT, "%E9%97%B2%E9%B1%BC*")), REJECT
