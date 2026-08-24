@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.1.6
-#!date = 26.8.14
+#!version = 1.1.7
+#!date = 26.8.24
 #!category = N合1
 #!system = ios
 
@@ -275,9 +275,9 @@ http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/bronze/pincheng
 # 专车页面优化
 http-response-jq ^https://res\.xiaojukeji\.com/resapi/activity/getInsActivityV2\? '.data."xp-card-07".data |= map(select( (.xtpl | IN( "xp-card-swiper-banner", "scene-recharge" )) | not ) | if .xtpl == "scene-home-core" then .list |= map(select( (.tplData.title | IN( "企业用车" )) | not ) ) else . end )'
 # 行程中页面净化
-http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pInTripLayout$ '.data.instances |= del(."complete-order-task-marketing_in-trip", ."complete-order-task-marketing_wait-trip", ."evaluate-card-intrip-in-trip", ."skin-change-evaluation-card-in-trip", ."xp-card-supper-banner-in-trip", ."xp-card-swiper-banner-in-trip", ."xp-card-supper-banner-wait-trip", ."xp-card-swiper-banner-wait-trip", ."xp-vip-level-in-trip", ."xp-vip-level-wait-trip")'
+http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pInTripLayout$ '.data.instances |= del(."complete-order-task-marketing_in-trip", ."complete-order-task-marketing_wait-trip", ."evaluate-card-intrip-in-trip", ."pay-card-wait-trip", ."skin-change-evaluation-card-in-trip", ."xp-card-supper-banner-in-trip", ."xp-card-swiper-banner-in-trip", ."xp-card-supper-banner-wait-trip", ."xp-card-swiper-banner-wait-trip", ."xp-vip-level-in-trip", ."xp-vip-level-wait-trip")'
 # 订单结束页面净化
-http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pEndTripPaidLayout$ '.data.instances |= del(."finish-header-01", ."zhunxing__p_zhunxing_end-trip__passenger_xpanel_general_card_finish", ."zhunxing__p_zhunxing_end-trip__passenger_xpanel_member_mileage")'
+http-response-jq ^https://api\.udache\.com/gulfstream/passenger-center/v2/bronze/pEndTripPaidLayout$ '.data.instances |= del(."finish-header-01", ."zhunxing__p_zhunxing_end-trip__didipas_app_inservice_sales_xp", ."zhunxing__p_zhunxing_end-trip__passenger_xpanel_general_card_finish", ."zhunxing__p_zhunxing_end-trip__passenger_xpanel_member_mileage")'
 # 
 http-response-jq ^https://api\.udache\.com/gulfstream/porsche/v1/pSFCHomePage\? '.data |= (if . == null then null else {hot_route_info, legal_info} end) | . as $root | .data.tab_list = ($root.data.tab_list | map(select(.tab_id == "passenger")))'
 # 
@@ -355,7 +355,6 @@ DOMAIN, lion.didialift.com, REJECT, extended-matching
 DOMAIN, msggate.xiaojukeji.com, REJECT, extended-matching
 DOMAIN, raven.xiaojukeji.com, REJECT, extended-matching
 DOMAIN, thanos.xiaojukeji.com, REJECT,extended-matching
-DOMAIN, tracker.didistatic.com, REJECT, extended-matching
 
 # 闲鱼净化
 # AND, ((URL-REGEX, "^http://.+/amdc/mobileDispatch", extended-matching), (USER-AGENT, "%E9%97%B2%E9%B1%BC*")), REJECT

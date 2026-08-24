@@ -47,7 +47,6 @@ DOMAIN, atoken.m.taobao.com
 DOMAIN, banners.itunes.apple.com
 DOMAIN, beacon-api.aliyuncs.com
 DOMAIN, c.sm.cn
-DOMAIN, catdot.dianping.com
 DOMAIN, click-bes.baidu.com
 DOMAIN, content-understand-strategy.sm.cn
 DOMAIN, df.tanx.com
@@ -1406,6 +1405,7 @@ DOMAIN-SUFFIX, appsec-mobile.meituan.com
 DOMAIN-SUFFIX, artisticsway.com
 DOMAIN-SUFFIX, asdk2​.com
 DOMAIN-SUFFIX, assemblyexchange.com
+DOMAIN-SUFFIX, assetsconfigcdn.org
 DOMAIN-SUFFIX, atlas-emui-drcn.hicloud.com
 DOMAIN-SUFFIX, atplay.cn
 DOMAIN-SUFFIX, aty.sohu.com
@@ -1450,6 +1450,7 @@ DOMAIN-SUFFIX, carpe.pages.dev
 DOMAIN-SUFFIX, casalemedia.com
 DOMAIN-SUFFIX, castarsdk.com
 DOMAIN-SUFFIX, catalog.video.msn.com
+DOMAIN-SUFFIX, catfront.dianping.com
 DOMAIN-SUFFIX, ccc-x.jd.com
 DOMAIN-SUFFIX, cdn.pgvt.io
 DOMAIN-SUFFIX, cdn.polarbyte.com
@@ -1495,6 +1496,7 @@ DOMAIN-SUFFIX, criteo.com
 DOMAIN-SUFFIX, cs1.wpc.v0cdn.net
 DOMAIN-SUFFIX, csp.godaddy.com
 DOMAIN-SUFFIX, csr.onet.pl
+DOMAIN-SUFFIX, cstm.baidu.com
 DOMAIN-SUFFIX, cszlks.com
 DOMAIN-SUFFIX, cudaojia.com
 DOMAIN-SUFFIX, cupid.iqiyi.com

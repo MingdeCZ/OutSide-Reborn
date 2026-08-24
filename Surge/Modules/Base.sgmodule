@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.7
-#!date = 26.8.14
+#!version = 1.0.8
+#!date = 26.8.24
 #!category = N合1
 
 [General]
@@ -18,7 +18,7 @@ always-real-ip = %APPEND% *.10099.com.cn, *.126.net, *.backloop.dev, *.blzstatic
 # 🚫 阻止常见的 HTTPDNS 服务器
 force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443
 # skip-proxy = %INSERT% *.local, 0.0.0.0/32, 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.0.0.0/24, 192.168.0.0/16, 198.18.0.0/15, 2001::/32, 2001:db8::/32, 2002::/16, 224.0.0.0/3, ::1/128, ::ffff:0:0:0:0/1, ::ffff:128:0:0:0/1, captive.apple.com, e.crashlytics.com, fc00::/7, fd00::/8, fe80::/10, ff00::/8, gate.lagou.com, localhost, login-service.mobile-bank.psbc.com, mobile-bank.psbc.com, passenger.t3go.cn, seed-sequoia.siri.apple.com, sequoia.apple.com, www.abchina.com.cn, www.baidu.com, wxh.wo.cn, yunbusiness.ccb.com
-# skip-proxy = %APPEND% *.local
+skip-proxy = %APPEND% *.local
 
 [MITM]
 hostname = %APPEND% mp.weixin.qq.com, security.wechat.com, sub.store, szextshort.weixin.qq.com, weixin110.qq.com, www.google.cn
