@@ -20,6 +20,7 @@ DOMAIN-SUFFIX, googlevads-cn.com
 DOMAIN-SUFFIX, honeycomb.io
 DOMAIN-SUFFIX, hs-banner.com
 DOMAIN-SUFFIX, quantummetric.com
+DOMAIN-SUFFIX, sentry.shortcat.app
 DOMAIN-SUFFIX, statsigapi.net
 IP-CIDR, 109.239.140.0/24
 IP-CIDR, 5.28.192.0/21

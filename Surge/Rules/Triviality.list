@@ -86,6 +86,8 @@ DOMAIN, packages.codeberg.org
 DOMAIN, pkgs.alpinelinux.org
 DOMAIN, pkgs.netbird.io
 DOMAIN, planet.openstreetmap.org
+DOMAIN, playwright-akamai.azureedge.net
+DOMAIN, playwright.azureedge.net
 DOMAIN, registry-1.docker.io
 DOMAIN, release.arcboxcdn.com
 DOMAIN, releases.landrop.app
@@ -96,6 +98,7 @@ DOMAIN, s2.animeko.openani.org
 DOMAIN, softwareupdate.pilotmoon.com
 DOMAIN, stat.nodeseek.org
 DOMAIN, stat.sa.net
+DOMAIN, static.adtidy.org
 DOMAIN, steamdeck-images.steamos.cloud
 DOMAIN, steamdeck-packages.steamos.cloud
 DOMAIN, store.nethunter.com
@@ -141,6 +144,7 @@ DOMAIN-SUFFIX, edge.kernel.org
 DOMAIN-SUFFIX, files.ghostty.org
 DOMAIN-SUFFIX, fontawesome.com
 DOMAIN-SUFFIX, fsmg.org.nz
+DOMAIN-SUFFIX, ghcr.io
 DOMAIN-SUFFIX, godamh.com
 DOMAIN-SUFFIX, happymh.com
 DOMAIN-SUFFIX, infuseku.xyz
@@ -171,6 +175,7 @@ DOMAIN-SUFFIX, perplexityusercontent.com
 DOMAIN-SUFFIX, pilotmoon.com
 DOMAIN-SUFFIX, popclip.app
 DOMAIN-SUFFIX, pythonhosted.org
+DOMAIN-SUFFIX, releases.parcse.com
 DOMAIN-SUFFIX, s3-website.cloud.ru
 DOMAIN-SUFFIX, s3.yandex.net
 DOMAIN-SUFFIX, seecdn.net
@@ -182,6 +187,7 @@ DOMAIN-SUFFIX, thebigboss.org
 DOMAIN-SUFFIX, typekit.net
 DOMAIN-SUFFIX, unpkg.com
 DOMAIN-SUFFIX, update.microsoft.com
+DOMAIN-SUFFIX, updates.shortcat.app
 DOMAIN-SUFFIX, webtype.com
 DOMAIN-SUFFIX, worldssl.net
 DOMAIN-SUFFIX, xxblapingpong.cc
