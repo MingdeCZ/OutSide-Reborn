@@ -207,11 +207,15 @@ DOMAIN-SUFFIX, cn.apple.com
 DOMAIN-SUFFIX, cn.ls.apple.com
 DOMAIN-SUFFIX, icloud.com.cn
 # 微软国内 CDN
-DOMAIN, res-1.cdn.office.net
-DOMAIN, res-2.cdn.office.net
-DOMAIN, res-h3.public.cdn.office.net
-DOMAIN, res.cdn.office.net
-DOMAIN, statics.teams.cdn.office.net
+# DOMAIN, res-1.cdn.office.net
+# DOMAIN, res-2.cdn.office.net
+# DOMAIN, res-h3.public.cdn.office.net
+# DOMAIN, res.cdn.office.net
+# DOMAIN, statics.teams.cdn.office.net
+# DOMAIN-SUFFIX, devblogs.microsoft.com
+# DOMAIN-SUFFIX, developer.microsoft.com
+# DOMAIN-SUFFIX, fs.microsoft.com
+# DOMAIN-SUFFIX, storeedgefd.dsx.mp.microsoft.com
 DOMAIN-SUFFIX, azuremigrate.download.prss.microsoft.com
 DOMAIN-SUFFIX, azuremigratetest.download.prss.microsoft.com
 DOMAIN-SUFFIX, azurestackhub.download.prss.microsoft.com
@@ -221,15 +225,12 @@ DOMAIN-SUFFIX, cn.windowssearch.com
 DOMAIN-SUFFIX, collaborate.download.prss.microsoft.com
 DOMAIN-SUFFIX, collaborateppe.download.prss.microsoft.com
 DOMAIN-SUFFIX, ctldl.windowsupdate.com
-DOMAIN-SUFFIX, devblogs.microsoft.com
-DOMAIN-SUFFIX, developer.microsoft.com
 DOMAIN-SUFFIX, dl.delivery.mp.microsoft.com
 DOMAIN-SUFFIX, download.microsoft.com
 DOMAIN-SUFFIX, download.visualstudio.microsoft.com
 DOMAIN-SUFFIX, download.windowsupdate.com
 DOMAIN-SUFFIX, dreamspark.download.prss.microsoft.com
 DOMAIN-SUFFIX, dreamsparkuat.download.prss.microsoft.com
-DOMAIN-SUFFIX, fs.microsoft.com
 DOMAIN-SUFFIX, itacademy.download.prss.microsoft.com
 DOMAIN-SUFFIX, itacademyuat.download.prss.microsoft.com
 DOMAIN-SUFFIX, lex.download.prss.microsoft.com
@@ -253,7 +254,6 @@ DOMAIN-SUFFIX, sdx.microsoft.com
 DOMAIN-SUFFIX, software.download.prss.microsoft.com
 DOMAIN-SUFFIX, storecorefulfillment.download.prss.microsoft.com
 DOMAIN-SUFFIX, storeedge.microsoft.com
-DOMAIN-SUFFIX, storeedgefd.dsx.mp.microsoft.com
 DOMAIN-SUFFIX, surface.download.prss.microsoft.com
 DOMAIN-SUFFIX, vlportal.download.prss.microsoft.com
 DOMAIN-SUFFIX, volic.download.prss.microsoft.com

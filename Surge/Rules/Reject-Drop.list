@@ -64,7 +64,11 @@ DOMAIN-SUFFIX, v.ipinfo.io
 DOMAIN-SUFFIX, zztfly.com
 DOMAIN-WILDCARD, ads-*.xhscdn.com
 IP-CIDR, 101.35.204.35/32
-URL-REGEX, ^http://.+/amdc/mobileDispatch
+IP-CIDR, 101.91.140.224/32
+IP-CIDR, 122.9.13.79/32
+IP-CIDR, 122.9.15.129/32
+URL-REGEX, "/\d+/resolve"
+URL-REGEX, "^http://.+/amdc/mobileDispatch"
 # 其它（最后更新：26-8-14）
 DOMAIN, dataflow.biliapi.com
 DOMAIN, nom.telemetrydeck.com
