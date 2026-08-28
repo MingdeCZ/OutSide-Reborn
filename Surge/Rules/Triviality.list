@@ -131,6 +131,7 @@ DOMAIN-SUFFIX, cdn.prod.website-files.com
 DOMAIN-SUFFIX, cdn.visa.com
 DOMAIN-SUFFIX, ciciaicdn.com
 DOMAIN-SUFFIX, colamanga.com
+DOMAIN-SUFFIX, delivery.mp.microsoft.com
 DOMAIN-SUFFIX, discordapp.com
 DOMAIN-SUFFIX, dl.discordapp.net
 DOMAIN-SUFFIX, dl.twrp.me
@@ -180,6 +181,7 @@ DOMAIN-SUFFIX, t3.storageapi.dev
 DOMAIN-SUFFIX, thebigboss.org
 DOMAIN-SUFFIX, typekit.net
 DOMAIN-SUFFIX, unpkg.com
+DOMAIN-SUFFIX, update.microsoft.com
 DOMAIN-SUFFIX, webtype.com
 DOMAIN-SUFFIX, worldssl.net
 DOMAIN-SUFFIX, xxblapingpong.cc

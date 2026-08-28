@@ -2322,7 +2322,6 @@ DOMAIN-SUFFIX, cos.sa-saopaulo.myqcloud.com
 DOMAIN-SUFFIX, crates.io
 DOMAIN-SUFFIX, debian.map.fastlydns.net
 DOMAIN-SUFFIX, debian.petiak.ir
-DOMAIN-SUFFIX, delivery.mp.microsoft.com
 DOMAIN-SUFFIX, desktop.docker.com
 DOMAIN-SUFFIX, digitaloceanspaces.com
 DOMAIN-SUFFIX, dl.dlsite.com
@@ -2781,7 +2780,6 @@ DOMAIN-SUFFIX, ubuntu.moon127.net
 DOMAIN-SUFFIX, ubuntu.nautile.nc
 DOMAIN-SUFFIX, ubuntu.petiak.ir
 DOMAIN-SUFFIX, ubuntumirror.dei.uc.pt
-DOMAIN-SUFFIX, update.microsoft.com
 DOMAIN-SUFFIX, vultrobjects.com
 DOMAIN-SUFFIX, wup.eshop.nintendo.net
 DOMAIN-SUFFIX, wup.shop.nintendo.net

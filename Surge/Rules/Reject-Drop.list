@@ -24,6 +24,7 @@ DOMAIN, snowflake.qq.com
 DOMAIN, titan.pinduoduo.com
 DOMAIN, trackingprd.hwwt8.com
 DOMAIN, zhihu-web-analytics.zhihu.com
+DOMAIN-KEYWORD, telemetry.officeapps.live.com
 DOMAIN-SUFFIX, a.ipinfo.io
 DOMAIN-SUFFIX, adkwai.com
 DOMAIN-SUFFIX, adnxs.com
@@ -46,6 +47,7 @@ DOMAIN-SUFFIX, logcollection.ronghub.com
 DOMAIN-SUFFIX, loggw-ex.alipay.com
 DOMAIN-SUFFIX, logs.netflix.com
 DOMAIN-SUFFIX, mairuan.com
+DOMAIN-SUFFIX, mazu.m.qq.com
 DOMAIN-SUFFIX, monitor.azure.com
 DOMAIN-SUFFIX, mum.alibabachengdun.com
 DOMAIN-SUFFIX, openmonitor.alipay-eco.com
