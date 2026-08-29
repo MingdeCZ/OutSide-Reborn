@@ -15,6 +15,7 @@ DOMAIN, galileotelemetry.tencent.com
 DOMAIN, h-adashx.dingtalkapps.com
 DOMAIN, ifs.tanx.com
 DOMAIN, im-x.jd.com
+DOMAIN, log.mmstat.com
 DOMAIN, meta.pinduoduo.com
 DOMAIN, open.e.kuaishou.cn
 DOMAIN, open.e.kuaishou.com
@@ -59,6 +60,7 @@ DOMAIN-SUFFIX, spider-tracker.xiaohongshu.com
 DOMAIN-SUFFIX, t2.xiaohongshu.com
 DOMAIN-SUFFIX, ta.pinduoduo.com
 DOMAIN-SUFFIX, th.pinduoduo.com
+DOMAIN-SUFFIX, trk.pinterest.com
 DOMAIN-SUFFIX, umeng.com
 DOMAIN-SUFFIX, umini.shujupie.com
 DOMAIN-SUFFIX, uranus.jd.com
