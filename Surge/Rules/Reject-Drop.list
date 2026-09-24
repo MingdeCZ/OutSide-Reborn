@@ -26,12 +26,14 @@ DOMAIN, titan.pinduoduo.com
 DOMAIN, trackingprd.hwwt8.com
 DOMAIN, zhihu-web-analytics.zhihu.com
 DOMAIN-KEYWORD, telemetry.officeapps.live.com
+DOMAIN-SUFFIX, 3lift.com
 DOMAIN-SUFFIX, a.ipinfo.io
 DOMAIN-SUFFIX, adkwai.com
 DOMAIN-SUFFIX, adnxs.com
 DOMAIN-SUFFIX, apm-fe.xiaohongshu.com
 DOMAIN-SUFFIX, apm-native.xiaohongshu.com
 DOMAIN-SUFFIX, collector.github.com
+DOMAIN-SUFFIX, csp-reporting.cloudflare.com
 DOMAIN-SUFFIX, d.meituan.net
 DOMAIN-SUFFIX, data.bilibili.com
 DOMAIN-SUFFIX, doubleclick.net
@@ -49,8 +51,10 @@ DOMAIN-SUFFIX, loggw-ex.alipay.com
 DOMAIN-SUFFIX, logs.netflix.com
 DOMAIN-SUFFIX, mairuan.com
 DOMAIN-SUFFIX, mazu.m.qq.com
+DOMAIN-SUFFIX, mdt.qq.com
 DOMAIN-SUFFIX, monitor.azure.com
 DOMAIN-SUFFIX, mum.alibabachengdun.com
+DOMAIN-SUFFIX, omgup.xiaojukeji.com
 DOMAIN-SUFFIX, openmonitor.alipay-eco.com
 DOMAIN-SUFFIX, plw6buurmlxhrlkm6wy3uk7cia0mprkq.lambda-url.ap-south-1.on.aws
 DOMAIN-SUFFIX, pulse.perfmetrics.netflix.com
@@ -59,6 +63,7 @@ DOMAIN-SUFFIX, s-gm.mmstat.com
 DOMAIN-SUFFIX, spider-tracker.xiaohongshu.com
 DOMAIN-SUFFIX, t2.xiaohongshu.com
 DOMAIN-SUFFIX, ta.pinduoduo.com
+DOMAIN-SUFFIX, telemetry.canva.com
 DOMAIN-SUFFIX, th.pinduoduo.com
 DOMAIN-SUFFIX, trk.pinterest.com
 DOMAIN-SUFFIX, umeng.com

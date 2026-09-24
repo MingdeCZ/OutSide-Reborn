@@ -3,6 +3,7 @@ DOMAIN, ad.flipboard.cn
 DOMAIN, fog.22112211.xyz
 DOMAIN, o33249.ingest.us.sentry.io
 DOMAIN, o4507514603831296.ingest.de.sentry.io
+DOMAIN, o64374.ingest.sentry.io
 DOMAIN-SUFFIX, 2mdn-cn.net
 DOMAIN-SUFFIX, adashx.ut.dingtalk.com
 DOMAIN-SUFFIX, app-analytics-services.com
@@ -1023,6 +1024,7 @@ DOMAIN, stat.dns.sb
 DOMAIN, stat.i3.dmm.com
 DOMAIN, stat.loli.net
 DOMAIN, stat.m.jd.com
+DOMAIN, stat.nodeseek.org
 DOMAIN, stat.rdap.ss
 DOMAIN, stat.simba.taobao.com
 DOMAIN, stat.v.baidu.com
@@ -1240,7 +1242,6 @@ DOMAIN-SUFFIX, 2mdn.net
 DOMAIN-SUFFIX, 365key.com
 DOMAIN-SUFFIX, 3721zh.com
 DOMAIN-SUFFIX, 3jiezhiwai.com
-DOMAIN-SUFFIX, 3lift.com
 DOMAIN-SUFFIX, 4dex.io
 DOMAIN-SUFFIX, 4dex.tech
 DOMAIN-SUFFIX, 4players.de
@@ -1251,6 +1252,7 @@ DOMAIN-SUFFIX, 6d63d3.com
 DOMAIN-SUFFIX, 91veg.com
 DOMAIN-SUFFIX, a.baidu.com
 DOMAIN-SUFFIX, a.tampermonkey.net
+DOMAIN-SUFFIX, abaftwetly.com
 DOMAIN-SUFFIX, abtauthprd.samsungcloudsolution.com
 DOMAIN-SUFFIX, ackprovided.com
 DOMAIN-SUFFIX, acs4baichuan.m.taobao.com
@@ -1411,6 +1413,7 @@ DOMAIN-SUFFIX, auction-ads.wpscdn.cn
 DOMAIN-SUFFIX, ay.delivery
 DOMAIN-SUFFIX, baichuan-sdk.taobao.com
 DOMAIN-SUFFIX, baidustatic.com
+DOMAIN-SUFFIX, bat.bing.net
 DOMAIN-SUFFIX, bayimob.com
 DOMAIN-SUFFIX, bdad.123pan.cn
 DOMAIN-SUFFIX, bdustatic.com
@@ -1431,6 +1434,7 @@ DOMAIN-SUFFIX, bootcdn.net
 DOMAIN-SUFFIX, bootcss.com
 DOMAIN-SUFFIX, brand.sogou.com
 DOMAIN-SUFFIX, brilliantfaronly.com
+DOMAIN-SUFFIX, brochureclear.com
 DOMAIN-SUFFIX, bryonypie.com
 DOMAIN-SUFFIX, btloader.com
 DOMAIN-SUFFIX, bugly.qq.com
@@ -1675,6 +1679,7 @@ DOMAIN-SUFFIX, ichnaea-web.netflix.com
 DOMAIN-SUFFIX, ichnaea.netflix.com
 DOMAIN-SUFFIX, id6.me
 DOMAIN-SUFFIX, ijinshan.com
+DOMAIN-SUFFIX, ill-fatedodd.com
 DOMAIN-SUFFIX, impactcdn.com
 DOMAIN-SUFFIX, imrworldwide.com
 DOMAIN-SUFFIX, imtmp.net
@@ -1753,7 +1758,6 @@ DOMAIN-SUFFIX, martianinc.co
 DOMAIN-SUFFIX, mc.yandex.ru
 DOMAIN-SUFFIX, mcs.zijieapi.com
 DOMAIN-SUFFIX, mczbf.com
-DOMAIN-SUFFIX, mdt.qq.com
 DOMAIN-SUFFIX, measure.office.com
 DOMAIN-SUFFIX, mechanicallydrug.com
 DOMAIN-SUFFIX, media.net
@@ -1805,12 +1809,14 @@ DOMAIN-SUFFIX, npm-cache.com
 DOMAIN-SUFFIX, nr-data.net
 DOMAIN-SUFFIX, nsclickvideo.baidu.com
 DOMAIN-SUFFIX, nytrng.com
+DOMAIN-SUFFIX, oaphoace.net
 DOMAIN-SUFFIX, oastify.com
 DOMAIN-SUFFIX, offerstrack.net
 DOMAIN-SUFFIX, offerwall.yandex.net
 DOMAIN-SUFFIX, ogads-pa.clients6.google.com
 DOMAIN-SUFFIX, ok365.com
 DOMAIN-SUFFIX, okamiboss.com
+DOMAIN-SUFFIX, omgup1.xiaojukeji.com
 DOMAIN-SUFFIX, omtrdc.net
 DOMAIN-SUFFIX, oneid.mmstat.com
 DOMAIN-SUFFIX, onesignal.com
@@ -1820,6 +1826,7 @@ DOMAIN-SUFFIX, op.hicloud.com
 DOMAIN-SUFFIX, open.kuaishouzt.com
 DOMAIN-SUFFIX, open.kwaizt.com
 DOMAIN-SUFFIX, openapi.samsung.com
+DOMAIN-SUFFIX, openfpcdn.io
 DOMAIN-SUFFIX, openlocation-drcn.platform.dbankcloud.com
 DOMAIN-SUFFIX, openpanel.dev
 DOMAIN-SUFFIX, openx.net
@@ -1999,7 +2006,6 @@ DOMAIN-SUFFIX, teads.tv
 DOMAIN-SUFFIX, telemetry-coverage.mozilla.org
 DOMAIN-SUFFIX, telemetry.appex.bing.com
 DOMAIN-SUFFIX, telemetry.appex.bing.net
-DOMAIN-SUFFIX, telemetry.canva.com
 DOMAIN-SUFFIX, telemetry.console.api.aws
 DOMAIN-SUFFIX, telemetry.insights.video.a2z.com
 DOMAIN-SUFFIX, telemetry.microsoft.com
