@@ -200,19 +200,34 @@ IP-CIDR, 216.40.84.0/22
 IP-CIDR, 8.8.4.4/32
 IP-CIDR, 8.8.8.8/32
 # 待分配 IP 查询
+# DOMAIN-SUFFIX, browserleaks.com
+# DOMAIN-SUFFIX, browserleaks.net
+# DOMAIN-SUFFIX, browserleaks.org
+# DOMAIN-SUFFIX, fast.com
+# DOMAIN-SUFFIX, ip.gs
 # DOMAIN-SUFFIX, ip.sb
 # DOMAIN-SUFFIX, ip234.in
 # DOMAIN-SUFFIX, ipaddress.my
 # DOMAIN-SUFFIX, ipapi.is
 # DOMAIN-SUFFIX, ipinfo.es
 # DOMAIN-SUFFIX, ipwho.is
+# DOMAIN-SUFFIX, myip.ms
+# DOMAIN-SUFFIX, speed.cloudflare.com
+DOMAIN-SUFFIX, 2ip.io
 DOMAIN-SUFFIX, abuseipdb.com
+DOMAIN-SUFFIX, browserscan.net
+DOMAIN-SUFFIX, cleanip.io
 DOMAIN-SUFFIX, db-ip.com
 DOMAIN-SUFFIX, freeipapi.com
+DOMAIN-SUFFIX, icanhazip.com
+DOMAIN-SUFFIX, ident.me
+DOMAIN-SUFFIX, ifconfig.co
+DOMAIN-SUFFIX, ifconfig.me
 DOMAIN-SUFFIX, ip-api.com
 DOMAIN-SUFFIX, ip-score.com
 DOMAIN-SUFFIX, ip.im
 DOMAIN-SUFFIX, ip.me
+DOMAIN-SUFFIX, ip.net.coffee
 DOMAIN-SUFFIX, ip.sy
 DOMAIN-SUFFIX, ip.zerosla.net
 DOMAIN-SUFFIX, ip125.com
@@ -227,11 +242,13 @@ DOMAIN-SUFFIX, ipgeolocation.io
 DOMAIN-SUFFIX, ipify.org
 DOMAIN-SUFFIX, ipinfo.cv
 DOMAIN-SUFFIX, ipinfo.io
+DOMAIN-SUFFIX, iping.cc
 DOMAIN-SUFFIX, ipip.la
 DOMAIN-SUFFIX, ipipseek.com
 DOMAIN-SUFFIX, ipjiance.com
 DOMAIN-SUFFIX, iplark.com
 DOMAIN-SUFFIX, iplocate.io
+DOMAIN-SUFFIX, iplocation.io
 DOMAIN-SUFFIX, iplocation.net
 DOMAIN-SUFFIX, ipmap.io
 DOMAIN-SUFFIX, ippure.com
@@ -239,12 +256,19 @@ DOMAIN-SUFFIX, ipqualityscore.com
 DOMAIN-SUFFIX, ipquery.io
 DOMAIN-SUFFIX, ipregistry.co
 DOMAIN-SUFFIX, ipstack.com
+DOMAIN-SUFFIX, ipwhois.io
 DOMAIN-SUFFIX, ipyard.com
+DOMAIN-SUFFIX, myip.com
 DOMAIN-SUFFIX, ping0.cc
 DOMAIN-SUFFIX, ping0.co
+DOMAIN-SUFFIX, ping0.xyz
 DOMAIN-SUFFIX, pingip.cn
 DOMAIN-SUFFIX, pubipa.com
 DOMAIN-SUFFIX, scamalytics.com
+DOMAIN-SUFFIX, tnedi.me
+DOMAIN-SUFFIX, whatismyip.com
+DOMAIN-SUFFIX, whatismyipaddress.com
+DOMAIN-SUFFIX, whatsmyip.org
 DOMAIN-SUFFIX, xmsl.dev
 # 苹果
 # DOMAIN-SUFFIX, appsto.re

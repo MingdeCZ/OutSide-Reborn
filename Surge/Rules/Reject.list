@@ -1485,6 +1485,7 @@ DOMAIN-SUFFIX, conde.digital
 DOMAIN-SUFFIX, conf.hpplay.cn
 DOMAIN-SUFFIX, config-factory.com
 DOMAIN-SUFFIX, configserver-dra.platform.hicloud.com
+DOMAIN-SUFFIX, console.data4.net
 DOMAIN-SUFFIX, content-loader.com
 DOMAIN-SUFFIX, convertexperiments.com
 DOMAIN-SUFFIX, coordinator-production-28516768.us-east-1.elb.amazonaws.com
@@ -1906,7 +1907,6 @@ DOMAIN-SUFFIX, rptsys.com
 DOMAIN-SUFFIX, rqd.qq.com
 DOMAIN-SUFFIX, rs.mail.ru
 DOMAIN-SUFFIX, rubiconproject.com
-DOMAIN-SUFFIX, rumt-zh.com
 DOMAIN-SUFFIX, ry51w.cn
 DOMAIN-SUFFIX, s.360.cn
 DOMAIN-SUFFIX, s.baidu.com
@@ -1942,6 +1942,7 @@ DOMAIN-SUFFIX, sg536.cn
 DOMAIN-SUFFIX, sgm-w.jd.com
 DOMAIN-SUFFIX, shadu.baidu.com
 DOMAIN-SUFFIX, share.baidu.com
+DOMAIN-SUFFIX, sharethis.com
 DOMAIN-SUFFIX, shouji.360.cn
 DOMAIN-SUFFIX, shshuoshu.com
 DOMAIN-SUFFIX, shuaji.360.cn
@@ -2119,6 +2120,7 @@ DOMAIN-SUFFIX, zhanzhang.net
 DOMAIN-SUFFIX, zhaozecheng.cn
 DOMAIN-SUFFIX, zhenxinet.com
 DOMAIN-SUFFIX, zhugeio.com
+DOMAIN-SUFFIX, zipthelake.com
 DOMAIN-SUFFIX, zohowriter.com
 DOMAIN-SUFFIX, ztd.dds.microsoft.com
 DOMAIN-WILDCARD, *-pcdn-*.biliapi.net
