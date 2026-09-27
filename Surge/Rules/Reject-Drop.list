@@ -35,7 +35,6 @@ DOMAIN-SUFFIX, apm-native.xiaohongshu.com
 DOMAIN-SUFFIX, collector.github.com
 DOMAIN-SUFFIX, csp-reporting.cloudflare.com
 DOMAIN-SUFFIX, d.meituan.net
-DOMAIN-SUFFIX, data.bilibili.com
 DOMAIN-SUFFIX, doubleclick.net
 DOMAIN-SUFFIX, dreport.meituan.net
 DOMAIN-SUFFIX, dutils.com
@@ -58,6 +57,7 @@ DOMAIN-SUFFIX, omgup.xiaojukeji.com
 DOMAIN-SUFFIX, openmonitor.alipay-eco.com
 DOMAIN-SUFFIX, plw6buurmlxhrlkm6wy3uk7cia0mprkq.lambda-url.ap-south-1.on.aws
 DOMAIN-SUFFIX, pulse.perfmetrics.netflix.com
+DOMAIN-SUFFIX, report.23video.com
 DOMAIN-SUFFIX, report.meituan.com
 DOMAIN-SUFFIX, rumt-zh.com
 DOMAIN-SUFFIX, s-gm.mmstat.com
@@ -82,8 +82,8 @@ IP-CIDR, 116.63.10.31/32
 IP-CIDR, 122.9.13.79/32
 IP-CIDR, 122.9.15.129/32
 URL-REGEX, "/\d+/resolve"
-URL-REGEX, "^http://.+/amdc/mobileDispatch"
-# 其它（最后更新：26-8-14）
+# 其它（最后更新：26-9-27）
+DOMAIN, data.bilibili.com
 DOMAIN, dataflow.biliapi.com
 DOMAIN, nom.telemetrydeck.com
 DOMAIN, stats.grafana.org

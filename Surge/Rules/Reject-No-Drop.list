@@ -1,13 +1,13 @@
 # 防止 TG 加载转圈
-IP-CIDR, 95.161.76.100/31
-IP-CIDR, 194.221.250.50/32
+# IP-CIDR, 95.161.76.100/31
+# IP-CIDR, 194.221.250.50/32
 
-# 阻止 YouTube 和 Bilibili 的视频 CDN 的 QUIC（最后更新：26-7-14）
+# 阻止 YouTube 和 Bilibili 的视频 CDN 的 QUIC（最后更新：26-9-27）
+# DOMAIN, upos-sz-302kodo.bilivideo.com
+# DOMAIN, upos-sz-302ppio.bilivideo.com
 AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, googlevideo.com))
 DOMAIN, livewebbs2pcdn.msstatic.com
 DOMAIN, qn-cdnfile1pcdn.msstatic.com
-DOMAIN, upos-sz-302kodo.bilivideo.com
-DOMAIN, upos-sz-302ppio.bilivideo.com
 DOMAIN-KEYWORD, -p2p-v2.pull.yximgs.com
 DOMAIN-KEYWORD, -p2p.pull.yximgs.com
 DOMAIN-SUFFIX, bsccdn.net
@@ -33,3 +33,4 @@ DOMAIN-SUFFIX, yfcdn.net
 DOMAIN-SUFFIX, yfcloud.com
 DOMAIN-SUFFIX, yfp2p.net
 DOMAIN-WILDCARD, p2p*.qq.com
+DOMAIN-WILDCARD, upos-sz-302*.bilivideo.com

@@ -1,4 +1,6 @@
 # AS59930 - 迈阿密
+DOMAIN, cdn1.telegram.space
+DOMAIN, cdn1.telesco.pe
 DOMAIN-SUFFIX, aurora.web.telegram.org
 DOMAIN-SUFFIX, pluto.web.telegram.org
 IP-CIDR, 149.154.172.0/22

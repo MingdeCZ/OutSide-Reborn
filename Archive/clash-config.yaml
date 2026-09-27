@@ -191,6 +191,13 @@ rule-providers:
     url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Direct.list"
     path: ./Direct.text
     interval: 604800
+  Mainland:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Mainland.list"
+    path: ./Mainland.text
+    interval: 604800
   Triviality:
     type: http
     format: text
@@ -241,6 +248,7 @@ rules:
   - RULE-SET, TG-US, 绿卡, no-resolve
   - RULE-SET, Cheat, 俯仰之间, no-resolve
   - RULE-SET, Direct, DIRECT, no-resolve
+  - RULE-SET, Mainland, DIRECT, no-resolve
   - RULE-SET, Triviality, 俯仰之间, no-resolve
   - RULE-SET, TG-EU, 壳, no-resolve
   - RULE-SET, Entity, 绿卡, no-resolve
