@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.1.8
-#!date = 26.9.27
+#!version = 1.1.9
+#!date = 26.9.29
 #!category = N合1
 #!system = ios
 
@@ -12,7 +12,7 @@
 skip-proxy = %APPEND% *.abcchina.com, *.abcchina.com.cn
 
 [MITM]
-hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4, 113.46.225.5, 116.85.2.14, 116.85.2.15, 116.85.2.21, 116.85.2.22, 116.85.2.4, 116.85.2.5, 117.51.168.12, 117.51.168.13, 117.51.168.17, 117.51.168.18, 117.51.168.5, 117.51.168.6, 117.51.169.11, 117.51.169.2, 117.51.169.4, 117.51.169.6, 120.241.142.11, 120.241.142.13, 120.241.142.18, 120.241.142.19, 120.241.142.4, 120.241.143.8, 120.241.143.4, 120.241.143.5, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.176, 123.207.209.177, 123.207.209.28, 123.207.209.29, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.64, 123.207.209.65, 157.122.212.11, 157.122.212.12, 157.122.212.2, 157.122.212.5, 157.255.76.12, 157.255.76.15, 157.255.76.17, 157.255.76.19, 157.255.76.5, 157.255.76.11, 3gimg.qq.com, acs.m.goofish.com, acs.m.taobao.com, apapia-sqk-weblogic.manmanbuy.com, api.bilibili.com, api.m.jd.com, api.pinduoduo.com, api.pinterest.com, api.udache.com, apiz.trakt.tv, apm.xiaojukeji.com, app.bilibili.com, app.dewu.com, app.missevan.com, as.xiaojukeji.com, b?dsp-x.jd.com, ci.xiaohongshu.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, daijia.kuaidadi.com, data.missevan.com, edith.xiaohongshu.com, fm.missevan.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw.alicdn.com, heic.alicdn.com, htwkop.xiaojukeji.com, htwkop-st.xiaojukeji.com, hw-edge.solseed.cn, images.pinduoduo.com, in.m.jd.com, ktx.cn, learn.chaoxing.com, mapi.ghsmpwalmart.com, miniapp.qmai.cn, miniapp.sexytea2013.com, mobile.api.sisyphe.cn, ms.jr.jd.com, newsso.map.qq.com, newton.gumingnc.com, poplayer.template.alibaba.com, prod.didi.cn, rec.xiaohongshu.com, res.xiaojukeji.com, so.xiaohongshu.com, tm-api.pin-dao.cn, webapi.qmai.cn, www.xiaohongshu.com, xyst.yuanfudao.com, youtubei.googleapis.com, zone.guiderank-app.com, acs-m.freshippo.com, sns.umetrip.com, appmsg.umetrip.com, home.umetrip.com, umehome.umetrip.com, opactivity.umetrip.com, activity.umetrip.com, umerp.umetrip.com, flightstatus.umetrip.com, umeflightstatus.umetrip.com, startup.umetrip.com, umestartup.umetrip.com, user.umetrip.com, umeuser.umetrip.com, event.umetrip.com, oss.umetrip.com, s.youtube.com, www.youtube.com, freight.xiaojukeji.com, union.click.jd.com
+hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4, 113.46.225.5, 116.85.2.14, 116.85.2.15, 116.85.2.21, 116.85.2.22, 116.85.2.4, 116.85.2.5, 117.51.168.12, 117.51.168.13, 117.51.168.17, 117.51.168.18, 117.51.168.5, 117.51.168.6, 117.51.169.11, 117.51.169.2, 117.51.169.4, 117.51.169.6, 120.241.142.11, 120.241.142.13, 120.241.142.18, 120.241.142.19, 120.241.142.4, 120.241.143.8, 120.241.143.4, 120.241.143.5, 123.207.209.142, 123.207.209.143, 123.207.209.160, 123.207.209.176, 123.207.209.177, 123.207.209.28, 123.207.209.29, 123.207.209.41, 123.207.209.42, 123.207.209.56, 123.207.209.57, 123.207.209.64, 123.207.209.65, 157.122.212.11, 157.122.212.12, 157.122.212.2, 157.122.212.5, 157.255.76.12, 157.255.76.15, 157.255.76.17, 157.255.76.19, 157.255.76.5, 157.255.76.11, 3gimg.qq.com, acs.m.goofish.com, acs.m.taobao.com, apapia-sqk-weblogic.manmanbuy.com, api.bilibili.com, api.m.jd.com, api.pinduoduo.com, api.pinterest.com, api.udache.com, apiz.trakt.tv, apm.xiaojukeji.com, app.bilibili.com, app.dewu.com, app.missevan.com, as.xiaojukeji.com, b?dsp-x.jd.com, ci.xiaohongshu.com, common.diditaxi.com.cn, conf.diditaxi.com.cn, daijia.kuaidadi.com, data.missevan.com, edith.xiaohongshu.com, fm.missevan.com, g-acs.m.goofish.com, grpc.biliapi.net, guide-acs.m.taobao.com, gw.alicdn.com, heic.alicdn.com, htwkop.xiaojukeji.com, htwkop-st.xiaojukeji.com, hw-edge.solseed.cn, images.pinduoduo.com, in.m.jd.com, ktx.cn, learn.chaoxing.com, mapi.ghsmpwalmart.com, miniapp.qmai.cn, miniapp.sexytea2013.com, mobile.api.sisyphe.cn, ms.jr.jd.com, newsso.map.qq.com, newton.gumingnc.com, poplayer.template.alibaba.com, prod.didi.cn, rec.xiaohongshu.com, res.xiaojukeji.com, so.xiaohongshu.com, tm-api.pin-dao.cn, webapi.qmai.cn, www.xiaohongshu.com, xyst.yuanfudao.com, youtubei.googleapis.com, zone.guiderank-app.com, acs-m.freshippo.com, s.youtube.com, www.youtube.com, freight.xiaojukeji.com, union.click.jd.com
 
 [URL Rewrite]
 # 哔哩哔哩优化
@@ -123,10 +123,10 @@ hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4,
 ^https://conf\.diditaxi\.com\.cn/homepage/v1/other/slow\? data-type=text data="{}" status-code=200
 ^https://res\.xiaojukeji\.com/resapi/activity/mget data-type=text data="{}" status-code=200
 # 青桔页面净化
-^https://htwkop-st\.xiaojukeji\.com/gateway\?api=cms\.htw\.delivery\.batch& data-type=text data="{}" status-code=200
-^https://htwkop\.xiaojukeji\.com/gateway\?api=hm\.fa\.querySellCardSummary& data-type=text data="{}" status-code=200
-^https://htwkop\.xiaojukeji\.com/gateway\?api=hm\.fa\.queryWelfareCenter& data-type=text data="{}" status-code=200
-^https://htwkop\.xiaojukeji\.com/gateway\?api=medel\.marketing\.spot\.delivery\.login& data-type=text data="{}" status-code=200
+^https://htwkop-st\.xiaojukeji\.com/gateway\?api=cms\.htw\.delivery\.batch& data-type=text data="{}"
+^https://htwkop\.xiaojukeji\.com/gateway\?api=hm\.fa\.querySellCardSummary& data-type=text data="{}"
+^https://htwkop\.xiaojukeji\.com/gateway\?api=hm\.fa\.queryWelfareCenter& data-type=text data="{}"
+^https://htwkop\.xiaojukeji\.com/gateway\?api=medel\.marketing\.spot\.delivery\.login& data-type=text data="{}"
 # 代驾页面净化
 ^https://daijia\.kuaidadi\.com/gateway\?api=lj\.c\.p\.queryLevelAndRightsStatus& data-type=text data="{}" status-code=200
 # 去弹窗
@@ -231,9 +231,6 @@ hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4,
 ^https://guide-acs\.m\.taobao\.com/gw/mtop\.cainiao\.adx\.flyad\.getad data-type=text data="{}" status-code=200
 ^https://guide-acs\.m\.taobao\.com/gw/mtop\.relationrecommend\.pailitaorecommend\.recommend data-type=text data="{}" status-code=200
 ^https://guide-acs\.m\.taobao\.com/gw/mtop\.taobao\.(?:volvo\.secondfloor\.getconfig|shot\.resources\.load|wireless\.home\.(?:newface|splash)\.awesome\.get) data-type=text data="{}" status-code=200
-
-# 航旅纵横净化
-^https://oss\.umetrip\.com/fs/advert/ data-type=tiny-gif
 
 [Body Rewrite]
 # 小程序净化
@@ -362,9 +359,9 @@ DOMAIN, api.biliapi.net, REJECT, extended-matching
 DOMAIN, app.biliapi.com, REJECT, extended-matching
 DOMAIN, app.biliapi.net, REJECT, extended-matching
 # 屏蔽 P2P
+# DEST-PORT, 8082, REJECT-NO-DROP
 DEST-PORT, 4480, REJECT-NO-DROP
 DEST-PORT, 4483, REJECT-NO-DROP
-DEST-PORT, 8082, REJECT-NO-DROP
 DEST-PORT, 9102, REJECT-NO-DROP
 
 # 滴滴出行优化
@@ -451,5 +448,3 @@ YouTube 日志活动请求处理 = type=http-request, pattern=^https://youtubei\
 # @Beta
 # 看天下解锁 VIP ktx.cn
 看天下解锁 VIP = type=http-response, pattern=^https://ktx\.cn, script-path = https://github.com/89996462/Quantumult-X/raw/main/ycdz/Vista.js, requires-body = 1
-# 航旅纵横净化 sns.umetrip.com, appmsg.umetrip.com, home.umetrip.com, umehome.umetrip.com, opactivity.umetrip.com, activity.umetrip.com, umerp.umetrip.com, flightstatus.umetrip.com, umeflightstatus.umetrip.com, startup.umetrip.com, umestartup.umetrip.com, user.umetrip.com, umeuser.umetrip.com, event.umetrip.com, oss.umetrip.com
-航旅纵横净化 = type=http-response, pattern=^https://(?:sns|appmsg|home|umehome|opactivity|activity|umerp|flightstatus|umeflightstatus|startup|umestartup|user|umeuser|event)\.umetrip\.com/gateway/api/umetrip/native(?:\?.*)?$, script-path = https://ddgksf2013.top/rewrite/umetrip.ads.js, requires-body = 1
