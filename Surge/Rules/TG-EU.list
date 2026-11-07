@@ -7,23 +7,23 @@
 # DOMAIN, cdn4.telesco.pe
 # DOMAIN-SUFFIX, venus.web.telegram.org
 # DOMAIN-SUFFIX, vesta.web.telegram.org
+DOMAIN-SUFFIX, t.me
+DOMAIN-SUFFIX, tx.me
+DOMAIN-SUFFIX, telegram.me
+DOMAIN-SUFFIX, telesco.pe
+DOMAIN-SUFFIX, legra.ph
+DOMAIN-SUFFIX, telegra.ph
 DOMAIN-SUFFIX, comments.app
 DOMAIN-SUFFIX, contest.com
-DOMAIN-SUFFIX, graph.org
-DOMAIN-SUFFIX, legra.ph
-DOMAIN-SUFFIX, t.me
 DOMAIN-SUFFIX, tdesktop.com
-DOMAIN-SUFFIX, telega.one
-DOMAIN-SUFFIX, telegra.ph
+DOMAIN-SUFFIX, tg.dev
 DOMAIN-SUFFIX, telegram.dog
-DOMAIN-SUFFIX, telegram.me
+DOMAIN-SUFFIX, telega.one
+DOMAIN-SUFFIX, graph.org
 DOMAIN-SUFFIX, telegram.org
 DOMAIN-SUFFIX, telegram.space
-DOMAIN-SUFFIX, telesco.pe
-DOMAIN-SUFFIX, tg.dev
-DOMAIN-SUFFIX, tx.me
-IP-CIDR, 149.154.160.0/21
 IP-CIDR, 91.108.4.0/21
 IP-CIDR, 91.108.58.0/23
 IP-CIDR, 95.161.64.0/20
+IP-CIDR, 149.154.160.0/21
 IP-CIDR6, 2001:67c:4e8::/48

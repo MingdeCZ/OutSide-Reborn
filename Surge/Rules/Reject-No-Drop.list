@@ -2,35 +2,43 @@
 # IP-CIDR, 95.161.76.100/31
 # IP-CIDR, 194.221.250.50/32
 
-# 阻止 YouTube 和 Bilibili 的视频 CDN 的 QUIC（最后更新：26-9-27）
-# DOMAIN, upos-sz-302kodo.bilivideo.com
-# DOMAIN, upos-sz-302ppio.bilivideo.com
-AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, googlevideo.com))
-DOMAIN, livewebbs2pcdn.msstatic.com
-DOMAIN, qn-cdnfile1pcdn.msstatic.com
-DOMAIN-KEYWORD, -p2p-v2.pull.yximgs.com
-DOMAIN-KEYWORD, -p2p.pull.yximgs.com
-DOMAIN-SUFFIX, bsccdn.net
-DOMAIN-SUFFIX, bvmlt.top
-DOMAIN-SUFFIX, cdnnodedns.cn
+# 阻止 YouTube 和 Bilibili 的视频 CDN 的 QUIC（最后更新：26-11-1）
 DOMAIN-SUFFIX, gjfzpt.cn
-DOMAIN-SUFFIX, ietheivaicai.com
-DOMAIN-SUFFIX, kuiniuca.com
-DOMAIN-SUFFIX, mcdn.bilivideo.cn
+DOMAIN-SUFFIX, cdnnodedns.cn
 DOMAIN-SUFFIX, mountaintoys.cn
-DOMAIN-SUFFIX, nexusedgeio.com
-DOMAIN-SUFFIX, onethingpcs.com
 DOMAIN-SUFFIX, p2cdn.com
-DOMAIN-SUFFIX, pcdn.yximgs.com
-DOMAIN-SUFFIX, pkoplink.com
-DOMAIN-SUFFIX, ppio.cloud
-DOMAIN-SUFFIX, saxysec.com
-DOMAIN-SUFFIX, szbdyd.com
-DOMAIN-SUFFIX, tianwenca.com
 DOMAIN-SUFFIX, uhabo.com
 DOMAIN-SUFFIX, xycdn.com
-DOMAIN-SUFFIX, yfcdn.net
+DOMAIN-SUFFIX, szbdyd.com
+DOMAIN-SUFFIX, saxysec.com
 DOMAIN-SUFFIX, yfcloud.com
+DOMAIN-SUFFIX, kuiniuca.com
+DOMAIN-SUFFIX, pkoplink.com
+DOMAIN-SUFFIX, tianwenca.com
+DOMAIN-SUFFIX, nexusedgeio.com
+DOMAIN-SUFFIX, onethingpcs.com
+DOMAIN-SUFFIX, ietheivaicai.com
+DOMAIN-SUFFIX, yfcdn.net
 DOMAIN-SUFFIX, yfp2p.net
+DOMAIN-SUFFIX, bsccdn.net
+DOMAIN-SUFFIX, bvmlt.top
+DOMAIN-SUFFIX, ppio.cloud
+DOMAIN-SUFFIX, p2plog.douyucdn.cn
+DOMAIN-SUFFIX, p2perrorlog.douyucdn.cn
+DOMAIN-SUFFIX, mcdn.bilivideo.cn
+DOMAIN-SUFFIX, p2p.huya.com
+DOMAIN-SUFFIX, pcdn.yximgs.com
+DOMAIN, livewebbs2pcdn.msstatic.com
+DOMAIN, qn-cdnfile1pcdn.msstatic.com
+DOMAIN, upos-sz-302kodo.bilivideo.com
+DOMAIN, upos-sz-302ppio.bilivideo.com
+AND, ((PROTOCOL, UDP), (DOMAIN-SUFFIX, googlevideo.com))
+DOMAIN-KEYWORD, -p2p-v2.pull.yximgs.com
+DOMAIN-KEYWORD, -p2p.pull.yximgs.com
+DOMAIN-WILDCARD, dyp2p-*.douyucdn.cn
 DOMAIN-WILDCARD, p2p*.qq.com
+DOMAIN-WILDCARD, p2p-*.douyucdn.cn
+DOMAIN-WILDCARD, p2pchunk-*.douyucdn.cn
+DOMAIN-WILDCARD, p2plive-*.douyucdn.cn
+DOMAIN-WILDCARD, stun*.douyucdn.cn
 DOMAIN-WILDCARD, upos-sz-302*.bilivideo.com

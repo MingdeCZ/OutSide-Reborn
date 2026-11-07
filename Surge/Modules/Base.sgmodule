@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.0.8
-#!date = 26.8.24
+#!version = 1.0.9
+#!date = 26.11.1
 #!category = N合1
 
 [General]
@@ -13,7 +13,7 @@
 # 🌐 通用设置增强
 # 注：always-raw-tcp-hosts 参数的优先级高于 force-http-engine-hosts 参数与 MITM 配置。
 always-raw-tcp-hosts = www.google.com, 91.108.*, 149.154.1*, 91.105.1*
-always-real-ip = %APPEND% *.10099.com.cn, *.126.net, *.backloop.dev, *.blzstatic.cn, *.cmbchina.com, *.cmpassport.com, *.direct, *.icitymobile.mobi, *.jegotrip.com.cn, *.kuwo.cn, *.lan, *.logon.battle.net, *.logon.battlenet.com.cn, *.mcdn.bilivideo.cn, *.microdone.cn, *.msftconnecttest.com, *.msftncsi.com, *.music.163.com, *.music.migu.cn, *.ntp.org.cn, *.pingan.com.cn, *.pool.ntp.org, *.srv.nintendo.net, *.stun.playstation.net, *.stun.twilio.com, *.turn.twilio.com, *.wosms.cn, *.xboxlive.com, *.xiami.com, *.y.qq.com, DC._msDCS.*.*, GC._msDCS.*.*, PDC._msDCS.*.*, amobile.music.tc.qq.com, api-jooxtt.sanook.com, api.joox.com, app.yinxiang.com, aqqmusic.tc.qq.com, cable.auth.com, detectportal.firefox.com, dl.stream.qqmusic.qq.com, enrichgw.10010.com, hmrz.wo.cn, id.mail.wo.cn, id6.me, injections.adguard.org, isure.stream.qqmusic.qq.com, joox.com, lancache.steamcontent.com, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, mdn.open.wo.cn, mobileoc.music.tc.qq.com, music.163.com, music.migu.cn, music.taihe.com, musicapi.taihe.com, network-test.debian.org, nishub1.10010.com, ntp.*.com, ntp?.*.com, open.e.189.cn, opencloud.wostore.cn, pool.ntp.org, proxy.golang.org, resolver1.opendns.com, songsearch.kugou.com, streamoc.music.tc.qq.com, stun.*, time.*.com, time.*.edu.cn, time.*.gov, time?.*.com, trackercdn.kugou.com, xbox.*.microsoft.com, y.qq.com, *.local
+always-real-ip = %APPEND% *.10099.com.cn, *.126.net, *.blzstatic.cn, *.cmbchina.com, *.cmpassport.com, *.direct, *.icitymobile.mobi, *.jegotrip.com.cn, *.kuwo.cn, *.lan, *.logon.battle.net, *.logon.battlenet.com.cn, *.mcdn.bilivideo.cn, *.microdone.cn, *.msftconnecttest.com, *.msftncsi.com, *.music.163.com, *.music.migu.cn, *.ntp.org.cn, *.pingan.com.cn, *.pool.ntp.org, *.srv.nintendo.net, *.stun.playstation.net, *.stun.twilio.com, *.turn.twilio.com, *.wosms.cn, *.xboxlive.com, *.xiami.com, *.y.qq.com, DC._msDCS.*.*, GC._msDCS.*.*, PDC._msDCS.*.*, amobile.music.tc.qq.com, api-jooxtt.sanook.com, api.joox.com, app.yinxiang.com, aqqmusic.tc.qq.com, cable.auth.com, detectportal.firefox.com, dl.stream.qqmusic.qq.com, enrichgw.10010.com, hmrz.wo.cn, id.mail.wo.cn, id6.me, injections.adguard.org, isure.stream.qqmusic.qq.com, joox.com, lancache.steamcontent.com, local.adguard.org, localhost.*.qq.com, localhost.*.weixin.qq.com, mdn.open.wo.cn, mobileoc.music.tc.qq.com, music.163.com, music.migu.cn, music.taihe.com, musicapi.taihe.com, network-test.debian.org, nishub1.10010.com, ntp.*.com, ntp?.*.com, open.e.189.cn, opencloud.wostore.cn, pool.ntp.org, proxy.golang.org, resolver1.opendns.com, songsearch.kugou.com, streamoc.music.tc.qq.com, stun.*, time.*.com, time.*.edu.cn, time.*.gov, time?.*.com, trackercdn.kugou.com, xbox.*.microsoft.com, y.qq.com
 
 # 🚫 阻止常见的 HTTPDNS 服务器
 force-http-engine-hosts = %APPEND% 119.29.29.29:80, dns.weixin.qq.com:80, dns.weixin.qq.com:8080, dns.weixin.qq.com:443
@@ -106,14 +106,14 @@ hostname = %APPEND% mp.weixin.qq.com, security.wechat.com, sub.store, szextshort
 
 [Rule]
 # 规则修正
-AND, ((DOMAIN-KEYWORD, tnc, extended-matching), (OR, ((DOMAIN-SUFFIX, capcutapi.com, extended-matching), (DOMAIN-SUFFIX, zijieapi.com, extended-matching), (DOMAIN-SUFFIX, isnssdk.com, extended-matching), (DOMAIN-SUFFIX, toutiaoapi.com, extended-matching), (DOMAIN-SUFFIX, bytedance.com, extended-matching), (DOMAIN-SUFFIX, snssdk.com, extended-matching), (DOMAIN-SUFFIX, sgsnssdk.com, extended-matching)))), DIRECT
 DOMAIN, ca.iadsdk.apple.com, DIRECT, extended-matching
+AND, ((DOMAIN-KEYWORD, tnc, extended-matching), (OR, ((DOMAIN-SUFFIX, capcutapi.com, extended-matching), (DOMAIN-SUFFIX, zijieapi.com, extended-matching), (DOMAIN-SUFFIX, isnssdk.com, extended-matching), (DOMAIN-SUFFIX, toutiaoapi.com, extended-matching), (DOMAIN-SUFFIX, bytedance.com, extended-matching), (DOMAIN-SUFFIX, snssdk.com, extended-matching), (DOMAIN-SUFFIX, sgsnssdk.com, extended-matching)))), DIRECT
 
 [Script]
 # @Sub-Store（高级订阅管理工具，无 ability 参数版本，不会爆内存， 如果需要使用指定节点功能 例如[加旗帜脚本或者cname脚本] 可以用带 ability 参数）（需开启 脚本、复写和 MitM 等功能，并指定代理策略，后访问 https://sub.store）（更多脚本信息请自行在 https://github.com/sub-store-org/Sub-Store 中查找）sub.store
 # 主程序 已经去掉 Sub-Store Core 的参数 [, ability = http-client-policy] 不会爆内存，这个参数在 Surge 非常占用内存；如果不需要使用指定节点功能 例如[加旗帜脚本或者 cname 脚本] 则可以使用此脚本
-Sub-Store Core = type=http-request, pattern=^https?://sub\.store/(?:download|api/(?:preview|sync|(?:utils/node-info))), script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body = true, timeout = 120
-Sub-Store Simple = type=http-request, pattern=^https?://sub\.store, script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body = true, timeout = 120
+Sub-Store Core = type=http-request, pattern=^https?://sub\.store/(?:download|api/(?:preview|sync|(?:utils/node-info))), script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-1.min.js, requires-body = 1, max-size = -1, timeout = 900
+Sub-Store Simple = type=http-request, pattern=^https?://sub\.store, script-path=https://github.com/sub-store-org/Sub-Store/releases/latest/download/sub-store-0.min.js, requires-body = 1, max-size = -1, timeout = 900
 
 # @zZPiglet（更多脚本信息请自行在 https://github.com/zZPiglet/Task/tree/master 中查找）
 # 跳过中间界面，支付宝链接和被封禁淘宝链接进行通知弹窗跳转，在微信中用快照显示被封禁的链接（可选），在微信中进行强制重定向（可选）（iOS/macOS、微信/WeChat 、群聊/扫码均可使用）security.wechat.com, weixin110.qq.com

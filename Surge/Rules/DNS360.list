@@ -1,106 +1,106 @@
 # 360
-DOMAIN-SUFFIX, 360.cn
-DOMAIN-SUFFIX, 360.com
-DOMAIN-SUFFIX, 360.net
-DOMAIN-SUFFIX, 360kuai.com
-DOMAIN-SUFFIX, 360os.com
-DOMAIN-SUFFIX, 360safe.com
-DOMAIN-SUFFIX, 360simg.com
-DOMAIN-SUFFIX, 360tpcdn.com
-DOMAIN-SUFFIX, 360webcache.com
-DOMAIN-SUFFIX, baomitu.com
-DOMAIN-SUFFIX, haosou.com
-DOMAIN-SUFFIX, qh-cdn.com
-DOMAIN-SUFFIX, qhmsg.com
-DOMAIN-SUFFIX, qhstatic.com
-DOMAIN-SUFFIX, qhupdate.com
-DOMAIN-SUFFIX, qihucdn.com
-DOMAIN-SUFFIX, qiku.com
-DOMAIN-SUFFIX, so.com
-DOMAIN-SUFFIX, yunpan.cn
-DOMAIN-SUFFIX, yunpan.com
-DOMAIN-SUFFIX, yunpan.com.cn
+.360.cn
+.yunpan.cn
+.so.com
+.360.com
+.qiku.com
+.360os.com
+.qhmsg.com
+.haosou.com
+.qh-cdn.com
+.yunpan.com
+.360kuai.com
+.360safe.com
+.360simg.com
+.baomitu.com
+.qihucdn.com
+.360tpcdn.com
+.qhstatic.com
+.qhupdate.com
+.360webcache.com
+.360.net
+.yunpan.com.cn
 # 谷歌中国
-DOMAIN-SUFFIX, 265.com
-DOMAIN-SUFFIX, adservice.google.com
-DOMAIN-SUFFIX, apps5.oingo.com
-DOMAIN-SUFFIX, avail.googleflights.net
-DOMAIN-SUFFIX, beacons3.gvt2.com
-DOMAIN-SUFFIX, c.pki.goog
-DOMAIN-SUFFIX, cache-management-prod.google.com
-DOMAIN-SUFFIX, cache.pack.google.com
-DOMAIN-SUFFIX, checkin.gstatic.com
-DOMAIN-SUFFIX, clickserve.cc-dt.com
-DOMAIN-SUFFIX, clickserve.dartsearch.net
-DOMAIN-SUFFIX, clientservices.googleapis.com
-DOMAIN-SUFFIX, cn.widevine.com
-DOMAIN-SUFFIX, connectivitycheck.gstatic.com
-DOMAIN-SUFFIX, crashlyticsreports-pa.googleapis.com
-DOMAIN-SUFFIX, crl.pki.goog
-DOMAIN-SUFFIX, csi.gstatic.com
-DOMAIN-SUFFIX, dartsearch-cn.net
-DOMAIN-SUFFIX, dg-meta.video.google.com
-DOMAIN-SUFFIX, dl.google.com
-DOMAIN-SUFFIX, dl.l.google.com
-DOMAIN-SUFFIX, download.mlcc.google.com
-DOMAIN-SUFFIX, download.tensorflow.google.com
-DOMAIN-SUFFIX, firebase-settings.crashlytics.com
-DOMAIN-SUFFIX, fontfiles.googleapis.com
-DOMAIN-SUFFIX, fonts.googleapis.cn
-DOMAIN-SUFFIX, fonts.googleapis.com
-DOMAIN-SUFFIX, fonts.gstatic.cn
-DOMAIN-SUFFIX, fonts.gstatic.com
-DOMAIN-SUFFIX, g0.gstatic.com
-DOMAIN-SUFFIX, g1.gstatic.com
-DOMAIN-SUFFIX, g2.gstatic.com
-DOMAIN-SUFFIX, g3.gstatic.com
-DOMAIN-SUFFIX, gonglchuangl.net
-DOMAIN-SUFFIX, gongyichuangyi.net
-DOMAIN-SUFFIX, googleapis-cn.com
-DOMAIN-SUFFIX, googleapps-cn.com
-DOMAIN-SUFFIX, googleflights-cn.net
-DOMAIN-SUFFIX, gstatic-cn.com
-DOMAIN-SUFFIX, gstaticadssl.l.google.com
-DOMAIN-SUFFIX, gtm.oasisfeng.com
-DOMAIN-SUFFIX, gvt1-cn.com
-DOMAIN-SUFFIX, gvt2-cn.com
-DOMAIN-SUFFIX, imasdk.googleapis.com
-DOMAIN-SUFFIX, o.pki.goog
-DOMAIN-SUFFIX, ocsp.pki.goog
-DOMAIN-SUFFIX, pagead-googlehosted.l.google.com
-DOMAIN-SUFFIX, performanceparameters.googleapis.com
-DOMAIN-SUFFIX, pki-goog.l.google.com
-DOMAIN-SUFFIX, prod-controlbe.floonet.goog
-DOMAIN-SUFFIX, prod-databe.floonet.goog
-DOMAIN-SUFFIX, prod.databe.floonet.goog
-DOMAIN-SUFFIX, qpx.googleflights.net
-DOMAIN-SUFFIX, recaptcha-cn.net
-DOMAIN-SUFFIX, recaptcha.net
-DOMAIN-SUFFIX, redirector.bdn.dev
-DOMAIN-SUFFIX, redirector.c.chat.google.com
-DOMAIN-SUFFIX, redirector.c.mail.google.com
-DOMAIN-SUFFIX, redirector.c.pack.google.com
-DOMAIN-SUFFIX, redirector.c.play.google.com
-DOMAIN-SUFFIX, redirector.c.youtubeeducation.com
-DOMAIN-SUFFIX, redirector.gcpcdn.gvt1.com
-DOMAIN-SUFFIX, redirector.gvt1.com
-DOMAIN-SUFFIX, redirector.offline-maps.gvt1.com
-DOMAIN-SUFFIX, redirector.snap.gvt1.com
-DOMAIN-SUFFIX, redirector.xn--ngstr-lra8j.com
-DOMAIN-SUFFIX, service.urchin.com
-DOMAIN-SUFFIX, services.googleapis.cn
-DOMAIN-SUFFIX, ssl-google-analytics.l.google.com
-DOMAIN-SUFFIX, ssl.gstatic.com
-DOMAIN-SUFFIX, staging-controlbe.floonet.goog
-DOMAIN-SUFFIX, staging-databe.floonet.goog
-DOMAIN-SUFFIX, staging.databe.floonet.goog
-DOMAIN-SUFFIX, tac.googleapis.com
-DOMAIN-SUFFIX, tools.google.com
-DOMAIN-SUFFIX, update.crashlytics.com
-DOMAIN-SUFFIX, update.googleapis.com
-DOMAIN-SUFFIX, wear.googleapis.com
-DOMAIN-SUFFIX, www-google-analytics.l.google.com
-DOMAIN-SUFFIX, www-googletagmanager.l.google.com
-DOMAIN-SUFFIX, www.destinationurl.com
-DOMAIN-SUFFIX, www.gstatic.com
-DOMAIN-SUFFIX, www.pxcc.com
+.265.com
+.gvt1-cn.com
+.gvt2-cn.com
+.gstatic-cn.com
+.googleapis-cn.com
+.googleapps-cn.com
+.recaptcha.net
+.gonglchuangl.net
+.recaptcha-cn.net
+.dartsearch-cn.net
+.gongyichuangyi.net
+.googleflights-cn.net
+.fonts.gstatic.cn
+.fonts.googleapis.cn
+.services.googleapis.cn
+.redirector.gvt1.com
+.beacons3.gvt2.com
+.www.pxcc.com
+.clickserve.cc-dt.com
+.apps5.oingo.com
+.dl.google.com
+.tools.google.com
+.adservice.google.com
+.cache-management-prod.google.com
+.service.urchin.com
+.g0.gstatic.com
+.g1.gstatic.com
+.g2.gstatic.com
+.g3.gstatic.com
+.csi.gstatic.com
+.ssl.gstatic.com
+.www.gstatic.com
+.fonts.gstatic.com
+.checkin.gstatic.com
+.connectivitycheck.gstatic.com
+.cn.widevine.com
+.gtm.oasisfeng.com
+.tac.googleapis.com
+.wear.googleapis.com
+.fonts.googleapis.com
+.imasdk.googleapis.com
+.update.googleapis.com
+.fontfiles.googleapis.com
+.clientservices.googleapis.com
+.crashlyticsreports-pa.googleapis.com
+.performanceparameters.googleapis.com
+.update.crashlytics.com
+.firebase-settings.crashlytics.com
+.www.destinationurl.com
+.redirector.xn--ngstr-lra8j.com
+.redirector.bdn.dev
+.clickserve.dartsearch.net
+.qpx.googleflights.net
+.avail.googleflights.net
+.c.pki.goog
+.o.pki.goog
+.crl.pki.goog
+.ocsp.pki.goog
+.prod-databe.floonet.goog
+.prod-controlbe.floonet.goog
+.staging-databe.floonet.goog
+.staging-controlbe.floonet.goog
+.redirector.snap.gvt1.com
+.redirector.gcpcdn.gvt1.com
+.redirector.offline-maps.gvt1.com
+.dl.l.google.com
+.pki-goog.l.google.com
+.gstaticadssl.l.google.com
+.pagead-googlehosted.l.google.com
+.ssl-google-analytics.l.google.com
+.www-google-analytics.l.google.com
+.www-googletagmanager.l.google.com
+.download.mlcc.google.com
+.cache.pack.google.com
+.dg-meta.video.google.com
+.download.tensorflow.google.com
+.redirector.c.youtubeeducation.com
+.prod.databe.floonet.goog
+.staging.databe.floonet.goog
+.redirector.c.chat.google.com
+.redirector.c.mail.google.com
+.redirector.c.pack.google.com
+.redirector.c.play.google.com
