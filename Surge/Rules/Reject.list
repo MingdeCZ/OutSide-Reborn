@@ -13,11 +13,13 @@ DOMAIN-SUFFIX, googletagmanager-cn.com
 DOMAIN-SUFFIX, googletagservices-cn.com
 DOMAIN-SUFFIX, app-analytics-services.com
 DOMAIN-SUFFIX, googletraveladservices-cn.com
+DOMAIN, browser-intake-us5-datadoghq.com
 DOMAIN-SUFFIX, 2mdn-cn.net
 DOMAIN-SUFFIX, statsigapi.net
 DOMAIN-SUFFIX, fuseplatform.net
 DOMAIN-SUFFIX, cedexis-radar.net
 DOMAIN-SUFFIX, cookielaw.org
+DOMAIN-SUFFIX, adtrafficquality.google
 DOMAIN, ads.codexpp.cc
 DOMAIN, logger.qmai.cn
 DOMAIN, report.radio.cn
@@ -26,7 +28,6 @@ DOMAIN, atom-track.bkchina.cn
 DOMAIN, ad.flipboard.cn
 DOMAIN, log.wechatpay.cn
 DOMAIN-SUFFIX, sentry.shortcat.app
-DOMAIN-SUFFIX, p2p.qq.com
 DOMAIN, upload-tracking-cn.chagee.com
 DOMAIN, d-gm.mmstat.com
 DOMAIN, report.rtxapp.com
@@ -914,7 +915,6 @@ DOMAIN, d6.sinaimg.cn
 DOMAIN, d7.sinaimg.cn
 DOMAIN, d8.sinaimg.cn
 DOMAIN, dotserver.douyucdn.cn
-DOMAIN-SUFFIX, p2perrorlog.douyucdn.cn
 DOMAIN, e.jparking.cn
 DOMAIN, test.surepush.cn
 DOMAIN, pclog.thepaper.cn
@@ -1009,7 +1009,6 @@ DOMAIN-SUFFIX, bugly.qq.com
 DOMAIN-SUFFIX, mpush.qq.com
 DOMAIN, adping.qq.com
 DOMAIN, adrdir.qq.com
-DOMAIN-SUFFIX, p2ptun.qq.com
 DOMAIN, pingjs.qq.com
 DOMAIN, pingma.qq.com
 DOMAIN, sngmta.qq.com
@@ -1644,6 +1643,8 @@ DOMAIN-SUFFIX, beamanalytics.b-cdn.net
 DOMAIN-SUFFIX, console.data4.net
 DOMAIN, a.imput.net
 DOMAIN, iflow.uczzd.net
+DOMAIN-SUFFIX, tcp.whoer.net
+DOMAIN-SUFFIX, whrq.whoer.net
 DOMAIN, edgecast-vod.yahoo.net
 DOMAIN, ap.cpatrk.net
 DOMAIN, me.cpatrk.net
@@ -2329,6 +2330,8 @@ DOMAIN-WILDCARD, mon-*.byteoversea.com
 DOMAIN-WILDCARD, pixel*.adswizz.com
 DOMAIN-WILDCARD, tracking.*.miui.com
 DOMAIN-WILDCARD, v*.thenewstack.io
+URL-REGEX, "/\d+/sign_d"
+URL-REGEX, "/igd\.xml"
 IP-CIDR, 39.97.128.148
 IP-CIDR, 39.97.130.51
 IP-CIDR, 42.81.232.18
@@ -2371,5 +2374,3 @@ IP-CIDR6, 2402:4e00:1200:ed00:0:9089:6dac:96b6
 IP-CIDR6, 2402:4e00:1900:1700:0:9554:1ad9:c3a
 IP-CIDR6, 2402:db40:5100:1011::5
 IP-CIDR6, 240e:928:1400:10::25
-URL-REGEX, "/\d+/sign_d"
-URL-REGEX, "/igd\.xml"

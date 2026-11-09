@@ -9,9 +9,9 @@ DOMAIN-SUFFIX, labs.google
 
 # OpenAI
 # DOMAIN-SUFFIX, oaistatic.com
+# DOMAIN-SUFFIX, openai.com
 DOMAIN-SUFFIX, chat.com
 DOMAIN-SUFFIX, sora.com
-DOMAIN-SUFFIX, openai.com
 DOMAIN-SUFFIX, chatgpt.com
 DOMAIN-SUFFIX, chatgpt.site
 DOMAIN-KEYWORD, openai

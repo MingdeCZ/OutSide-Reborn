@@ -1,4 +1,5 @@
 # 补充/优化
+# DOMAIN-SUFFIX, discordapp.com
 DOMAIN-SUFFIX, apple
 DOMAIN-SUFFIX, devin.ai
 DOMAIN-SUFFIX, windsurf.ai
@@ -52,6 +53,7 @@ DOMAIN-SUFFIX, tidio.com
 DOMAIN, unogs.com
 DOMAIN-SUFFIX, vmiss.com
 DOMAIN-SUFFIX, vultr.com
+DOMAIN-SUFFIX, airbnb.com
 DOMAIN-SUFFIX, awswaf.com
 DOMAIN-SUFFIX, bakamh.com
 DOMAIN-SUFFIX, capcut.com
@@ -102,6 +104,7 @@ DOMAIN-SUFFIX, marscode.com
 DOMAIN-SUFFIX, newrelic.com
 DOMAIN-SUFFIX, onetrust.com
 DOMAIN-SUFFIX, rapidssl.com
+DOMAIN-SUFFIX, squareup.com
 DOMAIN-SUFFIX, vodafone.com
 DOMAIN-SUFFIX, webtoons.com
 DOMAIN-SUFFIX, windsurf.com
@@ -125,7 +128,7 @@ DOMAIN-SUFFIX, arkoselabs.com
 DOMAIN-SUFFIX, bundlehunt.com
 DOMAIN-SUFFIX, cloudinary.com
 DOMAIN-SUFFIX, diabrowser.com
-DOMAIN-SUFFIX, discordapp.com
+DOMAIN-SUFFIX, foursquare.com
 DOMAIN-SUFFIX, githubnext.com
 DOMAIN-SUFFIX, globalsign.com
 DOMAIN-SUFFIX, grokipedia.com
@@ -194,6 +197,7 @@ DOMAIN-SUFFIX, twelve99.net
 DOMAIN-SUFFIX, worldssl.net
 DOMAIN-SUFFIX, zenlayer.net
 DOMAIN-SUFFIX, bilimanga.net
+DOMAIN-SUFFIX, every1dns.net
 DOMAIN-SUFFIX, observeit.net
 DOMAIN-SUFFIX, opentransit.net
 DOMAIN-SUFFIX, tampermonkey.net
@@ -225,6 +229,7 @@ DOMAIN, inputsource.pro
 DOMAIN, bsbsb.top
 DOMAIN-SUFFIX, 7sefun.top
 DOMAIN-SUFFIX, coolhub.top
+DOMAIN, ddgksf2013.top
 DOMAIN-SUFFIX, infuseku.xyz
 DOMAIN-SUFFIX, yummy.best
 DOMAIN-SUFFIX, crisp.chat
@@ -259,6 +264,8 @@ IP-CIDR, 1.0.0.1
 IP-CIDR, 1.1.1.1
 IP-CIDR, 8.8.4.4
 IP-CIDR, 8.8.8.8
+IP-CIDR, 20.93.239.167
+IP-CIDR, 54.65.63.219
 IP-CIDR, 74.125.250.129
 IP-CIDR, 95.111.202.5
 IP-CIDR, 103.229.54.0/23
@@ -280,6 +287,7 @@ IP-CIDR, 216.40.84.0/22
 # DOMAIN-SUFFIX, ipwho.is
 # DOMAIN-SUFFIX, myip.ms
 # DOMAIN-SUFFIX, speed.cloudflare.com
+DOMAIN, ipx.al
 DOMAIN-SUFFIX, iping.cc
 DOMAIN-SUFFIX, ping0.cc
 DOMAIN-SUFFIX, ip233.cn
@@ -330,6 +338,7 @@ DOMAIN-SUFFIX, ipqualityscore.com
 DOMAIN-SUFFIX, whatismyipaddress.com
 DOMAIN-SUFFIX, xmsl.dev
 DOMAIN-SUFFIX, ipcheck.ing
+DOMAIN-SUFFIX, whoer.net
 DOMAIN-SUFFIX, iplocation.net
 DOMAIN-SUFFIX, browserscan.net
 DOMAIN-SUFFIX, ipify.org
@@ -339,7 +348,14 @@ DOMAIN-SUFFIX, ip.zerosla.net
 DOMAIN-SUFFIX, ip.net.coffee
 # 苹果
 # DOMAIN-SUFFIX, appsto.re
+# PROCESS-NAME, CoreLocationAgent
+# PROCESS-NAME, WeatherWidget
+# PROCESS-NAME, apsd
+# PROCESS-NAME, com.apple.Maps
 # PROCESS-NAME, com.apple.geod
+# PROCESS-NAME, findmydevice-user-agent
+# PROCESS-NAME, fmfd
+# PROCESS-NAME, mapspushd
 DOMAIN-SUFFIX, apple.co
 DOMAIN-SUFFIX, me.com
 DOMAIN-SUFFIX, apple.com
@@ -364,13 +380,6 @@ IP-CIDR, 144.178.48.0/20
 IP-CIDR, 192.35.50.0/24
 IP-CIDR, 198.183.17.0/24
 IP-CIDR, 205.180.175.0/24
-PROCESS-NAME, CoreLocationAgent
-PROCESS-NAME, WeatherWidget
-PROCESS-NAME, apsd
-PROCESS-NAME, com.apple.Maps
-PROCESS-NAME, findmydevice-user-agent
-PROCESS-NAME, fmfd
-PROCESS-NAME, mapspushd
 # 微软
 # DOMAIN-SUFFIX, aka.ms
 # DOMAIN-SUFFIX, appcenter.ms
@@ -560,6 +569,7 @@ DOMAIN-SUFFIX, hermes-agent.nousresearch.com
 # DOMAIN-SUFFIX, pomf.se
 # DOMAIN-SUFFIX, speedtest.net
 # DOMAIN-SUFFIX, speedtestcustom.com
+# USER-AGENT, "Roam*"
 DOMAIN-SUFFIX, ac
 DOMAIN-SUFFIX, ai
 DOMAIN-SUFFIX, at
@@ -1454,7 +1464,6 @@ DOMAIN-SUFFIX, pixiv.net
 DOMAIN-SUFFIX, quad9.net
 DOMAIN-SUFFIX, reimu.net
 DOMAIN-SUFFIX, tfbnw.net
-DOMAIN-SUFFIX, whoer.net
 DOMAIN-SUFFIX, akamai.net
 DOMAIN-SUFFIX, fastly.net
 DOMAIN-SUFFIX, gitlab.net
@@ -1685,7 +1694,6 @@ DOMAIN-KEYWORD, google
 DOMAIN-KEYWORD, pinterest
 DOMAIN-KEYWORD, sci-hub
 DOMAIN-KEYWORD, whatsapp
-USER-AGENT, "Roam*"
 # 待分配流媒体
 # DOMAIN, hls-amt.itunes.apple.com
 # DOMAIN, hls.itunes.apple.com
@@ -1699,6 +1707,64 @@ USER-AGENT, "Roam*"
 # DOMAIN, youtube.googleapis.com
 # DOMAIN, youtubei.googleapis.com
 # DOMAIN-SUFFIX, googlevideo.com
+# PROCESS-NAME, com.amazon.avod.thirdpartyclient
+# PROCESS-NAME, com.bstar.intl
+# PROCESS-NAME, com.hktve.viutv
+# PROCESS-NAME, com.hulu.plus
+# PROCESS-NAME, com.linecorp.linetv
+# PROCESS-NAME, com.tencent.ibg.joox
+# PROCESS-NAME, com.twgood.android
+# PROCESS-NAME, com.viu.pad
+# PROCESS-NAME, com.viu.phone
+# PROCESS-NAME, com.vuclip.viu
+# PROCESS-NAME, music
+# PROCESS-NAME, tv
+# PROCESS-NAME, tv.twitch.android.app
+# USER-AGENT, "*Spotify*"
+# USER-AGENT, "AbemaTV*"
+# USER-AGENT, "All4*"
+# USER-AGENT, "Anime*"
+# USER-AGENT, "AppleTV*"
+# USER-AGENT, "BBCiPlayer*"
+# USER-AGENT, "DAZN*"
+# USER-AGENT, "Deezer*"
+# USER-AGENT, "FOX NOW*"
+# USER-AGENT, "FOXPlus*"
+# USER-AGENT, "HBO NOW*"
+# USER-AGENT, "HBOMAX*"
+# USER-AGENT, "HWTVMobile*"
+# USER-AGENT, "Himalaya*"
+# USER-AGENT, "Hulu*"
+# USER-AGENT, "ITV_Player*"
+# USER-AGENT, "InstantVideo.US*"
+# USER-AGENT, "JOOX*"
+# USER-AGENT, "KKTV*"
+# USER-AGENT, "LINE TV*"
+# USER-AGENT, "My5*"
+# USER-AGENT, "Naver TV*"
+# USER-AGENT, "Niconico*"
+# USER-AGENT, "Overcast*"
+# USER-AGENT, "PBS*"
+# USER-AGENT, "PPlus*"
+# USER-AGENT, "Pandora*"
+# USER-AGENT, "PeacockMobile*"
+# USER-AGENT, "Prime Video*"
+# USER-AGENT, "SoundCloud*"
+# USER-AGENT, "TIDAL*"
+# USER-AGENT, "TVer-Release*"
+# USER-AGENT, "TaiwanGood*"
+# USER-AGENT, "Viu*"
+# USER-AGENT, "WeMusic*"
+# USER-AGENT, "WeTV*"
+# USER-AGENT, "YouTube*"
+# USER-AGENT, "YouTubeMusic*"
+# USER-AGENT, "com.apple.tv*"
+# USER-AGENT, "com.google.ios.youtube*"
+# USER-AGENT, "com.google.ios.youtubemusic*"
+# USER-AGENT, "com.kktv.ios.kktv*"
+# USER-AGENT, "discovery+*"
+# USER-AGENT, "encoreTVB*"
+# USER-AGENT, "mytv*"
 DOMAIN-SUFFIX, netflix.ca
 DOMAIN-SUFFIX, primevideo.cc
 DOMAIN-SUFFIX, amazonvideo.cc
@@ -1913,8 +1979,6 @@ DOMAIN-SUFFIX, psg.cdn.hgc.com.hk
 DOMAIN, akmcdnoversea-tw.inter.ptqy.gitv.tv
 DOMAIN, chuangcachecdnoversea-tw.inter.ptqy.gitv.tv
 DOMAIN, cbsi.live.ott.irdeto.com
-IP-CIDR, 35.186.224.47
-IP-CIDR, 150.109.28.51
 DOMAIN-KEYWORD, -spotify-com
 DOMAIN-KEYWORD, avoddashs
 DOMAIN-KEYWORD, bbcfmt
@@ -1924,61 +1988,5 @@ DOMAIN-KEYWORD, rthklive
 DOMAIN-KEYWORD, tvbanywhere
 DOMAIN-KEYWORD, uk-live
 DOMAIN-KEYWORD, voddazn
-PROCESS-NAME, com.amazon.avod.thirdpartyclient
-PROCESS-NAME, com.bstar.intl
-PROCESS-NAME, com.hktve.viutv
-PROCESS-NAME, com.hulu.plus
-PROCESS-NAME, com.linecorp.linetv
-PROCESS-NAME, com.tencent.ibg.joox
-PROCESS-NAME, com.twgood.android
-PROCESS-NAME, com.viu.pad
-PROCESS-NAME, com.viu.phone
-PROCESS-NAME, com.vuclip.viu
-PROCESS-NAME, music
-PROCESS-NAME, tv
-PROCESS-NAME, tv.twitch.android.app
-USER-AGENT, "*Spotify*"
-USER-AGENT, "AbemaTV*"
-USER-AGENT, "All4*"
-USER-AGENT, "Anime*"
-USER-AGENT, "AppleTV*"
-USER-AGENT, "BBCiPlayer*"
-USER-AGENT, "DAZN*"
-USER-AGENT, "Deezer*"
-USER-AGENT, "FOX NOW*"
-USER-AGENT, "FOXPlus*"
-USER-AGENT, "HBO NOW*"
-USER-AGENT, "HBOMAX*"
-USER-AGENT, "HWTVMobile*"
-USER-AGENT, "Himalaya*"
-USER-AGENT, "Hulu*"
-USER-AGENT, "ITV_Player*"
-USER-AGENT, "InstantVideo.US*"
-USER-AGENT, "JOOX*"
-USER-AGENT, "KKTV*"
-USER-AGENT, "LINE TV*"
-USER-AGENT, "My5*"
-USER-AGENT, "Naver TV*"
-USER-AGENT, "Niconico*"
-USER-AGENT, "Overcast*"
-USER-AGENT, "PBS*"
-USER-AGENT, "PPlus*"
-USER-AGENT, "Pandora*"
-USER-AGENT, "PeacockMobile*"
-USER-AGENT, "Prime Video*"
-USER-AGENT, "SoundCloud*"
-USER-AGENT, "TIDAL*"
-USER-AGENT, "TVer-Release*"
-USER-AGENT, "TaiwanGood*"
-USER-AGENT, "Viu*"
-USER-AGENT, "WeMusic*"
-USER-AGENT, "WeTV*"
-USER-AGENT, "YouTube*"
-USER-AGENT, "YouTubeMusic*"
-USER-AGENT, "com.apple.tv*"
-USER-AGENT, "com.google.ios.youtube*"
-USER-AGENT, "com.google.ios.youtubemusic*"
-USER-AGENT, "com.kktv.ios.kktv*"
-USER-AGENT, "discovery+*"
-USER-AGENT, "encoreTVB*"
-USER-AGENT, "mytv*"
+IP-CIDR, 35.186.224.47
+IP-CIDR, 150.109.28.51

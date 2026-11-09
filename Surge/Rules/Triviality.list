@@ -27,6 +27,7 @@ DOMAIN-SUFFIX, webtype.com
 DOMAIN-SUFFIX, ciciaicdn.com
 DOMAIN, hugeicons.com
 DOMAIN-SUFFIX, capcutcdn-us.com
+DOMAIN-SUFFIX, academia-assets.com
 DOMAIN, typeless-static.com
 DOMAIN-SUFFIX, perplexityusercontent.com
 DOMAIN-SUFFIX, pkg.dev
@@ -53,6 +54,7 @@ DOMAIN, updates.64gr.am
 DOMAIN, kali.itsec.am
 DOMAIN-SUFFIX, mirrors.cu.be
 DOMAIN, img1.tucang.cc
+DOMAIN, img.boylove.cc
 DOMAIN-SUFFIX, cdn.hf.co
 DOMAIN, cran.nic.cz
 DOMAIN, debian.nic.cz
@@ -256,6 +258,10 @@ IP-CIDR6, 2a0b:e45:1::/48
 # DOMAIN-SUFFIX, scorecardresearch.com
 # DOMAIN-SUFFIX, siteintercept.qualtrics.com
 # DOMAIN-SUFFIX, tiqcdn.com
+# DOMAIN, s3.us-west-000.backblazeb2.com
+# DOMAIN, s3.us-west-001.backblazeb2.com
+# DOMAIN, s3.us-west-004.backblazeb2.com
+# DOMAIN, s3.eu-central-003.backblazeb2.com
 DOMAIN, rules.ac
 DOMAIN, vetted.ai
 DOMAIN-SUFFIX, shortpixel.ai
@@ -4686,10 +4692,6 @@ DOMAIN, images2.cmp.optimizely.com
 DOMAIN, images3.cmp.optimizely.com
 DOMAIN, images4.cmp.optimizely.com
 DOMAIN, resources.help.salesforce.com
-DOMAIN, s3.us-west-000.backblazeb2.com
-DOMAIN, s3.us-west-001.backblazeb2.com
-DOMAIN, s3.us-west-004.backblazeb2.com
-DOMAIN, s3.eu-central-003.backblazeb2.com
 DOMAIN, events.ld.catamorphic.com
 DOMAIN, images.store.crowdstrike.com
 DOMAIN, img1.ak.crunchyroll.com

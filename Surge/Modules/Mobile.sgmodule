@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.2.0
-#!date = 26.11.1
+#!version = 1.2.1
+#!date = 26.11.10
 #!category = N合1
 #!system = ios
 
@@ -406,13 +406,13 @@ AND, ((URL-REGEX, "^http://.+/amdc/mobileDispatch"), (USER-AGENT, "%E9%97%B2%E9%
 URL-REGEX, "^http://\w{32}\.jddebug\.com/diagnose\?", REJECT, pre-matching
 
 # 美团
+# DOMAIN, dnspod.meituan.httpdns.qcloud.com, REJECT, pre-matching, extended-matching
 DOMAIN, shark-dp.meituan.com, REJECT, pre-matching, extended-matching
 DOMAIN, shark-mt.meituan.com, REJECT, pre-matching, extended-matching
 DOMAIN, shark-ps.meituan.com, REJECT, pre-matching, extended-matching
 DOMAIN, shark-default.meituan.com, REJECT, pre-matching, extended-matching
 DOMAIN, shark-wm.sankuai.com, REJECT, pre-matching, extended-matching
 DOMAIN, shark.dianping.com, REJECT, pre-matching, extended-matching
-DOMAIN, dnspod.meituan.httpdns.qcloud.com, REJECT, pre-matching, extended-matching
 DOMAIN-WILDCARD, mquic-*.meituan.com, REJECT, pre-matching, extended-matching
 IP-CIDR, 42.193.128.160, REJECT, pre-matching, no-resolve
 IP-CIDR, 101.50.8.64, REJECT, pre-matching, no-resolve
@@ -457,9 +457,9 @@ AND, ((URL-REGEX, "^http:\/\/\[((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([
 
 # 小红书净化
 # AND, ((DOMAIN-SUFFIX, xiaohongshu.com, extended-matching), (PROTOCOL, UDP)), REJECT, pre-matching
-DOMAIN, ads-img-qc.xhscdn.com, REJECT, pre-matching, extended-matching
-DOMAIN, ads-video-al.xhscdn.com, REJECT, pre-matching, extended-matching
-DOMAIN, ads-video-qc.xhscdn.com, REJECT, pre-matching, extended-matching
+# DOMAIN, ads-img-qc.xhscdn.com, REJECT, pre-matching, extended-matching
+# DOMAIN, ads-video-al.xhscdn.com, REJECT, pre-matching, extended-matching
+# DOMAIN, ads-video-qc.xhscdn.com, REJECT, pre-matching, extended-matching
 DOMAIN, t-ads.xiaohongshu.com, REJECT, pre-matching, extended-matching
 
 # 淘宝去广告

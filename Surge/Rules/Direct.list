@@ -60,6 +60,7 @@ DOMAIN, iv6.gtimg.cn
 DOMAIN, u.alipay.cn
 DOMAIN, bdp-cdn.bkchina.cn
 DOMAIN, ocsp.digicert.cn
+DOMAIN, www.qualcomm.cn
 DOMAIN, gtimg.wechatpay.cn
 DOMAIN, payapp.wechatpay.cn
 DOMAIN, tenpay.wechatpay.cn
@@ -123,6 +124,7 @@ DOMAIN, s.koubei.com
 DOMAIN-SUFFIX, im.qcloud.com
 DOMAIN, 2.taobao.com
 DOMAIN-SUFFIX, m.taobao.com
+DOMAIN, www.taobao.com
 DOMAIN, ugcdn.taobao.com
 DOMAIN-SUFFIX, video.taobao.com
 DOMAIN, c.weixin.com
@@ -377,6 +379,7 @@ DOMAIN-SUFFIX, store.apple.com.edgekey.net.globalredir.akadns.net
 DOMAIN-SUFFIX, images.apple.com.edgekey.net.globalredir.akadns.net
 # 微软国内 CDN
 # DOMAIN-SUFFIX, download.microsoft.com
+# URL-REGEX, "^http://www\.microsoft\.com/pki(?:ops)?/"
 DOMAIN-SUFFIX, sdx.microsoft.com
 DOMAIN-SUFFIX, officecdn.microsoft.com
 DOMAIN-SUFFIX, storeedge.microsoft.com
@@ -422,7 +425,6 @@ DOMAIN-SUFFIX, storecorefulfillment.download.prss.microsoft.com
 DOMAIN-SUFFIX, surface.downloads.prss.microsoft.com
 DOMAIN-SUFFIX, b.c2r.ts.cdn.office.net
 DOMAIN-SUFFIX, f.c2r.ts.cdn.office.net
-URL-REGEX, "^http://www\.microsoft\.com/pki(?:ops)?/"
 # 谷歌中国
 DOMAIN-SUFFIX, googleapis-cn.com
 DOMAIN-SUFFIX, googleapps-cn.com
@@ -512,6 +514,40 @@ DOMAIN, time.xtracloud.net
 DOMAIN-WILDCARD, *.qhimgs?.com
 # 软件更新、操作系统等大文件下载（最后更新：26-8-14）
 # DOMAIN, archive.mirror.rafal.ca
+# DOMAIN, ftp.at.debian.org
+# DOMAIN, ftp.au.debian.org
+# DOMAIN, ftp.be.debian.org
+# DOMAIN, ftp.bg.debian.org
+# DOMAIN, ftp.br.debian.org
+# DOMAIN, ftp.ca.debian.org
+# DOMAIN, ftp.ch.debian.org
+# DOMAIN, ftp.cl.debian.org
+# DOMAIN, ftp.cn.debian.org
+# DOMAIN, ftp.cz.debian.org
+# DOMAIN, ftp.de.debian.org
+# DOMAIN, ftp.dk.debian.org
+# DOMAIN, ftp.es.debian.org
+# DOMAIN, ftp.fi.debian.org
+# DOMAIN, ftp.fr.debian.org
+# DOMAIN, ftp.hk.debian.org
+# DOMAIN, ftp.hr.debian.org
+# DOMAIN, ftp.is.debian.org
+# DOMAIN, ftp.it.debian.org
+# DOMAIN, ftp.jp.debian.org
+# DOMAIN, ftp.kr.freebsd.org
+# DOMAIN, ftp.lt.debian.org
+# DOMAIN, ftp.nc.debian.org
+# DOMAIN, ftp.nl.debian.org
+# DOMAIN, ftp.nz.debian.org
+# DOMAIN, ftp.pl.debian.org
+# DOMAIN, ftp.pt.debian.org
+# DOMAIN, ftp.ru.debian.org
+# DOMAIN, ftp.se.debian.org
+# DOMAIN, ftp.si.debian.org
+# DOMAIN, ftp.sk.debian.org
+# DOMAIN, ftp.tw.debian.org
+# DOMAIN, ftp.uk.debian.org
+# DOMAIN, ftp.us.debian.org
 # DOMAIN, mirror.amaze.com.au
 # DOMAIN, mirror.clarkson.edu
 # DOMAIN, mirror.linux.ro
@@ -2115,42 +2151,8 @@ DOMAIN, ctan.gutenberg.eu.org
 DOMAIN, mirrors.hostingromania.ro.org
 DOMAIN, download.savannah.gnu.org
 DOMAIN-SUFFIX, mirrors.tds.net.org
-DOMAIN, ftp.at.debian.org
-DOMAIN, ftp.au.debian.org
-DOMAIN, ftp.be.debian.org
-DOMAIN, ftp.bg.debian.org
-DOMAIN, ftp.br.debian.org
-DOMAIN, ftp.ca.debian.org
-DOMAIN, ftp.ch.debian.org
-DOMAIN, ftp.cl.debian.org
-DOMAIN, ftp.cn.debian.org
-DOMAIN, ftp.cz.debian.org
-DOMAIN, ftp.de.debian.org
 DOMAIN-SUFFIX, ftp2.de.debian.org
-DOMAIN, ftp.dk.debian.org
-DOMAIN, ftp.es.debian.org
-DOMAIN, ftp.fi.debian.org
-DOMAIN, ftp.fr.debian.org
-DOMAIN, ftp.hk.debian.org
-DOMAIN, ftp.hr.debian.org
-DOMAIN, ftp.is.debian.org
-DOMAIN, ftp.it.debian.org
-DOMAIN, ftp.jp.debian.org
-DOMAIN, ftp.lt.debian.org
-DOMAIN, ftp.nc.debian.org
-DOMAIN, ftp.nl.debian.org
-DOMAIN, ftp.nz.debian.org
-DOMAIN, ftp.pl.debian.org
-DOMAIN, ftp.pt.debian.org
-DOMAIN, ftp.ru.debian.org
-DOMAIN, ftp.se.debian.org
-DOMAIN, ftp.si.debian.org
-DOMAIN, ftp.sk.debian.org
-DOMAIN, ftp.tw.debian.org
-DOMAIN, ftp.uk.debian.org
-DOMAIN, ftp.us.debian.org
 DOMAIN, mirrors.us.kernel.org
-DOMAIN, ftp.kr.freebsd.org
 DOMAIN, versioncheck.addons.mozilla.org
 DOMAIN, versioncheck-bg.addons.mozilla.org
 DOMAIN, repos.del.extreme-ix.org
@@ -2374,7 +2376,43 @@ IP-CIDR6, ::1
 IP-CIDR6, fc00::/7
 IP-CIDR6, fe80::/10
 # 特定需求
+# PROCESS-NAME, BaiduNetdisk_mac
+# PROCESS-NAME, BitComet
+# PROCESS-NAME, ClashX
+# PROCESS-NAME, DownloadService
+# PROCESS-NAME, Folx
+# PROCESS-NAME, LocalSend
+# PROCESS-NAME, Logi Options
+# PROCESS-NAME, Logi Options Daemon
+# PROCESS-NAME, NetTransport
+# PROCESS-NAME, SunloginClient_Desktop
+# PROCESS-NAME, SunloginClient_Helper
+# PROCESS-NAME, Thunder
+# PROCESS-NAME, ThunderVIP
+# PROCESS-NAME, Transmission
+# PROCESS-NAME, UUBooster
+# PROCESS-NAME, WebTorrent
+# PROCESS-NAME, WebTorrent Helper
+# PROCESS-NAME, amuled
+# PROCESS-NAME, aria2c
+# PROCESS-NAME, clash
+# PROCESS-NAME, cloudflared
+# PROCESS-NAME, fdm
 # PROCESS-NAME, parsecd
+# PROCESS-NAME, privoxy
+# PROCESS-NAME, qBittorrent
+# PROCESS-NAME, qbittorrent*
+# PROCESS-NAME, qbittorrent-nox
+# PROCESS-NAME, ss-local
+# PROCESS-NAME, tailscaled
+# PROCESS-NAME, transmission-daemon
+# PROCESS-NAME, transmission-qt
+# PROCESS-NAME, trojan
+# PROCESS-NAME, trojan-go
+# PROCESS-NAME, uTorrent
+# PROCESS-NAME, v2ray
+# PROCESS-NAME, xray
+# USER-AGENT, "%E8%BF%85%E9%9B%B7"
 DOMAIN-SUFFIX, m2m
 DOMAIN-SUFFIX, bogon
 DOMAIN-SUFFIX, avgv.cc
@@ -2500,39 +2538,3 @@ DOMAIN-KEYWORD, readcube
 DOMAIN-KEYWORD, sciencedirect
 DOMAIN-KEYWORD, wanfangdata
 DOMAIN-KEYWORD, westlawchina
-PROCESS-NAME, BaiduNetdisk_mac
-PROCESS-NAME, BitComet
-PROCESS-NAME, ClashX
-PROCESS-NAME, DownloadService
-PROCESS-NAME, Folx
-PROCESS-NAME, LocalSend
-PROCESS-NAME, Logi Options
-PROCESS-NAME, Logi Options Daemon
-PROCESS-NAME, NetTransport
-PROCESS-NAME, SunloginClient_Desktop
-PROCESS-NAME, SunloginClient_Helper
-PROCESS-NAME, Thunder
-PROCESS-NAME, ThunderVIP
-PROCESS-NAME, Transmission
-PROCESS-NAME, UUBooster
-PROCESS-NAME, WebTorrent
-PROCESS-NAME, WebTorrent Helper
-PROCESS-NAME, amuled
-PROCESS-NAME, aria2c
-PROCESS-NAME, clash
-PROCESS-NAME, cloudflared
-PROCESS-NAME, fdm
-PROCESS-NAME, privoxy
-PROCESS-NAME, qBittorrent
-PROCESS-NAME, qbittorrent*
-PROCESS-NAME, qbittorrent-nox
-PROCESS-NAME, ss-local
-PROCESS-NAME, tailscaled
-PROCESS-NAME, transmission-daemon
-PROCESS-NAME, transmission-qt
-PROCESS-NAME, trojan
-PROCESS-NAME, trojan-go
-PROCESS-NAME, uTorrent
-PROCESS-NAME, v2ray
-PROCESS-NAME, xray
-USER-AGENT, "%E8%BF%85%E9%9B%B7"

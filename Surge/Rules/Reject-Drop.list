@@ -77,6 +77,7 @@ DOMAIN-SUFFIX, plw6buurmlxhrlkm6wy3uk7cia0mprkq.lambda-url.ap-south-1.on.aws
 AND, ((PROTOCOL, QUIC), (DOMAIN-SUFFIX, xiaohongshu.com))
 DOMAIN-KEYWORD, telemetry.officeapps.live.com
 DOMAIN-WILDCARD, ads-*.xhscdn.com
+URL-REGEX, "/\d+/resolve"
 IP-CIDR, 101.35.204.35
 IP-CIDR, 101.91.140.224
 IP-CIDR, 112.64.218.119
@@ -85,7 +86,6 @@ IP-CIDR, 114.116.215.110
 IP-CIDR, 116.63.10.31
 IP-CIDR, 122.9.13.79
 IP-CIDR, 122.9.15.129
-URL-REGEX, "/\d+/resolve"
 # 其它（最后更新：26-11-1）
 DOMAIN-SUFFIX, null
 DOMAIN-SUFFIX, undefined
