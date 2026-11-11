@@ -28,10 +28,13 @@ DOMAIN, atom-track.bkchina.cn
 DOMAIN, ad.flipboard.cn
 DOMAIN, log.wechatpay.cn
 DOMAIN-SUFFIX, sentry.shortcat.app
+DOMAIN, sentry-cn.chagee.com
 DOMAIN, upload-tracking-cn.chagee.com
 DOMAIN, d-gm.mmstat.com
 DOMAIN, report.rtxapp.com
 DOMAIN, analytics.umetrip.com
+DOMAIN, sentry.lkcoffee.com
+DOMAIN, dmonitor.lkcoffee.com
 DOMAIN, hmonitor.lkcoffee.com
 DOMAIN-SUFFIX, trackserver.shuxinyc.com
 DOMAIN, tracking.sexytea2013.com
@@ -373,6 +376,7 @@ DOMAIN-SUFFIX, adsensor.cn
 DOMAIN-SUFFIX, analysys.cn
 DOMAIN-SUFFIX, linktech.cn
 DOMAIN-SUFFIX, reachmax.cn
+DOMAIN-SUFFIX, telecome.cn
 DOMAIN-SUFFIX, testplus.cn
 DOMAIN-SUFFIX, voiceads.cn
 DOMAIN-SUFFIX, youshiad.cn
@@ -1436,6 +1440,7 @@ DOMAIN-SUFFIX, openapi.samsung.com
 DOMAIN, insights.samsung.com
 DOMAIN, nmetrics.samsung.com
 DOMAIN, smetrics.samsung.com
+DOMAIN, ad.toutiao.com
 DOMAIN, zhanzhang.toutiao.com
 DOMAIN, ads-api.twitter.com
 DOMAIN-SUFFIX, unityads.unity3d.com
@@ -1495,9 +1500,11 @@ DOMAIN-SUFFIX, tc.weszxdrf.com
 DOMAIN-SUFFIX, adx.xiaodutv.com
 DOMAIN-SUFFIX, adtech.yahooinc.com
 DOMAIN, adpublish.ydstatic.com
+DOMAIN, log.zijieapi.com
 DOMAIN-SUFFIX, mcs.zijieapi.com
 DOMAIN-SUFFIX, vcs.zijieapi.com
 DOMAIN, mssdk.zijieapi.com
+DOMAIN-SUFFIX, applog.zijieapi.com
 DOMAIN, cdn.24metrics.com
 DOMAIN, httpdns.bilivideo.com
 DOMAIN-SUFFIX, pixel.byspotify.com
@@ -1949,6 +1956,7 @@ DOMAIN-SUFFIX, datacollection.uve.weibo.com
 DOMAIN-SUFFIX, log.fc.yahoo.com
 DOMAIN, analytics.query.yahoo.com
 DOMAIN, ac.dun.163yun.com
+DOMAIN-SUFFIX, ye.dun.163yun.com
 DOMAIN, dingwei.nos-jd.163yun.com
 DOMAIN, osfota.cdn.aliyun.com
 DOMAIN-SUFFIX, devicemessaging.us-east-1.amazon.com

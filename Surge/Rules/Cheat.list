@@ -1,5 +1,5 @@
+# DOMAIN-SUFFIX, buy.apps.apple.com
 DOMAIN-SUFFIX, daf.xp.apple.com
-DOMAIN-SUFFIX, buy.apps.apple.com
 DOMAIN-SUFFIX, auth.apps.apple.com
 DOMAIN-SUFFIX, sb.music.apple.com
 DOMAIN-SUFFIX, beta.music.apple.com
@@ -12,7 +12,6 @@ DOMAIN-SUFFIX, auth.itunes.apple.com
 DOMAIN-SUFFIX, radio.itunes.apple.com
 DOMAIN-SUFFIX, hls-amt.itunes.apple.com
 DOMAIN-SUFFIX, np-edge.itunes.apple.com
-DOMAIN-SUFFIX, sandbox.itunes.apple.com
 DOMAIN-SUFFIX, userpub.itunes.apple.com
 DOMAIN-SUFFIX, uts-api.itunes.apple.com
 DOMAIN-SUFFIX, hls-svod.itunes.apple.com
@@ -31,4 +30,5 @@ DOMAIN-SUFFIX, radio-activity.itunes.apple.com
 DOMAIN-SUFFIX, contentdelivery.itunes.apple.com
 DOMAIN-SUFFIX, genius-download.itunes.apple.com
 DOMAIN-SUFFIX, entitlements-edge.itunes.apple.com
+DOMAIN-SUFFIX, silverbullet-external.itunes.apple.com
 DOMAIN-KEYWORD, buy.itunes.apple.com

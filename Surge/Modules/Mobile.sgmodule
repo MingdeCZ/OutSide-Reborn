@@ -3,8 +3,8 @@
 #!author = MingdeCZ[https://github.com/MingdeCZ]
 #!homepage =
 #!icon = 
-#!version = 1.2.1
-#!date = 26.11.10
+#!version = 1.2.2
+#!date = 26.11.11
 #!category = N合1
 #!system = ios
 
@@ -22,7 +22,7 @@ hostname = %APPEND% *.googlevideo.com, 113.46.225.2, 113.46.225.3, 113.46.225.4,
 ^https://api\.bilibili\.com/x/pd-proxy/tracker\? - reject
 ^https://api\.bilibili\.com/x/push/(?:report|popup/config) - reject
 ^https://api\.bilibili\.com/x/report/(?:click/(?:ios|now)|heartbeat/mobile) - reject
-^https://api\.bilibili\.com/x/vip/ads/material/report\? - reject
+^https?://api\.bilibili\.com/x/vip/ads/material/report\? - reject
 ^https://api\.bilibili\.com/x/vip/web/vip_center/v2/(?:sub)?weather\? - reject
 ^https://api\.bilibili\.com/x/web-interface/zone\?jsonp - reject
 ^https://app\.bilibili\.com/x/resource/(?:ip|abtest|fingerprint|pop/up) - reject

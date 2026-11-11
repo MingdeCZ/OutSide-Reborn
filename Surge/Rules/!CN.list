@@ -1,8 +1,9 @@
 # 补充/优化
+# DOMAIN-SUFFIX, devin.ai
 # DOMAIN-SUFFIX, discordapp.com
+# DOMAIN-SUFFIX, stash.ws
+# DOMAIN-SUFFIX, windsurf.ai
 DOMAIN-SUFFIX, apple
-DOMAIN-SUFFIX, devin.ai
-DOMAIN-SUFFIX, windsurf.ai
 DOMAIN-SUFFIX, 64gr.am
 DOMAIN-SUFFIX, boylove.cc
 DOMAIN-SUFFIX, priceai.cc
@@ -26,7 +27,6 @@ DOMAIN-SUFFIX, gcore.lu
 DOMAIN, uzu.ma
 DOMAIN-SUFFIX, rsms.me
 DOMAIN-SUFFIX, dbku.tv
-DOMAIN-SUFFIX, stash.ws
 DOMAIN-SUFFIX, gitfox.app
 DOMAIN-SUFFIX, macked.app
 DOMAIN-SUFFIX, getnoir.app
@@ -166,6 +166,7 @@ DOMAIN-SUFFIX, comscoreresearch.com
 DOMAIN-SUFFIX, ios-repo-updates.com
 DOMAIN-SUFFIX, amazonwebservices.com
 DOMAIN-SUFFIX, globalsecurelayer.com
+DOMAIN-SUFFIX, checktrustworthiness.com
 DOMAIN-SUFFIX, modelcontextprotocol.com
 DOMAIN-SUFFIX, jdx.dev
 DOMAIN-SUFFIX, zed.dev
@@ -566,6 +567,7 @@ DOMAIN-SUFFIX, hermes-agent.nousresearch.com
 # DOMAIN-SUFFIX, dcd.gg
 # DOMAIN-SUFFIX, deepmind.com
 # DOMAIN-SUFFIX, ipfs.io
+# DOMAIN-SUFFIX, micro.one
 # DOMAIN-SUFFIX, pomf.se
 # DOMAIN-SUFFIX, speedtest.net
 # DOMAIN-SUFFIX, speedtestcustom.com
@@ -1525,7 +1527,6 @@ DOMAIN-SUFFIX, hubspotstarter.net
 DOMAIN-SUFFIX, minecraftforum.net
 DOMAIN-SUFFIX, sysctl-explorer.net
 DOMAIN-SUFFIX, minecraft-services.net
-DOMAIN-SUFFIX, micro.one
 DOMAIN-SUFFIX, ap.org
 DOMAIN-SUFFIX, eu.org
 DOMAIN-SUFFIX, ao3.org
@@ -1695,6 +1696,7 @@ DOMAIN-KEYWORD, pinterest
 DOMAIN-KEYWORD, sci-hub
 DOMAIN-KEYWORD, whatsapp
 # 待分配流媒体
+# DOMAIN, ana.video.friday.tw
 # DOMAIN, hls-amt.itunes.apple.com
 # DOMAIN, hls.itunes.apple.com
 # DOMAIN, linear.tv.apple.com
@@ -1704,9 +1706,40 @@ DOMAIN-KEYWORD, whatsapp
 # DOMAIN, play-edge.itunes.apple.com
 # DOMAIN, players.brightcove.net
 # DOMAIN, uts-api.itunes.apple.com
+# DOMAIN, video.friday.tw
 # DOMAIN, youtube.googleapis.com
 # DOMAIN, youtubei.googleapis.com
+# DOMAIN-SUFFIX, ameba.jp
+# DOMAIN-SUFFIX, ameblo.jp
+# DOMAIN-SUFFIX, ani.gamer.com.tw
+# DOMAIN-SUFFIX, api.gamer.com.tw
+# DOMAIN-SUFFIX, bahamut.com.tw
+# DOMAIN-SUFFIX, bbc.co.uk
+# DOMAIN-SUFFIX, bbci.co.uk
+# DOMAIN-SUFFIX, discoveryplus.co.uk
+# DOMAIN-SUFFIX, discoveryplus.in
+# DOMAIN-SUFFIX, dmm.co.jp
+# DOMAIN-SUFFIX, dokusho-ojikan.jp
 # DOMAIN-SUFFIX, googlevideo.com
+# DOMAIN-SUFFIX, hbogoasia.hk
+# DOMAIN-SUFFIX, hbogoasia.id
+# DOMAIN-SUFFIX, hbogoasia.ph
+# DOMAIN-SUFFIX, hbogoasia.sg
+# DOMAIN-SUFFIX, hbogoasia.tw
+# DOMAIN-SUFFIX, hulu.us
+# DOMAIN-SUFFIX, kkbox.com.tw
+# DOMAIN-SUFFIX, kktv.com.tw
+# DOMAIN-SUFFIX, linetv.tw
+# DOMAIN-SUFFIX, location-plus.nhk.jp
+# DOMAIN-SUFFIX, netflix.ca
+# DOMAIN-SUFFIX, nicovideo.jp
+# DOMAIN-SUFFIX, overcast.fm
+# DOMAIN-SUFFIX, psg.cdn.hgc.com.hk
+# DOMAIN-SUFFIX, skyking.com.tw
+# DOMAIN-SUFFIX, spotifynewsroom.jp
+# DOMAIN-SUFFIX, tver.jp
+# DOMAIN-SUFFIX, tvlicensing.co.uk
+# DOMAIN-SUFFIX, winticket.jp
 # PROCESS-NAME, com.amazon.avod.thirdpartyclient
 # PROCESS-NAME, com.bstar.intl
 # PROCESS-NAME, com.hktve.viutv
@@ -1765,30 +1798,16 @@ DOMAIN-KEYWORD, whatsapp
 # USER-AGENT, "discovery+*"
 # USER-AGENT, "encoreTVB*"
 # USER-AGENT, "mytv*"
-DOMAIN-SUFFIX, netflix.ca
 DOMAIN-SUFFIX, primevideo.cc
 DOMAIN-SUFFIX, amazonvideo.cc
 DOMAIN-SUFFIX, amazonvideodirect.cc
 DOMAIN-SUFFIX, scdn.co
 DOMAIN-SUFFIX, pscdn.co
 DOMAIN-SUFFIX, spoti.fi
-DOMAIN-SUFFIX, overcast.fm
-DOMAIN-SUFFIX, hbogoasia.hk
-DOMAIN-SUFFIX, hbogoasia.id
-DOMAIN-SUFFIX, discoveryplus.in
 DOMAIN-SUFFIX, kfs.io
 DOMAIN-SUFFIX, abema.io
 DOMAIN-SUFFIX, hayabusa.io
-DOMAIN-SUFFIX, tver.jp
-DOMAIN-SUFFIX, ameba.jp
-DOMAIN-SUFFIX, ameblo.jp
-DOMAIN-SUFFIX, nicovideo.jp
-DOMAIN-SUFFIX, winticket.jp
-DOMAIN-SUFFIX, dokusho-ojikan.jp
-DOMAIN-SUFFIX, spotifynewsroom.jp
 DOMAIN-SUFFIX, kktv.me
-DOMAIN-SUFFIX, hbogoasia.ph
-DOMAIN-SUFFIX, hbogoasia.sg
 DOMAIN-SUFFIX, my5.tv
 DOMAIN-SUFFIX, viu.tv
 DOMAIN-SUFFIX, 4gtv.tv
@@ -1801,9 +1820,6 @@ DOMAIN-SUFFIX, twitch.tv
 DOMAIN-SUFFIX, bilibili.tv
 DOMAIN-SUFFIX, ext-twitch.tv
 DOMAIN-SUFFIX, primevideo.tv
-DOMAIN-SUFFIX, linetv.tw
-DOMAIN-SUFFIX, hbogoasia.tw
-DOMAIN-SUFFIX, hulu.us
 DOMAIN-SUFFIX, iq.com
 DOMAIN-SUFFIX, dmm.com
 DOMAIN-SUFFIX, fox.com
@@ -1914,18 +1930,7 @@ DOMAIN-SUFFIX, hayabusa.media
 DOMAIN-SUFFIX, spotify.design
 DOMAIN-SUFFIX, kk.stream
 DOMAIN-SUFFIX, production-public.tubi.io
-DOMAIN-SUFFIX, dmm.co.jp
-DOMAIN-SUFFIX, location-plus.nhk.jp
 DOMAIN, www.tubi.tv
-DOMAIN-SUFFIX, kktv.com.tw
-DOMAIN-SUFFIX, kkbox.com.tw
-DOMAIN-SUFFIX, bahamut.com.tw
-DOMAIN-SUFFIX, skyking.com.tw
-DOMAIN, video.friday.tw
-DOMAIN-SUFFIX, bbc.co.uk
-DOMAIN-SUFFIX, bbci.co.uk
-DOMAIN-SUFFIX, tvlicensing.co.uk
-DOMAIN-SUFFIX, discoveryplus.co.uk
 DOMAIN-SUFFIX, viu.now.com
 DOMAIN-SUFFIX, intl.iqiyi.com
 DOMAIN-SUFFIX, intl-rcd.iqiyi.com
@@ -1964,9 +1969,6 @@ DOMAIN, d2anahhhmp1ffz.cloudfront.net
 DOMAIN, d3196yreox78o9.cloudfront.net
 DOMAIN, d349g9zuie06uo.cloudfront.net
 DOMAIN, d3c7rimkq79yfu.cloudfront.net
-DOMAIN-SUFFIX, ani.gamer.com.tw
-DOMAIN-SUFFIX, api.gamer.com.tw
-DOMAIN, ana.video.friday.tw
 DOMAIN, cache.video.iqiyi.com
 DOMAIN, cbsservice.aws.syncbak.com
 DOMAIN, cbsplaylistserver.aws.syncbak.com
@@ -1975,7 +1977,6 @@ DOMAIN, gamer-cds.cdn.hinet.net
 DOMAIN, gamer2-cds.cdn.hinet.net
 DOMAIN, 4gtvfreepcvod-cds.cdn.hinet.net
 DOMAIN-SUFFIX, dca-ll-livedazn-dznlivejp.s.llnwi.net
-DOMAIN-SUFFIX, psg.cdn.hgc.com.hk
 DOMAIN, akmcdnoversea-tw.inter.ptqy.gitv.tv
 DOMAIN, chuangcachecdnoversea-tw.inter.ptqy.gitv.tv
 DOMAIN, cbsi.live.ott.irdeto.com
