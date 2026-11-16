@@ -130,8 +130,8 @@ DOMAIN-SUFFIX, is-ssl.mzstatic.com-cn-lb.itunes-apple.com.akadns.net
 DOMAIN-SUFFIX, gsp4-cn.ls.apple.com.edgekey.net.globalredir.akadns.net
 # CN
 # DOMAIN, api.smoot.apple.cn
-DOMAIN-SUFFIX, apple.com.cn
-DOMAIN-SUFFIX, icloud.com.cn
+# DOMAIN-SUFFIX, apple.com.cn
+# DOMAIN-SUFFIX, icloud.com.cn
 DOMAIN-SUFFIX, cn.apple.com
 DOMAIN-SUFFIX, cn.ls.apple.com
 DOMAIN-SUFFIX, cn-ssl.ls.apple.com
@@ -156,10 +156,13 @@ DOMAIN-SUFFIX, cn.windowssearch.com
 # DOMAIN-SUFFIX, fengkongcloud.com
 # DOMAIN-SUFFIX, gdtimg.com
 # DOMAIN-SUFFIX, hdslb.com
+# DOMAIN-SUFFIX, jpush.cn
 # DOMAIN-SUFFIX, lcdn-locator.apple.com
 # DOMAIN-SUFFIX, ludashi.com
 # DOMAIN-SUFFIX, meitustat.com
 # DOMAIN-SUFFIX, mobileservice.cn
+# DOMAIN-SUFFIX, moegirl.org.cn
+# DOMAIN-SUFFIX, ntp.org.cn
 # DOMAIN-SUFFIX, okr.com
 # DOMAIN-SUFFIX, qhimg.com
 # DOMAIN-SUFFIX, qhimgs.com
@@ -235,7 +238,6 @@ DOMAIN-SUFFIX, flyme.cn
 DOMAIN-SUFFIX, gtimg.cn
 DOMAIN-SUFFIX, honor.cn
 DOMAIN-SUFFIX, infoq.cn
-DOMAIN-SUFFIX, jpush.cn
 DOMAIN-SUFFIX, kdocs.cn
 DOMAIN-SUFFIX, ksurl.cn
 DOMAIN-SUFFIX, m1905.cn
@@ -990,46 +992,7 @@ DOMAIN-SUFFIX, chunyu.mobi
 DOMAIN-SUFFIX, xunyou.mobi
 DOMAIN-SUFFIX, mijia.tech
 DOMAIN-SUFFIX, c-t.work
-DOMAIN-SUFFIX, jd.com.cn
-DOMAIN-SUFFIX, ui.com.cn
-DOMAIN-SUFFIX, wo.com.cn
-DOMAIN-SUFFIX, kfc.com.cn
-DOMAIN-SUFFIX, zol.com.cn
-DOMAIN-SUFFIX, asus.com.cn
-DOMAIN-SUFFIX, chsi.com.cn
-DOMAIN-SUFFIX, cntv.com.cn
-DOMAIN-SUFFIX, icbc.com.cn
-DOMAIN-SUFFIX, sina.com.cn
-DOMAIN-SUFFIX, sohu.com.cn
-DOMAIN-SUFFIX, ubnt.com.cn
-DOMAIN-SUFFIX, vivo.com.cn
-DOMAIN-SUFFIX, 58cdn.com.cn
-DOMAIN-SUFFIX, 95588.com.cn
-DOMAIN-SUFFIX, cnnic.com.cn
-DOMAIN-SUFFIX, right.com.cn
-DOMAIN-SUFFIX, weibo.com.cn
-DOMAIN-SUFFIX, dccnet.com.cn
-DOMAIN-SUFFIX, huawei.com.cn
-DOMAIN-SUFFIX, ipanda.com.cn
-DOMAIN-SUFFIX, lenovo.com.cn
-DOMAIN-SUFFIX, nearme.com.cn
-DOMAIN-SUFFIX, pcauto.com.cn
-DOMAIN-SUFFIX, abchina.com.cn
-DOMAIN-SUFFIX, firefox.com.cn
-DOMAIN-SUFFIX, weather.com.cn
-DOMAIN-SUFFIX, zol-img.com.cn
-DOMAIN-SUFFIX, autohome.com.cn
-DOMAIN-SUFFIX, pconline.com.cn
-DOMAIN-SUFFIX, amazonaws.com.cn
-DOMAIN-SUFFIX, battlenet.com.cn
-DOMAIN-SUFFIX, hoopchina.com.cn
-DOMAIN-SUFFIX, jetbrains.com.cn
-DOMAIN-SUFFIX, mcdonalds.com.cn
-DOMAIN-SUFFIX, ubionline.com.cn
-DOMAIN-SUFFIX, chinatelecom.com.cn
 DOMAIN-SUFFIX, assets.msn.cn
-DOMAIN-SUFFIX, ntp.org.cn
-DOMAIN-SUFFIX, moegirl.org.cn
 DOMAIN, www.intel.cn
 DOMAIN, lv.queniujq.cn
 DOMAIN, assets1.xboxlive.cn

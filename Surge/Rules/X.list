@@ -48,6 +48,11 @@ DOMAIN, tracking.mcdonalds.com.cn
 DOMAIN, o64374.ingest.sentry.io
 DOMAIN, log.weixin.qq.com
 DOMAIN, apponline.research.qq.com
+DOMAIN, amp-api-ads.apps.apple.com
+DOMAIN, analytics.itunes.apple.com
+DOMAIN, analytics-nk.itunes.apple.com
+DOMAIN, analytics-st.itunes.apple.com
+DOMAIN, adattributionservice.itunes.apple.com
 DOMAIN, report.meeting.tencent.com
 DOMAIN-SUFFIX, adashx.ut.dingtalk.com
 DOMAIN, o4507514603831296.ingest.de.sentry.io
@@ -1496,6 +1501,7 @@ DOMAIN-SUFFIX, lu.sogoucdn.com
 DOMAIN-SUFFIX, inte.sogoucdn.com
 DOMAIN, theta.sogoucdn.com
 DOMAIN, event.syftdata.com
+DOMAIN-SUFFIX, mobilelog.upqzfile.com
 DOMAIN-SUFFIX, tc.weszxdrf.com
 DOMAIN-SUFFIX, adx.xiaodutv.com
 DOMAIN-SUFFIX, adtech.yahooinc.com
@@ -1505,6 +1511,7 @@ DOMAIN-SUFFIX, mcs.zijieapi.com
 DOMAIN-SUFFIX, vcs.zijieapi.com
 DOMAIN, mssdk.zijieapi.com
 DOMAIN-SUFFIX, applog.zijieapi.com
+DOMAIN, tnc3-bjlgy.zijieapi.com
 DOMAIN, cdn.24metrics.com
 DOMAIN, httpdns.bilivideo.com
 DOMAIN-SUFFIX, pixel.byspotify.com
