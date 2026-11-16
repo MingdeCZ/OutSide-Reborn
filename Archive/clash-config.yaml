@@ -142,19 +142,19 @@ rule-providers:
     url: "https://ruleset.skk.moe/Modules/Rules/sukka_local_dns_mapping/tencent.conf"
     path: ./dnsTencent.text
     interval: 604800
-  Reject-Drop:
+  Interstellar:
     type: http
     format: text
     behavior: classical
-    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Reject-Drop.list"
-    path: ./Reject-Drop.text
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Interstellar.list"
+    path: ./Interstellar.text
     interval: 604800
-  Reject:
+  X:
     type: http
     format: text
     behavior: classical
-    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Reject.list"
-    path: ./Reject.text
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/X.list"
+    path: ./X.text
     interval: 604800
   Reject-No-Drop:
     type: http
@@ -177,26 +177,19 @@ rule-providers:
     url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/TG-US.list"
     path: ./TG-US.text
     interval: 604800
-  Cheat:
+  Ex:
     type: http
     format: text
     behavior: classical
-    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Cheat.list"
-    path: ./Cheat.text
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Ex.list"
+    path: ./Ex.text
     interval: 604800
-  Direct:
+  Marx:
     type: http
     format: text
     behavior: classical
-    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Direct.list"
-    path: ./Direct.text
-    interval: 604800
-  Mainland:
-    type: http
-    format: text
-    behavior: classical
-    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Mainland.list"
-    path: ./Mainland.text
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Marx.list"
+    path: ./Marx.text
     interval: 604800
   Triviality:
     type: http
@@ -212,12 +205,12 @@ rule-providers:
     url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/TG-EU.list"
     path: ./TG-EU.text
     interval: 604800
-  Entity:
+  Autopilot:
     type: http
     format: text
     behavior: classical
-    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Entity.list"
-    path: ./Entity.text
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Autopilot.list"
+    path: ./Autopilot.text
     interval: 604800
   Streamberry:
     type: http
@@ -226,6 +219,13 @@ rule-providers:
     url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Streamberry.list"
     path: ./Streamberry.text
     interval: 604800
+  CUAgain:
+    type: http
+    format: text
+    behavior: classical
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/CUAgain.list"
+    path: ./CUAgain.text
+    interval: 604800
   Non-CN:
     type: http
     format: text
@@ -233,28 +233,28 @@ rule-providers:
     url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/!CN.list"
     path: ./!CN.text
     interval: 604800
-  Deh∕jack:
+  PeacefulWorld:
     type: http
     format: text
     behavior: classical
-    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/Deh%E2%88%95jack.list"
-    path: ./Deh∕jack.text
+    url: "https://v6.gh-proxy.org/https://github.com/MingdeCZ/OutSide-Reborn/raw/main/Surge/Rules/PeacefulWorld.list"
+    path: ./PeacefulWorld.text
     interval: 604800
 rules:
-  - RULE-SET, Reject-Drop, REJECT-DROP, no-resolve
-  - RULE-SET, Reject, REJECT, no-resolve
-  - RULE-SET, Reject-No-Drop, REJECT, no-resolve
+  - RULE-SET, Interstellar, REJECT-DROP, no-resolve
+  - RULE-SET, X, REJECT, no-resolve
+  - RULE-SET, Reject-No-Drop, REJECT
   - RULE-SET, TG-SG, 全球通, no-resolve
   - RULE-SET, TG-US, 绿卡, no-resolve
-  - RULE-SET, Cheat, 俯仰之间, no-resolve
-  - RULE-SET, Direct, DIRECT, no-resolve
-  - RULE-SET, Mainland, DIRECT, no-resolve
+  - RULE-SET, Ex, DIRECT, no-resolve
+  - RULE-SET, Marx, DIRECT, no-resolve
   - RULE-SET, Triviality, 俯仰之间, no-resolve
   - RULE-SET, TG-EU, 壳, no-resolve
-  - RULE-SET, Entity, 绿卡, no-resolve
+  - RULE-SET, Autopilot, 绿卡, no-resolve
   - RULE-SET, Streamberry, 全球通, no-resolve
+  - RULE-SET, CUAgain, 俯仰之间
   - RULE-SET, Non-CN, 俯仰之间, no-resolve
-  - RULE-SET, Deh∕jack, REJECT-DROP
+  - RULE-SET, PeacefulWorld, REJECT-DROP
   - GEOIP, CN, DIRECT
   - MATCH, 俯仰之间
 unified-delay: true
